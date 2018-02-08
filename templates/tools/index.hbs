@@ -1,12 +1,21 @@
-<a href="/">⬅️ back to Home</a>
+{{#*inline "page"}}
 
-<h1>Tools</h1>
+<header>
+  <h1>Tools</h1>
+</header>
 
-<a href="/contribute">Learn how to contribute to Rust</a>
+<section>
+  <h2><a href="/tools/ides">IDEs</a></h2>
+  <h2><a href="/tools/cargo">Cargo</a></h2>
+  <h2><a href="/tools/ci">CI integration</a></h2>
+  <h2><a href="/tools/debuggers">Debuggers</a></h2>
+  <h2><a href="/tools/linters">Linters</a></h2>
+  <h2><a href="/tools/rustup">rustup</a></h2>
+</section>
 
-<h2><a href="/tools/ides">IDEs</a></h2>
-<h2><a href="/tools/cargo">Cargo</a></h2>
-<h2><a href="/tools/ci">CI integration</a></h2>
-<h2><a href="/tools/debuggers">Debuggers</a></h2>
-<h2><a href="/tools/linters">Linters</a></h2>
-<h2><a href="/tools/rustup">rustup</a></h2>
+<section>
+  <a href="/contribute">Learn how to contribute to Rust</a>
+</section>
+
+{{/inline}}
+{{~> (parent)~}}

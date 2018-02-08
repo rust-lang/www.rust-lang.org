@@ -1,0 +1,30 @@
+body {
+  font-family: sans-serif;
+}
+
+section, header, footer, nav {
+  border: 1px dashed black;
+  padding: 10px;
+  margin: 10px auto;
+  width: 80%;
+}
+
+header, footer {
+  background: black;
+  color: white;
+}
+
+nav {
+  background: grey;
+  color: white;
+}
+
+header .subtitle {
+  font-style: italic;
+}
+
+div {
+  border: 1px dotted grey;
+  padding: 5px;
+  margin: 5px;
+}

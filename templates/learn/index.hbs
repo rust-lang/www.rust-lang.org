@@ -1,9 +1,18 @@
-<a href="/">⬅️ back to Home</a>
+{{#*inline "page"}}
 
-<h1>Learn</h1>
+<header>
+  <h1>Learn</h1>
+</header>
 
-<a href="#">Embed/Link to Playpen</a>
+<section>
+  <a href="#">Embed/Link to Playpen</a>
+</section>
 
-<h2><a href="learn/bookshelf">Bookshelf</a></h2>
-<h2><a href="learn/rustbridge">Rust Bridge</a></h2>
-<h2><a href="learn/resources">Resources</a></h2>
+<section>
+  <h2><a href="learn/bookshelf">Bookshelf</a></h2>
+  <h2><a href="learn/rustbridge">Rust Bridge</a></h2>
+  <h2><a href="learn/resources">Resources</a></h2>
+</section>
+
+{{/inline}}
+{{~> (parent)~}}
