@@ -1,7 +1,18 @@
-<a href="/learn">⬅️ back to Learn</a>
+{{#*inline "page"}}
 
-<h1>Getting Started</h1>
+<header>
+  <h1>Getting Started</h1>
+</header>
 
-<a href="/tools/rustup">rustup</a>
-<a href="/tools/cargo">Cargo</a>
-<a href="/learn">Learn more</a>
+<section>
+  <p>teach people how to get rust installed</p>
+</section>
+
+<section>
+  <a href="/tools/rustup">rustup</a>
+  <a href="/tools/cargo">Cargo</a>
+  <a href="/learn">Learn more</a>
+</section>
+
+{{/inline}}
+{{~> (parent)~}}

@@ -1,8 +1,8 @@
-<a href="/">⬅️ back to Home</a>
+{{#*inline "page"}}
 
-<h1>What?</h1>
-
-<hr/>
+<header>
+  <h1>What?</h1>
+</header>
 
 <section id="uses">
   <h2>Uses</h2>
@@ -13,18 +13,17 @@
   <h3><a href="what/server">Server</a></h3>
 </section>
 
-<hr/>
-
 <section id="language-values">
   <h2>Language Values</h2>
   <p>teaser copy</p>
   <h3><a href="what/language-values">Learn More</a></h3>
 </section>
 
-<hr/>
-
 <section id="Production">
   <h2>Production</h2>
   <p>teaser copy</p>
   <h3><a href="production">Check out how Rust is used in Production</a></h3>
 </section>
+
+{{/inline}}
+{{~> (parent)~}}
