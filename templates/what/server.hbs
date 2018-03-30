@@ -1,8 +1,72 @@
 {{#*inline "page"}}
 
 <section>
-  <h1>Web Server</h1>
+  <h1>Highly concurrent servers that let you sleep at night</h1>
 </section>
+
+<section>
+  <h3>Low footprint</h3>
+
+  <p>Rust servers use less memory, less CPU cycles
+    and less power.</p>
+  <div class="image">Image of a race cycle.</div>
+
+  <h3>Security and Predictability</h3>
+  <p>Rust servers a safe from many classes of bugs, while
+    retaining the predictability and speed of
+    a low-level language.
+  </p>
+  <div class="image">Image of a plane.</div>
+
+  <h3>Scalability and Concurrency</h3>
+  <p>
+    Rusts concurrency support allows you to safely
+    and conveniently mix concurrency patterns.
+
+    It empowers you to squeeze every last bit out
+    of you machine.
+  </p>
+  <div class="image">Image of a logistics center.</div>
+
+</section>
+
+<section>
+  <h3>Getting started server</h3>
+
+  <pre>
+    extern crate serde;
+    extern crate serde_json;
+
+    fn main() {
+        serde_json::parse::<MyStuff>("string"); (1)
+    }
+  </pre>
+
+  (1) This is all you need to safely parse JSON, checks its structure and reports proper errors
+</section>
+
+<section>
+  <h3>Keeping pagers silent since 2015</h3>
+
+  <ul>
+    <li>
+      NPM: Using Rust for services since for X years now.
+
+      Failure rate: 0%
+    </li>
+    <li>
+      1aim: Using Rust for their backend API.
+
+      Failure rate: 0%
+    </li>
+    <li>
+      Boyant: Using Rust for proxies and APIs.
+
+      Failure rate: 0%
+    </li>
+  </ul>
+</section>
+
 
 {{/inline}}
 {{~> (parent)~}}
