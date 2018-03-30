@@ -2,18 +2,13 @@
 
 <section role="main">
   <h1>Write Solid Command Line Applications</h1>
-  
+
   <p class="teaser">
-    {{!--
-    Failed tries:
-    - Get started quickly…
-    - Best practices by default∞
-    - Easily distributable tools that are just a single binary…
-    --}}
-    {{!-- Also bad but less so: --}}
-    Thanks to a great ecosystem that promotes best practices and easy distribution, you can get started with writing CLI apps in Rust in no time.
+    {{!-- Failed tries: - Get started quickly… - Best practices by default∞ - Easily distributable tools that are just a single
+    binary… --}} {{!-- Also bad but less so: --}} Thanks to a great ecosystem that promotes best practices and easy distribution,
+    you can get started with writing CLI apps in Rust in no time.
   </p>
-  
+
   <div class="three-boxes">
     <article class="box">
       <h2>Distribution</h2>
@@ -24,29 +19,37 @@
     <article class="box">
       <h2>Argument parsing &amp; config files: Solved</h2>
       <p>
-        Get the best practices for argument parsing with great help messages and configuration files that work cross-platform without boilerplate code.
+        Get the best practices for argument parsing with great help messages and configuration files that work cross-platform without
+        boilerplate code.
       </p>
     </article>
     <article class="box">
       <h2>Super solid</h2>
       <p>
-        Even if all you want to write is a short one-off script you can be confident it's fast, easily testable, and gives useful error messages.
+        Even if all you want to write is a short one-off script you can be confident it's fast, easily testable, and gives useful
+        error messages.
       </p>
     </article>
   </div>
-  
+
   <article>
     <h2>Rust CLI application in production</h2>
-    
+
     <div>
       <h3>Sentry's CLI</h3>
       <blockquote>"Rust is awesome and fun and you should use it"</blockquote>
-      <p><a href="https://www.youtube.com/watch?v=2Xu6EdEBa5E">Watch Armin Ronacher's talk at PolyConf 17</a></p>
+      <p>
+        <a href="https://www.youtube.com/watch?v=2Xu6EdEBa5E">Watch Armin Ronacher's talk at PolyConf 17</a>
+      </p>
     </div>
   </article>
-  
+
   <article>
-    <pre><code>#[derive(Clap)]
+
+    <div class="three-boxes">
+      <article class="box">
+        <h2>Simple Argument Parsing</h2>
+        <pre><code>#[derive(Clap)]
 struct Cli {
     file: PathBuf,
     #[clap(short="n")]
@@ -60,8 +63,40 @@ fn main() -> Result<(), _> {
         println!("{}", line);
     }
 }</code></pre>
+      </article>
+      <article class="box">
+        <h2>Configuration handling</h2>
+        <pre><code>#[derive(Confy)]
+struct MyConfig {
+  number: i32,
+  name: String,
+}
+
+fn main() {
+  let cfg: MyConfig = match confy::load("my_app") {
+    Some(cfg) => cfg,
+    None => confy::create(("my_app", MyConfig {
+      /* ... initialise default ... */
+    }),
+  };
+
+  println!("{} > {}", cfg.name, cfg.number);
+}</code></pre>
+      </article>
+
+      <article class="box">
+        <h2>Bringing it all together</h2>
+        <pre><code>extern crate skynet;
+
+fn main() {
+  // ...
+}
+      </code></pre>
+      </article>
+    </div>
+
+
   </article>
 </section>
 
-{{/inline}}
-{{~> (parent)~}}
+{{/inline}} {{~> (parent)~}}
