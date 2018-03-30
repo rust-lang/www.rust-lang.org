@@ -28,3 +28,12 @@ div {
   padding: 5px;
   margin: 5px;
 }
+
+.three-boxes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.three-boxes .box {
+  width: 32%;
+}
