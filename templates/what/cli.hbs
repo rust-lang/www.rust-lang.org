@@ -1,7 +1,66 @@
 {{#*inline "page"}}
 
-<section>
-  <h1>Command Line Tools (CLIs)</h1>
+<section role="main">
+  <h1>Write Solid Command Line Applications</h1>
+  
+  <p class="teaser">
+    {{!--
+    Failed tries:
+    - Get started quickly…
+    - Best practices by default∞
+    - Easily distributable tools that are just a single binary…
+    --}}
+    {{!-- Also bad but less so: --}}
+    Thanks to a great ecosystem that promotes best practices and easy distribution, you can get started with writing CLI apps in Rust in no time.
+  </p>
+  
+  <div class="three-boxes">
+    <article class="box">
+      <h2>Distribution</h2>
+      <p>
+        Super simple: Compile everything down to a single binary, no need for your users to have a runtime installed.
+      </p>
+    </article>
+    <article class="box">
+      <h2>Argument parsing &amp; config files: Solved</h2>
+      <p>
+        Get the best practices for argument parsing with great help messages and configuration files that work cross-platform without boilerplate code.
+      </p>
+    </article>
+    <article class="box">
+      <h2>Super solid</h2>
+      <p>
+        Even if all you want to write is a short one-off script you can be confident it's fast, easily testable, and gives useful error messages.
+      </p>
+    </article>
+  </div>
+  
+  <article>
+    <h2>Rust CLI application in production</h2>
+    
+    <div>
+      <h3>Sentry's CLI</h3>
+      <blockquote>"Rust is awesome and fun and you should use it"</blockquote>
+      <p><a href="https://www.youtube.com/watch?v=2Xu6EdEBa5E">Watch Armin Ronacher's talk at PolyConf 17</a></p>
+    </div>
+  </article>
+  
+  <article>
+    <pre><code>#[derive(Clap)]
+struct Cli {
+    file: PathBuf,
+    #[clap(short="n")]
+    num: i32,
+}
+
+fn main() -> Result<(), _> {
+    let args = Cli::from_args();
+    let file = std::fs::read_string(&args.file)?;
+    for line in file.lines().take(args.num) {
+        println!("{}", line);
+    }
+}</code></pre>
+  </article>
 </section>
 
 {{/inline}}
