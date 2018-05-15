@@ -7,6 +7,8 @@ the home of the new rust website
 
 1. As this is a [Rocket](https://rocket.rs/) app, you must have the most current version of Rust nightly installed on your local machine. You can install it using [`rustup`](https://rustup.rs/) by running `rustup default nightly`.
 
+1. We're using some third-party npm packages, so be sure to run `npm install`.
+
 1. Compile the `.scss` files to `.css` by running `sass static/styles/app.scss static/styles/app.css`.
 
 1. After cloning the repo, run `cargo run` in your terminal. If you encounter any errors, you may need to update your version of Cargo by running `cargo update`.
@@ -31,3 +33,5 @@ The linter is how we maintain a consistent code style throughout the project. Th
 1. Run `stylelint <path/to/file.scss>` (where `<path/to/file.scss>` is replaced by the actual path to your file) in your terminal and it will print out a nice list of all the rules you're breaking, right there in the terminal.
 
 If you encounter a persistent linter error that you are certain you've fixed, try running `stylelint <path/to/file.scss> --fix` (where `<path/to/file.scss>` is replaced by the actual path to your file) in your terminal.
+
+If you encounter a persistent linter error regarding a third-party CSS framework or other thing outside of your control, add the file to the list in the `.stylelintignore` file. Please only ignore third-party files that are not under your control. If you have the ability to fix the linter error or warning, it is preferable to do so.
