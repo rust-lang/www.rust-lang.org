@@ -1,0 +1,37 @@
+// THIRD-PARTY STYLES
+@import '../../node_modules/hamburgers/_sass/hamburgers/hamburgers';
+
+// VARIABLES
+@import 'variables/colors';
+@import 'variables/numbers';
+
+// PARTIALS
+@import '_nav';
+
+// PAGES
+@import 'index';
+
+// APPLICATION-WIDE STYLES
+
+body {
+  background-color: $background-color;
+  color: $text-color;
+  font-size: 2rem;
+
+  a {
+    text-decoration: none;
+    color: $text-color;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 1rem;
+
+    a:hover {
+      color: $medium-gray;
+    }
+
+    a:active {
+      color: $light-gray;
+    }
+  }
+}
