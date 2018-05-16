@@ -2,7 +2,5 @@
   "devDependencies": {
     "stylelint-config-standard": "^18.2.0"
   },
-  "dependencies": {
-    "hamburgers": "^0.9.3"
-  }
+  "dependencies": {}
 }
