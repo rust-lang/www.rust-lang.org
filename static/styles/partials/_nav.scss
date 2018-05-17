@@ -1,0 +1,75 @@
+label.hamburger {
+  float: right;
+
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.logo-small {
+  width: 30px;
+  height: 30px;
+  margin-top: 9px;
+  margin-left: 9px;
+
+  @media (min-width: $tablet-width) {
+    float: left;
+  }
+}
+
+nav {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  border: none;
+  width: 100%;
+  background-color: $background-color;
+  font-size: 0.8rem;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+    flex-direction: row;
+    margin-top: -30px;
+    margin-left: 45px;
+    width: 92%;
+
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      list-style: none;
+
+      a {
+        text-align: right;
+      }
+
+      li {
+        padding: 10px;
+        z-index: 5;
+
+        ul {
+          display: none;
+        }
+
+        &:hover ul {
+          display: block;
+          margin-left: -109px;
+          border: 1px solid $light-gray;
+
+          li {
+            margin-left: -40px;
+            background-color: $white;
+
+            &:hover {
+              background-color: $light-gray;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+input:checked ~ nav {
+  display: flex;
+  flex-direction: column;
+}

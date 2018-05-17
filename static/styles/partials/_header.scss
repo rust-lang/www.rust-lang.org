@@ -1,0 +1,76 @@
+header {
+  display: flex;
+  position: static;
+  flex-direction: column;
+  background-color: $white;
+  color: $dark-gray;
+  border: none;
+  width: 95%;
+  padding-bottom: 30px;
+  padding-left: 20px;
+
+  @media (min-width: $tablet-width) {
+    position: absolute;
+    padding-bottom: 0;
+    top: 78px;
+  }
+
+  div {
+    margin-bottom: 23px;
+
+    @media (min-width: $tablet-width) {
+      margin-bottom: 0;
+    }
+  }
+
+  h1 {
+    font-family: $header-font;
+    font-size: 5rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 0;
+    height: 100px;
+  }
+
+  h2 {
+    font-family: $description-font;
+    font-size: 1.2rem;
+    width: 90%;
+    max-width: 300px;
+
+    @media (min-width: $tablet-width) {
+      font-size: 1rem;
+      width: 80%;
+    }
+  }
+
+  button {
+    color: $white;
+    background-color: $dark-gray;
+    border: none;
+    font-family: $description-font;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 7px;
+    width: 200px;
+    height: 65px;
+
+    span {
+      font-size: 0.75rem;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    justify-content: space-between;
+
+    h2 {
+      width: 60%;
+      max-width: 500px;
+    }
+
+    button {
+      margin-top: 20px;
+    }
+  }
+}

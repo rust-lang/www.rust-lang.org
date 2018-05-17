@@ -4,23 +4,150 @@
 // VARIABLES
 @import 'variables/colors';
 @import 'variables/numbers';
+@import 'variables/fonts';
 
 // PARTIALS
-@import '_nav';
+@import 'partials/_nav';
+@import 'partials/_header';
 
 // PAGES
 @import 'index';
 
+// FONTS
+@import url('https://fonts.googleapis.com/css?family=Lalezar');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 // APPLICATION-WIDE STYLES
 
 body {
+  margin: 0;
   background-color: $background-color;
   color: $text-color;
-  font-size: 2rem;
+  font-size: 1.2rem;
+
+  @media (min-width: $tablet-width) {
+    font-size: 1rem;
+  }
 
   a {
     text-decoration: none;
     color: $text-color;
+  }
+
+  footer {
+    background-color: $dark-gray;
+    color: $white;
+    width: 103%;
+    height: 40px;
+    margin-left: -8px;
+    position: static;
+    font-size: 1rem;
+    padding: 25px 25px 10px 25px;
+
+    @media (min-width: $tablet-width) {
+      font-size: 0.75rem;
+      margin-bottom: 0;
+      bottom: -8px;
+    }
+
+    a {
+      color: $white;
+
+      &:hover,
+      &:active {
+        color: $light-gray;
+      }
+    }
+  }
+
+  section.home-intro {
+    background-color: $dark-gray;
+    color: $white;
+    margin-top: 0;
+    padding: 30px;
+    margin-left: -8px;
+    margin-right: -8px;
+    width: 100%;
+
+    a {
+      color: $white;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+    }
+
+    @media (min-width: $tablet-width) {
+      margin-top: 300px;
+    }
+
+    .subjects {
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: column;
+      padding-top: 25px;
+
+      @media (min-width: $tablet-width) {
+        flex-direction: row;
+      }
+    }
+  }
+
+  section.home-production {
+    margin-top: 0;
+    padding: 30px;
+    margin-left: -8px;
+    margin-right: -8px;
+    width: 100%;
+  }
+
+  section.home-community {
+    background-color: $light-blue;
+    color: $white;
+    margin-top: 0;
+    padding: 30px;
+    margin-left: -8px;
+    margin-right: -8px;
+    margin-bottom: -18px;
+    width: 100%;
+  }
+
+  .subheader {
+    font-family: $header-font;
+    letter-spacing: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .purple-line {
+    background-color: $purple;
+    height: 13px;
+    margin-top: -35px;
+    width: fit-content;
+    margin-left: -6px;
+    margin-bottom: 20px;
+  }
+
+  .light-purple-line {
+    background-color: $light-purple;
+    height: 13px;
+    margin-top: -35px;
+    width: fit-content;
+    margin-left: -6px;
+    margin-bottom: 20px;
+  }
+
+  .subject-item {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    font-size: 0.7rem;
+
+    svg {
+      margin-left: 35%;
+    }
+
+    @media (min-width: $tablet-width) {
+      max-width: 15%;
+    }
   }
 
   @media (min-width: $tablet-width) {
