@@ -2,5 +2,4 @@
 /target/
 **/*.rs.bk
 /node_modules
-/static/styles/app.css
 /static/styles/*.map
