@@ -1,0 +1,25 @@
+footer {
+  background-color: $dark-gray;
+  color: $white;
+  width: 103%;
+  height: 40px;
+  margin-left: -8px;
+  position: static;
+  font-size: 1rem;
+  padding: 25px 25px 10px 25px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 0.75rem;
+    margin-bottom: 0;
+    bottom: -8px;
+  }
+
+  a {
+    color: $white;
+
+    &:hover,
+    &:active {
+      color: $light-gray;
+    }
+  }
+}
