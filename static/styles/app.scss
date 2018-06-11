@@ -35,11 +35,24 @@ body {
     color: $text-color;
   }
 
+  .background-logo {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -75px;
+    margin-bottom: -335px;
+    margin-left: 92px;
+    width: 100%;
+
+    img.logo {
+      opacity: 0.5;
+    }
+  }
+
   section.home-intro {
     background-color: $dark-gray;
     color: $white;
     margin-top: 0;
-    padding: 30px;
+    padding: 50px;
     margin-left: -8px;
     margin-right: -8px;
     width: 100%;
@@ -51,7 +64,7 @@ body {
     }
 
     @media (min-width: $tablet-width) {
-      margin-top: 300px;
+      margin-top: 700px;
     }
 
     .subjects {
@@ -68,10 +81,80 @@ body {
 
   section.home-production {
     margin-top: 0;
-    padding: 30px;
+    padding: 50px;
     margin-left: -8px;
     margin-right: -8px;
     width: 100%;
+
+    .description-container {
+      display: grid;
+      grid-template-columns: auto auto;
+
+      svg {
+        justify-self: center;
+        z-index: 0;
+      }
+    }
+
+    .description {
+      display: flex;
+      flex-direction: column;
+
+      p {
+        font-size: 0.7rem;
+        max-width: 350px;
+        margin-left: 5%;
+        line-height: 1.5;
+        color: $medium-gray;
+      }
+
+      button {
+        background-color: $light-blue;
+        color: $white;
+        border: none;
+        font-family: $description-font;
+        font-size: 1rem;
+        padding: 10px;
+        border-radius: 7px;
+        width: 150px;
+        height: 50px;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+    }
+
+    svg {
+      height: auto;
+      max-width: 350px;
+    }
+
+    .company-logos {
+      display: grid;
+      grid-template-columns: auto auto;
+      padding: 40px;
+
+      div {
+        justify-self: center;
+        padding: 20px;
+        margin: 20px;
+
+        &:nth-child( odd ) {
+          border-right: 1px solid $light-gray;
+        }
+
+        span {
+          color: $purple;
+          font-size: 0.8rem;
+        }
+
+        p.quote-attribution {
+          color: $medium-gray;
+          font-size: 0.6rem;
+          line-height: 1.5;
+          margin-top: 20px;
+        }
+      }
+    }
   }
 
   section.home-community {

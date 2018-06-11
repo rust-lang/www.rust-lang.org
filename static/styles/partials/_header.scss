@@ -2,7 +2,6 @@ header {
   display: flex;
   position: static;
   flex-direction: column;
-  background-color: $white;
   color: $dark-gray;
   border: none;
   width: 95%;
@@ -15,12 +14,9 @@ header {
     top: 78px;
   }
 
-  div {
-    margin-bottom: 23px;
-
-    @media (min-width: $tablet-width) {
-      margin-bottom: 0;
-    }
+  .header-text {
+    display: flex;
+    justify-content: space-between;
   }
 
   h1 {
@@ -60,9 +56,14 @@ header {
     }
   }
 
+  img {
+    display: none;
+  }
+
   @media (min-width: $tablet-width) {
-    flex-direction: row;
-    justify-content: space-between;
+    img {
+      display: block;
+    }
 
     h2 {
       width: 60%;

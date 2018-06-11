@@ -1,13 +1,16 @@
 {{#*inline "page"}}
 <header>
-  <div>
-    <h1>RUST</h1>
-    <h2>A systems programming language that runs blazingly fast and guarantees thread safety</h2>
+  <div class="header-text">
+    <div>
+      <h1>RUST</h1>
+      <h2>A systems programming language that runs blazingly fast and guarantees thread safety</h2>
+    </div>
+    <button>
+      <strong>DOWNLOAD</strong><br/>
+      <span>v. 1.2.4</span>
+    </button>
   </div>
-  <button>
-    <strong>DOWNLOAD</strong><br/>
-    <span>v. 1.2.4</span>
-  </button>
+  <img src="/static/images/goldberg.jpg">
 </header>
 
 <section class="home-intro">
@@ -57,12 +60,48 @@
     </div>
   </div>
 </section>
-
+<div class="background-logo">
+  <img class="logo" src="/static/images/rust-logo-purple.png">
+</div>
 <section class="home-production">
   <div class="light-purple-line">
     <h3 class="subheader">Rust in Production</h3>
   </div>
-  <a href="production">Production</a>
+  <div class="description-container">
+    <div class="description">
+      <p>
+        I can see nothing; we are still; there are no waves lapping, but only a steady swirl of water softly running against the hawser. I can hear men's voices calling, near and far, and the roll and creak of oars in the rowlocks. A gun is fired somewhere; the echo of it seems far away.
+      <p>
+      <a href="production">
+        <button>
+          <strong>Learn more</strong>
+        </button>
+      </a>
+    </div>
+    {{> svgs/monitor}}
+  </div>
+  <div class="company-logos">
+    <div>
+      <h2>Company Logo 1</h2>
+      <span>
+        "We love Rust at our company! We love it because of reasons! Reasons that are great."
+      </span>
+      <p class="quote-attribution">
+        <strong>Person Name</strong><br/>
+        person title
+      </p>
+    </div>
+    <div>
+      <h2>Company Logo 2</h2>
+      <span>
+        "We love Rust at our company! We love it because of reasons! Reasons that are great."
+      </span>
+      <p class="quote-attribution">
+        <strong>Person Name</strong><br/>
+        person title
+      </p>
+    </div>
+  </div>
 </section>
 
 <section class="home-community">
