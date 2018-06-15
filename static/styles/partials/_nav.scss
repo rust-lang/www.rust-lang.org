@@ -24,11 +24,21 @@ nav {
   border: none;
   width: 100%;
   background-color: $background-color;
-  font-size: 0.8rem;
+  font-size: $mobile-nav-font-size;
+  line-height: $line-height;
+
+  a {
+    color: $text-color;
+  }
+
+  ul {
+    list-style: none;
+  }
 
   @media (min-width: $tablet-width) {
     display: block;
     flex-direction: row;
+    font-size: $default-font-size;
     margin-top: -30px;
     margin-left: 45px;
     width: 92%;

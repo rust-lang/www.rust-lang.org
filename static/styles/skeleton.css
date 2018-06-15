@@ -2,14 +2,9 @@ body {
   font-family: sans-serif;
 }
 
-footer, nav {
+nav {
   padding: 10px;
   margin: 10px auto;
-}
-
-footer {
-  background: black;
-  color: white;
 }
 
 .three-boxes {

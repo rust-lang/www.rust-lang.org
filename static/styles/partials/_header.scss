@@ -1,27 +1,37 @@
 header {
-  display: flex;
   position: static;
-  flex-direction: column;
   color: $dark-gray;
   border: none;
-  width: 95%;
-  padding-bottom: 30px;
-  padding-left: 20px;
+  padding: 30px;
+  width: 75%;
 
   @media (min-width: $tablet-width) {
+    display: flex;
+    flex-direction: row;
     position: absolute;
-    padding-bottom: 0;
+    padding: 0 0 0 20px;
     top: 78px;
+    width: 95%;
   }
 
   .header-text {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+
+    @media (min-width: $tablet-width) {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    button {
+      margin-top: 20px;
+    }
   }
 
   h1 {
     font-family: $header-font;
-    font-size: 5rem;
+    font-size: $extra-large-font-size;
     font-weight: 600;
     letter-spacing: 2px;
     margin: 0;
@@ -30,12 +40,12 @@ header {
 
   h2 {
     font-family: $description-font;
-    font-size: 1.2rem;
-    width: 90%;
+    font-size: $large-font-size;
+    width: 100%;
     max-width: 300px;
 
     @media (min-width: $tablet-width) {
-      font-size: 1rem;
+      font-size: $default-font-size;
       width: 80%;
     }
   }
@@ -45,25 +55,18 @@ header {
     background-color: $dark-gray;
     border: none;
     font-family: $description-font;
-    font-size: 1rem;
+    font-size: $default-font-size;
     padding: 10px;
     border-radius: 7px;
     width: 200px;
     height: 65px;
 
     span {
-      font-size: 0.75rem;
+      font-size: $small-font-size;
     }
-  }
-
-  img {
-    display: none;
   }
 
   @media (min-width: $tablet-width) {
-    img {
-      display: block;
-    }
 
     h2 {
       width: 60%;

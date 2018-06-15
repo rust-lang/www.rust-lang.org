@@ -18,33 +18,47 @@
 @import url('https://fonts.googleapis.com/css?family=Lalezar');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
+// MIXINS
+@import 'mixins/buttons';
+
 // APPLICATION-WIDE STYLES
 
 body {
   margin: 0;
+  width: 100%;
   background-color: $background-color;
   color: $text-color;
-  font-size: 1.2rem;
+  font-size: $large-font-size;
 
   @media (min-width: $tablet-width) {
-    font-size: 1rem;
+    font-size: $default-font-size;
   }
 
   a {
     text-decoration: none;
-    color: $text-color;
   }
 
-  .background-logo {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: -75px;
-    margin-bottom: -335px;
-    margin-left: 92px;
-    width: 100%;
+  .center-background-logo {
+    display: none;
 
-    img.logo {
-      opacity: 0.5;
+    @media (min-width: $tablet-width) {
+      display: block;
+      margin-bottom: -20%;
+      margin-left: 80%;
+      width: 20%;
+      margin-top: -6%;
+    }
+  }
+
+  .bottom-background-logo {
+    display: none;
+
+    @media (min-width: $tablet-width) {
+      display: block;
+      margin-left: -80px;
+      margin-top: -233px;
+      margin-bottom: -4%;
+      width: 25%;
     }
   }
 
@@ -53,18 +67,21 @@ body {
     color: $white;
     margin-top: 0;
     padding: 50px;
-    margin-left: -8px;
-    margin-right: -8px;
-    width: 100%;
+    max-width: 100%;
+
+    @media (min-width: $tablet-width) {
+      margin-top: 400px;
+      flex-direction: row;
+    }
 
     a {
       color: $white;
       text-transform: uppercase;
-      font-size: 0.7rem;
-    }
+      font-size: $default-font-size;
 
-    @media (min-width: $tablet-width) {
-      margin-top: 700px;
+      @media (min-width: $tablet-width) {
+        font-size: $small-font-size;
+      }
     }
 
     .subjects {
@@ -76,82 +93,119 @@ body {
       @media (min-width: $tablet-width) {
         flex-direction: row;
       }
+
+      .subject-item {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        font-size: $default-font-size;
+        line-height: $line-height;
+
+        @media (min-width: $tablet-width) {
+          max-width: 15%;
+          font-size: $small-font-size;
+        }
+
+        svg {
+          margin-left: 35%;
+        }
+      }
     }
   }
 
   section.home-production {
-    margin-top: 0;
-    padding: 50px;
-    margin-left: -8px;
-    margin-right: -8px;
-    width: 100%;
+    max-width: 70%;
+    margin-top: 85px;
+    padding-left: 50px;
+
+    @media (min-width: $tablet-width) {
+      max-width: 100%;
+      padding: 50px;
+    }
 
     .description-container {
-      display: grid;
-      grid-template-columns: auto auto;
+      @media (min-width: $tablet-width) {
+        display: grid;
+        grid-template-columns: auto auto;
+      }
 
       svg {
-        justify-self: center;
-        z-index: 0;
-      }
-    }
+        display: none;
 
-    .description {
-      display: flex;
-      flex-direction: column;
-
-      p {
-        font-size: 0.7rem;
-        max-width: 350px;
-        margin-left: 5%;
-        line-height: 1.5;
-        color: $medium-gray;
+        @media (min-width: $tablet-width) {
+          display: block;
+          justify-self: center;
+          z-index: 0;
+          height: auto;
+          max-width: 90%;
+        }
       }
 
-      button {
-        background-color: $light-blue;
-        color: $white;
-        border: none;
-        font-family: $description-font;
-        font-size: 1rem;
-        padding: 10px;
-        border-radius: 7px;
-        width: 150px;
-        height: 50px;
-        text-transform: uppercase;
-        cursor: pointer;
-      }
-    }
+      .description {
+        display: flex;
+        flex-direction: column;
 
-    svg {
-      height: auto;
-      max-width: 350px;
+        p {
+          font-size: $default-font-size;
+          max-width: 70%;
+          line-height: $line-height;
+          color: $medium-gray;
+
+          @media (min-width: $tablet-width) {
+            font-size: $small-font-size;
+            margin-left: 5%;
+          }
+        }
+
+        button {
+          @include buttons;
+
+          background-color: $light-blue;
+          color: $white;
+          width: 150px;
+        }
+      }
     }
 
     .company-logos {
-      display: grid;
-      grid-template-columns: auto auto;
-      padding: 40px;
+      padding: 25px 0 25px 0;
+
+      @media (min-width: $tablet-width) {
+        display: grid;
+        grid-template-columns: auto auto;
+        padding: 40px;
+      }
 
       div {
-        justify-self: center;
-        padding: 20px;
-        margin: 20px;
+        @media (min-width: $tablet-width) {
+          justify-self: center;
+          padding-bottom: 25px;
+          margin: 20px;
 
-        &:nth-child( odd ) {
-          border-right: 1px solid $light-gray;
+          &:nth-child( odd ) {
+            border-right: 1px solid $light-gray;
+            padding-right: 40px;
+          }
         }
 
         span {
           color: $purple;
-          font-size: 0.8rem;
+          font-size: $default-font-size;
+
+          @media (min-width: $tablet-width) {
+            font-size: $small-font-size;
+          }
         }
 
         p.quote-attribution {
           color: $medium-gray;
-          font-size: 0.6rem;
-          line-height: 1.5;
+          font-size: $default-font-size;
+          line-height: $line-height;
           margin-top: 20px;
+
+          @media (min-width: $tablet-width) {
+            font-size: $extra-small-font-size;
+          }
         }
       }
     }
@@ -161,11 +215,68 @@ body {
     background-color: $light-blue;
     color: $white;
     margin-top: 0;
-    padding: 30px;
-    margin-left: -8px;
-    margin-right: -8px;
-    margin-bottom: -18px;
-    width: 100%;
+    padding: 50px;
+    margin-bottom: -46px;
+    max-width: 100%;
+
+    a {
+      color: $white;
+      text-transform: uppercase;
+      font-size: $default-font-size;
+
+      @media (min-width: $tablet-width) {
+        font-size: $small-font-size;
+      }
+    }
+
+    .events-icon {
+      padding-bottom: 20px;
+    }
+
+    .map {
+      display: none;
+
+      @media (min-width: $tablet-width) {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    .community-content {
+      display: flex;
+      flex-direction: column;
+      font-size: $default-font-size;
+      width: 100%;
+
+      @media (min-width: $tablet-width) {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        font-size: $small-font-size;
+      }
+
+      button {
+        @include buttons;
+
+        width: 200px;
+        background-color: $purple;
+        color: $white;
+        border: 1px solid $white;
+      }
+
+      .community-info {
+        z-index: 0;
+        padding: 20px 20px 20px 0;
+        line-height: $line-height;
+
+        @media (min-width: $tablet-width) {
+          padding: 20px 60px 20px 20px;
+        }
+
+        .contribute-info {
+          padding: 10px 0 10px 0;
+        }
+      }
+    }
   }
 
   .subheader {
@@ -193,23 +304,17 @@ body {
     margin-bottom: 20px;
   }
 
-  .subject-item {
-    display: flex;
-    flex-direction: column;
-    max-width: 80%;
-    font-size: 0.7rem;
-
-    svg {
-      margin-left: 35%;
-    }
+  .icon {
+    width: 6%;
+    padding-right: 5px;
 
     @media (min-width: $tablet-width) {
-      max-width: 15%;
+      width: 4%;
     }
   }
 
   @media (min-width: $tablet-width) {
-    font-size: 1rem;
+    font-size: $default-font-size;
 
     a:hover {
       color: $medium-gray;
