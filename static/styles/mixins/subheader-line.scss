@@ -1,0 +1,6 @@
+@mixin subheader-line($color) {
+  background-color: $color;
+  height: 13px;
+  margin-left: 3px;
+  margin-bottom: -44px;
+}

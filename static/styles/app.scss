@@ -32,6 +32,7 @@
 
 // MIXINS
 @import 'mixins/buttons';
+@import 'mixins/subheader-line';
 
 // APPLICATION-WIDE STYLES
 
@@ -68,10 +69,31 @@ body {
 
     @media (min-width: $tablet-width) {
       display: block;
-      margin-left: -80px;
-      margin-top: -233px;
-      margin-bottom: -4%;
-      width: 25%;
+      width: 20%;
+      position: absolute;
+      bottom: -69%;
+      left: -4%;
+    }
+  }
+
+  .subheader-wrapper {
+    width: max-content;
+    width: -moz-max-content;
+
+    .subheader {
+      font-family: $header-font;
+      font-weight: 400;
+      letter-spacing: 1px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .purple-line {
+      @include subheader-line($purple);
+    }
+
+    .light-purple-line {
+      @include subheader-line($light-purple);
     }
   }
 
@@ -290,32 +312,6 @@ body {
         }
       }
     }
-  }
-
-  .subheader {
-    font-family: $header-font;
-    font-weight: 400;
-    letter-spacing: 1px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .purple-line {
-    background-color: $purple;
-    height: 13px;
-    margin-top: -35px;
-    width: fit-content;
-    margin-left: -6px;
-    margin-bottom: 20px;
-  }
-
-  .light-purple-line {
-    background-color: $light-purple;
-    height: 13px;
-    margin-top: -35px;
-    width: fit-content;
-    margin-left: -6px;
-    margin-bottom: 20px;
   }
 
   .icon {
