@@ -1,3 +1,5 @@
+@import '../mixins/buttons';
+
 header {
   position: static;
   color: $dark-gray;
@@ -32,8 +34,8 @@ header {
   h1 {
     font-family: $header-font;
     font-size: $extra-large-font-size;
-    font-weight: 600;
-    letter-spacing: 2px;
+    font-weight: 500;
+    letter-spacing: 3px;
     margin: 0;
     height: 100px;
   }
@@ -43,26 +45,29 @@ header {
     font-size: $large-font-size;
     width: 100%;
     max-width: 300px;
+    line-height: 1.5;
 
     @media (min-width: $tablet-width) {
       font-size: $default-font-size;
       width: 80%;
     }
+
+    strong {
+      font-family: $body-font-bold;
+    }
   }
 
   button {
+    @include buttons;
+
     color: $white;
     background-color: $dark-gray;
-    border: none;
-    font-family: $description-font;
-    font-size: $default-font-size;
-    padding: 10px;
-    border-radius: 7px;
     width: 200px;
     height: 65px;
 
     span {
       font-size: $small-font-size;
+      font-family: $body-font;
     }
   }
 

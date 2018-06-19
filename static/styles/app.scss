@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'Metropolis';
+  src: url('../fonts/Metropolis-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Metropolis Bold';
+  src: url('../fonts/Metropolis-Bold.otf') format('opentype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'AlfaSlabOne';
+  src: url('../fonts/AlfaSlabOne-Regular.ttf') format('truetype');
+}
+
 // THIRD-PARTY STYLES
 @import 'hamburgers/hamburgers';
 
@@ -14,10 +30,6 @@
 // PAGES
 @import 'index';
 
-// FONTS
-@import url('https://fonts.googleapis.com/css?family=Lalezar');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
 // MIXINS
 @import 'mixins/buttons';
 
@@ -29,6 +41,7 @@ body {
   background-color: $background-color;
   color: $text-color;
   font-size: $large-font-size;
+  font-family: $body-font;
 
   @media (min-width: $tablet-width) {
     font-size: $default-font-size;
@@ -281,6 +294,7 @@ body {
 
   .subheader {
     font-family: $header-font;
+    font-weight: 400;
     letter-spacing: 1px;
     padding-left: 10px;
     padding-right: 10px;

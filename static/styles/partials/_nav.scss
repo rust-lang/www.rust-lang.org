@@ -22,7 +22,6 @@ nav {
   display: none;
   flex-direction: column;
   border: none;
-  width: 100%;
   background-color: $background-color;
   font-size: $mobile-nav-font-size;
   line-height: $line-height;
@@ -38,7 +37,7 @@ nav {
   @media (min-width: $tablet-width) {
     display: block;
     flex-direction: row;
-    font-size: $default-font-size;
+    font-size: $small-font-size;
     margin-top: -30px;
     margin-left: 45px;
     width: 92%;
