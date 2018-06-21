@@ -2,16 +2,21 @@
 #![plugin(rocket_codegen)]
 
 extern crate rocket;
+extern crate sass_rs;
 
 extern crate rocket_contrib;
 #[macro_use]
 extern crate serde_derive;
 
+use std::fs::File;
 use std::io;
+use std::io::prelude::*;
 use std::path::{Path, PathBuf};
 
 use rocket::response::NamedFile;
 use rocket_contrib::Template;
+
+use sass_rs::{compile_file, Options};
 
 #[derive(Serialize)]
 struct Context {
@@ -61,7 +66,15 @@ fn subject(category: String, subject: String) -> Template {
     Template::render(page, &context)
 }
 
+fn compile_sass() {
+    let scss = "./src/styles/app.scss";
+    let css = compile_file(scss, Options::default()).unwrap();
+    let mut file = File::create("./static/styles/app.css").unwrap();
+    file.write_all(&css.into_bytes()).unwrap();
+}
+
 fn main() {
+    compile_sass();
     rocket::ignite()
         .attach(Template::fairing())
         .mount("/", routes![index, category, subject, files])
