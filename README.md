@@ -9,19 +9,15 @@
 
 1. As this is a [Rocket](https://rocket.rs/) app, you must have the most current version of Rust nightly installed on your local machine. You can install it using [`rustup`](https://rustup.rs/) by running `rustup default nightly`.
 
-1. We're using at least one third-party npm package, so be sure to run `npm install`.
-
-1. Compile the `.scss` files to `.css` by running `sass static/styles/app.scss static/styles/app.css`.
-
 1. After cloning the repo, run `cargo run` in your terminal. If you encounter any errors, you may need to update your version of Cargo by running `cargo update`.
 
-1. Navigate to http://localhost:7878 in your browser. If you make any updates to the styles, they should automatically update in the browser on refresh. If they don't, you may have to force-quit the local server, recompile `app.scss` to `app.css`, and run `cargo run` again.
+1. Navigate to http://localhost:7878 in your browser. If you make any updates to the styles, they should automatically update in the browser on refresh. If they don't, you may have to force-quit the local server and run `cargo run` again.
 
 ### A few notes on style(s)
 
-Colors and other variables go in `/static/styles/variables`.
+Colors and other variables go in `/src/styles/variables`.
 
-If you add a new `.scss` file be sure to `@include` it in `/static/styles/app.scss`.
+If you add a new `.scss` file be sure to `@include` it in `/src/styles/app.scss`.
 
 Be sure to put your styles in the applicable `.scss` files and compile to `.css`. Please don't write anything in the `.css` files, it will just be written over the next time you or someone else compiles the `.scss`.
 
