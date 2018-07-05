@@ -15,7 +15,21 @@ header {
     top: 78px;
     width: 95%;
   }
+  
+  button {
+    @include buttons;
 
+    color: $white;
+    background-color: $dark-gray;
+    width: 200px;
+    height: 65px;
+
+    span {
+      font-size: $small-font-size;
+      font-family: $body-font;
+    }
+  }
+  
   .header-text {
     display: flex;
     flex-direction: column;
@@ -54,20 +68,6 @@ header {
 
     strong {
       font-family: $body-font-bold;
-    }
-  }
-
-  button {
-    @include buttons;
-
-    color: $white;
-    background-color: $dark-gray;
-    width: 200px;
-    height: 65px;
-
-    span {
-      font-size: $small-font-size;
-      font-family: $body-font;
     }
   }
 
