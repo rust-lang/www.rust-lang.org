@@ -97,6 +97,104 @@ body {
     }
   }
 
+  section.home-production {
+    max-width: 70%;
+    margin-top: 85px;
+    padding-left: 50px;
+
+    @media (min-width: $tablet-width) {
+      max-width: 100%;
+      padding: 50px;
+    }
+
+    .description {
+      display: flex;
+      flex-direction: column;
+
+      p {
+        font-size: $default-font-size;
+        max-width: 70%;
+        line-height: $line-height;
+        color: $medium-gray;
+
+        @media (min-width: $tablet-width) {
+          font-size: $small-font-size;
+          margin-left: 5%;
+        }
+      }
+
+      button {
+        @include buttons;
+
+        background-color: $light-blue;
+        color: $white;
+        width: 150px;
+      }
+    }
+
+    .description-container {
+      @media (min-width: $tablet-width) {
+        display: grid;
+        grid-template-columns: auto auto;
+      }
+
+      svg {
+        display: none;
+
+        @media (min-width: $tablet-width) {
+          display: block;
+          justify-self: center;
+          z-index: 0;
+          height: auto;
+          max-width: 90%;
+        }
+      }
+    }
+
+    .company-logos {
+      padding: 25px 0 25px 0;
+
+      @media (min-width: $tablet-width) {
+        display: grid;
+        grid-template-columns: auto auto;
+        padding: 40px;
+      }
+
+      div {
+        @media (min-width: $tablet-width) {
+          justify-self: center;
+          padding-bottom: 25px;
+          margin: 20px;
+
+          &:nth-child( odd ) {
+            border-right: 1px solid $light-gray;
+            padding-right: 40px;
+          }
+        }
+
+        span {
+          color: $purple;
+          font-size: $default-font-size;
+
+          @media (min-width: $tablet-width) {
+            font-size: $small-font-size;
+          }
+        }
+
+        p.quote-attribution {
+          color: $medium-gray;
+          font-size: $default-font-size;
+          line-height: $line-height;
+          margin-top: 20px;
+
+          @media (min-width: $tablet-width) {
+            font-size: $extra-small-font-size;
+          }
+        }
+      }
+    }
+  }
+
   section.home-intro {
     background-color: $dark-gray;
     color: $white;
@@ -143,104 +241,6 @@ body {
 
         svg {
           margin-left: 35%;
-        }
-      }
-    }
-  }
-
-  section.home-production {
-    max-width: 70%;
-    margin-top: 85px;
-    padding-left: 50px;
-
-    @media (min-width: $tablet-width) {
-      max-width: 100%;
-      padding: 50px;
-    }
-
-    .description-container {
-      @media (min-width: $tablet-width) {
-        display: grid;
-        grid-template-columns: auto auto;
-      }
-
-      svg {
-        display: none;
-
-        @media (min-width: $tablet-width) {
-          display: block;
-          justify-self: center;
-          z-index: 0;
-          height: auto;
-          max-width: 90%;
-        }
-      }
-
-      .description {
-        display: flex;
-        flex-direction: column;
-
-        p {
-          font-size: $default-font-size;
-          max-width: 70%;
-          line-height: $line-height;
-          color: $medium-gray;
-
-          @media (min-width: $tablet-width) {
-            font-size: $small-font-size;
-            margin-left: 5%;
-          }
-        }
-
-        button {
-          @include buttons;
-
-          background-color: $light-blue;
-          color: $white;
-          width: 150px;
-        }
-      }
-    }
-
-    .company-logos {
-      padding: 25px 0 25px 0;
-
-      @media (min-width: $tablet-width) {
-        display: grid;
-        grid-template-columns: auto auto;
-        padding: 40px;
-      }
-
-      div {
-        @media (min-width: $tablet-width) {
-          justify-self: center;
-          padding-bottom: 25px;
-          margin: 20px;
-
-          &:nth-child( odd ) {
-            border-right: 1px solid $light-gray;
-            padding-right: 40px;
-          }
-        }
-
-        span {
-          color: $purple;
-          font-size: $default-font-size;
-
-          @media (min-width: $tablet-width) {
-            font-size: $small-font-size;
-          }
-        }
-
-        p.quote-attribution {
-          color: $medium-gray;
-          font-size: $default-font-size;
-          line-height: $line-height;
-          margin-top: 20px;
-
-          @media (min-width: $tablet-width) {
-            font-size: $extra-small-font-size;
-          }
         }
       }
     }

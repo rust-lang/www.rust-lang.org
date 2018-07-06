@@ -1,6 +1,13 @@
 {
-  "devDependencies": {
-    "stylelint-config-standard": "^18.2.0"
+  "scripts": {
+    "lint": "stylelint src/styles/*"
   },
-  "dependencies": {}
+  "stylelint": {
+    "extends": "stylelint-config-recommended-scss"
+  },
+  "devDependencies": {
+    "stylelint": "^9.3.0",
+    "stylelint-config-recommended-scss": "^3.2.0",
+    "stylelint-scss": "^3.1.3"
+  }
 }
