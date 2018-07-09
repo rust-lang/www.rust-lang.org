@@ -68,3 +68,19 @@ Your content PR will go through 3 stages:
   - ### Review Stage
     This is the final stage, where you will work with several representatives from your
     team and @aturon to ensure that everyone is pleased, if not excited!, about the page.
+
+### Content Owners
+
+If you have a question or would like to work on content in an area, please be sure
+to at-mention the content owner for that category. If you are not sure what category
+your idea fits in, please at-mention @ashleygwilliams.
+
+- Tools, @nrc
+- WASM, @sendilkumarn
+- CLI, @spacekookie + @killercup
+- Embedded, @japaric + @jamesmunns
+- Net, @aturon
+- Docs + Learn, @QuietMisdreavus + @steveklabnik
+- Governance, @aturon
+- Community, @skade + @ashleygwilliams
+- Release/Download, @ashleygwilliams
