@@ -1,0 +1,69 @@
+// Random stuff that @killercup added for illustrative purposes to the CLI pages.
+// You are very welcome to replace this with the actual design implementation.
+
+.two-boxes,
+.three-boxes {
+  @media screen and (min-width: $tablet-width) {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .box {
+    box-sizing: border-box;
+    padding: 0.1em 0.4em 0.2em;
+    background-color: #f0f0f0;
+    
+    @media screen and (max-width: $tablet-width - 1px) {
+      margin-bottom: 1em;
+    }
+    
+    h2,
+    p {
+      margin-bottom: 0em;
+    }
+    
+    pre {
+      word-break: break-word;
+    }
+    
+    &-cta {
+      text-align: center;
+      padding-bottom: 1em;
+    }
+    
+    @media screen and (min-width: $tablet-width) {
+      display: flex;
+      flex-direction: column;
+
+      &-content {
+        flex: 1;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $tablet-width) { 
+  .two-boxes .box {
+    width: 49%;
+  }
+
+  .three-boxes .box {
+    width: 32%;
+  }
+}
+
+.cli-main-page {
+  max-width: 60em;
+  font-size: 18px;
+  padding: 2em 1em 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cli-article {
+  max-width: 42em;
+  font-size: 18px;
+  padding: 2em 1em 1em;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -7,11 +7,3 @@ nav {
   margin: 10px auto;
 }
 
-.three-boxes {
-  display: flex;
-  justify-content: space-between;
-}
-
-.three-boxes .box {
-  width: 32%;
-}

@@ -1,6 +1,6 @@
 {{#*inline "page"}}
 
-<section role="main">
+<section role="main" class="cli-main-page">
   <h1>Write Solid Command Line Applications</h1>
 
   <p class="teaser">
@@ -12,23 +12,26 @@
   <div class="three-boxes">
     <article class="box">
       <h2>Distribution</h2>
-      <p>
+      <p class="box-content">
         Super simple: Compile everything down to a single binary, no need for your users to have a runtime installed.
       </p>
+      <p class="box-cta"><a href="/what/cli/guides#content-packaging-and-rendering-documentation">Learn more</a></p>
     </article>
     <article class="box">
-      <h2>Argument parsing &amp; config files: Solved</h2>
-      <p>
+      <h2>Argument parsing</h2>
+      <p class="box-content">
         Get the best practices for argument parsing with great help messages and configuration files that work cross-platform without
         boilerplate code.
       </p>
+      <p class="box-cta"><a href="/what/cli/guides#content-parsing-command-line-arguments">Learn more</a></p>
     </article>
     <article class="box">
       <h2>Super solid</h2>
-      <p>
+      <p class="box-content">
         Even if all you want to write is a short one-off script you can be confident it's fast, easily testable, and gives useful
         error messages.
       </p>
+      <p class="box-cta"><a href="/what/cli/guides#content-testing">Learn more</a></p>
     </article>
   </div>
 
@@ -46,7 +49,7 @@
 
   <article>
 
-    <div class="three-boxes">
+    <div class="two-boxes">
       <article class="box">
         <h2>Simple Argument Parsing</h2>
         <pre><code>#[derive(Clap)]
@@ -55,42 +58,19 @@ struct Cli {
     #[clap(short="n")]
     num: i32,
 }
-
-fn main() -> Result<(), _> {
-    let args = Cli::from_args();
-    let file = std::fs::read_string(&args.file)?;
-    for line in file.lines().take(args.num) {
-        println!("{}", line);
-    }
-}</code></pre>
-      </article>
-      <article class="box">
-        <h2>Configuration handling</h2>
-        <pre><code>#[derive(Confy)]
-struct MyConfig {
-  number: i32,
-  name: String,
-}
-
-fn main() {
-  let cfg: MyConfig = match confy::load("my_app") {
-    Some(cfg) => cfg,
-    None => confy::create(("my_app", MyConfig {
-      /* ... initialise default ... */
-    }),
-  };
-
-  println!("{} > {}", cfg.name, cfg.number);
-}</code></pre>
+</code></pre>
       </article>
 
       <article class="box">
         <h2>Bringing it all together</h2>
-        <pre><code>extern crate skynet;
+        <pre><code>extern crate quicli;
 
-fn main() {
-  // ...
-}
+main!(|args: Cli| {
+    read_file(&args.file)?
+        .lines()
+        .take(args.count)
+        .for_each(|line| println!("{}", line));
+});
       </code></pre>
       </article>
     </div>

@@ -7,6 +7,7 @@ extern crate sass_rs;
 extern crate rocket_contrib;
 #[macro_use]
 extern crate serde_derive;
+extern crate comrak;
 
 use std::fs::File;
 use std::io::prelude::*;
@@ -65,6 +66,47 @@ fn subject(category: String, subject: String) -> Template {
     Template::render(page, &context)
 }
 
+#[get("/<category>/<subject>/<chapter>", rank = 2)]
+fn chapter(category: String, subject: String, chapter: String) -> Template {
+    let page = format!("{}/{}/{}", category, subject, chapter);
+    let title = format!("Rust - {} - {}", page, chapter);
+    let md_path = PathBuf::from("./templates")
+        .join(&page)
+        .with_extension("md");
+    let content = match ::std::fs::read_to_string(&md_path) {
+        Err(e) => {
+            println!("Err on {}: {} ({})", page, e, md_path.display());
+            None
+        }
+        Ok(markdown) => {
+            use comrak::{markdown_to_html, ComrakOptions};
+            Some(markdown_to_html(
+                &markdown,
+                &ComrakOptions {
+                    ext_header_ids: Some("content-".into()),
+                    ..ComrakOptions::default()
+                },
+            ))
+        }
+    };
+
+    #[derive(Serialize)]
+    struct Context {
+        page: String,
+        title: String,
+        parent: String,
+        content: Option<String>,
+    }
+
+    let context = Context {
+        parent: "layout".to_string(),
+        page: page.clone(),
+        title,
+        content,
+    };
+    Template::render(page, &context)
+}
+
 fn compile_sass() {
     let scss = "./src/styles/app.scss";
     let css = compile_file(scss, Options::default()).unwrap();
@@ -76,6 +118,6 @@ fn main() {
     compile_sass();
     rocket::ignite()
         .attach(Template::fairing())
-        .mount("/", routes![index, category, subject, files])
+        .mount("/", routes![index, category, subject, chapter, files])
         .launch();
 }
