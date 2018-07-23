@@ -55,8 +55,8 @@ span.brand img {
 }
 
 .domains h3 {
+  font-weight: 800;
   font-size: 1.8em;
-  text-decoration: underline;
 }
 
 .domains a {
@@ -75,6 +75,11 @@ span.brand img {
 .get-involved {
   background-color: $purple;
   color: white;
+}
+
+.get-involved h3 {
+  font-weight: 800;
+  font-size: 1.8em;
 }
 
 section header {
