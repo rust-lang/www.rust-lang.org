@@ -1,116 +1,245 @@
 {{#*inline "page"}}
 
+<!-- TODO looping video header that autoplays and that includes clips of different embedded projects -->
+<!-- like the one in https://www.patreon.com/ -->
+<!-- cliking the header leads to a community maintained gallery of projects -->
 <section>
-  <h1>Embedded Devices</h1>
-</section>
-
-<section>
-    <p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/L4fB0rVJI8g?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    <br>
-    Video Carosel demonstrating production uses of Rust
-    </p>
-</section>
-
-<section>
-    <h2>Why Rust?</h2>
-    <section class="three-boxes">
-        <div class="box">
-            <img src="http://www.rustacean.net/assets/rustacean-flat-happy.svg" width="250"/>
-            <div class="content">
-                <h3>Code Reuse</h3>
-                <p>Drivers portable across architectures</p>
-            </div>
-        </div>
-        <div class="box">
-            <img src="http://www.rustacean.net/assets/rustacean-flat-happy.svg" width="250"/>
-            <div class="content">
-                <h3>Powerful static analysis</h3>
-                <p>Move functional safety checks to compile time, not run time</p>
-            </div>
-        </div>
-        <div class="box">
-            <img src="http://www.rustacean.net/assets/rustacean-flat-happy.svg" width="250"/>
-            <div class="content">
-                <h3>Works with your existing codebase</h3>
-                <p>Integrates with C/C++ codebases, including with RTOSs like FreeRTOS</p>
-            </div>
-        </div>
-    </section>
-    <section class="three-boxes">
-        <div class="box">
-            <img src="http://www.rustacean.net/assets/rustacean-flat-happy.svg" width="250"/>
-            <div class="content">
-                <h3>TODO TITLE</h3>
-                <p>TODO CONTENT</p>
-            </div>
-        </div>
-        <div class="box">
-            <img src="http://www.rustacean.net/assets/rustacean-flat-happy.svg" width="250"/>
-            <div class="content">
-                <h3>TODO TITLE</h3>
-                <p>TODO CONTENT</p>
-            </div>
-        </div>
-        <div class="box">
-            <img src="http://www.rustacean.net/assets/rustacean-flat-happy.svg" width="250"/>
-            <div class="content">
-                <h3>TODO TITLE</h3>
-                <p>TODO CONTENT</p>
-            </div>
-        </div>
-    </section>
-</section>
-
-<section>
-    <h2>Docs</h2>
-    <section class="three-boxes">
-        <div class="box">
-            <img src="http://www.rustacean.net/assets/rustacean-flat-happy.svg" width="250"/>
-            <div class="content">
-                <h3><a href="https://github.com/rust-lang-nursery/embedded-wg/issues/56">⚠ The Embedded Rust Book</a></h3>
-                <p>Learn how to use Rust on Embedded Systems</p>
-            </div>
-        </div>
-        <div class="box">
-            <img src="http://www.rustacean.net/assets/rustacean-flat-happy.svg" width="250"/>
-            <div class="content">
-                <h3><a href="https://github.com/rust-lang-nursery/embedded-wg/issues/59">⚠ The Embeddonomicon</a></h3>
-                <p>TODO CONTENT</p>
-            </div>
-        </div>
-        <div class="box">
-            <img src="http://www.rustacean.net/assets/rustacean-flat-happy.svg" width="250"/>
-            <div class="content">
-                <h3><a href="https://japaric.github.io/discovery/">Rust Discovery</a></h3>
-                <p>Learn about embedded systems using Rust</p>
-            </div>
-        </div>
-    </section>
-</section>
-
-<section>
-    <h2>Testimonials</h2>
-    <div class="box">
-        <img src="http://www.rustacean.net/assets/rustacean-flat-happy.svg" width="250"/>
-        <div class="content">
-            <h3><a href="#">Company #1</a></h3>
-            "We sure loved using rust."
-        </div>
+  <a href="https://example.org/#project-gallery">
+    <div class="container">
+      <iframe
+          width="960"
+          height="540"
+          src="https://www.youtube.com/embed/L4fB0rVJI8g?rel=0"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen></iframe>
     </div>
-    <div class="box">
-        <img src="http://www.rustacean.net/assets/rustacean-flat-happy.svg" width="250"/>
-        <div class="content">
-            <h3><a href="#">Company #2</a></h3>
-            "Rust was super great. Gotta go fast!."
+  </a>
+</section>
+
+<section>
+  <div class="container">
+    <header>
+      <h2>Why Rust for embedded development?</h2>
+    </header>
+
+    <div class="row">
+      <div class="four columns">
+        <div class="domain-icon">
+          <!-- TODO replace this icon; this is just a sample -->
+          <img src="https://image.flaticon.com/icons/svg/63/63794.svg" width="128" alt="A microscope"/>
+
+          <h5>Powerful static analysis</h5>
         </div>
-    </div>
-    <div class="box">
-        <img src="http://www.rustacean.net/assets/rustacean-flat-happy.svg" width="250"/>
-        <div class="content">
-            <h3><a href="#">Company #3</a></h3>
-            "Cargo is pretty much worth it to switch by itself."
+
+        <p>
+          Rust type system lets you enforce pin and peripheral configuration at compile time. Its ownership system guarantees that resources won't be used by unintended parts of the application.
+          <a href="https://github.com/rust-lang-nursery/embedded-wg/issues/118">Learn more</a>
+        </p>
+      </div>
+
+      <div class="four columns">
+        <div class="domain-icon">
+          <!-- TODO replace this icon; this is just a sample -->
+          <img src="https://image.flaticon.com/icons/svg/908/908319.svg" width="128" alt="A RAM stick"/>
+
+          <h5>Flexible memory management</h5>
         </div>
+
+        <p>
+          Dynamic memory (heap) allocation is optional. Use a global allocator and dynamic data structures from the Rust standard library. Or leave out heap allocation altogether and statically allocate everything.
+          <a href="https://github.com/rust-lang-nursery/embedded-wg/issues/125">Learn more</a>
+        </p>
+      </div>
+
+      <div class="four columns">
+        <div class="domain-icon">
+          <!-- TODO replace this icon; this is just a sample -->
+          <img src="https://image.flaticon.com/icons/svg/60/60473.svg" width="128" alt="Gears"/>
+
+          <h5>Safe concurrency</h5>
+        </div>
+
+        <p>
+          Rust memory safety holds regardless of the concurrency framework. Be it threads with explicit shared memory or tasks with message passing.
+          <a href="https://github.com/rust-lang-nursery/embedded-wg/issues/124">Learn more</a>
+        </p>
+      </div>
     </div>
+
+    <div class="row">
+      <div class="four columns">
+        <div class="domain-icon">
+          <!-- TODO replace this icon; this is just a sample -->
+          <img src="https://image.flaticon.com/icons/svg/1006/1006085.svg" width="128" alt="Handshake" />
+
+          <h5>Interoperability</h5>
+        </div>
+
+        <p>
+          Integrate Rust into your existing C codebase or leverage an existing SDK to write a Rust application.
+          <a href="https://github.com/rust-lang-nursery/embedded-wg/issues/48">Learn more</a>
+        </p>
+      </div>
+
+      <div class="four columns">
+        <div class="domain-icon">
+          <!-- TODO replace this icon; this is just a sample -->
+          <img src="https://image.flaticon.com/icons/svg/765/765963.svg" width="128" alt="Luggage trolley" />
+
+          <h5>Portability</h5>
+        </div>
+
+        <p>
+          Write a library / driver once and use it with a variety of systems ranging from very small microcontrollers to powerful SBCs.
+          <a href="https://github.com/rust-lang-nursery/embedded-wg/issues/119">Learn more</a>
+        </p>
+      </div>
+
+      <div class="four columns">
+        <div class="domain-icon">
+          <!-- TODO replace this icon; this is just a sample -->
+          <img src="https://image.flaticon.com/icons/svg/36/36601.svg" width="128" alt="?" />
+
+          <h5>$RESERVED</h5>
+        </div>
+
+        <p>
+          We'll think of something to put here...
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <header>
+      <h2>Get started!</h2>
+    </header>
+
+    <div class="row">
+      <div class="four columns">
+        <div class="domain-icon">
+          <!-- TODO replace this icon; this is just a sample -->
+          <img src="https://image.flaticon.com/icons/svg/1/1615.svg" width="128" alt="DIP-6 package"/>
+
+          <a href="https://japaric.github.io/discovery">
+            <h5>The Discovery book</h5>
+          </a>
+        </div>
+
+        <p>
+          Learn embedded development from scratch using Rust!
+        </p>
+      </div>
+
+      <div class="four columns">
+        <div class="domain-icon">
+          <!-- TODO replace this icon; this is just a sample -->
+          <img src="https://image.flaticon.com/icons/svg/861/861874.svg" width="128" alt="TFQP-16 package"/>
+
+          <a href="https://book.rust-embedded.org/">
+            <h5>The embedded Rust book</h5>
+          </a>
+        </div>
+
+        <p>
+          Already familiar with Embedded development? Make the switch to Rust
+        </p>
+      </div>
+
+      <div class="four columns">
+        <div class="domain-icon">
+          <!-- TODO replace this icon; this is just a sample -->
+          <img src="https://image.flaticon.com/icons/svg/908/908224.svg" width="128" alt="BGA package" />
+
+          <a href="https://embedonomicon.rust-embedded.org/">
+            <h5>The embedonomicon</h5>
+          </a>
+        </div>
+
+        <p>
+          Look under the hood of foundational embedded libraries.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <header>
+      <h2>Embedded Rust in production</h2>
+    </header>
+
+    <!-- Testimonials section -->
+    <!-- Here we want to show *who* is using Rust and *what* they are building -->
+    <div class="testimonials">
+      <div class="testimonial row">
+        <div class="four columns">
+          <a href="https://49nord.de/">
+            <img alt="49nord logo" src="https://49nord.de/img/49nord-logo-blue-round.svg" width="200"/>
+          </a>
+        </div>
+
+        <div class="eight columns">
+          <blockquote>
+            Rust makes our customers happy, as well as our engineers.
+          </blockquote>
+          <p class="attribution">- Marc Brinkmann</p>
+        </div>
+      </div>
+
+      <div class="testimonial row">
+        <div class="eight columns">
+          <blockquote>
+            We think it's really cool that we can use a modern nice language in the embedded space where usually there's no alternative to C/C++
+          </blockquote>
+          <p class="attribution">- Aleksei Arbuzov</p>
+        </div>
+
+        <div class="four columns">
+          <a href="http://www.termt.eu/">
+            <img alt="49nord logo" src="https://i0.wp.com/embeddedsecuritynews.com/wp-content/uploads/2017/02/terminal-technologies-logo.png"/>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Friends section  -->
+    <!-- Reference: https://www.rust-lang.org/en-US/friends.html -->
+    <!-- Here we want to show *who* is using Rust and *what* they are building -->
+    <!-- TODO this is missing the mouse over text -->
+    <div class="row">
+      <div class="four columns">
+        <div class="domain-icon">
+          <a href="http://www.otis.com">
+            <img alt="Otis Elevator Company logo" src="https://upload.wikimedia.org/wikipedia/en/2/2e/Otis_Elevator_Company_Logo.jpg" style="max-height:100px; max-width:200px;"/>
+            <!-- TODO need more details about how they are using Rust -->
+          </a>
+        </div>
+      </div>
+
+      <div class="four columns">
+        <div class="domain-icon">
+          <a href="https://49nord.de/img/49nord-logo-blue-round.svg">
+            <img alt="49nord logo" src="https://49nord.de/img/49nord-logo-blue-round.svg" style="max-height:100px; max-width:200px;"/>
+            <!-- "49nord develops safe and secure Industrial IoT hardware and applications using Rust." -->
+          </a>
+        </div>
+      </div>
+
+      <div class="four columns">
+        <div class="domain-icon">
+          <a href="http://www.termt.eu/">
+            <img alt="Otis Elevator Company logo" src="https://i0.wp.com/embeddedsecuritynews.com/wp-content/uploads/2017/02/terminal-technologies-logo.png" style="max-height:100px; max-width:200px;"/>
+          </a>
+            <!-- TODO need more details about how they are using Rust -->
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 {{/inline}}
