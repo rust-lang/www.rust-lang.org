@@ -218,3 +218,13 @@ blockquote::before {
 #learn-more .columns:first-of-type {
   border-right: 1px black dotted;
 }
+
+#code-of-conduct {
+  background-color: $red;
+  color: white;
+}
+
+#moderation {
+  background-color: $purple;
+  color: white;
+}
