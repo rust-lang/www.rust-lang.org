@@ -1,337 +1,220 @@
-@font-face {
-  font-family: 'Metropolis';
-  src: url('../fonts/Metropolis-Regular.otf') format('opentype');
-}
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Fira+Sans:400,800');
 
-@font-face {
-  font-family: 'Metropolis Bold';
-  src: url('../fonts/Metropolis-Bold.otf') format('opentype');
-  font-weight: bold;
-}
+$body-font: 'Fira Sans', Helvetica, Arial, sans-serif;
+$header-font: 'Alfa Slab One', serif;
 
-@font-face {
-  font-family: 'AlfaSlabOne';
-  src: url('../fonts/AlfaSlabOne-Regular.ttf') format('truetype');
-}
-
-// THIRD-PARTY STYLES
-@import 'hamburgers/hamburgers';
-
-// VARIABLES
-@import 'variables/colors';
-@import 'variables/numbers';
-@import 'variables/fonts';
-
-// PARTIALS
-@import 'partials/_nav';
-@import 'partials/_header';
-@import 'partials/_footer';
-
-// PAGES
-@import 'index';
-
-// MIXINS
-@import 'mixins/buttons';
-@import 'mixins/subheader-line';
-
-// APPLICATION-WIDE STYLES
+$gray: #454C52;
+$red: #C14566;
+$green: #6DC6B9;
+$purple: #403D58;
+$yellow: #FECD2F;
 
 body {
-  margin: 0;
-  width: 100%;
-  background-color: $background-color;
-  color: $text-color;
-  font-size: $large-font-size;
   font-family: $body-font;
+}
 
-  @media (min-width: $tablet-width) {
-    font-size: $default-font-size;
-  }
+header h1, section h2 {
+  font-family: $header-font;
+}
 
-  a {
-    text-decoration: none;
-  }
+header h1 {
+  font-size: 10rem;
+  margin: 0;
+}
 
-  .center-background-logo {
-    display: none;
+header {
+  padding: 30px 0 60px 0;
+}
 
-    @media (min-width: $tablet-width) {
-      display: block;
-      margin-bottom: -20%;
-      margin-left: 80%;
-      width: 20%;
-      margin-top: -6%;
-    }
-  }
+header .button.button-primary.button-download {
+  background-color: $purple;
+  border-color: $purple;
+  width: 100%;
+  padding: 20px;
+  height: auto;
+  font-size: 2em;
+}
 
-  .bottom-background-logo {
-    display: none;
+header .button.button-primary.button-download:hover {
+  background-color: $red;
+  border-color: $red;
+}
 
-    @media (min-width: $tablet-width) {
-      display: block;
-      width: 20%;
-      position: absolute;
-      bottom: -69%;
-      left: -4%;
-    }
-  }
+h1.subtitle {
+  margin: 0;
+  font-family: $body-font;
+  font-size: 3rem;
+  color: $gray;
+}
 
-  .subheader-wrapper {
-    width: max-content;
-    width: -moz-max-content;
+section {
+  padding: 30px 0 60px 0;
+}
 
-    .subheader {
-      font-family: $header-font;
-      font-weight: 400;
-      letter-spacing: 1px;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
+section .container {
+  padding-top: 20px;
+}
 
-    .purple-line {
-      @include subheader-line($purple);
-    }
+span.brand img {
+  width: 80px;
+}
 
-    .light-purple-line {
-      @include subheader-line($light-purple);
-    }
-  }
+.domain-icon {
+  min-height: 100px;
+}
 
-  section.home-production {
-    max-width: 70%;
-    margin-top: 85px;
-    padding-left: 50px;
+.domains {
+  background-color: $green;
+  color: white;
+}
 
-    @media (min-width: $tablet-width) {
-      max-width: 100%;
-      padding: 50px;
-    }
+.domains h3, #whitepapers h3 {
+  font-weight: 800;
+  font-size: 1.8em;
+}
 
-    .description {
-      display: flex;
-      flex-direction: column;
+.domains a, #whitepapers a {
+  color: white;
+}
 
-      p {
-        font-size: $default-font-size;
-        max-width: 70%;
-        line-height: $line-height;
-        color: $medium-gray;
+.domain-icon {
+  text-align: center;
+  padding-bottom: 10px;
+}
 
-        @media (min-width: $tablet-width) {
-          font-size: $small-font-size;
-          margin-left: 5%;
-        }
-      }
+.domains img {
+  width: 60%;
+}
 
-      button {
-        @include buttons;
+.get-involved {
+  background-color: $purple;
+  color: white;
+}
 
-        background-color: $light-blue;
-        color: $white;
-        width: 150px;
-      }
-    }
+.get-involved h3 {
+  font-weight: 800;
+  font-size: 1.8em;
+}
 
-    .description-container {
-      @media (min-width: $tablet-width) {
-        display: grid;
-        grid-template-columns: auto auto;
-      }
+.get-involved .code {
+  padding-bottom: 20px;
+  border-bottom: 1px dotted white;
+}
 
-      svg {
-        display: none;
+.get-involved .media {
+  padding-top: 20px;
+}
 
-        @media (min-width: $tablet-width) {
-          display: block;
-          justify-self: center;
-          z-index: 0;
-          height: auto;
-          max-width: 90%;
-        }
-      }
-    }
+.get-involved .button.button-secondary, #whitepapers .button.button-secondary {
+  color: $green;
+}
 
-    .company-logos {
-      padding: 25px 0 25px 0;
+section header {
+  display: inline-block;
+}
 
-      @media (min-width: $tablet-width) {
-        display: grid;
-        grid-template-columns: auto auto;
-        padding: 40px;
-      }
+section header h2 {
+  margin: 0;
+  padding: 0;
+}
 
-      div {
-        @media (min-width: $tablet-width) {
-          justify-self: center;
-          padding-bottom: 25px;
-          margin: 20px;
+.highlight {
+  height: 30px;
+  position: relative;
+  top: -30px;
+  left: -10px;
+  width: 120%;
+}
 
-          &:nth-child( odd ) {
-            border-right: 1px solid $light-gray;
-            padding-right: 40px;
-          }
-        }
+.highlight-yellow {
+  background-color: $yellow;
+}
 
-        span {
-          color: $purple;
-          font-size: $default-font-size;
+.highlight-red {
+  background-color: $red;
+}
 
-          @media (min-width: $tablet-width) {
-            font-size: $small-font-size;
-          }
-        }
+.highlight-green {
+  background-color: $green;
+}
 
-        p.quote-attribution {
-          color: $medium-gray;
-          font-size: $default-font-size;
-          line-height: $line-height;
-          margin-top: 20px;
+.highlight-purple {
+  background-color: $purple;
+}
 
-          @media (min-width: $tablet-width) {
-            font-size: $extra-small-font-size;
-          }
-        }
-      }
-    }
-  }
+footer {
+  padding: 30px 0;
+  background-color: black;
+  color: white;
+}
 
-  section.home-intro {
-    background-color: $dark-gray;
-    color: $white;
-    margin-top: 0;
-    padding: 50px;
-    max-width: 100%;
+footer a {
+  color: $yellow;
+}
 
-    @media (min-width: $tablet-width) {
-      margin-top: 400px;
-      flex-direction: row;
-    }
+footer h4 {
+  font-size: 1.2em;
+  font-weight: 800;
+}
 
-    a {
-      color: $white;
-      text-transform: uppercase;
-      font-size: $default-font-size;
+footer img {
+  width: 40px;
+  padding: 0 10px;
+}
 
-      @media (min-width: $tablet-width) {
-        font-size: $small-font-size;
-      }
-    }
+footer .attribution {
+  text-align: center;
+  padding-top: 30px;
+}
 
-    .subjects {
-      display: flex;
-      justify-content: space-evenly;
-      flex-direction: column;
-      padding-top: 25px;
+blockquote {
+  font-family: $header-font;
+  font-size: 2em;
+  line-height: 1.2em;
+  position: relative;
+  border-bottom: 1px dotted $gray;
+  padding: 5px;
+}
 
-      @media (min-width: $tablet-width) {
-        flex-direction: row;
-      }
+blockquote::before {
+  content: '“';
+  font-size: 3em;
+  position: absolute;
+  left: -50px;
+  top: 20px;
+}
 
-      .subject-item {
-        display: flex;
-        flex-direction: column;
-        max-width: 100%;
-        font-size: $default-font-size;
-        line-height: $line-height;
+.production .attribution {
+  color: $gray;
+  font-style: italic;
+}
 
-        @media (min-width: $tablet-width) {
-          max-width: 15%;
-          font-size: $small-font-size;
-        }
+.production .four {
+  text-align: center;
+}
 
-        svg {
-          margin-left: 35%;
-        }
-      }
-    }
-  }
+#whitepapers {
+  background-color: $purple;
+  color: white;
+}
 
-  section.home-community {
-    background-color: $light-blue;
-    color: $white;
-    margin-top: 0;
-    padding: 50px;
-    margin-bottom: -46px;
-    max-width: 100%;
+#whitepapers .top-border {
+  padding-top: 20px;
+  border-top: 1px white dotted;
+}
 
-    a {
-      color: $white;
-      text-transform: uppercase;
-      font-size: $default-font-size;
+#friends {
+  background-color: $red;
+  color: white;
+}
 
-      @media (min-width: $tablet-width) {
-        font-size: $small-font-size;
-      }
-    }
+#friends img {
+  width: 100%;
+  vertical-align: middle;
+  background-color: white;
+  padding: 20px;
+}
 
-    .events-icon {
-      padding-bottom: 20px;
-    }
-
-    .map {
-      display: none;
-
-      @media (min-width: $tablet-width) {
-        display: block;
-        width: 100%;
-      }
-    }
-
-    .community-content {
-      display: flex;
-      flex-direction: column;
-      font-size: $default-font-size;
-      width: 100%;
-
-      @media (min-width: $tablet-width) {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        font-size: $small-font-size;
-      }
-
-      button {
-        @include buttons;
-
-        width: 200px;
-        background-color: $purple;
-        color: $white;
-        border: 1px solid $white;
-      }
-
-      .community-info {
-        z-index: 0;
-        padding: 20px 20px 20px 0;
-        line-height: $line-height;
-
-        @media (min-width: $tablet-width) {
-          padding: 20px 60px 20px 20px;
-        }
-
-        .contribute-info {
-          padding: 10px 0 10px 0;
-        }
-      }
-    }
-  }
-
-  .icon {
-    width: 6%;
-    padding-right: 5px;
-
-    @media (min-width: $tablet-width) {
-      width: 4%;
-    }
-  }
-
-  @media (min-width: $tablet-width) {
-    font-size: $default-font-size;
-
-    a:hover {
-      color: $medium-gray;
-    }
-
-    a:active {
-      color: $light-gray;
-    }
-  }
+#learn-more .columns:first-of-type {
+  border-right: 1px black dotted;
 }
