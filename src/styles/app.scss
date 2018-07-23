@@ -228,3 +228,31 @@ blockquote::before {
   background-color: $purple;
   color: white;
 }
+
+#security-reporting {
+  background-color: $red;
+  color: white;
+  a {
+    color: $yellow;
+  }
+}
+
+#security-disclosure-policy a {
+  color: $green;
+}
+
+#security-receiving {
+  background-color: $purple;
+  color: white;
+  a {
+    color: $yellow;
+  }
+}
+
+#security-pgp-key {
+  background-color: $green;
+  color: white;
+  pre {
+    color: black;
+  }
+}
