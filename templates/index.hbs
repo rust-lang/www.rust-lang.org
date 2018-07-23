@@ -1,74 +1,67 @@
 {{#*inline "page"}}
 <header>
-  <div class="header-text">
-    <div>
-      <h1>RUST</h1>
-      <h2><strong>A systems programming language</strong> that runs blazingly fast and guarantees thread safety</h2>
+  <div class="container">
+    <div class="row">
+      <div class="eight columns">
+        <h1>RUST</h1>
+        <h1 class="subtitle">A systems programming language</strong> that runs blazingly fast and guarantees thread safety</h1>
+      </div>
+      <div class="four columns">
+        <a class="button button-primary" href="#">
+          <span>DOWNLOAD</span><br/>
+          <span>v. 1.2.4</span>
+        </a>
+      </div>
     </div>
-    <button>
-      <strong>DOWNLOAD</strong><br/>
-      <span>v. 1.2.4</span>
-    </button>
   </div>
 </header>
 
-<section class="home-intro">
-  <div class="subheader-wrapper">
-    <div class="purple-line"></div>
-    <h3 class="subheader">
-      Design with Rust
-    </h3>
-  </div>
-  <div class="subjects">
-    <div class="subject-item">
-      <p>
-        {{> svgs/command-line}}
-      </p>
-      <a href="/what/cli">Command Line</a>
-      <p>
-        This is written in the train from Varna to Galatz. Last night we all assembled a little before the time of sunset.
-      </p>
-    </div>
-    <div class="subject-item">
-      <p>
-        {{> svgs/wasm}}
-      </p>
-      <a href="/what/wasm">Web Assembly</a>
-      <p>
-        Each of us had done his work as well as he could; so far as thought, and endeavour, and opportunity go, we are prepared for the whole of our journey, and for our work when we get to Galatz.
-      </p>
-    </div>
-
-    <div class="subject-item">
-      <p>
-        {{> svgs/server}}
-      </p>
-      <a href="/what/server">Server</a>
-      <p>
-        When the usual time came round Mrs. Harker prepared herself for her hypnotic effort; and after a longer and more serious effort on the part of Van Helsing than has been usually necessary, she sank into the trance
-      </p>
-    </div>
-
-    <div class="subject-item">
-      <p>
-        {{> svgs/embedded}}
-      </p>
-      <a href="/what/embedded">Embedded</a>
-      <p>
-        Usually she speaks on a hint; but this time the Professor had to ask her questions, and to ask them pretty resolutely, before we could learn anything; at last her answer came
-      </p>
+<section class="domains">
+  <div class="container">
+    <header>
+      <h2>Build it in Rust</h2>
+      <div class="highlight highlight-yellow"></div>
+    </header>
+    <div class="row">
+      <div class="three columns">
+        <div class="domain-icon">{{> svgs/command-line}}</div>
+        <a href="/what/cli"><h3>Command Line</h3></a>
+        <p>
+          This is written in the train from Varna to Galatz. Last night we all assembled a little before the time of sunset.
+        </p>
+      </div>
+      <div class="three columns">
+        <div class="domain-icon">{{> svgs/wasm}}</div>
+        <a href="/what/wasm"><h3>Web Assembly</h3></a>
+        <p>
+          Each of us had done his work as well as he could; so far as thought, and endeavour, and opportunity go, we are prepared for the whole of our journey, and for our work when we get to Galatz.
+        </p>
+      </div>
+      <div class="three columns">
+        <div class="domain-icon">{{> svgs/server}}</div>
+        <a href="/what/server"><h3>Server</h3></a>
+        <p>
+          When the usual time came round Mrs. Harker prepared herself for her hypnotic effort; and after a longer and more serious effort on the part of Van Helsing than has been usually necessary, she sank into the trance
+        </p>
+      </div>
+      <div class="three columns">
+        <div class="domain-icon">{{> svgs/embedded}}</div>
+        <a href="/what/embedded"><h3>Embedded</h3></a>
+        <p>
+          Usually she speaks on a hint; but this time the Professor had to ask her questions, and to ask them pretty resolutely, before we could learn anything; at last her answer came
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
-<img class="center-background-logo" src="/static/images/rust-logo-purple2.png">
 
-<section class="home-production">
-  <div class="subheader-wrapper">
-    <div class="light-purple-line"></div>
-    <h3 class="subheader">Rust in Production</h3>
-  </div>
-  <div class="description-container">
+<section class="production">
+  <div class="container">
+    <header>
+      <h2>Rust in Production</h2>
+      <div class="highlight highlight-red"></div>
+    </header>
     <div class="description">
       <p>
         Over a hundred companies around the world are using Rust in production
@@ -76,71 +69,44 @@
         and love, such as the Firefox web browser and Dropbox, uses Rust. From startups to large
         corporations, from embedded devices to scalable web services, Rust is a great fit.
       </p>
-      <a href="production">
-        <button>
+      <a href="#" class="button button-secondary">
           <strong>Learn more</strong>
-        </button>
       </a>
     </div>
-    {{> svgs/monitor}}
-  </div>
-  <div class="company-logos">
-    <div>
-      <h2><img src="/static/images/user-logos/tilde.png" alt="Tilde Logo" /></h2>
-      <span>
-        "We've never made a programming error in Rust code that has caused a segfault that our
-        users have reported."
-      </span>
-      <p class="quote-attribution">
-        <strong>Yehuda Katz</strong><br/>
-        CTO
-      </p>
-    </div>
-    <div>
-      <h2><img src="/static/images/user-logos/chucklefish.png" alt="Chucklefish Logo" /></h2>
-      <span>
-        "Rust is one of the few languages that really gives you a large amount of confidence that
-        your parallel and concurrent code is anywhere near correct."
-      </span>
-      <p class="quote-attribution">
-        <strong>Catherine West</strong><br/>
-        Technical Lead
-      </p>
+    <div class="testimonials">
+      <div class="testimonial row">
+        <div class="four columns">
+          <img src="/static/images/user-logos/tilde.png" alt="Tilde Logo"/>
+        </div>
+        <div class="eight columns">
+          <blockquote>
+            We've never made a programming error in Rust code that has caused a segfault that our users have reported.
+          </blockquote>
+          <p class="attribution">- Yehuda Katz, CTO</p>
+        </div>
+      </div>
+      <div class="testimonial row">
+        <div class="eight columns">
+          <blockquote>
+            Rust is one of the few languages that really gives you a large amount of confidence that your parallel and concurrent code is anywhere near correct.
+          </blockquote>
+          <p class="attribution">- Catherine West, Technical Lead</p>
+        </div>
+        <div class="four columns">
+          <img src="/static/images/user-logos/chucklefish.png" alt="Chucklefish Logo" />
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="home-community">
-  <div class="subheader-wrapper">
-    <div class="purple-line"></div>
-    <h3 class="subheader">Get Involved</h3>
-  </div>
-  <div class="community-content">
-    <div class="community-info">
-      <p>
-        <img class="icon" src="/static/images/contribute.png">
-        <a href="/contribute">Contribute</a><br/>
-      </p>
-      <p class="contribute-info">
-        There is tramping of feet overhead, and ropes and chains are dragged along. What is this?
-      </p>
-      <button>
-        contribute code
-      </button>
-      <p>
-        <a href="/community/content">Content</a><br/>
-        <a href="/community/rustbridge">Rust Bridge</a>
-      </p>
-    </div>
-    <div>
-      <div class="events-icon">
-        <img class="icon" src="/static/images/events.png">
-        <a href="/community/events">Events</a>
-      </div>
-      <img class="map" src="/static/images/map.svg">
-    </div>
+<section class="get-involved">
+  <div class="container">
+    <header>
+      <h2>Get Involved</h2>
+      <div class="highlight highlight-green">
+    </header>
   </div>
 </section>
-<img class="bottom-background-logo" src="/static/images/rust-logo-purple2.png">
 {{/inline}}
 {{~> (parent)~}}
