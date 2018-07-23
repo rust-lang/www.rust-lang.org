@@ -264,3 +264,31 @@ blockquote::before {
     color: $purple;
   }
 }
+
+#learn-begin {
+  background-color: $red;
+  color: white;
+  a {
+    color: $yellow;
+  }
+}
+
+#learn-use a {
+  color: $green;
+}
+
+#learn-master {
+  background-color: $purple;
+  color: white;
+  a {
+    color: $yellow;
+  }
+}
+
+#security-learn-community-key {
+  background-color: $green;
+  color: white;
+  pre {
+    color: black;
+  }
+}
