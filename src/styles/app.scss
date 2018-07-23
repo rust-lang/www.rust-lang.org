@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Fira+Sans');
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Fira+Sans:400,800');
 
 $body-font: 'Fira Sans', Helvetica, Arial, sans-serif;
 $header-font: 'Alfa Slab One', serif;
@@ -112,8 +112,23 @@ footer {
   color: white;
 }
 
-.center {
+footer a {
+  color: $yellow;
+}
+
+footer h4 {
+  font-size: 1.2em;
+  font-weight: 800;
+}
+
+footer img {
+  width: 40px;
+  padding: 0 10px;
+}
+
+footer .attribution {
   text-align: center;
+  padding-top: 30px;
 }
 
 blockquote {
