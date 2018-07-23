@@ -1,37 +1,98 @@
 {{#*inline "page"}}
 
 <header>
-  <h1>Production</h1>
+  <div class="container">
+    <h1>Production</h1>
+  </div>
 </header>
 
 <section id="whitepapers">
-  <h2>Whitepapers</h2>
-  <p>Read about companies' experiences with Rust in production. Would your company like to be
-  featured in a case study? <a href="mailto:community@rust-lang.org">Reach out!</a></p>
-
-  <h3><a href="/static/pdfs/Rust-Tilde-Whitepaper.pdf">Rust at Tilde</a></h3>
-  <p>Learn how Rust helps <a href="http://www.tilde.io/">Tilde</a>, makers of <a
-  href="https://www.skylight.io/">Skylight</a>, use minimal resources to enable feature-rich
-  performance monitoring of their customers' applications.</p>
-
-  <h3><a href="/static/pdfs/Rust-Chucklefish-Whitepaper.pdf">Rust at Chucklefish</a></h3>
-  <p><a href="https://chucklefish.org/">Chucklefish</a>, the video game company that published
-  Stardew Valley and Starbound, is using Rust in their new projects Wargroove and Witchbrook to get
-  safe concurrency and portability.</p>
+  <div class="container">
+    <header>
+      <h2>Whitepapers</h2>
+      <div class="highlight highlight-green"></div>
+    </header>
+    <p>
+      Read about companies' experiences with Rust in production. 
+    </p>
+    <div class="row">
+      <div class="six columns">
+        <h3><a href="/static/pdfs/Rust-Tilde-Whitepaper.pdf">Tilde</a></h3>
+        <p>Learn how Rust helps <a href="http://www.tilde.io/">Tilde</a>, makers of <a href="https://www.skylight.io/">Skylight</a>, use minimal resources to enable feature-rich performance monitoring of their customers' applications.</p>
+      </div>
+      <div class="six columns">
+        <h3><a href="/static/pdfs/Rust-Chucklefish-Whitepaper.pdf">Chucklefish</a></h3>
+        <p><a href="https://chucklefish.org/">Chucklefish</a>, the video game company that published Stardew Valley and Starbound, is using Rust in their new projects Wargroove and Witchbrook to get safe concurrency and portability.</p>
+      </div>
+    </div>
+    <div class="top-border">
+      <p>Does your company use Rust? Consider sharing your experience with us!<p>
+      <a href="mailto:community@rust-lang.org" class="button button-secondary">Reach out!</a>
+    </div>
+  </div>
 </section>
 
 <section id="friends">
-  <h2>Friends</h2>
-  <h3><a href="#">Link to X random friends</a></h3>
-  <h3><a href="/production/friends">Friends</a></h3>
+  <div class="container">
+    <header>
+      <h2>Friends</h2>
+      <div class="highlight highlight-yellow"></div>
+    </header>
+    <div class="row">
+      <div class="four columns">
+        <img src="/static/images/user-logos/dropbox.svg"/>
+      </div>
+      <div class="four columns">
+        <img src="/static/images/user-logos/mozilla.png" />
+      </div>
+      <div class="four columns">
+        <img src="/static/images/user-logos/cloudflare.svg" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="four columns">
+        <img src="/static/images/user-logos/atlassian.svg"/>
+      </div>
+      <div class="four columns">
+        <img src="/static/images/user-logos/npm.svg" />
+      </div>
+      <div class="four columns">
+        <img src="/static/images/user-logos/braintree.png" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="four columns">
+        <img src="/static/images/user-logos/deliveroo.svg"/>
+      </div>
+      <div class="four columns">
+        <img src="/static/images/user-logos/chef.svg" />
+      </div>
+      <div class="four columns">
+        <img src="/static/images/user-logos/postmates.png" />
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="learn-more">
-  <h4>Learn more about what you can use Rust to do</h4>
-  <a href="/what">What?: Uses</a>
-  <br/>
-  <h4>Learn more about how Rust is licensed</h4>
-  <a href="/policies/license">Policies: License</a>
+  <div class="container row">
+    <div class="six columns">
+      <header>
+        <h2>Supporting Rust</h2>
+        <div class="highlight highlight-purple">
+      </header>
+      <p>Circumnavigated Flatland, circumnavigated descended from astronomers?</p>
+      <a href="#" class="button button-secondary">Supporting Rust</a>
+    </div>
+    <div class="six columns">
+      <header>
+        <h2>License</h2>
+        <div class="highlight highlight-green">
+      </header>
+      <p>White dwarf. Corpus callosum. Brain is the seed of intelligence rings of Uranus how far away vastness?</p>
+      <a href="/policies/license" class="button button-secondary">Policies: License</a>
+    </div>
+  </div>
 </section>
 
 {{/inline}}

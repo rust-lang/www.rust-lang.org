@@ -23,7 +23,21 @@ header h1 {
 }
 
 header {
-  padding: 30px 0;
+  padding: 30px 0 60px 0;
+}
+
+header .button.button-primary.button-download {
+  background-color: $purple;
+  border-color: $purple;
+  width: 100%;
+  padding: 20px;
+  height: auto;
+  font-size: 2em;
+}
+
+header .button.button-primary.button-download:hover {
+  background-color: $red;
+  border-color: $red;
 }
 
 h1.subtitle {
@@ -34,7 +48,7 @@ h1.subtitle {
 }
 
 section {
-  padding: 30px 0;
+  padding: 30px 0 60px 0;
 }
 
 section .container {
@@ -54,12 +68,12 @@ span.brand img {
   color: white;
 }
 
-.domains h3 {
+.domains h3, #whitepapers h3 {
   font-weight: 800;
   font-size: 1.8em;
 }
 
-.domains a {
+.domains a, #whitepapers a {
   color: white;
 }
 
@@ -80,6 +94,19 @@ span.brand img {
 .get-involved h3 {
   font-weight: 800;
   font-size: 1.8em;
+}
+
+.get-involved .code {
+  padding-bottom: 20px;
+  border-bottom: 1px dotted white;
+}
+
+.get-involved .media {
+  padding-top: 20px;
+}
+
+.get-involved .button.button-secondary, #whitepapers .button.button-secondary {
+  color: $green;
 }
 
 section header {
@@ -109,6 +136,10 @@ section header h2 {
 
 .highlight-green {
   background-color: $green;
+}
+
+.highlight-purple {
+  background-color: $purple;
 }
 
 footer {
@@ -160,4 +191,30 @@ blockquote::before {
 
 .production .four {
   text-align: center;
+}
+
+#whitepapers {
+  background-color: $purple;
+  color: white;
+}
+
+#whitepapers .top-border {
+  padding-top: 20px;
+  border-top: 1px white dotted;
+}
+
+#friends {
+  background-color: $red;
+  color: white;
+}
+
+#friends img {
+  width: 100%;
+  vertical-align: middle;
+  background-color: white;
+  padding: 20px;
+}
+
+#learn-more .columns:first-of-type {
+  border-right: 1px black dotted;
 }
