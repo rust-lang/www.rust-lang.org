@@ -256,3 +256,11 @@ blockquote::before {
     color: black;
   }
 }
+
+#license {
+  background-color: $green;
+  color: white;
+  a {
+    color: $purple;
+  }
+}
