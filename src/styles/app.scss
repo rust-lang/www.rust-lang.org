@@ -68,8 +68,8 @@ span.brand img {
   color: white;
 }
 
-.domains h3, #whitepapers h3 {
-  font-weight: 800;
+.domains h3, #whitepapers h3, #using-the-trademarks h3 {
+  font-weight: 800; 
   font-size: 1.8em;
 }
 
@@ -264,3 +264,43 @@ blockquote::before {
     color: $purple;
   }
 }
+
+#art-license {
+  background-color: $red;
+  color: white;
+  a {
+    color: yellow;
+  }
+}
+
+#trademark-policy {
+  background-color: $purple;
+  color: white;
+  a {
+    color: $green;
+  }
+}
+
+#rust-trademarks {
+  a {
+    color: $red;
+  }
+  img {
+    vertical-align: middle;
+  }
+}
+
+#logo-help-out {
+  background-color: $green;
+  a {
+    color: $purple;
+  }
+}
+
+#using-the-trademarks {
+  background-color: $yellow;
+  a {
+    color: $red;
+  }
+}
+>>>>>>> feat(page): media guide content/styles
