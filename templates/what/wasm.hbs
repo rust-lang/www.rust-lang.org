@@ -1,9 +1,98 @@
 {{#*inline "page"}}
-
-<section>
-  <h1>Web Assembly (WASM)</h1>
-</section>
-
+{{!-- Initial section Jumbotron like --}}
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="one-half column">
+        <h1> Web Assembly (WASM) </h1>
+        <p class="teaser"> Web Assembly delivers you <b>"Pluggable & Maintainable Performance"</b> in Web and Node.</p>
+        <a class="button button-wasm" href="https://webassembly.studio/">Try WebAssembly in your browser > </a>
+        <a class="button" href="https://rustwasm.github.io/">Learn about RustWasm > </a>
+      </div>
+      <div class="one-half column wasm-logo">
+        <img src="/static/images/rustwasm.jpg">
+        {{!-- May be add the tabbed code editor here --}}
+      </div>
+    </div>
+  </div>
+</div>
+{{!-- Comparison section --}}
+<div class="section compare">
+  <div class="container">
+    <div class="row">
+      <div class="one-half column">
+        <h2 class="center">~ 30%</h2> {{!-- Can we make this numbers animated --}}
+        <h5>more faster in your JS Engine</h5>
+        <ul>
+          <li>
+            Increase in performance
+          </li>
+          <li>
+            Increase in conversions
+          </li>
+          <li>
+            Increase in happy customers
+          </li>
+        </ul>
+      </div>
+      <div class="one-half column">
+        <h2 class="center"> &lt; 50%</h2>
+        <h5>Smaller payload</h5>
+        <ul>
+            <li>
+              wasm binary size of X is xxxKB
+            </li>
+            <li>
+              wasm binary size of Y is yyyKB 
+            </li>
+            <li>
+              wasm binary size of Rust is <b>zzzKB</b>
+            </li>
+        </ul>  
+      </div>
+    </div>
+  </div>
+</div>
+{{!-- Why & How section --}}
+<div class="section why-how">
+  <div class="container">
+    <div class="row">
+      <div class="one-half column">         
+        <h2>Low level control</h2>      
+        {{!-- Add more content here --}}
+      </div>
+      <div class="one-half column">
+        <h2>Integrates with the tools that you already know</h2>
+        <ul>
+          <li>
+            Bundles with Webpack {{!-- link to Webpack setup --}}
+          </li>
+          <li>
+            JS and WASM can live together
+          </li>
+          <li>
+             They complement each other well.              
+          </li>
+          <li>
+            No more boundary crossing worries.
+          </li>
+          <li>
+            Works the same way you import your JS {{!-- link to ESM --}}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{{!-- End section --}}
+<div class="section contact">
+  <div class="container">
+    <div class="row">
+      <h1>Have a question? Ask the Working Group here.</h1>
+      <h1>Have a feature? Ask the Working Group here.</h1>      
+    </div>
+  </div>
+</div>
 {{/inline}}
 {{~> (parent)~}}
 

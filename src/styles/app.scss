@@ -505,3 +505,24 @@ blockquote::before {
   background-color: $purple;
   color: white;
 }
+
+.wasm-logo {
+  img{
+    width: 250px;
+    height: 250px;
+  }
+}
+
+.button-wasm {
+  background-color: #5A5DD6;
+  color: white;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.section {
+  margin-top: 2%;
+  padding: 1%;
+}
