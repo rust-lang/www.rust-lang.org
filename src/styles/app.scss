@@ -89,7 +89,7 @@ span.brand img {
 
 .domains h3, #whitepapers h3, #using-the-trademarks h3,
 #contribute-code h3, #contribute-talk h3, #contribute h3,
-#community-events h3, #tools-code-quality h3 {
+#community-events h3, #tools-code-quality h3, #learn-use h3 {
   font-weight: 800; 
   font-size: 1.8em;
 }
@@ -287,15 +287,29 @@ blockquote::before {
 }
 
 #learn-begin {
-  background-color: $red;
+  background-color: $green;
   color: white;
   a {
-    color: $yellow;
+    color: $purple;
+  }
+  p:first-of-type {
+    padding-bottom: 20px;
+    border-bottom: 1px white dotted;
   }
 }
 
-#learn-use a {
-  color: $green;
+#learn-use {
+  background-color: $red;
+  color: white;
+  a {
+    color: $purple;
+  }
+  img {
+    width: 30%;
+  }
+  .domain {
+    text-align: center;
+  }
 }
 
 #learn-master {
@@ -303,6 +317,12 @@ blockquote::before {
   color: white;
   a {
     color: $yellow;
+  }
+  img {
+    width: 50%;
+  }
+  .book {
+    text-align: center;
   }
 }
 
