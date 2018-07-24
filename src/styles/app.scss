@@ -85,7 +85,8 @@ span.brand img {
   color: white;
 }
 
-.domains h3, #whitepapers h3, #using-the-trademarks h3 {
+.domains h3, #whitepapers h3, #using-the-trademarks h3,
+#contribute-code h3, #contribute-talk h3, #contribute h3 {
   font-weight: 800; 
   font-size: 1.8em;
 }
@@ -401,5 +402,30 @@ blockquote::before {
   color: white;
   .button.button-secondary {
     color: $purple;
+  }
+}
+
+#contribute {
+  background-color: $red;
+  color: white;
+  .button.button-secondary {
+    color: $purple;
+  }
+}
+
+#contribute-talk {
+  background-color: $green;
+  color: white;
+  .button.button-secondary {
+    color: $purple;
+    border-color: white;
+  }
+}
+
+#contribute-code {
+  background-color: $purple;
+  color: white;
+  .button.button-secondary {
+    color: $green;
   }
 }
