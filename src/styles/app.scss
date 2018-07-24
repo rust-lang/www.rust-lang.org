@@ -370,3 +370,36 @@ blockquote::before {
   background-color: $red;
   color: white;
 }
+
+#governance {
+  background-color: $red;
+  color: white;
+}
+
+#teams {
+  background-color: $purple;
+  color: white;
+  li {
+    display: inline-block;
+  }
+  img {
+    width: 10em;
+  }
+  a {
+    color: $yellow;
+  }
+  p {
+    margin: 0;
+  }
+  .button-secondary {
+    color: $yellow;
+  }
+}
+
+#community-standards {
+  background-color: $red;
+  color: white;
+  .button.button-secondary {
+    color: $purple;
+  }
+}
