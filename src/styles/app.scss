@@ -339,3 +339,17 @@ blockquote::before {
     color: $yellow;
   }
 }
+
+#installing-rust {
+  background-color: $purple;
+  color: white;
+}
+
+#generating-new-project {
+  background-color: $green;
+}
+
+#managing-rust-versions {
+  background-color: $red;
+  color: white;
+}

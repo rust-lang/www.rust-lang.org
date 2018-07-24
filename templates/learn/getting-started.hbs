@@ -1,17 +1,57 @@
 {{#*inline "page"}}
 
 <header>
-  <h1>Getting Started</h1>
+  <div class="container">
+    <h1>Getting Started</h1>
+  </div>
 </header>
 
-<section>
-  <p>teach people how to get rust installed</p>
+<section id="installing-rust">
+  <div class="container">
+    <header>
+      <h2>Installing Rust</h2>
+      <div class="highlight highlight-yellow"></div>
+    </header>
+    <p>To install Rust, run the following in your terminal, then follow the onscreen instructions.</p>
+    <pre>curl https://sh.rustup.rs -sSf | sh</pre>
+  </div>
 </section>
 
-<section>
-  <a href="/tools/rustup">rustup</a>
-  <a href="/tools/cargo">Cargo</a>
-  <a href="/learn">Learn more</a>
+<section id="generating-new-project">
+  <div class="container">
+    <header>
+      <h2>Generating a New Project</h2>
+      <div class="highlight highlight-purple"></div>
+    </hedaer>
+    <pre>cargo new</pre>
+  </div>
+</section>
+
+<section id="installing-dependencies">
+  <div class="container">
+    <header>
+      <h2>Installing Dependencies</h2>
+      <div class="highlight highlight-red"></div>
+    </header>
+    <pre>#Cargo.toml [dependencies] XXXXXX = "0.1.0"</pre>
+    <pre>//src/main.rs extern crate XXXXXX;</pre>
+    <pre>//src/main.rs use XXXXXX::myThing;</pre>
+    <pre>cargo build</pre>
+  </div>
+</section>
+
+<section id="managing-rust-versions">
+  <div class="container">
+    <header>
+      <h2>Manging Rust Versions</h2>
+      <div class="highlight highlight-yellow"</div>
+    </header>
+    <p>Link to explaniner of channels</p>
+    <pre>rustup +nightly</pre>
+    <pre>rustup update nightly</pre>
+    <pre>rustup override set nightly</pre>
+    <p>edition?????</p>
+  </div>
 </section>
 
 {{/inline}}
