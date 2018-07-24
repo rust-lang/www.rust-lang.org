@@ -55,6 +55,23 @@ section .container {
   padding-top: 20px;
 }
 
+.nav {
+  display: inline-block;
+}
+
+.nav ul {
+  list-style-type: none;
+}
+
+.nav li {
+  display: inline-block;
+  padding: 20px;
+}
+
+.nav a {
+  color: $gray;
+}
+
 span.brand img {
   width: 80px;
 }
