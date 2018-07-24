@@ -331,3 +331,11 @@ blockquote::before {
     color: $red;
   }
 }
+
+#policies-index {
+  background-color: $purple;
+  color: white;
+  a {
+    color: $yellow;
+  }
+}
