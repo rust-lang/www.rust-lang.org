@@ -1,100 +1,150 @@
 {{#*inline "page"}}
 {{!-- Initial section Jumbotron like --}}
-<div class="wasm">
-  <section role="main">
-    <div class="container">
-      <div class="row">
-        <div class="one-half column">
-          <h2> Web Assembly (WASM) </h2>
-          <p class="teaser"> 
-            Rust and Web Assembly delivers you <b>"Maintainable Performance"</b> in Web and Node.
-          </p>
-          <a class="button button-wasm" href="https://webassembly.studio/">Try WebAssembly in your browser > </a>
-          <a class="button" href="https://rustwasm.github.io/">Learn about RustWasm > </a>
+<section role="main" class="wasm">
+  <div class="container">
+    <div class="row">
+      <div class="ten columns">
+        <h1 class="title">
+          Increase performance-sensitive JavaScript code path with, 
+          <span class="text-wasm">Rust compiled to WebAssembly.</span>
+        </h1>
+        <p class="subtitle"> 
+          Rust and Web Assembly delivers <b>"Maintainable Performance"</b> in Web and Node.
+        </p>
+        <a class="button button-wasm" href="https://webassembly.studio/">Try WebAssembly > </a>
+        <a class="button" href="https://rustwasm.github.io/">Learn more > </a>
+      </div>
+      <div class="two columns wasm-logo">
+        <img src="/static/images/rustwasm.jpg">
+      </div>
+    </div>
+  </div>  
+</section>
+<hr />
+<section id="wasm-content">
+  <div class="container">
+    <div class="row">
+      <div class="one-third column">
+        <h3 class="centered">
+          <img src="https://image.flaticon.com/icons/svg/869/869121.svg" alt="A Truck" class="wasm-img"/> 
+          Speed without wizadry
+        </h3>
+        <p class="centered">
+          The performance of the JavaScript applications
+          varies based on its engine. While JavaScript is fast,
+          milking out more performance from it requires engine
+          specific modifications and endless hours of profiling.
+          On the other hand, Rust's natural idiom guides us 
+          towards fast code.
+          <a class="wasm-link" href="http://fitzgeraldnick.com/2018/02/26/speed-without-wizardry.html">Learn more</a>
+        </p>
+      </div>
+      <div class="one-third column">
+       <h3 class="centered">
+         <img src="https://image.flaticon.com/icons/svg/978/978016.svg" alt="plugin" class="wasm-img"/> 
+         Plug it in like JavaScript
+       </h3>
+       <p class="centered">
+          Keep the code and rewrite only those that needs higher performance.
+          Interoperability of WebAssembly and JavaScript is seamless. 
+          We can get published wasm packages from npm, or use your own.
+          Import it as you like and use it. Finally, bundlers will understand
+          Rust and WebAssembly.
+          <a class="wasm-link" href="https://github.com/wasm-tool/rust-plugin">Learn more</a>
+        </p>
+      </div>
+      <div class="one-third column">
+        <h3 class="centered">
+          <img src="https://image.flaticon.com/icons/svg/149/149322.svg" alt="chronometer" class="wasm-img"/> Guaranteed Performance
+        </h3>
+        <p class="centered">
+          No more GC passes. No more uncertainities. No more Runtime failures.
+          High performance. Reliable performance. Maintainable performance.          
+          <a class="wasm-link" href="https://rustwasm.github.io/book/">Learn more</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="wasm-tools">
+  <div class="container">    
+    <h3 class="centered"> Exciting tools in Rust and WebAssembly</h3>      
+    <div class="row">
+      <div class="one-third column">
+        <div class="card">
+          <div class="card-header">WASM-Bindgen</div>
+          <div class="card-content">
+            wasm-bindgen <span class="text-wasm">facilitates communication</span> between JavaScript and Rust compiled to WebAssembly. 
+            It allows you to speak in terms of Rust structs, JavaScript classes, strings, etc…            
+          </div>
+          <div class="card-footer">
+            <div class="one-half column">
+              <a class="wasm-link" href="https://github.com/rustwasm/wasm-bindgen"> Go to repo</a></div>
+            <div class="one-half column icon">
+              <img src="https://image.flaticon.com/icons/svg/1006/1006085.svg" alt="Handshake" />
+            </div>
+          </div>
         </div>
-        <div class="one-half column wasm-logo">
-          <img src="/static/images/rustwasm.jpg" id="loading">
-          {{!-- May be add the tabbed code editor here --}}
+      </div>
+      <div class="one-third column">
+        <div class="card">
+          <div class="card-header">WASM-Pack</div>
+          <div class="card-content">
+            wasm-pack seeks to be a <span class="text-wasm">one-stop shop</span> for building, optimizing, and publishing 
+            Rust-generated WebAssembly that you would like to interoperate with JavaScript, 
+            in the browser, or with Node.js.
+          </div>
+          <div class="card-footer">
+            <div class="one-half column">
+              <a class="wasm-link" href="https://github.com/rustwasm/wasm-pack"> Go to repo</a></div>
+            <div class="one-half column icon">
+              <img src="https://image.flaticon.com/icons/svg/134/134520.svg" alt="Package"/>            
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="one-third column">
+        <div class="card">
+          <div class="card-header">Twiggy</div>
+          <div class="card-content">
+           Twiggy is a <span class="text-wasm">code size profiler</span> for .wasm binaries. 
+           It helps in tracing function calls, space taken by each function
+           and space saved by removing all the dead code.
+          </div>
+          <div class="card-footer">
+            <div class="one-half column">
+              <a class="wasm-link" href="https://github.com/rustwasm/twiggy"> Go to repo</a></div>
+            <div class="one-half column icon">
+              <img src="https://image.flaticon.com/icons/svg/942/942803.svg" alt="A microscope"/>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </section>
-  {{!-- Comparison section --}}
-  <section class="section compare">
-    <div class="container">
-      <div class="row">
-        <div class="one-half column">
-          <h2 class="highlight-number">~ 30%</h2> {{!-- Can we make this numbers animated --}}
-          <h5>more faster</h5>
-          <ul>
-            <li>
-              Increase in performance
-            </li>
-            <li>
-              Increase in conversions
-            </li>
-            <li>
-              Increase in happy customers
-            </li>
-          </ul>
-        </div>
-        <div class="one-half column">
-          <h2 class="highlight-number"> &lt; 50%</h2>
-          <h5>Smaller payload</h5>
-          <ul>
-              <li>
-                wasm binary size of X is xxxKB
-              </li>
-              <li>
-                wasm binary size of Y is yyyKB 
-              </li>
-              <li>
-                wasm binary size of Rust is <b>zzzKB</b>
-              </li>
-          </ul>  
-        </div>
+  </div>
+</section>
+<section id="wasm-team">
+  <div class="container">   
+    <div class="icon centered">    
+      <img src="https://image.flaticon.com/icons/svg/910/910289.svg" alt="A flowchart"/>
+    </div> 
+    <h5 class="centered">
+      Interested to know more, suggest ideas and raise bugs <a href="https://github.com/rustwasm/team" class="wasm-link">here</a>
+    </h5>
+    <h5 class="centered">
+      Follow us at <a href="https://www.twitter.com/rustwasm" class="wasm-link">Twitter</a> | <a href="https://github.com/rustwasm" class="wasm-link">Github</a> | <a href="https://rustwasm.github.io/" class="wasm-link">Newsletter</a>
+    </h5>
+    {{!-- <div class="row">
+      <div class="one-half column">
+        
       </div>
-    </div>
-  </section>
-  {{!-- Why & How section --}}
-  <section class="section why-how">
-    <div class="container">
-      <div class="row">
-        <div class="one-half column">         
-          <h2>Low level control</h2>      
-          {{!-- Add more content here --}}
-        </div>
-        <div class="one-half column">
-          <h2>Easy Integration</h2>
-          <ul>
-            <li>
-              Bundles with Webpack {{!-- link to Webpack setup --}}
-            </li>
-            <li>
-              JS and WASM can live together
-            </li>
-            <li>
-              They complement each other well.              
-            </li>
-            <li>
-              No more boundary crossing worries.
-            </li>
-            <li>
-              Works the same way you import your JS {{!-- link to ESM --}}
-            </li>
-          </ul>
-        </div>
+      <div class="one-half column">
+        
       </div>
-    </div>
-  </section>
-  {{!-- End section --}}
-  <section class="section contact">
-    <div class="container">
-      <p>Built a cool thing with Rust & WebAssembly? <a href="https://github.com/rustwasm/team/issues/79">Share</a> it with us</p>   
-      <p>Have a question / feedback / feature? Come and discuss with us <a href="https://github.com/rustwasm/team">here</a>.</p>    
-    </div>
-  </section>
-</div>
+    </div> --}}
+  </div>
+</section>
+
 {{/inline}}
 {{~> (parent)~}}
 
