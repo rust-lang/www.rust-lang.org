@@ -505,24 +505,55 @@ blockquote::before {
   background-color: $purple;
   color: white;
 }
-
-.wasm-logo {
-  img{
-    width: 250px;
-    height: 250px;
+.wasm {
+  .wasm-logo {
+    img{
+      width: 250px;
+      height: 250px;
+    }
   }
-}
-
-.button-wasm {
-  background-color: #5A5DD6;
-  color: white;
-
-  &:hover {
+  
+  .button-wasm {
+    background-color: #5A5DD6;
     color: white;
+  
+    &:hover {
+      color: white;
+    }
   }
-}
 
-.section {
-  margin-top: 2%;
-  padding: 1%;
+  .highlight-number {
+    font-size: 5rem;
+  }
+  
+  .section {
+    
+    padding: 2%;
+    color: white;
+    &.compare {
+      background-color: $purple;
+    }
+
+    &.why-how {
+      background-color: $green;
+    }
+
+    &.contact {
+      background-color: $red;
+    }
+  }
+  
+  #loading {
+    display: inline-block;
+    animation: rotation 10s infinite linear;
+  }
+
+  @keyframes rotation {
+    50% {
+      transform: rotate(30deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
 }
