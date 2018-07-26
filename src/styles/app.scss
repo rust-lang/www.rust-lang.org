@@ -8,7 +8,6 @@ $red: #C14566;
 $green: #6DC6B9;
 $purple: #403D58;
 $yellow: #FECD2F;
-$wasm: #5A5DD6;
 
 body {
   font-family: $body-font;
@@ -508,14 +507,14 @@ blockquote::before {
 }
 
 .text-wasm {
-  color: $wasm;
+  color: $green;
 }
 
 .wasm {
   .wasm-logo {
     img{
-      width: 150px;
-      height: 150px;
+      width: 100%;
+      height: 100%;
     }
   }
   .subtitle {
@@ -529,17 +528,7 @@ blockquote::before {
 
   .button {
     margin-right: 10px;
-  }
-
-  .button-wasm {
-    border: 1px solid $wasm;    
-    color: $wasm;
-  
-    &:hover {
-      background-color: $wasm; 
-      color: white;
-    }
-  }  
+  } 
 }
 
 .centered {
@@ -547,13 +536,13 @@ blockquote::before {
 }
 
 .wasm-link {
-  color: $wasm;
+  color: $green;
   text-decoration: none;
 }
 
 .wasm-img {
-  width: 35px;
-  height: 35px;
+  width: 10%;
+  height: 10%;
 }
 
 #wasm-tools {
@@ -595,7 +584,7 @@ blockquote::before {
 
 #wasm-team {
   img {
-    height: 50px;
-    width: 50px;
+    height: 10%;
+    width: 10%;
   }
 }
