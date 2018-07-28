@@ -556,25 +556,20 @@ blockquote::before {
   }
 }
 
-#cli {
-  &-header {}
-
-  &-features {}
+#cli-quotes {
+  background-color: $green;
   
-  &-quotes {
-    background-color: $green;
-    
-    a {
-      color: black;
-    }
-  }
-
-  &-use-it {
-    background-color: $purple;
-    color: white;
-    
-    pre {
-      color: black;
-    }
+  a {
+    color: black;
   }
 }
+
+#cli-use-it {
+  background-color: $purple;
+  color: white;
+  
+  pre {
+    color: black;
+  }
+}
+

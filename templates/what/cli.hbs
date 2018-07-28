@@ -1,6 +1,6 @@
 {{#*inline "page"}}
 
-<header id="cli-header">
+<header>
   <div class="container">
     <h1>Write Solid Command Line Applications</h1>
 
@@ -68,26 +68,12 @@
     <div class="row">
       <article class="six columns box">
         <h2>Define your inputs</h2>
-        <pre><code>/// Read some lines of a file
-#[derive(Clap)]
-struct Cli {
-    file: PathBuf,
-    #[clap(short="n")]
-    num: i32,
-}</code></pre>
+        <pre><code>{{> what/cli/code-inputs }}</code></pre>
       </article>
 
       <article class="six columns box">
         <h2>Write your tool</h2>
-        <pre><code>use quicli::prelude::*;
-
-fn main() -> CliResult {
-    let args = Cli::from_args()?:
-    read_file(&args.file)?
-        .lines()
-        .take(args.count)
-        .for_each(|line| println!("{}", line));
-}</code></pre>
+        <pre><code>{{> what/cli/code-main }}</code></pre>
       </article>
     </div>
   </div>
