@@ -555,3 +555,26 @@ blockquote::before {
     padding: 20px;
   }
 }
+
+#cli {
+  &-header {}
+
+  &-features {}
+  
+  &-quotes {
+    background-color: $green;
+    
+    a {
+      color: black;
+    }
+  }
+
+  &-use-it {
+    background-color: $purple;
+    color: white;
+    
+    pre {
+      color: black;
+    }
+  }
+}
