@@ -601,6 +601,7 @@ blockquote::before {
     background-color: transparent;
     border: none;
     word-break: break-word;
+    white-space: pre-line;
   }
 }
 
