@@ -556,16 +556,19 @@ blockquote::before {
   }
 }
 
+#cli-pitch,
 #cli-features {
   .domain-icon {
     display: block;
+    padding-bottom: 0;
 
     img {
-      max-width: 118px;
+      max-width: 90px;
       height: auto;
       display: block;
       margin-left: auto;
       margin-right: auto;
+      padding-bottom: 1em;
     }
   }
 }
@@ -575,6 +578,14 @@ blockquote::before {
   
   a {
     color: black;
+  }
+}
+
+#cli-features {
+  background-color: $red;
+  color: white;
+  a {
+    color: $yellow;
   }
 }
 
