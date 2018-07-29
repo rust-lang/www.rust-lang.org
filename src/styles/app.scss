@@ -473,6 +473,18 @@ blockquote::before {
   }
 }
 
+#community-support {
+  background-color: $red;
+  color: black;
+  a {
+    color: $yellow;
+  }
+  img {
+    width: 40%;
+  }
+}
+
+
 #community-content {
   background-color: $purple;
   color: white;
