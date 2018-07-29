@@ -592,8 +592,15 @@ blockquote::before {
 #cli-features {
   background-color: $red;
   color: white;
+
   a {
     color: $yellow;
+  }
+  
+  h3 code {
+    background-color: transparent;
+    border: none;
+    word-break: break-word;
   }
 }
 

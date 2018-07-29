@@ -17,14 +17,14 @@
       <article class="four columns box">
         <header class="domain-icon">
           <img src="/static/images/cli-is-no-rocket-science.svg" alt="CLI apps are no rocket science"/>
-          <h3>Easy to get started with Rust</h3>
+          <h3>Easy start</h3>
         </header>
         <p class="box-content">
           Learn Rust by writing a command line tools.
           Implementing internal tools is also a great way to introduce Rust to your team.
         </p>
         <p class="button button-secondary">
-          <a href="#">Learn more &rarr;</a>
+          <a href="https://rust-lang-nursery.github.io/cli-wg/tutorial/intro.html">Learn more &rarr;</a>
         </p>
       </article>
       <article class="four columns box">
@@ -36,20 +36,21 @@
           Compile everything down to a single binary, no need for your users to have a runtime installed.
         </p>
         <p class="button button-secondary">
-          <a href="#">Learn more &rarr;</a>
+          <a href="https://crate-ci.github.io/release.html">Learn more &rarr;</a>
         </p>
       </article>
       <article class="four columns box">
         <header class="domain-icon">
           <img src="/static/images/cli-rustc-approved.svg" alt="Benefit from Rust's guarantees"/>
-          <h3>Super solid</h3>
+          <h3>Solid tools</h3>
         </header>
         <p class="box-content">
-          Even if all you want to write is a short one-off script: You can be confident it's fast, easily testable, and gives useful
-          error messages.
+          Even if all you want to write is a short one-off script:
+          You can be confident it's fast, easily testable,
+          and gives useful error messages.
         </p>
         <p class="button button-secondary">
-          <a href="#">Learn more &rarr;</a>
+          <a href="https://www.rust-lang.org">Learn more &rarr;</a>
         </p>
       </article>
     </div>
@@ -74,6 +75,10 @@
 
 <section id="cli-features">
   <div class="container">
+    <header>
+      <h2>Why Rust for CLI development?</h2>
+      <div class="highlight highlight-purple"></div>
+    </header>
     <div class="row">
       <article class="four columns box">
         <header class="domain-icon">
@@ -81,7 +86,8 @@
           <h3>Signal handling</h3>
         </header>
         <p>
-          Handle application signals with ease with a range of special crates, designed for various usecases.
+          Handle signals from your operating system with ease with a range of special libraries, designed for various use-cases.
+          <a href="https://rust-lang-nursery.github.io/cli-wg/in-depth/signals.html">Read more</a>
         </p>
       </article>
       <article class="four columns box">
@@ -90,7 +96,8 @@
           <h3>Argument parsing</h3>
         </header>
         <p>
-          Easily parse commandline arguments via a range of crates and the ecosystems that are built around them. Never worry about invalid or out-of-range data in your CLI again.
+          Easily parse command line arguments via a range of crates and the ecosystems that are built around them. Never worry about invalid or out-of-range data in your CLI again.
+          <a href="https://rust-lang-nursery.github.io/cli-wg/tutorial/cli-args.html">Read more</a>
         </p>
       </article>
       <article class="four columns box">
@@ -99,7 +106,8 @@
           <h3>Exit codes</h3>
         </header>
         <p>
-          Let your application terminate correctly by returning the standard exit codes that are expected of it. Utility crates exist to make this process as easy as possible for you.
+          Let your application quit correctly by returning the standard exit codes that are expected of it. Utility crates exist to make this process as easy as possible for you.
+          <a href="https://rust-lang-nursery.github.io/cli-wg/in-depth/exit-code.html">Read more</a>
         </p>
       </article>
     </div>
@@ -110,7 +118,9 @@
           <h3>Adaptable logging</h3>
         </header>
         <p>
-          We need to build it so that it scales organic growth, yet product management breakout fastworks. Overcome key issues to meet key milestones. One-sheet globalize, and we need a paradigm shift.
+          Be sure of what your application is doing
+          by injecting quick and concise log statements.
+          <a href="https://rust-lang-nursery.github.io/cli-wg/in-depth/human-communication.html">Read more</a>
         </p>
       </article>
       <article class="four columns box">
@@ -119,7 +129,8 @@
           <h3>Manuals? Done.</h3>
         </header>
         <p>
-          Generate manual pages for your application simply by using a commandline argument parser. There's no extra effort required on your part. Simple package the generated files to your user and it's all done.
+          Generate manual pages for your application simply by using a command line argument parser. There's no extra effort required on your part. Simple package the generated files to your user and it's all done.
+          <a href="https://rust-lang-nursery.github.io/cli-wg/in-depth/docs.html">Read more</a>
         </p>
       </article>
       <article class="four columns box">
@@ -129,6 +140,41 @@
         </header>
         <p>
           Handle configuration files without worrying about what platform you're running on: request a config file, and a crate will deal with namespaces and formats for you.
+          <a href="https://rust-lang-nursery.github.io/cli-wg/in-depth/config-files.html">Read more</a>
+        </p>
+      </article>
+    </div>
+    <div class="row">
+      <article class="four columns box">
+        <header class="domain-icon">
+          <img src="/static/images/cli-testing.svg" alt=""/>
+          <h3>Integration testing</h3>
+        </header>
+        <p>
+          Write tests that execute your CLI app
+          and concisely exercise its edge-cases.
+          <a href="https://rust-lang-nursery.github.io/cli-wg/tutorial/testing.html">Read more</a>
+        </p>
+      </article>
+      <article class="four columns box">
+        <header class="domain-icon">
+          <img src="/static/images/cli-pipe.svg" alt=""/>
+          <h3><code>cat data.json | my_app</code></h3>
+        </header>
+        <p>
+          In addition to talking to humans,
+          the Rust ecosystem has great tools to help you talk to machines as well.
+          <a href="">Read more</a>
+        </p>
+      </article>
+      <article class="four columns box">
+        <header class="domain-icon">
+          <img src="/static/images/cli.svg" alt=""/>
+          <h3>Lorem ipsum</h3>
+        </header>
+        <p>
+          Dolor sit maybe talk about human output here dolor sit amet.
+          <a href="">Read more</a>
         </p>
       </article>
     </div>
