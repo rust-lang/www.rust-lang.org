@@ -556,6 +556,20 @@ blockquote::before {
   }
 }
 
+#cli-features {
+  .domain-icon {
+    display: block;
+
+    img {
+      max-width: 118px;
+      height: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
 #cli-quotes {
   background-color: $green;
   
