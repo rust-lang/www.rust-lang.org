@@ -636,5 +636,23 @@ blockquote::before {
   img {
     height: 10%;
     width: 10%;
+  }  
+}
+
+#wasm-friends {
+  .row {
+    margin-bottom: 2%;
+  }
+
+  blockquote {
+    transform: skewY(-12deg)
+  }
+
+  .logo {
+    margin-top: 15%;
+    img {
+      width: 50%;
+      height:50%;
+    }
   }
 }
