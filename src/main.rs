@@ -69,6 +69,18 @@ fn subject(category: Category, subject: String) -> Template {
     Template::render(page, &context)
 }
 
+#[catch(404)]
+fn not_found() -> Template {
+    let page = "404";
+    let title = format!("Rust - {}", page).to_string();
+    let context = Context {
+        page: "404".to_string(),
+        title: title,
+        parent: "layout".to_string(),
+    };
+    Template::render(page, &context)
+}
+
 fn compile_sass() {
     let scss = "./src/styles/app.scss";
     let css = compile_file(scss, Options::default()).unwrap();
@@ -81,5 +93,6 @@ fn main() {
     rocket::ignite()
         .attach(Template::fairing())
         .mount("/", routes![index, category, subject, files])
+        .catch(catchers![not_found])
         .launch();
 }
