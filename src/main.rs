@@ -8,6 +8,8 @@ extern crate rocket_contrib;
 #[macro_use]
 extern crate serde_derive;
 
+mod category;
+
 use std::fs::File;
 use std::io::prelude::*;
 use std::path::{Path, PathBuf};
@@ -16,6 +18,8 @@ use rocket::response::NamedFile;
 use rocket_contrib::Template;
 
 use sass_rs::{compile_file, Options};
+
+use category::Category;
 
 #[derive(Serialize)]
 struct Context {
@@ -42,11 +46,11 @@ fn files(file: PathBuf) -> Option<NamedFile> {
 }
 
 #[get("/<category>")]
-fn category(category: String) -> Template {
-    let page = format!("{}/index", category.as_str()).to_string();
+fn category(category: Category) -> Template {
+    let page = category.index();
     let title = format!("Rust - {}", page).to_string();
     let context = Context {
-        page: category,
+        page: category.name().to_string(),
         title: title,
         parent: "layout".to_string(),
     };
@@ -54,8 +58,8 @@ fn category(category: String) -> Template {
 }
 
 #[get("/<category>/<subject>", rank = 2)]
-fn subject(category: String, subject: String) -> Template {
-    let page = format!("{}/{}", category.as_str(), subject.as_str()).to_string();
+fn subject(category: Category, subject: String) -> Template {
+    let page = format!("{}/{}", category.name(), subject.as_str()).to_string();
     let title = format!("Rust - {}", page).to_string();
     let context = Context {
         page: subject,
