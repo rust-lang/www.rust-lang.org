@@ -1,16 +1,14 @@
+use std::path::PathBuf;
+
 use rocket::http::RawStr;
 use rocket::request::FromParam;
 
-const CATEGORIES: [&str; 8] = [
-    "community",
-    "contribute",
-    "governance",
-    "learn",
-    "policies",
-    "production",
-    "tools",
-    "what",
-];
+fn is_category(name: &str) -> bool {
+    let mut path = PathBuf::from("templates");
+    path.push(name);
+    path.push("index.hbs");
+    path.exists()
+}
 
 pub struct Category {
     name: String,
@@ -33,7 +31,7 @@ impl<'r> FromParam<'r> for Category {
         let res = param.url_decode();
         match res {
             Ok(url) => {
-                if CATEGORIES.contains(&url.as_str()) {
+                if is_category(&url) {
                     Ok(Category { name: url })
                 } else {
                     Err(RawStr::from_str("no such category"))
