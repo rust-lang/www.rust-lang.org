@@ -556,24 +556,12 @@ blockquote::before {
   }
 }
 
-.text-wasm {
-  color: $green;
-}
-
 .wasm {
   .wasm-logo {
     img{
       width: 100%;
       height: 100%;
     }
-  }
-  .subtitle {
-    font-size: 2rem;
-  }
-
-  .title {
-    font-size: 3rem;
-    font-weight: bold;
   }
 
   .button {
@@ -583,11 +571,6 @@ blockquote::before {
 
 .centered {
   text-align: center;
-}
-
-.wasm-link {
-  color: $green;
-  text-decoration: none;
 }
 
 .wasm-img {
@@ -627,32 +610,6 @@ blockquote::before {
       }
 
       margin-bottom: 40px;
-    }
-
-  }
-}
-
-#wasm-team {
-  img {
-    height: 10%;
-    width: 10%;
-  }  
-}
-
-#wasm-friends {
-  .row {
-    margin-bottom: 2%;
-  }
-
-  blockquote {
-    transform: skewY(-12deg)
-  }
-
-  .logo {
-    margin-top: 15%;
-    img {
-      width: 50%;
-      height:50%;
     }
   }
 }
