@@ -25,7 +25,7 @@ impl Category {
 }
 
 impl<'r> FromParam<'r> for Category {
-    type Error = &'r RawStr;
+    type Error = String;
 
     fn from_param(param: &'r RawStr) -> Result<Self, Self::Error> {
         let res = param.url_decode();
@@ -34,10 +34,10 @@ impl<'r> FromParam<'r> for Category {
                 if is_category(&url) {
                     Ok(Category { name: url })
                 } else {
-                    Err(RawStr::from_str("no such category"))
+                    Err(format!("No category called <{}>", url))
                 }
             }
-            Err(e) => Err(RawStr::from_str("url illegal in utf-8")),
+            Err(e) => Err(format!("URL illegal in utf-8 ({})", e)),
         }
     }
 }
