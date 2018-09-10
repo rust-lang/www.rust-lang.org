@@ -13,6 +13,10 @@ body {
   font-family: $body-font;
 }
 
+code {
+  background-color: rgba(127, 127, 127, 0.25);
+}
+
 header h1, section h2 {
   font-family: $header-font;
   z-index: 999999;
@@ -80,6 +84,10 @@ span.brand img {
 
 .domain-icon {
   min-height: 100px;
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
 
 .domains {
@@ -91,7 +99,7 @@ span.brand img {
 #contribute-code h3, #contribute-talk h3, #contribute h3,
 #community-events h3, #tools-code-quality h3, #learn-use h3,
 #embedded-why-rust h3, #embedded-get-started h3 {
-  font-weight: 800; 
+  font-weight: 800;
   font-size: 1.8em;
 }
 
@@ -508,8 +516,6 @@ blockquote::before {
 }
 
 #embedded-project-gallery {
-  background-color: $purple;
-  color: white;
   iframe {
     width: 100%;
     height: 250px;
@@ -520,24 +526,14 @@ blockquote::before {
 }
 
 #embedded-why-rust {
-  background-color: $green;
-  color: white;
-  a {
-    color: $purple;
-  }
   img {
     width: 40%;
-  } 
+  }
 }
 
 #embedded-get-started {
-  background-color: $red;
-  color: white;
   img {
     width: 40%;
-  }
-  a {
-    color: $yellow;
   }
 }
 
@@ -548,7 +544,6 @@ blockquote::before {
 }
 
 #embedded-friends {
-  background-color: $yellow;
   img {
     width: 80%;
     background-color: white;
@@ -556,60 +551,37 @@ blockquote::before {
   }
 }
 
-.wasm {
-  .wasm-logo {
-    img{
-      width: 100%;
-      height: 100%;
-    }
+.background-green {
+  background-color: $green;
+  color: white;
+  a {
+    color: $purple;
   }
-
-  .button {
-    margin-right: 10px;
-  } 
 }
 
-.centered {
-  text-align: center;
+.background-yellow {
+  background-color: $yellow;
 }
 
-.wasm-img {
-  width: 10%;
-  height: 10%;
+.background-purple {
+  background-color: $purple;
+  color: white;
 }
 
-#wasm-tools {
-   // Card layout
-   .card {
-    border-radius: 4px;
-    border: solid 1px #cccccc;
-    padding: 20px;
-    margin-bottom: 30px;
-    text-align: left;
-    min-height: 250px;
+.background-red {
+  background-color: $red;
+  color: white;
+  a {
+    color: $yellow;
+  }
+}
 
-    .card-header {
-      margin-bottom: 20px;
-      font-weight: bold;
-      font-size: 2rem;
-    }
-
-    .card-content {
-      font-weight: 300;
-      text-align: left;
-      margin-bottom: 20px;
-    }
-
-    .card-footer {
-      bottom: 0;      
-      .icon {
-        text-align: right;
-        img {
-          height: 30px;
-        }              
-      }
-
-      margin-bottom: 40px;
-    }
+#wasm-production-use {
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  p.attribution a {
+    font-style: italic;
   }
 }
