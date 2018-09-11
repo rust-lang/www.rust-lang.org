@@ -190,6 +190,10 @@ footer .attribution {
   padding-top: 30px;
 }
 
+footer .languages {
+  color: $gray
+}
+
 blockquote {
   font-family: $header-font;
   font-size: 2em;
@@ -614,3 +618,6 @@ blockquote::before {
   }
 }
 
+#ferris-error {
+  width: 80%;
+}
