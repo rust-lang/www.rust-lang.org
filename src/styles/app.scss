@@ -13,6 +13,10 @@ body {
   font-family: $body-font;
 }
 
+code {
+  background-color: rgba(127, 127, 127, 0.25);
+}
+
 header h1, section h2 {
   font-family: $header-font;
   z-index: 999999;
@@ -80,6 +84,10 @@ span.brand img {
 
 .domain-icon {
   min-height: 100px;
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
 
 .domains {
@@ -513,8 +521,6 @@ blockquote::before {
 }
 
 #embedded-project-gallery {
-  background-color: $purple;
-  color: white;
   iframe {
     width: 100%;
     height: 250px;
@@ -525,24 +531,14 @@ blockquote::before {
 }
 
 #embedded-why-rust {
-  background-color: $green;
-  color: white;
-  a {
-    color: $purple;
-  }
   img {
     width: 40%;
-  } 
+  }
 }
 
 #embedded-get-started {
-  background-color: $red;
-  color: white;
   img {
     width: 40%;
-  }
-  a {
-    color: $yellow;
   }
 }
 
@@ -553,7 +549,6 @@ blockquote::before {
 }
 
 #embedded-friends {
-  background-color: $yellow;
   img {
     width: 80%;
     background-color: white;
@@ -561,6 +556,41 @@ blockquote::before {
   }
 }
 
+.background-green {
+  background-color: $green;
+  color: white;
+  a {
+    color: $purple;
+  }
+}
+
+.background-yellow {
+  background-color: $yellow;
+}
+
+.background-purple {
+  background-color: $purple;
+  color: white;
+}
+
+.background-red {
+  background-color: $red;
+  color: white;
+  a {
+    color: $yellow;
+  }
+}
+
+#wasm-production-use {
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  p.attribution a {
+    font-style: italic;
+  }
+}
+    
 #cli-pitch,
 #cli-features {
   .domain-icon {

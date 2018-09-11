@@ -1,9 +1,284 @@
 {{#*inline "page"}}
 
-<section>
-  <h1>Web Assembly (WASM)</h1>
+<header>
+  <div class="container">
+    <h1>WebAssembly</h1>
+  </div>
+</header>
+
+<section id="wasm-why" class="background-purple">
+  <div class="container">
+    <header>
+      <h2>Why Rust and WebAssembly?</h2>
+      <div class="highlight highlight-yellow"></div>
+    </header>
+    <div class="row">
+      <div class="three columns">
+        <div class="domain-icon">
+          <img src="/static/images/gears.svg" alt="?" />
+          <h3>Reliable Performance</h3>
+        </div>
+        <p>
+          No unpredictable garbage collection pauses. No JIT compiler
+          performance cliffs. Just low-level control coupled with high-level
+          ergonomics.
+        </p>
+      </div>
+      <div class="three columns">
+        <div class="domain-icon">
+          <img src="/static/images/microscope.svg" alt="?" />
+          <h3>Small Code Size</h3>
+        </div>
+        <p>
+          Small code size means faster page loads. Rust-generated
+          <code>.wasm</code> doesn't include extra bloat, like a garbage
+          collector. Advanced optimizations and tree shaking remove dead code.
+        </p>
+      </div>
+      <div class="three columns">
+        <div class="domain-icon">
+          <img src="/static/images/handshake.svg" alt="Handshake" />
+          <h3>JavaScript Integration</h3>
+        </div>
+        <p>
+          Do <u>not</u> rewrite your whole code base, just surgically
+          replace hot code paths with Rust-generated WebAssembly.
+        </p>
+      </div>
+      <div class="three columns">
+        <div class="domain-icon">
+          <img src="/static/images/luggage.svg" alt="?" />
+          <h3>Modern Amenities</h3>
+        </div>
+        <p>
+          A lively ecosystem of crates and libraries to help you hit the
+          ground running. Expressive, zero-cost abstractions. A welcoming
+          community.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="wasm-get-started" class="background-green">
+  <div class="container">
+    <header>
+      <h2>Get Started!</h2>
+      <div class="highlight highlight-purple"></div>
+    </header>
+    <div class="row">
+      <div class="four columns">
+        <div class="domain-icon">
+          <a href="https://rustwasm.github.io/book">
+            <img src="/static/images/reference.svg" alt="Books" />
+            <h3>The Rust and WebAssembly Book</h3>
+          </a>
+        </div>
+        <p>
+          Learn how to build, debug, profile, and deploy Rust and WebAssembly
+          applications!
+        </p>
+      </div>
+      <div class="four columns">
+        <div class="domain-icon">
+          <a href="https://webassembly.org/">
+            <img src="https://webassembly.org/css/webassembly.svg" alt="WebAssembly Logo" />
+          </a>
+        </div>
+        <p>
+          Learn more about the fast, safe, and open virtual machine called
+          WebAssembly, and read its standard.
+        </p>
+      </div>
+      <div class="four columns">
+        <div class="domain-icon">
+          <a href="https://developer.mozilla.org/en-US/docs/WebAssembly">
+            <img src="/static/images/mdn-logo.svg"/>
+          </a>
+        </div>
+        <p>
+          Learn more about WebAssembly on the Mozilla Developer Network.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="wasm-plays-well-with-javascript" class="background-red">
+  <div class="container">
+    <header>
+      <h2>Plays Well With JavaScript</h2>
+      <div class="highlight highlight-yellow"></div>
+    </header>
+    <div class="row">
+      <div class="four columns">
+        <div class="domain-icon">
+          <a href="https://developer.mozilla.org/en-US/docs/WebAssembly">
+            <h3>Augment, not Replace</h3>
+          </a>
+        </div>
+        <p>
+          The dream of WebAssembly is not to kill JavaScript but to work
+          alongside of it, to help super charge processing-heavy or low-level
+          tasks that would benefit from manual memory management or expression
+          in a systems-level language.
+        </p>
+      </div>
+      <div class="four columns">
+        <div class="domain-icon">
+          <a href="https://developer.mozilla.org/en-US/docs/WebAssembly">
+            <h3>Works with Familiar Toolchains</h3>
+          </a>
+        </div>
+        <p>
+          All of the Rust WebAssembly tooling has been designed with a Web
+          developer’s pre-existing toolchain in mind. You can publish Rust
+          generated WebAssembly packages to package registries like npm, bundle
+          them for production with all the popular bundlers, and maintain them
+          with tools like <code>npm audit</code> and Greenkeeper.
+        </p>
+      </div>
+      <div class="four columns">
+        <div class="domain-icon">
+          <a href="https://developer.mozilla.org/en-US/docs/WebAssembly">
+            <h3>Data Structure Bindings</h3>
+          </a>
+        </div>
+        <p>
+          WebAssembly only supports a small set of primitives, but Rust
+          WebAssembly tooling is designed to help you write maintainable code with
+          abstractions and types that you already know, seamlessly generating
+          binding code between Rust, WebAssembly, and JavaScript &mdash; so you
+          don’t have to!
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="wasm-production-use">
+  <div class="container">
+    <header>
+      <h2>Production Use</h2>
+      <div class="highlight highlight-green"></div>
+    </header>
+    <div class="testimonials">
+      <div class="testimonial row">
+        <div class="four columns">
+          <a href="https://blogs.dropbox.com/tech/2018/06/building-better-compression-together-with-divans/">
+            <img src="https://ucc07b4a6f7dce2bca4c5ff762a1.previews.dropboxusercontent.com/p/thumb/AAJGSN9OJyk-hrFWzjySLSC_RH-a57cOouIjHMBPMhEQmqqrZFJsA6oJSw9Pxqoa_WE4-Lc_RYZ08GzhusUlq9d2LviOQduExeH3yJJ0GlVxUXSED9J1nG2KHovqtP9DBvFuEWY1GdTVJVuwJNYsr6JeQF4nTYxtowaGeJuv4FMb6Z6EeglqUcq6I8KdMFWxUG7gzsBN7GEHT4LIU5XwMLfmuu46bKa562S3EmVUYJtwZQ/p.png"/>
+          </a>
+        </div>
+        <div class="eight columns">
+          <blockquote>
+            [Rust’s] properties make it easy to embed the DivANS codec in a
+            webpage with WASM, as shown above.
+          </blockquote>
+          <p class="attribution">
+            &ndash; Daniel Reiter Horn and Jongmin Baek,
+            <a href="https://blogs.dropbox.com/tech/2018/06/building-better-compression-together-with-divans/">
+              Building Better Compression Together with DivANS
+            </a>
+          </p>
+        </div>
+      </div>
+      <div class="testimonial row">
+        <div class="eight columns">
+          <blockquote>
+            The JavaScript implementation [of the <code>source-map</code> library]
+            has accumulated convoluted code in the name of performance, and we
+            replaced it with idiomatic Rust. Rust does not force us to choose
+            between clearly expressing intent and runtime performance.
+          </blockquote>
+          <p class="attribution">
+            &ndash; Nick Fitzgerald,
+            <a href="https://hacks.mozilla.org/2018/01/oxidizing-source-maps-with-rust-and-webassembly/">
+              Oxidizing Source Maps with Rust and WebAssembly
+            </a>
+          </p>
+        </div>
+        <div class="four columns">
+          <a href="https://hacks.mozilla.org/2018/01/oxidizing-source-maps-with-rust-and-webassembly/"
+             style="display: block;">
+            <img src="https://2r4s9p1yi1fa2jd7j43zph8r-wpengine.netdna-ssl.com/files/2018/01/first.pause_.at_.exception.scalajs.png"/>
+          </a>
+        </div>
+      </div>
+      <div class="testimonial row">
+        <div class="four columns">
+          <a href="https://mnt.io/2018/08/22/from-rust-to-beyond-the-webassembly-galaxy/">
+            <img src="https://mntio.files.wordpress.com/2018/07/gutenberg_logo.png"/>
+          </a>
+        </div>
+        <div class="eight columns">
+          <blockquote>
+            The Rust part for WebAssembly plus the Javascript part totals 313
+            lines of code. This is a tiny surface of code to review and to
+            maintain compared to writing a Javascript parser from scratch… The
+            WebAssembly binary is in average 86 times faster than the actual
+            Javascript implementation… So not only it is safer, but it is faster
+            than Javascript in this case. And it is only 300 lines of code.
+          </blockquote>
+          <p class="attribution">
+            &ndash; Ivan Enderlin,
+            <a href="https://mnt.io/2018/08/22/from-rust-to-beyond-the-webassembly-galaxy/">
+              Parsing the WordPress Gutenberg Post Format in Rust and WebAssembly
+            </a>
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="wasm-friends">
+  <div class="container">
+    <header>
+      <h2>Friends</h2>
+      <div class="highlight highlight-red"></div>
+    </header>
+    <div class="row">
+      <div class="four columns">
+        <div class="domain-icon">
+          <a href="https://mozilla.org">
+            Mozilla
+          </a>
+        </div>
+      </div>
+      <div class="four columns">
+        <div class="domain-icon">
+          <a href="https://dropbox.com/">
+            Dropbox
+          </a>
+        </div>
+      </div>
+      <div class="four columns">
+        <div class="domain-icon">
+          <a href="https://wordpress.com/">
+            WordPress
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="four columns">
+        <div class="domain-icon">
+          <a href="https://webpack.js.org/">
+            Webpack
+          </a>
+        </div>
+      </div>
+      <div class="four columns">
+        <div class="domain-icon">
+          <a href="https://parceljs.org/">
+            Parcel
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 {{/inline}}
 {{~> (parent)~}}
-
