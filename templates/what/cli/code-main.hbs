@@ -1,0 +1,9 @@
+use quicli::prelude::*;
+
+fn main() -> CliResult {
+    let args = Cli::from_args()?:
+    read_file(&args.file)?
+        .lines()
+        .take(args.count)
+        .for_each(|line| println!("{}", line));
+}

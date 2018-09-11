@@ -98,8 +98,9 @@ span.brand img {
 .domains h3, #whitepapers h3, #using-the-trademarks h3,
 #contribute-code h3, #contribute-talk h3, #contribute h3,
 #community-events h3, #tools-code-quality h3, #learn-use h3,
-#embedded-why-rust h3, #embedded-get-started h3 {
-  font-weight: 800;
+#embedded-why-rust h3, #embedded-get-started h3,
+#cli-features h3, #cli-pitch h3 {
+  font-weight: 800; 
   font-size: 1.8em;
 }
 
@@ -587,6 +588,63 @@ blockquote::before {
   }
   p.attribution a {
     font-style: italic;
+  }
+}
+    
+#cli-pitch,
+#cli-features {
+  .domain-icon {
+    display: block;
+    padding-bottom: 0;
+
+    img {
+      max-width: 90px;
+      height: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      padding-bottom: 1em;
+      opacity: 0.9;
+    }
+  }
+}
+
+#cli-pitch {
+  background-color: $green;
+  color: white;
+  
+  .button-secondary {
+    border-color: #fff;
+  }
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+#cli-features {
+  background-color: $red;
+  color: white;
+
+  a {
+    color: $yellow;
+  }
+  
+  h3 code {
+    background-color: transparent;
+    border: none;
+    word-break: break-word;
+    white-space: pre-line;
+  }
+}
+
+#cli-use-it {
+  background-color: $purple;
+  color: white;
+  
+  pre {
+    color: black;
   }
 }
 

@@ -1,7 +1,8 @@
 {{#*inline "page"}}
 
-<section role="main">
-  <h1>Write Solid Command Line Applications</h1>
+<header>
+  <div class="container">
+    <h1>Command Line Applications</h1>
 
   <p class="teaser">
     {{!-- Failed tries: - Get started quickly… - Best practices by default∞ - Easily distributable tools that are just a single
@@ -31,72 +32,192 @@
       </p>
     </article>
   </div>
+</header>
 
-  <article>
-    <h2>Rust CLI application in production</h2>
-
-    <div>
-      <h3>Sentry's CLI</h3>
-      <blockquote>"Rust is awesome and fun and you should use it"</blockquote>
-      <p>
-        <a href="https://www.youtube.com/watch?v=2Xu6EdEBa5E">Watch Armin Ronacher's talk at PolyConf 17</a>
-      </p>
-    </div>
-  </article>
-
-  <article>
-
-    <div class="three-boxes">
-      <article class="box">
-        <h2>Simple Argument Parsing</h2>
-        <pre><code>#[derive(Clap)]
-struct Cli {
-    file: PathBuf,
-    #[clap(short="n")]
-    num: i32,
-}
-
-fn main() -> Result<(), _> {
-    let args = Cli::from_args();
-    let file = std::fs::read_string(&args.file)?;
-    for line in file.lines().take(args.num) {
-        println!("{}", line);
-    }
-}</code></pre>
+<section id="cli-pitch">
+  <div class="container">
+    <div class="row">
+      <article class="four columns box">
+        <header class="domain-icon">
+          <img src="/static/images/cli-is-no-rocket-science.svg" alt="CLI apps are no rocket science"/>
+          <h3>Easy start</h3>
+        </header>
+        <p class="box-content">
+          Learn Rust by writing a command line tools.
+          Implementing internal tools is also a great way to introduce Rust to your team.
+        </p>
+        <p class="button button-secondary">
+          <a href="https://rust-lang-nursery.github.io/cli-wg/tutorial/intro.html">Learn more &rarr;</a>
+        </p>
       </article>
-      <article class="box">
-        <h2>Configuration handling</h2>
-        <pre><code>#[derive(Confy)]
-struct MyConfig {
-  number: i32,
-  name: String,
-}
-
-fn main() {
-  let cfg: MyConfig = match confy::load("my_app") {
-    Some(cfg) => cfg,
-    None => confy::create(("my_app", MyConfig {
-      /* ... initialise default ... */
-    }),
-  };
-
-  println!("{} > {}", cfg.name, cfg.number);
-}</code></pre>
+      <article class="four columns box">
+        <header class="domain-icon">
+          <img src="/static/images/cli-packaging.svg" alt="A package"/>
+          <h3>Easy Distribution</h3>
+        </header>
+        <p class="box-content">
+          Compile everything down to a single binary, no need for your users to have a runtime installed.
+        </p>
+        <p class="button button-secondary">
+          <a href="https://crate-ci.github.io/release.html">Learn more &rarr;</a>
+        </p>
       </article>
-
-      <article class="box">
-        <h2>Bringing it all together</h2>
-        <pre><code>extern crate skynet;
-
-fn main() {
-  // ...
-}
-      </code></pre>
+      <article class="four columns box">
+        <header class="domain-icon">
+          <img src="/static/images/cli-rustc-approved.svg" alt="Benefit from Rust's guarantees"/>
+          <h3>Solid tools</h3>
+        </header>
+        <p class="box-content">
+          Even if all you want to write is a short one-off script:
+          You can be confident it's fast, easily testable,
+          and gives useful error messages.
+        </p>
+        <p class="button button-secondary">
+          <a href="https://www.rust-lang.org">Learn more &rarr;</a>
+        </p>
       </article>
     </div>
+  </div>
+</section>
 
+<section id="cli-quotes">
+  <div class="container">
+    <article>
+      <h2>Rust CLI application in production</h2>
 
-  </article>
+      <div>
+        <h3>Sentry's CLI</h3>
+        <blockquote>"Rust is awesome and fun and you should use it"</blockquote>
+        <p>
+          <a href="https://www.youtube.com/watch?v=2Xu6EdEBa5E">Watch Armin Ronacher's talk at PolyConf 17</a>
+        </p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="cli-features">
+  <div class="container">
+    <header>
+      <h2>Why Rust for CLI development?</h2>
+      <div class="highlight highlight-purple"></div>
+    </header>
+    <div class="row">
+      <article class="four columns box">
+        <header class="domain-icon">
+          <img src="/static/images/cli-signals.svg" alt=""/>
+          <h3>Signal handling</h3>
+        </header>
+        <p>
+          Handle signals from your operating system with ease with a range of special libraries, designed for various use-cases.
+          <a href="https://rust-lang-nursery.github.io/cli-wg/in-depth/signals.html">Read more</a>
+        </p>
+      </article>
+      <article class="four columns box">
+        <header class="domain-icon">
+          <img src="/static/images/cli-app-structure.svg" alt=""/>
+          <h3>Argument parsing</h3>
+        </header>
+        <p>
+          Easily parse command line arguments via a range of crates and the ecosystems that are built around them. Never worry about invalid or out-of-range data in your CLI again.
+          <a href="https://rust-lang-nursery.github.io/cli-wg/tutorial/cli-args.html">Read more</a>
+        </p>
+      </article>
+      <article class="four columns box">
+        <header class="domain-icon">
+          <img src="/static/images/cli-exit.svg"/>
+          <h3>Exit codes</h3>
+        </header>
+        <p>
+          Let your application quit correctly by returning the standard exit codes that are expected of it. Utility crates exist to make this process as easy as possible for you.
+          <a href="https://rust-lang-nursery.github.io/cli-wg/in-depth/exit-code.html">Read more</a>
+        </p>
+      </article>
+    </div>
+    <div class="row">
+      <article class="four columns box">
+        <header class="domain-icon">
+          <img src="/static/images/cli-logging.svg" alt=""/>
+          <h3>Adaptable logging</h3>
+        </header>
+        <p>
+          Be sure of what your application is doing
+          by injecting quick and concise log statements.
+          <a href="https://rust-lang-nursery.github.io/cli-wg/in-depth/human-communication.html">Read more</a>
+        </p>
+      </article>
+      <article class="four columns box">
+        <header class="domain-icon">
+          <img src="/static/images/cli-man.svg" alt=""/>
+          <h3>Manuals? Done.</h3>
+        </header>
+        <p>
+          Generate manual pages for your application simply by using a command line argument parser. There's no extra effort required on your part. Simple package the generated files to your user and it's all done.
+          <a href="https://rust-lang-nursery.github.io/cli-wg/in-depth/docs.html">Read more</a>
+        </p>
+      </article>
+      <article class="four columns box">
+        <header class="domain-icon">
+          <img src="/static/images/cli-configs.svg" alt=""/>
+          <h3>Handle config files</h3>
+        </header>
+        <p>
+          Handle configuration files without worrying about what platform you're running on: request a config file, and a crate will deal with namespaces and formats for you.
+          <a href="https://rust-lang-nursery.github.io/cli-wg/in-depth/config-files.html">Read more</a>
+        </p>
+      </article>
+    </div>
+    <div class="row">
+      <article class="four columns box">
+        <header class="domain-icon">
+          <img src="/static/images/cli-testing.svg" alt=""/>
+          <h3>Integration testing</h3>
+        </header>
+        <p>
+          Write tests that execute your CLI app
+          and concisely exercise its edge-cases.
+          <a href="https://rust-lang-nursery.github.io/cli-wg/tutorial/testing.html">Read more</a>
+        </p>
+      </article>
+      <article class="four columns box">
+        <header class="domain-icon">
+          <img src="/static/images/cli-pipe.svg" alt=""/>
+          <h3><code>cat data | app</code></h3>
+        </header>
+        <p>
+          In addition to talking to humans,
+          the Rust ecosystem has great tools to help you talk to machines as well.
+          <a href="https://rust-lang-nursery.github.io/cli-wg/in-depth/machine-communication.html">Read more</a>
+        </p>
+      </article>
+      <article class="four columns box">
+        <header class="domain-icon">
+          <img src="/static/images/cli.svg" alt=""/>
+          <h3>Interactive</h3>
+        </header>
+        <p>
+          Easily show progress indicators and ask for user input.
+          <a href="https://rust-lang-nursery.github.io/cli-wg/in-depth/human-communication.html">Read more</a>
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="cli-use-it">
+  <div class="container">
+    <div class="row">
+      <article class="six columns box">
+        <h2>Define your inputs</h2>
+        <pre><code>{{> what/cli/code-inputs }}</code></pre>
+      </article>
+
+      <article class="six columns box">
+        <h2>Write your tool</h2>
+        <pre><code>{{> what/cli/code-main }}</code></pre>
+      </article>
+    </div>
+  </div>
 </section>
 
 {{/inline}} {{~> (parent)~}}

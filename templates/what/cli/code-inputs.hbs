@@ -1,0 +1,7 @@
+/// Read some lines of a file
+#[derive(Clap)]
+struct Cli {
+    file: PathBuf,
+    #[clap(short="n")]
+    num: i32,
+}
