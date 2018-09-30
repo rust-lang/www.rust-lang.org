@@ -9,23 +9,22 @@
 <!-- TODO looping video header that autoplays and that includes clips of different embedded projects -->
 <!-- like the one in https://www.patreon.com/ -->
 <!-- cliking the header leads to a community maintained gallery of projects -->
-<section id="embedded-project-gallery" class="background-purple">
+<section id="embedded-showcase-gallery" class="background-purple">
   <div class="container">
     <header>
-      <h2>Project Gallery</h2>
+      <h2>Showcase</h2>
       <div class="highlight highlight-yellow"></div>
     </header>
     <div class="row">
       <div class="six columns">
-        <p>A mote of dust suspended in a sunbeam colonies. The carbon in our apple pies cosmic fugue a very small stage in a vast cosmic arena. Rich in heavy atoms, circumnavigated Sea of Tranquility worldlets Apollonius of Perga a billion trillion a very small stage in a vast cosmic arena.</p>
-        <a href="#" class="button button-secondary">See More Projects</a>
+        "I was so excited when I came across Rust, from Mozilla. Rust is a new programming language, with the tag line 'safe, fast, concurrent - pick three'. It also has an assured future, with a powerful, committed user community."
+
+        <p><a href="https://github.com/rust-embedded/awesome-embedded-rust" class="button button-secondary">See More</a>
       </div>
       <div class="six columns">
-        <iframe
-          src="https://www.youtube.com/embed/L4fB0rVJI8g?rel=0"
-          frameborder="0"
-          allow="autoplay; encrypted-media"
-          allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/224912526?title=0&byline=0&portrait=0" width="500" height="281"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <p><a href="https://vimeo.com/224912526">Securing the future, with Rust</a> from <a href="https://vimeo.com/cambridgeconsultants">Cambridge Consultants</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -33,7 +32,7 @@
 <section id="embedded-why-rust" class="background-green">
   <div class="container">
     <header>
-      <h2>Why Rust for embedded development?</h2>
+      <h2>Why Rust for Embedded Development?</h2>
       <div class="highlight highlight-purple"></div>
     </header>
     <div class="row">
@@ -43,14 +42,14 @@
           <h3>Powerful static analysis</h3>
         </div>
         <p>
-          Rust type system lets you enforce pin and peripheral configuration at compile time. Its ownership system guarantees that resources won't be used by unintended parts of the application.
+          Rust's type system lets you enforce pin and peripheral configuration at compile time. Its ownership system guarantees that resources won't be used by unintended parts of the application.
           <a href="https://github.com/rust-lang-nursery/embedded-wg/issues/118">Learn more</a>
         </p>
       </div>
       <div class="four columns" id="flexible-memory-management">
         <div class="domain-icon">
           <img src="/static/images/ram-memory.svg" alt="A RAM stick"/>
-          <h3>Flexible memory management</h3>
+          <h3>Flexible Memory Management</h3>
         </div>
         <p>
           Dynamic memory (heap) allocation is optional. Use a global allocator and dynamic data structures from the Rust standard library. Or leave out heap allocation altogether and statically allocate everything.
@@ -60,10 +59,10 @@
       <div class="four columns" id="safe-concurrency">
         <div class="domain-icon">
           <img src="/static/images/gears.svg" alt="Gears"/>
-          <h3>Safe concurrency</h3>
+          <h3>Safe Concurrency</h3>
         </div>
         <p>
-          Rust memory safety holds regardless of the concurrency framework. Be it threads with explicit shared memory or tasks with message passing.
+          Rust's memory safety holds regardless of the concurrency framework. Be it threads with explicit shared memory or tasks with message passing.
           <a href="https://github.com/rust-lang-nursery/embedded-wg/issues/124">Learn more</a>
         </p>
       </div>
@@ -91,11 +90,12 @@
       </div>
       <div class="four columns">
         <div class="domain-icon">
-          <img src="/static/images/question.svg" alt="?" />
-          <h3>$RESERVED</h3>
+          <img src="/static/images/cli-rustc-approved.svg" alt="Shield Logo" />
+          <h3>Community Driven</h3>
         </div>
         <p>
-          We'll think of something to put here...
+          As part of the Rust open source project, support for embedded systems is driven by a best-in-class open source community, with support from commercial partners.
+          <a href="https://github.com/rust-embedded/wg">Learn more</a>
         </p>
       </div>
     </div>
@@ -113,7 +113,7 @@
         <div class="domain-icon">
           <img src="/static/images/chip1.svg" alt="DIP-6 package"/>
           <a href="https://japaric.github.io/discovery">
-            <h3>The Discovery book</h3>
+            <h3>The Discovery Book</h3>
           </a>
         </div>
         <p>
@@ -124,18 +124,18 @@
         <div class="domain-icon">
           <img src="/static/images/chip2.svg" alt="TFQP-16 package"/>
           <a href="https://book.rust-embedded.org/">
-            <h3>The embedded Rust book</h3>
+            <h3>The Embedded Rust Book</h3>
           </a>
         </div>
         <p>
-          Already familiar with Embedded development? Make the switch to Rust
+          Already familiar with Embedded development? Make the switch to Rust.
         </p>
       </div>
       <div class="four columns" id="embedonomicon">
         <div class="domain-icon">
           <img src="/static/images/chip3.svg" alt="BGA package" />
           <a href="https://embedonomicon.rust-embedded.org/">
-            <h3>The embedonomicon</h3>
+            <h3>The Embedonomicon</h3>
           </a>
         </div>
         <p>
@@ -155,6 +155,35 @@
     <!-- Testimonials section -->
     <!-- Here we want to show *who* is using Rust and *what* they are building -->
     <div class="testimonials">
+
+      <div class="testimonial row">
+        <div class="four columns">
+          <a href="https://www.sensirion.com/">
+            <img alt="Sensirion logo" src="https://pbs.twimg.com/profile_images/704935237713793024/Rs1Bvdef_400x400.jpg"/>
+          </a>
+        </div>
+        <div class="eight columns" id="Sensirion-testimonial">
+          <blockquote>
+            At Sensirion we recently used Rust to create an embedded demonstrator for Sensirion's <a href="https://sensirion-automotive.com/products#PM2_5">Particulate Matter Sensor</a>. Due to the easy cross-compilation and the availability of many high quality crates on crates.io <b>we quickly ended up with a fast and robust demonstrator.</b>
+          </blockquote>
+          <p class="attribution">- Raphael Nestler</p>
+        </div>
+      </div>
+
+      <div class="testimonial row">
+        <div class="eight columns"id="grieg-testimonial">
+          <blockquote>
+            At <a href="https://ael.co.uk">Airborne Engineering Ltd</a> we recently used Rust to write an Ethernet bootloader, <a href="https://github.com/airborneengineering/blethrs">blethrs</a>, for our in-house data acquisition system. <b>Rust is a promising language and we're excited to use it for our future projects, embedded and otherwise.</b>
+          </blockquote>
+          <p class="attribution">- Adam Grieg, Engineer</p>
+        </div>
+        <div class="four columns">
+          <a href="https://ael.co.uk">
+            <img alt="Airborne Engineering Ltd logo" src="https://pbs.twimg.com/profile_images/491853758502936576/WhO8vRry_400x400.png"/>
+          </a>
+        </div>
+      </div>
+
       <div class="testimonial row">
         <div class="four columns">
           <a href="https://49nord.de/">
@@ -163,25 +192,28 @@
         </div>
         <div class="eight columns" id="brinkmann-testimonial">
           <blockquote>
-            Rust makes our customers happy, as well as our engineers.
+            [Rust] enables us to ship software faster and more correct than we thought possible. Thanks to Rust, we can take memory safety for granted, while other benefits of a zero-overhead language with a sophisticated type system help us develop maintainable software.
+
+            <b>Rust makes our customers happy, as well as our engineers.</b>
           </blockquote>
           <p class="attribution">- Marc Brinkmann</p>
         </div>
       </div>
+
       <div class="testimonial row">
         <div class="eight columns"id="arbuzov-testimonial">
           <blockquote>
-            We think it's really cool that we can use a modern nice language in the embedded space where usually there's no alternative to C/C++
+            <b>We think it's really cool that we can use a modern nice language in the embedded space</b> where usually there's no alternative to C/C++
           </blockquote>
           <p class="attribution">- Aleksei Arbuzov</p>
         </div>
-
         <div class="four columns">
           <a href="http://www.termt.eu/">
             <img alt="49nord logo" src="https://i0.wp.com/embeddedsecuritynews.com/wp-content/uploads/2017/02/terminal-technologies-logo.png"/>
           </a>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -197,32 +229,25 @@
       <div class="highlight highlight-red"></div>
     </header>
     <div class="row">
+
       <div class="four columns">
         <div class="domain-icon">
-          <a href="http://www.otis.com">
-            <img alt="Otis Elevator Company logo" src="https://upload.wikimedia.org/wikipedia/en/2/2e/Otis_Elevator_Company_Logo.jpg"/>
-            <!-- TODO need more details about how they are using Rust -->
+          <a href="https://www.cambridgeconsultants.com/home">
+            <img src="/static/images/user-logos/cambridge-consultants.png" alt="Cambridge Consultants Logo">
           </a>
+          Cambridge Consultants develops embedded systems, using cutting edge technologies such as the Rust Programming Language
         </div>
       </div>
 
       <div class="four columns">
         <div class="domain-icon">
-          <a href="https://49nord.de/img/49nord-logo-blue-round.svg">
-            <img alt="49nord logo" src="https://49nord.de/img/49nord-logo-blue-round.svg"/>
-            <!-- "49nord develops safe and secure Industrial IoT hardware and applications using Rust." -->
+          <a href="http://www.ferrous-systems.com">
+            <img src="/static/images/user-logos/ferrous-logo.svg" alt="Ferrous Systems Logo">
           </a>
+          Ferrous Systems provides consulting, training, and development work for embedded systems developed in Rust
         </div>
       </div>
 
-      <div class="four columns">
-        <div class="domain-icon">
-          <a href="http://www.termt.eu/">
-            <img alt="Otis Elevator Company logo" src="https://i0.wp.com/embeddedsecuritynews.com/wp-content/uploads/2017/02/terminal-technologies-logo.png"/>
-          </a>
-            <!-- TODO need more details about how they are using Rust -->
-        </div>
-      </div>
     </div>
   </div>
 </section>
