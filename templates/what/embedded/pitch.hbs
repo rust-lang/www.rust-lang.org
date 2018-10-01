@@ -11,8 +11,9 @@
           <h3>Powerful static analysis</h3>
         </div>
         <p>
-          Rust's type system lets you enforce pin and peripheral configuration at compile time. Its ownership system guarantees that resources won't be used by unintended parts of the application.
-          <a href="https://github.com/rust-lang-nursery/embedded-wg/issues/118">Learn more</a>
+          Enforce pin and peripheral configuration at compile time. Guarantee that resources won't be used by
+          unintended parts of your application.
+          <a href="https://github.com/rust-embedded/book/issues/5">Learn more</a>
         </p>
       </div>
       <div class="four columns" id="flexible-memory-management">
@@ -21,17 +22,19 @@
           <h3>Flexible Memory Management</h3>
         </div>
         <p>
-          Dynamic memory (heap) allocation is optional. Use a global allocator and dynamic data structures from the Rust standard library. Or leave out heap allocation altogether and statically allocate everything.
+          Dynamic memory allocation is optional. Use a global allocator and dynamic data structures.
+          Or leave out the heap altogether and statically allocate everything.
           <a href="https://github.com/rust-lang-nursery/embedded-wg/issues/125">Learn more</a>
         </p>
       </div>
       <div class="four columns" id="safe-concurrency">
         <div class="domain-icon">
           <img src="/static/images/gears.svg" alt="Gears"/>
-          <h3>Safe Concurrency</h3>
+          <h3>Fearless concurrency</h3>
         </div>
         <p>
-          Rust's memory safety holds regardless of the concurrency framework. Be it threads with explicit shared memory or tasks with message passing.
+          Rust makes it impossible to accidentally share state between threads.
+          Use any concurrency approach you like, and you'll still get Rust's strong guarantees.
           <a href="https://github.com/rust-lang-nursery/embedded-wg/issues/124">Learn more</a>
         </p>
       </div>
@@ -43,7 +46,8 @@
           <h3>Interoperability</h3>
         </div>
         <p>
-          Integrate Rust into your existing C codebase or leverage an existing SDK to write a Rust application.
+          Integrate Rust into your existing C codebase or leverage an existing SDK to write a Rust
+          application.
           <a href="https://github.com/rust-lang-nursery/embedded-wg/issues/48">Learn more</a>
         </p>
       </div>
@@ -53,7 +57,8 @@
           <h3>Portability</h3>
         </div>
         <p>
-          Write a library / driver once and use it with a variety of systems ranging from very small microcontrollers to powerful SBCs.
+          Write a library or driver once, and use it with a variety of systems, ranging
+          from very small microcontrollers to powerful SBCs.
           <a href="https://github.com/rust-lang-nursery/embedded-wg/issues/119">Learn more</a>
         </p>
       </div>
