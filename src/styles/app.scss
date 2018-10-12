@@ -17,6 +17,14 @@ code {
   background-color: rgba(127, 127, 127, 0.25);
 }
 
+
+code.code-header {
+  background-color: rgba(127, 127, 127, 0.25);
+  font-size: 2rem;
+  display: inline-block;
+  margin: 0 0 3px 0;
+}
+
 header h1, section h2 {
   font-family: $header-font;
   z-index: 999999;
@@ -97,7 +105,7 @@ span.brand img {
 
 .domains h3, #whitepapers h3, #using-the-trademarks h3,
 #contribute-code h3, #contribute-talk h3, #contribute h3,
-#community-events h3, #tools-code-quality h3, #learn-use h3,
+#community-events h3, #learn-use h3,
 #embedded-why-rust h3, #embedded-get-started h3,
 #cli-features h3, #cli-pitch h3 {
   font-weight: 800; 
@@ -497,27 +505,42 @@ blockquote::before {
   }
 }
 
-#tools-code-quality {
+#tools-write {
   background-color: $purple;
   color: white;
 }
 
-#tools-ide-support {
+#tools-intro {
   background-color: $yellow;
 }
 
-#tools-build {
+#tools-debug {
   background-color: $green;
 }
 
-#tools-cross-platform {
+#tools-outro {
   background-color: $red;
   color: white;
 }
 
-#tools-debugging {
-  background-color: $purple;
+#tools-build {
+  background-color: $gray;
   color: white;
+}
+
+.tools-row {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.tools-row #tools-write-ide-prose {
+  margin-right: 10px;
+}
+
+.tools-row #tools-write-ide-img {
+  flex: none;
+  object-fit: none;
 }
 
 #embedded-project-gallery {
