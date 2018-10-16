@@ -6,61 +6,41 @@
   </div>
 </header>
 
-<section id="tools-code-quality">
+<section id="tools-intro">
+  <div class="container">
+    <p>Rust has all the development tools you need to be highly productive. Our tooling makes the experience of writing, building, and debugging code quick and friction-free.</p>
+
+    <p>Rust tools come to you. Whatever operating system, editor, or debugger you prefer, we aim to support it. Tools are configurable, with sensible defaults, meaning you can get up and going quickly, and customize tools to suit your workflow and programming style. And even if you want minimal tool support while you tinker on the command line, Rust gives you that flexibility.</p>
+
+    <p>TODO need a link here or maybe links inline for how to install and run tools</p>
+
+    <code class="code-header">rustup-init</code>
+
+    <p>The ergonomics of our tools starts when you first install Rust. Rustup is a tool for installing and managing Rust, tools, and toolchains.</p>
+  </div>
+</section>
+
+<section id="tools-write">
   <div class="container">
     <header>
-      <h2>Code Quality</h2>
+      <h2>Write</h2>
       <div class="highlight highlight-yellow"></div>
     </header>
+    <br>
+    <div class="tools-row">
+      <div id="tools-write-ide-prose">
+      <p>Rust has good and growing IDE and editor support. There are integrations available for Visual Studio Code, Eclipse, IntelliJ, Atom, Sublime Text, and more. We provide build and test integration, syntax highlighting, code completion, types and documentation, formatting, jump to definition, and more, all from your favorite editor.</p>
+      </div>
+    <img src="/static/images/ide.png" alt="'Find all references' in Visual Studio Code" id="tools-write-ide-img">
+    </div>
     <div class="row">
       <div class="six columns" id="type-systems">
-        <h3>Type System</h3>
-        <p>Another world a very small stage in a vast cosmic arena rich in mystery, descended from astronomers, gathered by gravity trillion sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam of brilliant syntheses sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam?</p>
+        <code class="code-header">cargo fmt</code>
+        <p>Easy, beautiful, configurable. Never worry about formatting code or arguing about code style.</p>
       </div>
       <div class="six columns" id="linting">
-        <h3>Linting</h3>
-        <p>Circumnavigated prime number Tunguska event, science quasar. Explorations. Euclid encyclopaedia galactica, ship of the imagination from which we spring totam rem aperiam. Tingling of the spine courage of our questions another world emerged into consciousness.</p>
-      </div>
-    </div>
-    <div class="row" id="testing">
-      <div class="four columns">
-        <h3>Testing</h3>
-        <p>A mote of dust suspended in a sunbeam cosmos worldlets prime number at the edge of forever and billions upon billions upon billions upon billions upon billions upon billions upon billions.</p>
-      </div>
-      <div class="four columns" id="code-style">
-        <h3>Code Style</h3>
-        <p>Network of wormholes sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. </p>
-      </div>
-      <div class="four columns" id="clippy">
-        <h3>Clippy</h3>
-        <p> Cosmic fugue, Orion's sword, Euclid made in the interiors of collapsing stars dispassionate extraterrestrial observer?</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="tools-ide-support">
-  <div class="container">
-    <header>
-      <h2>IDE Support</h2>
-      <div class="highlight highlight-green"></div>
-    </header>
-    <p>Intelligent beings a still more glorious dawn awaits are creatures of the cosmos, rogue radio telescope, concept of the number one Rig Veda Drake Equation preserve and cherish that pale blue dot finite but unbounded. Trillion Flatland.</p>
-  </div>
-</section>
-
-<section id="tools-pkg-mgmt">
-  <div class="container">
-    <header>
-      <h2>Package Management</h2>
-      <div class="highlight highlight-red"></div>
-    </header>
-    <div class="row">
-      <div class="eight columns">
-        <p>Drake Equation culture something incredible is waiting to be known! Dispassionate extraterrestrial observer intelligent beings not a sunrise but a galaxyrise dispassionate extraterrestrial observer cosmic fugue muse about inconspicuous motes of rock and gas culture, Cambrian explosion radio telescope?</p>
-      </div>
-      <div class="four columns">
-        <img src="/static/images/crates-logo.png" />
+        <code class="code-header">cargo doc</code>
+        <p>Quickly and easily generate documentation for your code.</p>
       </div>
     </div>
   </div>
@@ -70,31 +50,46 @@
   <div class="container">
     <header>
       <h2>Build</h2>
-      <div class="highlight highlight-yellow"></div>
+      <div class="highlight highlight-red"></div>
     </header>
-    <p>Extraordinary claims require extraordinary evidence consciousness cosmic ocean, stirred by starlight emerged into consciousness, network of wormholes, science nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
+    <div class="row">
+      <div class="four columns" id="type-systems">
+        <code class="code-header">cargo build</code>
+        <p>Cargo takes the hassle out of dependency management and building your project. Adding a dependency means adding a single line to the manifest. Build, run, test, or publish your project a single command and no extra configuration.</p>
+      </div>
+      <div class="four columns" id="linting">
+        <code class="code-header">cargo clippy</code>
+        <p>Powerful, reliable, and configurable linting; from style to safety and performance. Built with the Rust compiler, Clippy lets you catch even more bugs at compile-time.</p>
+      </div>
+      <div class="four columns" id="linting">
+        <code class="code-header">cargo +aarch64-apple-ios build</code>
+        <p>Rust runs on a multitude of platforms, from Windows, MacOS, and Linux on laptops, to IOS and Android on mobile phones, to Cortex-M micro-controllers. Rustup makes compiling for different platforms and operating systems streamlined and easy: installing platform-specific components and switching target platform are all simple commands.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<section id="tools-cross-platform">
+<section id="tools-debug">
   <div class="container">
     <header>
-      <h2>Cross Platform</h2>
-      <div class="highlight highlight-purple"></div>
+      <h2>Debug</h2>
+      <div class="highlight highlight-yellow"></div>
     </header>
-    <p>Birth cosmic fugue how far away? Vanquish the impossible Apollonius of Perga, another world! Rogue paroxysm of global death. Tesseract corpus callosum Drake Equation brain is the seed of intelligence courage of our questions! Venture laws of physics the sky calls to us Euclid Vangelis star stuff harvesting star light, across the centuries Jean-Francois Champollion across the centuries Euclid qui dolorem ipsum quia dolor sit amet. Orion's sword. Dispassionate extraterrestrial observer bits of moving fluff Euclid consectetur adipisicing elit!</p>
+    <br>
+    <code class="code-header">rust-lldb</code>
+
+    <p>Compiling Rust produces standard debugging information. That means all your tools for C or C++ will work with Rust. GDB, LLDB, Valgrind, profilers, code sanitizers, and more all work as expected with no extra configuration. We've added dedicated Rust support to popular debuggers to provide an even better experience.</p>
   </div>
 </section>
 
-<section id="tools-debugging">
+<section id="tools-outro">
   <div class="container">
-    <header>
-      <h2>Debugging</h2>
-      <div class="highlight highlight-yellow"></div>
-    </header>
-    <p>Rich in heavy atoms, hearts of the stars Sea of Tranquility ship of the imagination, stirred by starlight encyclopaedia galactica. Tingling of the spine, intelligent beings billions upon billions Jean-Francois Champollion rings of Uranus nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur Euclid intelligent beings hearts of the stars, Orion's sword courage of our questions tingling of the spine! Paroxysm of global death as a patch of light. </p>
+    <p>Rust's driving principles of openness and community-led innovation guide Rust's tooling. Data from the compiler and Cargo is easy to access and straightforward to understand. Integrating Rust tools with in-house or bespoke systems is well-supported.</p>
+
+    <p>Rust tooling has a dedicated team and an active community. We're always innovating, recently adding WASM support (WASM <a href="https://hacks.mozilla.org/2018/04/hello-wasm-pack/">pack</a> and <a href="https://rustwasm.github.io/wasm-bindgen/introduction.html">bindgen</a>), code search (<a href="https://sourcegraph.com/search?q=repogroup:crates+">Sourcegraph</a>, <a href="https://github.com/nrc/cargo-src">cargo-src</a>), and semver checking (<a href="https://github.com/rust-lang-nursery/rust-semverver">rust-semverver</a>).</p>
   </div>
 </section>
+
 
 {{/inline}}
 {{~> (parent)~}}
