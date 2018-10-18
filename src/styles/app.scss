@@ -37,7 +37,7 @@ header h1 {
 }
 
 header {
-  padding: 30px 0 60px 0;
+  padding: 30px 0 30px 0;
 }
 
 header .button.button-primary.button-download {
@@ -136,12 +136,12 @@ span.brand img {
 }
 
 .get-involved .code {
-  padding-bottom: 20px;
-  border-bottom: 1px dotted white;
+  padding-top: 20px;
 }
 
 .get-involved .media {
-  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px dotted white;
 }
 
 .get-involved .button.button-secondary, #whitepapers .button.button-secondary {
