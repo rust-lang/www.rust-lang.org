@@ -120,6 +120,25 @@ span.brand img {
   }
 }
 
+.green {
+  background-color: $green;
+  color: white;
+  .highlight {
+    background-color: $purple;
+  }
+  a {
+    color: white;
+  }
+  .button.button-secondary {
+    background-color: $purple;
+    border: $purple 1px solid;
+    color: white;
+    &:hover {
+      border-color: white;
+    }
+  }
+}
+
 .white {
   .highlight {
     background-color: $yellow;
