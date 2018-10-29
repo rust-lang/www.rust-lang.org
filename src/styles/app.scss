@@ -5,7 +5,7 @@ $header-font: 'Alfa Slab One', serif;
 
 $gray: #454C52;
 $red: #C14566;
-$green: #6DC6B9;
+$green: #4CAD9E;
 $purple: #403D58;
 $yellow: #FECD2F;
 
@@ -103,6 +103,25 @@ span.brand img {
 
 .red {
   background-color: $red;
+  color: white;
+  .highlight {
+    background-color: $purple;
+  }
+  a {
+    color: white;
+  }
+  .button.button-secondary {
+    background-color: $purple;
+    border: $purple 1px solid;
+    color: white;
+    &:hover {
+      border-color: white;
+    }
+  }
+}
+
+.green {
+  background-color: $green;
   color: white;
   .highlight {
     background-color: $purple;
