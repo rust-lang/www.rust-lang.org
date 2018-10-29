@@ -109,10 +109,14 @@ span.brand img {
   }
   a {
     color: white;
-    text-decoration: underline;
   }
   .button.button-secondary {
-    color: $purple;
+    background-color: $purple;
+    border: $purple 1px solid;
+    color: white;
+    &:hover {
+      border-color: white;
+    }
   }
 }
 
@@ -126,11 +130,11 @@ span.brand img {
   }
   .button.button-secondary {
     background-color: $yellow;
-    border: none;
+    border: 1px solid $yellow;
     color: $gray;
     text-decoration: none;
     &:hover {
-      border: 1px solid $gray;
+      border-color: $gray;
     }
   }
 }
@@ -147,12 +151,12 @@ span.brand img {
   }
   .button.button-secondary {
     background-color: $red;
-    border: none;
+    border: 1px solid $red;
     color: white;
     text-decoration: none;
     display: block;
     &:hover {
-      border: 1px white solid;
+      border-color: white;
     }
   }
 }
