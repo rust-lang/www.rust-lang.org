@@ -121,13 +121,17 @@ span.brand img {
     background-color: $yellow;
   }
   a {
-    color: black;
+    color: $gray;
     text-decoration: underline;
   }
   .button.button-secondary {
-    background-color: $red;
-    color: white;
+    background-color: $yellow;
+    border: none;
+    color: $gray;
     text-decoration: none;
+    &:hover {
+      border: 1px solid $gray;
+    }
   }
 }
 
@@ -216,29 +220,39 @@ footer .languages {
 }
 
 blockquote {
-  font-family: $header-font;
-  font-size: 2em;
+  font-size: 1.5em;
   line-height: 1.2em;
   position: relative;
   border-bottom: 1px dotted $gray;
   padding: 5px;
+  color: $gray;
 }
 
 blockquote::before {
   content: '“';
+  color: $gray;
   font-size: 3em;
   position: absolute;
   left: -50px;
   top: 20px;
 }
 
-.production .attribution {
-  color: $gray;
-  font-style: italic;
-}
-
 .production .four {
   text-align: center;
+}
+
+.production p {
+  font-size: 3rem;
+}
+
+.production .button.button-secondary {
+  margin-top: 30px;
+  display: block;
+}
+
+.production .attribution {
+  font-size: 1.5em;
+  text-align: right;
 }
 
 #whitepapers .top-border {
