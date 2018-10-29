@@ -93,22 +93,41 @@ span.brand img {
 .domain-icon {
   min-height: 100px;
   img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 50%;
+    max-height: 50%;
+    padding-bottom: 20px;
+  }
+  text-align: center;
+  margin-bottom: -10px;
+}
+
+.red {
+  background-color: $red;
+  color: white;
+  .highlight {
+    background-color: $purple;
+  }
+  a {
+    color: white;
+    text-decoration: underline;
+  }
+  .button.button-secondary {
+    color: $purple;
   }
 }
 
-.green {
-  background-color: $green;
-  color: white;
+.white {
   .highlight {
     background-color: $yellow;
   }
   a {
-    color: white;
+    color: black;
+    text-decoration: underline;
   }
   .button.button-secondary {
-    color: $yellow;
+    background-color: $red;
+    color: white;
+    text-decoration: none;
   }
 }
 
@@ -120,20 +139,24 @@ span.brand img {
   }
   a {
     color: white;
+    text-decoration: underline;
   }
   .button.button-secondary {
-    color: $red;
+    background-color: $red;
+    border: none;
+    color: white;
+    text-decoration: none;
+    display: block;
+    &:hover {
+      border: 1px white solid;
+    }
   }
 }
 
 h3 {
   font-weight: 800; 
   font-size: 1.8em;
-}
-
-.domain-icon {
-  text-align: center;
-  padding-bottom: 10px;
+  letter-spacing: normal;
 }
 
 .get-involved .code {
@@ -152,6 +175,7 @@ section header {
 section header h2 {
   margin: 0;
   padding: 0;
+  letter-spacing: normal;
 }
 
 .highlight {
