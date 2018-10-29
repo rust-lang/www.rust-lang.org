@@ -33,7 +33,7 @@ header h1, section h2 {
 
 header h1 {
   font-size: 10rem;
-  margin: 0;
+  margin-bottom: 0;
 }
 
 header {
@@ -93,46 +93,78 @@ span.brand img {
 .domain-icon {
   min-height: 100px;
   img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 50%;
+    max-height: 50%;
+    padding-bottom: 20px;
+  }
+  text-align: center;
+  margin-bottom: -10px;
+}
+
+.red {
+  background-color: $red;
+  color: white;
+  .highlight {
+    background-color: $purple;
+  }
+  a {
+    color: white;
+  }
+  .button.button-secondary {
+    background-color: $purple;
+    border: $purple 1px solid;
+    color: white;
+    &:hover {
+      border-color: white;
+    }
   }
 }
 
-.domains {
-  background-color: $green;
-  color: white;
+.white {
+  .highlight {
+    background-color: $yellow;
+  }
+  a {
+    color: $gray;
+    text-decoration: underline;
+  }
+  .button.button-secondary {
+    background-color: $yellow;
+    border: 1px solid $yellow;
+    color: $gray;
+    text-decoration: none;
+    &:hover {
+      border-color: $gray;
+    }
+  }
 }
 
-.domains h3, #whitepapers h3, #using-the-trademarks h3,
-#contribute-code h3, #contribute-talk h3, #contribute h3,
-#community-events h3, #learn-use h3,
-#embedded-why-rust h3, #embedded-get-started h3,
-#cli-features h3, #cli-pitch h3 {
-  font-weight: 800; 
-  font-size: 1.8em;
-}
-
-.domains a, #whitepapers a {
-  color: white;
-}
-
-.domain-icon {
-  text-align: center;
-  padding-bottom: 10px;
-}
-
-.domains img {
-  width: 60%;
-}
-
-.get-involved {
+.purple {
   background-color: $purple;
   color: white;
+  .highlight {
+    background-color: $red;
+  }
+  a {
+    color: white;
+    text-decoration: underline;
+  }
+  .button.button-secondary {
+    background-color: $red;
+    border: 1px solid $red;
+    color: white;
+    text-decoration: none;
+    display: block;
+    &:hover {
+      border-color: white;
+    }
+  }
 }
 
-.get-involved h3 {
-  font-weight: 800;
+h3 {
+  font-weight: 800; 
   font-size: 1.8em;
+  letter-spacing: normal;
 }
 
 .get-involved .code {
@@ -144,10 +176,6 @@ span.brand img {
   border-bottom: 1px dotted white;
 }
 
-.get-involved .button.button-secondary, #whitepapers .button.button-secondary {
-  color: $green;
-}
-
 section header {
   display: inline-block;
 }
@@ -155,6 +183,7 @@ section header {
 section header h2 {
   margin: 0;
   padding: 0;
+  letter-spacing: normal;
 }
 
 .highlight {
@@ -163,22 +192,6 @@ section header h2 {
   top: -30px;
   left: -10px;
   width: 120%;
-}
-
-.highlight-yellow {
-  background-color: $yellow;
-}
-
-.highlight-red {
-  background-color: $red;
-}
-
-.highlight-green {
-  background-color: $green;
-}
-
-.highlight-purple {
-  background-color: $purple;
 }
 
 footer {
@@ -211,44 +224,44 @@ footer .languages {
 }
 
 blockquote {
-  font-family: $header-font;
-  font-size: 2em;
+  font-size: 1.5em;
   line-height: 1.2em;
   position: relative;
   border-bottom: 1px dotted $gray;
   padding: 5px;
+  color: $gray;
 }
 
 blockquote::before {
   content: '“';
+  color: $gray;
   font-size: 3em;
   position: absolute;
   left: -50px;
   top: 20px;
 }
 
-.production .attribution {
-  color: $gray;
-  font-style: italic;
-}
-
 .production .four {
   text-align: center;
 }
 
-#whitepapers {
-  background-color: $purple;
-  color: white;
+.production p {
+  font-size: 3rem;
+}
+
+.production .button.button-secondary {
+  margin-top: 30px;
+  display: block;
+}
+
+.production .attribution {
+  font-size: 1.5em;
+  text-align: right;
 }
 
 #whitepapers .top-border {
   padding-top: 20px;
   border-top: 1px white dotted;
-}
-
-#friends {
-  background-color: $red;
-  color: white;
 }
 
 #friends img {
@@ -262,58 +275,7 @@ blockquote::before {
   border-right: 1px black dotted;
 }
 
-#code-of-conduct {
-  background-color: $red;
-  color: white;
-}
-
-#moderation {
-  background-color: $purple;
-  color: white;
-}
-
-#security-reporting {
-  background-color: $red;
-  color: white;
-  a {
-    color: $yellow;
-  }
-}
-
-#security-disclosure-policy a {
-  color: $green;
-}
-
-#security-receiving {
-  background-color: $purple;
-  color: white;
-  a {
-    color: $yellow;
-  }
-}
-
-#security-pgp-key {
-  background-color: $green;
-  color: white;
-  pre {
-    color: black;
-  }
-}
-
-#license {
-  background-color: $green;
-  color: white;
-  a {
-    color: $purple;
-  }
-}
-
 #learn-begin {
-  background-color: $green;
-  color: white;
-  a {
-    color: $purple;
-  }
   p:first-of-type {
     padding-bottom: 20px;
     border-bottom: 1px white dotted;
@@ -321,11 +283,6 @@ blockquote::before {
 }
 
 #learn-use {
-  background-color: $red;
-  color: white;
-  a {
-    color: $purple;
-  }
   img {
     width: 30%;
   }
@@ -335,11 +292,6 @@ blockquote::before {
 }
 
 #learn-master {
-  background-color: $purple;
-  color: white;
-  a {
-    color: $yellow;
-  }
   img {
     width: 50%;
   }
@@ -349,145 +301,27 @@ blockquote::before {
 }
 
 #security-learn-community-key {
-  background-color: $green;
-  color: white;
   pre {
     color: black;
   }
 }
 
-#art-license {
-  background-color: $red;
-  color: white;
-  a {
-    color: yellow;
-  }
-}
-
-#trademark-policy {
-  background-color: $purple;
-  color: white;
-  a {
-    color: $green;
-  }
-}
 
 #rust-trademarks {
-  a {
-    color: $red;
-  }
   img {
     vertical-align: middle;
   }
 }
 
-#logo-help-out {
-  background-color: $green;
-  a {
-    color: $purple;
-  }
-}
-
-#using-the-trademarks {
-  background-color: $yellow;
-  a {
-    color: $red;
-  }
-}
-
-#policies-index {
-  background-color: $purple;
-  color: white;
-  a {
-    color: $yellow;
-  }
-}
-
-#installing-rust {
-  background-color: $purple;
-  color: white;
-}
-
-#generating-new-project {
-  background-color: $green;
-}
-
-#managing-rust-versions {
-  background-color: $red;
-  color: white;
-}
-
-#governance {
-  background-color: $red;
-  color: white;
-}
-
 #teams {
-  background-color: $purple;
-  color: white;
   li {
     display: inline-block;
   }
   img {
     width: 10em;
   }
-  a {
-    color: $yellow;
-  }
   p {
     margin: 0;
-  }
-  .button-secondary {
-    color: $yellow;
-  }
-}
-
-#community-standards {
-  background-color: $red;
-  color: white;
-  .button.button-secondary {
-    color: $purple;
-  }
-}
-
-#contribute {
-  background-color: $red;
-  color: white;
-  .button.button-secondary {
-    color: $purple;
-  }
-}
-
-#contribute-talk {
-  background-color: $green;
-  color: white;
-  .button.button-secondary {
-    color: $purple;
-    border-color: white;
-  }
-}
-
-#contribute-code {
-  background-color: $purple;
-  color: white;
-  .button.button-secondary {
-    color: $green;
-  }
-}
-
-#community {
-  background-color: $green;
-}
-
-#community-events {
-  background-color: $yellow;
-}
-
-#community-content {
-  background-color: $purple;
-  color: white;
-  .button.button-secondary {
-    color: $green;
   }
 }
 
@@ -503,29 +337,6 @@ blockquote::before {
     display: inline-block;
     float: left;
   }
-}
-
-#tools-write {
-  background-color: $purple;
-  color: white;
-}
-
-#tools-intro {
-  background-color: $yellow;
-}
-
-#tools-debug {
-  background-color: $green;
-}
-
-#tools-outro {
-  background-color: $red;
-  color: white;
-}
-
-#tools-build {
-  background-color: $gray;
-  color: white;
 }
 
 .tools-row {
@@ -579,38 +390,10 @@ blockquote::before {
   }
 }
 
-.background-green {
-  background-color: $green;
-  color: white;
-  a {
-    color: $purple;
-  }
-}
-
-.background-yellow {
-  background-color: $yellow;
-}
-
-.background-purple {
-  background-color: $purple;
-  color: white;
-}
-
-.background-red {
-  background-color: $red;
-  color: white;
-  a {
-    color: $yellow;
-  }
-}
-
 #wasm-production-use {
   img {
     max-width: 100%;
     max-height: 100%;
-  }
-  p.attribution a {
-    font-style: italic;
   }
 }
     
@@ -632,28 +415,7 @@ blockquote::before {
   }
 }
 
-#cli-pitch {
-  background-color: $green;
-  color: white;
-  
-  .button-secondary {
-    border-color: #fff;
-  }
-  
-  a {
-    color: #fff;
-    text-decoration: none;
-  }
-}
-
 #cli-features {
-  background-color: $red;
-  color: white;
-
-  a {
-    color: $yellow;
-  }
-  
   h3 code {
     background-color: transparent;
     border: none;
@@ -663,9 +425,6 @@ blockquote::before {
 }
 
 #cli-use-it {
-  background-color: $purple;
-  color: white;
-  
   pre {
     color: black;
   }
