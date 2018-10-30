@@ -114,6 +114,7 @@ span.brand img {
     background-color: $purple;
     border: $purple 1px solid;
     color: white;
+    display: block;
     &:hover {
       border-color: white;
     }
@@ -133,6 +134,7 @@ span.brand img {
     background-color: $purple;
     border: $purple 1px solid;
     color: white;
+    display: block;
     &:hover {
       border-color: white;
     }
@@ -152,6 +154,7 @@ span.brand img {
     border: 1px solid $yellow;
     color: $gray;
     text-decoration: none;
+    display: block;
     &:hover {
       border-color: $gray;
     }
@@ -273,6 +276,15 @@ blockquote::before {
   display: block;
 }
 
+#embedded-testimonials .attribution {
+  text-align: right;
+}
+
+.testimonial img {
+  padding: 10px;
+  width: 80%;
+}
+
 .production .attribution {
   font-size: 1.5em;
   text-align: right;
@@ -383,21 +395,9 @@ blockquote::before {
   }
 }
 
-#embedded-why-rust {
+#embedded-get-started, #embedded-why-rust {
   img {
     width: 40%;
-  }
-}
-
-#embedded-get-started {
-  img {
-    width: 40%;
-  }
-}
-
-#embedded-testimonials {
-  img {
-    width: 100%;
   }
 }
 
