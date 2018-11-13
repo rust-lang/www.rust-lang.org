@@ -1,7 +1,9 @@
 /// Read some lines of a file
-#[derive(Clap)]
+#[derive(Debug, StructOpt)]
 struct Cli {
-    file: PathBuf,
-    #[clap(short="n")]
+    /// Input file to read
+    file: String,
+    /// Number of lines to read
+    #[structopt(short = "n")]
     num: i32,
 }
