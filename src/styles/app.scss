@@ -67,6 +67,16 @@ section {
 
 section .container {
   padding-top: 20px;
+
+  ul {
+    list-style: circle;
+    padding-left: 1.5em;
+  }
+
+  ol {
+    list-style: decimal;
+    padding-left: 1.5em;
+  }
 }
 
 .nav {
