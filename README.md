@@ -35,3 +35,15 @@ The linter is how we maintain a consistent code style throughout the project. Th
 If you encounter a persistent linter error that you are certain you've fixed, try running `stylelint <path/to/file.scss> --fix` (where `<path/to/file.scss>` is replaced by the actual path to your file) in your terminal.
 
 If you encounter a persistent linter error regarding a third-party CSS framework or other thing outside of your control, add the file to the list in the `.stylelintignore` file. Please only ignore third-party files that are not under your control. If you have the ability to fix the linter error or warning, it is preferable to do so.
+
+### Using the Lighthouse script
+
+Lighthouse is a website analysis tool that measures several elements of a website. We are using it primarily
+for accessibility testing at the moment, but we may expand that later to performance characteristics. To run
+Lighthouse locally, type this is a terminal on a computer with Chrome installed:
+
+```
+npm run lighthouse
+```
+
+This will run the tests in Chrome and then open the results page in Chrome for you.
