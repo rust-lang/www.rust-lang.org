@@ -4,3 +4,4 @@
 /static/styles/app.css
 /static/styles/*.map
 .sass-cache
+localhost*
