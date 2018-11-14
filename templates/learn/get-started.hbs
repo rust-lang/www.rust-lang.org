@@ -77,10 +77,8 @@ ferris_says = "0.1"</code></pre></p>
       <div class="highlight"></div>
     </header>
     <p>Now let's write a small application with our new dependency. In our <code>main.rs</code>, let's remove what's there and add the following code:</p>
-    <p><pre><code>extern crate ferris_says;
-
-use ferris_says::say;
-use std::io::{ stdout, BufWriter };
+    <p><pre><code>use ferris_says::say; // from the previous step
+use std::io::{stdout, BufWriter};
 
 fn main() {
     let stdout = stdout();
