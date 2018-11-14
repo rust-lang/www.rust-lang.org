@@ -409,6 +409,14 @@ blockquote::before {
   }
 }
 
+.rustfest {
+  background-image: url("/static/images/rustfest.jpg");
+  background-position: 50% 50%;
+  background-repeat:   no-repeat;
+  background-size:     cover;
+  height: 150px;
+}
+
 #rustbridge, #rustreach {
   img {
     width: 100%;
