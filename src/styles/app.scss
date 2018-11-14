@@ -17,7 +17,6 @@ code {
   background-color: rgba(127, 127, 127, 0.25);
 }
 
-
 code.code-header {
   background-color: rgba(127, 127, 127, 0.25);
   font-size: 2rem;
@@ -25,20 +24,24 @@ code.code-header {
   margin: 0 0 3px 0;
 }
 
-header h1, section h2 {
+section h2 {
   font-family: $header-font;
   z-index: 999999;
   position: relative;
 }
 
 header h1 {
+  font-family: $header-font;
   font-size: 10rem;
-  margin-bottom: 0;
-  margin-top: 0;
 }
 
 header {
   padding: 30px 0 60px 0;
+}
+
+h1.subtitle {
+  font-family: $body-font;
+  color: $gray;
 }
 
 header .button.button-primary.button-download {
@@ -56,12 +59,6 @@ header .button.button-primary.button-download:hover {
   border-color: $red;
 }
 
-h1.subtitle {
-  margin: 0;
-  font-family: $body-font;
-  font-size: 3rem;
-  color: $gray;
-}
 
 section {
   padding: 30px 0 60px 0;
