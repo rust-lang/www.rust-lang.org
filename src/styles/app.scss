@@ -11,6 +11,11 @@ body {
   font-family: $body-font;
 }
 
+#ferris img {
+  display: block;
+  margin: 0 auto;
+}
+
 code.code-header {
   background-color: rgba(127, 127, 127, 0.25);
   font-size: 2rem;
