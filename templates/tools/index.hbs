@@ -17,9 +17,9 @@
     <br>
     <div class="tools-row">
       <div id="tools-write-ide-prose">
-      <p>Whether you prefer portable command-line editors, or rich graphical
-        editors, there's probably a Rust integration available already. Or if
-        you'd like to build your own integration, take a look at the
+      <p>Whether you prefer working with code from the command line, or using
+        rich graphical editors, there's probably a Rust integration available
+        for you. Or if you'd like to build your own, take a look at the
         <a href="https://github.com/rust-lang-nursery/rls">
           Rust Language Server
         </a>.
@@ -64,44 +64,67 @@
   </div>
 </section>
 
-<section id="tools-build" class="red">
+<section id="tools-build" class="purple">
   <div class="container">
     <header>
-      <h2>Build</h2>
+      <h2>
+        Bring calmness to your builds
+      </h2>
       <div class="highlight highlight-red"></div>
     </header>
+    <p>
+      Cargo is the build tool for Rust. It bundles all common actions into a
+      single command. No boilerplate required.
+    </p>
     <div class="row">
       <div class="four columns" id="type-systems">
-        <code class="code-header">cargo build</code>
-        <p>Cargo takes the hassle out of dependency management and building your
-          project. Adding a dependency means adding a single line to the
-          manifest. Build, run, test, or publish your project a single command
-        and no extra configuration.</p>
+        <h2 class="code-header">
+          Install
+        </h2>
+        <p>
+          With tens of thousands of packages, there's a good chance
+          <a href="https://crates.io">crates.io</a> has the solution you're
+          looking for. Stand on the shoulders of giants, and move your team from
+          repetition to innovation.
+        </p>
       </div>
       <div class="four columns" id="linting">
-        <code class="code-header">cargo clippy</code>
-        <p>Powerful, reliable, and configurable linting; from style to safety
-          and performance. Built with the Rust compiler, Clippy lets you catch
-          even more bugs at compile-time.</p>
+        <h2 class="code-header">
+          Test
+        </h2>
+        <p>
+          Bring confidence to your code through Rust's excellent testing tools.
+          <code>cargo test</code> is Rust's unified solution to testing. Write
+          tests next to your code, or in separate files: it provides a solution
+          for all testing needs.
+        </p>
       </div>
-      <div class="four columns" id="linting">
-        <code class="code-header">cargo +aarch64-apple-ios build</code>
-        <p>Rust runs on a multitude of platforms, from Windows, MacOS, and Linux on laptops, to IOS and Android on mobile phones, to Cortex-M micro-controllers. Rustup makes compiling for different platforms and operating systems streamlined and easy: installing platform-specific components and switching target platform are all simple commands.</p>
+      <div class="four columns" id="type-systems">
+        <h2 class="code-header">
+          Deploy
+        </h2>
+        <p>
+          <code>cargo build</code> creates lean binaries for every platform.
+          With a single command your code can target Windows, Linux, OSX, and
+          the web. All part of a modern interface, with no need for bespoke
+          build files.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="tools-debug" class="purple">
+<section id="tools-debug" class="red">
   <div class="container">
     <header>
-      <h2>Debug</h2>
-      <div class="highlight highlight-yellow"></div>
+      <h2>
+        Automate every line of code
+      </h2>
     </header>
     <br>
-    <code class="code-header">rust-lldb</code>
-
-    <p>Compiling Rust produces standard debugging information. That means all your tools for C or C++ will work with Rust. GDB, LLDB, Valgrind, profilers, code sanitizers, and more all work as expected with no extra configuration. We've added dedicated Rust support to popular debuggers to provide an even better experience.</p>
+    <p>
+      Rust has a wide range of tools available to enable fearless collaboration.
+    </p>
   </div>
 </section>
 
