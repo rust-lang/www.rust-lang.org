@@ -9,24 +9,56 @@
 <section id="tools-write" class="green">
   <div class="container">
     <header>
-      <h2>Write</h2>
+      <h2>
+        First-class editor support
+      </h2>
       <div class="highlight highlight-yellow"></div>
     </header>
     <br>
     <div class="tools-row">
       <div id="tools-write-ide-prose">
-      <p>Rust has good and growing IDE and editor support. There are integrations available for Visual Studio Code, Eclipse, IntelliJ, Atom, Sublime Text, and more. We provide build and test integration, syntax highlighting, code completion, types and documentation, formatting, jump to definition, and more, all from your favorite editor.</p>
+      <p>Whether you prefer portable command-line editors, or rich graphical
+        editors, there's probably a Rust integration available already. Or if
+        you'd like to build your own integration, take a look at the
+        <a href="https://github.com/rust-lang-nursery/rls">
+          Rust Language Server
+        </a>.
       </div>
-    <img src="/static/images/ide.png" alt="'Find all references' in Visual Studio Code" id="tools-write-ide-img">
     </div>
     <div class="row">
-      <div class="six columns" id="type-systems">
-        <code class="code-header">cargo fmt</code>
-        <p>Easy, beautiful, configurable. Never worry about formatting code or arguing about code style.</p>
+      <div class="three columns">
+        <a href="https://plugins.jetbrains.com/plugin/8182-rust"
+           class="button button-secondary">Android Studio</a>
       </div>
-      <div class="six columns" id="linting">
-        <code class="code-header">cargo doc</code>
-        <p>Quickly and easily generate documentation for your code.</p>
+      <div class="three columns">
+        <a href="https://github.com/rust-lang-nursery/atom-ide-rust"
+           class="button button-secondary">Atom</a>
+      </div>
+      <div class="three columns">
+        <a href="https://github.com/rust-lang/rust-mode"
+           class="button button-secondary">Emacs</a>
+      </div>
+      <div class="three columns">
+        <a href="https://plugins.jetbrains.com/plugin/8182-rust"
+           class="button button-secondary">IntelliJ IDEA</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="three columns">
+        <a href="https://github.com/rust-lang/rust-enhanced"
+           class="button button-secondary">Sublime Text 3</a>
+      </div>
+      <div class="three columns">
+        <a href="https://github.com/rust-lang/rust.vim"
+           class="button button-secondary">Vim</a>
+      </div>
+      <div class="three columns">
+        <a href="https://marketplace.visualstudio.com/items?itemName=rust-lang.rust"
+           class="button button-secondary">VS Code</a>
+      </div>
+      <div class="three columns">
+        <a href="https://plugins.jetbrains.com/plugin/8182-rust"
+           class="button button-secondary">WebStorm</a>
       </div>
     </div>
   </div>
@@ -41,11 +73,16 @@
     <div class="row">
       <div class="four columns" id="type-systems">
         <code class="code-header">cargo build</code>
-        <p>Cargo takes the hassle out of dependency management and building your project. Adding a dependency means adding a single line to the manifest. Build, run, test, or publish your project a single command and no extra configuration.</p>
+        <p>Cargo takes the hassle out of dependency management and building your
+          project. Adding a dependency means adding a single line to the
+          manifest. Build, run, test, or publish your project a single command
+        and no extra configuration.</p>
       </div>
       <div class="four columns" id="linting">
         <code class="code-header">cargo clippy</code>
-        <p>Powerful, reliable, and configurable linting; from style to safety and performance. Built with the Rust compiler, Clippy lets you catch even more bugs at compile-time.</p>
+        <p>Powerful, reliable, and configurable linting; from style to safety
+          and performance. Built with the Rust compiler, Clippy lets you catch
+          even more bugs at compile-time.</p>
       </div>
       <div class="four columns" id="linting">
         <code class="code-header">cargo +aarch64-apple-ios build</code>
