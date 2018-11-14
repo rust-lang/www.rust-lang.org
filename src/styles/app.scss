@@ -307,6 +307,12 @@ blockquote::before {
   border-top: 1px white dotted;
 }
 
+#prod-highlights {
+  img {
+    width: 100%;
+  }
+}
+
 #friends .row .columns {
   position: relative;
   height: 200px;
