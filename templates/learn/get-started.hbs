@@ -1,0 +1,121 @@
+{{#*inline "page"}}
+
+<header>
+  <div class="container">
+    <h1>Getting Started</h1>
+    <h1 class="subtitle">This short tutorial will get you from zero to a writing a small application in a full local Rust developer environment!</h1>
+  </div>
+</header>
+
+<section id="installing-rust" class="purple">
+  <div class="container">
+    <header>
+      <h2>Installing Rust</h2>
+      <div class="highlight highlight"></div>
+    </header>
+    <h3><code>rustup</code>: The Rust Installer and Version Control Tool</h3>
+    <p>The primary way that folks install Rust is through a tool called <code>rustup</code> which is a Rust installer and version control tool.</p>
+    <p>To use <code>rustup</code> you first <a href="https://rustup.rs/">install it</a>.</p>
+    <a href="https://rustup.rs/" class="button button-secondary">Install Rustup</a>
+    <hr/>
+    <h3><code>rustc</code>: The Rust Compiler</h3>
+    <p>When you install <code>rustup</code> you'll also get the latest stable version of the Rust compiler, also known as <code>rustc</code>. To test that you have Rust installed, you can run this in your terminal of choice:</p>
+    <p><code>rustc --version</code></p>
+    <hr/>
+    <h3><code>cargo</code>: The Rust Build Tool and Package Manager</h3>
+    <p>When you install <code>rustup</code> you'll also get the latest stable version of the Rust build tool and package manager, also known as <code>cargo</code>. <code>cargo</code> does lots of things:
+    <ul>
+      <li>build your project with <code>cargo build</code></li>
+      <li>run your project with <code>cargo run</code></li>
+      <li>test your project with <code>cargo test</code></li>
+      <li>build documentaiton for your project with <code>cargo doc</code></li>
+      <li>publish a library to <a href="https://crates.io">crates.io</a> with <code>cargo publish</code></li>
+    </ul>
+    <p>To test that you have <code>cargo</code> installed, you can run this in your terminal of choice:</p>
+    <p><code>cargo --version</code></p>
+    <a href="https://doc.rust-lang.org/cargo/index.html" class="button button-secondary">Read the cargo book</a>
+  </div>
+</section>
+
+<section id="generating-new-project" class="red">
+  <div class="container">
+    <header>
+      <h2>Generating a New Project</h2>
+      <div class="highlight"></div>
+    </header>
+    <p>Let's write a small application with our new Rust development environment. To start, we'll use <code>cargo</code>to make a new project for us. In your terminal of choice run:</p>
+    <p><code>cargo new hello-rust</code></p>
+    <p>This will generate a new directory called <code>hello-rust</code> with the following files:</p>
+    <p><pre><code>hello-rust
+|- Cargo.toml
+|- src
+  |- main.rs</code></pre></p>
+    <p><code>Cargo.toml</code> is the manifest file for Rust. It's where you keep metadata for your project, as well as dependencies.</p>
+    <p><code>src/main.rs</code> is where we'll write our application code.</p>
+  </div>
+</section>
+
+<section id="installing-dependencies" class="white">
+  <div class="container">
+    <header>
+      <h2>Installing Dependencies</h2>
+      <div class="highlight"></div>
+    </header>
+    <p>Let's add a dependency to our application. In our <code>Cargo.toml</code> file we'll add:</p>
+    <p><pre><code>[dependencies]
+ferris_says = "0.1"</code></pre></p>
+    <p>Now we can run:</p>
+    <p><code>cargo build</code></p>
+    <p>...and <code>cargo</code>will install our dependency for us.</p>
+  </div>
+</section>
+
+<section id="a-small-rust-app" class="green">
+  <div class="container">
+    <header>
+      <h2>A Small Rust Application</h2>
+      <div class="highlight"></div>
+    </header>
+    <p>Now let's write a small application with our new dependency. In our <code>main.rs</code>, let's remove what's there and add the following code:</p>
+    <p><pre><code>extern crate ferris_says;
+
+use ferris_says::say;
+use std::io::{ stdout, BufWriter };
+
+fn main() {
+    let stdout = stdout();
+    let out = b"Hello fellow Rustaceans!";
+    let width = 24;
+
+    let mut writer = BufWriter::new(stdout.lock());
+    say(out, width, &mut writer).unwrap();
+}
+</code></pre></p>
+    <p>Once we save that, we can run our application by typing:</p>
+    <p><code>cargo run</code></p>
+    <p>Assuming everything went well, you should see your application print this to the screen:</p>
+    <p><pre><code>----------------------------
+| Hello fellow Rustaceans! |
+----------------------------
+              \
+               \
+                 _~^~^~_
+             \) /  o o  \ (/
+               '_   -   _'
+               / '-----' \</code></pre></p>
+  </div>
+</section>
+
+<section id="read-the-docs" class="purple">
+  <div class="container">
+    <header>
+      <h2>Learn More!</h2>
+      <div class="highlight"></div>
+    </header>
+    <p>You're a Rustacean now! Welcome! We're so glad to have you. When you're ready, hop over to our Learn page, where you can find lots of books that will help you to continue on your Rust adventure.</p>
+    <a href="/learn" class="button button-secondary">learn more!</a>
+  </div>
+</section>
+
+{{/inline}}
+{{~> (parent)~}}
