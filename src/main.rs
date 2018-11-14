@@ -82,10 +82,15 @@ fn not_found() -> Template {
 }
 
 fn compile_sass() {
-    let scss = "./src/styles/app.scss";
-    let css = compile_file(scss, Options::default()).unwrap();
-    let mut file = File::create("./static/styles/app.css").unwrap();
-    file.write_all(&css.into_bytes()).unwrap();
+    let app_scss = "./src/styles/app.scss";
+    let app_css = compile_file(app_scss, Options::default()).unwrap();
+    let mut app_file = File::create("./static/styles/app.css").unwrap();
+    app_file.write_all(&app_css.into_bytes()).unwrap();
+
+    let framework_scss = "./src/styles/framework.scss";
+    let framework_css = compile_file(framework_scss, Options::default()).unwrap();
+    let mut framework_file = File::create("./static/styles/framework.css").unwrap();
+    framework_file.write_all(&framework_css.into_bytes()).unwrap();
 }
 
 fn main() {

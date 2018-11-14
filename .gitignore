@@ -2,5 +2,6 @@
 **/*.rs.bk
 /node_modules
 /static/styles/app.css
+/static/styles/framework.css
 /static/styles/*.map
 .sass-cache
