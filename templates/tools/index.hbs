@@ -6,90 +6,167 @@
   </div>
 </header>
 
-<section id="tools-intro" class="green">
-  <div class="container">
-    <p>Rust has all the development tools you need to be highly productive. Our tooling makes the experience of writing, building, and debugging code quick and friction-free.</p>
-
-    <p>Rust tools come to you. Whatever operating system, editor, or debugger you prefer, we aim to support it. Tools are configurable, with sensible defaults, meaning you can get up and going quickly, and customize tools to suit your workflow and programming style. And even if you want minimal tool support while you tinker on the command line, Rust gives you that flexibility.</p>
-
-    <p>TODO need a link here or maybe links inline for how to install and run tools</p>
-
-    <code class="code-header">rustup-init</code>
-
-    <p>The ergonomics of our tools starts when you first install Rust. Rustup is a tool for installing and managing Rust, tools, and toolchains.</p>
-  </div>
-</section>
-
-<section id="tools-write" class="white">
+<section id="tools-write" class="green">
   <div class="container">
     <header>
-      <h2>Write</h2>
+      <h2>
+        First-class editor support
+      </h2>
       <div class="highlight highlight-yellow"></div>
     </header>
     <br>
     <div class="tools-row">
       <div id="tools-write-ide-prose">
-      <p>Rust has good and growing IDE and editor support. There are integrations available for Visual Studio Code, Eclipse, IntelliJ, Atom, Sublime Text, and more. We provide build and test integration, syntax highlighting, code completion, types and documentation, formatting, jump to definition, and more, all from your favorite editor.</p>
+      <p>Whether you prefer working with code from the command line, or using
+        rich graphical editors, there's probably a Rust integration available
+        for your editor of choice. Or if you'd like to build your own, take a
+        look at the <a href="https://github.com/rust-lang-nursery/rls">
+          Rust Language Server
+        </a>.
       </div>
-    <img src="/static/images/ide.png" alt="'Find all references' in Visual Studio Code" id="tools-write-ide-img">
     </div>
     <div class="row">
-      <div class="six columns" id="type-systems">
-        <code class="code-header">cargo fmt</code>
-        <p>Easy, beautiful, configurable. Never worry about formatting code or arguing about code style.</p>
+      <div class="three columns">
+        <a href="https://plugins.jetbrains.com/plugin/8182-rust"
+           class="button button-secondary">Android Studio</a>
       </div>
-      <div class="six columns" id="linting">
-        <code class="code-header">cargo doc</code>
-        <p>Quickly and easily generate documentation for your code.</p>
+      <div class="three columns">
+        <a href="https://github.com/rust-lang-nursery/atom-ide-rust"
+           class="button button-secondary">Atom</a>
+      </div>
+      <div class="three columns">
+        <a href="https://github.com/rust-lang/rust-mode"
+           class="button button-secondary">Emacs</a>
+      </div>
+      <div class="three columns">
+        <a href="https://plugins.jetbrains.com/plugin/8182-rust"
+           class="button button-secondary">IntelliJ IDEA</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="three columns">
+        <a href="https://github.com/rust-lang/rust-enhanced"
+           class="button button-secondary">Sublime Text 3</a>
+      </div>
+      <div class="three columns">
+        <a href="https://github.com/rust-lang/rust.vim"
+           class="button button-secondary">Vim</a>
+      </div>
+      <div class="three columns">
+        <a href="https://marketplace.visualstudio.com/items?itemName=rust-lang.rust"
+           class="button button-secondary">VS Code</a>
+      </div>
+      <div class="three columns">
+        <a href="https://plugins.jetbrains.com/plugin/8182-rust"
+           class="button button-secondary">WebStorm</a>
       </div>
     </div>
   </div>
 </section>
 
-<section id="tools-build" class="red">
+<section id="tools-build" class="purple">
   <div class="container">
     <header>
-      <h2>Build</h2>
+      <h2>
+        Bring calmness to your builds
+      </h2>
       <div class="highlight highlight-red"></div>
     </header>
+    <p>
+      Cargo is the build tool for Rust. It bundles all common actions into a
+      single command. No boilerplate required.
+    </p>
     <div class="row">
       <div class="four columns" id="type-systems">
-        <code class="code-header">cargo build</code>
-        <p>Cargo takes the hassle out of dependency management and building your project. Adding a dependency means adding a single line to the manifest. Build, run, test, or publish your project a single command and no extra configuration.</p>
+        <h2 class="code-header">
+          Install
+        </h2>
+        <p>
+          With tens of thousands of packages, there's a good chance
+          <a href="https://crates.io">crates.io</a> has the solution you're
+          looking for. Stand on the shoulders of giants, and move your team from
+          repetition to innovation.
+        </p>
       </div>
       <div class="four columns" id="linting">
-        <code class="code-header">cargo clippy</code>
-        <p>Powerful, reliable, and configurable linting; from style to safety and performance. Built with the Rust compiler, Clippy lets you catch even more bugs at compile-time.</p>
+        <h2 class="code-header">
+          Test
+        </h2>
+        <p>
+          Bring confidence to your code through Rust's excellent testing tools.
+          <code>cargo test</code> is Rust's unified solution to testing. Write
+          tests next to your code, or in separate files: it provides a solution
+          for all testing needs.
+        </p>
       </div>
-      <div class="four columns" id="linting">
-        <code class="code-header">cargo +aarch64-apple-ios build</code>
-        <p>Rust runs on a multitude of platforms, from Windows, MacOS, and Linux on laptops, to IOS and Android on mobile phones, to Cortex-M micro-controllers. Rustup makes compiling for different platforms and operating systems streamlined and easy: installing platform-specific components and switching target platform are all simple commands.</p>
+      <div class="four columns" id="type-systems">
+        <h2 class="code-header">
+          Deploy
+        </h2>
+        <p>
+          <code>cargo build</code> creates lean binaries for every platform.
+          With a single command your code can target Windows, Linux, OSX, and
+          the web. All part of a modern interface, with no need for bespoke
+          build files.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="tools-debug" class="purple">
+<section id="tools-debug" class="red">
   <div class="container">
     <header>
-      <h2>Debug</h2>
-      <div class="highlight highlight-yellow"></div>
+      <h2>
+        Velocity through automation
+      </h2>
+      <div class="highlight highlight-red"></div>
     </header>
     <br>
-    <code class="code-header">rust-lldb</code>
-
-    <p>Compiling Rust produces standard debugging information. That means all your tools for C or C++ will work with Rust. GDB, LLDB, Valgrind, profilers, code sanitizers, and more all work as expected with no extra configuration. We've added dedicated Rust support to popular debuggers to provide an even better experience.</p>
+    <p>
+      Rust's industry-grade tools make collaboration fearless, allowing teams to
+      focus on the tasks that matter.
+    </p>
+    <div class="row">
+      <div class="four columns" id="type-systems">
+        <h3 class="code-header">
+          <a href="https://github.com/rust-lang-nursery/rustfmt">
+            rustfmt
+          </a>
+        </h3>
+        <p>
+          Rust fmt automatically formats Rust code, making it easier to read,
+          write, and maintain. And most importantly: never debate spacing or
+          brace position ever again.
+        </p>
+      </div>
+      <div class="four columns" id="type-systems">
+        <h3 class="code-header">
+          <a href="https://github.com/rust-lang-nursery/rust-clippy">
+            clippy
+          </a>
+        </h3>
+        <p>
+          <em>"It looks like you're writing an Iterator."</em> <br> Clippy
+          helps developers of all experience levels write idiomatic code, and
+          enforce standards.
+        </p>
+      </div>
+      <div class="four columns" id="type-systems">
+        <a href="https://docs.rs/">
+          <h3 class="code-header">
+            cargo doc
+          </h3>
+        </a>
+        <p>
+          Cargo's doc builder makes it to so no API ever goes undocumented. It's
+          available locally through <code>cargo doc</code>, and online for
+          public crates through <a href="https://docs.rs">docs.rs</a>.
+        </p>
+      </div>
+    </div>
   </div>
 </section>
-
-<section id="tools-outro" class="green">
-  <div class="container">
-    <p>Rust's driving principles of openness and community-led innovation guide Rust's tooling. Data from the compiler and Cargo is easy to access and straightforward to understand. Integrating Rust tools with in-house or bespoke systems is well-supported.</p>
-
-    <p>Rust tooling has a dedicated team and an active community. We're always innovating, recently adding WASM support (WASM <a href="https://hacks.mozilla.org/2018/04/hello-wasm-pack/">pack</a> and <a href="https://rustwasm.github.io/wasm-bindgen/introduction.html">bindgen</a>), code search (<a href="https://sourcegraph.com/search?q=repogroup:crates+">Sourcegraph</a>, <a href="https://github.com/nrc/cargo-src">cargo-src</a>), and semver checking (<a href="https://github.com/rust-lang-nursery/rust-semverver">rust-semverver</a>).</p>
-  </div>
-</section>
-
 
 {{/inline}}
 {{~> (parent)~}}
