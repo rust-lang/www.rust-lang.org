@@ -13,11 +13,6 @@ body {
   font-family: $body-font;
 }
 
-code {
-  background-color: rgba(127, 127, 127, 0.25);
-}
-
-
 code.code-header {
   background-color: rgba(127, 127, 127, 0.25);
   font-size: 2rem;
@@ -471,8 +466,6 @@ blockquote::before {
 }
 
 .flex {
-  display: flex;
-
   &.vertical {
     flex-direction: column;
   }
