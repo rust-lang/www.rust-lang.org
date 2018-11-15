@@ -332,7 +332,8 @@ blockquote::before {
     margin: auto;
 }
 
-#share-your-experience h3 {
+#share-your-experience h3, #production-domains h3 {
+  padding-bottom: 20px;
   text-align: center;
 }
 
