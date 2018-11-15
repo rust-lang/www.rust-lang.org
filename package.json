@@ -1,11 +1,13 @@
 {
   "scripts": {
-    "lint": "stylelint src/styles/*"
+    "lint": "stylelint src/styles/*",
+    "lighthouse": "lighthouse http://localhost:7878 --view"
   },
   "stylelint": {
     "extends": "stylelint-config-recommended-scss"
   },
   "devDependencies": {
+    "lighthouse": "^3.2.1",
     "stylelint": "^9.3.0",
     "stylelint-config-recommended-scss": "^3.2.0",
     "stylelint-scss": "^3.1.3"
