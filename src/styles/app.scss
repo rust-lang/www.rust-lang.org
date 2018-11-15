@@ -127,6 +127,8 @@ span.brand img {
     border: $purple 1px solid;
     color: white;
     display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
     &:hover {
       border-color: white;
     }
@@ -147,6 +149,8 @@ span.brand img {
     border: $purple 1px solid;
     color: white;
     display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
     &:hover {
       border-color: white;
     }
@@ -168,6 +172,8 @@ span.brand img {
     color: $gray;
     text-decoration: none;
     display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
     &:hover {
       border-color: $gray;
     }
@@ -190,6 +196,8 @@ span.brand img {
     color: white;
     text-decoration: none;
     display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
     &:hover {
       border-color: white;
     }
