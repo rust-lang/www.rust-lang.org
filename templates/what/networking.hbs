@@ -47,14 +47,14 @@
 
     <p>This is all you need to safely parse JSON, checks its structure and reports proper errors:</p>
 
-    <pre>
+    <pre><code>
       extern crate serde;
       extern crate serde_json;
 
       fn main() {
           serde_json::parse::<MyStuff>("string");
       }
-    </pre>
+    </code></pre>
 
     <p>
       Want more? You can customize every aspect of serializing and
