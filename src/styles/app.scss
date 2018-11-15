@@ -154,6 +154,7 @@ span.brand img {
 }
 
 .white {
+   color: black;
   .highlight {
     background-color: $yellow;
   }
@@ -279,6 +280,10 @@ blockquote::before {
   text-align: center;
 }
 
+#production .attribution {
+  text-align: right;
+}
+
 .production p {
   font-size: 3rem;
 }
@@ -286,10 +291,6 @@ blockquote::before {
 .production .button.button-secondary {
   margin-top: 30px;
   display: block;
-}
-
-#embedded-testimonials .attribution {
-  text-align: right;
 }
 
 .testimonial img {
@@ -307,11 +308,33 @@ blockquote::before {
   border-top: 1px white dotted;
 }
 
+#prod-highlights {
+  img {
+    width: 100%;
+  }
+}
+
+#friends .row .columns {
+  position: relative;
+  height: 200px;
+}
+
 #friends img {
-  width: 100%;
-  vertical-align: middle;
-  background-color: white;
-  padding: 20px;
+    max-height: 100%;  
+    max-width: 100%; 
+    width: auto;
+    height: auto;
+    position: absolute;  
+    top: 0;  
+    bottom: 0;  
+    left: 0;  
+    right: 0;  
+    margin: auto;
+}
+
+#share-your-experience h3, #production-domains h3 {
+  padding-bottom: 20px;
+  text-align: center;
 }
 
 #learn-more .columns:first-of-type {
@@ -421,13 +444,6 @@ blockquote::before {
   }
 }
 
-#wasm-production-use {
-  img {
-    max-width: 100%;
-    max-height: 100%;
-  }
-}
-    
 #cli-pitch,
 #cli-features {
   .domain-icon {

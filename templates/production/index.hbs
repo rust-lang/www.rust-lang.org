@@ -12,77 +12,165 @@
       <h2>Whitepapers</h2>
       <div class="highlight"></div>
     </header>
-    <p>
-      Read about companies' experiences with Rust in production.
-    </p>
     <div class="row">
       <div class="six columns" id="tilde-whitepaper">
-        <h3><a href="/static/pdfs/Rust-Tilde-Whitepaper.pdf">Tilde</a></h3>
+        <h3>Tilde</h3>
         <p>Learn how Rust helps <a href="http://www.tilde.io/">Tilde</a>, makers of <a href="https://www.skylight.io/">Skylight</a>, use minimal resources to enable feature-rich performance monitoring of their customers' applications.</p>
+      <a class="button button-secondary" href="/static/pdfs/Rust-Tilde-Whitepaper.pdf">Read the whitepaper</a>
       </div>
       <div class="six columns" id="chucklefish-whitepaper">
-        <h3><a href="/static/pdfs/Rust-Chucklefish-Whitepaper.pdf">Chucklefish</a></h3>
+        <h3>Chucklefish</h3>
         <p><a href="https://chucklefish.org/">Chucklefish</a>, the video game company that published Stardew Valley and Starbound, is using Rust in their new projects Wargroove and Witchbrook to get safe concurrency and portability.</p>
+      <a class="button button-secondary" href="/static/pdfs/Rust-Chucklefish-Whitepaper.pdf">Read the whitepaper</a>
       </div>
     </div>
-    <div class="top-border" id="share-your-experience">
-      <p>Does your company use Rust? Consider sharing your experience with us!<p>
-      <a href="mailto:community@rust-lang.org" class="button button-secondary">Reach out!</a>
+  </div>
+</section>
+<section class="green" id="share-your-experience">
+  <div class="container">
+    <h3>Does your company use Rust? Consider sharing your experience with us!</h3>
+    <a href="mailto:production@rust-lang.org" class="button button-secondary">Reach out to the production users team</a>
+  </div>
+</section>
+
+<section id="prod-highlights" class="red">
+  <div class="container">
+    <header>
+      <h2>Highlights</h2>
+    </header>
+    <div class="row">
+      <div class="eight columns">
+        <h3>Dropbox</h3>
+        <p>
+          Several components of the Dropbox core file-storage system were written in Rust as one step in part of a larger project to pursue greater datacenter efficiency. It's currently used by all Dropbox storage today, serving >500 million users.
+        </p>
+        <a href="https://www.wired.com/2016/03/epic-story-dropboxs-exodus-amazon-cloud-empire/" class="button button-secondary">Read More</a>
+      </div>
+      <div class="four columns">
+        <img alt="dropbox logo" src="/static/images/dropbox.svg" />
+      </div>
+    </div>
+    <hr/>
+    <div class="row">
+      <div class="four columns">
+        <img alt="yelp logo" src="/static/images/user-logos/yelp.png" />
+      </div>
+      <div class="eight columns">
+        <h3>Yelp</h3>
+        <p>
+          Yelp has developed a framework in Rust for real-time A/B testing. It's used across all Yelp websites and apps, and experiment subjects range from UX to internal infrastructure. Rust was chosen because it's as fast as C (cheap to run) and safer than C (cheap to maintain).
+        </p>
+        <a href="https://www.youtube.com/watch?v=u6ZbF4apABk" class="button button-secondary">Watch the Videdo</a>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="friends" class="white">
+<section id="users" class="white">
   <div class="container">
     <header>
-      <h2>Friends</h2>
+      <h2>Users</h2>
       <div class="highlight"></div>
     </header>
     <div class="row">
       <div class="four columns" id="dropbox">
-        <img src="/static/images/user-logos/dropbox.svg"/>
+        <a href="https://www.dropbox.com/">
+          <img src="/static/images/user-logos/dropbox.svg"/>
+        </a>
       </div>
       <div class="four columns" id="mozilla">
-        <img src="/static/images/user-logos/mozilla.png" />
+        <a href="https://www.mozilla.org">
+          <img src="/static/images/user-logos/mozilla.png" />
+        </a>
       </div>
       <div class="four columns" id="cloudflare">
-        <img src="/static/images/user-logos/cloudflare.svg" />
+        <a href="https://www.cloudflare.com/">
+          <img src="/static/images/user-logos/cloudflare.svg" />
+        </a>
       </div>
     </div>
     <div class="row">
       <div class="four columns" id="atlassian">
-        <img src="/static/images/user-logos/atlassian.svg"/>
+        <a href="https://www.atlassian.com/">
+          <img src="/static/images/user-logos/atlassian.svg"/>
+        </a>
       </div>
       <div class="four columns" id="npm">
-        <img src="/static/images/user-logos/npm.svg" />
+        <a href="https://www.npmjs.com">
+          <img src="/static/images/user-logos/npm.svg" />
+        </a>
       </div>
       <div class="four columns" id="braintree">
-        <img src="/static/images/user-logos/braintree.png" />
+        <a href="https://www.braintreepayments.com/">
+          <img src="/static/images/user-logos/braintree.png" />
+        </a>
       </div>
     </div>
     <div class="row">
       <div class="four columns" id="deliveroo">
-        <img src="/static/images/user-logos/deliveroo.svg"/>
+        <a href="https://deliveroo.com">
+          <img src="/static/images/user-logos/deliveroo.svg"/>
+        </a>
       </div>
       <div class="four columns" id="chef">
-        <img src="/static/images/user-logos/chef.svg" />
+        <a href="https://www.chef.io/">
+          <img src="/static/images/user-logos/chef.svg" />
+        </a>
       </div>
       <div class="four columns" id="postmates">
-        <img src="/static/images/user-logos/postmates.png" />
+        <a href="https://postmates.com/">
+          <img src="/static/images/user-logos/postmates.png" />
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<section id="learn-more" class="red">
+<section class="green" id="production-domains">
+  <div class="container">
+    <h3>See how companies are using tools in specific development domains!</h3>
+        <div class="row">
+      <div class="three columns flex vertical space-around" id="command-line">
+        <div class="domain-icon">
+          <img src="/static/images/cli.svg" />
+          <h3>Command Line</h3>
+        </div>
+        <a href="/what/cli#production" class="button button-secondary">Learn More</a>
+      </div>
+      <div class="three columns flex vertical space-around" id="web-assembly">
+        <div class="domain-icon">
+          <img src="/static/images/webassembly.svg" />
+          <h3>WebAssembly</h3>
+        </div>
+        <a href="/what/wasm#production" class="button button-secondary">Learn More</a>
+      </div>
+      <div class="three columns flex vertical space-around" id="networking">
+        <div class="domain-icon">
+          <img src="/static/images/networking.svg" />
+          <h3>Networking</h3>
+        </div>
+        <a href="/what/networking#production" class="button button-secondary">Learn More</a>
+      </div>
+      <div class="three columns flex vertical space-around" id="embedded">
+        <div class="domain-icon">
+          <img src="/static/images/embedded.svg" />
+          <h3>Embedded</h3>
+        </div>
+        <a href="/what/embedded#production" class="button button-secondary">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="red">
   <div class="container row">
     <div class="six columns" id="supporting-rust">
       <header>
         <h2>Supporting Rust</h2>
         <div class="highlight"></div>
       </header>
-      <p>Circumnavigated Flatland, circumnavigated descended from astronomers?</p>
-      <a href="#" class="button button-secondary">Supporting Rust</a>
+      <p>Interested in sponsoring work on Rust? A Rust conference? We'd love to hear from you.</p>
+      <a href="mailto:core@rust-lang.org" class="button button-secondary">Message the Core Team</a>
     </div>
     <div class="six columns" id="license">
       <header>
