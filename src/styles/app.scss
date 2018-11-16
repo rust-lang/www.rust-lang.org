@@ -414,17 +414,26 @@ blockquote::before {
   }
 }
 
+.rustfest {
+  background-image: url("/static/images/rustfest.jpg");
+  background-position: 50% 50%;
+  background-repeat:   no-repeat;
+  background-size:     cover;
+  height: 150px;
+}
+
 #rustbridge, #rustreach {
   img {
     width: 100%;
   }
-  ul {
-    list-style-type: none;
-  }
-  li img {
-    width: 25%;
-    display: inline-block;
+  .img {
+    position: relative;
     float: left;
+    width:  25%;
+    height: 100px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
   }
 }
 
