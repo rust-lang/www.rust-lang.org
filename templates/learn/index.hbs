@@ -7,24 +7,27 @@
 </header>
 
 <section id="learn-begin" class="green">
-  <div class="center flex flex-column measure measure-wide-ns pa3">
+  <div class="center flex flex-column mw9 w-100 pa3">
     <header>
       <h2>Get Started with Rust</h2>
       <div class="highlight"></div>
     </header>
-    <div class="row">
-      <div class="">
-        <p>Affectionately nicknamed "the book," The Rust Programming Language
-          will give you an overview of the language from first principles.
-          You'll build a few projects along the way, and by the end, you'll have
-        a solid grasp of the language.</p>
-        <a class="button button-secondary" href="https://doc.rust-lang.org/book/">Read the Book!</a>
-        <p class="pt4">If reading multiple hundreds of pages about a language isn't your
-          style, then Rust By Example has you covered. While the book talks
-          about code with a lot of words, RBE shows off a bunch of code, and
-          keeps the talking to a minimum. It also includes exercises!</p>
+    <div class="flex flex-column flex-row-l justify-between">
+      <section class="pt0">
+        <p>Affectionately nicknamed "the book," <a href="https://doc.rust-lang.org/book/">The Rust Programming
+            Language</a> will give you an overview of the language from first
+          principles. You'll build a few projects along the way, and by the
+          end, you'll have a solid grasp of the language.</p>
+          <a class="button button-secondary" href="https://doc.rust-lang.org/book/">Read the Book!</a>
+      </section>
+      <section class="pl5-l pt4 pt0-l">
+        <p>If reading multiple hundreds of pages about a language isn't your
+          style, then <a href="https://doc.rust-lang.org/rust-by-example/">Rust
+            By Example</a> has you covered. While the book talks about code with
+          a lot of words, RBE shows off a bunch of code, and keeps the talking
+          to a minimum. It also includes exercises!</p>
           <a class="button button-secondary" href="https://doc.rust-lang.org/book/">Check out Rust by example</a>
-      </div>
+      </section>
     </div>
   </div>
 </section>
@@ -32,62 +35,64 @@
 <section id="learn-use" class="white">
   <div class="container">
     <header>
-      <h2>Grow with Rust</h2>
+      <h2 class="black">
+        Grow with Rust
+      </h2>
       <div class="highlight"></div>
     </header>
-    <div class="row">
+    <div class="row black">
       <h3>Read the core documentation</h3>
-      <p>All of this documentation is also available locally using the <code>rustup doc</code> command, which will open up these resources for you in your browser without requiring a network connection!</p>
-      <div class="row">
-        <div class="three columns">
+      <p>All of this documentation is also available locally using the
+        <code>rustup doc</code> command, which will open up these resources for
+        you in your browser without requiring a network connection!</p>
+
+      <section class="flex flex-column">
+        <div class="pt3 flex flex-column flex-row-l">
           <a href="https://doc.rust-lang.org/std/index.html"
-             class="button button-secondary">The standard library</a>
+             class="button button-secondary mw6-l w-100">The standard library</a>
+          <p class="pl4-l">
+            Comprehensive guide to the Rust standard library APIs.
+          </p>
         </div>
-        <div class="nine columns">
-          Comprehensive guide to the Rust standard library APIs.
-        </div>
-      </div>
-      <div class="row">
-        <div class="three columns">
+
+        <div class="pt5 pt3-l flex flex-column flex-row-l">
           <a href="https://doc.rust-lang.org/cargo/index.html"
-             class="button button-secondary">Cargo Book</a>
+             class="button button-secondary mw6-l w-100">Cargo Book</a>
+          <p class="pl4-l">
+            A book on Rust's package manager and build system.
+          </p>
         </div>
-        <div class="nine columns">
-          A book on Rust's package manager and build system.
-        </div>
-      </div>
-      <div class="row">
-        <div class="three columns">
+
+        <div class="pt5 pt3-l flex flex-column flex-row-l">
           <a href="https://doc.rust-lang.org/rustdoc/index.html"
-             class="button button-secondary">rustdoc Book</a>
+             class="button button-secondary mw6-l w-100">rustdoc Book</a>
+          <p class="pl4-l">
+            Learn how to make awesome documentation for your crate.
+          </p>
         </div>
-        <div class="nine columns">
-          Learn how to make awesome documentation for your crate.
+
+        <div class="pt5 pt3-l flex flex-column flex-row-l">
+          <a href="https://doc.rust-lang.org/rustc/index.html"
+             class="button button-secondary mw6-l w-100">rustc Book</a>
+          <p class="pl4-l">
+            Familiarize yourself with the knobs available in the Rust compiler.
+          </p>
         </div>
-      </div>
-      <div class="row">
-        <div class="three columns">
-          <a href="https://doc.rust-lang.org/rustc/index.html" class="button
-          button-secondary">rustc Book</a>
-        </div>
-        <div class="nine columns">
-          Familiarize yourself with the knobs available in the Rust compiler.
-        </div>
-      </div>
-      <div class="row">
-        <div class="three columns">
+
+        <div class="pt5 pt3-l flex flex-column flex-row-l">
           <a href="https://doc.rust-lang.org/error-index.html"
-             class="button button-secondary">Compiler Error Index</a>
+             class="button button-secondary mw6-l w-100">Compiler Error Index</a>
+          <p class="pl4-l">
+            In-depth explanations of the errors you may see from the Rust
+            compiler.
+          </p>
         </div>
-        <div class="eight columns">
-          In-depth explanations of the errors you may see from the Rust compiler.
-        </div>
-      </div>
+      </section>
     </div>
     <br/>
     <br/>
     <hr/>
-    <div class="row">
+    <div class="row black">
       <h3>Build your skills in an application domain</h3>
       <div class="row">
         <div class="three columns domain" id="cli-guide">
