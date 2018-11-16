@@ -7,7 +7,7 @@
 </header>
 
 <section id="learn-begin" class="green">
-  <div class="center flex flex-column mw9 w-100 pa3">
+  <div class="container">
     <header>
       <h2>Get Started with Rust</h2>
       <div class="highlight"></div>
@@ -94,40 +94,49 @@
     <hr/>
     <div class="row black">
       <h3>Build your skills in an application domain</h3>
-      <div class="row">
-        <div class="three columns domain" id="cli-guide">
-          <img src="/static/images/cli.svg" />
-          <p>
-            Learn how to build effective command line applications in Rust.
-          </p>
-          <a href="https://rust-lang-nursery.github.io/cli-wg/"
-             class="button button-secondary">Command Line Book</a>
-        </div>
-        <div class="three columns domain" id="webassembly-guide">
-          <img src="/static/images/webassembly.svg" />
-          <p>
-            Use Rust to build browser-native libraries through WebAssembly.
-          </p>
-          <a href="https://rustwasm.github.io/book/"
-             class="button button-secondary">WebAssembly Book</a>
-        </div>
-        <div class="three columns domain" id="networking-guide">
-          <img src="/static/images/networking.svg" />
-          <p>
-            Learn how to write asynchronous code that maximizes resource
-            efficiency.
-          </p>
-          <a href="#" class="button button-secondary">Networking Book</a>
-        </div>
-        <div class="three columns domain" id="embedded-guide">
-          <img src="/static/images/embedded.svg" />
-          <p>
-            Become proficient with Rust for Microcontrollers and other embedded
-            systems.
-          </p>
-          <a href="https://rust-embedded.github.io/book/"
-             class="button button-secondary">Embedded Book</a>
-        </div>
+        <section class="flex flex-column">
+          <div class="pt3 flex flex-column flex-row-l">
+            <a href="https://rust-lang-nursery.github.io/cli-wg/"
+               class="button button-secondary mw6-l w-100">
+              Command Line Book
+            </a>
+            <p class="pl4-l">
+              Learn how to build effective command line applications in Rust.
+            </p>
+          </div>
+
+          <div class="pt5 pt3-l flex flex-column flex-row-l">
+            <a href="https://rustwasm.github.io/book/"
+               class="button button-secondary mw6-l w-100">
+              WebAssembly Book
+            </a>
+            <p class="pl4-l">
+              Use Rust to build browser-native libraries through WebAssembly.
+            </p>
+          </div>
+
+          <div class="pt5 pt3-l flex flex-column flex-row-l">
+            <a href="#"
+               class="button button-secondary mw6-l w-100">
+              Networking Book
+            </a>
+            <p class="pl4-l">
+              Learn how to write async code that maximizes resource
+              efficiency.
+            </p>
+          </div>
+
+          <div class="pt5 pt3-l flex flex-column flex-row-l">
+            <a href="#"
+               class="button button-secondary mw6-l w-100">
+              Embedded Book
+            </a>
+            <p class="pl4-l">
+              Become proficient with Rust for Microcontrollers and other
+              embedded systems.
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   </div>
