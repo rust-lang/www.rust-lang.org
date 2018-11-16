@@ -81,6 +81,11 @@ fn not_found() -> Template {
     Template::render(page, &context)
 }
 
+#[catch(500)]
+fn catch_error() -> Template {
+    not_found()
+}
+
 fn compile_sass() {
     let scss = "./src/styles/app.scss";
     let css = compile_file(scss, Options::default()).unwrap();
@@ -93,6 +98,6 @@ fn main() {
     rocket::ignite()
         .attach(Template::fairing())
         .mount("/", routes![index, category, subject, files])
-        .catch(catchers![not_found])
+        .catch(catchers![not_found, catch_error])
         .launch();
 }
