@@ -9,7 +9,11 @@ extern crate rocket_contrib;
 extern crate serde_derive;
 
 mod category;
+mod team;
 
+use team::*;
+
+use std::collections::HashMap;
 use std::fs::File;
 use std::io::prelude::*;
 use std::path::{Path, PathBuf};
@@ -26,6 +30,7 @@ struct Context {
     page: String,
     title: String,
     parent: String,
+    data: Option<HashMap<String, Vec<Team>>>,
 }
 
 #[get("/")]
@@ -36,6 +41,7 @@ fn index() -> Template {
         page: "index".to_string(),
         title: title,
         parent: "layout".to_string(),
+        data: None,
     };
     Template::render(page, &context)
 }
@@ -53,8 +59,19 @@ fn category(category: Category) -> Template {
         page: category.name().to_string(),
         title: title,
         parent: "layout".to_string(),
+        data: load_governance_data(&page),
     };
     Template::render(page, &context)
+}
+
+fn load_governance_data(page: &str) -> Option<HashMap<String, Vec<Team>>> {
+    let mut map: HashMap<String, Vec<Team>> = HashMap::new();
+    if page == "governance/index" {
+        map.insert("teams".to_string(), team::get_teams().unwrap());
+        map.insert("wgs".to_string(), team::get_wgs().unwrap());
+        return Some(map);
+    }
+    None
 }
 
 #[get("/<category>/<subject>", rank = 2)]
@@ -65,6 +82,7 @@ fn subject(category: Category, subject: String) -> Template {
         page: subject,
         title: title,
         parent: "layout".to_string(),
+        data: None,
     };
     Template::render(page, &context)
 }
@@ -77,6 +95,7 @@ fn not_found() -> Template {
         page: "404".to_string(),
         title: title,
         parent: "layout".to_string(),
+        data: None,
     };
     Template::render(page, &context)
 }
