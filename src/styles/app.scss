@@ -533,3 +533,12 @@ blockquote::before {
     justify-content: space-around;
   }
 }
+
+.install-details {
+  background-color: rgba(white, 0.15);
+  border: 1px solid rgba(white, 0.65);
+  margin-bottom: 20px;
+  padding: .2rem .5rem;
+  margin: 0 .2rem;
+  border-radius: 4px;
+}
