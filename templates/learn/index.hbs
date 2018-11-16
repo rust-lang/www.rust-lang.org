@@ -10,25 +10,23 @@
   <div class="container">
     <header>
       <h2>Get started with Rust</h2>
-      <div class="highlight highlight"></div>
+      <div class="highlight"></div>
     </header>
-    <div class="row">
-      <div class="eight columns" id="the-book">
-        <p>Affectionately nicknamed "the book," The Rust Programming
-            Language will give you an overview of the language from first
-          principles. You'll build a few projects along the way, and by the
-          end, you'll have a solid grasp of the language.</p>
-          <a class="button button-secondary" href="https://doc.rust-lang.org/book/"></a>Read the Book!</a>
+    <div class="flex flex-column flex-row-l justify-between">
+      <section class="pt0">
+        <p>Affectionately nicknamed "the book," The Rust Programming Language
+          will give you an overview of the language from first principles.
+          You'll build a few projects along the way, and by the end, you'll have
+        a solid grasp of the language.</p>
+          <a class="button button-secondary" href="https://doc.rust-lang.org/book/">Read the Book!</a>
+      </section>
+      <section class="pl5-l pt4 pt0-l">
         <p>If reading multiple hundreds of pages about a language isn't your
-          style, then Rust
-            By Example has you covered. While the book talks about code with
-          a lot of words, RBE shows off a bunch of code, and keeps the talking
-          to a minimum. It also includes exercises!</p>
+          style, then Rust By Example has you covered. While the book talks
+          about code with a lot of words, RBE shows off a bunch of code, and
+          keeps the talking to a minimum. It also includes exercises!</p>
           <a class="button button-secondary" href="https://doc.rust-lang.org/book/">Check out Rust by example</a>
-      </div>
-      <div class="four columns">
-        <img src="http://via.placeholder.com/350x200">
-      </div>
+      </section>
     </div>
   </div>
 </section>
@@ -36,97 +34,106 @@
 <section id="learn-use" class="white">
   <div class="container">
     <header>
-      <h2>Grow with Rust</h2>
+      <h2 class="black">
+        Grow with Rust
+      </h2>
       <div class="highlight"></div>
     </header>
-    <div class="row">
+    <div class="row black">
       <h3>Read the core documentation</h3>
-      <p>All of this documentation is also available locally using the <code>rustup doc</code> command, which will open up these resources for you in your browser without requiring a network connection!</p>
-      <div class="row">
-        <div class="three columns">
+      <p>All of this documentation is also available locally using the
+        <code>rustup doc</code> command, which will open up these resources for
+        you in your browser without requiring a network connection!</p>
+
+      <section class="flex flex-column">
+        <div class="pt3 flex flex-column flex-row-l">
           <a href="https://doc.rust-lang.org/std/index.html"
-             class="button button-secondary">The standard library</a>
+             class="button button-secondary mw6-l w-100">The standard library</a>
+          <p class="pl4-l">
+            Comprehensive guide to the Rust standard library APIs.
+          </p>
         </div>
-        <div class="nine columns">
-          Comprehensive guide to the Rust standard library APIs.
-        </div>
-      </div>
-      <div class="row">
-        <div class="three columns">
+
+        <div class="pt4 pt3-l flex flex-column flex-row-l">
           <a href="https://doc.rust-lang.org/cargo/index.html"
-             class="button button-secondary">Cargo Book</a>
+             class="button button-secondary mw6-l w-100">Cargo Book</a>
+          <p class="pl4-l">
+            A book on Rust's package manager and build system.
+          </p>
         </div>
-        <div class="nine columns">
-          A book on Rust's package manager and build system.
-        </div>
-      </div>
-      <div class="row">
-        <div class="three columns">
+
+        <div class="pt4 pt3-l flex flex-column flex-row-l">
           <a href="https://doc.rust-lang.org/rustdoc/index.html"
-             class="button button-secondary">rustdoc Book</a>
+             class="button button-secondary mw6-l w-100">rustdoc Book</a>
+          <p class="pl4-l">
+            Learn how to make awesome documentation for your crate.
+          </p>
         </div>
-        <div class="nine columns">
-          Learn how to make awesome documentation for your crate.
+
+        <div class="pt4 pt3-l flex flex-column flex-row-l">
+          <a href="https://doc.rust-lang.org/rustc/index.html"
+             class="button button-secondary mw6-l w-100">rustc Book</a>
+          <p class="pl4-l">
+            Familiarize yourself with the knobs available in the Rust compiler.
+          </p>
         </div>
-      </div>
-      <div class="row">
-        <div class="three columns">
-          <a href="https://doc.rust-lang.org/rustc/index.html" class="button
-          button-secondary">rustc Book</a>
-        </div>
-        <div class="nine columns">
-          Familiarize yourself with the knobs available in the Rust compiler.
-        </div>
-      </div>
-      <div class="row">
-        <div class="three columns">
+
+        <div class="pt4 pt3-l flex flex-column flex-row-l">
           <a href="https://doc.rust-lang.org/error-index.html"
-             class="button button-secondary">Compiler Error Index</a>
+             class="button button-secondary mw6-l w-100">Compiler Error Index</a>
+          <p class="pl4-l">
+            In-depth explanations of the errors you may see from the Rust
+            compiler.
+          </p>
         </div>
-        <div class="eight columns">
-          In-depth explanations of the errors you may see from the Rust compiler.
-        </div>
-      </div>
+      </section>
     </div>
-    <br/>
-    <br/>
     <hr/>
-    <div class="row">
+    <div class="row black">
       <h3>Build your skills in an application domain</h3>
-      <div class="row">
-        <div class="three columns domain" id="cli-guide">
-          <img src="/static/images/cli.svg" />
-          <p>
-            Learn how to build effective command line applications in Rust.
-          </p>
-          <a href="https://rust-lang-nursery.github.io/cli-wg/"
-             class="button button-secondary">Command Line Book</a>
-        </div>
-        <div class="three columns domain" id="webassembly-guide">
-          <img src="/static/images/webassembly.svg" />
-          <p>
-            Use Rust to build browser-native libraries through WebAssembly.
-          </p>
-          <a href="https://rustwasm.github.io/book/"
-             class="button button-secondary">WebAssembly Book</a>
-        </div>
-        <div class="three columns domain" id="networking-guide">
-          <img src="/static/images/networking.svg" />
-          <p>
-            Learn how to write asynchronous code that maximizes resource
-            efficiency.
-          </p>
-          <a href="#" class="button button-secondary">Networking Book</a>
-        </div>
-        <div class="three columns domain" id="embedded-guide">
-          <img src="/static/images/embedded.svg" />
-          <p>
-            Become proficient with Rust for Microcontrollers and other embedded
-            systems.
-          </p>
-          <a href="https://rust-embedded.github.io/book/"
-             class="button button-secondary">Embedded Book</a>
-        </div>
+        <section class="flex flex-column">
+          <div class="pt3 flex flex-column flex-row-l">
+            <a href="https://rust-lang-nursery.github.io/cli-wg/"
+               class="button button-secondary mw6-l w-100">
+              Command Line Book
+            </a>
+            <p class="pl4-l">
+              Learn how to build effective command line applications in Rust.
+            </p>
+          </div>
+
+          <div class="pt4 pt3-l flex flex-column flex-row-l">
+            <a href="https://rustwasm.github.io/book/"
+               class="button button-secondary mw6-l w-100">
+              WebAssembly Book
+            </a>
+            <p class="pl4-l">
+              Use Rust to build browser-native libraries through WebAssembly.
+            </p>
+          </div>
+
+          <div class="pt4 pt3-l flex flex-column flex-row-l">
+            <a href="#"
+               class="button button-secondary mw6-l w-100">
+              Networking Book
+            </a>
+            <p class="pl4-l">
+              Learn how to write async code that maximizes resource
+              efficiency.
+            </p>
+          </div>
+
+          <div class="pt4 pt3-l flex flex-column flex-row-l">
+            <a href="#"
+               class="button button-secondary mw6-l w-100">
+              Embedded Book
+            </a>
+            <p class="pl4-l">
+              Become proficient with Rust for Microcontrollers and other
+              embedded systems.
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   </div>
@@ -139,26 +146,54 @@
       <div class="highlight"></div>
     </header>
     <p>Curious about the darkest corners of the language? Here's where you can get into the nitty-gritty:</p>
-    <div class="row">
-      <div class="four columns book" id="the-reference">
-        <img src="/static/images/reference.svg" />
-        <p>The Reference is not a formal spec, but is more
-          detailed and comprehensive than the book.</p>
-        <a class="button button-secondary" href="https://doc.rust-lang.org/reference/index.html">Read the reference</a>
+    <section class="flex flex-column flex-row-l pv0-l">
+      <div class="dt mw8 measure-wide-l pv4 pv5-m pv6-ns ph4-l">
+        <div class="dtc db-l v-top tc-l">
+          <img src="/static/images/reference.svg" alt="A bookshelf icon"
+              class="mw5" />
+        </div>
+        <div class="dtc db-l v-top pl4 pl0-l pt0 pt3-l">
+          <p>The Reference is not a formal spec, but is more detailed and
+            comprehensive than the book.</p>
+          <a class="button button-secondary"
+             href="https://doc.rust-lang.org/reference/index.html">
+            Read the reference
+          </a>
+        </div>
       </div>
-      <div class="four columns book" id="rustonomicon">
-        <img src="/static/images/nomicon.svg" />
-        <p>The Rustonomicon is your guidebook to the dark
-          arts of unsafe Rust. It's also sometimes called "the 'nomicon."</p>
-        <a class="button button-secondary" href="https://doc.rust-lang.org/nomicon/index.html">Read the nomicon</a>
+
+      <div class="dt mw8 measure-wide-l pv4 pv5-m pv6-ns ph4-l">
+        <div class="dtc db-l v-top tc-l">
+          <img src="/static/images/nomicon.svg" alt="Two hands cradling fire"
+              class="mw5" />
+        </div>
+        <div class="dtc db-l v-top pl4 pl0-l pt0 pt3-l">
+          <p> The Rustonomicon is your guidebook to the dark
+            arts of unsafe Rust. It's also sometimes called "the 'nomicon."</p>
+
+          <a class="button button-secondary"
+             href="https://doc.rust-lang.org/nomicon/index.html">
+            Read the nomicon
+          </a>
+        </div>
       </div>
-      <div class="four columns book" id="the-unstable-book">
-        <img src="/static/images/unstable.svg" />
-        <p>The Unstable Book has documentation for
-          unstable features that you can only use with nightly Rust.</p>
-        <a class="button button-secondary" href="https://doc.rust-lang.org/unstable-book/index.html">Read the unstable book</a>
+
+      <div class="dt mw8 measure-wide-l pv3 pv5-m pv6-ns ph4-l">
+        <div class="dtc db-l v-top tc-l">
+          <img src="/static/images/unstable.svg" alt="A hand sharing sparkles"
+               class="mw5" />
+        </div>
+        <div class="dtc db-l v-top pl4 pl0-l pt0 pt3-l">
+          <p>The Unstable Book has documentation for unstable features that you
+            can only use with nightly Rust.</p>
+          <a class="button button-secondary"
+             href="https://doc.rust-lang.org/unstable-book/index.html">
+            Read the unstable book
+          </a>
+        </div>
       </div>
-    </div>
+
+    </section>
   </div>
 </section>
 
