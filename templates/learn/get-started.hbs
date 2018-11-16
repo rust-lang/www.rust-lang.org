@@ -15,8 +15,9 @@
     </header>
     <h3><code>rustup</code>: The Rust Installer and Version Control Tool</h3>
     <p>The primary way that folks install Rust is through a tool called <code>rustup</code> which is a Rust installer and version control tool.</p>
-    <p>To use <code>rustup</code> you first <a href="https://rustup.rs/">install it</a>.</p>
-    <a href="https://rustup.rs/" class="button button-secondary">Install Rustup</a>
+    {{> tools/rustup }}
+    <br/><br/>
+    <a href="/tools/install" class="button button-secondary">Learn more about installation</a>
     <hr/>
     <h3><code>cargo</code>: The Rust Build Tool and Package Manager</h3>
     <p>When you install <code>rustup</code> you'll also get the latest stable version of the Rust build tool and package manager, also known as <code>cargo</code>. <code>cargo</code> does lots of things:
@@ -58,7 +59,7 @@
       <div class="highlight"></div>
     </header>
     <p>Let's add a dependency to our application. You can find all sorts of libraries on <a href="https://crates.io">crates.io</a>, the package registry for Rust. In Rust, we often refer to packages as "crates".</p>
-    <p>In this project, we'll use a library called <a href="https://crates.io/crates/ferris-says"><code>ferris-says</code></a>. 
+    <p>In this project, we'll use a crate called <a href="https://crates.io/crates/ferris-says"><code>ferris-says</code></a>. 
     <p>In our <code>Cargo.toml</code> file we'll add this information (that we got from the crate page):</p>
     <p><pre><code>[dependencies]
 ferris_says = "0.1"</code></pre></p>
@@ -129,6 +130,6 @@ fn main() {
     <img alt="a gif of ferris scurrying side to side" src=/static/images/ferris.gif />
   </div>
 </section>
-
+{{> tools/install-script }}
 {{/inline}}
 {{~> (parent)~}}
