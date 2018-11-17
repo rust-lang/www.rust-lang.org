@@ -29,7 +29,7 @@
 </section>
 {{/if ~}}
 
-{{#if data.subwgss ~}}
+{{#if data.subwgs ~}}
 <section id="subwgs" class="red">
   <div class="container">
     <header>
@@ -37,7 +37,7 @@
       <div class="highlight"></div>
     </header>
     <div id="wgs" class="row">
-      {{#each data.wgs as |wg| ~}}
+      {{#each data.subwgs as |wg| ~}}
         <div class="two columns">
           <h3>{{wg.name~}}</h3>
         </div>
