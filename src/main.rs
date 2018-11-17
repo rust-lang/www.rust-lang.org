@@ -87,9 +87,14 @@ fn team(subject: String) -> Template {
     Template::render(page, &context)
 }
 
-fn load_team_data(page: &str) -> Option<HashMap<String, Vec<Team>>> {
+fn load_team_data(team: &str) -> Option<HashMap<String, Vec<Team>>> {
     let mut map: HashMap<String, Vec<Team>> = HashMap::new();
-    map.insert("subteams".to_string(), team::get_subteams(page).unwrap());
+    map.insert("info".to_string(), vec![team::get_teaminfo(team).unwrap()]);
+    let subteams = team::get_subteams(team).unwrap();
+    println!("subteams len {}", subteams.len());
+    if subteams.len() > 0 {
+      map.insert("subteams".to_string(), subteams);
+    }
     return Some(map);
 }
 
