@@ -542,3 +542,30 @@ blockquote::before {
   margin: 0 .2rem;
   border-radius: 4px;
 }
+
+// Temporary HACK: switch away from this when we switch to using Tachyons for
+// the page titles -- at that time, we should make a simple component class that
+// just composes those classes.
+// This hard-coded value for the break-point matches what is in Skeleton.
+@media screen and (max-width: 550px) {
+  header {
+    h1 {
+      font-size: 5rem;
+    }
+
+    h2.subtitle {
+      font-size: 2.5rem;
+      line-height: 1.1;
+    }
+
+    .button.button-primary.button-download {
+      background-color: $purple;
+      border-color: $purple;
+      width: 100%;
+      padding: 5px;
+      height: auto;
+      font-size: 1.5em;
+      margin-top: 20px;
+    }
+  }
+}
