@@ -67,8 +67,8 @@ fn category(category: Category) -> Template {
 fn load_governance_data(page: &str) -> Option<HashMap<String, Vec<Group>>> {
     let mut map: HashMap<String, Vec<Group>> = HashMap::new();
     if page == "governance/index" {
-        map.insert("teams".to_string(), group::get_data("teams").unwrap());
-        map.insert("wgs".to_string(), group::get_data("wgs").unwrap());
+        map.insert("teams".to_string(), group::get_data("teams").expect("couldn't get teams data"));
+        map.insert("wgs".to_string(), group::get_data("wgs").expect("couldn't get wgs data"));
         return Some(map);
     }
     None
@@ -89,12 +89,12 @@ fn team(subject: String) -> Template {
 
 fn load_group_data(team: &str) -> Option<HashMap<String, Vec<Group>>> {
     let mut map: HashMap<String, Vec<Group>> = HashMap::new();
-    map.insert("info".to_string(), vec![group::get_info(team).unwrap()]);
-    let subteams = group::get_subs("teams", team).unwrap();
+    map.insert("info".to_string(), vec![group::get_info(team).expect("couldn't get group info")]);
+    let subteams = group::get_subs("teams", team).expect("couldn't get subteams data");
     if subteams.len() > 0 {
         map.insert("subteams".to_string(), subteams);
     }
-    let subwgs = group::get_subs("wgs", team).unwrap();
+    let subwgs = group::get_subs("wgs", team).expect("couldn't get subwgs data");
     if subwgs.len() > 0 {
         map.insert("subwgs".to_string(), subwgs);
     }
@@ -134,9 +134,9 @@ fn catch_error() -> Template {
 
 fn compile_sass() {
     let scss = "./src/styles/app.scss";
-    let css = compile_file(scss, Options::default()).unwrap();
-    let mut file = File::create("./static/styles/app.css").unwrap();
-    file.write_all(&css.into_bytes()).unwrap();
+    let css = compile_file(scss, Options::default()).expect("couldn't compile sass");
+    let mut file = File::create("./static/styles/app.css").expect("couldn't make css file");
+    file.write_all(&css.into_bytes()).expect("couldn't write css file");
 }
 
 fn main() {

@@ -16,7 +16,7 @@ fn read_team_yaml(team: &str) -> io::Result<Group> {
     let data_path = Path::new("./src/data/teams/").join(team).join("team.yml");
     assert!(fs::metadata(&data_path)?.is_file());
     let data_string = fs::read_to_string(&data_path)?;
-    let data: Group = serde_yaml::from_str(&data_string).unwrap();
+    let data: Group = serde_yaml::from_str(&data_string).expect("failed yaml parse");
     Ok(data)
 }
 
@@ -25,14 +25,14 @@ pub fn get_data(t: &str) -> io::Result<Vec<Group>> {
     let team_data = fs::read_dir(Path::new("./src/data/").join(t))?;
     for team in team_data {
         let team = team?;
-        let data = read_team_yaml(&get_name_from_direntry(team.path())).unwrap();
+        let data = read_team_yaml(&get_name_from_direntry(team.path())).expect("couldn't get team data");
         teams.push(data);
     }
     Ok(teams)
 }
 
 fn get_name_from_direntry(path: PathBuf) -> String {
-  path.file_stem().unwrap().to_str().unwrap().to_string()
+  path.file_stem().expect("no file stem").to_str().expect("can't make file a string").to_string()
 }
 
 pub fn get_info(name: &str) -> io::Result<Group> {
@@ -47,7 +47,7 @@ pub fn get_subs(t: &str, team: &str) -> io::Result<Vec<Group>> {
         let team_data = fs::read_dir(data_path)?;
         for team in team_data {
             let team = team?;
-            let data = read_team_yaml(&get_name_from_direntry(team.path())).unwrap();
+            let data = read_team_yaml(&get_name_from_direntry(team.path())).expect("couldn't get subs data");
             teams.push(data);
         }
     }
