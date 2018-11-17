@@ -1,3 +1,4 @@
+route: networking
 name: Networking working group
 description: Focusing on the end-to-end experience for both sync and async networking code, in coordination with the growing ecosystem in this space.
 chat: WG-Net channels on Discord

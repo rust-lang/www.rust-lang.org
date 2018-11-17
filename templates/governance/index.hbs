@@ -51,7 +51,7 @@
       {{#each data.teams as |team| ~}}
         <div class="two columns">
           <h3>{{team.name~}}</h3>
-          <a href="/governance/{{team.name}}" class="button button-secondary">Learn More</a>
+          <a href="/governance/teams/{{team.route}}" class="button button-secondary">Learn More</a>
         </div>
       {{/each~}}
     </div>
@@ -61,7 +61,7 @@
       {{#each data.wgs as |wg| ~}}
         <div class="two columns">
           <h3>{{wg.name~}}</h3>
-          <a href="#" class="button button-secondary">Learn More</a>
+          <a href="/governance/wgs/{{wg.route}}" class="button button-secondary">Learn More</a>
         </div>
       {{/each~}}
     </div>

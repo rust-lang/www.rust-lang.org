@@ -1,3 +1,4 @@
+route: dev-tools
 name: Dev Tools team
 description: Rust developer tools
 chat: Dev Tools #dev-tools channel on Discord

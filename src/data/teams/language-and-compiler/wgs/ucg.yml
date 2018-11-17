@@ -1,3 +1,4 @@
+route: ucg
 name: Unsafe Code Guidelines (UCG)
 description: Working out the "Unsafe Code Guidelines", which define what kind of behavior unsafe code can and cannot do.
 chat: wg-unsafe-code-guidelines stream on Zulip

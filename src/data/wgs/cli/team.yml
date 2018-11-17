@@ -1,3 +1,4 @@
+route: cli
 name: Command-line interfaces (CLI) team
 description: Focusing on the end-to-end experience of writing CLI apps, both large and small, in Rust.
 chat: Domain Working Groups #wg-cli channel on Discord

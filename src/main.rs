@@ -74,27 +74,27 @@ fn load_governance_data(page: &str) -> Option<HashMap<String, Vec<Group>>> {
     None
 }
 
-#[get("/governance/<subject>", rank = 2)]
-fn team(subject: String) -> Template {
+#[get("/governance/<t>/<subject>", rank = 2)]
+fn team(t: String, subject: String) -> Template {
     let page = "governance/group".to_string();
     let title = format!("Rust - {}", page).to_string();
     let context = Context {
         page: "farts".to_string(),
         title: title,
         parent: "layout".to_string(),
-        data: load_group_data(&subject),
+        data: load_group_data(&t, &subject),
     };
     Template::render(page, &context)
 }
 
-fn load_group_data(team: &str) -> Option<HashMap<String, Vec<Group>>> {
+fn load_group_data(t: &str, group: &str) -> Option<HashMap<String, Vec<Group>>> {
     let mut map: HashMap<String, Vec<Group>> = HashMap::new();
-    map.insert("info".to_string(), vec![group::get_info(team).expect("couldn't get group info")]);
-    let subteams = group::get_subs("teams", team).expect("couldn't get subteams data");
+    map.insert("info".to_string(), vec![group::get_info(t, group).expect("couldn't get group info")]);
+    let subteams = group::get_subs("teams", group).expect("couldn't get subteams data");
     if subteams.len() > 0 {
         map.insert("subteams".to_string(), subteams);
     }
-    let subwgs = group::get_subs("wgs", team).expect("couldn't get subwgs data");
+    let subwgs = group::get_subs("wgs", group).expect("couldn't get subwgs data");
     if subwgs.len() > 0 {
         map.insert("subwgs".to_string(), subwgs);
     }
