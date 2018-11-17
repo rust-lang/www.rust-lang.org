@@ -1,1 +1,4 @@
 name: Language and compiler team
+description: the overarching team for the language and compiler
+chat: Zulip ????
+leads: [nikomatsakis]

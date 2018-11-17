@@ -1,0 +1,4 @@
+name: Embedded devices team
+description: Focusing on the end-to-end experience of using Rust in resource-constrained environments and non-traditional platforms.
+chat: Domain Working Groups #wg-embedded channel on Discord
+leads: [japaric]
