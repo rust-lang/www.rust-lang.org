@@ -477,7 +477,9 @@ blockquote::before {
 }
 
 #cli-pitch,
-#cli-features {
+#cli-features,
+#embedded-why-rust,
+#embedded-get-started {
   .domain-icon {
     display: block;
     padding-bottom: 0;
