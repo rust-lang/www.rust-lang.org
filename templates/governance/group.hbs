@@ -32,10 +32,22 @@
       <h2>Subteams</h2>
       <div class="highlight"></div>
     </header>
-    <div id="teams" class="row">
+    <div id="teams">
       {{#each data.subteams as |st| ~}}
-        <div class="two columns">
+        <div class="team row">
           <h3>{{st.name~}}</h3>
+          <div id="{{st.name}}-info">
+            <p><strong>{{ st.description }}</strong></p>
+            <p><strong>Chat Channel</strong>: {{ st.chat }}</p>
+          </div>
+          <div id="{{st.name}}-leads">
+            {{#each st.leads as |lead|}}
+              <div class="two columns group-member">
+                <h3>{{lead}}</h3>
+                <img src="https://avatars.githubusercontent.com/{{lead}}" />
+              </div>
+            {{/each~}}
+          </div>
         </div>
       {{/each~}}
     </div>
@@ -44,16 +56,28 @@
 {{/if ~}}
 
 {{#if data.subwgs ~}}
-<section id="subwgs" class="red">
+<section id="subteams" class="green">
   <div class="container">
     <header>
-      <h2>Working Groups</h2>
+      <h2>Subteams</h2>
       <div class="highlight"></div>
     </header>
-    <div id="wgs" class="row">
-      {{#each data.subwgs as |wg| ~}}
-        <div class="two columns">
-          <h3>{{wg.name~}}</h3>
+    <div id="teams">
+      {{#each data.subwgs as |st| ~}}
+        <div class="team row">
+          <h3>{{st.name~}}</h3>
+          <div id="{{st.name}}-info">
+            <p><strong>{{ st.description }}</strong></p>
+            <p><strong>Chat Channel</strong>: {{ st.chat }}</p>
+          </div>
+          <div id="{{st.name}}-leads">
+            {{#each st.leads as |lead|}}
+              <div class="two columns group-member">
+                <h3>{{lead}}</h3>
+                <img src="https://avatars.githubusercontent.com/{{lead}}" />
+              </div>
+            {{/each~}}
+          </div>
         </div>
       {{/each~}}
     </div>
