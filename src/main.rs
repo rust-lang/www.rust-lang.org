@@ -9,9 +9,9 @@ extern crate rocket_contrib;
 extern crate serde_derive;
 
 mod category;
-mod team;
+mod group;
 
-use team::*;
+use group::*;
 
 use std::collections::HashMap;
 use std::fs::File;
@@ -30,7 +30,7 @@ struct Context {
     page: String,
     title: String,
     parent: String,
-    data: Option<HashMap<String, Vec<Team>>>,
+    data: Option<HashMap<String, Vec<Group>>>,
 }
 
 #[get("/")]
@@ -64,11 +64,11 @@ fn category(category: Category) -> Template {
     Template::render(page, &context)
 }
 
-fn load_governance_data(page: &str) -> Option<HashMap<String, Vec<Team>>> {
-    let mut map: HashMap<String, Vec<Team>> = HashMap::new();
+fn load_governance_data(page: &str) -> Option<HashMap<String, Vec<Group>>> {
+    let mut map: HashMap<String, Vec<Group>> = HashMap::new();
     if page == "governance/index" {
-        map.insert("teams".to_string(), team::get_data("team").unwrap());
-        map.insert("wgs".to_string(), team::get_data("wgs").unwrap());
+        map.insert("teams".to_string(), group::get_data("teams").unwrap());
+        map.insert("wgs".to_string(), group::get_data("wgs").unwrap());
         return Some(map);
     }
     None
@@ -76,25 +76,25 @@ fn load_governance_data(page: &str) -> Option<HashMap<String, Vec<Team>>> {
 
 #[get("/governance/<subject>", rank = 2)]
 fn team(subject: String) -> Template {
-    let page = "governance/team".to_string();
+    let page = "governance/group".to_string();
     let title = format!("Rust - {}", page).to_string();
     let context = Context {
         page: "farts".to_string(),
         title: title,
         parent: "layout".to_string(),
-        data: load_team_data(&subject),
+        data: load_group_data(&subject),
     };
     Template::render(page, &context)
 }
 
-fn load_team_data(team: &str) -> Option<HashMap<String, Vec<Team>>> {
-    let mut map: HashMap<String, Vec<Team>> = HashMap::new();
-    map.insert("info".to_string(), vec![team::get_teaminfo(team).unwrap()]);
-    let subteams = team::get_subs("teams", team).unwrap();
+fn load_group_data(team: &str) -> Option<HashMap<String, Vec<Group>>> {
+    let mut map: HashMap<String, Vec<Group>> = HashMap::new();
+    map.insert("info".to_string(), vec![group::get_info(team).unwrap()]);
+    let subteams = group::get_subs("teams", team).unwrap();
     if subteams.len() > 0 {
         map.insert("subteams".to_string(), subteams);
     }
-    let subwgs = team::get_subs("wgs", team).unwrap();
+    let subwgs = group::get_subs("wgs", team).unwrap();
     if subwgs.len() > 0 {
         map.insert("subwgs".to_string(), subwgs);
     }
