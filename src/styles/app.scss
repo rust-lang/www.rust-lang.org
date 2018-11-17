@@ -558,7 +558,16 @@ blockquote::before {
 @media screen and (max-width: 550px) {
   header {
     h1 {
-      font-size: 5rem;
+      font-size: 4rem;
+    }
+
+    h2 {
+      font-size: 3rem;
+    }
+
+    .highlight {
+      height: 20px;
+      top: -20px;
     }
 
     h2.subtitle {
