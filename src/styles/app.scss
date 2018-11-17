@@ -16,6 +16,10 @@ body {
   margin: 0 auto;
 }
 
+code {
+  overflow: scroll;
+}
+
 code.code-header {
   background-color: rgba(127, 127, 127, 0.25);
   font-size: 2rem;
@@ -568,7 +572,7 @@ blockquote::before {
     .highlight {
       height: 20px;
       top: -20px;
-      width: calc(110% - 10px);
+      max-width: calc(100vw - 1em);
     }
 
     h2.subtitle {
