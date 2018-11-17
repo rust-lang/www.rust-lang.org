@@ -25,7 +25,7 @@ pub fn get_data(t: &str) -> io::Result<Vec<Group>> {
     let team_data = fs::read_dir(Path::new("./src/data/").join(t))?;
     for team in team_data {
         let team = team?;
-        let data = read_team_yaml(&get_name_from_direntry(team.path())).expect("couldn't get team data");
+        let data = read_team_yaml(&get_name_from_direntry(team.path())).expect(&format!("couldn't get team data for type {}", t));
         teams.push(data);
     }
     Ok(teams)
