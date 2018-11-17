@@ -17,6 +17,14 @@
       <h2>Subteams</h2>
       <div class="highlight"></div>
     </header>
+    <div id="teams" class="row">
+      {{#each data.subteams as |st| ~}}
+        <div class="two columns">
+          <h3>{{st.name~}}</h3>
+          <a href="#" class="button button-secondary">Learn More</a>
+        </div>
+      {{/each~}}
+    </div>
   </div>
 </section>
 

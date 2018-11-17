@@ -74,7 +74,26 @@ fn load_governance_data(page: &str) -> Option<HashMap<String, Vec<Team>>> {
     None
 }
 
-#[get("/<category>/<subject>", rank = 2)]
+#[get("/governance/<subject>", rank = 2)]
+fn team(subject: String) -> Template {
+    let page = "governance/team".to_string();
+    let title = format!("Rust - {}", page).to_string();
+    let context = Context {
+        page: "farts".to_string(),
+        title: title,
+        parent: "layout".to_string(),
+        data: load_team_data(&subject),
+    };
+    Template::render(page, &context)
+}
+
+fn load_team_data(page: &str) -> Option<HashMap<String, Vec<Team>>> {
+    let mut map: HashMap<String, Vec<Team>> = HashMap::new();
+    map.insert("subteams".to_string(), team::get_subteams(page).unwrap());
+    return Some(map);
+}
+
+#[get("/<category>/<subject>", rank = 4)]
 fn subject(category: Category, subject: String) -> Template {
     let page = format!("{}/{}", category.name(), subject.as_str()).to_string();
     let title = format!("Rust - {}", page).to_string();
@@ -116,7 +135,7 @@ fn main() {
     compile_sass();
     rocket::ignite()
         .attach(Template::fairing())
-        .mount("/", routes![index, category, subject, files])
+        .mount("/", routes![index, category, team, subject, files])
         .catch(catchers![not_found, catch_error])
         .launch();
 }
