@@ -568,6 +568,7 @@ blockquote::before {
     .highlight {
       height: 20px;
       top: -20px;
+      width: calc(110% - 10px);
     }
 
     h2.subtitle {
