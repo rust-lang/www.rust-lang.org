@@ -16,7 +16,7 @@ fn read_team_yaml(team: &str) -> io::Result<Group> {
     let data_path = Path::new("./src/data/teams/").join(team).join("team.yml");
     assert!(fs::metadata(&data_path)?.is_file());
     let data_string = fs::read_to_string(&data_path)?;
-    let data: Group = serde_yaml::from_str(&data_string).expect("failed yaml parse");
+    let data: Group = serde_yaml::from_str(&data_string).expect(&format!("failed yaml parse for team {}", team));
     Ok(data)
 }
 
