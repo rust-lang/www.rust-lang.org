@@ -8,6 +8,15 @@
 
 <section id="team-info" class="purple">
   <div class="container">
+    <p><strong>{{ data.info.description }}</strong></p>
+    <p><strong>Chat Channel</strong>: {{ data.info.chat }}</p>
+    <div class="row">
+      {{#each data.info.leads as |lead| ~}}
+        <div class="two columns">
+          <h3>{{lead}}</h3>
+        </div>
+      {{/each~}}
+    </div>
   </div>
 </section>
 
