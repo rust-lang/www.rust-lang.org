@@ -27,8 +27,8 @@ fn read_subs_yaml(t: &str, group: &str, st: &str, sub: &str) -> io::Result<Group
         .join(t)
         .join(group)
         .join(st)
-        .join(sub)
-        .join("team.yml");
+        .join(format!("{}.yml", sub));
+    println!("trying to find {:?}", data_path);
     assert!(fs::metadata(&data_path)?.is_file());
     let data_string = fs::read_to_string(&data_path)?;
     let data: Group = serde_yaml::from_str(&data_string).expect(&format!(
@@ -65,7 +65,7 @@ pub fn get_info(t: &str, name: &str) -> io::Result<Group> {
 pub fn get_subs(t: &str, team: &str, st: &str) -> io::Result<Vec<Group>> {
     let mut teams = vec![];
     println!("team {}", team);
-    let data_path = Path::new("./src/data/teams/").join(team).join(t);
+    let data_path = Path::new("./src/data").join(t).join(team).join(st);
     if fs::metadata(&data_path).is_ok() {
         let sub_data = fs::read_dir(data_path)?;
         for sub in sub_data {
