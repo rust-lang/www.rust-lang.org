@@ -11,11 +11,16 @@
     <p><strong>{{ data.info[0].description }}</strong></p>
     <p><strong>Chat Channel</strong>: {{ data.info[0].chat }}</p>
     <div class="row">
+      <h2>Leads</h2>
       {{#each data.info[0].leads as |lead| ~}}
-        <div class="two columns">
+        <div class="two columns group-member">
           <h3>{{lead}}</h3>
+          <img src="https://avatars.githubusercontent.com/{{lead}}" />
         </div>
       {{/each~}}
+    </div>
+    <div class="row">
+      <h2>Members</h2>
     </div>
   </div>
 </section>
