@@ -29,5 +29,23 @@
 </section>
 {{/if ~}}
 
+{{#if data.subwgss ~}}
+<section id="subwgs" class="red">
+  <div class="container">
+    <header>
+      <h2>Working Groups</h2>
+      <div class="highlight"></div>
+    </header>
+    <div id="wgs" class="row">
+      {{#each data.wgs as |wg| ~}}
+        <div class="two columns">
+          <h3>{{wg.name~}}</h3>
+        </div>
+      {{/each~}}
+    </div>
+  </div>
+</section>
+{{/if ~}}
+
 {{/inline}}
 {{~> (parent)~}}

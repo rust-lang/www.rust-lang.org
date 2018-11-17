@@ -91,9 +91,12 @@ fn load_team_data(team: &str) -> Option<HashMap<String, Vec<Team>>> {
     let mut map: HashMap<String, Vec<Team>> = HashMap::new();
     map.insert("info".to_string(), vec![team::get_teaminfo(team).unwrap()]);
     let subteams = team::get_subteams(team).unwrap();
-    println!("subteams len {}", subteams.len());
     if subteams.len() > 0 {
-      map.insert("subteams".to_string(), subteams);
+        map.insert("subteams".to_string(), subteams);
+    }
+    let subwgs = team::get_subwgs(team).unwrap();
+    if subwgs.len() > 0 {
+        map.insert("subwgs".to_string(), subwgs);
     }
     return Some(map);
 }

@@ -1,8 +1,10 @@
+extern crate serde_yaml;
+
 use std::fs;
 use std::io;
 use std::path::Path;
 
-#[derive(Serialize)]
+#[derive(Serialize, Deserialize)]
 pub struct Team {
     name: String,
 }
@@ -22,8 +24,10 @@ pub fn get_teams() -> io::Result<Vec<Team>> {
 pub fn get_teaminfo(team: &str) -> io::Result<Team> {
     println!("team {}", team);
     let data_path = Path::new("./src/data/teams/").join(team).join("team.yml");
-    assert!(fs::metadata(data_path)?.is_file());
-    Ok(Team { name: team.to_string() })
+    assert!(fs::metadata(&data_path)?.is_file());
+    let data_string = fs::read_to_string(&data_path)?;
+    let data: Team = serde_yaml::from_str(&data_string).unwrap();
+    Ok(data)
 }
 
 pub fn get_subteams(team: &str) -> io::Result<Vec<Team>> {
@@ -40,6 +44,21 @@ pub fn get_subteams(team: &str) -> io::Result<Vec<Team>> {
         }
     }
     Ok(teams)
+}
+
+pub fn get_subwgs(team: &str) -> io::Result<Vec<Team>> {
+    let mut wgs = vec![];
+    let data_path = Path::new("./src/data/teams/").join(team).join("wgs");
+    if fs::metadata(&data_path).is_ok() {
+        let wg_data = fs::read_dir(data_path)?;
+        for wg in wg_data {
+            let wg = wg?;
+            wgs.push(Team {
+                name: wg.file_name().into_string().unwrap(),
+            });
+        }
+    }
+    Ok(wgs)
 }
 
 pub fn get_wgs() -> io::Result<Vec<Team>> {
