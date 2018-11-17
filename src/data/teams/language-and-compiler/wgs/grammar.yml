@@ -1,0 +1,4 @@
+name: Grammar
+description:  Working out a the official, formal grammar for Rust and validating it against existing implementations.
+chat: #wg-grammar on Discord
+leads: [centril, qmx]
