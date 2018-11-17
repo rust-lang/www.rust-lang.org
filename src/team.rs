@@ -20,9 +20,9 @@ fn read_team_yaml(team: &str) -> io::Result<Team> {
     Ok(data)
 }
 
-pub fn get_teams() -> io::Result<Vec<Team>> {
+pub fn get_data(t: &str) -> io::Result<Vec<Team>> {
     let mut teams = vec![];
-    let team_data = fs::read_dir("./src/data/teams/")?;
+    let team_data = fs::read_dir(Path::new("./src/data/").join(t))?;
     for team in team_data {
         let team = team?;
         let data = read_team_yaml(&get_name_from_direntry(team.path())).unwrap();
@@ -39,10 +39,10 @@ pub fn get_teaminfo(team: &str) -> io::Result<Team> {
     read_team_yaml(team)
 }
 
-pub fn get_subteams(team: &str) -> io::Result<Vec<Team>> {
+pub fn get_subs(t: &str, team: &str) -> io::Result<Vec<Team>> {
     let mut teams = vec![];
     println!("team {}", team);
-    let data_path = Path::new("./src/data/teams/").join(team).join("subteams");
+    let data_path = Path::new("./src/data/teams/").join(team).join(t);
     if fs::metadata(&data_path).is_ok() {
         let team_data = fs::read_dir(data_path)?;
         for team in team_data {
@@ -50,31 +50,6 @@ pub fn get_subteams(team: &str) -> io::Result<Vec<Team>> {
             let data = read_team_yaml(&get_name_from_direntry(team.path())).unwrap();
             teams.push(data);
         }
-    }
-    Ok(teams)
-}
-
-pub fn get_subwgs(team: &str) -> io::Result<Vec<Team>> {
-    let mut wgs = vec![];
-    let data_path = Path::new("./src/data/teams/").join(team).join("wgs");
-    if fs::metadata(&data_path).is_ok() {
-        let wg_data = fs::read_dir(data_path)?;
-        for wg in wg_data {
-            let wg = wg?;
-            let data = read_team_yaml(&get_name_from_direntry(wg.path())).unwrap();
-            wgs.push(data);
-        }
-    }
-    Ok(wgs)
-}
-
-pub fn get_wgs() -> io::Result<Vec<Team>> {
-    let mut teams = vec![];
-    let team_data = fs::read_dir("./src/data/wgs/")?;
-    for team in team_data {
-        let team = team?;
-        let data = read_team_yaml(&get_name_from_direntry(team.path())).unwrap();
-        teams.push(data);
     }
     Ok(teams)
 }

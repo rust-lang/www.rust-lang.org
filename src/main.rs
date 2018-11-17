@@ -67,8 +67,8 @@ fn category(category: Category) -> Template {
 fn load_governance_data(page: &str) -> Option<HashMap<String, Vec<Team>>> {
     let mut map: HashMap<String, Vec<Team>> = HashMap::new();
     if page == "governance/index" {
-        map.insert("teams".to_string(), team::get_teams().unwrap());
-        map.insert("wgs".to_string(), team::get_wgs().unwrap());
+        map.insert("teams".to_string(), team::get_data("team").unwrap());
+        map.insert("wgs".to_string(), team::get_data("wgs").unwrap());
         return Some(map);
     }
     None
@@ -90,11 +90,11 @@ fn team(subject: String) -> Template {
 fn load_team_data(team: &str) -> Option<HashMap<String, Vec<Team>>> {
     let mut map: HashMap<String, Vec<Team>> = HashMap::new();
     map.insert("info".to_string(), vec![team::get_teaminfo(team).unwrap()]);
-    let subteams = team::get_subteams(team).unwrap();
+    let subteams = team::get_subs("teams", team).unwrap();
     if subteams.len() > 0 {
         map.insert("subteams".to_string(), subteams);
     }
-    let subwgs = team::get_subwgs(team).unwrap();
+    let subwgs = team::get_subs("wgs", team).unwrap();
     if subwgs.len() > 0 {
         map.insert("subwgs".to_string(), subwgs);
     }
