@@ -80,25 +80,34 @@ section .container {
   }
 }
 
-.nav {
-  display: inline-block;
-}
-
-.nav ul {
-  list-style-type: none;
-}
-
-.nav li {
-  display: inline-block;
-  padding: 20px;
+// TODO:  remove when switching to Tachyons -- these are overrides for Skeleton.
+ul.nav, ul.nav li {
+  margin-bottom: 0;
 }
 
 .nav a {
   color: $gray;
 }
 
-span.brand img {
-  width: 80px;
+a.brand {
+  $v-top: 3px; // for getting the vertical rhythm just right
+
+  color: black;
+  font-family: $body-font;
+  font-size: 4rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: $v-top;
+
+  img {
+    width: 80px;
+    margin-top: -$v-top;
+  }
+
+  span {
+    display: inline-block;
+    margin-left: -1rem;
+  }
 }
 
 .domain-icon {
@@ -558,11 +567,7 @@ blockquote::before {
     }
 
     .button.button-primary.button-download {
-      background-color: $purple;
-      border-color: $purple;
-      width: 100%;
       padding: 5px;
-      height: auto;
       font-size: 1.5em;
       margin-top: 20px;
     }

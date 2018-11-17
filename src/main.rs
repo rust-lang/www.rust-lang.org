@@ -26,6 +26,7 @@ struct Context {
     page: String,
     title: String,
     parent: String,
+    is_landing: bool,
 }
 
 #[get("/")]
@@ -36,6 +37,7 @@ fn index() -> Template {
         page: "index".to_string(),
         title: title,
         parent: "layout".to_string(),
+        is_landing: true,
     };
     Template::render(page, &context)
 }
@@ -53,6 +55,7 @@ fn category(category: Category) -> Template {
         page: category.name().to_string(),
         title: title,
         parent: "layout".to_string(),
+        is_landing: false,
     };
     Template::render(page, &context)
 }
@@ -65,6 +68,7 @@ fn subject(category: Category, subject: String) -> Template {
         page: subject,
         title: title,
         parent: "layout".to_string(),
+        is_landing: false,
     };
     Template::render(page, &context)
 }
@@ -77,6 +81,7 @@ fn not_found() -> Template {
         page: "404".to_string(),
         title: title,
         parent: "layout".to_string(),
+        is_landing: false,
     };
     Template::render(page, &context)
 }
