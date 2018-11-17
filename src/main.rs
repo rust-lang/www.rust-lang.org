@@ -67,8 +67,14 @@ fn category(category: Category) -> Template {
 fn load_governance_data(page: &str) -> Option<HashMap<String, Vec<Group>>> {
     let mut map: HashMap<String, Vec<Group>> = HashMap::new();
     if page == "governance/index" {
-        map.insert("teams".to_string(), group::get_data("teams").expect("couldn't get teams data"));
-        map.insert("wgs".to_string(), group::get_data("wgs").expect("couldn't get wgs data"));
+        map.insert(
+            "teams".to_string(),
+            group::get_data("teams").expect("couldn't get teams data"),
+        );
+        map.insert(
+            "wgs".to_string(),
+            group::get_data("wgs").expect("couldn't get wgs data"),
+        );
         return Some(map);
     }
     None
@@ -89,12 +95,15 @@ fn team(t: String, subject: String) -> Template {
 
 fn load_group_data(t: &str, group: &str) -> Option<HashMap<String, Vec<Group>>> {
     let mut map: HashMap<String, Vec<Group>> = HashMap::new();
-    map.insert("info".to_string(), vec![group::get_info(t, group).expect("couldn't get group info")]);
-    let subteams = group::get_subs("teams", group).expect("couldn't get subteams data");
+    map.insert(
+        "info".to_string(),
+        vec![group::get_info(t, group).expect("couldn't get group info")],
+    );
+    let subteams = group::get_subs(t, group, "teams").expect("couldn't get subteams data");
     if subteams.len() > 0 {
         map.insert("subteams".to_string(), subteams);
     }
-    let subwgs = group::get_subs("wgs", group).expect("couldn't get subwgs data");
+    let subwgs = group::get_subs(t, group, "wgs").expect("couldn't get subwgs data");
     if subwgs.len() > 0 {
         map.insert("subwgs".to_string(), subwgs);
     }
@@ -136,7 +145,8 @@ fn compile_sass() {
     let scss = "./src/styles/app.scss";
     let css = compile_file(scss, Options::default()).expect("couldn't compile sass");
     let mut file = File::create("./static/styles/app.css").expect("couldn't make css file");
-    file.write_all(&css.into_bytes()).expect("couldn't write css file");
+    file.write_all(&css.into_bytes())
+        .expect("couldn't write css file");
 }
 
 fn main() {
