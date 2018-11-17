@@ -542,3 +542,20 @@ blockquote::before {
   margin: 0 .2rem;
   border-radius: 4px;
 }
+
+// "Larger than tablet" breakpoint from skeleton, adjust as needed to fit rest of site
+@media (min-width: 750px) {
+  .row {
+    display: flex;
+    
+    .columns {
+      display: flex;
+      flex: auto;
+      flex-direction: column;
+    
+      .button:last-child {
+        margin-top: auto;
+      }
+    }  
+  }
+}
