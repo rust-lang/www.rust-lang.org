@@ -1,8 +1,10 @@
 #![feature(plugin)]
 #![plugin(rocket_codegen)]
 
+extern crate reqwest;
 extern crate rocket;
 extern crate sass_rs;
+extern crate toml;
 
 extern crate rocket_contrib;
 #[macro_use]
@@ -10,6 +12,7 @@ extern crate serde_derive;
 
 mod category;
 mod group;
+mod rust_version;
 
 use group::*;
 
@@ -37,14 +40,27 @@ struct Context {
 
 #[get("/")]
 fn index() -> Template {
+    #[derive(Serialize)]
+    struct Context {
+        page: String,
+        title: String,
+        parent: String,
+        is_landing: bool,
+        data: Option<HashMap<String, Vec<Group>>>,
+        rust_version: String,
+    }
+
     let page = "index".to_string();
     let title = format!("Rust - {}", page).to_string();
+
     let context = Context {
         page: "index".to_string(),
         title: title,
         parent: "layout".to_string(),
         is_landing: true,
         data: None,
+        rust_version: rust_version::rust_version()
+            .map_or(String::new(), |v| format!("Version {}", v)),
     };
     Template::render(page, &context)
 }
