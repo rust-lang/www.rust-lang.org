@@ -93,6 +93,7 @@ fn team(t: String, subject: String) -> Template {
         page: "farts".to_string(),
         title: title,
         parent: "layout".to_string(),
+        is_landing: false,
         data: load_group_data(t, &subject),
     };
     Template::render(page, &context)
