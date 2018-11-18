@@ -19,8 +19,8 @@ use std::io::prelude::*;
 use std::path::{Path, PathBuf};
 
 use rocket::response::NamedFile;
-use rocket_contrib::Template;
 use rocket::Error;
+use rocket_contrib::Template;
 
 use sass_rs::{compile_file, Options};
 
@@ -96,13 +96,13 @@ fn team(t: String, subject: String) -> Template {
 }
 
 fn get_type_from_string(s: &str) -> Result<GroupType, Error> {
-  match s {
-    "wgs" => Ok(GroupType::WorkingGroup),
-    "teams" => Ok(GroupType::Team),
-    "peers" => Ok(GroupType::Peer),
-    "shepards" => Ok(GroupType::Shepard),
-    _ => Err(Error::Internal),
-  }
+    match s {
+        "wgs" => Ok(GroupType::WorkingGroup),
+        "teams" => Ok(GroupType::Team),
+        "peers" => Ok(GroupType::Peer),
+        "shepards" => Ok(GroupType::Shepard),
+        _ => Err(Error::Internal),
+    }
 }
 
 fn load_group_data(t: GroupType, group: &str) -> Option<HashMap<String, Vec<Group>>> {
@@ -111,11 +111,13 @@ fn load_group_data(t: GroupType, group: &str) -> Option<HashMap<String, Vec<Grou
         "info".to_string(),
         vec![group::get_info(&t, group).expect("couldn't get group info")],
     );
-    let subteams = group::get_subs_data(&t, group, &GroupType::Team).expect("couldn't get subteams data");
+    let subteams =
+        group::get_subs_data(&t, group, &GroupType::Team).expect("couldn't get subteams data");
     if subteams.len() > 0 {
         map.insert("subteams".to_string(), subteams);
     }
-    let subwgs = group::get_subs_data(&t, group, &GroupType::WorkingGroup).expect("couldn't get subwgs data");
+    let subwgs = group::get_subs_data(&t, group, &GroupType::WorkingGroup)
+        .expect("couldn't get subwgs data");
     if subwgs.len() > 0 {
         map.insert("subwgs".to_string(), subwgs);
     }

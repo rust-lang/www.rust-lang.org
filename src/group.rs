@@ -6,19 +6,19 @@ use std::io;
 use std::path::{Path, PathBuf};
 
 pub enum GroupType {
-  WorkingGroup,
-  Team,
-  Peer, 
-  Shepard,
+    WorkingGroup,
+    Team,
+    Peer,
+    Shepard,
 }
 
 impl fmt::Display for GroupType {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         match self {
-          GroupType::WorkingGroup => write!(f, "wgs"),
-          GroupType::Team => write!(f, "teams"),
-          GroupType::Peer => write!(f, "peers"),
-          GroupType::Shepard => write!(f, "shepards"),
+            GroupType::WorkingGroup => write!(f, "wgs"),
+            GroupType::Team => write!(f, "teams"),
+            GroupType::Peer => write!(f, "peers"),
+            GroupType::Shepard => write!(f, "shepards"),
         }
     }
 }
@@ -33,7 +33,10 @@ pub struct Group {
 }
 
 fn read_toplevel_yaml(t: &GroupType, name: &str) -> io::Result<Group> {
-    let data_path = Path::new("./src/data/").join(t.to_string()).join(name).join("team.yml");
+    let data_path = Path::new("./src/data/")
+        .join(t.to_string())
+        .join(name)
+        .join("team.yml");
     assert!(fs::metadata(&data_path)?.is_file());
     let data_string = fs::read_to_string(&data_path)?;
     let data: Group =
@@ -83,7 +86,10 @@ pub fn get_info(t: &GroupType, name: &str) -> io::Result<Group> {
 
 pub fn get_subs_data(t: &GroupType, group: &str, st: &GroupType) -> io::Result<Vec<Group>> {
     let mut groups = vec![];
-    let data_path = Path::new("./src/data").join(t.to_string()).join(group).join(st.to_string());
+    let data_path = Path::new("./src/data")
+        .join(t.to_string())
+        .join(group)
+        .join(st.to_string());
     if fs::metadata(&data_path).is_ok() {
         let sub_data = fs::read_dir(data_path)?;
         for sub in sub_data {
