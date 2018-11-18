@@ -1,0 +1,7 @@
+route: cargo
+name: Cargo team
+description: design and implementation of Cargo
+chat: "Dev-Tools Team #cargo on Discord"
+email: "help@crates.io"
+leads: [nrc]
+members: [alexcrichton, dwijnand, eh2406, ehuss, joshtriplett, withoutboats, wycats]

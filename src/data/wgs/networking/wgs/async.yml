@@ -1,0 +1,5 @@
+route: async
+name: Async foundations working group
+description: Our goal is to bring async/await onto a path to stabilization and to provide documentation for asynchronous programming.
+chat: WG-Net #wg-net-async channel on Discord
+leads: [cramertj, majorbreakfast]

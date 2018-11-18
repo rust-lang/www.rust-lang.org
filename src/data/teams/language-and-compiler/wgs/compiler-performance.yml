@@ -1,0 +1,5 @@
+route: compiler-performance
+name: Compiler Performance
+description: Improving rustc compilation performance (build times).
+chat: #wg-compiler-performance on Discord
+leads: [nikomatsakis]
