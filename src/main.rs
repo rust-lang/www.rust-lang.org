@@ -20,6 +20,7 @@ use std::path::{Path, PathBuf};
 
 use rocket::response::NamedFile;
 use rocket_contrib::Template;
+use rocket::Error;
 
 use sass_rs::{compile_file, Options};
 
@@ -68,12 +69,12 @@ fn load_governance_data(page: &str) -> Option<HashMap<String, Vec<Group>>> {
     let mut map: HashMap<String, Vec<Group>> = HashMap::new();
     if page == "governance/index" {
         map.insert(
-            "teams".to_string(),
-            group::get_toplevel_data("teams").expect("couldn't get teams data"),
+            GroupType::Team.to_string(),
+            group::get_toplevel_data(&GroupType::Team).expect("couldn't get teams data"),
         );
         map.insert(
-            "wgs".to_string(),
-            group::get_toplevel_data("wgs").expect("couldn't get wgs data"),
+            GroupType::WorkingGroup.to_string(),
+            group::get_toplevel_data(&GroupType::WorkingGroup).expect("couldn't get wgs data"),
         );
         return Some(map);
     }
@@ -84,26 +85,37 @@ fn load_governance_data(page: &str) -> Option<HashMap<String, Vec<Group>>> {
 fn team(t: String, subject: String) -> Template {
     let page = "governance/group".to_string();
     let title = format!("Rust - {}", page).to_string();
+    let t = get_type_from_string(&t).expect("couldnt figure out group type from path string");
     let context = Context {
         page: "farts".to_string(),
         title: title,
         parent: "layout".to_string(),
-        data: load_group_data(&t, &subject),
+        data: load_group_data(t, &subject),
     };
     Template::render(page, &context)
 }
 
-fn load_group_data(t: &str, group: &str) -> Option<HashMap<String, Vec<Group>>> {
+fn get_type_from_string(s: &str) -> Result<GroupType, Error> {
+  match s {
+    "wgs" => Ok(GroupType::WorkingGroup),
+    "teams" => Ok(GroupType::Team),
+    "peers" => Ok(GroupType::Peer),
+    "shepards" => Ok(GroupType::Shepard),
+    _ => Err(Error::Internal),
+  }
+}
+
+fn load_group_data(t: GroupType, group: &str) -> Option<HashMap<String, Vec<Group>>> {
     let mut map: HashMap<String, Vec<Group>> = HashMap::new();
     map.insert(
         "info".to_string(),
-        vec![group::get_info(t, group).expect("couldn't get group info")],
+        vec![group::get_info(&t, group).expect("couldn't get group info")],
     );
-    let subteams = group::get_subs_data(t, group, "teams").expect("couldn't get subteams data");
+    let subteams = group::get_subs_data(&t, group, &GroupType::Team).expect("couldn't get subteams data");
     if subteams.len() > 0 {
         map.insert("subteams".to_string(), subteams);
     }
-    let subwgs = group::get_subs_data(t, group, "wgs").expect("couldn't get subwgs data");
+    let subwgs = group::get_subs_data(&t, group, &GroupType::WorkingGroup).expect("couldn't get subwgs data");
     if subwgs.len() > 0 {
         map.insert("subwgs".to_string(), subwgs);
     }

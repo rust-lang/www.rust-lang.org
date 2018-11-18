@@ -1,8 +1,27 @@
 extern crate serde_yaml;
 
+use std::fmt;
 use std::fs;
 use std::io;
 use std::path::{Path, PathBuf};
+
+pub enum GroupType {
+  WorkingGroup,
+  Team,
+  Peer, 
+  Shepard,
+}
+
+impl fmt::Display for GroupType {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        match self {
+          GroupType::WorkingGroup => write!(f, "wgs"),
+          GroupType::Team => write!(f, "teams"),
+          GroupType::Peer => write!(f, "peers"),
+          GroupType::Shepard => write!(f, "shepards"),
+        }
+    }
+}
 
 #[derive(Serialize, Deserialize)]
 pub struct Group {
@@ -13,8 +32,8 @@ pub struct Group {
     leads: Vec<String>,
 }
 
-fn read_toplevel_yaml(t: &str, name: &str) -> io::Result<Group> {
-    let data_path = Path::new("./src/data/").join(t).join(name).join("team.yml");
+fn read_toplevel_yaml(t: &GroupType, name: &str) -> io::Result<Group> {
+    let data_path = Path::new("./src/data/").join(t.to_string()).join(name).join("team.yml");
     assert!(fs::metadata(&data_path)?.is_file());
     let data_string = fs::read_to_string(&data_path)?;
     let data: Group =
@@ -22,11 +41,11 @@ fn read_toplevel_yaml(t: &str, name: &str) -> io::Result<Group> {
     Ok(data)
 }
 
-fn read_subs_yaml(t: &str, group: &str, st: &str, sub: &str) -> io::Result<Group> {
+fn read_subs_yaml(t: &GroupType, group: &str, st: &GroupType, sub: &str) -> io::Result<Group> {
     let data_path = Path::new("./src/data/")
-        .join(t)
+        .join(t.to_string())
         .join(group)
-        .join(st)
+        .join(st.to_string())
         .join(format!("{}.yml", sub));
     println!("trying to find {:?}", data_path);
     assert!(fs::metadata(&data_path)?.is_file());
@@ -38,9 +57,9 @@ fn read_subs_yaml(t: &str, group: &str, st: &str, sub: &str) -> io::Result<Group
     Ok(data)
 }
 
-pub fn get_toplevel_data(t: &str) -> io::Result<Vec<Group>> {
+pub fn get_toplevel_data(t: &GroupType) -> io::Result<Vec<Group>> {
     let mut groups = vec![];
-    let groups_data = fs::read_dir(Path::new("./src/data/").join(t))?;
+    let groups_data = fs::read_dir(Path::new("./src/data/").join(t.to_string()))?;
     for group in groups_data {
         let group = group?;
         let data = read_toplevel_yaml(t, &get_name_from_path(group.path()))
@@ -58,13 +77,13 @@ fn get_name_from_path(path: PathBuf) -> String {
         .to_string()
 }
 
-pub fn get_info(t: &str, name: &str) -> io::Result<Group> {
+pub fn get_info(t: &GroupType, name: &str) -> io::Result<Group> {
     read_toplevel_yaml(t, name)
 }
 
-pub fn get_subs_data(t: &str, group: &str, st: &str) -> io::Result<Vec<Group>> {
+pub fn get_subs_data(t: &GroupType, group: &str, st: &GroupType) -> io::Result<Vec<Group>> {
     let mut groups = vec![];
-    let data_path = Path::new("./src/data").join(t).join(group).join(st);
+    let data_path = Path::new("./src/data").join(t.to_string()).join(group).join(st.to_string());
     if fs::metadata(&data_path).is_ok() {
         let sub_data = fs::read_dir(data_path)?;
         for sub in sub_data {
