@@ -16,6 +16,10 @@ body {
   margin: 0 auto;
 }
 
+code {
+  overflow: scroll;
+}
+
 code.code-header {
   background-color: rgba(127, 127, 127, 0.25);
   font-size: 2rem;
@@ -80,25 +84,33 @@ section .container {
   }
 }
 
-.nav {
-  display: inline-block;
-}
-
-.nav ul {
-  list-style-type: none;
-}
-
-.nav li {
-  display: inline-block;
-  padding: 20px;
+// TODO:  remove when switching to Tachyons -- these are overrides for Skeleton.
+ul.nav, ul.nav li {
+  margin-bottom: 0;
 }
 
 .nav a {
   color: $gray;
 }
 
-span.brand img {
-  width: 80px;
+a.brand {
+  $v-top: 3px; // for getting the vertical rhythm just right
+
+  color: black;
+  font-family: $header-font;
+  font-size: 3rem;
+  text-decoration: none;
+  margin-top: $v-top;
+
+  img {
+    width: 80px;
+    margin-top: -$v-top;
+  }
+
+  span {
+    display: inline-block;
+    margin-left: -1rem;
+  }
 }
 
 .domain-icon {
@@ -528,6 +540,39 @@ blockquote::before {
 
 #language-values span {
   font-weight: 600;
+}
+
+// Temporary HACK: switch away from this when we switch to using Tachyons for
+// the page titles -- at that time, we should make a simple component class that
+// just composes those classes.
+// This hard-coded value for the break-point matches what is in Skeleton.
+@media screen and (max-width: 550px) {
+  header {
+    h1 {
+      font-size: 4rem;
+    }
+
+    h2 {
+      font-size: 3rem;
+    }
+
+    .highlight {
+      height: 20px;
+      top: -20px;
+      max-width: calc(100vw - 1em);
+    }
+
+    h2.subtitle {
+      font-size: 2.5rem;
+      line-height: 1.1;
+    }
+
+    .button.button-primary.button-download {
+      padding: 5px;
+      font-size: 1.5em;
+      margin-top: 20px;
+    }
+  }
 }
 
 .team {

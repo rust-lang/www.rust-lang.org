@@ -31,6 +31,7 @@ struct Context {
     page: String,
     title: String,
     parent: String,
+    is_landing: bool,
     data: Option<HashMap<String, Vec<Group>>>,
 }
 
@@ -42,6 +43,7 @@ fn index() -> Template {
         page: "index".to_string(),
         title: title,
         parent: "layout".to_string(),
+        is_landing: true,
         data: None,
     };
     Template::render(page, &context)
@@ -60,6 +62,7 @@ fn category(category: Category) -> Template {
         page: category.name().to_string(),
         title: title,
         parent: "layout".to_string(),
+        is_landing: false,
         data: load_governance_data(&page),
     };
     Template::render(page, &context)
@@ -132,6 +135,7 @@ fn subject(category: Category, subject: String) -> Template {
         page: subject,
         title: title,
         parent: "layout".to_string(),
+        is_landing: false,
         data: None,
     };
     Template::render(page, &context)
@@ -145,6 +149,7 @@ fn not_found() -> Template {
         page: "404".to_string(),
         title: title,
         parent: "layout".to_string(),
+        is_landing: false,
         data: None,
     };
     Template::render(page, &context)
