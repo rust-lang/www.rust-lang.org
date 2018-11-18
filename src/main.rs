@@ -12,6 +12,7 @@ extern crate serde_derive;
 
 mod category;
 mod group;
+mod rust_version;
 
 use group::*;
 
@@ -52,24 +53,13 @@ fn index() -> Template {
     let page = "index".to_string();
     let title = format!("Rust - {}", page).to_string();
 
-    let manifest = reqwest::get("https://static.rust-lang.org/dist/channel-rust-stable.toml")
-        .expect("get response")
-        .text()
-        .expect("get string");
-    let manifest = manifest.parse::<toml::Value>().expect("parse as toml");
-    let rust_version = manifest["pkg"]["rust"]["version"]
-        .as_str()
-        .unwrap()
-        .to_string();
-    let rust_version = &rust_version[..rust_version.find(" ").unwrap()];
-
     let context = Context {
         page: "index".to_string(),
         title: title,
         parent: "layout".to_string(),
         is_landing: true,
         data: None,
-        rust_version: format!("Version {}", rust_version),
+        rust_version: format!("Version {}", rust_version::rust_version()),
     };
     Template::render(page, &context)
 }
