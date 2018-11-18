@@ -3,93 +3,12 @@
 <header>
   <div class="container">
     <h1>Networking</h1>
-    <h2>Highly concurrent servers that let you sleep at night</h2>
   </div>
 </header>
 
-<section id="selling-points" class="red">
-  <div class="container">
-    <header>
-      <h2>Why Rust?</h2>
-      <div class="highlight"></div>
-    </header>
-    <h3>Low footprint</h3>
-
-    <p>Rust servers use less memory, less CPU cycles
-      and less power.</p>
-    <div class="image">Image of a race cycle.</div>
-
-    <h3>Security and predictability</h3>
-    <p>Rust servers a safe from many classes of bugs, while
-      retaining the predictability and speed of
-      a low-level language.
-    </p>
-    <div class="image">Image of a plane.</div>
-
-    <h3>Scalability and concurrency</h3>
-    <p>
-      Rusts concurrency support allows you to safely
-      and conveniently mix concurrency patterns.
-
-      It empowers you to squeeze every last bit out
-      of you machine.
-    </p>
-    <div class="image">Image of a logistics center.</div>
-  </div>
-</section>
-
-<section id="getting-started" class="white">
-  <div class="container">
-    <header>
-      <h2>Getting started</h2>
-      <div class="highlight"></div>
-    </header>
-
-    <p>This is all you need to safely parse JSON, checks its structure and reports proper errors:</p>
-
-    <pre><code>
-      extern crate serde;
-      extern crate serde_json;
-
-      fn main() {
-          serde_json::parse::<MyStuff>("string");
-      }
-    </code></pre>
-
-    <p>
-      Want more? You can customize every aspect of serializing and
-      deserializing your data, all checked by the compiler.
-    </p>
-  </div>
-</section>
-
-<section class="green">
-  <div class="container">
-    <header>
-      <h2>Keeping pagers silent since 2015</h2>
-      <div class="highlight"></div>
-    </header>
-
-    <ul>
-      <li>
-        NPM: Using Rust for services since for X years now.
-
-        Failure rate: 0%
-      </li>
-      <li>
-        1aim: Using Rust for their backend API.
-
-        Failure rate: 0%
-      </li>
-      <li>
-        Boyant: Using Rust for proxies and APIs.
-
-        Failure rate: 0%
-      </li>
-    </ul>
-  </div>
-</section>
-
+{{> what/networking/pitch }}
+{{> what/networking/get-started }}
+{{> what/networking/production }}
 
 {{/inline}}
 {{~> (parent)~}}
