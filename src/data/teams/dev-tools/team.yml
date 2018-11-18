@@ -3,3 +3,4 @@ name: Dev Tools team
 description: Rust developer tools
 chat: Dev Tools #dev-tools channel on Discord
 leads: [nrc]
+members: [fitzgen, japaric, killercup, manishearth, steveklabnik, withoutboats]

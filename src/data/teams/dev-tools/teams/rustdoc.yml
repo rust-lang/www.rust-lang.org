@@ -1,0 +1,6 @@
+route: rustdoc
+name: Rustdoc team
+chat: ??
+description: "Documentation tools including Rustdoc and docs.rs"
+leads: [QuietMisdreavus]
+members: [GuillaumeGomez, QuietMisdreavus, ollie27, onur, steveklabnik]

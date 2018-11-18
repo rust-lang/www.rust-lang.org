@@ -28,8 +28,10 @@ pub struct Group {
     route: String,
     name: String,
     description: String,
-    chat: String,
-    leads: Vec<String>,
+    chat: Option<String>,
+    repo: Option<String>,
+    email: Option<String>,
+    leads: Option<Vec<String>>,
     members: Option<Vec<String>>,
 }
 

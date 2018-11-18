@@ -1,5 +1,5 @@
 route: library
 name: Library team
 description: the Rust standard library, rust-lang crates, conventions, and ecosystem support
-chat: ?????
 leads: [alexcrichton]
+members: [sfackler, BurntSushi, Kimundi, SimonSapin, dtolnay, aturon, KodrAus, withoutboats]

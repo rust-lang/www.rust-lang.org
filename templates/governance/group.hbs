@@ -9,7 +9,9 @@
 <section id="team-info" class="purple">
   <div class="container">
     <p><strong>{{ data.info[0].description }}</strong></p>
-    <p><strong>Chat Channel</strong>: {{ data.info[0].chat }}</p>
+    {{#if data.info[0].chat}}<p><strong>Chat Channel</strong>: {{ data.info[0].chat }}</p>{{/if}}
+    {{#if data.info[0].repo}}<p><a href="{{data.info[0].repo}}" class="button button-secondary">Team GitHub</a></p>{{/if}}
+    {{#if data.info[0].email}}<p><a href="mailto:{{data.info[0].email}}" class="button button-secondary">Email the Team</a></p>{{/if}}
     <div class="row">
       <h2>Members</h2>
       {{#each data.info[0].leads as |lead| ~}}
@@ -41,7 +43,9 @@
           <h3>{{st.name~}}</h3>
           <div id="{{st.name}}-info">
             <p><strong>{{ st.description }}</strong></p>
-            <p><strong>Chat Channel</strong>: {{ st.chat }}</p>
+            {{#if st.chat}}<p><strong>Chat Channel</strong>: {{ st.chat }}</p>{{/if}}
+            {{#if st.repo}}<p><a href="{{st.repo}}" class="button button-secondary">Team GitHub</a></p>{{/if}}
+            {{#if st.email}}<p><a href="mailto:{{st.email}}" class="button button-secondary">Email the Team</a></p>{{/if}}
           </div>
           <div id="{{st.name}}-members">
             {{#each st.leads as |lead|}}
@@ -65,10 +69,10 @@
 {{/if ~}}
 
 {{#if data.subwgs ~}}
-<section id="subteams" class="green">
+<section id="subteams" class="red">
   <div class="container">
     <header>
-      <h2>Subteams</h2>
+      <h2>Working Groups</h2>
       <div class="highlight"></div>
     </header>
     <div id="teams">
@@ -77,7 +81,9 @@
           <h3>{{st.name~}}</h3>
           <div id="{{st.name}}-info">
             <p><strong>{{ st.description }}</strong></p>
-            <p><strong>Chat Channel</strong>: {{ st.chat }}</p>
+            {{#if st.chat}}<p><strong>Chat Channel</strong>: {{ st.chat }}</p>{{/if}}
+            {{#if st.email}}<p><a href="mailto:{{st.repo}}" class="button button-secondary">Team GitHub</a></p>{{/if}}
+            {{#if st.email}}<p><a href="mailto:{{st.email}}" class="button button-secondary">Email the Team</a></p>{{/if}}
           </div>
           <div id="{{st.name}}-leads">
             {{#each st.leads as |lead|}}

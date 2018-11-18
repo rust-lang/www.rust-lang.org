@@ -1,0 +1,5 @@
+route: language
+name: Language team
+description: designing new language features
+leads: [nikomatsakis]
+members: [cramertj, withoutboats, eddyb, nrc, pnkfelix, aturon, joshtriplett, scottmcm, Centril]

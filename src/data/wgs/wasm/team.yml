@@ -1,5 +1,6 @@
 route: wasm
 name: WebAssembly (WASM) working group
 description: Focusing on the end-to-end experience of embedding Rust code in JS libraries and apps via WebAssembly.
-chat: #rust-wasm on Mozilla IRC
+chat: "#rust-wasm on Mozilla IRC"
+repo: "https://github.com/rustwasm"
 leads: [fitzgen]
