@@ -9,12 +9,17 @@ extern crate rocket_contrib;
 extern crate serde_derive;
 
 mod category;
+mod group;
 
+use group::*;
+
+use std::collections::HashMap;
 use std::fs::File;
 use std::io::prelude::*;
 use std::path::{Path, PathBuf};
 
 use rocket::response::NamedFile;
+use rocket::Error;
 use rocket_contrib::Template;
 
 use sass_rs::{compile_file, Options};
@@ -26,6 +31,7 @@ struct Context {
     page: String,
     title: String,
     parent: String,
+    data: Option<HashMap<String, Vec<Group>>>,
 }
 
 #[get("/")]
@@ -36,6 +42,7 @@ fn index() -> Template {
         page: "index".to_string(),
         title: title,
         parent: "layout".to_string(),
+        data: None,
     };
     Template::render(page, &context)
 }
@@ -53,11 +60,71 @@ fn category(category: Category) -> Template {
         page: category.name().to_string(),
         title: title,
         parent: "layout".to_string(),
+        data: load_governance_data(&page),
     };
     Template::render(page, &context)
 }
 
-#[get("/<category>/<subject>", rank = 2)]
+fn load_governance_data(page: &str) -> Option<HashMap<String, Vec<Group>>> {
+    let mut map: HashMap<String, Vec<Group>> = HashMap::new();
+    if page == "governance/index" {
+        map.insert(
+            GroupType::Team.to_string(),
+            group::get_toplevel_data(&GroupType::Team).expect("couldn't get teams data"),
+        );
+        map.insert(
+            GroupType::WorkingGroup.to_string(),
+            group::get_toplevel_data(&GroupType::WorkingGroup).expect("couldn't get wgs data"),
+        );
+        return Some(map);
+    }
+    None
+}
+
+#[get("/governance/<t>/<subject>", rank = 2)]
+fn team(t: String, subject: String) -> Template {
+    let page = "governance/group".to_string();
+    let title = format!("Rust - {}", page).to_string();
+    let t = get_type_from_string(&t).expect("couldnt figure out group type from path string");
+    let context = Context {
+        page: "farts".to_string(),
+        title: title,
+        parent: "layout".to_string(),
+        data: load_group_data(t, &subject),
+    };
+    Template::render(page, &context)
+}
+
+fn get_type_from_string(s: &str) -> Result<GroupType, Error> {
+    match s {
+        "wgs" => Ok(GroupType::WorkingGroup),
+        "teams" => Ok(GroupType::Team),
+        "peers" => Ok(GroupType::Peer),
+        "shepards" => Ok(GroupType::Shepard),
+        _ => Err(Error::Internal),
+    }
+}
+
+fn load_group_data(t: GroupType, group: &str) -> Option<HashMap<String, Vec<Group>>> {
+    let mut map: HashMap<String, Vec<Group>> = HashMap::new();
+    map.insert(
+        "info".to_string(),
+        vec![group::get_info(&t, group).expect("couldn't get group info")],
+    );
+    let subteams =
+        group::get_subs_data(&t, group, &GroupType::Team).expect("couldn't get subteams data");
+    if subteams.len() > 0 {
+        map.insert("subteams".to_string(), subteams);
+    }
+    let subwgs = group::get_subs_data(&t, group, &GroupType::WorkingGroup)
+        .expect("couldn't get subwgs data");
+    if subwgs.len() > 0 {
+        map.insert("subwgs".to_string(), subwgs);
+    }
+    return Some(map);
+}
+
+#[get("/<category>/<subject>", rank = 4)]
 fn subject(category: Category, subject: String) -> Template {
     let page = format!("{}/{}", category.name(), subject.as_str()).to_string();
     let title = format!("Rust - {}", page).to_string();
@@ -65,6 +132,7 @@ fn subject(category: Category, subject: String) -> Template {
         page: subject,
         title: title,
         parent: "layout".to_string(),
+        data: None,
     };
     Template::render(page, &context)
 }
@@ -77,6 +145,7 @@ fn not_found() -> Template {
         page: "404".to_string(),
         title: title,
         parent: "layout".to_string(),
+        data: None,
     };
     Template::render(page, &context)
 }
@@ -88,16 +157,17 @@ fn catch_error() -> Template {
 
 fn compile_sass() {
     let scss = "./src/styles/app.scss";
-    let css = compile_file(scss, Options::default()).unwrap();
-    let mut file = File::create("./static/styles/app.css").unwrap();
-    file.write_all(&css.into_bytes()).unwrap();
+    let css = compile_file(scss, Options::default()).expect("couldn't compile sass");
+    let mut file = File::create("./static/styles/app.css").expect("couldn't make css file");
+    file.write_all(&css.into_bytes())
+        .expect("couldn't write css file");
 }
 
 fn main() {
     compile_sass();
     rocket::ignite()
         .attach(Template::fairing())
-        .mount("/", routes![index, category, subject, files])
+        .mount("/", routes![index, category, team, subject, files])
         .catch(catchers![not_found, catch_error])
         .launch();
 }

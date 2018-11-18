@@ -397,18 +397,6 @@ blockquote::before {
   }
 }
 
-#teams {
-  li {
-    display: inline-block;
-  }
-  img {
-    width: 10em;
-  }
-  p {
-    margin: 0;
-  }
-}
-
 .rustfest {
   background-image: url("/static/images/rustfest.jpg");
   background-position: 50% 50%;
@@ -540,4 +528,46 @@ blockquote::before {
 
 #language-values span {
   font-weight: 600;
+}
+
+.team {
+  min-height: 250px;
+  max-height: 250px;
+  float: left;
+  width: 25%;
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+  position: relative;
+  border: 1px solid white;
+  .button {
+    position: absolute;
+    bottom: 5px;
+    width: 80%;
+  }
+  h4 {
+    font-size: 1.5em;
+    font-weight: 600;
+  }
+}
+
+.group-member {
+  float: left;
+  .name {
+    display: block;
+    font-weight: 600;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.subteam {
+  margin: 20px 0;
+  width: 100%;
+  content: "";
+  display: table;
+  clear: both;
+  border: 1px white solid;
+  padding: 20px;
 }

@@ -14,22 +14,14 @@
       <div class="highlight"></div>
     </header>
     <div class="row">
-      <div class="four columns">
-        IMAGE HERE
-      </div>
-      <div class="eight columns">
+      <div class="six columns">
         <p>Each major decision in Rust starts as a Request for Comments (RFC).
           Everyone is invited to discuss the proposal, to work toward a shared understanding of the tradeoffs.
           Though sometimes arduous, this community deliberation is Rust's secret sauce for quality.
         </p>
         <a href="https://github.com/rust-lang/rfcs" target="_blank" rel="noopener" class="button button-secondary">Learn more</a>
       </div>
-    </div>
-    <div class="row">
-      <div class="four columns">
-        IMAGE HERE
-      </div>
-      <div class="eight columns">
+      <div class="six columns">
         <p>The RFC process is also used to establish a yearly roadmap laying out our aspirations for that year.
           This shared vision is essential for keeping the development process focused.
         </p>
@@ -39,181 +31,33 @@
     </div>
 </section>
 
-<section id="teams" class="purple">
+<section id="teams-and-working-groups" class="purple">
   <div class="container">
     <header>
-      <h2>Teams</h2>
+      <h2>Teams and Working Groups</h2>
       <div class="highlight"></div>
     </header>
     <p>Each aspect of the Rust project is managed by a dedicated leadership team:</p>
-
-    <div class="row">
-      <div class="four columns">
-        <b>Team</b>
-      </div>
-      <div class="eight columns">
-        <b>Purview</b>
-      </div>
+    <h3>Teams</h3>
+    <div id="teams" class="row">
+      {{#each data.teams as |team| ~}}
+        <div class="team">
+          <h4>{{team.name~}}</h4>
+          <p>{{team.description}}</p>
+          <a href="/governance/teams/{{team.route}}" class="button button-secondary">Learn More</a>
+        </div>
+      {{/each~}}
     </div>
-    <div class="row">
-      <div class="four columns">
-        <a href="??">Core</a>
-      </div>
-      <div class="eight columns">
-        Rust's vision and global concerns.
-      </div>
-    </div>
-    <div class="row">
-      <div class="four columns">
-        <a href="??">Language</a>
-      </div>
-      <div class="eight columns">
-        The design of the core language.
-      </div>
-    </div>
-    <div class="row">
-      <div class="four columns">
-        &bullet; <a href="??">WG: Unsafe code guidelines (UCG)</a>
-      </div>
-      <div class="eight columns">
-
-      </div>
-    </div>
-    <div class="row">
-      <div class="four columns">
-        <a href="??">Compiler</a>
-      </div>
-      <div class="eight columns">
-        The Rust compiler, <code>rustc</code>
-      </div>
-    </div>
-    <div class="row">
-      <div class="four columns">
-        &bullet; <a href="??">WG: Non-lexical lifetimes (NLL)</a>
-      </div>
-      <div class="eight columns">
-
-      </div>
-    </div>
-    <div class="row">
-      <div class="four columns">
-        &bullet; <a href="??">WG: Grammar</a>
-      </div>
-      <div class="eight columns">
-
-      </div>
-    </div>
-    <div class="row">
-      <div class="four columns">
-        &bullet; <a href="??">WG: Traits</a>
-      </div>
-      <div class="eight columns">
-
-      </div>
-    </div>
-    <div class="row">
-      <div class="four columns">
-        &bullet; <a href="??">WG: Compiler performance</a>
-      </div>
-      <div class="eight columns">
-
-      </div>
-    </div>
-    <div class="row">
-      <div class="four columns">
-        &bullet; <a href="??">WG: Codegen</a>
-      </div>
-      <div class="eight columns">
-
-      </div>
-    </div>
-    <div class="row">
-      <div class="four columns">
-        <p><a href="??">Library</a>
-      </div>
-      <div class="eight columns">
-        The standard library and ecosystem.
-      </div>
-    </div>
-    <div class="row">
-      <div class="four columns">
-        <a href="??">Dev Tools</a>
-      </div>
-      <div class="eight columns">
-        Cargo, IDE support, <code>rustdoc</code>, <code>rustfmt</code>, and more.
-      </div>
-    </div>
-    <div class="row">
-      <div class="four columns">
-        <a href="https://github.com/rust-community/team" target="_blank" rel="noopener">Community</a>
-      </div>
-      <div class="eight columns">
-        Events, surveys, switchboard and more.
-      </div>
-    </div>
-    <div class="row">
-      <div class="four columns">
-        <a href="??">Documentation</a>
-      </div>
-      <div class="eight columns">
-        Official books and API docs.
-      </div>
-    </div>
-    <div class="row">
-      <div class="four columns">
-        <a href="??">Operations</a>
-      </div>
-      <div class="eight columns">
-        Rust releases and project infrastructure.
-      </div>
-    </div>
-    <div class="row">
-      <div class="four columns">
-        <a href="??">Moderation</a>
-      </div>
-      <div class="eight columns">
-
-      </div>
-    </div>
-    <div class="row">
-      <div class="four columns">
-        <a href="??">Domain working groups</a>
-      </div>
-      <div class="eight columns">
-        Bolster Rust's story for particular application domains.
-      </div>
-    </div>
-    <div class="row">
-      <div class="four columns">
-        &bullet; <a href="??">WG: Command-line apps</a>
-      </div>
-      <div class="eight columns">
-
-      </div>
-    </div>
-    <div class="row">
-      <div class="four columns">
-        &bullet; <a href="??">WG: WebAssembly</a>
-      </div>
-      <div class="eight columns">
-
-      </div>
-    </div>
-    <div class="row">
-      <div class="four columns">
-        &bullet; <a href="??">WG: Embedded devices</a>
-      </div>
-      <div class="eight columns">
-
-      </div>
-    </div>
-    <div class="row">
-      <div class="four columns">
-        &bullet; <a href="??">WG: networking services</a>
-      </div>
-      <div class="eight columns">
-
-      </div>
+    <hr/>
+    <h3>Working Groups</h3>
+    <div id="wgs" class="row">
+      {{#each data.wgs as |wg| ~}}
+        <div class="team">
+          <h4>{{wg.name~}}</h4>
+          <p>{{wg.description}}</p>
+          <a href="/governance/wgs/{{wg.route}}" class="button button-secondary">Learn More</a>
+        </div>
+      {{/each~}}
     </div>
   </div>
 </section>

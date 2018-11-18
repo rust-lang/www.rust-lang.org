@@ -1,0 +1,6 @@
+route: crates-io
+name: Crates.io team
+description: management of operations, development, and policies for crates.io
+chat: Infra #crates-io channel on Discord
+leads: [ag_dubs, sgrif]
+members: [carols10cents, jtgeibel, withoutboats, joshtriplett, ishitatsuyuki, steveklabnik]
