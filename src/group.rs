@@ -13,7 +13,7 @@ pub struct Group {
     leads: Vec<String>,
 }
 
-fn read_team_yaml(t: &str, name: &str) -> io::Result<Group> {
+fn read_toplevel_yaml(t: &str, name: &str) -> io::Result<Group> {
     let data_path = Path::new("./src/data/").join(t).join(name).join("team.yml");
     assert!(fs::metadata(&data_path)?.is_file());
     let data_string = fs::read_to_string(&data_path)?;
@@ -38,16 +38,16 @@ fn read_subs_yaml(t: &str, group: &str, st: &str, sub: &str) -> io::Result<Group
     Ok(data)
 }
 
-pub fn get_data(t: &str) -> io::Result<Vec<Group>> {
-    let mut teams = vec![];
-    let team_data = fs::read_dir(Path::new("./src/data/").join(t))?;
-    for team in team_data {
-        let team = team?;
-        let data = read_team_yaml(t, &get_name_from_path(team.path()))
-            .expect(&format!("couldn't get team data for type {}", t));
-        teams.push(data);
+pub fn get_toplevel_data(t: &str) -> io::Result<Vec<Group>> {
+    let mut groups = vec![];
+    let groups_data = fs::read_dir(Path::new("./src/data/").join(t))?;
+    for group in groups_data {
+        let group = group?;
+        let data = read_toplevel_yaml(t, &get_name_from_path(group.path()))
+            .expect(&format!("couldn't get toplevel group data for type {}", t));
+        groups.push(data);
     }
-    Ok(teams)
+    Ok(groups)
 }
 
 fn get_name_from_path(path: PathBuf) -> String {
@@ -59,26 +59,25 @@ fn get_name_from_path(path: PathBuf) -> String {
 }
 
 pub fn get_info(t: &str, name: &str) -> io::Result<Group> {
-    read_team_yaml(t, name)
+    read_toplevel_yaml(t, name)
 }
 
-pub fn get_subs(t: &str, team: &str, st: &str) -> io::Result<Vec<Group>> {
-    let mut teams = vec![];
-    println!("team {}", team);
-    let data_path = Path::new("./src/data").join(t).join(team).join(st);
+pub fn get_subs_data(t: &str, group: &str, st: &str) -> io::Result<Vec<Group>> {
+    let mut groups = vec![];
+    let data_path = Path::new("./src/data").join(t).join(group).join(st);
     if fs::metadata(&data_path).is_ok() {
         let sub_data = fs::read_dir(data_path)?;
         for sub in sub_data {
             let sub = sub?;
             let data =
-                read_subs_yaml(t, team, st, &get_name_from_path(sub.path())).expect(&format!(
+                read_subs_yaml(t, group, st, &get_name_from_path(sub.path())).expect(&format!(
                     "couldn't get subs data for {} {} {}",
                     t,
-                    team,
+                    group,
                     get_name_from_path(sub.path())
                 ));
-            teams.push(data);
+            groups.push(data);
         }
     }
-    Ok(teams)
+    Ok(groups)
 }

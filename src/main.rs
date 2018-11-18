@@ -69,11 +69,11 @@ fn load_governance_data(page: &str) -> Option<HashMap<String, Vec<Group>>> {
     if page == "governance/index" {
         map.insert(
             "teams".to_string(),
-            group::get_data("teams").expect("couldn't get teams data"),
+            group::get_toplevel_data("teams").expect("couldn't get teams data"),
         );
         map.insert(
             "wgs".to_string(),
-            group::get_data("wgs").expect("couldn't get wgs data"),
+            group::get_toplevel_data("wgs").expect("couldn't get wgs data"),
         );
         return Some(map);
     }
@@ -99,11 +99,11 @@ fn load_group_data(t: &str, group: &str) -> Option<HashMap<String, Vec<Group>>> 
         "info".to_string(),
         vec![group::get_info(t, group).expect("couldn't get group info")],
     );
-    let subteams = group::get_subs(t, group, "teams").expect("couldn't get subteams data");
+    let subteams = group::get_subs_data(t, group, "teams").expect("couldn't get subteams data");
     if subteams.len() > 0 {
         map.insert("subteams".to_string(), subteams);
     }
-    let subwgs = group::get_subs(t, group, "wgs").expect("couldn't get subwgs data");
+    let subwgs = group::get_subs_data(t, group, "wgs").expect("couldn't get subwgs data");
     if subwgs.len() > 0 {
         map.insert("subwgs".to_string(), subwgs);
     }
