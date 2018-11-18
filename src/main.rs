@@ -1,8 +1,10 @@
 #![feature(plugin)]
 #![plugin(rocket_codegen)]
 
+extern crate reqwest;
 extern crate rocket;
 extern crate sass_rs;
+extern crate toml;
 
 extern crate rocket_contrib;
 #[macro_use]
@@ -37,14 +39,37 @@ struct Context {
 
 #[get("/")]
 fn index() -> Template {
+    #[derive(Serialize)]
+    struct Context {
+        page: String,
+        title: String,
+        parent: String,
+        is_landing: bool,
+        data: Option<HashMap<String, Vec<Group>>>,
+        rust_version: String,
+    }
+
     let page = "index".to_string();
     let title = format!("Rust - {}", page).to_string();
+
+    let manifest = reqwest::get("https://static.rust-lang.org/dist/channel-rust-stable.toml")
+        .expect("get response")
+        .text()
+        .expect("get string");
+    let manifest = manifest.parse::<toml::Value>().expect("parse as toml");
+    let rust_version = manifest["pkg"]["rust"]["version"]
+        .as_str()
+        .unwrap()
+        .to_string();
+    let rust_version = &rust_version[..rust_version.find(" ").unwrap()];
+
     let context = Context {
         page: "index".to_string(),
         title: title,
         parent: "layout".to_string(),
         is_landing: true,
         data: None,
+        rust_version: format!("Version {}", rust_version),
     };
     Template::render(page, &context)
 }
