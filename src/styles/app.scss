@@ -550,3 +550,14 @@ blockquote::before {
     font-weight: 600;
   }
 }
+
+.group-member {
+  float: left;
+  .name {
+    display: block;
+    font-weight: 600;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+}

@@ -11,16 +11,13 @@
     <p><strong>{{ data.info[0].description }}</strong></p>
     <p><strong>Chat Channel</strong>: {{ data.info[0].chat }}</p>
     <div class="row">
-      <h2>Leads</h2>
+      <h2>Members</h2>
       {{#each data.info[0].leads as |lead| ~}}
-        <div class="two columns group-member">
-          <h3>{{lead}}</h3>
+        <div class="two columns group-lead group-member">
+          <p class="name">{{lead}} (Lead)</p>
           <img src="https://avatars.githubusercontent.com/{{lead}}" />
         </div>
       {{/each~}}
-    </div>
-    <div class="row">
-      <h2>Members</h2>
     </div>
   </div>
 </section>
@@ -34,16 +31,16 @@
     </header>
     <div id="teams">
       {{#each data.subteams as |st| ~}}
-        <div class="team row">
+        <div class="subteam">
           <h3>{{st.name~}}</h3>
           <div id="{{st.name}}-info">
             <p><strong>{{ st.description }}</strong></p>
             <p><strong>Chat Channel</strong>: {{ st.chat }}</p>
           </div>
-          <div id="{{st.name}}-leads">
+          <div id="{{st.name}}-members">
             {{#each st.leads as |lead|}}
               <div class="two columns group-member">
-                <h3>{{lead}}</h3>
+                <p class="name">{{lead}} (Lead)</p>
                 <img src="https://avatars.githubusercontent.com/{{lead}}" />
               </div>
             {{/each~}}
