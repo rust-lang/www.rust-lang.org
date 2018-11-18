@@ -59,7 +59,8 @@ fn index() -> Template {
         parent: "layout".to_string(),
         is_landing: true,
         data: None,
-        rust_version: format!("Version {}", rust_version::rust_version()),
+        rust_version: rust_version::rust_version()
+            .map_or(String::new(), |v| format!("Version {}", v)),
     };
     Template::render(page, &context)
 }
