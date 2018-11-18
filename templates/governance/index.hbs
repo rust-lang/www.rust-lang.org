@@ -41,18 +41,20 @@
     <h3>Teams</h3>
     <div id="teams" class="row">
       {{#each data.teams as |team| ~}}
-        <div class="two columns">
-          <h3>{{team.name~}}</h3>
+        <div class="team">
+          <h4>{{team.name~}}</h4>
+          <p>{{team.description}}</p>
           <a href="/governance/teams/{{team.route}}" class="button button-secondary">Learn More</a>
         </div>
       {{/each~}}
     </div>
     <hr/>
     <h3>Working Groups</h3>
-    <div id="teams" class="row">
+    <div id="wgs" class="row">
       {{#each data.wgs as |wg| ~}}
-        <div class="two columns">
-          <h3>{{wg.name~}}</h3>
+        <div class="team">
+          <h4>{{wg.name~}}</h4>
+          <p>{{wg.description}}</p>
           <a href="/governance/wgs/{{wg.route}}" class="button button-secondary">Learn More</a>
         </div>
       {{/each~}}
