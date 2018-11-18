@@ -30,6 +30,7 @@ pub struct Group {
     description: String,
     chat: String,
     leads: Vec<String>,
+    members: Option<Vec<String>>,
 }
 
 fn read_toplevel_yaml(t: &GroupType, name: &str) -> io::Result<Group> {
