@@ -561,3 +561,13 @@ blockquote::before {
     margin: 0;
   }
 }
+
+.subteam {
+  margin: 20px 0;
+  width: 100%;
+  content: "";
+  display: table;
+  clear: both;
+  border: 1px white solid;
+  padding: 20px;
+}

@@ -18,6 +18,12 @@
           <img src="https://avatars.githubusercontent.com/{{lead}}" />
         </div>
       {{/each~}}
+      {{#each data.info[0].members as |member|}}
+        <div class="two columns group-member">
+          <p class="name">{{member}}</p>
+          <img src="https://avatars.githubusercontent.com/{{member}}" />
+        </div>
+      {{/each~}}
     </div>
   </div>
 </section>
@@ -44,6 +50,12 @@
                 <img src="https://avatars.githubusercontent.com/{{lead}}" />
               </div>
             {{/each~}}
+            {{#each st.members as |member|}}
+              <div class="two columns group-member">
+                <p class="name">{{member}}</p>
+                <img src="https://avatars.githubusercontent.com/{{member}}" />
+              </div>
+            {{/each~}}
           </div>
         </div>
       {{/each~}}
@@ -61,7 +73,7 @@
     </header>
     <div id="teams">
       {{#each data.subwgs as |st| ~}}
-        <div class="team row">
+        <div class="subteam">
           <h3>{{st.name~}}</h3>
           <div id="{{st.name}}-info">
             <p><strong>{{ st.description }}</strong></p>
