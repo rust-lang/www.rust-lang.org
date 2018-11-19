@@ -44,8 +44,8 @@ header {
 }
 
 header .button.button-primary.button-download {
-  background-color: $purple;
-  border-color: $purple;
+  background-color: $red;
+  border-color: $red;
   width: 100%;
   padding: 20px;
   height: auto;
@@ -54,8 +54,8 @@ header .button.button-primary.button-download {
 }
 
 header .button.button-primary.button-download:hover {
-  background-color: $red;
-  border-color: $red;
+  background-color: $purple;
+  border-color: $purple;
 }
 
 h2.subtitle {
