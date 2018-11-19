@@ -7,43 +7,17 @@
 
 ### Running the app locally
 
-1. As this is a [Rocket](https://rocket.rs/) app, you must have the most current version of Rust nightly installed on your local machine. You can install it using [`rustup`](https://rustup.rs/) by running `rustup default nightly`.
-
+1. This is a [Rocket](https://rocket.rs/) app, which means we use the `nightly` channel of Rust. You can install it using [`rustup`](https://rustup.rs/) by running `rustup default nightly`. The Rust `nightly` that we deploy with is listed in the `RustConfig` file. If the latest `nightly` is not working for you, you should use the `nightly` version in that file.
 1. Install `cargo watch` by running `cargo install cargo-watch` in your terminal.
-
 1. To build the app and run the server, run `cargo watch -x run` in your terminal.
-
 1. Navigate to http://localhost:7878 in your browser. If you make any updates to the styles, or any other project files, `cargo watch` will automatically restart the server for you, all you have to do is refresh your browser to see your changes.
 
-### A few notes on style(s)
+### Where to edit
 
-Colors and other variables go in `/src/styles/variables`.
+- If you would like to edit styles, you should edit [`src/styles/app.scss`](src/styles/app.scss). 
+- If you would like to update group data, you should edit the `yml` files in [`src/data/`](src/data/).
+- If you would like to edit page content, you should edit the `hbs` file in [`templates`](templates).
 
-If you add a new `.scss` file be sure to `@include` it in `/src/styles/app.scss`.
+### Contributing
 
-Be sure to put your styles in the applicable `.scss` files and compile to `.css`. Please don't write anything in the `.css` files, it will just be written over the next time you or someone else compiles the `.scss`.
-
-The `skeleton.css` file comes from http://getskeleton.com/ and is a base upon which we are building. Feel free to pull out things from there that you would like to customize and add your altered version to our original SCSS.
-
-### Using the linter
-
-The linter is how we maintain a consistent code style throughout the project. This project's style rules are defined in `.stylelintrc` using [Stylelint](https://stylelint.io/). You can install Stylelint on your local machine by running `npm install -g stylelint`. There are a few ways to use the linter! You can do all or just some of them.
-
-1. Install a linter package to your text editor of choice. I use Atom, so I installed [linter-stylelint](https://atom.io/packages/linter-stylelint), but you can probably find a [compatible package](https://stylelint.io/user-guide/complementary-tools/#editor-plugins) for your editor of choice.
-1. Run `stylelint <path/to/file.scss>` (where `<path/to/file.scss>` is replaced by the actual path to your file) in your terminal and it will print out a nice list of all the rules you're breaking, right there in the terminal.
-
-If you encounter a persistent linter error that you are certain you've fixed, try running `stylelint <path/to/file.scss> --fix` (where `<path/to/file.scss>` is replaced by the actual path to your file) in your terminal.
-
-If you encounter a persistent linter error regarding a third-party CSS framework or other thing outside of your control, add the file to the list in the `.stylelintignore` file. Please only ignore third-party files that are not under your control. If you have the ability to fix the linter error or warning, it is preferable to do so.
-
-### Using the Lighthouse script
-
-Lighthouse is a website analysis tool that measures several elements of a website. We are using it primarily
-for accessibility testing at the moment, but we may expand that later to performance characteristics. To run
-Lighthouse locally, type this is a terminal on a computer with Chrome installed:
-
-```
-npm run lighthouse
-```
-
-This will run the tests in Chrome and then open the results page in Chrome for you.
+Please read our [`CONTRIBUTING.md`](CONTRIBUTING.md) before submitting a PR!
