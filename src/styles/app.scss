@@ -266,6 +266,7 @@ section header h2 {
   top: -30px;
   left: -10px;
   width: 120%;
+  max-width: 90vw;
 }
 
 footer {
@@ -559,7 +560,6 @@ blockquote::before {
     .highlight {
       height: 20px;
       top: -20px;
-      max-width: calc(100vw - 1em);
     }
 
     h2.subtitle {
