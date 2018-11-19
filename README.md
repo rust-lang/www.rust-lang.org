@@ -1,7 +1,7 @@
-# wubwub
+# new-rust-www
 > the home of the new rust website
 
-[![Build Status](https://travis-ci.com/rust-lang/wubwub.svg?token=hHeDp9pQmz9kvsgRNVHy&branch=master)](https://travis-ci.com/rust-lang/wubwub)
+[![Build Status](https://travis-ci.com/rust-lang/new-rust-www.svg?token=hHeDp9pQmz9kvsgRNVHy&branch=master)](https://travis-ci.com/rust-lang/new-rust-www)
 
 ## Development
 
