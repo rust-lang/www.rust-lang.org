@@ -13,8 +13,8 @@
       <h2>Roadmap and RFC process</h2>
       <div class="highlight"></div>
     </header>
-    <div class="row">
-      <div class="six columns">
+    <div class="flex flex-column flex-row-l">
+      <div class="mw8 flex flex-column justify-between pt0 bp2 pv3-ns ph3-l">
         <p>Each major decision in Rust starts as a Request for Comments (RFC).
           Everyone is invited to discuss the proposal, to work toward a shared understanding of the tradeoffs.
           Though sometimes arduous, this community deliberation is Rust's secret sauce for quality.
@@ -22,7 +22,7 @@
         <a href="https://github.com/rust-lang/rfcs" target="_blank" rel="noopener" class="button button-secondary">Learn
           more</a>
       </div>
-      <div class="six columns">
+      <div class="mw8 flex flex-column justify-between pt0 bp2 pv3-ns ph3-l">
         <p>The RFC process is also used to establish a yearly roadmap laying out our aspirations for that year.
           This shared vision is essential for keeping the development process focused.
         </p>
@@ -41,10 +41,10 @@
     </header>
     <p>Each aspect of the Rust project is managed by a dedicated leadership team:</p>
     <h3>Teams</h3>
-    <div id="teams" class="row">
+    <div id="teams" class="flex flex-column flex-row-l flex-wrap-l justify-start tc">
       {{#each data.teams as |team| ~}}
-      <div class="team">
-        <h4>{{team.name~}}</h4>
+      <div class="flex flex-column justify-between ba br3 b--white mw-100 w-100-l pa3 ma4 max-width-quarter-l">
+        <h4 class="f2 fw6">{{team.name~}}</h4>
         <p>{{team.description}}</p>
         <a href="/governance/teams/{{team.route}}" class="button button-secondary">Learn More</a>
       </div>
@@ -52,10 +52,10 @@
     </div>
     <hr />
     <h3>Working Groups</h3>
-    <div id="wgs" class="row">
+    <div id="wgs" class="flex flex-column flex-row-l flex-wrap-l justify-start tc">
       {{#each data.wgs as |wg| ~}}
-      <div class="team">
-        <h4>{{wg.name~}}</h4>
+      <div class="flex flex-column justify-between ba br3 b--white mw-100 w-100-l pa3 ma4 max-width-quarter-l">
+        <h4 class="f2 fw6">{{wg.name~}}</h4>
         <p>{{wg.description}}</p>
         <a href="/governance/wgs/{{wg.route}}" class="button button-secondary">Learn More</a>
       </div>

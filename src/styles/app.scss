@@ -575,11 +575,14 @@ blockquote::before {
   }
 }
 
+
+@media screen and (min-width: 60em) {
+  .max-width-quarter-l {
+    max-width: 25%;
+  }
+}
+
 .team {
-  min-height: 250px;
-  max-height: 250px;
-  float: left;
-  width: 25%;
   text-align: center;
   padding: 20px;
   margin: 20px;
