@@ -20,7 +20,7 @@ file an issue so that we can discuss it first!
 
 The site currently uses two frameworks: [Tachyons] and [Skeleton].
 
-The team is currently in the process of transitioning from Tachyons to Skeleton.
+The team is currently in the process of transitioning from Skeleton to Tachyons.
 This is a somewhat complicated transition, so if you would like to update CSS,
 please file an issue.
 
