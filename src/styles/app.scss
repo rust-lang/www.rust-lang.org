@@ -584,7 +584,9 @@ blockquote::before {
   padding: 20px;
   margin: 20px;
   position: relative;
-  border: 1px solid white;
+  border: 0.5px solid $red;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.3), 0 1px 3px 1px rgba(0,0,0,0.15);
   .button {
     position: absolute;
     bottom: 5px;
