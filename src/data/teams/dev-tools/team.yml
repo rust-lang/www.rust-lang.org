@@ -2,5 +2,6 @@ route: dev-tools
 name: Dev Tools team
 description: Rust developer tools
 chat: Dev Tools #dev-tools channel on Discord
+repo: "https://github.com/rust-dev-tools/dev-tools-team"
 leads: [nrc]
 members: [fitzgen, japaric, killercup, manishearth, steveklabnik, withoutboats]
