@@ -7,7 +7,12 @@ public. Please file an issue with suggestions!
 
 **tl;dr: Always file an issue first.**
 
-**Contacts:** @ashleygwilliams, @aturon, @chriskrycho, @yoshuawuyts
+**Contacts:** [@ashleygwilliams], [@aturon], [@chriskrycho], [@yoshuawuyts]
+
+[@ashleygwilliams]: https://github.com/ashleygwilliams
+[@aturon]: https://github.com/aturon
+[@chriskrycho]: https://github.com/chriskrycho
+[@yoshuawuyts]: https://github.com/yoshuawuyts
 
 ## Design and Content
 
@@ -24,12 +29,12 @@ The team is currently in the process of transitioning from Skeleton to Tachyons.
 This is a somewhat complicated transition, so if you would like to update CSS,
 please file an issue.
 
-@yoshuawuyts and @chriskrycho are the current developers on this transition. Please
+[@yoshuawuyts] and [@chriskrycho] are the current developers on this transition. Please
 direct issues and questions to them!
 
 ### Content
 
-The content of the site is currently overseen by @aturon. Please direct issues
+The content of the site is currently overseen by [@aturon]. Please direct issues
 and questions to him.
 
 The content is largely owned by the associated team or working group. If you have
@@ -39,8 +44,8 @@ site.
 
 ## Development
 
-Currently, @ashleygwilliams is the primary developer on the site. If
-you need help or have any questions please direct them to @ashleygwilliams.
+Currently, [@ashleygwilliams] is the primary developer on the site. If
+you need help or have any questions please direct them to [@ashleygwilliams].
 
 Before filing a PR to the site, please file an issue. This way we can ensure that the
 work you are doing meets the requirements of the site and will be very likely merged.
