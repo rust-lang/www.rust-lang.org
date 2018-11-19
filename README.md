@@ -16,7 +16,7 @@
 
 - If you would like to edit styles, you should edit [`src/styles/app.scss`](src/styles/app.scss). 
 - If you would like to update group data, you should edit the `yml` files in [`src/data/`](src/data/).
-- If you would like to edit page content, you should edit the `hbs` file in [`templates`](templates).
+- If you would like to edit page content, you should edit the `hbs` files in [`templates`](templates).
 
 ### Contributing
 
