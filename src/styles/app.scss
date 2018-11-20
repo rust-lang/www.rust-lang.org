@@ -72,18 +72,18 @@ section {
   padding: 30px 0 60px 0;
 }
 
+ul {
+  list-style: circle;
+  padding-left: 1.5em;
+}
+
+ol {
+  list-style: decimal;
+  padding-left: 1.5em;
+}
+
 section .container {
   padding-top: 20px;
-
-  ul {
-    list-style: circle;
-    padding-left: 1.5em;
-  }
-
-  ol {
-    list-style: decimal;
-    padding-left: 1.5em;
-  }
 }
 
 // TODO:  remove when switching to Tachyons -- these are overrides for Skeleton.
