@@ -7,7 +7,7 @@
 </header>
 
 <section id="community" class="purple">
-  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f2">
     <p>
       The Rust programming language has many qualities, but Rust’s greatest
       strength is the community of people who come together to make working in
@@ -18,7 +18,7 @@
       We'd like to hear from you! Not sure where or who to ask a question? Want to get involved but aren't sure how?
       The community team is eager to connect you with someone who can help!
     </p>
-    <a href="mailto:community@rust-lang.org" class="button button-secondary">email community@rust-lang.org</a>
+    <a href="mailto:community@rust-lang.org" class="center mw8 button button-secondary">email community@rust-lang.org</a>
   </div>
 </section>
 
@@ -28,35 +28,52 @@
       <h2>Where to talk</h2>
       <div class="highlight"></div>
     </header>
-    <div class="row">
-      <div class="four columns" id="users-forum">
-        <h3>Users forum</h3>
-        <p>
-          The Rust Users Forum is a place for Rust users to communicate about
-          anything and everything related to Rust. Ask questions here,
-          coordinate on project ideas, whatever you like!
-        </p>
-        <a href="https://users.rust-lang.org" target="_blank" rel="noopener"
-           class="button button-secondary">Visit Forum</a>
+    <div class="flex flex-column flex-row-l">
+      <div class="mw-30-l mh1-ns pt0 flex flex-column justify-between" id="users-forum">
+        <div>
+          <h3>Users forum</h3>
+          <p>
+            The Rust Users Forum is a place for Rust users to communicate about
+            anything and everything related to Rust. Ask questions here,
+            coordinate on project ideas, whatever you like!
+          </p>
+        </div>
+
+        <a href="https://users.rust-lang.org" target="_blank" rel="noopener" class="button button-secondary">Visit
+          Forum</a>
       </div>
-      <div class="four columns" id="internals-forum">
-        <h3>Internals forum</h3>
-        <p>
-          The Rust Internals Forum is a place for discussion about the
-          development of Rust itself.
-        </p>
-        <a href="https://internals.rust-lang.org/" target="_blank" rel="noopener"
-           class="button button-secondary">Visit Forum</a>
+
+      <div class="mw-30-l mh1-ns pt4 pt0-l flex flex-column justify-between" id="internals-forum">
+        <div>
+          <h3>Internals forum</h3>
+          <p>
+            The Rust Internals Forum is a place for discussion about the
+            development of Rust itself.
+          </p>
+        </div>
+        <a href="https://internals.rust-lang.org/" target="_blank" rel="noopener" class="button button-secondary">Visit
+          Forum</a>
       </div>
-      <div class="four columns" id="chat-platforms">
-        <h3>Chat platforms</h3>
-        <p>
-          Development of Rust, and general chatter happens on several chat
-          platforms. Check out general channels and more on the Rust Discord server,
-          or check out the teams page to find where specific teams meet.
-        </p>
-        <a href="https://discord.gg/rust-lang" target="_blank" rel="noopener" class="button button-secondary">Discord</a>
-        <a href="/governance" class="button button-secondary">Learn more about teams</a>
+
+      <div class="mw-30-l mh1-ns pt4 pt0-l flex flex-column justify-between" id="chat-platforms">
+        <div>
+          <h3>Chat platforms</h3>
+          <p>
+            Development of Rust, and general chatter happens on several chat
+            platforms. Check out general channels and more on the Rust Discord server,
+            or check out the teams page to find where specific teams meet.
+          </p>
+        </div>
+
+        {{!-- TODO: remove padding and margin once global declarations are gone --}}
+        <ul class="list pa0 ma0"> 
+          <li>
+            <a href="https://discord.gg/rust-lang" target="_blank" rel="noopener" class="button button-secondary">Discord</a>
+          </li>
+          <li>
+            <a href="/governance" class="button button-secondary">Learn more about teams</a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
