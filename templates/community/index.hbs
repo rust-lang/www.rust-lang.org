@@ -29,7 +29,7 @@
       <div class="highlight"></div>
     </header>
     <div class="flex flex-column flex-row-l">
-      <div class="mw-30-l mh1-ns pt0 flex flex-column justify-between" id="users-forum">
+      <div class="mw-33-l mh2-l pt0 flex flex-column justify-between" id="users-forum">
         <div>
           <h3>Users forum</h3>
           <p>
@@ -43,7 +43,7 @@
           Forum</a>
       </div>
 
-      <div class="mw-30-l mh1-ns pt4 pt0-l flex flex-column justify-between" id="internals-forum">
+      <div class="mw-33-l mh2-l pt4 pt0-l flex flex-column justify-between" id="internals-forum">
         <div>
           <h3>Internals forum</h3>
           <p>
@@ -55,7 +55,7 @@
           Forum</a>
       </div>
 
-      <div class="mw-30-l mh1-ns pt4 pt0-l flex flex-column justify-between" id="chat-platforms">
+      <div class="mw-33-l mh2-l pt4 pt0-l flex flex-column justify-between" id="chat-platforms">
         <div>
           <h3>Chat platforms</h3>
           <p>
@@ -85,32 +85,48 @@
       <h2>Events</h2>
       <div class="highlight"></div>
     </header>
-    <div class="row">
-      <div class="six columns" id="meetups-usergroups">
-        <h3>Find a local meetup or conference</h3>
-        <p>
-          There are more than 90 Meetups and several conferences worldwide in over 35 countries.
-          Rustaceans meet periodically in Rust User Groups. Its a great
-          introduction to the community and a great way to learn and socialize
-          with other people with a similar interest. Meetings are usually
-          informal and open to everyone.
-        </p>
-        <a href="https://calendar.google.com/calendar/embed?showTitle=0&showPrint=0&showTabs=0&showCalendars=0&mode=AGENDA&height=400&wkst=1&bgcolor=%23FFFFFF&src=apd9vmbc22egenmtu5l6c5jbfc%40group.calendar.google.com&color=%23691426&ctz=Europe%2FMadrid"
-          target="_blank" rel="noopener" class="button button-secondary">View Calendar</a>
-        <a href="https://blog.rust-lang.org/2018/01/31/The-2018-Rust-Event-Lineup.html"
-           target="_blank" rel="noopener" class="button button-secondary">Check out the 2018 Conference Lineup</a>
+    <div class="flex flex-column flex-row-l">
+      <div class="mw-50-l mh2-l pt0 flex flex-column justify-between" id="meetups-usergroups">
+        <div>
+          <h3>Find a local meetup or conference</h3>
+          <p>
+            There are more than 90 Meetups and several conferences worldwide in over 35 countries.
+            Rustaceans meet periodically in Rust User Groups. Its a great
+            introduction to the community and a great way to learn and socialize
+            with other people with a similar interest. Meetings are usually
+            informal and open to everyone.
+          </p>
+        </div>
+        <ul class="list ma0 pa0">
+          <li>
+            <a href="https://calendar.google.com/calendar/embed?showTitle=0&showPrint=0&showTabs=0&showCalendars=0&mode=AGENDA&height=400&wkst=1&bgcolor=%23FFFFFF&src=apd9vmbc22egenmtu5l6c5jbfc%40group.calendar.google.com&color=%23691426&ctz=Europe%2FMadrid"
+              target="_blank" rel="noopener" class="button button-secondary">View Calendar</a>
+          </li>
+          <li>
+            <a href="https://blog.rust-lang.org/2018/01/31/The-2018-Rust-Event-Lineup.html" target="_blank" rel="noopener"
+              class="button button-secondary">Check out the 2018 Conference Lineup</a>
+          </li>
+        </ul>
       </div>
-      <div class="six columns" id="conferences">
-        <h3>Run your own event</h3>
-        <p>
-          As Rust grows, we're excited to help folks start their own local events.
-          From hack and learns, to meetups, to conferences, the Rust Events Team is
-          ready to help support you.
-        </p>
-        <a href="https://github.com/rust-community/events-team#-rust-events-team" target="_blank" rel="noopener"
-          class="button button-secondary">Check out the events team repo</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf52YXGhqBaHtCXtVna4iHYMK7IQaTqUW6V-ztsZC8C2TBInQ/viewform"
-          target="_blank" rel="noopener" class="button button-secondary">Register your event</a>
+      <div class="mw-50-l mh2-l pt4 pt0-l flex flex-column justify-between" id="conferences">
+        <div>
+          <h3>Run your own event</h3>
+          <p>
+            As Rust grows, we're excited to help folks start their own local events.
+            From hack and learns, to meetups, to conferences, the Rust Events Team is
+            ready to help support you.
+          </p>
+        </div>
+        <ul class="list ma0 pa0">
+        <li>
+          <a href="https://github.com/rust-community/events-team#-rust-events-team" target="_blank" rel="noopener" class="button button-secondary">Check
+            out the events team repo</a>
+        </li>
+        <li>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSf52YXGhqBaHtCXtVna4iHYMK7IQaTqUW6V-ztsZC8C2TBInQ/viewform"
+            target="_blank" rel="noopener" class="button button-secondary">Register your event</a>
+        </li>
+        </ul>
       </div>
     </div>
     <img src="/static/images/rustfest.jpg" alt="RustFest participants">
@@ -123,22 +139,23 @@
       <h2>RustBridge</h2>
       <div class="highlight"></div>
     </header>
-    <div class="row">
-      <div class="four columns">
+
+    <div class="w-100 flex flex-column flex-row-l">
+      <div class="mw-33-l mh2-l">
         <img src="/static/images/rustbridge.jpg" alt="rustbridge logo"/>
       </div>
-      <div class="eight columns">
+      <div class="mw-67-l mh2-l">
         <p>
           RustBridge is a workshop focused on getting underrepresented people
           with a background in another programming language to learn Rust and
           join the community.
         </p>
         <a href="https://github.com/rustbridge/team" target="_blank" rel="noopener"
-           class="button button-secondary">Check out the Rustbridge repo</a>
+          class="button button-secondary">Check out the Rustbridge repo</a>
       </div>
     </div>
 
-    <ul class="list flex flex-column flex-row-ns flex-wrap-m flex-nowrap-l justify-center">
+    <ul class="list ma0 pa0 w-100 flex flex-column flex-row-ns flex-wrap-m flex-nowrap-l justify-center">
       <li class="tc max-width-half-m ph1-ns"><img src="/static/images/rustbridge-rustconf.jpg" alt="RustBridge at RustConf" /></li>
       <li class="tc max-width-half-m ph1-ns"><img src="/static/images/rustbridge-paris.jpg" alt="RustBridge Paris" /></li>
       <li class="tc max-width-half-m ph1-ns"><img src="/static/images/rustbridge-berlin.jpg" alt="RustBridge Berlin" /></dv>
