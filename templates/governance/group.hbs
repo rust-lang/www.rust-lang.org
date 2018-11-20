@@ -8,8 +8,8 @@
 
 <section id="team-info" class="purple">
   <div class="container">
-    <p><strong>{{ data.info[0].description }}</strong></p>
-    {{#if data.info[0].chat}}<p><strong>Chat Channel</strong>: {{ data.info[0].chat }}</p>{{/if}}
+    <p><b>{{ data.info[0].description }}</b></p>
+    {{#if data.info[0].chat}}<p><b>Chat Channel</b>: {{ data.info[0].chat }}</p>{{/if}}
     {{#if data.info[0].repo}}<p><a href="{{data.info[0].repo}}" class="button button-secondary">Team GitHub</a></p>{{/if}}
     {{#if data.info[0].email}}<p><a href="mailto:{{data.info[0].email}}" class="button button-secondary">Email the Team</a></p>{{/if}}
     <div class="row">
@@ -42,8 +42,8 @@
         <div class="subteam">
           <h3>{{st.name~}}</h3>
           <div id="{{st.name}}-info">
-            <p><strong>{{ st.description }}</strong></p>
-            {{#if st.chat}}<p><strong>Chat Channel</strong>: {{ st.chat }}</p>{{/if}}
+            <p><b>{{ st.description }}</b></p>
+            {{#if st.chat}}<p><b>Chat Channel</b>: {{ st.chat }}</p>{{/if}}
             {{#if st.repo}}<p><a href="{{st.repo}}" class="button button-secondary">Team GitHub</a></p>{{/if}}
             {{#if st.email}}<p><a href="mailto:{{st.email}}" class="button button-secondary">Email the Team</a></p>{{/if}}
           </div>
@@ -80,8 +80,8 @@
         <div class="subteam">
           <h3>{{st.name~}}</h3>
           <div id="{{st.name}}-info">
-            <p><strong>{{ st.description }}</strong></p>
-            {{#if st.chat}}<p><strong>Chat Channel</strong>: {{ st.chat }}</p>{{/if}}
+            <p><b>{{ st.description }}</b></p>
+            {{#if st.chat}}<p><b>Chat Channel</b>: {{ st.chat }}</p>{{/if}}
             {{#if st.email}}<p><a href="mailto:{{st.repo}}" class="button button-secondary">Team GitHub</a></p>{{/if}}
             {{#if st.email}}<p><a href="mailto:{{st.email}}" class="button button-secondary">Email the Team</a></p>{{/if}}
           </div>
