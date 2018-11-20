@@ -1,0 +1,13 @@
+// Custom classes we use to extend Tachyons
+
+@media screen and (min-width: 30em) and (max-width: 60em) {
+  .max-width-half-m {
+    max-width: 50%;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .max-width-quarter-l {
+    max-width: 25%;
+  }
+}

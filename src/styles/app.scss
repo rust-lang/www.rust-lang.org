@@ -1,3 +1,5 @@
+@import 'tachyons-ext';
+
 $body-font: 'Fira Sans', Helvetica, Arial, sans-serif;
 $header-font: 'Alfa Slab One', serif;
 
@@ -410,29 +412,6 @@ blockquote::before {
   }
 }
 
-.rustfest {
-  background-image: url("/static/images/rustfest.jpg");
-  background-position: 50% 50%;
-  background-repeat:   no-repeat;
-  background-size:     cover;
-  height: 150px;
-}
-
-#rustbridge, #rustreach {
-  img {
-    width: 100%;
-  }
-  .img {
-    position: relative;
-    float: left;
-    width:  25%;
-    height: 100px;
-    background-position: 50% 50%;
-    background-repeat:   no-repeat;
-    background-size:     cover;
-  }
-}
-
 .tools-row {
   display: flex;
   flex-direction: row;
@@ -572,13 +551,6 @@ blockquote::before {
       font-size: 1.5em;
       margin-top: 20px;
     }
-  }
-}
-
-
-@media screen and (min-width: 60em) {
-  .max-width-quarter-l {
-    max-width: 25%;
   }
 }
 

@@ -96,7 +96,7 @@
           target="_blank" rel="noopener" class="button button-secondary">Register your event</a>
       </div>
     </div>
-    <div class="rustfest"></div>
+    <img src="/static/images/rustfest.jpg" alt="RustFest participants">
   </div>
 </section>
 
@@ -120,10 +120,17 @@
            class="button button-secondary">Check out the Rustbridge repo</a>
       </div>
     </div>
-    <div class="img" style="background-image:url('/static/images/rustbridge-rustconf.jpg');"></div>
-    <div class="img" style="background-image:url('/static/images/rustbridge-paris.jpg');"></div>
-    <div class="img" style="background-image:url('/static/images/rustbridge-berlin.jpg');"></div>
-    <div class="img" style="background-image:url('/static/images/rustbridge-rbr.jpg');"></div>
+
+    {{!--
+      TODO: switch this to a `ul` when Skeleton is gone, since we can then also
+      remove our `section .container ul` settings.
+    --}}
+    <div class="list flex flex-column flex-row-ns flex-wrap-m flex-nowrap-l justify-center">
+      <div class="tc max-width-half-m ph1-ns"><img src="/static/images/rustbridge-rustconf.jpg" alt="RustBridge at RustConf" /></div>
+      <div class="tc max-width-half-m ph1-ns"><img src="/static/images/rustbridge-paris.jpg" alt="RustBridge Paris" /></div>
+      <div class="tc max-width-half-m ph1-ns"><img src="/static/images/rustbridge-berlin.jpg" alt="RustBridge Berlin" /></div>
+      <div class="tc max-width-half-m ph1-ns"><img src="/static/images/rustbridge-rbr.jpg" alt="RustBridge at Rust Belt Rust" /></div>
+    </div>
   </div>
 </section>
 
