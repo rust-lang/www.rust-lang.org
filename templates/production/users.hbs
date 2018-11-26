@@ -1,0 +1,21 @@
+<section id="users" class="white">
+  <div class="container">
+    <header>
+      <h2>Users</h2>
+      <div class="highlight"></div>
+    </header>
+
+    {{#each data as |user_row| ~}}
+      <div class="row">
+        {{#each user_row as |u| ~}}
+          <div class="four columns">
+            <a href="{{ u.url }}" target="_blank" rel="noopener">
+              <img src="/static/images/user-logos/{{ u.logo }}"/>
+            </a>
+            <em>{{ u.name }}</em>: {{{ u.how }}}
+          </div>
+        {{/each~}}
+      </div>
+    {{/each~}}
+  </div>
+</section>

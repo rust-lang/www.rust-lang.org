@@ -1,6 +1,7 @@
 #![feature(plugin)]
 #![plugin(rocket_codegen)]
 
+extern crate rand;
 extern crate reqwest;
 extern crate rocket;
 extern crate sass_rs;
@@ -12,14 +13,18 @@ extern crate serde_derive;
 
 mod category;
 mod group;
+mod production;
 mod rust_version;
 
 use group::*;
+use production::User;
 
 use std::collections::HashMap;
 use std::fs::File;
 use std::io::prelude::*;
 use std::path::{Path, PathBuf};
+
+use rand::seq::SliceRandom;
 
 use rocket::response::NamedFile;
 use rocket::Error;
@@ -35,7 +40,24 @@ struct Context {
     title: String,
     parent: String,
     is_landing: bool,
-    data: Option<HashMap<String, Vec<Group>>>,
+}
+
+#[derive(Serialize)]
+struct GroupContext {
+    page: String,
+    title: String,
+    parent: String,
+    is_landing: bool,
+    data: HashMap<String, Vec<Group>>,
+}
+
+#[derive(Serialize)]
+struct UsersContext {
+    page: String,
+    title: String,
+    parent: String,
+    is_landing: bool,
+    data: Vec<Vec<User>>,
 }
 
 #[get("/")]
@@ -46,7 +68,6 @@ fn index() -> Template {
         title: String,
         parent: String,
         is_landing: bool,
-        data: Option<HashMap<String, Vec<Group>>>,
         rust_version: String,
     }
 
@@ -54,11 +75,10 @@ fn index() -> Template {
     let title = format!("Rust - {}", page).to_string();
 
     let context = Context {
-        page: "index".to_string(),
+        page: page.clone(),
         title: title,
         parent: "layout".to_string(),
         is_landing: true,
-        data: None,
         rust_version: rust_version::rust_version()
             .map_or(String::new(), |v| format!("Version {}", v)),
     };
@@ -79,25 +99,35 @@ fn category(category: Category) -> Template {
         title: title,
         parent: "layout".to_string(),
         is_landing: false,
-        data: load_governance_data(&page),
     };
     Template::render(page, &context)
 }
 
-fn load_governance_data(page: &str) -> Option<HashMap<String, Vec<Group>>> {
+#[get("/governance")]
+fn governance() -> Template {
+    let page = "governance/index".to_string();
+    let title = format!("Rust - {}", page).to_string();
+    let context = GroupContext {
+        page: page.clone(),
+        title: title,
+        parent: "layout".to_string(),
+        is_landing: false,
+        data: load_governance_data(),
+    };
+    Template::render(page, &context)
+}
+
+fn load_governance_data() -> HashMap<String, Vec<Group>> {
     let mut map: HashMap<String, Vec<Group>> = HashMap::new();
-    if page == "governance/index" {
-        map.insert(
-            GroupType::Team.to_string(),
-            group::get_toplevel_data(&GroupType::Team).expect("couldn't get teams data"),
-        );
-        map.insert(
-            GroupType::WorkingGroup.to_string(),
-            group::get_toplevel_data(&GroupType::WorkingGroup).expect("couldn't get wgs data"),
-        );
-        return Some(map);
-    }
-    None
+    map.insert(
+        GroupType::Team.to_string(),
+        group::get_toplevel_data(&GroupType::Team).expect("couldn't get teams data"),
+    );
+    map.insert(
+        GroupType::WorkingGroup.to_string(),
+        group::get_toplevel_data(&GroupType::WorkingGroup).expect("couldn't get wgs data"),
+    );
+    map
 }
 
 #[get("/governance/<t>/<subject>", rank = 2)]
@@ -105,8 +135,8 @@ fn team(t: String, subject: String) -> Template {
     let page = "governance/group".to_string();
     let title = format!("Rust - {}", page).to_string();
     let t = get_type_from_string(&t).expect("couldnt figure out group type from path string");
-    let context = Context {
-        page: "farts".to_string(),
+    let context = GroupContext {
+        page: page.clone(),
         title: title,
         parent: "layout".to_string(),
         is_landing: false,
@@ -125,7 +155,7 @@ fn get_type_from_string(s: &str) -> Result<GroupType, Error> {
     }
 }
 
-fn load_group_data(t: GroupType, group: &str) -> Option<HashMap<String, Vec<Group>>> {
+fn load_group_data(t: GroupType, group: &str) -> HashMap<String, Vec<Group>> {
     let mut map: HashMap<String, Vec<Group>> = HashMap::new();
     map.insert(
         "info".to_string(),
@@ -141,7 +171,28 @@ fn load_group_data(t: GroupType, group: &str) -> Option<HashMap<String, Vec<Grou
     if subwgs.len() > 0 {
         map.insert("subwgs".to_string(), subwgs);
     }
-    return Some(map);
+    map
+}
+
+#[get("/production")]
+fn production() -> Template {
+    let page = "production/index".to_string();
+    let title = format!("Rust - {}", page).to_string();
+    let context = UsersContext {
+        page: page.clone(),
+        title: title,
+        parent: "layout".to_string(),
+        is_landing: false,
+        data: load_users_data(),
+    };
+    Template::render(page, &context)
+}
+
+fn load_users_data() -> Vec<Vec<User>> {
+    let mut rng = rand::thread_rng();
+    let mut users = production::get_info().expect("couldn't get production users data");
+    users.shuffle(&mut rng);
+    users.chunks(3).map(|s| s.to_owned()).collect()
 }
 
 #[get("/<category>/<subject>", rank = 4)]
@@ -153,7 +204,6 @@ fn subject(category: Category, subject: String) -> Template {
         title: title,
         parent: "layout".to_string(),
         is_landing: false,
-        data: None,
     };
     Template::render(page, &context)
 }
@@ -167,7 +217,6 @@ fn not_found() -> Template {
         title: title,
         parent: "layout".to_string(),
         is_landing: false,
-        data: None,
     };
     Template::render(page, &context)
 }
@@ -189,7 +238,9 @@ fn main() {
     compile_sass();
     rocket::ignite()
         .attach(Template::fairing())
-        .mount("/", routes![index, category, team, subject, files])
-        .catch(catchers![not_found, catch_error])
+        .mount(
+            "/",
+            routes![index, category, governance, team, production, subject, files],
+        ).catch(catchers![not_found, catch_error])
         .launch();
 }
