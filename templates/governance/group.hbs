@@ -1,13 +1,13 @@
 {{#*inline "page"}}
 
 <header>
-  <div class="container">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <h1>{{ data.info[0].name }}</h1>
   </div>
 </header>
 
 <section id="team-info" class="purple">
-  <div class="container">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <p><b>{{ data.info[0].description }}</b></p>
     {{#if data.info[0].chat}}<p><b>Chat Channel</b>: {{ data.info[0].chat }}</p>{{/if}}
     {{#if data.info[0].repo}}<p><a href="{{data.info[0].repo}}" class="button button-secondary">Team GitHub</a></p>{{/if}}
@@ -32,7 +32,7 @@
 
 {{#if data.subteams ~}}
 <section id="subteams" class="green">
-  <div class="container">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
       <h2>Subteams</h2>
       <div class="highlight"></div>
@@ -70,7 +70,7 @@
 
 {{#if data.subwgs ~}}
 <section id="subteams" class="red">
-  <div class="container">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
       <h2>Working Groups</h2>
       <div class="highlight"></div>
