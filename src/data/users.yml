@@ -1,26 +1,6 @@
-# Rust user logos
+# Rust users
 
-# If you are a "production" user of Rust, you are encouraged to add
-# your organization's information here to have it displayed on and
-# linked from the Rust web page. Organizations are currently listed
-# in an arbitrary order.
-
-# The 'how' field should be one short sentence, ideally with a link
-# providing evidence (other prospective users will be interested to
-# know details). The UI for this can't accomodate more than about two
-# lines of text.
-
-# To have your pull request accepted, you must additionally provide us
-# the name and email of a contact within your organization who the
-# Rust team can contact should we need to make changes to the web
-# page. You may either do this on the pull request itself, or
-# alternately email production@rust-lang.org with the subject line
-# "Rust User Logo Contact". This information will be kept private.
-
-# Logos will be displayed against a white background and constrained
-# via CSS to a width of 200px by 100px. To support high-resolution
-# displays, consider submitting your image at a resolution of at least
-# 400px by 200px.
+# See CONTRIBUTING.md for details on how to contribute to this file
 
 -
   name: 1aim
