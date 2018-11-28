@@ -1,6 +1,6 @@
 ---
 name: Technical Feature Request
-about: Want us to add new functionality to wubwub?
+about: Want us to add new functionality to the Rust website?
 ---
 
 # Technical Feature Request
