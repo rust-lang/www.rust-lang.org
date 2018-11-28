@@ -1,6 +1,6 @@
 route: rustdoc
 name: Rustdoc team
-chat: ??
+chat: "Dev-Tools Team #rustdoc on Discord"
 description: "Documentation tools including Rustdoc and docs.rs"
 leads: [QuietMisdreavus]
 members: [GuillaumeGomez, ollie27, onur, steveklabnik]

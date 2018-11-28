@@ -3,4 +3,4 @@ name: Clippy working group
 description: design and implementation of the Clippy linter
 chat: "Dev-Tools Team #wg-clippy on Discord"
 repo: "https://github.com/rust-lang-nursery/rust-clippy"
-members: [llogiq, killercup, manishearth, oli-obk]
+leads: [llogiq, killercup, manishearth, oli-obk]
