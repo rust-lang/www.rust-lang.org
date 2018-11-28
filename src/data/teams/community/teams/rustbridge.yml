@@ -1,7 +1,7 @@
 route: rustbridge
 name: RustBridge team
-description: an inclusive educational initiative focused on bringing underrepped folks into Rust
-chat: Community #rustbridge channel on Discord
+description: An inclusive educational initiative focused on bringing underrepped folks into Rust.
+chat: "Community #rustbridge channel on Discord"
 repo: "https://github.com/rustbridge/team"
 leads: [oe]
 members: [ashleygwilliams, technetos, arshiamufti, spacekookie, sebasmagri]
