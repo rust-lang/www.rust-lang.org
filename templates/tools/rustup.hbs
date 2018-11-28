@@ -1,24 +1,18 @@
 <div class="row">
-  <div class="eight columns">
-    <div id="platform-instructions-unix" class="instructions" style="display: block;">
-      <p><b>Looks like you're running macOS, Linux, or another Unix-like OS!</b></p>
-      <p>To install Rust, run the following in your terminal, then follow the onscreen instructions.</p>
-      <code>curl https://sh.rustup.rs -sSf | sh</code>
-    </div>
-    <div id="platform-instructions-win" class="instructions" style="display: none;">
-    <p><b>Looks like you're running Windows!</b></p>
-    <p>
-      <p>To install Rust, download and run</p>
-      <a href="https://win.rustup.rs" class="button button-secondary">rustup‑init.exe</a>
-      <p>...then follow the onscreen instructions.</p>
-    </p>
+  <div id="platform-instructions-unix" class="instructions" style="display: block;">
+    <p>It looks like you're running macOS, Linux, or another Unix-like OS. To download Rustup and install Rust, run the following in your terminal, then follow the on-screen instructions.</p>
+    <code>curl https://sh.rustup.rs -sSf | sh</code>
+  </div>
+  <div id="platform-instructions-win" class="instructions" style="display: none;">
+    <p>It looks like you're running Windows. To install Rust, download and run</p>
+    <a href="https://win.rustup.rs" class="button button-secondary">rustup‑init.exe</a>
+    <p>...then follow the onscreen instructions.</p>
     <p><b>Windows Subsystem for Linux</b></p>
-    <p>If you're a Windows Subsystem for Linux user run the following in your terminal, then follow the onscreen instructions to install Rust.</p>
+    <p>If you're a Windows Subsystem for Linux user run the following in your terminal, then follow the on-screen instructions to install Rust.</p>
     <code>curl https://sh.rustup.rs -sSf | sh</code>
   </div>
   <div id="platform-instructions-unknown" class="instructions" style="display: none;">
     <!-- unrecognized platform: ask for help -->
-    <p><b>I don't recognize your platform.</b></p>
     <p>
       Rust runs on Windows, Linux, macOS, FreeBSD and NetBSD. If
       you are on one of these platforms and are seeing this then please
@@ -38,7 +32,7 @@
     <div>
       <p>
         To install Rust, if you are running Unix,<br>run the following
-        in your terminal, then follow the onscreen instructions.
+        in your terminal, then follow the on-screen instructions.
       </p>
       <code>curl https://sh.rustup.rs -sSf | sh</code>
     </div>
@@ -47,7 +41,7 @@
       <p>
         If you are running Windows,<br>download and run
         <a href="https://win.rustup.rs">rustup‑init.exe</a>
-        then follow the onscreen instructions.
+        then follow the on-screen instructions.
       </p>
     </div>
   </div>
@@ -55,7 +49,7 @@
     <div>
       <p>
         To install Rust, if you are running Unix,<br>run the following
-        in your terminal, then follow the onscreen instructions.
+        in your terminal, then follow the on-screen instructions.
       </p>
       <code>curl https://sh.rustup.rs -sSf | sh</code>
     </div>
@@ -64,21 +58,8 @@
       <p>
         If you are running Windows,<br>download and run
         <a href="https://win.rustup.rs">rustup‑init.exe</a>
-        then follow the onscreen instructions.
+        then follow the on-screen instructions.
       </p>
     </div>
   </div>
-</div>
-<div class="four columns release-info-column">
-  <div>
-    <div class="release-version">Rust <span>1.30.1</span></div>
-    <a href="https://blog.rust-lang.org/2018/11/08/Rust-1.30.1.html">
-      <div class="release-date">November 8, 2018</div>
-    </a>
-    <br>
-    <a id="platform-button" style="display: none;" href="#">
-      click or press "n" to cycle platforms
-    </a>
-  </div>
-</div>
 </div>
