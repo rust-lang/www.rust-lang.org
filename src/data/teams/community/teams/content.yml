@@ -1,7 +1,6 @@
 route: content
 name: Content Team
-description: Helping support community content collection and development
+description: Helping support community content collection and development.
 chat: "Community #content channel on Discord"
 repo: "https://github.com/rust-community/content-team"
-leads: [booyaa]
-members: [wezm]
+members: [wezm, nasa42, adityac8, skade]

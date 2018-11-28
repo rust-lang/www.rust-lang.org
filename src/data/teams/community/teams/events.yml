@@ -1,7 +1,7 @@
 route: events
 name: Events Team
-description: supporting community events with knowledge and resources
-chat: Community #events channel on Discord
+description: Supporting community events with knowledge and resources.
+chat: "Community #events channel on Discord"
 repo: "https://github.com/rust-community/events-team"
 leads: [skade]
-members: [mattgathu, celaus, flaki, badboy]
+members: [mattgathu, celaus, flaki, badboy, Manishearth, mgattozzi]

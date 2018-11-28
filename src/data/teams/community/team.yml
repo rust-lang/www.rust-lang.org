@@ -5,4 +5,4 @@ chat: "Community #general channel on Discord"
 repo: "https://github.com/rust-community/team"
 email: "community@rust-lang.org"
 leads: [ashleygwilliams]
-members: [skade, manishearth, sebasmagri, badboy, booyaa, ashleygwilliams, oe, technetos, jonathandturner]
+members: [skade, manishearth, sebasmagri, badboy, ashleygwilliams, oe, technetos, jonathandturner]
