@@ -3,3 +3,4 @@ name: Documentation team
 description: ensuring Rust has fantastic documentation
 chat: Documentation Team #docs channel on Discord
 leads: [steveklabnik]
+members: [QuietMisdreavus, GuillaumeGomez]
