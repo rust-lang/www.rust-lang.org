@@ -3,4 +3,4 @@ name: Rustfmt working group
 description: design and implementation of Rustfmt
 chat: "Dev-Tools Team #wg-rustfmt on Discord"
 repo: "https://github.com/rust-lang-nursery/rustfmt"
-members: [nrc, topecongiro]
+leads: [nrc, topecongiro]
