@@ -4,6 +4,7 @@ version = "0.1.0"
 authors = ["Ashley Williams <ashley666ashley@gmail.com>"]
 
 [dependencies]
+rand = "0.6"
 rocket = "0.3.14"
 rocket_codegen = "0.3.14"
 serde = "1.0"

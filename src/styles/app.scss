@@ -360,21 +360,21 @@ blockquote::before {
   }
 }
 
-#friends .row .columns {
+#users .row .columns {
   position: relative;
   height: 200px;
 }
 
-#friends img {
-    max-height: 100%;  
-    max-width: 100%; 
+#users img {
+    max-height: 200px;
+    max-width: 100px;
     width: auto;
     height: auto;
-    position: absolute;  
-    top: 0;  
-    bottom: 0;  
-    left: 0;  
-    right: 0;  
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     margin: auto;
 }
 
@@ -447,7 +447,7 @@ blockquote::before {
   }
 }
 
-#embedded-friends {
+#embedded-users {
   img {
     width: 80%;
     background-color: white;
