@@ -174,9 +174,9 @@ fn load_group_data(t: GroupType, group: &str) -> HashMap<String, Vec<Group>> {
     map
 }
 
-#[get("/production")]
+#[get("/production/users")]
 fn production() -> Template {
-    let page = "production/index".to_string();
+    let page = "production/users".to_string();
     let title = format!("Rust - {}", page).to_string();
     let context = UsersContext {
         page: page.clone(),

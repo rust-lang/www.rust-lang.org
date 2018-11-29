@@ -366,16 +366,20 @@ blockquote::before {
 }
 
 #users img {
-    max-height: 200px;
-    max-width: 100px;
-    width: auto;
-    height: auto;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+  max-height: 200px;
+  max-width: 100px;
+  width: auto;
+  height: auto;
+  margin: auto;
+  display: block;  
+}
+
+.user-logo {
+  min-height: 100px;
+}
+
+.user-container {
+  min-height: 300px;
 }
 
 #share-your-experience h3, #production-domains h3 {
