@@ -12,6 +12,14 @@ $yellow: #FECD2F;
 body {
   font-family: $body-font;
   background-color: white;
+
+  /* Ensure the footer is always at the bottom of the screen */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  & > #main-content {
+      flex: 1;
+  }
 }
 
 #ferris img {
