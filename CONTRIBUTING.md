@@ -32,6 +32,9 @@ please file an issue.
 [@yoshuawuyts] and [@chriskrycho] are the current developers on this transition. Please
 direct issues and questions to them!
 
+[Tachyons]: http://tachyons.io/
+[Skeleton]: http://getskeleton.com/
+
 ### Content
 
 The content of the site is currently overseen by [@aturon]. Please direct issues
