@@ -54,10 +54,6 @@ header h1 {
   margin-top: 0;
 }
 
-header {
-  padding: 30px 0 60px 0;
-}
-
 header .button.button-primary.button-download {
   background-color: $yellow;
   border-color: $yellow;
@@ -84,7 +80,7 @@ h2.subtitle {
 }
 
 section {
-  padding: 30px 0 60px 0;
+  padding: 30px 0;
 }
 
 ul {
