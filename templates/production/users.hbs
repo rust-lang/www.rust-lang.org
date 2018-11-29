@@ -1,10 +1,13 @@
+{{#*inline "page"}}
+
+<header>
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <h1>Users</h1>
+  </div>
+</header>
+
 <section id="users" class="white">
   <div class="container">
-    <header>
-      <h2>Users</h2>
-      <div class="highlight"></div>
-    </header>
-
     {{#each data as |user_row| ~}}
       <div class="row">
         {{#each user_row as |u| ~}}
@@ -19,3 +22,6 @@
     {{/each~}}
   </div>
 </section>
+
+{{/inline}}
+{{~> (parent)~}}
