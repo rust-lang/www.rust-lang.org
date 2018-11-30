@@ -12,6 +12,14 @@ $yellow: #FECD2F;
 body {
   font-family: $body-font;
   background-color: white;
+
+  /* Ensure the footer is always at the bottom of the screen */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  & > #main-content {
+      flex: 1;
+  }
 }
 
 #ferris img {
@@ -41,13 +49,10 @@ header h1, section h2 {
 }
 
 header h1 {
+  line-height: 1;
   font-size: 10rem;
   margin-bottom: 0;
   margin-top: 0;
-}
-
-header {
-  padding: 30px 0 60px 0;
 }
 
 header .button.button-primary.button-download {
@@ -58,11 +63,13 @@ header .button.button-primary.button-download {
   padding: 20px;
   height: auto;
   font-size: 2em;
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
-header .button.button-primary.button-download:hover {
-  border-color: black;
+header .button.button-primary.button-download {
+  &:hover, &:focus {
+      border-color: black;
+  }
 }
 
 h2.subtitle {
@@ -74,7 +81,7 @@ h2.subtitle {
 }
 
 section {
-  padding: 30px 0 60px 0;
+  padding: 30px 0;
 }
 
 ul {
@@ -147,7 +154,7 @@ a.brand {
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
-    &:hover {
+    &:hover, &:focus {
       border-color: white;
     }
   }
@@ -174,7 +181,7 @@ a.brand {
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
-    &:hover {
+    &:hover, &:focus {
       border-color: white;
     }
   }
@@ -202,7 +209,7 @@ a.brand {
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
-    &:hover {
+    &:hover, &:focus {
       border-color: $gray;
     }
   }
@@ -231,7 +238,7 @@ a.brand {
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
-    &:hover {
+    &:hover, &:focus {
       border-color: white;
     }
   }
@@ -558,7 +565,7 @@ blockquote::before {
     .button.button-primary.button-download {
       padding: 5px;
       font-size: 1.5em;
-      margin-top: 20px;
+      margin-top: 0;
     }
   }
 }
