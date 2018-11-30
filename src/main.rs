@@ -226,16 +226,22 @@ fn catch_error() -> Template {
     not_found()
 }
 
-fn compile_sass() {
-    let scss = "./src/styles/app.scss";
-    let css = compile_file(scss, Options::default()).expect("couldn't compile sass");
-    let mut file = File::create("./static/styles/app.css").expect("couldn't make css file");
+fn compile_sass(filename: &str) {
+    let scss_file = format!("./src/styles/{}.scss", filename);
+    let css_file = format!("./static/styles/{}.css", filename);
+
+    let css = compile_file(&scss_file, Options::default())
+        .expect(&format!("couldn't compile sass: {}", &scss_file));
+    let mut file =
+        File::create(&css_file).expect(&format!("couldn't make css file: {}", &css_file));
     file.write_all(&css.into_bytes())
-        .expect("couldn't write css file");
+        .expect(&format!("couldn't write css file: {}", &css_file));
 }
 
 fn main() {
-    compile_sass();
+    compile_sass("app");
+    compile_sass("fonts");
+
     rocket::ignite()
         .attach(Template::fairing())
         .mount(
