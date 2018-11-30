@@ -66,8 +66,10 @@ header .button.button-primary.button-download {
   margin-top: 25px;
 }
 
-header .button.button-primary.button-download:hover {
-  border-color: black;
+header .button.button-primary.button-download {
+  &:hover, &:focus {
+      border-color: black;
+  }
 }
 
 h2.subtitle {
@@ -152,7 +154,7 @@ a.brand {
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
-    &:hover {
+    &:hover, &:focus {
       border-color: white;
     }
   }
@@ -179,7 +181,7 @@ a.brand {
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
-    &:hover {
+    &:hover, &:focus {
       border-color: white;
     }
   }
@@ -207,7 +209,7 @@ a.brand {
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
-    &:hover {
+    &:hover, &:focus {
       border-color: $gray;
     }
   }
@@ -236,7 +238,7 @@ a.brand {
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
-    &:hover {
+    &:hover, &:focus {
       border-color: white;
     }
   }
