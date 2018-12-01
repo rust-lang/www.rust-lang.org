@@ -76,7 +76,7 @@ fn index() -> Template {
 
     let context = Context {
         page: page.clone(),
-        title: title,
+        title,
         parent: "layout".to_string(),
         is_landing: true,
         rust_version: rust_version::rust_version()
@@ -96,7 +96,7 @@ fn category(category: Category) -> Template {
     let title = format!("Rust - {}", page).to_string();
     let context = Context {
         page: category.name().to_string(),
-        title: title,
+        title,
         parent: "layout".to_string(),
         is_landing: false,
     };
@@ -109,7 +109,7 @@ fn governance() -> Template {
     let title = format!("Rust - {}", page).to_string();
     let context = GroupContext {
         page: page.clone(),
-        title: title,
+        title,
         parent: "layout".to_string(),
         is_landing: false,
         data: load_governance_data(),
@@ -137,7 +137,7 @@ fn team(t: String, subject: String) -> Template {
     let t = get_type_from_string(&t).expect("couldnt figure out group type from path string");
     let context = GroupContext {
         page: page.clone(),
-        title: title,
+        title,
         parent: "layout".to_string(),
         is_landing: false,
         data: load_group_data(t, &subject),
@@ -163,12 +163,12 @@ fn load_group_data(t: GroupType, group: &str) -> HashMap<String, Vec<Group>> {
     );
     let subteams =
         group::get_subs_data(&t, group, &GroupType::Team).expect("couldn't get subteams data");
-    if subteams.len() > 0 {
+    if !subteams.is_empty() {
         map.insert("subteams".to_string(), subteams);
     }
     let subwgs = group::get_subs_data(&t, group, &GroupType::WorkingGroup)
         .expect("couldn't get subwgs data");
-    if subwgs.len() > 0 {
+    if !subwgs.is_empty() {
         map.insert("subwgs".to_string(), subwgs);
     }
     map
@@ -180,7 +180,7 @@ fn production() -> Template {
     let title = format!("Rust - {}", page).to_string();
     let context = UsersContext {
         page: page.clone(),
-        title: title,
+        title,
         parent: "layout".to_string(),
         is_landing: false,
         data: load_users_data(),
@@ -201,7 +201,7 @@ fn subject(category: Category, subject: String) -> Template {
     let title = format!("Rust - {}", page).to_string();
     let context = Context {
         page: subject,
-        title: title,
+        title,
         parent: "layout".to_string(),
         is_landing: false,
     };
@@ -214,7 +214,7 @@ fn not_found() -> Template {
     let title = format!("Rust - {}", page).to_string();
     let context = Context {
         page: "404".to_string(),
-        title: title,
+        title,
         parent: "layout".to_string(),
         is_landing: false,
     };
@@ -241,6 +241,7 @@ fn main() {
         .mount(
             "/",
             routes![index, category, governance, team, production, subject, files],
-        ).catch(catchers![not_found, catch_error])
+        )
+        .catch(catchers![not_found, catch_error])
         .launch();
 }
