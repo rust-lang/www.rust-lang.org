@@ -271,10 +271,14 @@ section header {
   display: inline-block;
 }
 
+header h1 {
+  letter-spacing: 1px;
+}
+
 section header h2 {
   margin: 0;
   padding: 0;
-  letter-spacing: normal;
+  letter-spacing: 1px;
 }
 
 .highlight {
