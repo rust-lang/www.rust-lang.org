@@ -23,6 +23,7 @@ use std::collections::HashMap;
 use std::fs;
 use std::fs::File;
 use std::io::prelude::*;
+use std::iter::FromIterator;
 use std::path::{Path, PathBuf};
 
 use rand::seq::SliceRandom;
@@ -61,6 +62,13 @@ struct UsersContext {
     data: Vec<Vec<User>>,
 }
 
+fn get_title(page_name: &str) -> String {
+    let mut v: Vec<char> = page_name.replace("-", " ").chars().collect();
+    v[0] = v[0].to_uppercase().nth(0).unwrap();
+    let page_name = String::from_iter(v);
+    format!("{} - Rust programming language", page_name).to_string()
+}
+
 #[get("/")]
 fn index() -> Template {
     #[derive(Serialize)]
@@ -73,7 +81,7 @@ fn index() -> Template {
     }
 
     let page = "index".to_string();
-    let title = format!("Rust - {}", page).to_string();
+    let title = "Rust programming language".to_string();
 
     let context = Context {
         page: page.clone(),
@@ -94,7 +102,7 @@ fn files(file: PathBuf) -> Option<NamedFile> {
 #[get("/<category>")]
 fn category(category: Category) -> Template {
     let page = category.index();
-    let title = format!("Rust - {}", page).to_string();
+    let title = get_title(&category.name());
     let context = Context {
         page: category.name().to_string(),
         title,
@@ -107,7 +115,7 @@ fn category(category: Category) -> Template {
 #[get("/governance")]
 fn governance() -> Template {
     let page = "governance/index".to_string();
-    let title = format!("Rust - {}", page).to_string();
+    let title = "Governance - Rust programming language".to_string();
     let context = GroupContext {
         page: page.clone(),
         title,
@@ -134,8 +142,8 @@ fn load_governance_data() -> HashMap<String, Vec<Group>> {
 #[get("/governance/<t>/<subject>", rank = 2)]
 fn team(t: String, subject: String) -> Template {
     let page = "governance/group".to_string();
-    let title = format!("Rust - {}", page).to_string();
     let t = get_type_from_string(&t).expect("couldn't figure out group type from path string");
+    let title = get_title(&format!("{} team", subject));
     let context = GroupContext {
         page: page.clone(),
         title,
@@ -178,7 +186,7 @@ fn load_group_data(t: GroupType, group: &str) -> HashMap<String, Vec<Group>> {
 #[get("/production/users")]
 fn production() -> Template {
     let page = "production/users".to_string();
-    let title = format!("Rust - {}", page).to_string();
+    let title = "Users - Rust programming language".to_string();
     let context = UsersContext {
         page: page.clone(),
         title,
@@ -199,7 +207,7 @@ fn load_users_data() -> Vec<Vec<User>> {
 #[get("/<category>/<subject>", rank = 4)]
 fn subject(category: Category, subject: String) -> Template {
     let page = format!("{}/{}", category.name(), subject.as_str()).to_string();
-    let title = format!("Rust - {}", page).to_string();
+    let title = get_title(&subject);
     let context = Context {
         page: subject,
         title,
@@ -212,7 +220,7 @@ fn subject(category: Category, subject: String) -> Template {
 #[catch(404)]
 fn not_found() -> Template {
     let page = "404";
-    let title = format!("Rust - {}", page).to_string();
+    let title = format!("{} - Rust programming language", page).to_string();
     let context = Context {
         page: "404".to_string(),
         title,
