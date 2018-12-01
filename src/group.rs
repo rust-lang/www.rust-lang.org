@@ -42,8 +42,8 @@ fn read_toplevel_yaml(t: &GroupType, name: &str) -> io::Result<Group> {
         .join("team.yml");
     assert!(fs::metadata(&data_path)?.is_file());
     let data_string = fs::read_to_string(&data_path)?;
-    let data: Group =
-        serde_yaml::from_str(&data_string).expect(&format!("failed yaml parse for {} {}", t, name));
+    let data: Group = serde_yaml::from_str(&data_string)
+        .unwrap_or_else(|_| panic!("failed yaml parse for {} {}", t, name));
     Ok(data)
 }
 
@@ -56,10 +56,8 @@ fn read_subs_yaml(t: &GroupType, group: &str, st: &GroupType, sub: &str) -> io::
     println!("trying to find {:?}", data_path);
     assert!(fs::metadata(&data_path)?.is_file());
     let data_string = fs::read_to_string(&data_path)?;
-    let data: Group = serde_yaml::from_str(&data_string).expect(&format!(
-        "failed yaml parse for {} {} {} {}",
-        t, group, st, sub
-    ));
+    let data: Group = serde_yaml::from_str(&data_string)
+        .unwrap_or_else(|_| panic!("failed yaml parse for {} {} {} {}", t, group, st, sub));
     Ok(data)
 }
 
@@ -69,7 +67,7 @@ pub fn get_toplevel_data(t: &GroupType) -> io::Result<Vec<Group>> {
     for group in groups_data {
         let group = group?;
         let data = read_toplevel_yaml(t, &get_name_from_path(group.path()))
-            .expect(&format!("couldn't get toplevel group data for type {}", t));
+            .unwrap_or_else(|_| panic!("couldn't get toplevel group data for type {}", t));
         groups.push(data);
     }
     Ok(groups)
@@ -97,13 +95,15 @@ pub fn get_subs_data(t: &GroupType, group: &str, st: &GroupType) -> io::Result<V
         let sub_data = fs::read_dir(data_path)?;
         for sub in sub_data {
             let sub = sub?;
-            let data =
-                read_subs_yaml(t, group, st, &get_name_from_path(sub.path())).expect(&format!(
-                    "couldn't get subs data for {} {} {}",
-                    t,
-                    group,
-                    get_name_from_path(sub.path())
-                ));
+            let data = read_subs_yaml(t, group, st, &get_name_from_path(sub.path()))
+                .unwrap_or_else(|_| {
+                    panic!(
+                        "couldn't get subs data for {} {} {}",
+                        t,
+                        group,
+                        get_name_from_path(sub.path())
+                    )
+                });
             groups.push(data);
         }
     }
