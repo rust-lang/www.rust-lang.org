@@ -42,6 +42,10 @@ code.code-header {
   margin: 0 0 3px 0;
 }
 
+header {
+  padding: 2rem 0;
+}
+
 header h1, section h2 {
   font-family: $header-font;
   z-index: 999999;
