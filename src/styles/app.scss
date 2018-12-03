@@ -618,3 +618,14 @@ blockquote::before {
 .languages {
   display: none;
 }
+
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 545px) {
+  .vertical-center {
+    display: block;
+  }
+}
