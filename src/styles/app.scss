@@ -623,3 +623,9 @@ blockquote::before {
   display: flex;
   align-items: center;
 }
+
+@media only screen and (max-width: 545px) {
+  .vertical-center {
+    display: block;
+  }
+}
