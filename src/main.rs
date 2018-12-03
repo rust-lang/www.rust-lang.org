@@ -16,8 +16,12 @@ extern crate serde;
 #[macro_use]
 extern crate serde_derive;
 
+extern crate regex;
+//extern crate fluent;
+
 mod cache;
 mod category;
+mod i18n;
 mod production;
 mod redirect;
 mod rust_version;
@@ -42,6 +46,8 @@ use rocket_contrib::templates::Template;
 use sass_rs::{compile_file, Options};
 
 use category::Category;
+
+use i18n::I18N;
 
 #[derive(Serialize)]
 struct Context<T: ::serde::Serialize> {
@@ -270,6 +276,7 @@ fn main() {
 
     rocket::ignite()
         .attach(Template::fairing())
+        .attach(I18N::dummy())
         .mount(
             "/",
             routes![
