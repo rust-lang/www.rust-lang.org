@@ -619,13 +619,11 @@ blockquote::before {
   display: none;
 }
 
-.vertical-center {
+.testimonial {
   display: flex;
   align-items: center;
-}
-
-@media only screen and (max-width: 545px) {
-  .vertical-center {
+  
+  @media only screen and (max-width: 545px) {
     display: block;
   }
 }
