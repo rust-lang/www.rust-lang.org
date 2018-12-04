@@ -5,6 +5,7 @@ extern crate rand;
 extern crate reqwest;
 extern crate rocket;
 extern crate sass_rs;
+extern crate siphasher;
 extern crate toml;
 
 extern crate rocket_contrib;
@@ -19,9 +20,11 @@ mod rust_version;
 use group::*;
 use production::User;
 
+use std::collections::hash_map::DefaultHasher;
 use std::collections::HashMap;
 use std::fs;
 use std::fs::File;
+use std::hash::Hasher;
 use std::io::prelude::*;
 use std::path::{Path, PathBuf};
 
@@ -227,12 +230,19 @@ fn catch_error() -> Template {
     not_found()
 }
 
+fn hash_css(css: &str) -> String {
+    let mut hasher = DefaultHasher::new();
+    hasher.write(css.as_bytes());
+    hasher.finish().to_string()
+}
+
 fn compile_sass(filename: &str) {
     let scss_file = format!("./src/styles/{}.scss", filename);
-    let css_file = format!("./static/styles/{}.css", filename);
 
     let css = compile_file(&scss_file, Options::default())
         .expect(&format!("couldn't compile sass: {}", &scss_file));
+    let css_sha = format!("{}_{}", filename, hash_css(&css));
+    let css_file = format!("./static/styles/{}.css", css_sha);
     let mut file =
         File::create(&css_file).expect(&format!("couldn't make css file: {}", &css_file));
     file.write_all(&css.into_bytes())
