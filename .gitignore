@@ -2,6 +2,7 @@
 **/*.rs.bk
 /node_modules
 /static/styles/app.css
+/static/styles/fonts.css
 /static/styles/*.map
 .sass-cache
 localhost*
