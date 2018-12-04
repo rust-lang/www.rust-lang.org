@@ -6,3 +6,4 @@
 /static/styles/*.map
 .sass-cache
 localhost*
+/static/styles/vendor.css

@@ -20,6 +20,7 @@ use group::*;
 use production::User;
 
 use std::collections::HashMap;
+use std::fs;
 use std::fs::File;
 use std::io::prelude::*;
 use std::path::{Path, PathBuf};
@@ -238,9 +239,23 @@ fn compile_sass(filename: &str) {
         .expect(&format!("couldn't write css file: {}", &css_file));
 }
 
+fn concat_vendor_css(files: Vec<&str>) {
+    let mut concatted = String::new();
+    for filestem in files {
+        let vendor_path = format!("./static/styles/{}.css", filestem);
+        let mut file = File::open(vendor_path).expect("couldn't read vendor css");
+        let mut contents = String::new();
+        file.read_to_string(&mut contents)
+            .expect("couldn't read vendor css");
+        concatted.push_str(&contents);
+    }
+    fs::write("./static/styles/vendor.css", &concatted).expect("couldn't write vendor css");
+}
+
 fn main() {
     compile_sass("app");
     compile_sass("fonts");
+    concat_vendor_css(vec!["Skeleton-2.0.4/css/skeleton", "tachyons"]);
 
     rocket::ignite()
         .attach(Template::fairing())
