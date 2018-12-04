@@ -134,7 +134,7 @@ fn load_governance_data() -> HashMap<String, Vec<Group>> {
 fn team(t: String, subject: String) -> Template {
     let page = "governance/group".to_string();
     let title = format!("Rust - {}", page).to_string();
-    let t = get_type_from_string(&t).expect("couldnt figure out group type from path string");
+    let t = get_type_from_string(&t).expect("couldn't figure out group type from path string");
     let context = GroupContext {
         page: page.clone(),
         title,

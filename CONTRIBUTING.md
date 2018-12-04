@@ -52,7 +52,7 @@ e-mail production@rust-lang.org (please do *not* raise a PR) with:
  - Your company name, URL and logo.
  - A one short sentence describing your usage of Rust, ideally with a link
    providing evidence (other prospective users will be interested to
-   know details). The UI for this can't accomodate more than about two
+   know details). The UI for this can't accommodate more than about two
    lines of text
  - A name and e-mail of a contact within your organization who the
    Rust team can contact should we need to make changes to the web
