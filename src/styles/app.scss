@@ -59,7 +59,7 @@ header h1, section h2 {
 }
 
 header h1 {
-  font-size: 10rem;
+  font-size: 8rem;
   margin-bottom: 0;
   margin-top: 0;
 }
@@ -71,7 +71,7 @@ header .button.button-primary.button-download {
   width: 100%;
   padding: 20px;
   height: auto;
-  font-size: 2em;
+  font-size: 2.25rem;
   margin-top: 20px;
 }
 
@@ -271,7 +271,7 @@ a.brand {
 
 h3 {
   font-weight: 800; 
-  font-size: 1.8em;
+  font-size: 1.5em;
   letter-spacing: normal;
 }
 
@@ -350,10 +350,6 @@ blockquote::before {
 
 #production .attribution {
   text-align: right;
-}
-
-.production p {
-  font-size: 3rem;
 }
 
 .production .button.button-secondary {
