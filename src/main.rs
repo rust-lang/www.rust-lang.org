@@ -251,10 +251,7 @@ fn concat_vendor_css(files: Vec<&str>) {
     let mut concatted = String::new();
     for filestem in files {
         let vendor_path = format!("./static/styles/{}.css", filestem);
-        let mut file = File::open(vendor_path).expect("couldn't read vendor css");
-        let mut contents = String::new();
-        file.read_to_string(&mut contents)
-            .expect("couldn't read vendor css");
+        let contents = fs::read_to_string(vendor_path).expect("couldn't read vendor css");
         concatted.push_str(&contents);
     }
     fs::write("./static/styles/vendor.css", &concatted).expect("couldn't write vendor css");
