@@ -20,6 +20,7 @@ use group::*;
 use production::User;
 
 use std::collections::HashMap;
+use std::fs;
 use std::fs::File;
 use std::io::prelude::*;
 use std::iter::FromIterator;
@@ -84,7 +85,7 @@ fn index() -> Template {
 
     let context = Context {
         page: page.clone(),
-        title: title,
+        title,
         parent: "layout".to_string(),
         is_landing: true,
         rust_version: rust_version::rust_version()
@@ -104,7 +105,7 @@ fn category(category: Category) -> Template {
     let title = get_title(&category.name());
     let context = Context {
         page: category.name().to_string(),
-        title: title,
+        title,
         parent: "layout".to_string(),
         is_landing: false,
     };
@@ -117,7 +118,7 @@ fn governance() -> Template {
     let title = "Governance - Rust programming language".to_string();
     let context = GroupContext {
         page: page.clone(),
-        title: title,
+        title,
         parent: "layout".to_string(),
         is_landing: false,
         data: load_governance_data(),
@@ -145,7 +146,7 @@ fn team(t: String, subject: String) -> Template {
     let title = get_title(&format!("{} team", subject));
     let context = GroupContext {
         page: page.clone(),
-        title: title,
+        title,
         parent: "layout".to_string(),
         is_landing: false,
         data: load_group_data(t, &subject),
@@ -171,12 +172,12 @@ fn load_group_data(t: GroupType, group: &str) -> HashMap<String, Vec<Group>> {
     );
     let subteams =
         group::get_subs_data(&t, group, &GroupType::Team).expect("couldn't get subteams data");
-    if subteams.len() > 0 {
+    if !subteams.is_empty() {
         map.insert("subteams".to_string(), subteams);
     }
     let subwgs = group::get_subs_data(&t, group, &GroupType::WorkingGroup)
         .expect("couldn't get subwgs data");
-    if subwgs.len() > 0 {
+    if !subwgs.is_empty() {
         map.insert("subwgs".to_string(), subwgs);
     }
     map
@@ -188,7 +189,7 @@ fn production() -> Template {
     let title = "Users - Rust programming language".to_string();
     let context = UsersContext {
         page: page.clone(),
-        title: title,
+        title,
         parent: "layout".to_string(),
         is_landing: false,
         data: load_users_data(),
@@ -209,7 +210,7 @@ fn subject(category: Category, subject: String) -> Template {
     let title = get_title(&subject);
     let context = Context {
         page: subject,
-        title: title,
+        title,
         parent: "layout".to_string(),
         is_landing: false,
     };
@@ -222,7 +223,7 @@ fn not_found() -> Template {
     let title = format!("{} - Rust programming language", page).to_string();
     let context = Context {
         page: "404".to_string(),
-        title: title,
+        title,
         parent: "layout".to_string(),
         is_landing: false,
     };
@@ -234,16 +235,36 @@ fn catch_error() -> Template {
     not_found()
 }
 
-fn compile_sass() {
-    let scss = "./src/styles/app.scss";
-    let css = compile_file(scss, Options::default()).expect("couldn't compile sass");
-    let mut file = File::create("./static/styles/app.css").expect("couldn't make css file");
+fn compile_sass(filename: &str) {
+    let scss_file = format!("./src/styles/{}.scss", filename);
+    let css_file = format!("./static/styles/{}.css", filename);
+
+    let css = compile_file(&scss_file, Options::default())
+        .expect(&format!("couldn't compile sass: {}", &scss_file));
+    let mut file =
+        File::create(&css_file).expect(&format!("couldn't make css file: {}", &css_file));
     file.write_all(&css.into_bytes())
-        .expect("couldn't write css file");
+        .expect(&format!("couldn't write css file: {}", &css_file));
+}
+
+fn concat_vendor_css(files: Vec<&str>) {
+    let mut concatted = String::new();
+    for filestem in files {
+        let vendor_path = format!("./static/styles/{}.css", filestem);
+        let mut file = File::open(vendor_path).expect("couldn't read vendor css");
+        let mut contents = String::new();
+        file.read_to_string(&mut contents)
+            .expect("couldn't read vendor css");
+        concatted.push_str(&contents);
+    }
+    fs::write("./static/styles/vendor.css", &concatted).expect("couldn't write vendor css");
 }
 
 fn main() {
-    compile_sass();
+    compile_sass("app");
+    compile_sass("fonts");
+    concat_vendor_css(vec!["skeleton", "tachyons"]);
+
     rocket::ignite()
         .attach(Template::fairing())
         .mount(

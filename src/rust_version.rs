@@ -8,5 +8,5 @@ pub fn rust_version() -> Option<String> {
         .ok()?;
     let manifest = manifest.parse::<toml::Value>().ok()?;
     let rust_version = manifest["pkg"]["rust"]["version"].as_str()?.to_string();
-    Some(rust_version[..rust_version.find(" ")?].to_string())
+    Some(rust_version[..rust_version.find(' ')?].to_string())
 }

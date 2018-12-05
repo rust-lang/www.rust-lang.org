@@ -7,7 +7,7 @@ $gray: #454C52;
 $red: #C14566;
 $green: #398277;
 $purple: #403D58;
-$yellow: #FECD2F;
+$yellow: #FFD45E;
 
 body {
   font-family: $body-font;
@@ -28,7 +28,7 @@ body {
 }
 
 code {
-  overflow: scroll;
+  overflow: auto;
 }
 
 .button.button-secondary {
@@ -52,10 +52,6 @@ header h1 {
   font-size: 10rem;
   margin-bottom: 0;
   margin-top: 0;
-}
-
-header {
-  padding: 30px 0 60px 0;
 }
 
 header .button.button-primary.button-download {
@@ -85,6 +81,17 @@ h2.subtitle {
 
 section {
   padding: 30px 0 60px 0;
+
+  header {
+    padding: 30px 0 60px 0;
+    display: inline-block;
+
+    h2 {
+      margin: 0;
+      padding: 0;
+      letter-spacing: 1px;
+    }
+  }
 }
 
 ul {
@@ -267,14 +274,8 @@ h3 {
   border-bottom: 1px dotted white;
 }
 
-section header {
-  display: inline-block;
-}
-
-section header h2 {
-  margin: 0;
-  padding: 0;
-  letter-spacing: normal;
+header h1 {
+  letter-spacing: 1px;
 }
 
 .highlight {
@@ -571,6 +572,13 @@ blockquote::before {
       margin-top: 20px;
     }
   }
+
+  section header {
+    padding: {
+      top: 10px;
+      bottom: 30px;
+    }
+  }
 }
 
 .team {
@@ -613,4 +621,13 @@ blockquote::before {
 
 .languages {
   display: none;
+}
+
+.testimonial {
+  display: flex;
+  align-items: center;
+  
+  @media only screen and (max-width: 545px) {
+    display: block;
+  }
 }
