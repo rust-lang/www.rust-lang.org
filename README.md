@@ -1,7 +1,7 @@
 # www.rust-lang.org
 > the home of the rust website
 
-[![Build Status](https://travis-ci.org/rust-lang/www.rust-lang.org.svg?token=hHeDp9pQmz9kvsgRNVHy&branch=master)](https://travis-ci.org/rust-lang/www.rust-lang.org)
+[![Build Status](https://travis-ci.org/rust-lang/www.rust-lang.org.svg?branch=master)](https://travis-ci.org/rust-lang/www.rust-lang.org)
 
 ## Development
 
