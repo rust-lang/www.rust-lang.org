@@ -634,3 +634,13 @@ blockquote::before {
     display: block;
   }
 }
+
+.flash {
+  width: 100%;
+  font-size: 1em;
+  padding: 0;
+  margin: 0;
+  h3 {
+    text-align: center;
+  }
+}
