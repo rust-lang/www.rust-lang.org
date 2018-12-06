@@ -1,5 +1,5 @@
 route: nll
-name: Non-Lexical Lifetimes (NLL)
-description: Implementing the new MIR-based borrow check and non-lexical lifetimes.
-chat: wg-nll stream on Zulip
+name: Non-Lexical Lifetimes (NLL) team
+description: implementing the new MIR-based borrow checker and non-lexical lifetimes in Rust
+chat: "#wg-nll stream on Zulip"
 leads: [nikomatsakis, pnkfelix]

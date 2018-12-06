@@ -1,6 +1,6 @@
 route: clippy
 name: Clippy working group
-description: design and implementation of the Clippy linter
-chat: "Dev-Tools Team #wg-clippy on Discord"
+description: designing and implementing the Clippy linter
+chat: "Dev-Tools #wg-clippy on Discord"
 repo: "https://github.com/rust-lang-nursery/rust-clippy"
 leads: [llogiq, killercup, manishearth, oli-obk]

@@ -1,7 +1,7 @@
 route: infrastructure
 name: Infrastructure team
-description: "infrastructure supporting the Rust project itself: CI, releases, bots, metrics"
+description: developing infrastructure supporting the Rust project itself, including the CI, releases, bots, and metrics
 chat: "Ops #infra channel on Discord"
-email: "infra@rust-lang.org"
+email: infra@rust-lang.org
 leads: [aidanhs]
 members: [alexcrichton, shepmaster, TimNN, Mark-Simulacrum, erickt, kennytm, ashleygwilliams, sgrif, pietroalbini]

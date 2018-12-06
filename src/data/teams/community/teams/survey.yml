@@ -1,6 +1,6 @@
 route: survey
 name: Survey team
-description: Running, analysing, and presenting the community survey.
+description: running, analyzing, and otherwise administering the community survey
 chat: "Community #survey channel on Discord"
-leads: [jturner] 
+leads: [jturner]
 members: [manishearth, mgattozzi]

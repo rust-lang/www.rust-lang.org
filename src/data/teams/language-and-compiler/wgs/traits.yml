@@ -1,5 +1,5 @@
 route: traits
-name: Traits
-description: Revamping the rustc trait implementation to follow the Chalk approach.
-chat: #wg-traits on Discord
+name: Traits team
+description: revamping the compiler's trait implementation to follow the Chalk approach
+chat: "#wg-traits on Discord"
 leads: [nikomatsakis]
