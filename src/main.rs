@@ -94,6 +94,11 @@ fn index() -> Template {
     Template::render(page, &context)
 }
 
+#[get("/logos/<file..>", rank = 1)]
+fn logos(file: PathBuf) -> Option<NamedFile> {
+    NamedFile::open(Path::new("static/logos").join(file)).ok()
+}
+
 #[get("/static/<file..>", rank = 1)]
 fn files(file: PathBuf) -> Option<NamedFile> {
     NamedFile::open(Path::new("static/").join(file)).ok()
@@ -266,7 +271,7 @@ fn main() {
         .attach(Template::fairing())
         .mount(
             "/",
-            routes![index, category, governance, team, production, subject, files],
+            routes![index, category, governance, team, production, subject, files, logos],
         )
         .catch(catchers![not_found, catch_error])
         .launch();
