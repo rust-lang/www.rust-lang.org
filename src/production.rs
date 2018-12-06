@@ -17,7 +17,7 @@ fn read_yaml() -> io::Result<Vec<User>> {
     assert!(fs::metadata(&data_path)?.is_file());
     let data_string = fs::read_to_string(&data_path)?;
     let data: Vec<User> = serde_yaml::from_str(&data_string)
-        .expect(&format!("failed yaml parse for {}", data_path.display()));
+        .unwrap_or_else(|_| panic!("failed yaml parse for {}", data_path.display()));
     Ok(data)
 }
 
