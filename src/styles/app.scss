@@ -8,6 +8,8 @@ $red: #C14566;
 $green: #398277;
 $purple: #403D58;
 $yellow: #FECD2F;
+$a11ybg: #fefefe;
+$a11ytext: #000000;
 
 body {
   font-family: $body-font;
@@ -162,8 +164,8 @@ a.brand {
     }
   }
   code {
-    color: white;
-    background-color: rgba(white, 0.15);
+    color: $a11ytext;
+    background-color: $a11ybg;
     border: 1px solid rgba(white, 0.65);
   }
 }
@@ -189,8 +191,8 @@ a.brand {
     }
   }
   code {
-    color: white;
-    background-color: rgba(white, 0.15);
+    color: $a11ytext;
+    background-color: $a11ybg;
     border: 1px solid rgba(white, 0.65);
   }
 }
@@ -217,8 +219,8 @@ a.brand {
     }
   }
   code {
-    color: black;
-    background-color: rgba($gray, 0.05);
+    color: $a11ytext;
+    background-color: $a11ybg;
     border: 1px solid rgba($gray, 0.25);
   }
 }
@@ -246,8 +248,8 @@ a.brand {
     }
   }
   code {
-    color: white;
-    background-color: rgba(white, 0.15);
+    color: $a11ytext;
+    background-color: $a11ybg;
     border: 1px solid rgba(white, 0.65);
   }
 }

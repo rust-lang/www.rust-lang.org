@@ -36,6 +36,8 @@
     <link rel="stylesheet" href="/static/styles/tachyons.css"/>
     <link rel="stylesheet" href="/static/styles/fonts.css"/>
     <link rel="stylesheet" href="/static/styles/app.css"/>
+    <link rel="stylesheet" href="/static/styles/syntax-highlight/a11y-light.css"/>
+    <link rel="stylesheet" href="/static/styles/syntax-highlight/theme.css"/>
 
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/static/images/apple-touch-icon.png">
@@ -52,5 +54,7 @@
         {{~> page}}
     </div>
     {{> footer}}
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script>
+    <script  src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-rust.min.js"></script>
   </body>
 </html>

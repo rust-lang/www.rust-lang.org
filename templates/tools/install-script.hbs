@@ -113,6 +113,9 @@ function cycle_platform() {
 
 function set_up_cycle_button() {
     var cycle_button = document.getElementById("platform-button");
+    
+    if (!cycle_button) return;
+
     cycle_button.onclick = cycle_platform;
 
     var key="test";

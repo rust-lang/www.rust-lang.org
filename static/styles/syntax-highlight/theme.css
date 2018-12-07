@@ -1,0 +1,12 @@
+section pre[class*="language-"], article pre[class*="language-"] {
+  background: none;
+  padding: 0;
+}
+
+section code[class*="language-"], article code[class*="language-"] {
+  background: #fefefe;
+}
+
+.main-theme {
+	background: #fefefe;	
+}
