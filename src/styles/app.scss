@@ -4,8 +4,8 @@ $body-font: 'Fira Sans', Helvetica, Arial, sans-serif;
 $header-font: 'Alfa Slab One', serif;
 
 $gray: #454C52;
-$red: #C14566;
-$green: #398277;
+$red: #b8415e;
+$green: #37786d;
 $purple: #403D58;
 $yellow: #FFD45E;
 
@@ -188,6 +188,7 @@ a.brand {
 .red {
   background-color: $red;
   color: white;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.27);
   .highlight {
     background-color: $purple;
   }
@@ -214,6 +215,7 @@ a.brand {
 .green {
   background-color: $green;
   color: white;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.27);
   .highlight {
     background-color: $purple;
   }
@@ -265,6 +267,7 @@ a.brand {
 .purple {
   background-color: $purple;
   color: white;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.18);
   .highlight {
     background-color: $red;
   }
