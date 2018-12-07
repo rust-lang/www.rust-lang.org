@@ -11,6 +11,16 @@ $yellow: #FECD2F;
 $a11ybg: #fefefe;
 $a11ytext: #000000;
 
+html {
+  font-size: 62.5%
+}
+
+@media screen and (min-width: 30em) {
+  html {
+    font-size: 75%;
+  }
+}
+
 body {
   font-family: $body-font;
   background-color: white;
@@ -30,7 +40,7 @@ body {
 }
 
 code {
-  overflow: scroll;
+  overflow: auto;
 }
 
 .button.button-secondary {
@@ -51,13 +61,9 @@ header h1, section h2 {
 }
 
 header h1 {
-  font-size: 10rem;
+  font-size: 8rem;
   margin-bottom: 0;
   margin-top: 0;
-}
-
-header {
-  padding: 30px 0 60px 0;
 }
 
 header .button.button-primary.button-download {
@@ -67,7 +73,7 @@ header .button.button-primary.button-download {
   width: 100%;
   padding: 20px;
   height: auto;
-  font-size: 2em;
+  font-size: 2.25rem;
   margin-top: 20px;
 }
 
@@ -87,6 +93,17 @@ h2.subtitle {
 
 section {
   padding: 30px 0 60px 0;
+
+  header {
+    padding: 30px 0 60px 0;
+    display: inline-block;
+
+    h2 {
+      margin: 0;
+      padding: 0;
+      letter-spacing: 1px;
+    }
+  }
 }
 
 ul {
@@ -256,7 +273,7 @@ a.brand {
 
 h3 {
   font-weight: 800; 
-  font-size: 1.8em;
+  font-size: 1.5em;
   letter-spacing: normal;
 }
 
@@ -269,14 +286,8 @@ h3 {
   border-bottom: 1px dotted white;
 }
 
-section header {
-  display: inline-block;
-}
-
-section header h2 {
-  margin: 0;
-  padding: 0;
-  letter-spacing: normal;
+header h1 {
+  letter-spacing: 1px;
 }
 
 .highlight {
@@ -292,6 +303,9 @@ footer {
   padding: 30px 0;
   background-color: black;
   color: white;
+  p {
+    margin: 0;
+  }
 }
 
 footer a {
@@ -341,10 +355,6 @@ blockquote::before {
 
 #production .attribution {
   text-align: right;
-}
-
-.production p {
-  font-size: 3rem;
 }
 
 .production .button.button-secondary {
@@ -573,6 +583,13 @@ blockquote::before {
       margin-top: 20px;
     }
   }
+
+  section header {
+    padding: {
+      top: 10px;
+      bottom: 30px;
+    }
+  }
 }
 
 .team {
@@ -615,4 +632,23 @@ blockquote::before {
 
 .languages {
   display: none;
+}
+
+.testimonial {
+  display: flex;
+  align-items: center;
+  
+  @media only screen and (max-width: 545px) {
+    display: block;
+  }
+}
+
+.flash {
+  width: 100%;
+  font-size: 1em;
+  padding: 0;
+  margin: 0;
+  h3 {
+    text-align: center;
+  }
 }

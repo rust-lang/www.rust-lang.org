@@ -1,6 +1,6 @@
 {{#*inline "page"}}
 
-<header>
+<header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <h1>Getting started</h1>
     <h2 class="subtitle">Quickly set up a Rust development environment and write a small app!</h2>
@@ -13,26 +13,26 @@
       <h2>Installing Rust</h2>
       <div class="highlight highlight"></div>
     </header>
-    <h3><code>rustup</code>: the Rust installer and version management tool</h3>
-    <p>The primary way that folks install Rust is through a tool called <code>rustup</code> which is a Rust installer
+    <h3>Rustup: the Rust installer and version management tool</h3>
+    <p>The primary way that folks install Rust is through a tool called Rustup, which is a Rust installer
       and version management tool.</p>
     {{> tools/rustup }}
     <br /><br />
     <a href="/tools/install" class="button button-secondary">Learn more about installation</a>
     <hr />
-    <h3><code>cargo</code>: the Rust build tool and package manager</h3>
-    <p>When you install <code>rustup</code> you’ll also get the latest stable version of the Rust build tool and
-      package manager, also known as <code>cargo</code>. <code>cargo</code> does lots of things:</p>
-      <ul>
-        <li>build your project with <code>cargo build</code></li>
-        <li>run your project with <code>cargo run</code></li>
-        <li>test your project with <code>cargo test</code></li>
-        <li>build documentaiton for your project with <code>cargo doc</code></li>
-        <li>publish a library to <a href="https://crates.io" target="_blank" rel="noopener">crates.io</a> with <code>cargo publish</code></li>
-      </ul>
-      <p>To test that you have Rust and <code>cargo</code> installed, you can run this in your terminal of choice:</p>
-      <p><code>cargo --version</code></p>
-      <a href="https://doc.rust-lang.org/cargo/index.html" target="_blank" rel="noopener" class="button button-secondary">Read
+    <h3>Cargo: the Rust build tool and package manager</h3>
+    <p>When you install Rustup you’ll also get the latest stable version of the Rust build tool and
+      package manager, also known as Cargo. Cargo does lots of things:</p>
+    <ul>
+      <li>build your project with <code>cargo build</code></li>
+      <li>run your project with <code>cargo run</code></li>
+      <li>test your project with <code>cargo test</code></li>
+      <li>build documentation for your project with <code>cargo doc</code></li>
+      <li>publish a library to <a href="https://crates.io" target="_blank" rel="noopener">crates.io</a> with <code>cargo publish</code></li>
+    </ul>
+    <p>To test that you have Rust and Cargo installed, you can run this in your terminal of choice:</p>
+    <p><code>cargo --version</code></p>
+    <a href="https://doc.rust-lang.org/cargo/index.html" target="_blank" rel="noopener" class="button button-secondary">Read
         the cargo book</a>
     <hr />
     <h3>Other tools</h3>
@@ -50,7 +50,7 @@
       <h2>Generating a new project</h2>
       <div class="highlight"></div>
     </header>
-    <p>Let’s write a small application with our new Rust development environment. To start, we’ll use <code>cargo</code> to
+    <p>Let’s write a small application with our new Rust development environment. To start, we’ll use Cargo to
       make a new project for us. In your terminal of choice run:</p>
     <p><code>cargo new hello-rust</code></p>
     <p>This will generate a new directory called <code>hello-rust</code> with the following files:</p>
@@ -63,6 +63,15 @@
     <p><code>Cargo.toml</code> is the manifest file for Rust. It’s where you keep metadata for your project, as well as
       dependencies.</p>
     <p><code>src/main.rs</code> is where we’ll write our application code.</p>
+    <hr/>
+    <p><code>cargo new</code> generates a "Hello, world!" project for us! We can run this program by moving into the new directory that we made and running this in our terminal:</p>
+    <p><code>cargo run</code></p>
+    <p>You should see this in your terminal:</p>
+    <p><pre><code>$ cargo run
+   Compiling hello-rust v0.1.0 (/Users/ag_dubs/rust/hello-rust)
+    Finished dev [unoptimized + debuginfo] target(s) in 1.34s
+     Running `target/debug/hello-rust`
+Hello, world!</code></pre><p>
   </div>
 </section>
 
@@ -83,7 +92,7 @@ ferris-says = "0.1"</code></pre>
       </p>
       <p>Now we can run:</p>
       <p><code>cargo build</code></p>
-      <p>...and <code>cargo</code>will install our dependency for us.</p>
+      <p>...and Cargo will install our dependency for us.</p>
       <p>You’ll see that running this command created a new file for us, <code>Cargo.lock</code>. This file is a log of
         the exact versions of the dependencies we are using locally.</p>
       <p>To use this dependency, we can open <code>main.rs</code>, remove everything that’s in there (it’s just another
@@ -153,8 +162,9 @@ fn main() {
       <h2>Who’s this crab, Ferris?</h2>
       <div class="highlight"></div>
     </header>
-    <p>Ferris (they/them) is the unofficial mascot of the Rust Community. Rust programmers call themselves
-      “Rustaceans,” which is a play on the word “crustacean,” which is set a of creatures, one of which is a crab!</p>
+    <p>Ferris is the unofficial mascot of the Rust Community. Many Rust programmers call themselves “Rustaceans,”
+      a play on the word “<a href="https://en.wikipedia.org/wiki/Crustacean">crustacean</a>.” We refer to Ferris with
+      the pronouns “they,” “them,” etc., rather than with gendered pronouns.</p>
     <p>Ferris is a name playing off of the adjective, “ferrous,” meaning of or pertaining to iron. Since Rust often
       forms on iron, it seemed like a fun origin for our mascot’s name!</p>
     <p>You can find more images of Ferris on <a href="http://rustacean.net/" target="_blank" rel="noopener">http://rustacean.net/</a>.

@@ -20,8 +20,10 @@ use group::*;
 use production::User;
 
 use std::collections::HashMap;
+use std::fs;
 use std::fs::File;
 use std::io::prelude::*;
+use std::iter::FromIterator;
 use std::path::{Path, PathBuf};
 
 use rand::seq::SliceRandom;
@@ -60,6 +62,13 @@ struct UsersContext {
     data: Vec<Vec<User>>,
 }
 
+fn get_title(page_name: &str) -> String {
+    let mut v: Vec<char> = page_name.replace("-", " ").chars().collect();
+    v[0] = v[0].to_uppercase().nth(0).unwrap();
+    let page_name = String::from_iter(v);
+    format!("{} - Rust programming language", page_name).to_string()
+}
+
 #[get("/")]
 fn index() -> Template {
     #[derive(Serialize)]
@@ -72,17 +81,22 @@ fn index() -> Template {
     }
 
     let page = "index".to_string();
-    let title = format!("Rust - {}", page).to_string();
+    let title = "Rust programming language".to_string();
 
     let context = Context {
         page: page.clone(),
-        title: title,
+        title,
         parent: "layout".to_string(),
         is_landing: true,
         rust_version: rust_version::rust_version()
             .map_or(String::new(), |v| format!("Version {}", v)),
     };
     Template::render(page, &context)
+}
+
+#[get("/logos/<file..>", rank = 1)]
+fn logos(file: PathBuf) -> Option<NamedFile> {
+    NamedFile::open(Path::new("static/logos").join(file)).ok()
 }
 
 #[get("/static/<file..>", rank = 1)]
@@ -93,10 +107,10 @@ fn files(file: PathBuf) -> Option<NamedFile> {
 #[get("/<category>")]
 fn category(category: Category) -> Template {
     let page = category.index();
-    let title = format!("Rust - {}", page).to_string();
+    let title = get_title(&category.name());
     let context = Context {
         page: category.name().to_string(),
-        title: title,
+        title,
         parent: "layout".to_string(),
         is_landing: false,
     };
@@ -106,10 +120,10 @@ fn category(category: Category) -> Template {
 #[get("/governance")]
 fn governance() -> Template {
     let page = "governance/index".to_string();
-    let title = format!("Rust - {}", page).to_string();
+    let title = "Governance - Rust programming language".to_string();
     let context = GroupContext {
         page: page.clone(),
-        title: title,
+        title,
         parent: "layout".to_string(),
         is_landing: false,
         data: load_governance_data(),
@@ -133,11 +147,11 @@ fn load_governance_data() -> HashMap<String, Vec<Group>> {
 #[get("/governance/<t>/<subject>", rank = 2)]
 fn team(t: String, subject: String) -> Template {
     let page = "governance/group".to_string();
-    let title = format!("Rust - {}", page).to_string();
-    let t = get_type_from_string(&t).expect("couldnt figure out group type from path string");
+    let t = get_type_from_string(&t).expect("couldn't figure out group type from path string");
+    let title = get_title(&format!("{} team", subject));
     let context = GroupContext {
         page: page.clone(),
-        title: title,
+        title,
         parent: "layout".to_string(),
         is_landing: false,
         data: load_group_data(t, &subject),
@@ -163,12 +177,12 @@ fn load_group_data(t: GroupType, group: &str) -> HashMap<String, Vec<Group>> {
     );
     let subteams =
         group::get_subs_data(&t, group, &GroupType::Team).expect("couldn't get subteams data");
-    if subteams.len() > 0 {
+    if !subteams.is_empty() {
         map.insert("subteams".to_string(), subteams);
     }
     let subwgs = group::get_subs_data(&t, group, &GroupType::WorkingGroup)
         .expect("couldn't get subwgs data");
-    if subwgs.len() > 0 {
+    if !subwgs.is_empty() {
         map.insert("subwgs".to_string(), subwgs);
     }
     map
@@ -177,10 +191,10 @@ fn load_group_data(t: GroupType, group: &str) -> HashMap<String, Vec<Group>> {
 #[get("/production/users")]
 fn production() -> Template {
     let page = "production/users".to_string();
-    let title = format!("Rust - {}", page).to_string();
+    let title = "Users - Rust programming language".to_string();
     let context = UsersContext {
         page: page.clone(),
-        title: title,
+        title,
         parent: "layout".to_string(),
         is_landing: false,
         data: load_users_data(),
@@ -198,10 +212,10 @@ fn load_users_data() -> Vec<Vec<User>> {
 #[get("/<category>/<subject>", rank = 4)]
 fn subject(category: Category, subject: String) -> Template {
     let page = format!("{}/{}", category.name(), subject.as_str()).to_string();
-    let title = format!("Rust - {}", page).to_string();
+    let title = get_title(&subject);
     let context = Context {
         page: subject,
-        title: title,
+        title,
         parent: "layout".to_string(),
         is_landing: false,
     };
@@ -211,10 +225,10 @@ fn subject(category: Category, subject: String) -> Template {
 #[catch(404)]
 fn not_found() -> Template {
     let page = "404";
-    let title = format!("Rust - {}", page).to_string();
+    let title = format!("{} - Rust programming language", page).to_string();
     let context = Context {
         page: "404".to_string(),
-        title: title,
+        title,
         parent: "layout".to_string(),
         is_landing: false,
     };
@@ -226,21 +240,39 @@ fn catch_error() -> Template {
     not_found()
 }
 
-fn compile_sass() {
-    let scss = "./src/styles/app.scss";
-    let css = compile_file(scss, Options::default()).expect("couldn't compile sass");
-    let mut file = File::create("./static/styles/app.css").expect("couldn't make css file");
+fn compile_sass(filename: &str) {
+    let scss_file = format!("./src/styles/{}.scss", filename);
+    let css_file = format!("./static/styles/{}.css", filename);
+
+    let css = compile_file(&scss_file, Options::default())
+        .expect(&format!("couldn't compile sass: {}", &scss_file));
+    let mut file =
+        File::create(&css_file).expect(&format!("couldn't make css file: {}", &css_file));
     file.write_all(&css.into_bytes())
-        .expect("couldn't write css file");
+        .expect(&format!("couldn't write css file: {}", &css_file));
+}
+
+fn concat_vendor_css(files: Vec<&str>) {
+    let mut concatted = String::new();
+    for filestem in files {
+        let vendor_path = format!("./static/styles/{}.css", filestem);
+        let contents = fs::read_to_string(vendor_path).expect("couldn't read vendor css");
+        concatted.push_str(&contents);
+    }
+    fs::write("./static/styles/vendor.css", &concatted).expect("couldn't write vendor css");
 }
 
 fn main() {
-    compile_sass();
+    compile_sass("app");
+    compile_sass("fonts");
+    concat_vendor_css(vec!["skeleton", "tachyons"]);
+
     rocket::ignite()
         .attach(Template::fairing())
         .mount(
             "/",
-            routes![index, category, governance, team, production, subject, files],
-        ).catch(catchers![not_found, catch_error])
+            routes![index, category, governance, team, production, subject, files, logos],
+        )
+        .catch(catchers![not_found, catch_error])
         .launch();
 }
