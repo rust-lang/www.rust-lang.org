@@ -14,6 +14,7 @@ extern crate serde_derive;
 mod category;
 mod group;
 mod production;
+mod redirect;
 mod rust_version;
 
 use group::*;
@@ -28,7 +29,7 @@ use std::path::{Path, PathBuf};
 
 use rand::seq::SliceRandom;
 
-use rocket::response::NamedFile;
+use rocket::response::{NamedFile, Redirect};
 use rocket::Error;
 use rocket_contrib::Template;
 
@@ -222,6 +223,22 @@ fn subject(category: Category, subject: String) -> Template {
     Template::render(page, &context)
 }
 
+#[get("/<dest>", rank = 9)]
+fn redirect(dest: redirect::Destination) -> Redirect {
+    Redirect::permanent(dest.uri)
+}
+
+#[get("/en-US/<dest>")]
+fn redirect_en_us(dest: redirect::Destination) -> Redirect {
+    Redirect::permanent(dest.uri)
+}
+
+#[get("/<_locale>/<dest>", rank = 9)]
+fn redirect_locale(_locale: redirect::Locale, dest: redirect::Destination) -> Redirect {
+    // Temporary until locale support is restored.
+    Redirect::temporary(dest.uri)
+}
+
 #[catch(404)]
 fn not_found() -> Template {
     let page = "404";
@@ -271,7 +288,19 @@ fn main() {
         .attach(Template::fairing())
         .mount(
             "/",
-            routes![index, category, governance, team, production, subject, files, logos],
+            routes![
+                index,
+                category,
+                governance,
+                team,
+                production,
+                subject,
+                files,
+                logos,
+                redirect,
+                redirect_en_us,
+                redirect_locale
+            ],
         )
         .catch(catchers![not_found, catch_error])
         .launch();
