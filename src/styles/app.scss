@@ -69,10 +69,17 @@ header .button.button-primary.button-download {
   border-color: $yellow;
   color: black;
   width: 100%;
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 50px;
+  padding-left: 50px;
   height: auto;
-  font-size: 2.25rem;
-  margin-top: 20px;
+  font-size: 2.75rem;
+  margin-top: 30%;
+}
+
+header .version-link {
+  font-size: 1.5rem;
 }
 
 header .button.button-primary.button-download {
