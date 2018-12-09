@@ -1,6 +1,6 @@
 route: rustbridge
 name: RustBridge team
-description: managing RustBridge, an inclusive educational initiative focused on bringing underrepresented groups into Rust
+description: Managing RustBridge, an inclusive educational initiative focused on bringing underrepresented groups into Rust.
 chat: "Community #rustbridge channel on Discord"
 repo: "https://github.com/rustbridge/team"
 leads: [oe]

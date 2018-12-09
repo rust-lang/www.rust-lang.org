@@ -1,5 +1,5 @@
 route: traits
 name: Traits team
-description: revamping the compiler's trait implementation to follow the Chalk approach
+description: Revamping the compiler's trait implementation to follow the Chalk approach.
 chat: "#wg-traits on Discord"
 leads: [nikomatsakis]
