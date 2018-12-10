@@ -7,7 +7,9 @@ matrix:
   # tests pass
   - rust: nightly
     script:
+    - rustup update
+    - rustup -V
     - cargo test --all --locked
-    - rustup component add rustfmt-preview
+    - rustup component add rustfmt
     - cargo fmt --all -- --check
     env: RUST_BACKTRACE=1
