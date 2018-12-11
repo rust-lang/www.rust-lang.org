@@ -2,10 +2,10 @@ use quicli::prelude::*;
 use structopt::StructOpt;
 
 fn main() -> CliResult {
-    let args = Cli::from_args()?;
+    let args = Cli::from_args();
     read_file(&args.file)?
         .lines()
-        .take(args.count)
+        .take(args.num)
         .for_each(|line| println!("{}", line));
     Ok(())
 }
