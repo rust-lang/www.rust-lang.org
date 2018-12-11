@@ -1,8 +1,8 @@
-#![feature(plugin)]
-#![plugin(rocket_codegen)]
+#![feature(proc_macro_hygiene, decl_macro)]
 
 extern crate rand;
 extern crate reqwest;
+#[macro_use]
 extern crate rocket;
 extern crate sass_rs;
 extern crate toml;
@@ -30,8 +30,7 @@ use std::path::{Path, PathBuf};
 use rand::seq::SliceRandom;
 
 use rocket::response::{NamedFile, Redirect};
-use rocket::Error;
-use rocket_contrib::Template;
+use rocket_contrib::templates::Template;
 
 use sass_rs::{compile_file, Options};
 
@@ -160,13 +159,13 @@ fn team(t: String, subject: String) -> Template {
     Template::render(page, &context)
 }
 
-fn get_type_from_string(s: &str) -> Result<GroupType, Error> {
+fn get_type_from_string(s: &str) -> Result<GroupType, ()> {
     match s {
         "wgs" => Ok(GroupType::WorkingGroup),
         "teams" => Ok(GroupType::Team),
         "peers" => Ok(GroupType::Peer),
         "shepards" => Ok(GroupType::Shepard),
-        _ => Err(Error::Internal),
+        _ => Err(()),
     }
 }
 
@@ -302,6 +301,6 @@ fn main() {
                 redirect_locale
             ],
         )
-        .catch(catchers![not_found, catch_error])
+        .register(catchers![not_found, catch_error])
         .launch();
 }

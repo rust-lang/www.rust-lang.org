@@ -2,25 +2,25 @@
 
 <header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-    <h1>{{ data.info[0].name }}</h1>
+    <h1>{{ data.info.[0].name }}</h1>
   </div>
 </header>
 
 <section id="team-info" class="purple">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-    <p><b>{{ data.info[0].description }}</b></p>
-    {{#if data.info[0].chat}}<p><b>Chat Channel</b>: {{ data.info[0].chat }}</p>{{/if}}
-    {{#if data.info[0].repo}}<p><a href="{{data.info[0].repo}}" class="button button-secondary">Team GitHub</a></p>{{/if}}
-    {{#if data.info[0].email}}<p><a href="mailto:{{data.info[0].email}}" class="button button-secondary">Email the Team</a></p>{{/if}}
+    <p><b>{{ data.info.[0].description }}</b></p>
+    {{#if data.info.[0].chat}}<p><b>Chat Channel</b>: {{ data.info.[0].chat }}</p>{{/if}}
+    {{#if data.info.[0].repo}}<p><a href="{{data.info.[0].repo}}" class="button button-secondary">Team GitHub</a></p>{{/if}}
+    {{#if data.info.[0].email}}<p><a href="mailto:{{data.info.[0].email}}" class="button button-secondary">Email the Team</a></p>{{/if}}
     <div class="row">
       <h2>Members</h2>
-      {{#each data.info[0].leads as |lead| ~}}
+      {{#each data.info.[0].leads as |lead| ~}}
         <div class="two columns group-lead group-member">
           <p class="name">{{lead}} (Lead)</p>
           <img src="https://avatars.githubusercontent.com/{{lead}}" />
         </div>
       {{/each~}}
-      {{#each data.info[0].members as |member|}}
+      {{#each data.info.[0].members as |member|}}
         <div class="two columns group-member">
           <p class="name">{{member}}</p>
           <img src="https://avatars.githubusercontent.com/{{member}}" />
