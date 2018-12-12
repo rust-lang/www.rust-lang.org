@@ -96,6 +96,11 @@ fn index() -> Template {
     Template::render(page, &context)
 }
 
+#[get("/components/<_file..>", rank = 1)]
+fn components(_file: PathBuf) -> Template {
+    not_found()
+}
+
 #[get("/logos/<file..>", rank = 1)]
 fn logos(file: PathBuf) -> Option<NamedFile> {
     NamedFile::open(Path::new("static/logos").join(file)).ok()
@@ -298,6 +303,7 @@ fn main() {
                 subject,
                 files,
                 logos,
+                components,
                 redirect,
                 redirect_en_us,
                 redirect_locale
