@@ -20,7 +20,7 @@
     <h3>Rustup: the Rust installer and version management tool</h3>
     <p>The primary way that folks install Rust is through a tool called Rustup, which is a Rust installer
       and version management tool.</p>
-    {{> tools/rustup }}
+    {{> components/tools/rustup }}
     <br /><br />
     <a href="/tools/install" class="button button-secondary">Learn more about installation</a>
     <hr />
@@ -43,7 +43,7 @@
 
     <h3>Other tools</h3>
     <p>Rust support is available in many editors:</p>
-    {{> tools/editors }}
+    {{> components/tools/editors }}
     <br />
     <p>You can install a code formatting tool (Rustfmt) with <code>rustup component add rustfmt</code>,
       and a linting tool (Clippy) with <code>rustup component add clippy</code>.</p>
@@ -177,6 +177,6 @@ fn main() {
       <img alt="a gif of ferris scurrying side to side" src=/static/images/ferris.gif />
   </div>
 </section>
-{{> tools/install-script }}
+{{> components/tools/install-script }}
 {{/inline}}
 {{~> (parent)~}}
