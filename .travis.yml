@@ -5,7 +5,7 @@ matrix:
   include:
 
   # tests pass
-  - rust: nightly
+  - rust: nightly-2018-12-08
     script:
     - cargo test --all --locked
     - rustup component add rustfmt-preview
