@@ -62,6 +62,8 @@ struct UsersContext {
     data: Vec<Vec<User>>,
 }
 
+static LAYOUT: &str = "components/layout";
+
 fn get_title(page_name: &str) -> String {
     let mut v: Vec<char> = page_name.replace("-", " ").chars().collect();
     v[0] = v[0].to_uppercase().nth(0).unwrap();
@@ -86,12 +88,17 @@ fn index() -> Template {
     let context = Context {
         page: page.clone(),
         title,
-        parent: "layout".to_string(),
+        parent: LAYOUT.to_string(),
         is_landing: true,
         rust_version: rust_version::rust_version()
             .map_or(String::new(), |v| format!("Version {}", v)),
     };
     Template::render(page, &context)
+}
+
+#[get("/components/<_file..>", rank = 1)]
+fn components(_file: PathBuf) -> Template {
+    not_found()
 }
 
 #[get("/logos/<file..>", rank = 1)]
@@ -111,7 +118,7 @@ fn category(category: Category) -> Template {
     let context = Context {
         page: category.name().to_string(),
         title,
-        parent: "layout".to_string(),
+        parent: LAYOUT.to_string(),
         is_landing: false,
     };
     Template::render(page, &context)
@@ -124,7 +131,7 @@ fn governance() -> Template {
     let context = GroupContext {
         page: page.clone(),
         title,
-        parent: "layout".to_string(),
+        parent: LAYOUT.to_string(),
         is_landing: false,
         data: load_governance_data(),
     };
@@ -152,7 +159,7 @@ fn team(t: String, subject: String) -> Template {
     let context = GroupContext {
         page: page.clone(),
         title,
-        parent: "layout".to_string(),
+        parent: LAYOUT.to_string(),
         is_landing: false,
         data: load_group_data(t, &subject),
     };
@@ -195,7 +202,7 @@ fn production() -> Template {
     let context = UsersContext {
         page: page.clone(),
         title,
-        parent: "layout".to_string(),
+        parent: LAYOUT.to_string(),
         is_landing: false,
         data: load_users_data(),
     };
@@ -216,7 +223,7 @@ fn subject(category: Category, subject: String) -> Template {
     let context = Context {
         page: subject,
         title,
-        parent: "layout".to_string(),
+        parent: LAYOUT.to_string(),
         is_landing: false,
     };
     Template::render(page, &context)
@@ -245,7 +252,7 @@ fn not_found() -> Template {
     let context = Context {
         page: "404".to_string(),
         title,
-        parent: "layout".to_string(),
+        parent: LAYOUT.to_string(),
         is_landing: false,
     };
     Template::render(page, &context)
@@ -296,6 +303,7 @@ fn main() {
                 subject,
                 files,
                 logos,
+                components,
                 redirect,
                 redirect_en_us,
                 redirect_locale
