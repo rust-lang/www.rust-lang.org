@@ -1,10 +1,12 @@
 <nav class="flex flex-row justify-center justify-end-l items-center flex-wrap ph2 pl3-ns pr4-ns">
-  <a href="/"  class="brand flex-auto w-100 w-auto-l self-start tc tl-l">
-    <img class="v-mid ml0-l" alt="Rust Logo" src="/static/images/rust-logo-blk.svg">
-    {{#unless is_landing}}
-      <span class="dib ml1 ml0-l">Rust</span>
-    {{/unless}}
-  </a>
+  <div class="brand flex-auto w-100 w-auto-l self-start tc tl-l">
+    <a href="/" class="brand">
+      <img class="v-mid ml0-l" alt="Rust Logo" src="/static/images/rust-logo-blk.svg">
+      {{#unless is_landing}}
+        <span class="dib ml1 ml0-l">Rust</span>
+      {{/unless}}
+    </a>
+  </div>
 
   <ul class="nav list w-100 w-auto-l flex flex-none flex-row flex-wrap justify-center justify-end-l items-center pv2 ph0 ph4-ns">
     <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="/tools/install">Install</a></li>
@@ -16,7 +18,7 @@
   </ul>
 
   <div class=" w-100 w-auto-l flex-none flex justify-center pv4 pv-0-l languages">
-    {{> languages-dropdown}}
+    {{> components/languages-dropdown}}
   </div>
 
 </nav>

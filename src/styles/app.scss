@@ -43,6 +43,30 @@ code {
   overflow: auto;
 }
 
+.button,
+button {
+  display: block;
+  overflow: hidden;
+  height: 38px;
+  padding: 0 30px;
+  text-align: center;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-radius: 4px;
+  border: 1px solid;
+  cursor: pointer;
+  box-sizing: border-box;
+
+  &:hover, &:focus {
+    outline: 0;
+  }
+}
+
 .button.button-secondary {
   font-size: 0.8em;
 }
@@ -66,20 +90,18 @@ header h1 {
   margin-top: 0;
 }
 
-header .button.button-primary.button-download {
+header .button.button-download {
+  color: black;
   background-color: $yellow;
   border-color: $yellow;
-  color: black;
   width: 100%;
   padding: 20px;
   height: auto;
   font-size: 2.25rem;
   margin-top: 20px;
-}
 
-header .button.button-primary.button-download {
   &:hover, &:focus {
-      border-color: black;
+    border-color: black;
   }
 }
 
@@ -129,7 +151,7 @@ ul.nav, ul.nav li {
   color: $gray;
 }
 
-a.brand {
+div.brand {
   $v-top: 3px; // for getting the vertical rhythm just right
 
   color: black;
@@ -147,6 +169,11 @@ a.brand {
     display: inline-block;
     margin-left: -1rem;
   }
+}
+
+a.brand {
+  color: black;
+  text-decoration: none;
 }
 
 .domain-icon {
@@ -168,14 +195,13 @@ a.brand {
   }
   a {
     color: white;
+    text-decoration: underline;
   }
   .button.button-secondary {
     background-color: $purple;
-    border: $purple 1px solid;
+    border-color: $purple;
     color: white;
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    text-decoration: none;
     &:hover, &:focus {
       border-color: white;
     }
@@ -195,14 +221,13 @@ a.brand {
   }
   a {
     color: white;
+    text-decoration: underline;
   }
   .button.button-secondary {
     background-color: $purple;
-    border: $purple 1px solid;
+    border-color: $purple;
     color: white;
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    text-decoration: none;
     &:hover, &:focus {
       border-color: white;
     }
@@ -225,12 +250,9 @@ a.brand {
   }
   .button.button-secondary {
     background-color: $yellow;
-    border: 1px solid $yellow;
+    border-color: $yellow;
     color: $gray;
     text-decoration: none;
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
     &:hover, &:focus {
       border-color: $gray;
     }
@@ -254,12 +276,9 @@ a.brand {
   }
   .button.button-secondary {
     background-color: $red;
-    border: 1px solid $red;
+    border-color: $red;
     color: white;
     text-decoration: none;
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
     &:hover, &:focus {
       border-color: white;
     }
@@ -291,9 +310,9 @@ header h1 {
 }
 
 .highlight {
-  height: 30px;
+  height: 24px;
   position: relative;
-  top: -30px;
+  top: -24px;
   left: -10px;
   width: 120%;
   max-width: 90vw;
@@ -303,13 +322,25 @@ footer {
   padding: 30px 0;
   background-color: black;
   color: white;
+
   p {
     margin: 0;
   }
-}
 
-footer a {
-  color: $yellow;
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  a {
+    color: $yellow;
+    text-decoration: none;
+
+    &:hover {
+      color: $yellow;
+      text-decoration: underline;
+    }
+  }
 }
 
 footer h4 {
@@ -359,7 +390,6 @@ blockquote::before {
 
 .production .button.button-secondary {
   margin-top: 30px;
-  display: block;
 }
 
 .testimonial img {

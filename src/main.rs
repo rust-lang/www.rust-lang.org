@@ -1,8 +1,10 @@
-#![feature(plugin)]
-#![plugin(rocket_codegen)]
+#![feature(proc_macro_hygiene, decl_macro)]
 
+#[macro_use]
+extern crate lazy_static;
 extern crate rand;
 extern crate reqwest;
+#[macro_use]
 extern crate rocket;
 extern crate sass_rs;
 extern crate toml;
@@ -14,6 +16,7 @@ extern crate serde_derive;
 mod category;
 mod group;
 mod production;
+mod redirect;
 mod rust_version;
 
 use group::*;
@@ -28,9 +31,8 @@ use std::path::{Path, PathBuf};
 
 use rand::seq::SliceRandom;
 
-use rocket::response::NamedFile;
-use rocket::Error;
-use rocket_contrib::Template;
+use rocket::response::{NamedFile, Redirect};
+use rocket_contrib::templates::Template;
 
 use sass_rs::{compile_file, Options};
 
@@ -62,6 +64,8 @@ struct UsersContext {
     data: Vec<Vec<User>>,
 }
 
+static LAYOUT: &str = "components/layout";
+
 fn get_title(page_name: &str) -> String {
     let mut v: Vec<char> = page_name.replace("-", " ").chars().collect();
     v[0] = v[0].to_uppercase().nth(0).unwrap();
@@ -86,12 +90,17 @@ fn index() -> Template {
     let context = Context {
         page: page.clone(),
         title,
-        parent: "layout".to_string(),
+        parent: LAYOUT.to_string(),
         is_landing: true,
         rust_version: rust_version::rust_version()
             .map_or(String::new(), |v| format!("Version {}", v)),
     };
     Template::render(page, &context)
+}
+
+#[get("/components/<_file..>", rank = 1)]
+fn components(_file: PathBuf) -> Template {
+    not_found()
 }
 
 #[get("/logos/<file..>", rank = 1)]
@@ -111,7 +120,7 @@ fn category(category: Category) -> Template {
     let context = Context {
         page: category.name().to_string(),
         title,
-        parent: "layout".to_string(),
+        parent: LAYOUT.to_string(),
         is_landing: false,
     };
     Template::render(page, &context)
@@ -124,7 +133,7 @@ fn governance() -> Template {
     let context = GroupContext {
         page: page.clone(),
         title,
-        parent: "layout".to_string(),
+        parent: LAYOUT.to_string(),
         is_landing: false,
         data: load_governance_data(),
     };
@@ -152,20 +161,20 @@ fn team(t: String, subject: String) -> Template {
     let context = GroupContext {
         page: page.clone(),
         title,
-        parent: "layout".to_string(),
+        parent: LAYOUT.to_string(),
         is_landing: false,
         data: load_group_data(t, &subject),
     };
     Template::render(page, &context)
 }
 
-fn get_type_from_string(s: &str) -> Result<GroupType, Error> {
+fn get_type_from_string(s: &str) -> Result<GroupType, ()> {
     match s {
         "wgs" => Ok(GroupType::WorkingGroup),
         "teams" => Ok(GroupType::Team),
         "peers" => Ok(GroupType::Peer),
         "shepards" => Ok(GroupType::Shepard),
-        _ => Err(Error::Internal),
+        _ => Err(()),
     }
 }
 
@@ -195,7 +204,7 @@ fn production() -> Template {
     let context = UsersContext {
         page: page.clone(),
         title,
-        parent: "layout".to_string(),
+        parent: LAYOUT.to_string(),
         is_landing: false,
         data: load_users_data(),
     };
@@ -216,10 +225,26 @@ fn subject(category: Category, subject: String) -> Template {
     let context = Context {
         page: subject,
         title,
-        parent: "layout".to_string(),
+        parent: LAYOUT.to_string(),
         is_landing: false,
     };
     Template::render(page, &context)
+}
+
+#[get("/<dest>", rank = 9)]
+fn redirect(dest: redirect::Destination) -> Redirect {
+    Redirect::permanent(dest.uri)
+}
+
+#[get("/en-US/<dest>")]
+fn redirect_en_us(dest: redirect::Destination) -> Redirect {
+    Redirect::permanent(dest.uri)
+}
+
+#[get("/<_locale>/<dest>", rank = 9)]
+fn redirect_locale(_locale: redirect::Locale, dest: redirect::Destination) -> Redirect {
+    // Temporary until locale support is restored.
+    Redirect::temporary(dest.uri)
 }
 
 #[catch(404)]
@@ -229,7 +254,7 @@ fn not_found() -> Template {
     let context = Context {
         page: "404".to_string(),
         title,
-        parent: "layout".to_string(),
+        parent: LAYOUT.to_string(),
         is_landing: false,
     };
     Template::render(page, &context)
@@ -271,8 +296,21 @@ fn main() {
         .attach(Template::fairing())
         .mount(
             "/",
-            routes![index, category, governance, team, production, subject, files, logos],
+            routes![
+                index,
+                category,
+                governance,
+                team,
+                production,
+                subject,
+                files,
+                logos,
+                components,
+                redirect,
+                redirect_en_us,
+                redirect_locale
+            ],
         )
-        .catch(catchers![not_found, catch_error])
+        .register(catchers![not_found, catch_error])
         .launch();
 }
