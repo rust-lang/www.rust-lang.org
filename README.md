@@ -1,23 +1,23 @@
-# www.rust-lang.org
-> the home of the rust website
+# rustmx.github.io
+> El sitio oficial de RustMX (Aún en construcción)
 
 [![Build Status](https://travis-ci.org/rust-lang/www.rust-lang.org.svg?branch=master)](https://travis-ci.org/rust-lang/www.rust-lang.org)
 
-## Development
+## Desarrollo
 
-### Running the app locally
+### Ejecutar un servidor local
 
-1. This is a [Rocket](https://rocket.rs/) app, which means we use the `nightly` channel of Rust. You can install it using [`rustup`](https://rustup.rs/) by running `rustup default nightly`. The Rust `nightly` that we deploy with is listed in the `RustConfig` file. If the latest `nightly` is not working for you, you should use the `nightly` version in that file.
-1. Install `cargo watch` by running `cargo install cargo-watch` in your terminal.
-1. To build the app and run the server, run `cargo watch -x run` in your terminal.
-1. Navigate to http://localhost:7878 in your browser. If you make any updates to the styles, or any other project files, `cargo watch` will automatically restart the server for you, all you have to do is refresh your browser to see your changes.
+1. Esta página está hecha con [Rocket](https://rocket.rs/), lo que significa que utiliza el canal de actualizaciones `nightly`. Puedes instalarlo con [`rustup`](https://rustup.rs/) ejecutando la orden `rustup default nightly`. El Rust `nightly` que desplegamos está en el archivo `RustConfig`. Si el `nightly` mas reciente no te funciona intenta usar la versión `nightly` en el archivo.
+1. Instala `cargo watch` ejecutando `cargo install cargo-watch` en tu terminal.
+1. Para construir y ejecutar el servidor, ejecuta la orden `cargo watch -x run` en tu terminal.
+1. Ingresa a http://localhost:7878 en tu navegador. Si actualizaste los estilos, o cualquier otro archivo del proyecto, `cargo watch` actualizará el servidor por ti, solo necesitarás refrescar la pestaña de tu navegador para ver los cambios.
 
-### Where to edit
+### Archivos a editar
 
-- If you would like to edit styles, you should edit [`src/styles/app.scss`](src/styles/app.scss). 
-- If you would like to update group data, you should edit the `yml` files in [`src/data/`](src/data/).
-- If you would like to edit page content, you should edit the `hbs` files in [`templates`](templates).
+- Si deseas editar los estilos, dirígete a [`src/styles/app.scss`](src/styles/app.scss). 
+- Si deseas actualizar los datos grupales, ve a los archivos `yml` en [`src/data/`](src/data/).
+- Si deseas editar el contenido de la página, puedes editar los archivos `hbs` en [`templates`](templates).
 
-### Contributing
+### Contribuciones
 
-Please read our [`CONTRIBUTING.md`](CONTRIBUTING.md) before submitting a PR!
+Please read our [`CONTRIBUTING.md`](CONTRIBUTING.md) before submitting a PR! (WORK IN PROGRESS)
