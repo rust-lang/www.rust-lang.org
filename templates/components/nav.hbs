@@ -18,7 +18,10 @@
   </ul>
 
   <div class=" w-100 w-auto-l flex-none flex justify-center pv4 pv-0-l languages">
-    {{> components/languages-dropdown}}
+    <label for="language-nav" class="hidden">Language</label>
+    <select id="language-nav">
+      {{> components/languages-dropdown}}
+    </select>
   </div>
 
 </nav>
