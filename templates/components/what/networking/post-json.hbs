@@ -1,15 +1,15 @@
 // This will POST a body of
 //     `{"delete": true, "user": 42}`
 #[derive(Serialize)]
-struct Body {
-    delete: bool,
-    user: u32,
+struct Body<'a> {
+    lang: &'a str,
+    body: &'a str,
 }
 
 let client = reqwest::Client::new();
-let res = client.post("http://example.org")
+let res = client.post("http://httpbin.org/post")
     .json(&Body {
-        delete: true,
-        user: 42,
+        lang: "rust",
+        body: "json",
     })
     .send()?;
