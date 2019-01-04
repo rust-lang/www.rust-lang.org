@@ -17,13 +17,13 @@
       {{#each data.info.[0].leads as |lead| ~}}
         <div class="two columns group-lead group-member">
           <p class="name">{{lead}} (Lead)</p>
-          <img src="https://avatars.githubusercontent.com/{{lead}}" />
+          <img src="https://avatars.githubusercontent.com/{{lead}}" alt="{{lead}}" />
         </div>
       {{/each~}}
       {{#each data.info.[0].members as |member|}}
         <div class="two columns group-member">
           <p class="name">{{member}}</p>
-          <img src="https://avatars.githubusercontent.com/{{member}}" />
+          <img src="https://avatars.githubusercontent.com/{{member}}" alt="{{member}}" />
         </div>
       {{/each~}}
     </div>
@@ -51,13 +51,13 @@
             {{#each st.leads as |lead|}}
               <div class="two columns group-member">
                 <p class="name">{{lead}} (Lead)</p>
-                <img src="https://avatars.githubusercontent.com/{{lead}}" />
+                <img src="https://avatars.githubusercontent.com/{{lead}}" alt="{{lead}}" />
               </div>
             {{/each~}}
             {{#each st.members as |member|}}
               <div class="two columns group-member">
                 <p class="name">{{member}}</p>
-                <img src="https://avatars.githubusercontent.com/{{member}}" />
+                <img src="https://avatars.githubusercontent.com/{{member}}" alt="{{member}}" />
               </div>
             {{/each~}}
           </div>
@@ -89,7 +89,7 @@
             {{#each st.leads as |lead|}}
               <div class="two columns group-member">
                 <p class="name">{{lead}}</p>
-                <img src="https://avatars.githubusercontent.com/{{lead}}" />
+                <img src="https://avatars.githubusercontent.com/{{lead}}" alt="{{lead}}" />
               </div>
             {{/each~}}
           </div>
