@@ -1,10 +1,15 @@
 // This will POST a body of
-//     `{"lang":"rust","body":"json"}`
-let mut map = HashMap::new();
-map.insert("lang", "rust");
-map.insert("body", "json");
+//     `{"lang": "rust", "body": "json"}`
+#[derive(Serialize)]
+struct Body<'a> {
+    lang: &'a str,
+    body: &'a str,
+}
 
 let client = reqwest::Client::new();
 let res = client.post("http://httpbin.org/post")
-    .json(&map)
+    .json(&Body {
+        lang: "rust",
+        body: "json",
+    })
     .send()?;
