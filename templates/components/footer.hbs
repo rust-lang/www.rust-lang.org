@@ -9,7 +9,10 @@
           <li><a href="http://ping.rust-lang.org">Check Website Status</a></li>
         </ul>
         <div class="languages">
-          {{> components/languages-dropdown }}
+            <label for="language-footer" class="hidden">Language</label>
+            <select id="language-footer">
+                {{> components/languages-dropdown}}
+            </select>
         </div>
       </div>
       <div class="four columns mt3 mt0-l">
@@ -19,7 +22,7 @@
           <li><a href="/policies/licenses">Licenses</a></li>
           <li><a href="/policies/media-guide">Logo Policy and Media Guide</a></li>
           <li><a href="/policies/security">Security Disclosures</a></li>
-          <li><a href="/policies">All</a></li>
+          <li><a href="/policies">All Policies</a></li>
         </ul>
       </div>
       <div class="four columns mt3 mt0-l">
@@ -34,9 +37,9 @@
     <div class="attribution">
       <p>
         Maintained by the Rust Team. See a typo?
-        <a href="https://github.com/rust-lang/beta.rust-lang.org" target="_blank" rel="noopener">Send a fix here</a>!
+        <a href="https://github.com/rust-lang/www.rust-lang.org" target="_blank" rel="noopener">Send a fix here</a>!
       </p>
-      <p>Looking for the <a href="https://prev.rust-lang.org">previous website?</a></p>
+      <p>Looking for the <a href="https://prev.rust-lang.org">previous website</a>?</p>
     </div>
   </div>
 </footer>

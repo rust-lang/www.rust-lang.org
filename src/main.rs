@@ -1,5 +1,7 @@
 #![feature(proc_macro_hygiene, decl_macro)]
 
+#[macro_use]
+extern crate lazy_static;
 extern crate rand;
 extern crate reqwest;
 #[macro_use]
