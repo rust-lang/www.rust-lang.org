@@ -2,4 +2,4 @@ route: debugging
 name: Debugging working group
 description: debugging tools and foundations
 chat: "Dev-Tools Team #wg-debugging on Discord"
-leads: [manishearth, michaelwoerister, tromey]
+leads: [manishearth, michaelwoerister]
