@@ -392,7 +392,6 @@ blockquote::before {
 
 .testimonial img {
   padding: 10px;
-  width: 80%;
 }
 
 .production .attribution {
@@ -678,14 +677,5 @@ blockquote::before {
   margin: 0;
   h3 {
     text-align: center;
-  }
-}
-
-#chucklefish {
-  width: 50%;
-  height: auto;
-
-  @media only screen and (max-width: 545px) {
-    width: 35%;
   }
 }
