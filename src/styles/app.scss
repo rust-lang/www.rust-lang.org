@@ -680,3 +680,12 @@ blockquote::before {
     text-align: center;
   }
 }
+
+#chucklefish {
+  width: 50%;
+  height: auto;
+
+  @media only screen and (max-width: 545px) {
+    width: 35%;
+  }
+}
