@@ -4,6 +4,7 @@
 extern crate lazy_static;
 extern crate rand;
 extern crate reqwest;
+extern crate serde_json;
 #[macro_use]
 extern crate rocket;
 extern crate sass_rs;
@@ -82,6 +83,7 @@ fn index() -> Template {
         parent: String,
         is_landing: bool,
         rust_version: String,
+        release_post: String,
     }
 
     let page = "index".to_string();
@@ -94,6 +96,9 @@ fn index() -> Template {
         is_landing: true,
         rust_version: rust_version::rust_version()
             .map_or(String::new(), |v| format!("Version {}", v)),
+        release_post: rust_version::rust_release().map_or(String::new(), |v| {
+            format!("https://blog.rust-lang.org/{}", v)
+        }),
     };
     Template::render(page, &context)
 }
