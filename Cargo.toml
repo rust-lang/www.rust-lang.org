@@ -13,6 +13,7 @@ serde_yaml = "0.8.7"
 sass-rs = "0.2.1"
 reqwest = "0.9.5"
 toml = "0.4"
+serde_json = "1.0"
 
 [dependencies.rocket_contrib]
 version = "*"
