@@ -11,6 +11,7 @@ extern crate sass_rs;
 extern crate toml;
 
 extern crate rocket_contrib;
+extern crate serde;
 #[macro_use]
 extern crate serde_derive;
 
@@ -40,29 +41,12 @@ use sass_rs::{compile_file, Options};
 use category::Category;
 
 #[derive(Serialize)]
-struct Context {
+struct Context<T: ::serde::Serialize> {
     page: String,
     title: String,
     parent: String,
     is_landing: bool,
-}
-
-#[derive(Serialize)]
-struct GroupContext {
-    page: String,
-    title: String,
-    parent: String,
-    is_landing: bool,
-    data: HashMap<String, Vec<Group>>,
-}
-
-#[derive(Serialize)]
-struct UsersContext {
-    page: String,
-    title: String,
-    parent: String,
-    is_landing: bool,
-    data: Vec<Vec<User>>,
+    data: T,
 }
 
 static LAYOUT: &str = "components/layout";
@@ -77,13 +61,9 @@ fn get_title(page_name: &str) -> String {
 #[get("/")]
 fn index() -> Template {
     #[derive(Serialize)]
-    struct Context {
-        page: String,
-        title: String,
-        parent: String,
-        is_landing: bool,
+    struct IndexData {
         rust_version: String,
-        release_post: String,
+        rust_release_post: String,
     }
 
     let page = "index".to_string();
@@ -94,11 +74,13 @@ fn index() -> Template {
         title,
         parent: LAYOUT.to_string(),
         is_landing: true,
-        rust_version: rust_version::rust_version()
-            .map_or(String::new(), |v| format!("Version {}", v)),
-        release_post: rust_version::rust_release().map_or(String::new(), |v| {
-            format!("https://blog.rust-lang.org/{}", v)
-        }),
+        data: IndexData {
+            rust_version: rust_version::rust_version()
+                .map_or(String::new(), |v| format!("Version {}", v)),
+            rust_release_post: rust_version::rust_release().map_or(String::new(), |v| {
+                format!("https://blog.rust-lang.org/{}", v)
+            }),
+        },
     };
     Template::render(page, &context)
 }
@@ -127,6 +109,7 @@ fn category(category: Category) -> Template {
         title,
         parent: LAYOUT.to_string(),
         is_landing: false,
+        data: (),
     };
     Template::render(page, &context)
 }
@@ -135,7 +118,7 @@ fn category(category: Category) -> Template {
 fn governance() -> Template {
     let page = "governance/index".to_string();
     let title = "Governance - Rust programming language".to_string();
-    let context = GroupContext {
+    let context = Context {
         page: page.clone(),
         title,
         parent: LAYOUT.to_string(),
@@ -163,7 +146,7 @@ fn team(t: String, subject: String) -> Template {
     let page = "governance/group".to_string();
     let t = get_type_from_string(&t).expect("couldn't figure out group type from path string");
     let title = get_title(&format!("{} team", subject));
-    let context = GroupContext {
+    let context = Context {
         page: page.clone(),
         title,
         parent: LAYOUT.to_string(),
@@ -206,7 +189,7 @@ fn load_group_data(t: GroupType, group: &str) -> HashMap<String, Vec<Group>> {
 fn production() -> Template {
     let page = "production/users".to_string();
     let title = "Users - Rust programming language".to_string();
-    let context = UsersContext {
+    let context = Context {
         page: page.clone(),
         title,
         parent: LAYOUT.to_string(),
@@ -232,6 +215,7 @@ fn subject(category: Category, subject: String) -> Template {
         title,
         parent: LAYOUT.to_string(),
         is_landing: false,
+        data: (),
     };
     Template::render(page, &context)
 }
@@ -261,6 +245,7 @@ fn not_found() -> Template {
         title,
         parent: LAYOUT.to_string(),
         is_landing: false,
+        data: (),
     };
     Template::render(page, &context)
 }
