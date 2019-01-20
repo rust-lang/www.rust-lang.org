@@ -15,6 +15,7 @@ extern crate serde;
 #[macro_use]
 extern crate serde_derive;
 
+mod cache;
 mod category;
 mod group;
 mod production;
@@ -77,7 +78,7 @@ fn index() -> Template {
         data: IndexData {
             rust_version: rust_version::rust_version()
                 .map_or(String::new(), |v| format!("Version {}", v)),
-            rust_release_post: rust_version::rust_release().map_or(String::new(), |v| {
+            rust_release_post: rust_version::rust_release_post().map_or(String::new(), |v| {
                 format!("https://blog.rust-lang.org/{}", v)
             }),
         },

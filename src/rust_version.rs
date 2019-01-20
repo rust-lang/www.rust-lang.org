@@ -1,68 +1,44 @@
 use reqwest;
 use serde_json;
-use std::sync::RwLock;
-use std::thread;
-use std::time::Instant;
+use std::any::Any;
+use std::error::Error;
 use toml;
 
-lazy_static! {
-    static ref CACHE: RwLock<Option<(String, Instant)>> = RwLock::new(None);
-    static ref URL_CACHE: RwLock<Option<(String, Instant)>> = RwLock::new(None);
+static MANIFEST_URL: &str = "https://static.rust-lang.org/dist/channel-rust-stable.toml";
+static RELEASES_FEED_URL: &str = "https://blog.rust-lang.org/releases.json";
+
+fn fetch_rust_version() -> Result<Box<Any>, Box<Error>> {
+    let manifest = reqwest::get(MANIFEST_URL)?.text()?.parse::<toml::Value>()?;
+    let rust_version = manifest["pkg"]["rust"]["version"].as_str().unwrap();
+    let version: String =
+        rust_version[..rust_version.find(' ').unwrap_or(rust_version.len())].to_string();
+    Ok(Box::new(version))
 }
 
-const CACHE_TTL_SECS: u64 = 120;
+fn fetch_rust_release_post() -> Result<Box<Any>, Box<Error>> {
+    let releases = reqwest::get(RELEASES_FEED_URL)?
+        .text()?
+        .parse::<serde_json::Value>()?;
+    let url = releases["releases"][0]["url"].as_str().unwrap().to_string();
+    Ok(Box::new(url))
+}
 
 pub fn rust_version() -> Option<String> {
-    cached_rust_version().or_else(fetch_rust_version)
-}
-
-pub fn rust_release() -> Option<String> {
-    cached_rust_release().or_else(fetch_rust_release_post)
-}
-
-fn cached_rust_release() -> Option<String> {
-    let cached = URL_CACHE.read().unwrap();
-    let (url, timestamp) = cached.as_ref()?;
-    if timestamp.elapsed().as_secs() > CACHE_TTL_SECS {
-        // Update the cache in the background.
-        thread::spawn(fetch_rust_release_post);
+    match ::cache::get(fetch_rust_version) {
+        Ok(version) => Some(version),
+        Err(err) => {
+            eprintln!("error while fetching the rust version: {}", err);
+            None
+        }
     }
-    Some(url.clone())
 }
 
-fn cached_rust_version() -> Option<String> {
-    let cached = CACHE.read().unwrap();
-    let (version, timestamp) = cached.as_ref()?;
-    if timestamp.elapsed().as_secs() > CACHE_TTL_SECS {
-        // Update the cache in the background.
-        thread::spawn(fetch_rust_version);
+pub fn rust_release_post() -> Option<String> {
+    match ::cache::get(fetch_rust_release_post) {
+        Ok(post) => Some(post),
+        Err(err) => {
+            eprintln!("error while fetching the rust release post: {}", err);
+            None
+        }
     }
-    Some(version.clone())
-}
-
-fn fetch_rust_version() -> Option<String> {
-    let manifest = reqwest::get("https://static.rust-lang.org/dist/channel-rust-stable.toml")
-        .ok()?
-        .text()
-        .ok()?;
-    let manifest = manifest.parse::<toml::Value>().ok()?;
-    let rust_version = manifest["pkg"]["rust"]["version"].as_str()?;
-    let version = rust_version[..rust_version.find(' ')?].to_string();
-
-    // Update the cache.
-    *CACHE.write().unwrap() = Some((version.clone(), Instant::now()));
-    Some(version)
-}
-
-fn fetch_rust_release_post() -> Option<String> {
-    let releases = reqwest::get("https://blog.rust-lang.org/releases.json")
-        .ok()?
-        .text()
-        .ok()?;
-    let releases = releases.parse::<serde_json::Value>().ok()?;
-    let url = releases["releases"][0]["url"].as_str()?.to_string();
-
-    // Update the cache.
-    *URL_CACHE.write().unwrap() = Some((url.clone(), Instant::now()));
-    Some(url)
 }
