@@ -1,0 +1,6 @@
+route: rustup
+name: Rustup working group
+description: design and implementation of Rustup
+chat: "Dev-Tools Team #wg-rustup on Discord"
+repo: "https://github.com/rust-lang/rustup.rs"
+leads: [alexcrichton, dwijnand, kinnison, nrc]
