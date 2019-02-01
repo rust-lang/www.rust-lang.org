@@ -1,0 +1,51 @@
+<a name="{{team.name}}"></a>
+<div class="w-100 mw-none mw-8-m mw9-l ph3 center f3">
+    <header class="pb0 pt5">
+        <h2>{{team.website_data.name}}</h2>
+        <div class="highlight"></div>
+    </header>
+    <div>
+        <div class="mv4 flex flex-column flex-row-l justify-between">
+            <p class="ma0 f2">{{team.website_data.description}}</p>
+            <div class="flex flex-column ml5-l mt4 mt0-l">
+                {{#if team.website_data.email}}
+                    <a class="button button-secondary" href="mailto:{{team.website_data.email}}">Email the {{team.website_data.name}}</a>
+                {{/if}}
+                {{#if team.website_data.repo}}
+                    <a class="button button-secondary" href="{{team.website_data.repo}}">
+                        {{team.website_data.name}} repository
+                    </a>
+                {{/if}}
+                {{#if team.website_data.discord}}
+                    <a class="button button-secondary" href="{{team.website_data.discord.url}}" target="_blank" rel="noopener">
+                        {{team.website_data.discord.channel}} on Discord
+                    </a>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    {{#if team.members}}
+        <header class="pb4 pt0">
+            <h2 class="f2">Members</h2>
+        </header>
+        <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+            {{#each team.members as |member|}}
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                    <a class="mr4 w4 h4 flex-no-shrink" href="https://github.com/{{member.github}}">
+                        <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/{{member.github}}" alt="{{member.name}}">
+                    </a>
+                    <div class="flex flex-column w-100">
+                        <h3 class="{{#unless member.is_lead}}fw4{{/unless}} ma0 mb2">{{member.name}}</h3>
+                        <div>
+                            GitHub:
+                            <a href="https://github.com/{{member.github}}">{{member.github}}</a>
+                        </div>
+                        {{#if member.is_lead}}
+                            <div>Team leader</div>
+                        {{/if}}
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    {{/if}}
+</div>

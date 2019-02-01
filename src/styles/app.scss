@@ -567,6 +567,10 @@ blockquote::before {
   }
 }
 
+.flex-no-shrink {
+  flex-shrink: 0;
+}
+
 .install-details {
   background-color: rgba(white, 0.15);
   border: 1px solid rgba(white, 0.65);

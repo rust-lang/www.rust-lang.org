@@ -9,6 +9,7 @@ extern crate serde_json;
 extern crate rocket;
 extern crate sass_rs;
 extern crate toml;
+extern crate rust_team_data;
 
 extern crate rocket_contrib;
 extern crate serde;
@@ -21,11 +22,10 @@ mod group;
 mod production;
 mod redirect;
 mod rust_version;
+mod teams;
 
-use group::*;
 use production::User;
 
-use std::collections::HashMap;
 use std::fs;
 use std::fs::File;
 use std::io::prelude::*;
@@ -34,7 +34,7 @@ use std::path::{Path, PathBuf};
 
 use rand::seq::SliceRandom;
 
-use rocket::response::{NamedFile, Redirect};
+use rocket::{http::Status, response::{NamedFile, Redirect}};
 use rocket_contrib::templates::Template;
 
 use sass_rs::{compile_file, Options};
@@ -116,74 +116,55 @@ fn category(category: Category) -> Template {
 }
 
 #[get("/governance")]
-fn governance() -> Template {
-    let page = "governance/index".to_string();
-    let title = "Governance - Rust programming language".to_string();
-    let context = Context {
-        page: page.clone(),
-        title,
-        parent: LAYOUT.to_string(),
-        is_landing: false,
-        data: load_governance_data(),
-    };
-    Template::render(page, &context)
-}
-
-fn load_governance_data() -> HashMap<String, Vec<Group>> {
-    let mut map: HashMap<String, Vec<Group>> = HashMap::new();
-    map.insert(
-        GroupType::Team.to_string(),
-        group::get_toplevel_data(&GroupType::Team).expect("couldn't get teams data"),
-    );
-    map.insert(
-        GroupType::WorkingGroup.to_string(),
-        group::get_toplevel_data(&GroupType::WorkingGroup).expect("couldn't get wgs data"),
-    );
-    map
-}
-
-#[get("/governance/<t>/<subject>", rank = 2)]
-fn team(t: String, subject: String) -> Template {
-    let page = "governance/group".to_string();
-    let t = get_type_from_string(&t).expect("couldn't figure out group type from path string");
-    let title = get_title(&format!("{} team", subject));
-    let context = Context {
-        page: page.clone(),
-        title,
-        parent: LAYOUT.to_string(),
-        is_landing: false,
-        data: load_group_data(t, &subject),
-    };
-    Template::render(page, &context)
-}
-
-fn get_type_from_string(s: &str) -> Result<GroupType, ()> {
-    match s {
-        "wgs" => Ok(GroupType::WorkingGroup),
-        "teams" => Ok(GroupType::Team),
-        "peers" => Ok(GroupType::Peer),
-        "shepards" => Ok(GroupType::Shepard),
-        _ => Err(()),
+fn governance() -> Result<Template, Status> {
+    match teams::index_data() {
+        Ok(data) => {
+            let page = "governance/index".to_string();
+            let title = "Governance - Rust programming language".to_string();
+            let context = Context {
+                page: page.clone(),
+                title,
+                parent: LAYOUT.to_string(),
+                is_landing: false,
+                data,
+            };
+            Ok(Template::render(page, &context))
+        }
+        Err(err) => {
+            eprintln!("error while loading the governance page: {}", err);
+            Err(Status::InternalServerError)
+        }
     }
 }
 
-fn load_group_data(t: GroupType, group: &str) -> HashMap<String, Vec<Group>> {
-    let mut map: HashMap<String, Vec<Group>> = HashMap::new();
-    map.insert(
-        "info".to_string(),
-        vec![group::get_info(&t, group).expect("couldn't get group info")],
-    );
-    let subteams =
-        group::get_subs_data(&t, group, &GroupType::Team).expect("couldn't get subteams data");
-    if !subteams.is_empty() {
-        map.insert("subteams".to_string(), subteams);
+#[get("/governance/<section>/<team>", rank = 2)]
+fn team(section: String, team: String) -> Result<Template, Result<Redirect, Status>> {
+    match teams::page_data(&section, &team) {
+        Ok(data) => {
+            let page = "governance/group".to_string();
+            let title = get_title(&data.team.website_data.as_ref().unwrap().name);
+            let context = Context {
+                page: page.clone(),
+                title,
+                parent: LAYOUT.to_string(),
+                is_landing: false,
+                data,
+            };
+            Ok(Template::render(page, &context))
+        }
+        Err(err) => {
+            if err.is::<teams::TeamNotFound>() {
+                match (section.as_str(), team.as_str()) {
+                    // Old teams URLs
+                    ("teams", "language-and-compiler") => Err(Ok(Redirect::temporary("/governance"))),
+                    _ => Err(Err(Status::NotFound))
+                }
+            } else {
+                eprintln!("error while loading the team page: {}", err);
+                Err(Err(Status::InternalServerError))
+            }
+        }
     }
-    let subwgs = group::get_subs_data(&t, group, &GroupType::WorkingGroup)
-        .expect("couldn't get subwgs data");
-    if !subwgs.is_empty() {
-        map.insert("subwgs".to_string(), subwgs);
-    }
-    map
 }
 
 #[get("/production/users")]
