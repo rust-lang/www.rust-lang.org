@@ -1,5 +1,0 @@
-route: IDEs-and-editors
-name: IDEs and editors team
-description: IDEs, editors, and supporting tools such as Racer and the RLS
-leads: [nrc, Xanewok]
-members: [alexheretic, autozimu, jasonwilliams, LucasBullen, matklad, vlad20012]

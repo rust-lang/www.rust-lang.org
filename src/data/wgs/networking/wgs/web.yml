@@ -1,5 +1,0 @@
-route: web
-name: Web foundations working group
-description: Our goal is to improve web programming in Rust.
-chat: WG-Net #wg-net-web channel on Discord
-leads: [aturon, yoshuawuyts]

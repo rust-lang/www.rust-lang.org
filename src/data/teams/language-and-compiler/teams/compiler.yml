@@ -1,5 +1,0 @@
-route: compiler
-name: Compiler team
-description: "compiler internals, optimizations"
-leads: [nikomatsakis]
-members: [cramertj, eddyb, estebank, nagisa, oli-obk, petrochenkov, pnkfelix, michaelwoerister, varkor, Zoxc]

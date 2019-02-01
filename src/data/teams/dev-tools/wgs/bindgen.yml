@@ -1,6 +1,0 @@
-route: bindgen
-name: Bindgen working group
-description: tools for generating FFI bindings
-chat: "Dev-Tools Team #wg-bindgen on Discord"
-repo: "https://github.com/rust-lang-nursery/rust-bindgen"
-leads: [emilio, fitzgen]

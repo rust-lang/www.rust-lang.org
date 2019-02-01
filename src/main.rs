@@ -18,7 +18,6 @@ extern crate serde_derive;
 
 mod cache;
 mod category;
-mod group;
 mod production;
 mod redirect;
 mod rust_version;
