@@ -1,6 +1,0 @@
-route: release
-name: Release team
-email: "release@rust-lang.org"
-description: "tracking regressions, stabilizations, and producing Rust releases"
-leads: [Mark-Simulacrum]
-members: [jrozner, jkordish, cuviper, alexcrichton, dirtybit, Centril, sgrif, pietroalbini, BatmanAoD, PramodBisht, ArazAbishov, Aaronepower, treiff, cssivision, gsollazzo, pambihira, stokhos]

@@ -1,5 +1,0 @@
-route: embedded
-name: Embedded networking group
-description: Our goal is to support IoT development.
-chat: WG-Net #wg-net-embedded channel on Discord
-leads: [nemo157, levex]

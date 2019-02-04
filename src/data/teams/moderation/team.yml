@@ -1,6 +1,0 @@
-route: moderation
-name: Moderation team
-chat: "@mods on Discord"
-email: "rust-mods@rust-lang.org"
-description: helping uphold the code of conduct
-members: [mbrubeck, BurntSushi, manishearth, niconii, llogiq, matthieu-m]

@@ -14,6 +14,7 @@ sass-rs = "0.2.1"
 reqwest = "0.9.5"
 toml = "0.4"
 serde_json = "1.0"
+rust_team_data = { git = "https://github.com/rust-lang/team" }
 
 [dependencies.rocket_contrib]
 version = "*"

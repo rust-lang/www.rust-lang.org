@@ -33,64 +33,32 @@
     </div>
 </section>
 
-<section id="teams-and-working-groups" class="purple">
-  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-    <header>
-      <h2>Teams and Working Groups</h2>
-      <div class="highlight"></div>
-    </header>
-    <p>Each aspect of the Rust project is managed by a dedicated leadership team:</p>
-    <h3>Teams</h3>
-    <div id="teams" class="flex flex-column flex-row-l flex-wrap-l justify-start tc">
-      {{#each data.teams as |team| ~}}
-      <div class="flex flex-column justify-between ba br3 b--white mw-100 w-100-l pa3 ma4 max-width-quarter-l">
-        <h4 class="f2 fw6">{{team.name~}}</h4>
-        <p>{{team.description}}</p>
-        <a href="/governance/teams/{{team.route}}" class="button button-secondary">Learn More</a>
-      </div>
-      {{/each~}}
+<section id="teams" class="purple">
+    <div class="w-100 mw-none ph3 mw-8-m mw9-l center f3">
+        <header>
+            <h2>Teams</h2>
+            <div class="highlight"></div>
+        </header>
+        <div class="flex flex-column flex-row-l flex-wrap-l justify-start tc">
+            {{#each data.teams as |team| ~}}
+                {{> governance/index-team}}
+            {{/each~}}
+        </div>
     </div>
-    <hr />
-    <h3>Working Groups</h3>
-    <div id="wgs" class="flex flex-column flex-row-l flex-wrap-l justify-start tc">
-      {{#each data.wgs as |wg| ~}}
-      <div class="flex flex-column justify-between ba br3 b--white mw-100 w-100-l pa3 ma4 max-width-quarter-l">
-        <h4 class="f2 fw6">{{wg.name~}}</h4>
-        <p>{{wg.description}}</p>
-        <a href="/governance/wgs/{{wg.route}}" class="button button-secondary">Learn More</a>
-      </div>
-      {{/each~}}
-    </div>
-  </div>
 </section>
 
-<section id="sustainability" class="white">
-  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-    <header>
-      <h2>Sustainability and support</h2>
-      <div class="highlight"></div>
-    </header>
-    <p>The Rust project belongs to its community of stakeholders, not to any one company or organization.
-      It’s built by a worldwide group of volunteers, students, and paid contributors.
-      Organizations that benefit from Rust give back by allocating employee time to Rust contribution
-      or by sponsoring community efforts.
-      There are people working part- and full-time on Rust at a half dozen companies, big and small.
-    </p>
-    <a href="mailto:core@rust-lang.org" class="button button-secondary">Contact the core team to join in</a>
-  </div>
-</section>
-
-<section id="community-standards" class="green">
-  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-    <header>
-      <h2>Community standards</h2>
-      <div class="highlight"></div>
-    </header>
-    <p>Rust <i>is</i> its community, and so it’s vital that its culture reflect the project’s values:
-      inclusivity, empowerment, kindness, and careful deliberation. We have a Code of Conduct and a Moderation Team to
-      enforce it, but in official venues we strive to go beyond that and treat each other with the highest standards of
-      empathy and respect.</p>
-    <a href="/policies/code-of-conduct" class="button button-secondary">Learn More</a>
+<section id="teams" class="green">
+    <div class="w-100 mw-none ph3 mw-8-m mw9-l center f3">
+        <header>
+            <h2>Working groups</h2>
+            <div class="highlight"></div>
+        </header>
+        <div class="flex flex-column flex-row-l flex-wrap-l justify-start tc">
+            {{#each data.wgs as |team| ~}}
+                {{> governance/index-team}}
+            {{/each~}}
+        </div>
+    </div>
 </section>
 
 {{/inline}}
