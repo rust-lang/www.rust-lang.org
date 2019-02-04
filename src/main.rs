@@ -7,9 +7,9 @@ extern crate reqwest;
 extern crate serde_json;
 #[macro_use]
 extern crate rocket;
+extern crate rust_team_data;
 extern crate sass_rs;
 extern crate toml;
-extern crate rust_team_data;
 
 extern crate rocket_contrib;
 extern crate serde;
@@ -33,7 +33,10 @@ use std::path::{Path, PathBuf};
 
 use rand::seq::SliceRandom;
 
-use rocket::{http::Status, response::{NamedFile, Redirect}};
+use rocket::{
+    http::Status,
+    response::{NamedFile, Redirect},
+};
 use rocket_contrib::templates::Template;
 
 use sass_rs::{compile_file, Options};
@@ -155,8 +158,10 @@ fn team(section: String, team: String) -> Result<Template, Result<Redirect, Stat
             if err.is::<teams::TeamNotFound>() {
                 match (section.as_str(), team.as_str()) {
                     // Old teams URLs
-                    ("teams", "language-and-compiler") => Err(Ok(Redirect::temporary("/governance"))),
-                    _ => Err(Err(Status::NotFound))
+                    ("teams", "language-and-compiler") => {
+                        Err(Ok(Redirect::temporary("/governance")))
+                    }
+                    _ => Err(Err(Status::NotFound)),
                 }
             } else {
                 eprintln!("error while loading the team page: {}", err);
