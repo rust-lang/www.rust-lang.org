@@ -181,6 +181,68 @@ mod tests {
     }
 
     #[test]
+    fn test_index_data() {
+        let mut foo = dummy_team("foo");
+        foo.kind = TeamKind::WorkingGroup;
+        let data = Data::dummy(vec![foo, dummy_team("bar")]);
+
+        let res = data.index_data().unwrap();
+        assert_eq!(res.teams.len(), 1);
+        assert_eq!(res.teams[0].url, "teams/bar");
+        assert_eq!(res.teams[0].team.name, "bar");
+        assert_eq!(res.wgs.len(), 1);
+        assert_eq!(res.wgs[0].url, "wgs/foo");
+        assert_eq!(res.wgs[0].team.name, "foo");
+    }
+
+    #[test]
+    fn test_index_subteams_are_hidden() {
+        let mut foo = dummy_team("foo");
+        foo.subteam_of = Some(String::new());
+        let data = Data::dummy(vec![foo]);
+
+        assert_eq!(data.index_data().unwrap().teams.len(), 0);
+    }
+
+    #[test]
+    fn test_page_data() {
+        let main = dummy_team("main");
+        let mut subteam = dummy_team("subteam");
+        subteam.subteam_of = Some("main".into());
+        let mut wg = dummy_team("wg");
+        wg.subteam_of = Some("main".into());
+        wg.kind = TeamKind::WorkingGroup;
+
+        let other = dummy_team("other");
+        let mut other_subteam = dummy_team("other-subteam");
+        other_subteam.subteam_of = Some("other".into());
+        let mut other_wg = dummy_team("other-wg");
+        other_wg.subteam_of = Some("other".into());
+        other_wg.kind = TeamKind::WorkingGroup;
+
+        let data = Data::dummy(vec![main, subteam, wg, other, other_subteam, other_wg]);
+        let page = data.page_data("teams", "main").unwrap();
+
+        assert_eq!(page.team.name, "main");
+        assert_eq!(page.subteams.len(), 1);
+        assert_eq!(page.subteams[0].name, "subteam");
+        assert_eq!(page.wgs.len(), 1);
+        assert_eq!(page.wgs[0].name, "wg");
+    }
+
+    #[test]
+    fn test_missing_pages() {
+        let foo = dummy_team("foo");
+        let mut bar = dummy_team("bar");
+        bar.kind = TeamKind::WorkingGroup;
+        let data = Data::dummy(vec![foo, bar]);
+
+        assert!(data.clone().page_data("teams", "unknown").err().unwrap().is::<TeamNotFound>());
+        assert!(data.clone().page_data("wgs", "foo").err().unwrap().is::<TeamNotFound>());
+        assert!(data.clone().page_data("teams", "bar").err().unwrap().is::<TeamNotFound>());
+    }
+
+    #[test]
     fn test_subteams_cant_be_loaded() {
         let mut foo = dummy_team("foo");
         foo.subteam_of = Some("bar".into());
