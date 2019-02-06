@@ -35,6 +35,11 @@ impl Data {
         })
     }
 
+    #[cfg(test)]
+    fn dummy(teams: Vec<Team>) -> Self {
+        Data { teams }
+    }
+
     fn index_data(self) -> Result<IndexData, Box<Error>> {
         let mut data = IndexData::default();
 
@@ -71,6 +76,11 @@ impl Data {
             .next()
             .cloned()
             .ok_or(TeamNotFound)?;
+
+        // Don't show pages for subteams
+        if main_team.subteam_of.is_some() {
+            return Err(TeamNotFound.into());
+        }
 
         // Then find all the subteams and wgs
         let mut subteams = Vec::new();
@@ -133,5 +143,49 @@ impl fmt::Debug for TeamNotFound {
 impl fmt::Display for TeamNotFound {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "team not found")
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use rust_team_data::v1::{Team, TeamKind, TeamMember, TeamWebsite};
+    use super::{Data, TeamNotFound};
+
+    fn dummy_team(name: &str) -> Team {
+        Team {
+            name: name.into(),
+            kind: TeamKind::Team,
+            subteam_of: None,
+            members: vec![
+                TeamMember {
+                    name: "John Doe".into(),
+                    github: "johnd".into(),
+                    is_lead: false,
+                },
+                TeamMember {
+                    name: "Jane Doe".into(),
+                    github: "janed".into(),
+                    is_lead: true,
+                },
+            ],
+            website_data: Some(TeamWebsite {
+                name: format!("Team {}", name),
+                description: format!("Description of {}", name),
+                page: name.into(),
+                email: None,
+                repo: None,
+                discord: None,
+                weight: 0,
+            }),
+        }
+    }
+
+    #[test]
+    fn test_subteams_cant_be_loaded() {
+        let mut foo = dummy_team("foo");
+        foo.subteam_of = Some("bar".into());
+        let data = Data::dummy(vec![foo, dummy_team("bar")]);
+
+        assert!(data.page_data("teams", "foo").err().unwrap().is::<TeamNotFound>());
     }
 }
