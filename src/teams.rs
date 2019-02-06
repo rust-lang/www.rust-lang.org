@@ -1,6 +1,7 @@
 use reqwest;
 use rust_team_data::v1::{Team, TeamKind, Teams, BASE_URL};
 use std::any::Any;
+use std::cmp::Reverse;
 use std::error::Error;
 use std::fmt;
 
@@ -24,6 +25,7 @@ pub struct PageData {
     wgs: Vec<Team>,
 }
 
+#[derive(Clone)]
 struct Data {
     teams: Vec<Team>,
 }
@@ -60,10 +62,12 @@ impl Data {
                 TeamKind::WorkingGroup => data.wgs.push(team),
             });
 
-        data.teams
-            .sort_by_key(|team| -team.team.website_data.as_ref().unwrap().weight);
-        data.wgs
-            .sort_by_key(|team| -team.team.website_data.as_ref().unwrap().weight);
+        data.teams.sort_by_key(|index_team| {
+            Reverse(index_team.team.website_data.as_ref().unwrap().weight)
+        });
+        data.wgs.sort_by_key(|index_team| {
+            Reverse(index_team.team.website_data.as_ref().unwrap().weight)
+        });
         Ok(data)
     }
 
