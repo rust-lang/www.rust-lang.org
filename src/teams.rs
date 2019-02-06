@@ -69,7 +69,8 @@ impl Data {
 
     pub fn page_data(self, section: &str, team_name: &str) -> Result<PageData, Box<Error>> {
         // Find the main team first
-        let main_team = self.teams
+        let main_team = self
+            .teams
             .iter()
             .filter(|team| team.website_data.as_ref().map(|ws| ws.page.as_str()) == Some(team_name))
             .filter(|team| kind_to_str(team.kind) == section)
@@ -148,8 +149,8 @@ impl fmt::Display for TeamNotFound {
 
 #[cfg(test)]
 mod tests {
-    use rust_team_data::v1::{Team, TeamKind, TeamMember, TeamWebsite};
     use super::{Data, TeamNotFound};
+    use rust_team_data::v1::{Team, TeamKind, TeamMember, TeamWebsite};
 
     fn dummy_team(name: &str) -> Team {
         Team {
@@ -237,9 +238,24 @@ mod tests {
         bar.kind = TeamKind::WorkingGroup;
         let data = Data::dummy(vec![foo, bar]);
 
-        assert!(data.clone().page_data("teams", "unknown").err().unwrap().is::<TeamNotFound>());
-        assert!(data.clone().page_data("wgs", "foo").err().unwrap().is::<TeamNotFound>());
-        assert!(data.clone().page_data("teams", "bar").err().unwrap().is::<TeamNotFound>());
+        assert!(data
+            .clone()
+            .page_data("teams", "unknown")
+            .err()
+            .unwrap()
+            .is::<TeamNotFound>());
+        assert!(data
+            .clone()
+            .page_data("wgs", "foo")
+            .err()
+            .unwrap()
+            .is::<TeamNotFound>());
+        assert!(data
+            .clone()
+            .page_data("teams", "bar")
+            .err()
+            .unwrap()
+            .is::<TeamNotFound>());
     }
 
     #[test]
@@ -248,6 +264,10 @@ mod tests {
         foo.subteam_of = Some("bar".into());
         let data = Data::dummy(vec![foo, dummy_team("bar")]);
 
-        assert!(data.page_data("teams", "foo").err().unwrap().is::<TeamNotFound>());
+        assert!(data
+            .page_data("teams", "foo")
+            .err()
+            .unwrap()
+            .is::<TeamNotFound>());
     }
 }
