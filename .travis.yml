@@ -1,13 +1,4 @@
 language: rust
-sudo: false
+rust: nightly-2018-12-20
 
-matrix:
-  include:
-
-  # tests pass
-  - rust: nightly
-    script:
-    - cargo test --all --locked
-    - rustup component add rustfmt-preview
-    - cargo fmt --all -- --check
-    env: RUST_BACKTRACE=1
+script: ci/run.sh

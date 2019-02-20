@@ -29,8 +29,8 @@ The team is currently in the process of transitioning from Skeleton to Tachyons.
 This is a somewhat complicated transition, so if you would like to update CSS,
 please file an issue.
 
-[@yoshuawuyts] and [@chriskrycho] are the current developers on this transition. Please
-direct issues and questions to them!
+[@yoshuawuyts] and [@chriskrycho] are the current developers on this transition.
+Please direct issues and questions to them!
 
 [Tachyons]: http://tachyons.io/
 [Skeleton]: http://getskeleton.com/
@@ -40,10 +40,10 @@ direct issues and questions to them!
 The content of the site is currently overseen by [@aturon]. Please direct issues
 and questions to him.
 
-The content is largely owned by the associated team or working group. If you have
-thoughts, it can be useful to discuss those with the lead(s) of those groups. You
-can learn more about the teams and working groups on the Governance page of the
-site.
+The content is largely owned by the associated team or working group. If you
+have thoughts, it can be useful to discuss those with the lead(s) of those
+groups. You can learn more about the teams and working groups on the Governance
+page of the site.
 
 If you would like your company to be displayed on the 'Production' page
 (i.e. would like to edit `src/data/users.yml`), you should
@@ -68,7 +68,7 @@ displays, consider submitting your image at a resolution of at least
 Currently, [@ashleygwilliams] is the primary developer on the site. If
 you need help or have any questions please direct them to [@ashleygwilliams].
 
-Before filing a PR to the site, please file an issue. This way we can ensure that the
-work you are doing meets the requirements of the site and will be very likely merged.
-If you file a PR before an issue, you will likely be asked to file an issue, or your
-PR may be closed outright.
+Before filing a PR to the site, please file an issue. This way we can ensure
+that the work you are doing meets the requirements of the site and will be very
+likely merged.  If you file a PR before an issue, you will likely be asked to
+file an issue, or your PR may be closed outright.
