@@ -203,9 +203,9 @@
   logo: giga.svg
   how: "Rust serves us as our primary tool for rewriting our database for 3d geological models."
 -
-  name: Gremlin Inc
-  url: https://www.gremlininc.com
-  logo: gremlininc.svg
+  name: Gremlin
+  url: https://www.gremlin.com
+  logo: gremlin.svg
   how: "Safely and efficiently causing controlled chaos."
 -
   name: Habitat
