@@ -8,7 +8,7 @@ export RUST_BACKTRACE=1
 ci/check-nightly-version.sh
 
 # Install extra rustup components
-rustup component add rustfmt-preview
+rustup component add rustfmt
 
 # Check if the code is good
 cargo test --all --locked
