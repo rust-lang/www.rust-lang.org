@@ -113,7 +113,9 @@ function cycle_platform() {
 
 function set_up_cycle_button() {
     var cycle_button = document.getElementById("platform-button");
-    cycle_button.onclick = cycle_platform;
+    if (cycle_button !== null) {
+        cycle_button.onclick = cycle_platform;
+    }
 
     var key="test";
     var idx=0;
@@ -128,7 +130,9 @@ function set_up_cycle_button() {
             idx += 1;
 
             if (idx == key.length) {
-                cycle_button.style.display = "block";
+                if (cycle_button !== null) {
+                    cycle_button.style.display = "block";
+                }
                 unlocked = true;
                 cycle_platform();
             }
