@@ -151,7 +151,35 @@ function fill_in_bug_report_values() {
     nav_app.textContent = navigator.appVersion;
 }
 
+var override_map = new Map ([
+    ["unix", "unix"],
+    ["win", "win"],
+    ["linux", "unix"],
+    ["win32", "win"],
+    ["win64", "win"],
+    ["windows", "win"],
+    ["wsl", "win"],
+    ["default", "default"],
+    ["generic", "default"],
+    ["all", "default"],
+]);
+
+function check_initial_override() {
+    var urlParams = new URLSearchParams(location.search);
+    if (urlParams.has('platform_override')) {
+        var override = urlParams.get('platform_override').toLowerCase();
+        // Now normalise in case people pass unusual things in
+        override = override_map.get(override);
+        if (override === undefined) {
+            platform_override = "unknown";
+        } else {
+            platform_override = override;
+        }
+    }
+}
+
 (function () {
+    check_initial_override();
     adjust_for_platform();
     set_up_cycle_button();
     fill_in_bug_report_values();
