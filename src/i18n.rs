@@ -63,6 +63,12 @@ impl I18N {
             provider: Box::new(DummyProvider {}),
         }
     }
+
+    pub fn from(provider: Box<I18NProvider + Send + Sync>) -> I18N {
+        I18N {
+            provider: provider,
+        }
+    }
 }
 
 impl Fairing for I18N {

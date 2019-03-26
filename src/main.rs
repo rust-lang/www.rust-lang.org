@@ -17,10 +17,11 @@ extern crate serde;
 extern crate serde_derive;
 
 extern crate regex;
-//extern crate fluent;
+extern crate fluent_bundle;
 
 mod cache;
 mod category;
+mod fluent_wrapper;
 mod i18n;
 mod production;
 mod redirect;
@@ -48,6 +49,10 @@ use sass_rs::{compile_file, Options};
 use category::Category;
 
 use i18n::I18N;
+use fluent_wrapper::*;
+use std::fs::read_dir;
+use std::collections::HashMap;
+
 
 #[derive(Serialize)]
 struct Context<T: ::serde::Serialize> {
@@ -288,9 +293,25 @@ fn main() {
     compile_sass("fonts");
     concat_vendor_css(vec!["skeleton", "tachyons"]);
 
+    let mut fluent_resources = HashMap::new();
+    let mut fluent_collection = FluentCollection::new();
+    let entries = read_dir("./templates/fluent-resource").unwrap();
+    for entry in entries {
+        let entry = entry.unwrap();
+        let mut resources = read_from_dir(entry.path()).unwrap();
+        fluent_resources.insert(entry.file_name(), resources);
+    }
+    for (lang, resources) in &fluent_resources {
+        if let Ok(lang) = lang.clone().into_string() {
+            let bundle = create_bundle(resources);
+            fluent_collection.insert(lang, bundle);
+        }
+    }
+
     rocket::ignite()
         .attach(Template::fairing())
-        .attach(I18N::dummy())
+        //.attach(I18N::dummy())
+        .attach(I18N::from(Box::new(FluentI18nProvider::new(&fluent_collection))))
         .mount(
             "/",
             routes![
