@@ -112,7 +112,8 @@ ferris-says = "0.1"</code></pre>
     </header>
     <p>Now let’s write a small application with our new dependency. In our <code>main.rs</code>, add the following
       code:</p>
-    <pre><code>use ferris_says::say; // from the previous step
+    <pre><code>extern crate ferris_says;
+use ferris_says::say; // from the previous step
 use std::io::{stdout, BufWriter};
 
 fn main() {
