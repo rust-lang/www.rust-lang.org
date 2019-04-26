@@ -258,6 +258,11 @@
   logo: maidsafe.svg
   how: "Building a decentralised data and communications network."
 -
+  name: Media-IO
+  url: https://media-io.com
+  logo: media-io.png
+  how: "Specialized in Broadcast and Cinema technologie, we are using Rust for our microservice workers and for our native web player."
+-
   name: Mozilla
   url: https://www.mozilla.org
   logo: mozilla.png
