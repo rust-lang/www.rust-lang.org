@@ -1,0 +1,6 @@
+ports:
+- port: 7878
+  onOpen: open-preview
+tasks:
+- init: cargo build
+  command: cargo run
