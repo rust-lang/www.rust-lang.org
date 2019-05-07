@@ -168,6 +168,11 @@
   logo: deliveroo.svg
   how: "We are using Rust to quickly make assignment decisions in our food delivery network."
 -
+  name: Distil Networks
+  url: https://www.distilnetworks.com/
+  logo: distil.png
+  how: "We are using Rust in our low latency bot detection and mitigation platform."
+-
   name: Dropbox
   url: https://www.dropbox.com
   logo: dropbox.svg
