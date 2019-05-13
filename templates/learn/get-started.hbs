@@ -60,7 +60,8 @@
       make a new project for us. In your terminal of choice run:</p>
     <p><code>cargo new hello-rust</code></p>
     <p>This will generate a new directory called <code>hello-rust</code> with the following files:</p>
-    <pre><code>hello-rust
+    <p>
+      <pre><code class="language-text">hello-rust
 |- Cargo.toml
 |- src
   |- main.rs</code></pre>
@@ -71,7 +72,7 @@
     <p><code>cargo new</code> generates a "Hello, world!" project for us! We can run this program by moving into the new directory that we made and running this in our terminal:</p>
     <p><code>cargo run</code></p>
     <p>You should see this in your terminal:</p>
-    <pre><code>$ cargo run
+    <pre><code class="language-text">$ cargo run
    Compiling hello-rust v0.1.0 (/Users/ag_dubs/rust/hello-rust)
     Finished dev [unoptimized + debuginfo] target(s) in 1.34s
      Running `target/debug/hello-rust`
@@ -89,7 +90,8 @@ Hello, world!</code></pre>
       packages as “crates.”</p>
     <p>In this project, we’ll use a crate called <a href="https://crates.io/crates/ferris-says"><code>ferris-says</code></a>.
       <p>In our <code>Cargo.toml</code> file we’ll add this information (that we got from the crate page):</p>
-      <pre><code>[dependencies]
+      <p>
+        <pre><code class="language-toml">[dependencies]
 ferris-says = "0.1"</code></pre>
       <p>Now we can run:</p>
       <code>cargo build</code>
@@ -98,7 +100,9 @@ ferris-says = "0.1"</code></pre>
         the exact versions of the dependencies we are using locally.</p>
       <p>To use this dependency, we can open <code>main.rs</code>, remove everything that’s in there (it’s just another
         example), and add this line to it:</p>
-      <pre><code>use ferris_says::say;</code></pre>
+      <p>
+        <pre><code class="language-rust">use ferris_says::say;</code></pre>
+      </p>
       <p>This line means that we can now use the <code>say</code> function that the <code>ferris-says</code> crate
         exports for us.</p>
   </div>
@@ -112,7 +116,8 @@ ferris-says = "0.1"</code></pre>
     </header>
     <p>Now let’s write a small application with our new dependency. In our <code>main.rs</code>, add the following
       code:</p>
-    <pre><code>use ferris_says::say; // from the previous step
+    <p>
+      <pre><code class="language-rust">use ferris_says::say; // from the previous step
 use std::io::{stdout, BufWriter};
 
 fn main() {

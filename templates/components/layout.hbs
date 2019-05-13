@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="/static/styles/vendor.css"/>
     <link rel="stylesheet" href="/static/styles/fonts.css"/>
     <link rel="stylesheet" href="/static/styles/app.css"/>
+    <link rel="stylesheet" href="/static/styles/syntax-highlight/a11y-light2.css"/>
+    <!-- <link rel="stylesheet" href="/static/styles/syntax-highlight/theme.css"/> -->
 
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/static/images/apple-touch-icon.png">
@@ -42,5 +44,9 @@
         {{~> page}}
     </div>
     {{> components/footer}}
+    <script src="/static/scripts/highlight.pack.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
   </body>
 </html>
