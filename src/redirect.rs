@@ -11,6 +11,9 @@ impl<'r> FromParam<'r> for Destination {
 
     fn from_param(param: &'r RawStr) -> Result<Self, Self::Error> {
         let uri = match param.percent_decode()?.as_ref() {
+            "Rust-npm-Whitepaper.pdf" => "Rust-npm-Whitepaper.pdf",
+            "Rust-Chucklefish-Whitepaper.pdf" => "Rust-Chucklefish-Whitepaper.pdf",
+            "Rust-Tilde-Whitepaper.pdf" => "Rust-Tilde-Whitepaper.pdf",
             "community.html" => "/community",
             "conduct.html" => "/policies/code-of-conduct",
             "contribute-bugs.html" => "/community",

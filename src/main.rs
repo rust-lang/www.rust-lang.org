@@ -211,6 +211,11 @@ fn redirect(dest: redirect::Destination) -> Redirect {
     Redirect::permanent(dest.uri)
 }
 
+#[get("/pdfs/<dest>")]
+fn redirect_pdfs(dest: redirect::Destination) -> Redirect {
+    Redirect::permanent("/static/pdfs/".to_owned() + dest.uri)
+}
+
 #[get("/en-US/<dest>")]
 fn redirect_en_us(dest: redirect::Destination) -> Redirect {
     Redirect::permanent(dest.uri)
@@ -283,6 +288,7 @@ fn main() {
                 logos,
                 components,
                 redirect,
+                redirect_pdfs,
                 redirect_en_us,
                 redirect_locale
             ],
