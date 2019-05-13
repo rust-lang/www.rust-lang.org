@@ -216,6 +216,11 @@ fn redirect_pdfs(dest: redirect::Destination) -> Redirect {
     Redirect::permanent("/static/pdfs/".to_owned() + dest.uri)
 }
 
+#[get("/<_locale>", rank = 8)]
+fn redirect_bare_locale(_locale: redirect::Locale) -> Redirect {
+    Redirect::temporary("/")
+}
+
 #[get("/en-US/<dest>")]
 fn redirect_en_us(dest: redirect::Destination) -> Redirect {
     Redirect::permanent(dest.uri)
@@ -289,6 +294,7 @@ fn main() {
                 components,
                 redirect,
                 redirect_pdfs,
+                redirect_bare_locale,
                 redirect_en_us,
                 redirect_locale
             ],
