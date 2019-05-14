@@ -22,6 +22,7 @@ extern crate regex;
 extern crate handlebars;
 
 mod cache;
+mod caching;
 mod category;
 mod headers;
 mod i18n;
@@ -51,6 +52,8 @@ use sass_rs::{compile_file, Options};
 use category::Category;
 
 use i18n::{I18NHelper, SupportedLocale, TeamHelper};
+use caching::{Cached, Caching};
+use rocket::http::hyper::header::CacheDirective;
 
 #[derive(Serialize)]
 struct Context<T: ::serde::Serialize> {
@@ -87,13 +90,17 @@ fn components(_file: PathBuf) -> Template {
 }
 
 #[get("/logos/<file..>", rank = 1)]
-fn logos(file: PathBuf) -> Option<NamedFile> {
-    NamedFile::open(Path::new("static/logos").join(file)).ok()
+fn logos(file: PathBuf) -> Option<Cached<NamedFile>> {
+    NamedFile::open(Path::new("static/logos").join(file))
+        .ok()
+        .map(|file| file.cached(vec![CacheDirective::MaxAge(3600)]))
 }
 
 #[get("/static/<file..>", rank = 1)]
-fn files(file: PathBuf) -> Option<NamedFile> {
-    NamedFile::open(Path::new("static/").join(file)).ok()
+fn files(file: PathBuf) -> Option<Cached<NamedFile>> {
+    NamedFile::open(Path::new("static/").join(file))
+        .ok()
+        .map(|file| file.cached(vec![CacheDirective::MaxAge(3600)]))
 }
 
 #[get("/")]
