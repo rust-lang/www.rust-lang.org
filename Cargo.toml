@@ -2,6 +2,7 @@
 name = "www-rust-lang-org"
 version = "0.1.0"
 authors = ["Ashley Williams <ashley666ashley@gmail.com>"]
+edition = "2018"
 
 [dependencies]
 lazy_static = "1.2.0"

@@ -24,7 +24,7 @@ fn fetch_rust_release_post() -> Result<Box<Any>, Box<Error>> {
 }
 
 pub fn rust_version() -> Option<String> {
-    match ::cache::get(fetch_rust_version) {
+    match crate::cache::get(fetch_rust_version) {
         Ok(version) => Some(version),
         Err(err) => {
             eprintln!("error while fetching the rust version: {}", err);
@@ -34,7 +34,7 @@ pub fn rust_version() -> Option<String> {
 }
 
 pub fn rust_release_post() -> Option<String> {
-    match ::cache::get(fetch_rust_release_post) {
+    match crate::cache::get(fetch_rust_release_post) {
         Ok(post) => Some(post),
         Err(err) => {
             eprintln!("error while fetching the rust release post: {}", err);
