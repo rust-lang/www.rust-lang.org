@@ -56,10 +56,10 @@
       <h3>Configuring the <code>PATH</code> environment variable</h3>
       <p>
         In the Rust development environment, all tools are installed to the
-        <span class="platform-specific not-win" style="display: inline;">
+        <span class="platform-specific not-win di">
           <code>~/.cargo/bin</code>
         </span>
-        <span class="platform-specific win" style="display: none;">
+        <span class="platform-specific win dn">
           <code>%USERPROFILE%\.cargo\bin</code>
         </span> directory,
         and this is where you will find the Rust toolchain, including
@@ -81,7 +81,7 @@
         console fails, this is the most likely reason.
       </p>
     </div>
-    <div class="platform-specific win" style="display: none;">
+    <div class="platform-specific win dn">
       <h3>Windows considerations</h3>
       <p>
         On Windows, Rust additionally requires the C++ build tools
@@ -116,7 +116,6 @@
     <a href="https://forge.rust-lang.org/other-installation-methods.html" class="button button-secondary">Learn more</a>
   </div>
 </section>
-{{> components/tools/install-script }}
 
 {{/inline}}
 {{~> (parent)~}}
