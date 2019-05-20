@@ -572,6 +572,10 @@ blockquote::before {
   width: 1px;
 }
 
+.flex-grow {
+  flex-grow: 1;
+}
+
 .flex {
   &.vertical {
     flex-direction: column;

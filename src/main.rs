@@ -280,7 +280,7 @@ fn concat_vendor_css(files: Vec<&str>) {
 fn main() {
     compile_sass("app");
     compile_sass("fonts");
-    concat_vendor_css(vec!["tachyons"]);
+    concat_vendor_css(vec!["skeleton", "tachyons"]);
 
     rocket::ignite()
         .attach(Template::fairing())
