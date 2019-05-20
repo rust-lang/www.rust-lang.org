@@ -22,6 +22,8 @@ html {
 body {
   font-family: $body-font;
   background-color: white;
+  font-size: 1.5rem;
+  line-height: 1.6;
 
   /* Ensure the footer is always at the bottom of the screen */
   min-height: 100vh;
@@ -80,12 +82,15 @@ header h1, section h2 {
   font-family: $header-font;
   z-index: 999999;
   position: relative;
+  letter-spacing: 1px;
+  font-weight: 300;
 }
 
 header h1 {
   font-size: 8rem;
   margin-bottom: 0;
   margin-top: 0;
+  line-height: 1.2
 }
 
 header .button.button-download {
@@ -122,6 +127,8 @@ section {
       margin: 0;
       padding: 0;
       letter-spacing: 1px;
+      font-size: 4.2rem;
+      line-height: 1.25;
     }
   }
 }
@@ -314,6 +321,7 @@ header h1 {
   left: -10px;
   width: 120%;
   max-width: 90vw;
+  line-height: 1.6;
 }
 
 footer {
@@ -328,6 +336,11 @@ footer {
   ul {
     list-style-type: none;
     padding-left: 0;
+    margin-top: 0;
+  }
+
+  li {
+    margin-bottom: 1rem;
   }
 
   a {
@@ -344,6 +357,8 @@ footer {
 footer h4 {
   font-size: 1.2em;
   font-weight: 800;
+  margin-top: 0;
+  margin-bottom: 2rem;
 }
 
 footer img {
@@ -594,10 +609,6 @@ blockquote::before {
       font-size: 4rem;
     }
 
-    h2 {
-      font-size: 3rem;
-    }
-
     .highlight {
       height: 20px;
       top: -20px;
@@ -619,6 +630,10 @@ blockquote::before {
     padding: {
       top: 10px;
       bottom: 30px;
+    }
+
+    h2 {
+      font-size: 3rem;
     }
   }
 }
