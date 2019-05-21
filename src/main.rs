@@ -18,6 +18,7 @@ extern crate serde_derive;
 
 mod cache;
 mod category;
+mod headers;
 mod production;
 mod redirect;
 mod rust_version;
@@ -284,6 +285,7 @@ fn main() {
 
     rocket::ignite()
         .attach(Template::fairing())
+        .attach(headers::InjectHeaders)
         .mount(
             "/",
             routes![

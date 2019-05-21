@@ -1,9 +1,9 @@
 <div class="row">
-  <div id="platform-instructions-unix" class="instructions" style="display: block;">
+  <div id="platform-instructions-unix" class="instructions db">
     <p>It looks like you’re running macOS, Linux, or another Unix-like OS. To download Rustup and install Rust, run the following in your terminal, then follow the on-screen instructions.</p>
     <pre><code class="db w-100">curl https://sh.rustup.rs -sSf | sh</code></pre>
   </div>
-  <div id="platform-instructions-win" class="instructions" style="display: none;">
+  <div id="platform-instructions-win" class="instructions dn">
     <p>It looks like you’re running Windows. To install Rust, download and run</p>
     <a href="https://win.rustup.rs" class="button button-secondary">rustup‑init.exe</a>
     <p>...then follow the onscreen instructions.</p>
@@ -11,7 +11,7 @@
     <p>If you’re a Windows Subsystem for Linux user run the following in your terminal, then follow the on-screen instructions to install Rust.</p>
     <pre><code class="db w-100">curl https://sh.rustup.rs -sSf | sh</code></pre>
   </div>
-  <div id="platform-instructions-unknown" class="instructions" style="display: none;">
+  <div id="platform-instructions-unknown" class="instructions dn">
     <!-- unrecognized platform: ask for help -->
     <p>
       Rust runs on Windows, Linux, macOS, FreeBSD and NetBSD. If
@@ -45,7 +45,7 @@
       </p>
     </div>
   </div>
-  <div id="platform-instructions-default" class="instructions" style="display: none;">
+  <div id="platform-instructions-default" class="instructions dn">
     <div>
       <p>
         To install Rust, if you are running a Unix such as WSL, Linux or macOS,<br>
@@ -64,3 +64,5 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript" src="/static/scripts/tools-install.js"></script>
