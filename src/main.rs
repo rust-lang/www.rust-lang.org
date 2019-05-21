@@ -9,6 +9,7 @@ extern crate serde_json;
 extern crate rocket;
 extern crate rust_team_data;
 extern crate sass_rs;
+extern crate siphasher;
 extern crate toml;
 
 extern crate rocket_contrib;
@@ -32,9 +33,11 @@ mod teams;
 
 use production::User;
 
+use std::collections::hash_map::DefaultHasher;
 use std::env;
 use std::fs;
 use std::fs::File;
+use std::hash::Hasher;
 use std::io::prelude::*;
 use std::iter::FromIterator;
 use std::path::{Path, PathBuf};
@@ -45,6 +48,7 @@ use rocket::{
     http::Status,
     response::{NamedFile, Redirect},
 };
+
 use rocket_contrib::templates::Template;
 
 use sass_rs::{compile_file, Options};
@@ -52,6 +56,24 @@ use sass_rs::{compile_file, Options};
 use category::Category;
 
 use i18n::{I18NHelper, SupportedLocale, TeamHelper};
+
+lazy_static! {
+    static ref ASSETS: AssetFiles = {
+        let app_css_file = compile_sass("app");
+        let fonts_css_file = compile_sass("fonts");
+        let vendor_css_file = concat_vendor_css(vec!["skeleton", "tachyons"]);
+        let app_js_file = concat_app_js(vec!["tools-install"]);
+
+        AssetFiles {
+            css: CSSFiles {
+                app: app_css_file,
+                fonts: fonts_css_file,
+                vendor: vendor_css_file,
+            },
+            js: JSFiles { app: app_js_file },
+        }
+    };
+}
 
 #[derive(Serialize)]
 struct Context<T: ::serde::Serialize> {
@@ -63,6 +85,22 @@ struct Context<T: ::serde::Serialize> {
     lang: String,
     baseurl: String,
     pontoon_enabled: bool,
+    assets: AssetFiles,
+}
+#[derive(Clone, Serialize)]
+struct CSSFiles {
+    app: String,
+    fonts: String,
+    vendor: String,
+}
+#[derive(Clone, Serialize)]
+struct JSFiles {
+    app: String,
+}
+#[derive(Clone, Serialize)]
+struct AssetFiles {
+    css: CSSFiles,
+    js: JSFiles,
 }
 
 static LAYOUT: &str = "components/layout";
@@ -216,6 +254,7 @@ fn not_found() -> Template {
         lang: ENGLISH.to_string(),
         baseurl: String::new(),
         pontoon_enabled: pontoon_enabled(),
+        assets: ASSETS.clone(),
     };
     Template::render(page, &context)
 }
@@ -225,26 +264,59 @@ fn catch_error() -> Template {
     not_found()
 }
 
-fn compile_sass(filename: &str) {
+fn hash_css(css: &str) -> String {
+    let mut hasher = DefaultHasher::new();
+    hasher.write(css.as_bytes());
+    hasher.finish().to_string()
+}
+
+fn compile_sass(filename: &str) -> String {
     let scss_file = format!("./src/styles/{}.scss", filename);
-    let css_file = format!("./static/styles/{}.css", filename);
 
     let css = compile_file(&scss_file, Options::default())
         .expect(&format!("couldn't compile sass: {}", &scss_file));
+
+    let css_sha = format!("{}_{}", filename, hash_css(&css));
+    let css_file = format!("./static/styles/{}.css", css_sha);
+
     let mut file =
         File::create(&css_file).expect(&format!("couldn't make css file: {}", &css_file));
     file.write_all(&css.into_bytes())
         .expect(&format!("couldn't write css file: {}", &css_file));
+
+    String::from(&css_file[1..])
 }
 
-fn concat_vendor_css(files: Vec<&str>) {
+fn concat_vendor_css(files: Vec<&str>) -> String {
     let mut concatted = String::new();
     for filestem in files {
         let vendor_path = format!("./static/styles/{}.css", filestem);
         let contents = fs::read_to_string(vendor_path).expect("couldn't read vendor css");
         concatted.push_str(&contents);
     }
-    fs::write("./static/styles/vendor.css", &concatted).expect("couldn't write vendor css");
+
+    let css_sha = format!("vendor_{}", hash_css(&concatted));
+    let css_path = format!("./static/styles/{}.css", &css_sha);
+
+    fs::write(&css_path, &concatted).expect("couldn't write vendor css");
+
+    String::from(&css_path[1..])
+}
+
+fn concat_app_js(files: Vec<&str>) -> String {
+    let mut concatted = String::new();
+    for filestem in files {
+        let vendor_path = format!("./static/scripts/{}.js", filestem);
+        let contents = fs::read_to_string(vendor_path).expect("couldn't read app js");
+        concatted.push_str(&contents);
+    }
+
+    let js_sha = format!("app_{}", hash_css(&concatted));
+    let js_path = format!("./static/scripts/{}.js", &js_sha);
+
+    fs::write(&js_path, &concatted).expect("couldn't write app js");
+
+    String::from(&js_path[1..])
 }
 
 fn render_index(lang: String) -> Template {
@@ -271,6 +343,7 @@ fn render_index(lang: String) -> Template {
         baseurl: baseurl(&lang),
         lang,
         pontoon_enabled: pontoon_enabled(),
+        assets: ASSETS.clone(),
     };
     Template::render(page, &context)
 }
@@ -287,6 +360,7 @@ fn render_category(category: Category, lang: String) -> Template {
         baseurl: baseurl(&lang),
         lang,
         pontoon_enabled: pontoon_enabled(),
+        assets: ASSETS.clone(),
     };
     Template::render(page, &context)
 }
@@ -303,6 +377,7 @@ fn render_production(lang: String) -> Template {
         baseurl: baseurl(&lang),
         lang,
         pontoon_enabled: pontoon_enabled(),
+        assets: ASSETS.clone(),
     };
     Template::render(page, &context)
 }
@@ -321,6 +396,7 @@ fn render_governance(lang: String) -> Result<Template, Status> {
                 baseurl: baseurl(&lang),
                 lang,
                 pontoon_enabled: pontoon_enabled(),
+                assets: ASSETS.clone(),
             };
             Ok(Template::render(page, &context))
         }
@@ -349,6 +425,7 @@ fn render_team(
                 baseurl: baseurl(&lang),
                 lang,
                 pontoon_enabled: pontoon_enabled(),
+                assets: ASSETS.clone(),
             };
             Ok(Template::render(page, &context))
         }
@@ -381,15 +458,12 @@ fn render_subject(category: Category, subject: String, lang: String) -> Template
         baseurl: baseurl(&lang),
         lang,
         pontoon_enabled: pontoon_enabled(),
+        assets: ASSETS.clone(),
     };
     Template::render(page, &context)
 }
 
 fn main() {
-    compile_sass("app");
-    compile_sass("fonts");
-    concat_vendor_css(vec!["skeleton", "tachyons"]);
-
     let templating = Template::custom(|engine| {
         engine
             .handlebars
