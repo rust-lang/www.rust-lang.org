@@ -23,6 +23,7 @@ mod cache;
 mod category;
 mod fluent_wrapper;
 mod i18n;
+mod headers;
 mod production;
 mod redirect;
 mod rust_version;
@@ -304,6 +305,8 @@ fn main() {
             "en".into(),
             &FLUENT_RESOURCES,
         ))))
+
+        .attach(headers::InjectHeaders)
         .mount(
             "/",
             routes![

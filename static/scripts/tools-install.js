@@ -1,5 +1,14 @@
-<script type="text/javascript">
-      var platform_override = null;
+var platform_override = null;
+
+function vis(elem, apply) {
+    ["db", "di", "dn"].forEach(c => {
+        if (c === apply) {
+            elem.classList.add(c);
+        } else {
+            elem.classList.remove(c);
+        }
+    });
+}
 
 function detect_platform() {
     "use strict";
@@ -34,7 +43,7 @@ function detect_platform() {
         // rust-www/#692 - FreeBSD epiphany!
         if (navigator.appVersion.indexOf("FreeBSD")!=-1) {os = "unix";}
     }
-    
+
     // Firefox Quantum likes to hide platform and appVersion but oscpu works
     if (navigator.oscpu) {
         if (navigator.oscpu.indexOf("Windows")!=-1) {os = "win";}
@@ -57,40 +66,40 @@ function adjust_for_platform() {
     var unknown_div = document.getElementById("platform-instructions-unknown");
     var default_div = document.getElementById("platform-instructions-default");
 
-    unix_div.style.display = "none";
-    win_div.style.display = "none";
-    unknown_div.style.display = "none";
-    default_div.style.display = "none";
+    vis(unix_div, "dn");
+    vis(win_div, "dn");
+    vis(unknown_div, "dn");
+    vis(default_div, "dn");
 
     if (platform == "unix") {
-        unix_div.style.display = "block";
+        vis(unix_div, "db");
     } else if (platform == "win") {
-        win_div.style.display = "block";
+        vis(win_div, "db");
     } else if (platform == "unknown") {
-        unknown_div.style.display = "block";
+        vis(unknown_div, "db");
     } else {
-        default_div.style.display = "block";
+        vis(default_div, "db");
     }
 
     var platform_specific = document.getElementsByClassName("platform-specific");
     for (var el of platform_specific) {
         var el_is_not_win = el.className.indexOf("not-win") !== -1;
         var el_is_inline = el.tagName.toLowerCase() == "span";
-        var el_visible_style = "block";
+        var el_visible_class = "db";
         if (el_is_inline) {
-            el_visible_style = "inline";
+            el_visible_class = "di";
         }
         if (platform == "win") {
             if (el_is_not_win) {
-                el.style.display = "none";
+                vis(el, "dn");
             } else {
-                el.style.display = el_visible_style;
+                vis(el, el_visible_class);
             }
         } else {
             if (el_is_not_win) {
-                el.style.display = el_visible_style;
+                vis(el, el_visible_class);
             } else {
-                el.style.display = "none";
+                vis(el, "dn");
             }
         }
     }
@@ -131,7 +140,7 @@ function set_up_cycle_button() {
 
             if (idx == key.length) {
                 if (cycle_button !== null) {
-                    cycle_button.style.display = "block";
+                    vis(cycle_button, "db");
                 }
                 unlocked = true;
                 cycle_platform();
@@ -184,5 +193,3 @@ function check_initial_override() {
     set_up_cycle_button();
     fill_in_bug_report_values();
 }());
-
-    </script>

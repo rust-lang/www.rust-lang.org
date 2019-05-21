@@ -1,7 +1,7 @@
 <footer>
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-    <div class="row">
-      <div class="four columns mt3 mt0-l" id="get-help">
+    <div class="flex flex-column flex-row-ns pv0-l">
+      <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l" id="get-help">
         <h4>Get help!</h4>
         <ul>
           <li><a href="https://doc.rust-lang.org">Documentation</a></li>
@@ -15,7 +15,7 @@
             </select>
         </div>
       </div>
-      <div class="four columns mt3 mt0-l">
+      <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l">
         <h4>Terms and policies</h4>
         <ul>
           <li><a href="/policies/code-of-conduct">Code of Conduct</a></li>
@@ -25,12 +25,14 @@
           <li><a href="/policies">All Policies</a></li>
         </ul>
       </div>
-      <div class="four columns mt3 mt0-l">
+      <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l">
         <h4>Social</h4>
-        <a href="https://twitter.com/rustlang"><img src="/static/images/twitter.svg" alt="twitter logo" title="Twitter"/></a>
-        <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA"><img style="padding-top: 6px; padding-bottom:6px" src="/static/images/youtube.svg" alt="youtube logo" title="YouTube"/></a>
-        <a href="https://discord.gg/rust-lang"><img src="/static/images/discord.svg" alt="discord logo" title="Discord"/></a>
-        <a href="https://github.com/rust-lang"><img src="/static/images/github.svg" alt="github logo" title="GitHub"/></a>
+        <div class="flex flex-row flex-wrap">
+          <a href="https://twitter.com/rustlang"><img src="/static/images/twitter.svg" alt="twitter logo" title="Twitter"/></a>
+          <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA"><img class="pv2" src="/static/images/youtube.svg" alt="youtube logo" title="YouTube"/></a>
+          <a href="https://discord.gg/rust-lang"><img src="/static/images/discord.svg" alt="discord logo" title="Discord"/></a>
+          <a href="https://github.com/rust-lang"><img src="/static/images/github.svg" alt="github logo" title="GitHub"/></a>
+        </div>
       </div>
 
     </div>

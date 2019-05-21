@@ -15,7 +15,7 @@
     <section class="flex flex-column flex-row-l pv0-l">
       <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l pb4 pb5-m pb6-ns ph4-l">
         <div class="v-top pl4 pl0-l pt3-l measure-wide-l flex-l flex-column-l flex-auto-l">
-          <p>Affectionately nicknamed “the book,” <cite>The Rust Programming
+          <p class="flex-grow">Affectionately nicknamed “the book,” <cite>The Rust Programming
           Language</cite> will give you an overview of the language from first
           principles. You’ll build a few projects along the way, and by the end,
           you’ll have a solid grasp of the language.</p>
@@ -24,7 +24,7 @@
       </div>
       <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l pb4 pb5-m pb6-ns ph4-l">
         <div class="v-top pl4 pl0-l pt3-l measure-wide-l flex-l flex-column-l flex-auto-l">
-          <p>Alternatively, Rustlings guides you through downloading and setting up the
+          <p class="flex-grow">Alternatively, Rustlings guides you through downloading and setting up the
            Rust toolchain, and teaches you the basics of reading and writing
            Rust syntax, on the command line. It's an alternative to Rust by Example that works with your own environment.</p>
           <a class="button button-secondary" href="https://github.com/rust-lang/rustlings/">Do the Rustlings course!</a>
@@ -32,7 +32,7 @@
       </div>
       <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l pb4 pb5-m pb6-ns ph4-l">
         <div class="v-top pl4 pl0-l pt3-l measure-wide-l flex-l flex-column-l flex-auto-l">
-          <p>If reading multiple hundreds of pages about a language isn’t your
+          <p class="flex-grow">If reading multiple hundreds of pages about a language isn’t your
           style, then Rust By Example has you covered. While the book talks
           about code with a lot of words, RBE shows off a bunch of code, and
           keeps the talking to a minimum. It also includes exercises!</p>
@@ -57,51 +57,53 @@
         <code>rustup doc</code> command, which will open up these resources for
         you in your browser without requiring a network connection!</p>
 
+{{!-- TODO: Remove button-secondary--no-skeleton once Skeleton is completely removed. --}}
+
       <section class="flex flex-column">
-        <div class="pt3 flex flex-column flex-row-l">
+        <div class="pt3 flex flex-column flex-row-l items-center-l mb4-l">
           <a href="https://doc.rust-lang.org/std/index.html"
-             class="button button-secondary mw6-l w-100">The standard library</a>
-          <p class="pl4-l">
+             class="button button-secondary button-secondary--no-skeleton mw6-l w-100">The standard library</a>
+          <p class="pl4-l ma0-l mt1 mb3">
             Comprehensive guide to the Rust standard library APIs.
           </p>
         </div>
 
-        <div class="pt4 pt3-l flex flex-column flex-row-l">
+        <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l mb4-l">
           <a href="https://doc.rust-lang.org/edition-guide/index.html"
-             class="button button-secondary mw6-l w-100">Edition Guide</a>
-          <p class="pl4-l">
+             class="button button-secondary button-secondary--no-skeleton mw6-l w-100">Edition Guide</a>
+          <p class="pl4-l ma0-l mt1 mb3">
             Guide to the Rust editions.
           </p>
         </div>
 
-        <div class="pt4 pt3-l flex flex-column flex-row-l">
+        <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l mb4-l">
           <a href="https://doc.rust-lang.org/cargo/index.html"
-             class="button button-secondary mw6-l w-100">Cargo Book</a>
-          <p class="pl4-l">
+             class="button button-secondary button-secondary--no-skeleton mw6-l w-100">Cargo Book</a>
+          <p class="pl4-l ma0-l mt1 mb3">
             A book on Rust’s package manager and build system.
           </p>
         </div>
 
-        <div class="pt4 pt3-l flex flex-column flex-row-l">
+        <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l mb4-l">
           <a href="https://doc.rust-lang.org/rustdoc/index.html"
-             class="button button-secondary mw6-l w-100">rustdoc Book</a>
-          <p class="pl4-l">
+             class="button button-secondary button-secondary--no-skeleton mw6-l w-100">rustdoc Book</a>
+          <p class="pl4-l ma0-l mt1 mb3">
             Learn how to make awesome documentation for your crate.
           </p>
         </div>
 
-        <div class="pt4 pt3-l flex flex-column flex-row-l">
+        <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l mb4-l">
           <a href="https://doc.rust-lang.org/rustc/index.html"
-             class="button button-secondary mw6-l w-100">rustc Book</a>
-          <p class="pl4-l">
+             class="button button-secondary button-secondary--no-skeleton mw6-l w-100">rustc Book</a>
+          <p class="pl4-l ma0-l mt1 mb3">
             Familiarize yourself with the knobs available in the Rust compiler.
           </p>
         </div>
 
-        <div class="pt4 pt3-l flex flex-column flex-row-l">
+        <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l mb4-l">
           <a href="https://doc.rust-lang.org/error-index.html"
-             class="button button-secondary mw6-l w-100">Compiler Error Index</a>
-          <p class="pl4-l">
+             class="button button-secondary button-secondary--no-skeleton mw6-l w-100">Compiler Error Index</a>
+          <p class="pl4-l mb0 mt1 ma0-l">
             In-depth explanations of the errors you may see from the Rust
             compiler.
           </p>
@@ -112,32 +114,32 @@
     <div class="row black">
       <h3>Build your skills in an application domain</h3>
         <section class="flex flex-column">
-          <div class="pt3 flex flex-column flex-row-l">
+          <div class="pt3 flex flex-column flex-row-l items-center-l mb4-l">
             <a href="https://rust-lang-nursery.github.io/cli-wg/"
-               class="button button-secondary mw6-l w-100">
+               class="button button-secondary button-secondary--no-skeleton mw6-l w-100">
               Command Line Book
             </a>
-            <p class="pl4-l">
+            <p class="pl4-l ma0-l mt1 mb3">
               Learn how to build effective command line applications in Rust.
             </p>
           </div>
 
-          <div class="pt4 pt3-l flex flex-column flex-row-l">
+          <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l mb4-l">
             <a href="https://rustwasm.github.io/docs/book/"
-               class="button button-secondary mw6-l w-100">
+               class="button button-secondary button-secondary--no-skeleton mw6-l w-100">
               WebAssembly Book
             </a>
-            <p class="pl4-l">
+            <p class="pl4-l ma0-l mt1 mb3">
               Use Rust to build browser-native libraries through WebAssembly.
             </p>
           </div>
 
-          <div class="pt4 pt3-l flex flex-column flex-row-l">
+          <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l mb4-l">
             <a href="https://rust-embedded.github.io/book/"
-               class="button button-secondary mw6-l w-100">
+               class="button button-secondary button-secondary--no-skeleton mw6-l w-100">
               Embedded Book
             </a>
-            <p class="pl4-l">
+            <p class="pl4-l mb0 mt1 ma0-l">
               Become proficient with Rust for Microcontrollers and other
               embedded systems.
             </p>
