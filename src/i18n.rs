@@ -4,6 +4,7 @@ use handlebars::{
 
 use rocket::http::RawStr;
 use rocket::request::FromParam;
+use serde_json::Value as Json;
 use std::collections::HashMap;
 use std::fs::read_dir;
 use std::fs::File;
@@ -11,7 +12,7 @@ use std::io;
 use std::io::prelude::*;
 use std::path::Path;
 
-use fluent_bundle::{FluentBundle, FluentResource};
+use fluent_bundle::{FluentBundle, FluentResource, FluentValue};
 
 lazy_static! {
     static ref RESOURCES: HashMap<String, Vec<FluentResource>> = build_resources();
@@ -26,10 +27,15 @@ impl I18NHelper {
     pub fn new() -> Self {
         Self { bundles: &*BUNDLES }
     }
-    pub fn i18n_token(&self, lang: &str, text_id: &str) -> String {
+    pub fn i18n_token(
+        &self,
+        lang: &str,
+        text_id: &str,
+        args: Option<&HashMap<&str, FluentValue>>,
+    ) -> String {
         if let Some(bundle) = self.bundles.get(lang) {
             let (value, _errors) = bundle
-                .format(text_id, None)
+                .format(text_id, args)
                 .expect("Failed to format a message.");
             return value;
         }
@@ -46,27 +52,46 @@ impl HelperDef for I18NHelper {
         _rc: &mut RenderContext<'reg>,
         out: &mut dyn Output,
     ) -> HelperResult {
-        let arg = if let Some(arg) = h.param(0) {
-            arg
+        let id = if let Some(id) = h.param(0) {
+            id
         } else {
             return Err(RenderError::new(
                 "{{text}} must have at least one parameter",
             ));
         };
 
-        let arg = if let Some(arg) = arg.path() {
-            arg
+        let id = if let Some(id) = id.path() {
+            id
         } else {
             return Err(RenderError::new("{{text}} takes an identifier parameter"));
         };
 
+        let map;
+        let args = if h.hash().is_empty() {
+            None
+        } else {
+            map = h
+                .hash()
+                .iter()
+                .filter_map(|(k, v)| {
+                    let json = v.value();
+                    let val = match *json {
+                        Json::Number(ref n) => FluentValue::Number(n.to_string()),
+                        Json::String(ref s) => FluentValue::String(s.to_string()),
+                        _ => return None,
+                    };
+                    Some((&**k, val))
+                })
+                .collect();
+            Some(&map)
+        };
         let lang = context
             .data()
             .get("lang")
             .expect("Language not set in context")
             .as_str()
             .expect("Language must be string");
-        let response = self.i18n_token(lang, &arg);
+        let response = self.i18n_token(lang, &id, args);
         out.write(&response).map_err(RenderError::with)
     }
 }
