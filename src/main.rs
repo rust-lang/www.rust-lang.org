@@ -16,14 +16,16 @@ extern crate serde;
 #[macro_use]
 extern crate serde_derive;
 
-extern crate regex;
 extern crate fluent_bundle;
+extern crate regex;
+
+extern crate handlebars;
 
 mod cache;
 mod category;
 mod fluent_wrapper;
-mod i18n;
 mod headers;
+mod i18n;
 mod production;
 mod redirect;
 mod rust_version;
@@ -49,8 +51,8 @@ use sass_rs::{compile_file, Options};
 
 use category::Category;
 
-use i18n::I18N;
 use fluent_wrapper::*;
+use i18n::I18NHelper;
 
 #[derive(Serialize)]
 struct Context<T: ::serde::Serialize> {
@@ -291,11 +293,17 @@ fn main() {
     compile_sass("fonts");
     concat_vendor_css(vec!["skeleton", "tachyons"]);
 
+    let templating = Template::custom(|engine| {
+        engine.handlebars.register_helper(
+            "text",
+            Box::new(I18NHelper::new(Box::new(FluentI18nProvider::new()))),
+        );
+    });
+
     rocket::ignite()
-        .attach(Template::fairing())
+        .attach(templating)
         //.attach(I18N::dummy())
         //.attach(I18N::from(Box::new(FluentI18nProvider::new(&fluent_collection))))
-        .attach(I18N::from(Box::new(FluentI18nProvider::new())))
         .attach(headers::InjectHeaders)
         .mount(
             "/",

@@ -1,16 +1,16 @@
 use std::collections::HashMap;
-use std::fs::File;
 use std::fs::read_dir;
+use std::fs::File;
 use std::io::prelude::*;
 use std::io::Result;
 use std::path::Path;
 
 use fluent_bundle::{FluentBundle, FluentResource};
 
-use i18n::I18NProvider;
+use crate::i18n::I18NProvider;
 
 pub fn read_from_file<P: AsRef<Path>>(filename: P) -> Result<FluentResource> {
-    let mut file = try!(File::open(filename));
+    let mut file = File::open(filename)?;
     let mut string = String::new();
 
     file.read_to_string(&mut string)?;
@@ -20,9 +20,9 @@ pub fn read_from_file<P: AsRef<Path>>(filename: P) -> Result<FluentResource> {
 
 pub fn read_from_dir<P: AsRef<Path>>(dirname: P) -> Result<Vec<FluentResource>> {
     let mut result = Vec::new();
-    for dir_entry in try!(read_dir(dirname)) {
-        let entry = try!(dir_entry);
-        let resource = try!(read_from_file(entry.path()));
+    for dir_entry in read_dir(dirname)? {
+        let entry = dir_entry?;
+        let resource = read_from_file(entry.path())?;
         result.push(resource);
     }
     Ok(result)
@@ -32,7 +32,8 @@ pub fn create_bundle(resources: &'static Vec<FluentResource>) -> FluentBundle<'s
     let mut bundle = FluentBundle::new(&["en-US"]);
 
     for res in resources {
-        bundle.add_resource(res)
+        bundle
+            .add_resource(res)
             .expect("Failed to add FTL resources to the bundle.");
     }
 
@@ -43,7 +44,6 @@ lazy_static! {
     static ref RESOURCES: HashMap<String, Vec<FluentResource>> = build_resources();
     static ref BUNDLES: HashMap<String, FluentBundle<'static>> = build_bundles();
 }
-
 
 fn build_resources() -> HashMap<String, Vec<FluentResource>> {
     let mut all_resources = HashMap::new();
@@ -72,18 +72,17 @@ pub struct FluentI18nProvider {
 
 impl FluentI18nProvider {
     pub fn new() -> FluentI18nProvider {
-        FluentI18nProvider {
-            bundles: &*BUNDLES
-        }
+        FluentI18nProvider { bundles: &*BUNDLES }
     }
 }
 
 impl I18NProvider for FluentI18nProvider {
     fn i18n_token(&self, lang: &str, text_id: &str) -> String {
         if let Some(bundle) = self.bundles.get(lang) {
-            let (value, _errors) = bundle.format(text_id, None)
+            let (value, _errors) = bundle
+                .format(text_id, None)
                 .expect("Failed to format a message.");
-            return value
+            return value;
         }
         String::from(text_id)
     }
