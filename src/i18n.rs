@@ -54,10 +54,10 @@ impl HelperDef for I18NHelper {
             ));
         };
 
-        let arg = if let Some(arg) = arg.value().as_str() {
+        let arg = if let Some(arg) = arg.path() {
             arg
         } else {
-            return Err(RenderError::new("{{text}} takes a string parameter"));
+            return Err(RenderError::new("{{text}} takes an identifier parameter"));
         };
 
         let lang = context
@@ -66,7 +66,7 @@ impl HelperDef for I18NHelper {
             .expect("Language not set in context")
             .as_str()
             .expect("Language must be string");
-        let response = self.i18n_token(lang, arg);
+        let response = self.i18n_token(lang, &arg);
         out.write(&response).map_err(RenderError::with)
     }
 }
