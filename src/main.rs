@@ -60,10 +60,19 @@ struct Context<T: ::serde::Serialize> {
     is_landing: bool,
     data: T,
     lang: String,
+    baseurl: String,
 }
 
 static LAYOUT: &str = "components/layout";
 static ENGLISH: &str = "en-US";
+
+fn baseurl(lang: &str) -> String {
+    if lang == "en-US" {
+        String::new()
+    } else {
+        format!("/{}", lang)
+    }
+}
 
 fn get_title(page_name: &str) -> String {
     let mut v: Vec<char> = page_name.replace("-", " ").chars().collect();
@@ -199,6 +208,7 @@ fn not_found() -> Template {
         is_landing: false,
         data: (),
         lang: ENGLISH.to_string(),
+        baseurl: String::new(),
     };
     Template::render(page, &context)
 }
@@ -252,6 +262,7 @@ fn render_index(lang: String) -> Template {
                 format!("https://blog.rust-lang.org/{}", v)
             }),
         },
+        baseurl: baseurl(&lang),
         lang,
     };
     Template::render(page, &context)
@@ -266,6 +277,7 @@ fn render_category(category: Category, lang: String) -> Template {
         parent: LAYOUT.to_string(),
         is_landing: false,
         data: (),
+        baseurl: baseurl(&lang),
         lang,
     };
     Template::render(page, &context)
@@ -280,6 +292,7 @@ fn render_production(lang: String) -> Template {
         parent: LAYOUT.to_string(),
         is_landing: false,
         data: load_users_data(),
+        baseurl: baseurl(&lang),
         lang,
     };
     Template::render(page, &context)
@@ -296,6 +309,7 @@ fn render_governance(lang: String) -> Result<Template, Status> {
                 parent: LAYOUT.to_string(),
                 is_landing: false,
                 data,
+                baseurl: baseurl(&lang),
                 lang,
             };
             Ok(Template::render(page, &context))
@@ -322,6 +336,7 @@ fn render_team(
                 parent: LAYOUT.to_string(),
                 is_landing: false,
                 data,
+                baseurl: baseurl(&lang),
                 lang,
             };
             Ok(Template::render(page, &context))
@@ -352,6 +367,7 @@ fn render_subject(category: Category, subject: String, lang: String) -> Template
         parent: LAYOUT.to_string(),
         is_landing: false,
         data: (),
+        baseurl: baseurl(&lang),
         lang,
     };
     Template::render(page, &context)
