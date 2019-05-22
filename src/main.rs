@@ -16,9 +16,14 @@ extern crate serde;
 #[macro_use]
 extern crate serde_derive;
 
+extern crate fluent_bundle;
+extern crate regex;
+
 mod cache;
 mod category;
+mod fluent_wrapper;
 mod headers;
+mod i18n;
 mod production;
 mod redirect;
 mod rust_version;
@@ -26,11 +31,14 @@ mod teams;
 
 use production::User;
 
+use std::collections::HashMap;
 use std::fs;
 use std::fs::File;
 use std::io::prelude::*;
 use std::iter::FromIterator;
 use std::path::{Path, PathBuf};
+
+use fluent_bundle::FluentResource;
 
 use rand::seq::SliceRandom;
 
@@ -44,6 +52,9 @@ use sass_rs::{compile_file, Options};
 
 use category::Category;
 
+use fluent_wrapper::*;
+use i18n::I18N;
+
 #[derive(Serialize)]
 struct Context<T: ::serde::Serialize> {
     page: String,
@@ -54,6 +65,11 @@ struct Context<T: ::serde::Serialize> {
 }
 
 static LAYOUT: &str = "components/layout";
+
+lazy_static! {
+    static ref FLUENT_RESOURCES: HashMap<String, Vec<FluentResource>> =
+        load_fluent_resources("./templates/fluent-resource");
+}
 
 fn get_title(page_name: &str) -> String {
     let mut v: Vec<char> = page_name.replace("-", " ").chars().collect();
@@ -285,6 +301,10 @@ fn main() {
 
     rocket::ignite()
         .attach(Template::fairing())
+        .attach(I18N::from(Box::new(FluentI18nProvider::new(
+            "en".into(),
+            &FLUENT_RESOURCES,
+        ))))
         .attach(headers::InjectHeaders)
         .mount(
             "/",
