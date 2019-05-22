@@ -111,7 +111,7 @@ fn category(category: Category) -> Template {
     render_category(category, ENGLISH.into())
 }
 
-#[get("/<locale>/<category>", rank = 6)]
+#[get("/<locale>/<category>", rank = 11)]
 fn category_locale(category: Category, locale: SupportedLocale) -> Template {
     render_category(category, locale.0)
 }
