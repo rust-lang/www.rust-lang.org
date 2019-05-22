@@ -1,11 +1,11 @@
+use rocket::http::RawStr;
+use rocket::request::FromParam;
 use std::collections::HashMap;
 use std::fs::read_dir;
 use std::fs::File;
-use std::io::prelude::*;
 use std::io;
+use std::io::prelude::*;
 use std::path::Path;
-use rocket::request::FromParam;
-use rocket::http::RawStr;
 
 use fluent_bundle::{FluentBundle, FluentResource};
 
@@ -97,6 +97,5 @@ impl<'r> FromParam<'r> for SupportedLocale {
         } else {
             Err(())
         }
-
     }
 }
