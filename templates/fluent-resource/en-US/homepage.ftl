@@ -43,3 +43,35 @@ language-values-productivity-blurb = Rust has great documentation, a friendly co
           messages, and top-notch tooling &mdash; an integrated package manager
           and build tool, smart multi-editor support with auto-completion and 
           type inspections, an auto-formatter, and more.
+
+# components/panels/domains.hbs
+domains-title = Build it in Rust
+domains-blurb = In 2018, the Rust community decided to improve programming experience
+        for a few distinct domains (see <a
+        href="https://blog.rust-lang.org/2018/03/12/roadmap.html">the 2018
+        roadmap</a>). For these, you can find many high-quality crates and some
+        awesome guides on how to get started.
+domains-learn-more = Learn More
+
+domains-cli = Command Line
+domains-cli-blurb = Whip up a CLI tool quickly with Rust’s robust ecosystem.
+            Rust helps you maintain your app with confidence and distribute it with ease.
+domains-cli-alt = terminal
+
+domains-wasm = WebAssembly
+domains-wasm-blurb = Use Rust to supercharge your JavaScript, one module at a time.
+          Publish to npm, bundle with webpack, and you’re off to the races.
+domains-wasm-alt = gear with puzzle piece elements
+
+domains-net = Networking
+domains-net-blurb = Predictable performance. Tiny resource footprint. Rock-solid reliability.
+            Rust is great for network services.
+domains-net-alt = a cloud with nodes
+
+domains-embedded = Embedded
+domains-embedded-blurb = Targeting low-resource devices?
+            Need low-level control without giving up high-level conveniences?
+            Rust has you covered.
+domains-embedded-alt = an embedded device chip
+
+
