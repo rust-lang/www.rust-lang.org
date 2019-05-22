@@ -41,3 +41,4 @@ impl HelperDef for I18NHelper {
         out.write(&response).map_err(RenderError::with)
     }
 }
+

@@ -2,12 +2,14 @@ use std::collections::HashMap;
 use std::fs::read_dir;
 use std::fs::File;
 use std::io::prelude::*;
-use std::io::Result;
+use std::io;
 use std::path::Path;
+use rocket::request::FromParam;
+use rocket::http::RawStr;
 
 use fluent_bundle::{FluentBundle, FluentResource};
 
-pub fn read_from_file<P: AsRef<Path>>(filename: P) -> Result<FluentResource> {
+pub fn read_from_file<P: AsRef<Path>>(filename: P) -> io::Result<FluentResource> {
     let mut file = File::open(filename)?;
     let mut string = String::new();
 
@@ -16,7 +18,7 @@ pub fn read_from_file<P: AsRef<Path>>(filename: P) -> Result<FluentResource> {
     Ok(FluentResource::try_new(string).expect("File did not parse!"))
 }
 
-pub fn read_from_dir<P: AsRef<Path>>(dirname: P) -> Result<Vec<FluentResource>> {
+pub fn read_from_dir<P: AsRef<Path>>(dirname: P) -> io::Result<Vec<FluentResource>> {
     let mut result = Vec::new();
     for dir_entry in read_dir(dirname)? {
         let entry = dir_entry?;
@@ -80,5 +82,21 @@ impl FluentProvider {
             return value;
         }
         String::from(text_id)
+    }
+}
+
+pub struct SupportedLocale(pub String);
+
+impl<'r> FromParam<'r> for SupportedLocale {
+    type Error = ();
+
+    fn from_param(param: &'r RawStr) -> Result<Self, Self::Error> {
+        let param = param.percent_decode().map_err(|_| ())?;
+        if BUNDLES.get(param.as_ref()).is_some() {
+            Ok(SupportedLocale(param.into()))
+        } else {
+            Err(())
+        }
+
     }
 }

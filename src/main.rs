@@ -52,6 +52,7 @@ use sass_rs::{compile_file, Options};
 use category::Category;
 
 use i18n::I18NHelper;
+use fluent_wrapper::SupportedLocale;
 
 #[derive(Serialize)]
 struct Context<T: ::serde::Serialize> {
@@ -75,6 +76,15 @@ fn get_title(page_name: &str) -> String {
 
 #[get("/")]
 fn index() -> Template {
+    render_index(ENGLISH.to_string())
+}
+
+#[get("/<locale>", rank = 3)]
+fn index_locale(locale: SupportedLocale) -> Template {
+    render_index(locale.0)
+}
+
+fn render_index(lang: String) -> Template {
     #[derive(Serialize)]
     struct IndexData {
         rust_version: String,
@@ -96,7 +106,7 @@ fn index() -> Template {
                 format!("https://blog.rust-lang.org/{}", v)
             }),
         },
-        lang: ENGLISH.to_string(),
+        lang,
     };
     Template::render(page, &context)
 }
@@ -325,6 +335,7 @@ fn main() {
                 files,
                 logos,
                 components,
+                index_locale,
                 redirect,
                 redirect_pdfs,
                 redirect_bare_en_us,
