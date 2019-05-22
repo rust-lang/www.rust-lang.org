@@ -36,12 +36,23 @@ impl I18NHelper {
         args: Option<&HashMap<&str, FluentValue>>,
     ) -> String {
         if let Some(bundle) = self.bundles.get(lang) {
-            let (value, _errors) = bundle
-                .format(text_id, args)
-                .expect("Failed to format a message.");
-            return value;
+            if bundle.has_message(text_id) {
+                let (value, _errors) = bundle
+                    .format(text_id, args)
+                    .expect("Failed to format a message.");
+                return value;
+            } else if lang != "en-US" {
+                let bundle = self
+                    .bundles
+                    .get("en-US")
+                    .expect("Must have English localization");
+                let (value, _errors) = bundle
+                    .format(text_id, args)
+                    .expect("Failed to format a message.");
+                return value;
+            }
         }
-        String::from(text_id)
+        format!("Unknown localization {}", text_id)
     }
 }
 
