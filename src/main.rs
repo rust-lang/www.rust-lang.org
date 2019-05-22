@@ -51,7 +51,6 @@ use sass_rs::{compile_file, Options};
 
 use category::Category;
 
-use fluent_wrapper::*;
 use i18n::I18NHelper;
 
 #[derive(Serialize)]
@@ -296,7 +295,7 @@ fn main() {
     let templating = Template::custom(|engine| {
         engine.handlebars.register_helper(
             "text",
-            Box::new(I18NHelper::new(Box::new(FluentI18nProvider::new()))),
+            Box::new(I18NHelper::new()),
         );
     });
 

@@ -1,16 +1,17 @@
-use rocket::Request;
-
 use handlebars::{
     Context, Handlebars, Helper, HelperDef, HelperResult, Output, RenderContext, RenderError,
 };
 
+use crate::fluent_wrapper::FluentProvider;
+
+
 pub struct I18NHelper {
-    provider: Box<I18NProvider + Send + Sync>,
+    provider: FluentProvider,
 }
 
 impl I18NHelper {
-    pub fn new(provider: Box<I18NProvider + Send + Sync>) -> Self {
-        Self { provider }
+    pub fn new() -> Self {
+        Self { provider: FluentProvider::new() }
     }
 }
 
@@ -35,27 +36,7 @@ impl HelperDef for I18NHelper {
             return Err(RenderError::new("{{text}} takes a string parameter"));
         };
 
-        let response = self.provider.i18n_token("en", arg);
-        out.write(&response);
-        Ok(())
-    }
-}
-
-pub trait I18NProvider {
-    fn get_language(&self, request: &Request) -> String {
-        request
-            .get_query_value("lang")
-            .and_then(|r| r.ok())
-            .unwrap_or("en".into())
-    }
-
-    fn i18n_token(&self, lang: &str, text_id: &str) -> String;
-}
-
-struct DummyProvider;
-
-impl I18NProvider for DummyProvider {
-    fn i18n_token(&self, lang: &str, text_id: &str) -> String {
-        format!("::localized text for {} from {}::", text_id, lang)
+        let response = self.provider.i18n_token("en-US", arg);
+        out.write(&response).map_err(RenderError::with)
     }
 }

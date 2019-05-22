@@ -7,8 +7,6 @@ use std::path::Path;
 
 use fluent_bundle::{FluentBundle, FluentResource};
 
-use crate::i18n::I18NProvider;
-
 pub fn read_from_file<P: AsRef<Path>>(filename: P) -> Result<FluentResource> {
     let mut file = File::open(filename)?;
     let mut string = String::new();
@@ -66,18 +64,15 @@ fn build_bundles() -> HashMap<String, FluentBundle<'static>> {
     bundles
 }
 
-pub struct FluentI18nProvider {
+pub struct FluentProvider {
     bundles: &'static HashMap<String, FluentBundle<'static>>,
 }
 
-impl FluentI18nProvider {
-    pub fn new() -> FluentI18nProvider {
-        FluentI18nProvider { bundles: &*BUNDLES }
+impl FluentProvider {
+    pub fn new() -> FluentProvider {
+        FluentProvider { bundles: &*BUNDLES }
     }
-}
-
-impl I18NProvider for FluentI18nProvider {
-    fn i18n_token(&self, lang: &str, text_id: &str) -> String {
+    pub fn i18n_token(&self, lang: &str, text_id: &str) -> String {
         if let Some(bundle) = self.bundles.get(lang) {
             let (value, _errors) = bundle
                 .format(text_id, None)
