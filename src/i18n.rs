@@ -161,8 +161,8 @@ pub fn read_from_dir<P: AsRef<Path>>(dirname: P) -> io::Result<Vec<FluentResourc
     Ok(result)
 }
 
-pub fn create_bundle(resources: &'static Vec<FluentResource>) -> FluentBundle<'static> {
-    let mut bundle = FluentBundle::new(&["en-US"]);
+pub fn create_bundle(lang: &str, resources: &'static Vec<FluentResource>) -> FluentBundle<'static> {
+    let mut bundle = FluentBundle::new(&[lang]);
 
     for res in resources {
         bundle
@@ -189,7 +189,7 @@ fn build_resources() -> HashMap<String, Vec<FluentResource>> {
 fn build_bundles() -> HashMap<String, FluentBundle<'static>> {
     let mut bundles = HashMap::new();
     for (ref k, ref v) in &*RESOURCES {
-        bundles.insert(k.to_string(), create_bundle(&v));
+        bundles.insert(k.to_string(), create_bundle(&k, &v));
     }
     bundles
 }
