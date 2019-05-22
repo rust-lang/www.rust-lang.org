@@ -23,7 +23,6 @@ extern crate handlebars;
 
 mod cache;
 mod category;
-mod fluent_wrapper;
 mod headers;
 mod i18n;
 mod production;
@@ -51,8 +50,7 @@ use sass_rs::{compile_file, Options};
 
 use category::Category;
 
-use fluent_wrapper::SupportedLocale;
-use i18n::I18NHelper;
+use i18n::{I18NHelper, SupportedLocale};
 
 #[derive(Serialize)]
 struct Context<T: ::serde::Serialize> {
