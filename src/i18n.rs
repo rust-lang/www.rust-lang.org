@@ -1,7 +1,9 @@
 use handlebars::{
     Context, Handlebars, Helper, HelperDef, HelperResult, Output, RenderContext, RenderError,
+    Renderable,
 };
 
+use handlebars::template::{Parameter, TemplateElement};
 use rocket::http::RawStr;
 use rocket::request::FromParam;
 use serde_json::Value as Json;
@@ -43,13 +45,25 @@ impl I18NHelper {
     }
 }
 
+#[derive(Default)]
+struct StringOutput {
+    pub s: String,
+}
+
+impl Output for StringOutput {
+    fn write(&mut self, seg: &str) -> Result<(), io::Error> {
+        self.s.push_str(seg);
+        Ok(())
+    }
+}
+
 impl HelperDef for I18NHelper {
     fn call<'reg: 'rc, 'rc>(
         &self,
         h: &Helper<'reg, 'rc>,
-        _r: &'reg Handlebars,
+        reg: &'reg Handlebars,
         context: &'rc Context,
-        _rc: &mut RenderContext<'reg>,
+        rcx: &mut RenderContext<'reg>,
         out: &mut dyn Output,
     ) -> HelperResult {
         let id = if let Some(id) = h.param(0) {
@@ -66,11 +80,10 @@ impl HelperDef for I18NHelper {
             return Err(RenderError::new("{{text}} takes an identifier parameter"));
         };
 
-        let map;
-        let args = if h.hash().is_empty() {
+        let mut args = if h.hash().is_empty() {
             None
         } else {
-            map = h
+            let map = h
                 .hash()
                 .iter()
                 .filter_map(|(k, v)| {
@@ -83,15 +96,48 @@ impl HelperDef for I18NHelper {
                     Some((&**k, val))
                 })
                 .collect();
-            Some(&map)
+            Some(map)
         };
+
+        if let Some(tpl) = h.template() {
+            if args.is_none() {
+                args = Some(HashMap::new());
+            }
+            let args = args.as_mut().unwrap();
+            for element in &tpl.elements {
+                if let TemplateElement::HelperBlock(ref block) = element {
+                    if block.name != "textparam" {
+                        return Err(RenderError::new(format!(
+                            "{{{{text}}}} can only contain {{{{textparam}}}} elements, not {}",
+                            block.name
+                        )));
+                    }
+                    let id = if let Some(el) = block.params.get(0) {
+                        if let Parameter::Name(ref s) = *el {
+                            s
+                        } else {
+                            return Err(RenderError::new(
+                                "{{textparam}} takes an identifier parameter",
+                            ));
+                        }
+                    } else {
+                        return Err(RenderError::new("{{textparam}} must have one parameter"));
+                    };
+                    if let Some(ref tpl) = block.template {
+                        let mut s = StringOutput::default();
+                        tpl.render(reg, context, rcx, &mut s)?;
+                        args.insert(&*id, FluentValue::String(s.s));
+                    }
+                }
+            }
+        }
         let lang = context
             .data()
             .get("lang")
             .expect("Language not set in context")
             .as_str()
             .expect("Language must be string");
-        let response = self.i18n_token(lang, &id, args);
+        let response = self.i18n_token(lang, &id, args.as_ref());
         out.write(&response).map_err(RenderError::with)
     }
 }
