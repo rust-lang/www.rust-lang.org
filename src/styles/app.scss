@@ -9,6 +9,7 @@ $green: #398277;
 $purple: #403D58;
 $yellow: #FFD45E;
 $border-radius: 4px;
+$link-color: #1EAEDB;
 
 html {
   font-size: 62.5%
@@ -747,4 +748,8 @@ blockquote::before {
   h3 {
     text-align: center;
   }
+}
+
+.download-link {
+  color: $link-color;
 }
