@@ -19,14 +19,21 @@ lazy_static! {
 }
 
 pub struct I18NHelper {
-    provider: FluentProvider,
+    bundles: &'static HashMap<String, FluentBundle<'static>>,
 }
 
 impl I18NHelper {
     pub fn new() -> Self {
-        Self {
-            provider: FluentProvider::new(),
+        Self { bundles: &*BUNDLES }
+    }
+    pub fn i18n_token(&self, lang: &str, text_id: &str) -> String {
+        if let Some(bundle) = self.bundles.get(lang) {
+            let (value, _errors) = bundle
+                .format(text_id, None)
+                .expect("Failed to format a message.");
+            return value;
         }
+        String::from(text_id)
     }
 }
 
@@ -59,7 +66,7 @@ impl HelperDef for I18NHelper {
             .expect("Language not set in context")
             .as_str()
             .expect("Language must be string");
-        let response = self.provider.i18n_token(lang, arg);
+        let response = self.i18n_token(lang, arg);
         out.write(&response).map_err(RenderError::with)
     }
 }
@@ -114,25 +121,6 @@ fn build_bundles() -> HashMap<String, FluentBundle<'static>> {
         bundles.insert(k.to_string(), create_bundle(&v));
     }
     bundles
-}
-
-pub struct FluentProvider {
-    bundles: &'static HashMap<String, FluentBundle<'static>>,
-}
-
-impl FluentProvider {
-    pub fn new() -> FluentProvider {
-        FluentProvider { bundles: &*BUNDLES }
-    }
-    pub fn i18n_token(&self, lang: &str, text_id: &str) -> String {
-        if let Some(bundle) = self.bundles.get(lang) {
-            let (value, _errors) = bundle
-                .format(text_id, None)
-                .expect("Failed to format a message.");
-            return value;
-        }
-        String::from(text_id)
-    }
 }
 
 pub struct SupportedLocale(pub String);
