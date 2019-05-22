@@ -1,6 +1,7 @@
 # index.hbs
 tagline = ˙ǝɹɐʍʇɟos ʇuǝᴉɔᴉɟɟǝ puɐ ǝlqɐᴉlǝɹ plᴉnq oʇ ⁩ʞɐǝɹqǝuᴉl$⁨ ǝuoʎɹǝʌǝ ƃuᴉɹǝʍodɯǝ ǝƃɐnƃuɐl ∀
 get-started = pǝʇɹɐʇS ʇǝפ
+homepage-version = { $number } uoᴉsɹǝΛ
 
 # components/panels/production.hbs
 production-title = uoᴉʇɔnpoɹd uᴉ ʇsnɹ

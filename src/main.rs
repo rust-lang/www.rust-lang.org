@@ -256,8 +256,7 @@ fn render_index(lang: String) -> Template {
         parent: LAYOUT.to_string(),
         is_landing: true,
         data: IndexData {
-            rust_version: rust_version::rust_version()
-                .map_or(String::new(), |v| format!("Version {}", v)),
+            rust_version: rust_version::rust_version().unwrap_or(String::new()),
             rust_release_post: rust_version::rust_release_post().map_or(String::new(), |v| {
                 format!("https://blog.rust-lang.org/{}", v)
             }),
