@@ -386,8 +386,6 @@ fn main() {
 
     rocket::ignite()
         .attach(templating)
-        //.attach(I18N::dummy())
-        //.attach(I18N::from(Box::new(FluentI18nProvider::new(&fluent_collection))))
         .attach(headers::InjectHeaders)
         .mount(
             "/",
