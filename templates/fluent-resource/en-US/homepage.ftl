@@ -75,3 +75,19 @@ domains-embedded-blurb = Targeting low-resource devices?
 domains-embedded-alt = an embedded device chip
 
 
+# components/panels/get-involved.hbs
+get-involved = Get involved
+
+get-involved-read-rust = Read Rust
+get-involved-read-rust-blurb = We love documentation! Take a look at the books available online, as well as key blog posts and user guides.
+get-involved-read-rust-link = Read the book
+
+get-involved-watch-rust = Watch Rust
+get-involved-watch-rust-blurb = The Rust community has a dedicated YouTube channel collecting a huge range of presentations and
+        tutorials.
+get-involved-watch-rust-link = Watch the Videos
+
+get-involved-contribute = Contribute code
+get-involved-contribute-blurb = Rust is truly a community effort, and we welcome contribution from hobbyists and production users, from
+      newcomers and seasoned professionals. Come help us make the Rust experience even better!
+get-involved-contribute-link = Read Contribution Guide
