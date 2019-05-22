@@ -60,9 +60,11 @@ struct Context<T: ::serde::Serialize> {
     parent: String,
     is_landing: bool,
     data: T,
+    lang: String,
 }
 
 static LAYOUT: &str = "components/layout";
+static ENGLISH: &str = "en-US";
 
 fn get_title(page_name: &str) -> String {
     let mut v: Vec<char> = page_name.replace("-", " ").chars().collect();
@@ -94,6 +96,7 @@ fn index() -> Template {
                 format!("https://blog.rust-lang.org/{}", v)
             }),
         },
+        lang: ENGLISH.to_string(),
     };
     Template::render(page, &context)
 }
@@ -123,6 +126,7 @@ fn category(category: Category) -> Template {
         parent: LAYOUT.to_string(),
         is_landing: false,
         data: (),
+        lang: ENGLISH.to_string(),
     };
     Template::render(page, &context)
 }
@@ -139,6 +143,7 @@ fn governance() -> Result<Template, Status> {
                 parent: LAYOUT.to_string(),
                 is_landing: false,
                 data,
+                lang: ENGLISH.to_string(),
             };
             Ok(Template::render(page, &context))
         }
@@ -161,6 +166,7 @@ fn team(section: String, team: String) -> Result<Template, Result<Redirect, Stat
                 parent: LAYOUT.to_string(),
                 is_landing: false,
                 data,
+                lang: ENGLISH.to_string(),
             };
             Ok(Template::render(page, &context))
         }
@@ -191,6 +197,7 @@ fn production() -> Template {
         parent: LAYOUT.to_string(),
         is_landing: false,
         data: load_users_data(),
+        lang: ENGLISH.to_string(),
     };
     Template::render(page, &context)
 }
@@ -212,6 +219,7 @@ fn subject(category: Category, subject: String) -> Template {
         parent: LAYOUT.to_string(),
         is_landing: false,
         data: (),
+        lang: ENGLISH.to_string(),
     };
     Template::render(page, &context)
 }
@@ -256,6 +264,7 @@ fn not_found() -> Template {
         parent: LAYOUT.to_string(),
         is_landing: false,
         data: (),
+        lang: ENGLISH.to_string(),
     };
     Template::render(page, &context)
 }

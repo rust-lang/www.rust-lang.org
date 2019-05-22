@@ -20,7 +20,7 @@ impl HelperDef for I18NHelper {
         &self,
         h: &Helper<'reg, 'rc>,
         _r: &'reg Handlebars,
-        _ctx: &'rc Context,
+        context: &'rc Context,
         _rc: &mut RenderContext<'reg>,
         out: &mut dyn Output,
     ) -> HelperResult {
@@ -36,7 +36,8 @@ impl HelperDef for I18NHelper {
             return Err(RenderError::new("{{text}} takes a string parameter"));
         };
 
-        let response = self.provider.i18n_token("en-US", arg);
+        let lang = context.data().get("lang").expect("Language not set in context").as_str().expect("Language must be string");
+        let response = self.provider.i18n_token(lang, arg);
         out.write(&response).map_err(RenderError::with)
     }
 }
