@@ -159,6 +159,64 @@ impl HelperDef for I18NHelper {
     }
 }
 
+pub struct TeamHelper {
+    i18n: I18NHelper,
+}
+
+impl TeamHelper {
+    pub fn new() -> Self {
+        Self {
+            i18n: I18NHelper::new(),
+        }
+    }
+}
+
+impl HelperDef for TeamHelper {
+    fn call<'reg: 'rc, 'rc>(
+        &self,
+        h: &Helper<'reg, 'rc>,
+        reg: &'reg Handlebars,
+        context: &'rc Context,
+        rcx: &mut RenderContext<'reg>,
+        out: &mut dyn Output,
+    ) -> HelperResult {
+        let name = if let Some(name) = h.param(0) {
+            name
+        } else {
+            return Err(RenderError::new(
+                "{{team-text}} must have at least two parameters",
+            ));
+        };
+        let name = if let Some(name) = name.path() {
+            name
+        } else {
+            return Err(RenderError::new(
+                "{{team-text}} takes only identifier parameters",
+            ));
+        };
+
+        let id = if let Some(id) = h.param(1) {
+            id
+        } else {
+            return Err(RenderError::new(
+                "{{team-text}} must have at least two parameters",
+            ));
+        };
+        let id = if let Some(id) = id.path() {
+            id
+        } else {
+            return Err(RenderError::new(
+                "{{team-text}} takes only identifier parameters",
+            ));
+        };
+        let team = rcx
+            .evaluate_in_block_context(name)?
+            .ok_or_else(|| RenderError::new(format!("Cannot find team {}", name)))?;
+        let english = team["website_data"][id].as_str().unwrap();
+        out.write(&english).map_err(RenderError::with)
+    }
+}
+
 pub fn read_from_file<P: AsRef<Path>>(filename: P) -> io::Result<FluentResource> {
     let mut file = File::open(filename)?;
     let mut string = String::new();
