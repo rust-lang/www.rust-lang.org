@@ -185,7 +185,7 @@ impl HelperDef for TeamHelper {
     fn call<'reg: 'rc, 'rc>(
         &self,
         h: &Helper<'reg, 'rc>,
-        reg: &'reg Handlebars,
+        _: &'reg Handlebars,
         context: &'rc Context,
         rcx: &mut RenderContext<'reg>,
         out: &mut dyn Output,
@@ -222,6 +222,27 @@ impl HelperDef for TeamHelper {
         let team = rcx
             .evaluate_in_block_context(name)?
             .ok_or_else(|| RenderError::new(format!("Cannot find team {}", name)))?;
+        let lang = context
+            .data()
+            .get("lang")
+            .expect("Language not set in context")
+            .as_str()
+            .expect("Language must be string");
+
+        let fluent_id = format!("governance-{}-{}", team["name"], id);
+
+        // We currently fall back to using the team data directly
+        // We should switch to including a team-data-derived ftl file for English
+        if let Some(value) = self.i18n.lookup(lang, &fluent_id, None) {
+            return out.write(&value).map_err(RenderError::with);
+        }
+
+        if lang != "en-US" {
+            if let Some(value) = self.i18n.lookup("en-US", &fluent_id, None) {
+                return out.write(&value).map_err(RenderError::with);
+            }
+        }
+
         let english = team["website_data"][id].as_str().unwrap();
         out.write(&english).map_err(RenderError::with)
     }

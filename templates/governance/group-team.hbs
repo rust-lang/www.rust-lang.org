@@ -6,14 +6,14 @@
     </header>
     <div>
         <div class="mv4 flex flex-column flex-row-l justify-between">
-            <p class="ma0 f2">{{team.website_data.description}}</p>
+            <p class="ma0 f2">{{team-text team description}}</p>
             <div class="flex flex-column ml5-l mt4 mt0-l">
                 {{#if team.website_data.email}}
-                    <a class="button button-secondary" href="mailto:{{team.website_data.email}}">Email the {{team.website_data.name}}</a>
+                    <a class="button button-secondary" href="mailto:{{team.website_data.email}}">Email the {{team-text team name}}</a>
                 {{/if}}
                 {{#if team.website_data.repo}}
                     <a class="button button-secondary" href="{{team.website_data.repo}}">
-                        {{team.website_data.name}} repository
+                        {{team-text team name}} repository
                     </a>
                 {{/if}}
                 {{#if team.website_data.discord}}
