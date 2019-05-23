@@ -1,24 +1,24 @@
 <nav class="flex flex-row justify-center justify-end-l items-center flex-wrap ph2 pl3-ns pr4-ns pb3">
   <div class="brand flex-auto w-100 w-auto-l self-start tc tl-l">
     <a href="{{baseurl}}/" class="brand">
-      <img class="v-mid ml0-l" alt="Rust Logo" src="/static/images/rust-logo-blk.svg">
+      <img class="v-mid ml0-l" alt="{{text nav-logo-alt}}" src="/static/images/rust-logo-blk.svg">
       {{#unless is_landing}}
-        <span class="dib ml1 ml0-l">Rust</span>
+        <span class="dib ml1 ml0-l">{{text rust}}</span>
       {{/unless}}
     </a>
   </div>
 
   <ul class="nav list w-100 w-auto-l flex flex-none flex-row flex-wrap justify-center justify-end-l items-center pv2 ph0 ph4-ns">
-    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="{{baseurl}}/tools/install">Install</a></li>
-    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="{{baseurl}}/learn">Learn</a></li>
-    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="{{baseurl}}/tools">Tools</a></li>
-    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="{{baseurl}}/governance">Governance</a></li>
-    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="{{baseurl}}/community">Community</a></li>
-    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="https://blog.rust-lang.org/">Blog</a></li>
+    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="{{baseurl}}/tools/install">{{text nav-install}}</a></li>
+    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="{{baseurl}}/learn">{{text nav-learn}}</a></li>
+    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="{{baseurl}}/tools">{{text nav-tools}}</a></li>
+    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="{{baseurl}}/governance">{{text nav-governance}}</a></li>
+    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="{{baseurl}}/community">{{text nav-community}}</a></li>
+    <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="https://blog.rust-lang.org/">{{text nav-blog}}</a></li>
   </ul>
 
   <div class=" w-100 w-auto-l flex-none flex justify-center pv4 pv-0-l languages">
-    <label for="language-nav" class="hidden">Language</label>
+    <label for="language-nav" class="hidden">{{text choose-language}}</label>
     <select id="language-nav">
       {{> components/languages-dropdown}}
     </select>

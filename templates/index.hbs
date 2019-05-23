@@ -12,7 +12,7 @@
         {{text get-started}}
       </a>
       <p class="tc f3 f2-l mt3">
-        <a href="{{data.rust_release_post}}">{{data.rust_version}}</a>
+        <a href="{{data.rust_release_post}}">{{#text homepage-version}}{{#textparam number}}{{data.rust_version}}{{/textparam}}{{/text}}</a>
       </p>
     </div>
   </div>

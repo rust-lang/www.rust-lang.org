@@ -37,18 +37,24 @@ impl I18NHelper {
     ) -> String {
         if let Some(bundle) = self.bundles.get(lang) {
             if bundle.has_message(text_id) {
-                let (value, _errors) = bundle
-                    .format(text_id, args)
-                    .expect("Failed to format a message.");
+                let (value, _errors) = bundle.format(text_id, args).unwrap_or_else(|| {
+                    panic!(
+                        "Failed to format a message for locale {} and id {}",
+                        lang, text_id
+                    )
+                });
                 return value;
             } else if lang != "en-US" {
                 let bundle = self
                     .bundles
                     .get("en-US")
                     .expect("Must have English localization");
-                let (value, _errors) = bundle
-                    .format(text_id, args)
-                    .expect("Failed to format a message.");
+                let (value, _errors) = bundle.format(text_id, args).unwrap_or_else(|| {
+                    panic!(
+                        "Failed to format a message for locale en-US and id {}",
+                        text_id
+                    )
+                });
                 return value;
             }
         }

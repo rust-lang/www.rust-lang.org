@@ -111,7 +111,7 @@ fn category(category: Category) -> Template {
     render_category(category, ENGLISH.into())
 }
 
-#[get("/<locale>/<category>", rank = 6)]
+#[get("/<locale>/<category>", rank = 11)]
 fn category_locale(category: Category, locale: SupportedLocale) -> Template {
     render_category(category, locale.0)
 }
@@ -256,8 +256,7 @@ fn render_index(lang: String) -> Template {
         parent: LAYOUT.to_string(),
         is_landing: true,
         data: IndexData {
-            rust_version: rust_version::rust_version()
-                .map_or(String::new(), |v| format!("Version {}", v)),
+            rust_version: rust_version::rust_version().unwrap_or(String::new()),
             rust_release_post: rust_version::rust_release_post().map_or(String::new(), |v| {
                 format!("https://blog.rust-lang.org/{}", v)
             }),
