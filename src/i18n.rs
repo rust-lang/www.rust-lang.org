@@ -234,7 +234,7 @@ impl HelperDef for TeamHelper {
             // XXXManishearth this can be removed once we land https://github.com/rust-lang/team/pull/70
             team_name = "wg-rls-2";
         }
-        let fluent_id = format!("governance-{}-{}", team_name, id);
+        let fluent_id = format!("governance-team-{}-{}", team_name, id);
 
         // We currently fall back to using the team data directly
         // We should switch to including a team-data-derived ftl file for English

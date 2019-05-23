@@ -23,6 +23,7 @@ footer-media = ǝpᴉnפ ɐᴉpǝW puɐ ʎɔᴉloԀ oƃo˥
 footer-security = sǝɹnsolɔsᴉp ʎʇᴉɹnɔǝS
 footer-policies-all = sǝᴉɔᴉloԀ ll∀
 footer-social = lɐᴉɔoS
+footer-get-help = ¡dlǝɥ ʇǝפ
 
 footer-alt-twitter = ɹǝʇʇᴉʍ┴
 footer-alt-youtube = oƃol ǝqnʇnoʎ
