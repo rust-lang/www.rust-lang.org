@@ -29,12 +29,13 @@ impl I18NHelper {
     pub fn new() -> Self {
         Self { bundles: &*BUNDLES }
     }
-    pub fn i18n_token(
+
+    pub fn lookup(
         &self,
         lang: &str,
         text_id: &str,
         args: Option<&HashMap<&str, FluentValue>>,
-    ) -> String {
+    ) -> Option<String> {
         if let Some(bundle) = self.bundles.get(lang) {
             if bundle.has_message(text_id) {
                 let (value, _errors) = bundle.format(text_id, args).unwrap_or_else(|| {
@@ -43,22 +44,31 @@ impl I18NHelper {
                         lang, text_id
                     )
                 });
-                return value;
-            } else if lang != "en-US" {
-                let bundle = self
-                    .bundles
-                    .get("en-US")
-                    .expect("Must have English localization");
-                let (value, _errors) = bundle.format(text_id, args).unwrap_or_else(|| {
-                    panic!(
-                        "Failed to format a message for locale en-US and id {}",
-                        text_id
-                    )
-                });
-                return value;
+                Some(value)
+            } else {
+                None
             }
+        } else {
+            panic!("Unknown language {}", lang)
         }
-        format!("Unknown localization {}", text_id)
+    }
+    pub fn lookup_with_fallback(
+        &self,
+        lang: &str,
+        text_id: &str,
+        args: Option<&HashMap<&str, FluentValue>>,
+    ) -> String {
+        if let Some(val) = self.lookup(lang, text_id, args) {
+            val
+        } else if lang != "en-US" {
+            if let Some(val) = self.lookup("en-US", text_id, args) {
+                val
+            } else {
+                format!("Unknown localization {}", text_id)
+            }
+        } else {
+            format!("Unknown localization {}", text_id)
+        }
     }
 }
 
@@ -154,7 +164,7 @@ impl HelperDef for I18NHelper {
             .expect("Language not set in context")
             .as_str()
             .expect("Language must be string");
-        let response = self.i18n_token(lang, &id, args.as_ref());
+        let response = self.lookup_with_fallback(lang, &id, args.as_ref());
         out.write(&response).map_err(RenderError::with)
     }
 }
