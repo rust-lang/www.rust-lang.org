@@ -1,6 +1,6 @@
 # tools/index.hbs
 tools-editor-support-heading = First-class editor support
-tools-write-ide-description = Whether you prefer working with code from the
+tools-editor-support-description = Whether you prefer working with code from the
         command line, or using rich graphical editors, there’s a Rust
         integration available for your editor of choice. Or you can build your
         own using the
