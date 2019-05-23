@@ -29,12 +29,13 @@ impl I18NHelper {
     pub fn new() -> Self {
         Self { bundles: &*BUNDLES }
     }
-    pub fn i18n_token(
+
+    pub fn lookup(
         &self,
         lang: &str,
         text_id: &str,
         args: Option<&HashMap<&str, FluentValue>>,
-    ) -> String {
+    ) -> Option<String> {
         if let Some(bundle) = self.bundles.get(lang) {
             if bundle.has_message(text_id) {
                 let (value, _errors) = bundle.format(text_id, args).unwrap_or_else(|| {
@@ -43,22 +44,31 @@ impl I18NHelper {
                         lang, text_id
                     )
                 });
-                return value;
-            } else if lang != "en-US" {
-                let bundle = self
-                    .bundles
-                    .get("en-US")
-                    .expect("Must have English localization");
-                let (value, _errors) = bundle.format(text_id, args).unwrap_or_else(|| {
-                    panic!(
-                        "Failed to format a message for locale en-US and id {}",
-                        text_id
-                    )
-                });
-                return value;
+                Some(value)
+            } else {
+                None
             }
+        } else {
+            panic!("Unknown language {}", lang)
         }
-        format!("Unknown localization {}", text_id)
+    }
+    pub fn lookup_with_fallback(
+        &self,
+        lang: &str,
+        text_id: &str,
+        args: Option<&HashMap<&str, FluentValue>>,
+    ) -> String {
+        if let Some(val) = self.lookup(lang, text_id, args) {
+            val
+        } else if lang != "en-US" {
+            if let Some(val) = self.lookup("en-US", text_id, args) {
+                val
+            } else {
+                format!("Unknown localization {}", text_id)
+            }
+        } else {
+            format!("Unknown localization {}", text_id)
+        }
     }
 }
 
@@ -154,8 +164,92 @@ impl HelperDef for I18NHelper {
             .expect("Language not set in context")
             .as_str()
             .expect("Language must be string");
-        let response = self.i18n_token(lang, &id, args.as_ref());
+        let response = self.lookup_with_fallback(lang, &id, args.as_ref());
         out.write(&response).map_err(RenderError::with)
+    }
+}
+
+pub struct TeamHelper {
+    i18n: I18NHelper,
+}
+
+impl TeamHelper {
+    pub fn new() -> Self {
+        Self {
+            i18n: I18NHelper::new(),
+        }
+    }
+}
+
+impl HelperDef for TeamHelper {
+    fn call<'reg: 'rc, 'rc>(
+        &self,
+        h: &Helper<'reg, 'rc>,
+        _: &'reg Handlebars,
+        context: &'rc Context,
+        rcx: &mut RenderContext<'reg>,
+        out: &mut dyn Output,
+    ) -> HelperResult {
+        let name = if let Some(name) = h.param(0) {
+            name
+        } else {
+            return Err(RenderError::new(
+                "{{team-text}} must have at least two parameters",
+            ));
+        };
+        let name = if let Some(name) = name.path() {
+            name
+        } else {
+            return Err(RenderError::new(
+                "{{team-text}} takes only identifier parameters",
+            ));
+        };
+
+        let id = if let Some(id) = h.param(1) {
+            id
+        } else {
+            return Err(RenderError::new(
+                "{{team-text}} must have at least two parameters",
+            ));
+        };
+        let id = if let Some(id) = id.path() {
+            id
+        } else {
+            return Err(RenderError::new(
+                "{{team-text}} takes only identifier parameters",
+            ));
+        };
+        let team = rcx
+            .evaluate_in_block_context(name)?
+            .ok_or_else(|| RenderError::new(format!("Cannot find team {}", name)))?;
+        let lang = context
+            .data()
+            .get("lang")
+            .expect("Language not set in context")
+            .as_str()
+            .expect("Language must be string");
+
+        let mut team_name = team["name"].as_str().unwrap();
+        if team_name == "wg-rls-2.0" {
+            // XXXManishearth this can be removed once we land https://github.com/rust-lang/team/pull/70
+            team_name = "wg-rls-2";
+        }
+        let fluent_id = format!("governance-team-{}-{}", team_name, id);
+
+        // We currently fall back to using the team data directly
+        // We should switch to including a team-data-derived ftl file for English
+        if let Some(value) = self.i18n.lookup(lang, &fluent_id, None) {
+            return out.write(&value).map_err(RenderError::with);
+        }
+
+        if lang != "en-US" {
+            if let Some(value) = self.i18n.lookup("en-US", &fluent_id, None) {
+                return out.write(&value).map_err(RenderError::with);
+            }
+        }
+
+        let english = team["website_data"][id].as_str().unwrap();
+        out.write(&english).map_err(RenderError::with)
     }
 }
 

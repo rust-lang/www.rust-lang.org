@@ -50,7 +50,7 @@ use sass_rs::{compile_file, Options};
 
 use category::Category;
 
-use i18n::{I18NHelper, SupportedLocale};
+use i18n::{I18NHelper, SupportedLocale, TeamHelper};
 
 #[derive(Serialize)]
 struct Context<T: ::serde::Serialize> {
@@ -381,6 +381,9 @@ fn main() {
         engine
             .handlebars
             .register_helper("text", Box::new(I18NHelper::new()));
+        engine
+            .handlebars
+            .register_helper("team-text", Box::new(TeamHelper::new()));
     });
 
     rocket::ignite()

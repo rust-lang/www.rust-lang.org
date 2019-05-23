@@ -24,6 +24,7 @@ footer-media = Logo Policy and Media Guide
 footer-security = Security Disclosures
 footer-policies-all = All Policies
 footer-social = Social
+footer-get-help = Get help!
 
 footer-alt-twitter = Twitter
 footer-alt-youtube = youtube logo
