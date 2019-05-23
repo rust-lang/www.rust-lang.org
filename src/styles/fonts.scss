@@ -95,7 +95,7 @@ $format-names: (
           src: local($font),
                local($filename),
                urls($filename, $range, $formats);
-          font-display: block;
+          font-display: swap;
         }
       }
     }
