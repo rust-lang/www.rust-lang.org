@@ -2,7 +2,7 @@
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
       <h2>
-        Why Rust?
+        {{text cli-pitch-heading}}
       </h2>
       <div class="highlight"></div>
     </header>
@@ -10,57 +10,54 @@
     <div class="flex flex-column flex-row-l">
       <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l">
         <div class="v-top tc-l">
-          <img src="/static/images/cli-rustc-approved.svg" alt="Shield with a checkmark" class="mw3 mw4-ns"/>
+          <img src="/static/images/cli-rustc-approved.svg" alt="{{text cli-pitch-solid-img-alt}}" class="mw3 mw4-ns"/>
         </div>
         <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
           <h3 class="tc-l">
-            Solid and quick
+            {{text cli-pitch-solid-heading}}
           </h3>
           <p class="flex-grow-1">
-            Even if you’re just writing a short one-off script, you can be
-            confident it’s fast, easily testable, and gives helpful output.
+            {{text cli-pitch-solid-description}}
           </p>
           <a href="{{baseurl}}/learn" class="button button-secondary">
-            Rust’s guarantees
+            {{text cli-pitch-solid-link}}
           </a>
         </div>
       </div>
 
       <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l">
         <div class="v-top tc-l">
-          <img src="/static/images/cli-packaging.svg" alt="box with a checkmark"
+          <img src="/static/images/cli-packaging.svg" alt="{{text cli-pitch-ship-img-alt}}"
                class="mw3 mw4-ns"/>
         </div>
         <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
           <h3 class="tc-l">
-            Easy distribution
+            {{text cli-pitch-ship-heading}}
           </h3>
           <p class="flex-grow-1">
-            Compile everything down to a single binary&mdash;no need for your
-            users to have a runtime or libraries installed.
+            {{text cli-pitch-ship-description}}
           </p>
           <a href="https://rust-lang-nursery.github.io/cli-wg/tutorial/packaging.html" class="button button-secondary">
-            How to ship Rust code
+            {{text cli-pitch-ship-link}}
           </a>
         </div>
       </div>
 
       <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l">
         <div class="v-top tc-l">
-          <img src="/static/images/cli-configs.svg" alt="A note and a gear"
+          <img src="/static/images/cli-configs.svg" alt="{{text cli-pitch-config-img-alt}}"
                class="mw3 mw4-ns"/>
         </div>
         <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
           <h3 class="tc-l">
-            Robust configuration
+            {{text cli-pitch-config-heading}}
           </h3>
 
           <p class="flex-grow-1">
-            Handle configuration files across platforms with ease.  Rust will
-            deal with namespaces and formats for you.
+            {{text cli-pitch-config-description}}
           </p>
           <a href="https://rust-lang-nursery.github.io/cli-wg/in-depth/config-files.html" class="button button-secondary">
-              Start configuring
+              {{text cli-pitch-config-link}}
           </a>
         </div>
       </div>
@@ -68,38 +65,36 @@
     <div class="flex-none flex-l flex-row mt5-l">
       <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l">
         <div class="v-top tc-l">
-          <img src="/static/images/cli-man.svg" alt="Help manual"
+          <img src="/static/images/cli-man.svg" alt="{{text cli-pitch-manuals-img-alt}}"
                class="mw3 mw4-ns"/>
         </div>
         <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
           <h3 class="tc-l">
-            Manuals? done.
+            {{text cli-pitch-manuals-heading}}
           </h3>
           <p class="flex-grow-1">
-            Generate manual pages for your app automatically.  Just package the
-            generated files and you’re done.
+            {{text cli-pitch-manuals-description}}
           </p>
           <a href="https://rust-lang-nursery.github.io/cli-wg/in-depth/docs.html" class="button button-secondary">
-            Learn how
+            {{text cli-pitch-manuals-link}}
           </a>
         </div>
       </div>
 
       <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l">
         <div class="v-top tc-l">
-          <img src="/static/images/cli-pipe.svg" alt="Pipes"
+          <img src="/static/images/cli-pipe.svg" alt="{{text cli-pitch-machines-img-alt}}"
                class="mw3 mw4-ns"/>
         </div>
         <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
           <h3 class="tc-l">
-            Data in, data out
+            {{text cli-pitch-machines-heading}}
           </h3>
           <p class="flex-grow-1">
-            In addition to talking to humans, Rust has great tools to help you
-            talk to machines.
+            {{text cli-pitch-machines-description}}
           </p>
           <a href="https://rust-lang-nursery.github.io/cli-wg/in-depth/machine-communication.html" class="button button-secondary">
-            Communicate with machines
+            {{text cli-pitch-machines-link}}
           </a>
         </div>
       </div>
@@ -107,20 +102,19 @@
       <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l">
         <div class="v-top tc-l">
           <img src="/static/images/cli-logging.svg"
-               alt="3 wood logs stacked on top of each other"
+               alt="{{text cli-pitch-logging-img-alt}}"
                class="mw3 mw4-ns"/>
         </div>
         <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
           <h3 class="tc-l">
-            Flexible logging
+            {{text cli-pitch-logging-heading}}
           </h3>
 
           <p class="flex-grow-1">
-            It’s easy to add logging, and even easier to configure it to
-            different targets and with different styles.
+            {{text cli-pitch-logging-description}}
           </p>
           <a href="https://rust-lang-nursery.github.io/cli-wg/in-depth/human-communication.html" class="button button-secondary">
-            Log, trace, comprehend
+            {{text cli-pitch-logging-link}}
           </a>
         </div>
       </div>
