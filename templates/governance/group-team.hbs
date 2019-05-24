@@ -1,24 +1,26 @@
 <a name="{{team.name}}"></a>
 <div class="w-100 mw-none mw-8-m mw9-l ph3 center f3">
     <header class="pb0 pt5">
-        <h2>{{team.website_data.name}}</h2>
+        <h2>{{team-text team name}}</h2>
         <div class="highlight"></div>
     </header>
     <div>
         <div class="mv4 flex flex-column flex-row-l justify-between">
-            <p class="ma0 f2">{{team.website_data.description}}</p>
+            <p class="ma0 f2">{{team-text team description}}</p>
             <div class="flex flex-column ml5-l mt4 mt0-l">
                 {{#if team.website_data.email}}
-                    <a class="button button-secondary" href="mailto:{{team.website_data.email}}">Email the {{team.website_data.name}}</a>
+                    <a class="button button-secondary" href="mailto:{{team.website_data.email}}">
+                    {{#text governance-team-email}}{{#textparam teamname}}{{team-text team name}}{{/textparam}}{{/text}}
+                    </a>
                 {{/if}}
                 {{#if team.website_data.repo}}
                     <a class="button button-secondary" href="{{team.website_data.repo}}">
-                        {{team.website_data.name}} repository
+                        {{#text governance-team-repository}}{{#textparam teamname}}{{team-text team name}}{{/textparam}}{{/text}}
                     </a>
                 {{/if}}
                 {{#if team.website_data.discord}}
                     <a class="button button-secondary" href="{{team.website_data.discord.url}}">
-                        {{team.website_data.discord.channel}} on Discord
+                        {{#text governance-team-discord}}{{#textparam channel}}{{team.website_data.discord.channel}}{{/textparam}}{{/text}}
                     </a>
                 {{/if}}
             </div>
@@ -26,7 +28,7 @@
     </div>
     {{#if team.members}}
         <header class="pb4 pt0">
-            <h2 class="f2">Members</h2>
+            <h2 class="f2">{{text governance-members-header}}</h2>
         </header>
         <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
             {{#each team.members as |member|}}
@@ -37,11 +39,14 @@
                     <div class="flex flex-column w-100">
                         <h3 class="{{#unless member.is_lead}}fw4{{/unless}} ma0 mb2">{{member.name}}</h3>
                         <div>
-                            GitHub:
-                            <a href="https://github.com/{{member.github}}">{{member.github}}</a>
+                        {{#text governance-user-github}}
+                            {{#textparam link}}
+                                <a href="https://github.com/{{member.github}}">{{member.github}}</a>
+                            {{/textparam}}
+                        {{/text}}
                         </div>
                         {{#if member.is_lead}}
-                            <div>Team leader</div>
+                            <div>{{governance-user-team-leader}}</div>
                         {{/if}}
                     </div>
                 </div>
