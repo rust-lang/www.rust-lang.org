@@ -26,6 +26,6 @@ After this time, we evaluate the state of the translation with the goal to make 
 
 Note: this section is minimal due to the final translation service being setup.
 
-Translations are done via keys: for example, a key name `rust-claim` in the website source will expand to "A language empowering everyone..." in the English translation. Additional translations 
+Translations are done via keys: for example, a key name `rust-claim` in the website source will expand to "A language empowering everyone..." in the English translation. Additional translations will override this key with their own phrase.
 
 Each translation must be reviewed by a second member of the team for quality control.
