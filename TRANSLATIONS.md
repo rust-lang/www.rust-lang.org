@@ -29,7 +29,3 @@ Note: this section is minimal due to the final translation service being setup.
 Translations are done via keys: for example, a key name `rust-claim` in the website source will expand to "A language empowering everyone..." in the English translation. Additional translations 
 
 Each translation must be reviewed by a second member of the team for quality control.
-
-## Non-written languages
-
-If you want to make a serious effort at providing content in non-written languages (such as sign language) for the page, please get in touch.
