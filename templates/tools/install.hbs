@@ -2,14 +2,14 @@
 
 <header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-    <h1>Install Rust</h1>
+    <h1>{{text install-page-heading}}</h1>
   </div>
 </header>
 
 <section id="rustup" class="green">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>Using rustup (Recommended)</h2>
+      <h2>{{text install-using-rustup-heading}}</h2>
       <div class="highlight"></div>
     </header>
     {{> components/tools/rustup }}
@@ -19,86 +19,24 @@
 <section id="installation-notes" class="white">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>Notes about Rust installation</h2>
+      <h2>{{text install-notes-heading}}</h2>
       <div class="highlight"></div>
     </header>
     <div>
-      <h3>Getting started</h3>
+      <h3>{{text install-notes-getting-started-heading}}</h3>
       <p>
-        If you're just getting started with Rust and would like a more detailed walk-through, see our <a href="{{baseurl}}/learn/get-started">getting started</a> page.
+        {{text install-notes-getting-started-description}}
       </p>
 
-      <h3>Toolchain management with <code>rustup</code></h3>
-      <p>
-        Rust is installed and managed by the
-        <a href="https://github.com/rust-lang/rustup.rs"><code>rustup</code></a>
-        tool. Rust has a 6-week
-        <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
-          rapid release process
-        </a> and supports a
-        <a href="https://forge.rust-lang.org/platform-support.html">great number of platforms</a>,
-        so there are many builds of Rust available at any time.
-        <code>rustup</code> manages these builds in a consistent way on every
-        platform that Rust supports, enabling installation of Rust from the beta
-        and nightly release channels as well as support for additional
-        cross-compilation targets.
-      </p>
-      <p>
-        If you've installed <code>rustup</code> in the past, you can update
-        your installation by running <code>rustup update</code>.
-      </p>
-      <p>
-        For more information see the
-        <a href="https://github.com/rust-lang/rustup.rs/blob/master/README.md"><code>rustup</code>
-        documentation</a>.
-      </p>
+      <h3>{{text install-notes-rustup-heading}}</h3>
+      {{text install-notes-rustup-description}}
 
-      <h3>Configuring the <code>PATH</code> environment variable</h3>
-      <p>
-        In the Rust development environment, all tools are installed to the
-        <span class="platform-specific not-win di">
-          <code>~/.cargo/bin</code>
-        </span>
-        <span class="platform-specific win dn">
-          <code>%USERPROFILE%\.cargo\bin</code>
-        </span> directory,
-        and this is where you will find the Rust toolchain, including
-        <code>rustc</code>, <code>cargo</code>, and <code>rustup</code>.
-      </p>
-      <p>
-        Accordingly, it is customary for Rust developers to include this
-        directory in their
-        <a href="https://en.wikipedia.org/wiki/PATH_(variable)"><code>PATH</code>
-        environment variable</a>.  During installation <code>rustup</code>
-        will attempt to configure the
-        <code>PATH</code>. Because of differences between platforms,
-        command shells, and bugs in <code>rustup</code>, the modifications
-        to <code>PATH</code> may not take effect until the console is
-        restarted, or the user is logged out, or it may not succeed at all.
-      </p>
-      <p>
-        If, after installation, running <code>rustc --version</code> in the
-        console fails, this is the most likely reason.
-      </p>
+      <h3>{{text install-notes-path-heading}}</h3>
+      {{text install-notes-path-description}}
     </div>
     <div class="platform-specific win dn">
-      <h3>Windows considerations</h3>
-      <p>
-        On Windows, Rust additionally requires the C++ build tools
-        for Visual Studio 2013 or later. The easiest way to acquire the build
-        tools is by installing
-        <a href="https://www.visualstudio.com/downloads/#build-tools-for-visual-studio-2019">
-          Microsoft Visual C++ Build Tools 2019
-        </a>
-        which provides just the Visual C++ build tools. Alternately, you
-        can <a href="https://www.visualstudio.com/downloads/">install</a>
-        Visual Studio 2019, Visual Studio 2017, Visual Studio 2015, or Visual Studio 2013 and during install select
-        the “C++ tools.”
-      </p>
-      <p>
-        For further information about configuring Rust on Windows see the
-        <a href="https://github.com/rust-lang/rustup.rs/blob/master/README.md#working-with-rust-on-windows">Windows-specific <code>rustup</code> documentation</a>.
-      </p>
+      <h3>{{text install-notes-windows-heading}}</h3>
+      {{text install-notes-windows-description}}
     </div>
   </div>
 </section>
@@ -106,14 +44,15 @@
 <section id="other-methods" class="purple">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>Other installation methods</h2>
+      <h2>{{text install-other-methods-heading}}</h2>
       <div class="highlight"></div>
     </header>
     <p>
-      The installation described above, via <code>rustup</code>, is the preferred way to install Rust
-      for most developers. However, Rust can be installed via other methods as well.
+      {{text install-other-methods-description}}
     </p>
-    <a href="https://forge.rust-lang.org/other-installation-methods.html" class="button button-secondary">Learn more</a>
+    <a href="https://forge.rust-lang.org/other-installation-methods.html" class="button button-secondary">
+      {{text install-other-methods-link}}
+    </a>
   </div>
 </section>
 
