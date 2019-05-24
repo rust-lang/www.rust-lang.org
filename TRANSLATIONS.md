@@ -4,7 +4,7 @@ The Rust website can be translated into multiple languages using [fluent](https:
 
 ## What can be translated
 
-All text on the website can be translated. Some texts, especially polcies can be translated, but the English version will be the binding one.
+All text on the website can be translated. Some texts, especially policies, can be translated, but the English version will be the binding one.
 
 ## Forming a translation team
 
@@ -32,5 +32,4 @@ Each translation must be reviewed by a second member of the team for quality con
 
 ## Non-written languages
 
-If you want to make a serious effort at providing some sign language content for the page, please get in touch.
-
+If you want to make a serious effort at providing content in non-written languages (such as sign language) for the page, please get in touch.
