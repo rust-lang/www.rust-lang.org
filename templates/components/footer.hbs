@@ -2,46 +2,45 @@
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <div class="flex flex-column flex-row-ns pv0-l">
       <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l" id="get-help">
-        <h4>Get help!</h4>
+        <h4>{{text footer-get-help}}</h4>
         <ul>
-          <li><a href="https://doc.rust-lang.org">Documentation</a></li>
-          <li><a href="https://users.rust-lang.org">Ask a Question on the Users Forum</a></li>
-          <li><a href="http://ping.rust-lang.org">Check Website Status</a></li>
+          <li><a href="https://doc.rust-lang.org">{{text footer-doc}}</a></li>
+          <li><a href="https://users.rust-lang.org">{{text footer-ask}}</a></li>
+          <li><a href="http://ping.rust-lang.org">{{text footer-status}}</a></li>
         </ul>
         <div class="languages">
-            <label for="language-footer" class="hidden">Language</label>
+            <label for="language-footer" class="hidden">{{text choose-language}}</label>
             <select id="language-footer">
                 {{> components/languages-dropdown}}
             </select>
         </div>
       </div>
       <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l">
-        <h4>Terms and policies</h4>
+        <h4>{{text footer-policies}}</h4>
         <ul>
-          <li><a href="/policies/code-of-conduct">Code of Conduct</a></li>
-          <li><a href="/policies/licenses">Licenses</a></li>
-          <li><a href="/policies/media-guide">Logo Policy and Media Guide</a></li>
-          <li><a href="/policies/security">Security Disclosures</a></li>
-          <li><a href="/policies">All Policies</a></li>
+          <li><a href="{{baseurl}}/policies/code-of-conduct">{{text footer-coc}}</a></li>
+          <li><a href="{{baseurl}}/policies/licenses">{{text footer-licenses}}</a></li>
+          <li><a href="{{baseurl}}/policies/media-guide">{{text footer-media}}</a></li>
+          <li><a href="{{baseurl}}/policies/security">{{text footer-security}}</a></li>
+          <li><a href="{{baseurl}}/policies">{{text footer-policies-all}}</a></li>
         </ul>
       </div>
       <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l">
-        <h4>Social</h4>
+        <h4>{{text footer-social}}</h4>
         <div class="flex flex-row flex-wrap">
-          <a href="https://twitter.com/rustlang"><img src="/static/images/twitter.svg" alt="twitter logo" title="Twitter"/></a>
-          <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA"><img class="pv2" src="/static/images/youtube.svg" alt="youtube logo" title="YouTube"/></a>
-          <a href="https://discord.gg/rust-lang"><img src="/static/images/discord.svg" alt="discord logo" title="Discord"/></a>
-          <a href="https://github.com/rust-lang"><img src="/static/images/github.svg" alt="github logo" title="GitHub"/></a>
+          <a href="https://twitter.com/rustlang"><img src="/static/images/twitter.svg" alt="twitter logo" title="{{text footer-alt-twitter}}"/></a>
+          <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA"><img class="pv2" src="/static/images/youtube.svg" alt="{{text footer-alt-youtube}}" title="YouTube"/></a>
+          <a href="https://discord.gg/rust-lang"><img src="/static/images/discord.svg" alt="discord logo" title="{{text footer-alt-discord}}"/></a>
+          <a href="https://github.com/rust-lang"><img src="/static/images/github.svg" alt="github logo" title="{{text footer-alt-github}}"/></a>
         </div>
       </div>
 
     </div>
     <div class="attribution">
       <p>
-        Maintained by the Rust Team. See a typo?
-        <a href="https://github.com/rust-lang/www.rust-lang.org">Send a fix here</a>!
+        {{text footer-attribution}}
       </p>
-      <p>Looking for the <a href="https://prev.rust-lang.org">previous website</a>?</p>
+      <p>{{text footer-old-site}}</p>
     </div>
   </div>
 </footer>

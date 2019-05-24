@@ -93,6 +93,11 @@ button {
   }
 }
 
+p {
+  margin-top: 0;
+  margin-bottom: 2.5rem;
+}
+
 .button.button-secondary {
   font-size: 0.8em;
 }
@@ -176,6 +181,10 @@ section {
       font-size: 4.2rem;
       line-height: 1.25;
     }
+  }
+
+  h3 {
+    line-height: 1.3;
   }
 
   p {
