@@ -6,9 +6,8 @@ static HEADERS: &[(&str, &str)] = &[
     ("x-xss-protection", "1; mode=block"),
     ("strict-transport-security", "max-age=63072000"),
     ("x-content-type-options", "nosniff"),
-    ("x-frame-options", "DENY"),
     ("referrer-policy", "no-referrer, strict-origin-when-cross-origin"),
-    ("content-security-policy", "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' avatars.githubusercontent.com; font-src 'self'; manifest-src 'self'; frame-src player.vimeo.com"),
+    ("content-security-policy", "default-src 'self' pontoon.rust-lang.org pontoon.mozilla.org; connect-src 'self' pontoon.rust-lang.org ; frame-ancestors 'self' pontoon.rust-lang.org rust-pontoon.herokuapp.com; script-src 'self' pontoon.rust-lang.org pontoon.mozilla.org; style-src 'self' pontoon.rust-lang.org pontoon.mozilla.org; img-src 'self' avatars.githubusercontent.com pontoon.rust-lang.org pontoon.mozilla.org; font-src 'self'; manifest-src 'self'; frame-src pontoon.rust-lang.org player.vimeo.com"),
 ];
 
 pub(crate) struct InjectHeaders;
