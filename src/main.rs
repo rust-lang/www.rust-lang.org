@@ -32,6 +32,7 @@ mod teams;
 
 use production::User;
 
+use std::env;
 use std::fs;
 use std::fs::File;
 use std::io::prelude::*;
@@ -61,10 +62,15 @@ struct Context<T: ::serde::Serialize> {
     data: T,
     lang: String,
     baseurl: String,
+    pontoon_enabled: bool,
 }
 
 static LAYOUT: &str = "components/layout";
 static ENGLISH: &str = "en-US";
+
+fn pontoon_enabled() -> bool {
+    env::var("RUST_WWW_PONTOON").is_ok()
+}
 
 fn baseurl(lang: &str) -> String {
     if lang == "en-US" {
@@ -209,6 +215,7 @@ fn not_found() -> Template {
         data: (),
         lang: ENGLISH.to_string(),
         baseurl: String::new(),
+        pontoon_enabled: pontoon_enabled(),
     };
     Template::render(page, &context)
 }
@@ -263,6 +270,7 @@ fn render_index(lang: String) -> Template {
         },
         baseurl: baseurl(&lang),
         lang,
+        pontoon_enabled: pontoon_enabled(),
     };
     Template::render(page, &context)
 }
@@ -278,6 +286,7 @@ fn render_category(category: Category, lang: String) -> Template {
         data: (),
         baseurl: baseurl(&lang),
         lang,
+        pontoon_enabled: pontoon_enabled(),
     };
     Template::render(page, &context)
 }
@@ -293,6 +302,7 @@ fn render_production(lang: String) -> Template {
         data: load_users_data(),
         baseurl: baseurl(&lang),
         lang,
+        pontoon_enabled: pontoon_enabled(),
     };
     Template::render(page, &context)
 }
@@ -310,6 +320,7 @@ fn render_governance(lang: String) -> Result<Template, Status> {
                 data,
                 baseurl: baseurl(&lang),
                 lang,
+                pontoon_enabled: pontoon_enabled(),
             };
             Ok(Template::render(page, &context))
         }
@@ -337,6 +348,7 @@ fn render_team(
                 data,
                 baseurl: baseurl(&lang),
                 lang,
+                pontoon_enabled: pontoon_enabled(),
             };
             Ok(Template::render(page, &context))
         }
@@ -368,6 +380,7 @@ fn render_subject(category: Category, subject: String, lang: String) -> Template
         data: (),
         baseurl: baseurl(&lang),
         lang,
+        pontoon_enabled: pontoon_enabled(),
     };
     Template::render(page, &context)
 }
