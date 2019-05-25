@@ -286,7 +286,7 @@ pub fn create_bundle(lang: &str, resources: &'static Vec<FluentResource>) -> Flu
 
 fn build_resources() -> HashMap<String, Vec<FluentResource>> {
     let mut all_resources = HashMap::new();
-    let entries = read_dir("./templates/fluent-resource").unwrap();
+    let entries = read_dir("./locales").unwrap();
     for entry in entries {
         let entry = entry.unwrap();
         if let Ok(lang) = entry.file_name().into_string() {
