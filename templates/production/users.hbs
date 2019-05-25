@@ -7,11 +7,11 @@
 </header>
 
 <section id="users" class="white">
-  <div class="container">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center ph5-l flex-auto-l">
     {{#each data as |user_row| ~}}
       <div class="flex flex-column flex-row-l flex-wrap-l justify-start tc">
         {{#each user_row as |u| ~}}
-          <div class="flex flex-column justify-between ba br3 b--black mw-100 w-100-l pa3 ma4 max-width-quarter-l">
+          <div class="flex flex-column justify-start ba br3 b--black mw-100 w-100-l pa4 ma4 max-width-quarter-l">
             <div class="user-logo">
               <a href="{{ u.url }}">
                 <img src="/static/images/user-logos/{{ u.logo }}" alt="{{ u.logo }}" />
