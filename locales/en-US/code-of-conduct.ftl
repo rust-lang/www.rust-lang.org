@@ -16,8 +16,8 @@ coc-conduct-description =
           <li>Private harassment is also unacceptable. No matter who you are, if you feel you have been or are being harassed or made uncomfortable by a community member, please contact one of the channel ops or any of the { $coc-rust-moderation-team-anchor } immediately. Whether you’re a regular contributor or a newcomer, we care about making this community a safe place for you and we’ve got your back.</li>
           <li>Likewise any spamming, trolling, flaming, baiting or other attention-stealing behavior is not welcome.</li>
         </ul>
-coc-rust-moderation-team-anchor-text = Rust moderation team
-coc-conduct-link = Email The Moderation Team
+coc-conduct-description-team-anchor-text = Rust moderation team
+coc-conduct-email-button = Email The Moderation Team
 
 coc-moderation-heading = Moderation
 coc-moderation-description =
@@ -36,3 +36,5 @@ coc-moderation-description =
         <p>And if someone takes issue with something you said or did, resist the urge to be defensive. Just stop doing what it was they complained about and apologize. Even if you feel you were misinterpreted or unfairly accused, chances are good there was something you could’ve communicated better — remember that it’s your responsibility to make your fellow Rustaceans comfortable. Everyone wants to get along and we are all here first and foremost because we want to talk about cool technology. You will find that people will be eager to assume good intent and forgive as long as you earn their trust.</p>
         <p>The enforcement policies listed above apply to all official Rust venues; including Discord channels (https://discord.gg/rust-lang); GitHub repositories under rust-lang, rust-lang-nursery, and rust-lang-deprecated; and all forums under rust-lang.org (users.rust-lang.org, internals.rust-lang.org). For other projects adopting the Rust Code of Conduct, please contact the maintainers of those projects for enforcement. If you wish to use this code of conduct for your own project, consider explicitly mentioning your moderation policy or making a copy with your own moderation policy so as to avoid confusion.</p>
         <p><i>Adapted from the <a href="http://blog.izs.me/post/30036893703/policy-on-trolling">Node.js Policy on Trolling</a> as well as the <a href="https://www.contributor-covenant.org/version/1/3/0/">Contributor Covenant v1.3.0</a>.</i></p>
+
+coc-moderation-description-team-anchor-text = Rust moderation team
