@@ -164,8 +164,23 @@ impl HelperDef for I18NHelper {
             .expect("Language not set in context")
             .as_str()
             .expect("Language must be string");
+        let pontoon = context
+            .data()
+            .get("pontoon_enabled")
+            .expect("Pontoon not set in context")
+            .as_bool()
+            .expect("Pontoon must be boolean");
+
         let response = self.lookup_with_fallback(lang, &id, args.as_ref());
-        out.write(&response).map_err(RenderError::with)
+        if pontoon {
+            out.write(&format!("<span data-l10n-id='{}'>", id))
+                .map_err(RenderError::with)?;
+        }
+        out.write(&response).map_err(RenderError::with)?;
+        if pontoon {
+            out.write("</span>").map_err(RenderError::with)?;
+        }
+        Ok(())
     }
 }
 
@@ -228,28 +243,35 @@ impl HelperDef for TeamHelper {
             .expect("Language not set in context")
             .as_str()
             .expect("Language must be string");
+        let pontoon = context
+            .data()
+            .get("pontoon_enabled")
+            .expect("Pontoon not set in context")
+            .as_bool()
+            .expect("Pontoon must be boolean");
+        let team_name = team["name"].as_str().unwrap();
 
-        let mut team_name = team["name"].as_str().unwrap();
-        if team_name == "wg-rls-2.0" {
-            // XXXManishearth this can be removed once we land https://github.com/rust-lang/team/pull/70
-            team_name = "wg-rls-2";
-        }
         let fluent_id = format!("governance-team-{}-{}", team_name, id);
 
-        // We currently fall back to using the team data directly
-        // We should switch to including a team-data-derived ftl file for English
-        if let Some(value) = self.i18n.lookup(lang, &fluent_id, None) {
-            return out.write(&value).map_err(RenderError::with);
+        if pontoon {
+            out.write(&format!("<span data-l10n-id='{}'>", fluent_id))
+                .map_err(RenderError::with)?;
         }
 
-        if lang != "en-US" {
-            if let Some(value) = self.i18n.lookup("en-US", &fluent_id, None) {
-                return out.write(&value).map_err(RenderError::with);
-            }
+        // English uses the team data directly, so that it gets autoupdated
+        if lang == "en-US" {
+            let english = team["website_data"][id].as_str().unwrap();
+            out.write(&english).map_err(RenderError::with)?;
+        } else if let Some(value) = self.i18n.lookup(lang, &fluent_id, None) {
+            out.write(&value).map_err(RenderError::with)?;
+        } else {
+            let english = team["website_data"][id].as_str().unwrap();
+            out.write(&english).map_err(RenderError::with)?;
         }
-
-        let english = team["website_data"][id].as_str().unwrap();
-        out.write(&english).map_err(RenderError::with)
+        if pontoon {
+            out.write("</span>").map_err(RenderError::with)?;
+        }
+        Ok(())
     }
 }
 
@@ -286,7 +308,7 @@ pub fn create_bundle(lang: &str, resources: &'static Vec<FluentResource>) -> Flu
 
 fn build_resources() -> HashMap<String, Vec<FluentResource>> {
     let mut all_resources = HashMap::new();
-    let entries = read_dir("./templates/fluent-resource").unwrap();
+    let entries = read_dir("./locales").unwrap();
     for entry in entries {
         let entry = entry.unwrap();
         if let Ok(lang) = entry.file_name().into_string() {
