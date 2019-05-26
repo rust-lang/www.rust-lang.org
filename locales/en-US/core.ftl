@@ -1,6 +1,3 @@
-rust = Rust
-rust-language-server = Rust Language Server
-
 -security-at-rust-lang-org-anchor =
         <a href="mailto:security@rust-lang.org">security@rust-lang.org</a>
 -rust-security-team-key-href =
