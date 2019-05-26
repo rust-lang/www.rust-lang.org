@@ -61,3 +61,84 @@ learn-nomicon-button = Read the ’nomicon
 learn-unstable-alt = A hand sharing sparkles
 learn-unstable = The Unstable Book has documentation for unstable features that you can only use with nightly Rust.
 learn-unstable-button = Read the unstable book
+
+# learn/get-started.hbs
+
+learn-setup-heading = Getting started
+learn-setup = Quickly set up a Rust development environment and write a small app!
+
+learn-install-heading = Installing Rust
+learn-play = You can try Rust online in the Rust Playground without installing anything on your computer.
+learn-play-button = Try Rust without installing
+
+learn-install-rustup-header = Rustup: the Rust installer and version management tool
+learn-install-rustup = The primary way that folks install Rust is through a tool called Rustup, which is a Rust installer and version management tool.
+learn-install-rustup-button = Learn more about installation
+
+
+learn-install-cargo-header = Cargo: the Rust build tool and package manager
+learn-install-cargo = <p>When you install Rustup you’ll also get the latest stable version of the Rust build tool and
+                          package manager, also known as Cargo. Cargo does lots of things:</p>
+                        <ul>
+                          <li>build your project with <code>cargo build</code></li>
+                          <li>run your project with <code>cargo run</code></li>
+                          <li>test your project with <code>cargo test</code></li>
+                          <li>build documentation for your project with <code>cargo doc</code></li>
+                          <li>publish a library to <a href="https://crates.io">crates.io</a> with <code>cargo publish</code></li>
+                        </ul>
+                        <p>To test that you have Rust and Cargo installed, you can run this in your terminal of choice:</p>
+                        <p><code>cargo --version</code></p>
+learn-install-cargo-button = Read the cargo book
+
+learn-install-other = Other tools
+learn-install-editors = Rust support is available in many editors:
+learn-install-fmt-clippy = You can install a code formatting tool (Rustfmt) with <code>rustup component add rustfmt</code>, and a linting tool (Clippy) with <code>rustup component add clippy</code>.
+
+
+learn-generating = Generating a new project
+learn-generating-steps = <p>Let’s write a small application with our new Rust development environment. To start, we’ll use Cargo to
+      make a new project for us. In your terminal of choice run:</p>
+    <p><code>cargo new hello-rust</code></p>
+    <p>This will generate a new directory called <code>hello-rust</code> with the following files:</p>
+    { $tree }
+    <p><code>Cargo.toml</code> is the manifest file for Rust. It’s where you keep metadata for your project, as well as
+      dependencies.</p>
+    <p><code>src/main.rs</code> is where we’ll write our application code.</p>
+    <hr/>
+    <p><code>cargo new</code> generates a "Hello, world!" project for us! We can run this program by moving into the new directory that we made and running this in our terminal:</p>
+    <p><code>cargo run</code></p>
+    <p>You should see this in your terminal:</p>
+    { $output }
+
+learn-dependencies = Adding dependencies
+learn-dependencies-steps = <p>Let’s add a dependency to our application. You can find all sorts of libraries on <a href="https://crates.io">crates.io</a>, the package registry for Rust. In Rust, we often refer to
+      packages as “crates.”</p>
+    <p>In this project, we’ll use a crate called <a href="https://crates.io/crates/ferris-says"><code>ferris-says</code></a>.
+      <p>In our <code>Cargo.toml</code> file we’ll add this information (that we got from the crate page):</p>
+      { $cargotoml }
+      <p>Now we can run:</p>
+      <code>cargo build</code>
+      <p>...and Cargo will install our dependency for us.</p>
+      <p>You’ll see that running this command created a new file for us, <code>Cargo.lock</code>. This file is a log of
+        the exact versions of the dependencies we are using locally.</p>
+      <p>To use this dependency, we can open <code>main.rs</code>, remove everything that’s in there (it’s just another
+        example), and add this line to it:</p>
+      <pre><code>use ferris_says::say;</code></pre>
+      <p>This line means that we can now use the <code>say</code> function that the <code>ferris-says</code> crate
+        exports for us.</p>
+
+learn-app = A small Rust application
+learn-app-steps = <p>Now let’s write a small application with our new dependency. In our <code>main.rs</code>, add the following
+      code:</p>
+    { $code }
+    <p>Once we save that, we can run our application by typing:</p>
+    <p><code>cargo run</code></p>
+    <p>Assuming everything went well, you should see your application print this to the screen:</p>
+    { $output }
+
+
+learn-ferris-who = Who’s this crab, Ferris?
+learn-ferris = <p>Ferris is the unofficial mascot of the Rust Community. Many Rust programmers call themselves “Rustaceans,” a play on the word “<a href="https://en.wikipedia.org/wiki/Crustacean">crustacean</a>.” We refer to Ferris with the pronouns “they,” “them,” etc., rather than with gendered pronouns.</p>
+               <p>Ferris is a name playing off of the adjective, “ferrous,” meaning of or pertaining to iron. Since Rust often forms on iron, it seemed like a fun origin for our mascot’s name!</p>
+               <p>You can find more images of Ferris on <a href="http://rustacean.net/">http://rustacean.net/</a>.
+learn-ferris-alt = a gif of ferris scurrying side to side
