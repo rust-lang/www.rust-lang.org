@@ -261,14 +261,13 @@ impl HelperDef for TeamHelper {
             out.write(&format!("<span data-l10n-id='{}'>", fluent_id))
                 .map_err(RenderError::with)?;
         }
-        // We currently fall back to using the team data directly
-        // We should switch to including a team-data-derived ftl file for English
-        if let Some(value) = self.i18n.lookup(lang, &fluent_id, None) {
+
+        // English uses the team data directly, so that it gets autoupdated
+        if lang == "en-US" {
+            let english = team["website_data"][id].as_str().unwrap();
+            out.write(&english).map_err(RenderError::with)?;
+        } else if let Some(value) = self.i18n.lookup(lang, &fluent_id, None) {
             out.write(&value).map_err(RenderError::with)?;
-        } else if lang != "en-US" {
-            if let Some(value) = self.i18n.lookup("en-US", &fluent_id, None) {
-                out.write(&value).map_err(RenderError::with)?;
-            }
         } else {
             let english = team["website_data"][id].as_str().unwrap();
             out.write(&english).map_err(RenderError::with)?;
