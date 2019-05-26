@@ -17,6 +17,8 @@ use std::path::Path;
 use fluent_bundle::{FluentBundle, FluentResource, FluentValue};
 
 lazy_static! {
+    static ref CORE_RESOURCE: FluentResource =
+        read_from_file("./locales/core.ftl").expect("cannot find core.ftl");
     static ref RESOURCES: HashMap<String, Vec<FluentResource>> = build_resources();
     static ref BUNDLES: HashMap<String, FluentBundle<'static>> = build_bundles();
 }
@@ -296,7 +298,9 @@ pub fn read_from_dir<P: AsRef<Path>>(dirname: P) -> io::Result<Vec<FluentResourc
 
 pub fn create_bundle(lang: &str, resources: &'static Vec<FluentResource>) -> FluentBundle<'static> {
     let mut bundle = FluentBundle::new(&[lang]);
-
+    bundle
+        .add_resource(&CORE_RESOURCE)
+        .expect("Failed to add core resource to bundle");
     for res in resources {
         bundle
             .add_resource(res)
@@ -311,9 +315,11 @@ fn build_resources() -> HashMap<String, Vec<FluentResource>> {
     let entries = read_dir("./locales").unwrap();
     for entry in entries {
         let entry = entry.unwrap();
-        if let Ok(lang) = entry.file_name().into_string() {
-            let resources = read_from_dir(entry.path()).unwrap();
-            all_resources.insert(lang, resources);
+        if entry.file_type().unwrap().is_dir() {
+            if let Ok(lang) = entry.file_name().into_string() {
+                let resources = read_from_dir(entry.path()).unwrap();
+                all_resources.insert(lang, resources);
+            }
         }
     }
     all_resources
