@@ -25,7 +25,11 @@
     <div>
       <h3>{{text install-notes-getting-started-heading}}</h3>
       <p>
-        {{text install-notes-getting-started-description}}
+        {{#text install-notes-getting-started-description}}
+          {{#textparam getting-started-href}}
+            {{baseurl}}/learn/get-started
+          {{/textparam}}
+        {{/text}}
       </p>
 
       <h3>{{text install-notes-rustup-heading}}</h3>
