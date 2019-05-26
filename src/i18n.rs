@@ -15,19 +15,48 @@ use std::io::prelude::*;
 use std::path::Path;
 
 use fluent_bundle::{FluentBundle, FluentResource, FluentValue};
+use fluent_locale::negotiate_languages;
 
 lazy_static! {
     static ref RESOURCES: HashMap<String, Vec<FluentResource>> = build_resources();
     static ref BUNDLES: HashMap<String, FluentBundle<'static>> = build_bundles();
+    static ref LOCALES: Vec<String> = build_locale_list();
+}
+
+pub struct Fallback<'res> {
+    default: Option<&'res str>,
+    availables: &'res Vec<String>,
+}
+
+impl<'res> Fallback<'res> {
+    pub fn new(available_locales: &'res Vec<String>) -> Self {
+        Self {
+            default: Some("en-US"),
+            availables: available_locales,
+        }
+    }
+
+    pub fn order<'t, T: AsRef<str>>(&'t self, targets: &'t [T]) -> Vec<&'t str> {
+        negotiate_languages(
+            targets,
+            &self.availables,
+            self.default,
+            &fluent_locale::NegotiationStrategy::Filtering,
+        )
+    }
 }
 
 pub struct I18NHelper {
     bundles: &'static HashMap<String, FluentBundle<'static>>,
+    fallback: Fallback<'static>,
 }
 
 impl I18NHelper {
     pub fn new() -> Self {
-        Self { bundles: &*BUNDLES }
+        Self {
+            bundles: &*BUNDLES,
+            fallback: Fallback::new(&*LOCALES),
+        }
     }
 
     pub fn lookup(
@@ -58,17 +87,12 @@ impl I18NHelper {
         text_id: &str,
         args: Option<&HashMap<&str, FluentValue>>,
     ) -> String {
-        if let Some(val) = self.lookup(lang, text_id, args) {
-            val
-        } else if lang != "en-US" {
-            if let Some(val) = self.lookup("en-US", text_id, args) {
-                val
-            } else {
-                format!("Unknown localization {}", text_id)
+        for l in self.fallback.order(&[lang]) {
+            if let Some(val) = self.lookup(l, text_id, args) {
+                return val;
             }
-        } else {
-            format!("Unknown localization {}", text_id)
         }
+        format!("Unknown localization {}", text_id)
     }
 }
 
@@ -282,6 +306,14 @@ pub fn create_bundle(lang: &str, resources: &'static Vec<FluentResource>) -> Flu
     }
 
     bundle
+}
+
+fn build_locale_list() -> Vec<String> {
+    let mut locale_list = Vec::new();
+    for key in RESOURCES.keys() {
+        locale_list.push(key.clone());
+    }
+    locale_list
 }
 
 fn build_resources() -> HashMap<String, Vec<FluentResource>> {
