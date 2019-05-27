@@ -55,3 +55,26 @@ embedded-showcase-see-more-link = See More
 
 embedded-showcase-video-description =
         <a href="https://vimeo.com/224912526">Securing the future, with Rust</a> from <a href="https://vimeo.com/cambridgeconsultants">Cambridge Consultants</a> on <a href="https://vimeo.com">Vimeo</a>.
+
+
+## Get started! (templates/components/what/embedded/get-started.hbs)
+
+embedded-get-started-heading = Get started!
+
+embedded-get-started-discovery-book-alt = DIP-6 package
+embedded-get-started-discovery-book-heading = The Discovery book
+embedded-get-started-discovery-book-description =
+        Learn embedded development from the ground up&mdash;using Rust!
+
+embedded-get-started-embedded-rust-book-alt = TFQP-16 package
+embedded-get-started-embedded-rust-book-heading = The Embedded Rust book
+embedded-get-started-embedded-rust-book-description =
+        Already familiar with Embedded development? Jump in with Rust and start reaping the benefits.
+
+embedded-get-started-embedonomicon-alt = BGA package
+embedded-get-started-embedonomicon-heading = The Embedonomicon
+embedded-get-started-embedonomicon-description =
+        Look under the hood of foundational embedded libraries.
+
+embedded-get-started-read-link = Read
+embedded-get-started-more-documentation-link = More Documentation
