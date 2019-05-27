@@ -5,7 +5,8 @@
 # Page Title
 embedded-page-title = Embedded devices
 
-## components/what/pitch.hbs
+
+## Why Rust? (templates/components/what/pitch.hbs)
 
 embedded-pitch-heading = Why Rust?
 
@@ -40,3 +41,6 @@ embedded-pitch-community-description =
         As part of the Rust open source project, support for embedded systems is driven by a best-in-class open source community, with support from commercial partners.
 
 embedded-learn-more-link = Learn more
+
+
+## Showcase (templates/components/what/showcase.hbs)
