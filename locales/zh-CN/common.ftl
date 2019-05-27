@@ -9,7 +9,7 @@ nav-governance = 管理
 nav-community = 社区
 nav-blog = 博客
 
-choose-language = 语言
+choose-language = 选择语言
 
 nav-logo-alt = Rust Logo
 
