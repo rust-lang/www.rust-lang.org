@@ -51,8 +51,8 @@ use sass_rs::{compile_file, Options};
 
 use category::Category;
 
-use i18n::{I18NHelper, SupportedLocale, TeamHelper};
 use caching::{Cached, Caching};
+use i18n::{I18NHelper, SupportedLocale, TeamHelper};
 use rocket::http::hyper::header::CacheDirective;
 
 #[derive(Serialize)]
