@@ -78,3 +78,33 @@ embedded-get-started-embedonomicon-description =
 
 embedded-get-started-read-link = Read
 embedded-get-started-more-documentation-link = More Documentation
+
+
+## Production use (templates/components/what/embedded/testimonials.hbs)
+
+embedded-testimonials-heading = Production use
+
+embedded-testimonials-sensirion-alt = Sensirion logo
+embedded-testimonials-sensirion-quote =
+        At Sensirion we recently used Rust to create an embedded demonstrator for Sensirion’s <a href="https://sensirion-automotive.com/products#PM2_5">Particulate Matter Sensor</a>. Due to the easy cross-compilation and the availability of many high quality crates on crates.io <b>we quickly ended up with a fast and robust demonstrator.</b>
+embedded-testimonials-sensirion-attribution =
+        &ndash; Raphael Nestler, Software Engineer, Sensirion
+
+embedded-testimonials-airborne-alt = Airborne Engineering Ltd logo
+embedded-testimonials-airborne-quote =
+        At Airborne Engineering Ltd. we recently used Rust to write an Ethernet bootloader, <a href="https://github.com/airborneengineering/blethrs">blethrs</a>, for our in-house data acquisition system. <b>Rust is a promising language and we’re excited to use it for our future projects, embedded and otherwise.</b>
+embedded-testimonials-airborne-attribution =
+        &ndash; Dr. Adam Greig, Instrumentation Engineer, Airborne Engineering Ltd.
+
+embedded-testimonials-49nord-alt = 49nord logo
+# "Fluent" requires a square bracket which is the first character of a line to be escaped like this: {"["} See https://projectfluent.org/fluent/guide/special.html
+embedded-testimonials-49nord-quote =
+        {"["}Rust] enables us to ship software faster and more correct than we thought possible. Thanks to Rust, we can take memory safety for granted, while other benefits of a zero-overhead language with a sophisticated type system help us develop maintainable software. <b>Rust makes our customers happy, as well as our engineers.</b>
+embedded-testimonials-49nord-attribution =
+        &ndash; Marc Brinkmann, CEO, 49nord
+
+embedded-testimonials-terminal-tech-alt = Terminal Technologies logo
+embedded-testimonials-terminal-tech-quote =
+        <b>We think it’s really cool that we can use a modern nice language in the embedded space</b> where usually there’s no alternative to C/C++
+embedded-testimonials-terminal-tech-attribution =
+        &ndash; Aleksei Arbuzov, Senior Software Engineer, Terminal Technologies
