@@ -44,3 +44,14 @@ embedded-learn-more-link = Learn more
 
 
 ## Showcase (templates/components/what/showcase.hbs)
+
+embedded-showcase-heading = Showcase
+
+embedded-showcase-quote =
+        “I was so excited when I came across Rust, from Mozilla. Rust is a new programming language, with the tag line ‘safe, fast, concurrent &ndash; pick three.’ It also has an assured future, with a powerful, committed user community.”
+embedded-showcase-quote-attribution =
+        &ndash; Jonathan Pallant, Senior Consultant, Cambridge Consultants
+embedded-showcase-see-more-link = See More
+
+embedded-showcase-video-description =
+        <a href="https://vimeo.com/224912526">Securing the future, with Rust</a> from <a href="https://vimeo.com/cambridgeconsultants">Cambridge Consultants</a> on <a href="https://vimeo.com">Vimeo</a>.
