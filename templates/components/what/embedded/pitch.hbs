@@ -1,82 +1,110 @@
 <section id="embedded-why-rust" class="green">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>Why Rust?</h2>
+      <h2>
+        Why Rust?
+      </h2>
       <div class="highlight"></div>
     </header>
-    <div class="flex flex-column flex-row-l">
-      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l" id="powerful-static-analysis">
-        <div class="tc-l">
-          <img src="/static/images/microscope.svg" alt="A microscope" class="mw3 mw4-ns"/>
+    
+    <div class="flex-none flex-l flex-row">
+      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l" id="powerful-static-analysis">
+        <div class="v-top tc-l">
+          <img src="/static/images/microscope.svg" alt="A microscope"
+            class="mw3 mw4-ns"/>
         </div>
-        <h3 class="tc-l">Powerful static analysis</h3>
-
-        <p class="flex-grow-1">
-          Enforce pin and peripheral configuration at compile time. Guarantee that resources won’t be used by
-          unintended parts of your application.
-        </p>
-        <a href="https://docs.rust-embedded.org/book/static-guarantees/" class="button button-secondary">Learn more</a>
+        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+          <h3 class="tc-l">
+            Powerful static analysis
+          </h3>
+          <p class="flex-grow-1">
+            Enforce pin and peripheral configuration at compile time. Guarantee that resources won’t be used by unintended parts of your application.
+          </p>
+          <a href="https://docs.rust-embedded.org/book/static-guarantees/" class="button button-secondary">Learn more</a>
+        </div>
       </div>
+
       <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l" id="flexible-memory-management">
         <div class="v-top tc-l">
-          <img src="/static/images/ram-memory.svg" alt="A RAM stick" class="mw3 mw4-ns"/>
+          <img src="/static/images/ram-memory.svg" alt="A RAM stick"
+            class="mw3 mw4-ns"/>
         </div>
-        <h3 class="tc-l">Flexible memory management</h3>
-
-        <p class="flex-grow-1">
-          Dynamic memory allocation is optional. Use a global allocator and dynamic data structures.
-          Or leave out the heap altogether and statically allocate everything.
-        </p>
+        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+          <h3 class="tc-l">
+            Flexible memory 
+          </h3>
+          <p class="flex-grow-1">
+            Dynamic memory allocation is optional. Use a global allocator and dynamic data structures.
+            Or leave out the heap altogether and statically allocate everything.
+          </p>
           <a href="https://docs.rust-embedded.org/book/collections/" class="button button-secondary">Learn more</a>
-      </div>
-      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l" id="safe-concurrency">
-        <div class="v-top tc-l">
-          <img src="/static/images/gears.svg" alt="Gears" class="mw3 mw4-ns"/>
         </div>
-        <h3 class="v-top tc-l">Fearless concurrency</h3>
+      </div>
 
-        <p>
-          Rust makes it impossible to accidentally share state between threads.
-          Use any concurrency approach you like, and you’ll still get Rust’s strong guarantees.
-        </p>
-        <a href="https://docs.rust-embedded.org/book/concurrency/" class="button button-secondary">Learn more</a>
+
+      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l" id="flexible-memory-management">
+        <div class="v-top tc-l">
+          <img src="/static/images/gears.svg" alt="Gears"
+            class="mw3 mw4-ns"/>
+        </div>
+        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+          <h3 class="v-top tc-l">
+            Fearless concurrency
+          </h3>
+
+          <p class="flex-grow-1">
+            Rust makes it impossible to accidentally share state between threads.
+            Use any concurrency approach you like, and you’ll still get Rust’s strong guarantees.
+          </p>
+          <a href="https://docs.rust-embedded.org/book/concurrency/" class="button button-secondary">Learn more</a>
+        </div>
       </div>
     </div>
+  
     <div class="flex-none flex-l flex-row mt5-l">
-      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l">
+      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l" id="interoperability">
         <div class="v-top tc-l">
-          <img src="/static/images/handshake.svg" alt="Handshake" class="mw3 mw4-ns"/>
+          <img src="/static/images/handshake.svg" alt="Handshake"
+            class="mw3 mw4-ns"/>
         </div>
-        <h3 class="tc-l">Interoperability</h3>
-
-        <p class="flex-grow-1">
-          Integrate Rust into your existing C codebase or leverage an existing SDK to write a Rust
-          application.
-        </p>
-        <a href="https://docs.rust-embedded.org/book/interoperability/" class="button button-secondary">Learn more</a>
+        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+          <h3 class="tc-l">
+            Interoperability
+          </h3>
+          <p class="flex-grow-1">
+            Integrate Rust into your existing C codebase or leverage an existing SDK to write a Rust
+            application.
+          </p>
+          <a href="https://docs.rust-embedded.org/book/interoperability/" class="button button-secondary">Learn more</a>
+        </div>
       </div>
       <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l" id="portability">
         <div class="v-top tc-l">
-          <img src="/static/images/luggage.svg" alt="Luggage trolley" class="mw3 mw4-ns"/>
+          <img src="/static/images/luggage.svg" alt="Luggage trolley"
+            class="mw3 mw4-ns"/>
         </div>
-        <h3 class="tc-l">Portability</h3>
+        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+          <h3 class="tc-l">Portability</h3>
 
-        <p class="flex-grow-1">
-          Write a library or driver once, and use it with a variety of systems, ranging
-          from very small microcontrollers to powerful SBCs.
-        </p>
-        <a href="https://docs.rust-embedded.org/book/portability/" class="button button-secondary">Learn more</a>
+          <p class="flex-grow-1">
+            Write a library or driver once, and use it with a variety of systems, ranging
+            from very small microcontrollers to powerful SBCs.
+          </p>
+          <a href="https://docs.rust-embedded.org/book/portability/" class="button button-secondary">Learn more</a>
+        </div>
       </div>
       <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l" id="community-driven">
         <div class="v-top tc-l">
           <img src="/static/images/cli-rustc-approved.svg" alt="Shield Logo" class="mw3 mw4-ns"/>
         </div>
-        <h3 class="tc-l">Community driven</h3>
+        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+          <h3 class="tc-l">Community driven</h3>
 
-        <p class="flex-grow-1">
-          As part of the Rust open source project, support for embedded systems is driven by a best-in-class open source community, with support from commercial partners.
-        </p>
-        <a href="https://github.com/rust-embedded/wg" class="button button-secondary">Learn more</a>
+          <p class="flex-grow-1">
+            As part of the Rust open source project, support for embedded systems is driven by a best-in-class open source community, with support from commercial partners.
+          </p>
+          <a href="https://github.com/rust-embedded/wg" class="button button-secondary">Learn more</a>
+        </div>
       </div>
     </div>
   </div>
