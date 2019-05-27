@@ -20,18 +20,18 @@ footer-status = 检查网站状态
 footer-policies = 条款与政策
 footer-coc = 行为准则
 footer-licenses = 许可证
-footer-media = Logo Policy and Media Guide
-footer-security = Security Disclosures
-footer-policies-all = All Policies
-footer-social = Social
-footer-get-help = Get help!
+footer-media = 商标政策与使用指南
+footer-security = 安全问题报告
+footer-policies-all = 政策总览
+footer-social = 社交账号
+footer-get-help = 获取帮助
 
 footer-alt-twitter = Twitter
 footer-alt-youtube = youtube logo
 footer-alt-discord = Discord
 footer-alt-github = GitHub
 
-footer-attribution = Maintained by the Rust Team. See a typo?
-        <a href="https://github.com/rust-lang/www.rust-lang.org">Send a fix here</a>!
+footer-attribution = 由 Rust 团队维护。发现网页存在错误?
+        <a href="https://github.com/rust-lang/www.rust-lang.org">帮助我们修复</a>!
 
-footer-old-site = Looking for the <a href="https://prev.rust-lang.org">previous website</a>?
+footer-old-site = 寻找<a href="https://prev.rust-lang.org">旧版网站</a>?
