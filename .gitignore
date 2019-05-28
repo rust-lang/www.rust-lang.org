@@ -1,9 +1,10 @@
 /target/
 **/*.rs.bk
 /node_modules
-/static/styles/app.css
-/static/styles/fonts.css
 /static/styles/*.map
 .sass-cache
 localhost*
-/static/styles/vendor.css
+/static/scripts/app*.js
+/static/styles/vendor*.css
+/static/styles/app*.css
+/static/styles/fonts*.css
