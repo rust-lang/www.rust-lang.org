@@ -1,6 +1,13 @@
-# Translations that appear on most/all pages
+## Translations that appear on many pages
 
-# components/nav.hbs
+rust = Rust
+
+get-started-exclamation = Get started!
+getting-started = Getting started
+why-rust = Why Rust?
+production-use = Production use
+
+## components/nav.hbs
 
 nav-install = Install
 nav-learn = Learn
@@ -13,7 +20,8 @@ choose-language = Language
 
 nav-logo-alt = Rust Logo
 
-# components/footer.hbs
+## components/footer.hbs
+
 footer-doc = Documentation
 footer-ask = Ask a Question on the Users Forum
 footer-status = Check Website Status

@@ -64,7 +64,6 @@ learn-unstable-button = Read the unstable book
 
 ## learn/get-started.hbs
 
-learn-setup-heading = Getting started
 learn-setup = Quickly set up a Rust development environment and write a small app!
 
 learn-install-heading = Installing Rust

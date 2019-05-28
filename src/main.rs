@@ -42,7 +42,8 @@ use std::path::{Path, PathBuf};
 use rand::seq::SliceRandom;
 
 use rocket::{
-    http::Status,
+    http::{RawStr, Status},
+    request::{FromParam, Request},
     response::{NamedFile, Redirect},
 };
 use rocket_contrib::templates::Template;
@@ -89,7 +90,12 @@ fn get_title(page_name: &str) -> String {
 
 #[get("/components/<_file..>", rank = 1)]
 fn components(_file: PathBuf) -> Template {
-    not_found()
+    not_found_locale(ENGLISH.into())
+}
+
+#[get("/<locale>/components/<_file..>", rank = 11)]
+fn components_locale(locale: SupportedLocale, _file: PathBuf) -> Template {
+    not_found_locale(locale.0)
 }
 
 #[get("/logos/<file..>", rank = 1)]
@@ -204,7 +210,21 @@ fn redirect_locale(_locale: redirect::Locale, dest: redirect::Destination) -> Re
 }
 
 #[catch(404)]
-fn not_found() -> Template {
+fn not_found(req: &Request) -> Template {
+    let lang = if let Some(next) = req.uri().segments().next() {
+        if let Ok(lang) = SupportedLocale::from_param(RawStr::from_str(next)) {
+            lang.0
+        } else {
+            ENGLISH.into()
+        }
+    } else {
+        ENGLISH.into()
+    };
+
+    not_found_locale(lang)
+}
+
+fn not_found_locale(lang: String) -> Template {
     let page = "404";
     let title = format!("{} - Rust programming language", page).to_string();
     let context = Context {
@@ -213,7 +233,7 @@ fn not_found() -> Template {
         parent: LAYOUT.to_string(),
         is_landing: false,
         data: (),
-        lang: ENGLISH.to_string(),
+        lang,
         baseurl: String::new(),
         pontoon_enabled: pontoon_enabled(),
     };
@@ -222,7 +242,7 @@ fn not_found() -> Template {
 
 #[catch(500)]
 fn catch_error() -> Template {
-    not_found()
+    not_found_locale(ENGLISH.into())
 }
 
 fn compile_sass(filename: &str) {
@@ -420,6 +440,7 @@ fn main() {
                 team_locale,
                 production_locale,
                 subject_locale,
+                components_locale,
                 redirect,
                 redirect_pdfs,
                 redirect_bare_en_us,

@@ -1,5 +1,7 @@
 # Translations that appear on most/all pages
 
+rust = ʇsnɹ
+
 # components/nav.hbs
 nav-install = llɐʇsuI
 nav-learn = uɹɐǝ˥
