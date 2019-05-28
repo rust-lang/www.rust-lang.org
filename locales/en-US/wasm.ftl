@@ -43,3 +43,20 @@ wasm-get-started-mdn-alt = MDN logo
 wasm-get-started-mdn-description =
         Learn more about WebAssembly on the Mozilla Developer Network.
 wasm-get-started-mdn-link = Check it out
+
+
+## Plays well with JavaScript (templates/components/what/wasm/js.hbs)
+
+wasm-js-heading = Plays well with JavaScript
+
+wasm-js-augment-heading = Augment, don’t replace
+wasm-js-augment-description =
+        The dream of WebAssembly is not to kill JavaScript but to work alongside of it, to help super charge processing-heavy or low-level tasks &mdash; tasks that benefit from Rust’s focus on performance.
+
+wasm-js-toolchains-heading = Works with familiar toolchains
+wasm-js-toolchains-description =
+        Publish Rust WebAssembly packages to package registries like npm. Bundle and ship them with webpack, Parcel, and others. Maintain them with tools like <code>npm audit</code> and Greenkeeper.
+
+wasm-js-interop-heading = Seamless interop
+wasm-js-interop-description =
+        Automatically generate binding code between Rust, WebAssembly, and JavaScript APIs. Take advantage of libraries like <a href="https://rustwasm.github.io/wasm-bindgen/web-sys/index.html"><code>web-sys</code></a> that provide pre-packaged bindings for the entire web platform.
