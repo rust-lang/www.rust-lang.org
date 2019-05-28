@@ -23,3 +23,23 @@ wasm-why-rust-amenities-alt = Luggage
 wasm-why-rust-amenities-heading = Modern amenities
 wasm-why-rust-amenities-description =
         A lively ecosystem of libraries to help you hit the ground running. Expressive, zero-cost abstractions. And a welcoming community to help you learn.
+
+
+## Get started! (templates/components/what/wasm/get-started.hbs)
+
+wasm-get-started-heading = Get started!
+
+wasm-get-started-wasm-alt = WebAssembly Logo
+wasm-get-started-wasm-description =
+        Learn more about the fast, safe, and open virtual machine called WebAssembly, and read its standard.
+wasm-get-started-wasm-link = Learn More
+
+wasm-get-started-book-alt = wasm ferris
+wasm-get-started-book-description =
+        Learn how to build, debug, profile, and deploy WebAssembly applications using Rust!
+wasm-get-started-book-link = Read The Book
+
+wasm-get-started-mdn-alt = MDN logo
+wasm-get-started-mdn-description =
+        Learn more about WebAssembly on the Mozilla Developer Network.
+wasm-get-started-mdn-link = Check it out
