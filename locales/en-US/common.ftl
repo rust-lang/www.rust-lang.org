@@ -5,6 +5,7 @@ rust = Rust
 get-started-exclamation = Get started!
 getting-started = Getting started
 why-rust = Why Rust?
+production-use = Production use
 
 ## components/nav.hbs
 

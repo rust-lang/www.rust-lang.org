@@ -60,8 +60,6 @@ wasm-js-interop-description =
 
 ## Production use (templates/components/what/wasm/production.hbs)
 
-wasm-production-heading = Production use
-
 wasm-production-cloudflare-alt = cloudflare logo
 wasm-production-cloudflare-quote =
         We can compile Rust to WASM, and call it from Serverless functions woven into the very fabric of the Internet. That’s huge and I can’t wait to do more of it.

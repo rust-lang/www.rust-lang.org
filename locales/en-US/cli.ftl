@@ -79,8 +79,6 @@ cli-example-link = Learn more with the CLI book
 
 ## templates/components/what/cli/production.hbs
 
-cli-production-heading = Production use
-
 cli-production-sentry-img-alt = sentry logo
 cli-production-sentry-quote =
         One of the reasons we liked Rust was the crates.io ecosystem. [...]

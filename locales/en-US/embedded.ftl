@@ -78,8 +78,6 @@ embedded-get-started-more-documentation-link = More Documentation
 
 ## Production use (templates/components/what/embedded/testimonials.hbs)
 
-embedded-testimonials-heading = Production use
-
 embedded-testimonials-sensirion-alt = Sensirion logo
 embedded-testimonials-sensirion-quote =
         At Sensirion we recently used Rust to create an embedded demonstrator for Sensirion’s <a href="https://sensirion-automotive.com/products#PM2_5">Particulate Matter Sensor</a>. Due to the easy cross-compilation and the availability of many high quality crates on crates.io <b>we quickly ended up with a fast and robust demonstrator.</b>

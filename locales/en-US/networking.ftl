@@ -38,8 +38,6 @@ networking-pitch-concurrent-alt = Connected gears
 
 ## templates/components/what/networking/production.hbs
 
-networking-production = Production use
-
 networking-production-testimonial-mozilla =
     Migrating our Push connection infrastructure to Rust has provided us with an easier to maintain
     code-base with a focus on correctness while delivering fantastic performance. We are now
