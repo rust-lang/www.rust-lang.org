@@ -54,7 +54,7 @@ networking-production-testimonial-buoyant =
     most surprising, though, is how Rust’s lifetime/borrow checking system allows us to avoid large
     classes of resource leaks. After 2 years, I really can’t imagine using any other language for
     the job.
-networking-production-testimonial-buoyant-attribution = Oliver Gould, CTO, <a href="https://buoyant.io/">Buoyant</a>
+networking-production-testimonial-buoyant-attribution = Oliver Gould, CTO, <a href="{ $href }">Buoyant</a>
 
 networking-production-testimonial-1aim =
     Rust's powerful type system enables safe refactoring and catches many classes of bugs at
@@ -64,7 +64,7 @@ networking-production-testimonial-1aim =
     the last part of our stack we ever have to worry about. We have been running a almost 100% Rust
     backend in production since end of 2015 and it has never failed us so far!
 
-networking-production-testimonial-1aim-attribution = Yann Leretaille, <a href="https://1aim.com/">1aim</a>
+networking-production-testimonial-1aim-attribution = Yann Leretaille, <a href="{ $href }">1aim</a>
 
 
 
