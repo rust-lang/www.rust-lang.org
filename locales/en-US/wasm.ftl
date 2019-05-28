@@ -70,18 +70,18 @@ wasm-production-cloudflare-alt = cloudflare logo
 wasm-production-cloudflare-quote =
         We can compile Rust to WASM, and call it from Serverless functions woven into the very fabric of the Internet. That’s huge and I can’t wait to do more of it.
 wasm-production-cloudflare-attribution =
-        &ndash;  Steven Pack, <a href="{ $href }">Serverless Rust with Cloudflare Workers</a>
+        Steven Pack, <a href="{ $href }">Serverless Rust with Cloudflare Workers</a>
 
 wasm-production-mozilla-alt = firefox
 # If an opening square bracket is the first character on a line, it must be escaped like this: {"["}. See https://projectfluent.org/fluent/guide/special.html
 wasm-production-mozilla-quote =
         The JavaScript implementation [of the <code>source-map</code> library] has accumulated convoluted code in the name of performance, and we replaced it with idiomatic Rust. Rust does not force us to choose between clearly expressing intent and runtime performance.
 wasm-production-mozilla-attribution =
-        &ndash; Nick Fitzgerald, <a href="{ $href }">Oxidizing Source Maps with Rust and WebAssembly</a>
+        Nick Fitzgerald, <a href="{ $href }">Oxidizing Source Maps with Rust and WebAssembly</a>
 
 wasm-production-dropbox-alt = dropbox
 # If an opening square bracket is the first character on a line, it must be escaped like this: {"["}. See https://projectfluent.org/fluent/guide/special.html
 wasm-production-dropbox-quote =
         {"["}Rust’s] properties make it easy to embed the DivANS codec in a webpage with WASM, as shown above.
 wasm-production-dropbox-attribution =
-        &ndash; Daniel Reiter Horn and Jongmin Baek, <a href="{ $href }">Building Better Compression Together with DivANS</a>
+        Daniel Reiter Horn and Jongmin Baek, <a href="{ $href }">Building Better Compression Together with DivANS</a>
