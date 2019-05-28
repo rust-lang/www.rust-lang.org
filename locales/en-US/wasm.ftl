@@ -7,8 +7,6 @@ wasm-page-title = Web&shy;Assembly
 
 ## Why Rust? (templates/components/what/wasm/pitch.hbs)
 
-wasm-why-rust-heading = Why Rust?
-
 wasm-why-rust-predictable-alt = Gears
 wasm-why-rust-predictable-heading = Predictable performance
 wasm-why-rust-predictable-description =

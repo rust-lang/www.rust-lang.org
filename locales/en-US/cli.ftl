@@ -8,8 +8,6 @@ cli-page-heading = Command-line apps
 
 ## templates/components/what/cli/pitch.hbs
 
-cli-pitch-heading = Why Rust?
-
 cli-pitch-solid-img-alt = Shield with a checkmark
 cli-pitch-solid-heading = Solid and quick
 cli-pitch-solid-description = Even if you’re just writing a short one-off

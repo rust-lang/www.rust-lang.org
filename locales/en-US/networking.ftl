@@ -12,7 +12,6 @@ networking-get-started-rocket = Learn more about Rocket
 
 ## templates/components/what/networking/pitch.hbs
 
-networking-pitch-why = Why Rust?
 networking-pitch-footprint-header = Low footprint
 networking-pitch-footprint =
     Take control over resource usage to keep memory and CPU footprint to a minimum.

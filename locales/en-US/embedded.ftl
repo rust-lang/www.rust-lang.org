@@ -8,8 +8,6 @@ embedded-page-title = Embedded devices
 
 ## Why Rust? (templates/components/what/pitch.hbs)
 
-embedded-pitch-heading = Why Rust?
-
 embedded-pitch-analysis-alt = A microscope
 embedded-pitch-analysis-heading = Powerful static analysis
 embedded-pitch-analysis-description =

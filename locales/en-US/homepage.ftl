@@ -28,7 +28,6 @@ production-testimonial-yelp-alt = Yelp Logo
 
 
 # components/panels/language-values.hbs
-language-values-why-rust = Why Rust?
 
 language-values-performance = Performance
 language-values-performance-blurb = Rust is blazingly fast and memory-efficient: with no runtime or
