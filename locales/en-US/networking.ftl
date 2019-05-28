@@ -4,7 +4,6 @@ networking-header = Networking
 
 ## templates/components/what/networking/get-started.hbs
 
-networking-get-started-header = Get started!
 networking-get-started = Rust has a growing ecosystem of easy-to-use libraries for the web. Here are just two examples:
 networking-get-started-post-json = POST some JSON
 networking-get-started-take-json = Handle a JSON POST

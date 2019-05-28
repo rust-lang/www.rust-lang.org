@@ -58,7 +58,6 @@ install-using-rustup-heading = Using rustup (Recommended)
 
 install-notes-heading = Notes about Rust installation
 
-install-notes-getting-started-heading = Getting started
 install-notes-getting-started-description = If you're just getting started with
         Rust and would like a more detailed walk-through, see our
         <a href="{ $getting-started-href }">getting started</a> page.

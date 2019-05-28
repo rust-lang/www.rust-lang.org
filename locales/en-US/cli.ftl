@@ -73,7 +73,6 @@ cli-maintainable-refactoring-link = Refactoring Rust
 
 ## templates/components/what/cli/example.hbs
 
-cli-example-heading = Get started!
 cli-example-description = Writing a command-line app is a great way to learn Rust.
 cli-example-inputs-heading = Define your inputs
 cli-example-main-heading = Write your tool

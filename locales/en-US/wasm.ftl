@@ -27,8 +27,6 @@ wasm-why-rust-amenities-description =
 
 ## Get started! (templates/components/what/wasm/get-started.hbs)
 
-wasm-get-started-heading = Get started!
-
 wasm-get-started-wasm-alt = WebAssembly Logo
 wasm-get-started-wasm-description =
         Learn more about the fast, safe, and open virtual machine called WebAssembly, and read its standard.

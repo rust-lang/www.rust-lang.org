@@ -59,8 +59,6 @@ embedded-showcase-video-description =
 
 ## Get started! (templates/components/what/embedded/get-started.hbs)
 
-embedded-get-started-heading = Get started!
-
 embedded-get-started-discovery-book-alt = DIP-6 package
 embedded-get-started-discovery-book-heading = The Discovery book
 embedded-get-started-discovery-book-description =

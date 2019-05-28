@@ -1,6 +1,9 @@
-## Translations that appear on most/all pages
+## Translations that appear on many pages
 
 rust = Rust
+
+get-started-exclamation = Get started!
+getting-started = Getting started
 
 ## components/nav.hbs
 
