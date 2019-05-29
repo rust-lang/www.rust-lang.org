@@ -15,24 +15,51 @@ use std::io::prelude::*;
 use std::path::Path;
 
 use fluent_bundle::{FluentBundle, FluentResource, FluentValue};
+use fluent_locale::negotiate_languages;
 
 lazy_static! {
     static ref CORE_RESOURCE: FluentResource =
         read_from_file("./locales/core.ftl").expect("cannot find core.ftl");
     static ref RESOURCES: HashMap<String, Vec<FluentResource>> = build_resources();
     static ref BUNDLES: HashMap<String, FluentBundle<'static>> = build_bundles();
+    static ref LOCALES: Vec<&'static str> = RESOURCES.iter().map(|(l, _)| &**l).collect();
+    static ref FALLBACKS: HashMap<String, Vec<String>> = build_fallbacks();
+}
+
+pub fn build_fallbacks() -> HashMap<String, Vec<String>> {
+    LOCALES
+        .iter()
+        .map(|locale| {
+            (
+                locale.to_string(),
+                negotiate_languages(
+                    &[locale],
+                    &LOCALES,
+                    None,
+                    &fluent_locale::NegotiationStrategy::Filtering,
+                )
+                .into_iter()
+                .map(|x| x.to_string())
+                .collect(),
+            )
+        })
+        .collect()
 }
 
 pub struct I18NHelper {
     bundles: &'static HashMap<String, FluentBundle<'static>>,
+    fallbacks: &'static HashMap<String, Vec<String>>,
 }
 
 impl I18NHelper {
     pub fn new() -> Self {
-        Self { bundles: &*BUNDLES }
+        Self {
+            bundles: &*BUNDLES,
+            fallbacks: &*FALLBACKS,
+        }
     }
 
-    pub fn lookup(
+    pub fn lookup_single_language(
         &self,
         lang: &str,
         text_id: &str,
@@ -54,23 +81,41 @@ impl I18NHelper {
             panic!("Unknown language {}", lang)
         }
     }
-    pub fn lookup_with_fallback(
+
+    // Traverse the fallback chain,
+    pub fn lookup(
         &self,
         lang: &str,
         text_id: &str,
         args: Option<&HashMap<&str, FluentValue>>,
     ) -> String {
-        if let Some(val) = self.lookup(lang, text_id, args) {
-            val
-        } else if lang != "en-US" {
-            if let Some(val) = self.lookup("en-US", text_id, args) {
-                val
-            } else {
-                format!("Unknown localization {}", text_id)
+        for l in self.fallbacks.get(lang).expect("language not found") {
+            if let Some(val) = self.lookup_single_language(l, text_id, args) {
+                return val;
             }
-        } else {
-            format!("Unknown localization {}", text_id)
         }
+        if lang != "en-US" {
+            if let Some(val) = self.lookup_single_language("en-US", text_id, args) {
+                return val;
+            }
+        }
+        format!("Unknown localization {}", text_id)
+    }
+
+    // Don't fall back to English
+    pub fn lookup_no_english(
+        &self,
+        lang: &str,
+        text_id: &str,
+        args: Option<&HashMap<&str, FluentValue>>,
+    ) -> Option<String> {
+        for l in self.fallbacks.get(lang).expect("language not found") {
+            if let Some(val) = self.lookup_single_language(l, text_id, args) {
+                return Some(val);
+            }
+        }
+
+        None
     }
 }
 
@@ -173,7 +218,7 @@ impl HelperDef for I18NHelper {
             .as_bool()
             .expect("Pontoon must be boolean");
 
-        let response = self.lookup_with_fallback(lang, &id, args.as_ref());
+        let response = self.lookup(lang, &id, args.as_ref());
         if pontoon {
             out.write(&format!("<span data-l10n-id='{}'>", id))
                 .map_err(RenderError::with)?;
@@ -264,7 +309,7 @@ impl HelperDef for TeamHelper {
         if lang == "en-US" {
             let english = team["website_data"][id].as_str().unwrap();
             out.write(&english).map_err(RenderError::with)?;
-        } else if let Some(value) = self.i18n.lookup(lang, &fluent_id, None) {
+        } else if let Some(value) = self.i18n.lookup_no_english(lang, &fluent_id, None) {
             out.write(&value).map_err(RenderError::with)?;
         } else {
             let english = team["website_data"][id].as_str().unwrap();
