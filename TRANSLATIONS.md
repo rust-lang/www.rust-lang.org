@@ -28,7 +28,7 @@ After this time, we evaluate the state of the translation with the goal to make 
 
 Anyone can give suggestions to a translation by signing up to the pontoon instance and using the "suggest" function. Managers and Translators can review.
 
-Translations are done via keys: for example, a key name `rust-claim` in the website source will expand to "A language empowering everyone..." in the English translation. Translations will override this key with their own phrase.
+Translations are done via keys: for example, a key name `rust-claim` in the website source will expand to "A language empowering everyone..." in the English translation. Translations will override this key with their own phrase. Some translations use [_variables_](https://projectfluent.org/fluent/guide/variables.html) to interpolate other text. For example, some string may say `rls-text = Read more about RLS <a href="{ $href }">here</a>`, in which case the website is setting the `$href` variable to the actual link. Be sure to include this in the translation as well. This is typically used to interpolate links, complex HTML, and code blocks. Furthermore, some things like security emails and keys are included using [_terms_](https://projectfluent.org/fluent/guide/terms.html), which look like variables but start with a `-`. The protocol is the same here, make sure the term is included in the translation.
 
 Each translation must be reviewed by a second member of the team for quality control. Follow this workflow:
 
