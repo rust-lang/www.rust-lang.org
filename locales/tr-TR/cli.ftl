@@ -60,21 +60,21 @@ cli-maintainable-errors-description =
         çalıştırmadan önce bu “sorun çıkarabilecek” durumları işaret edecektir.
 cli-maintainable-errors-link = Rust'ın hata yönetimi
 
-cli-maintainable-refactoring-img-alt = cli is no rocket science
-cli-maintainable-refactoring-heading = Easily extend later
+cli-maintainable-refactoring-img-alt = ksu roket bilimi değil
+cli-maintainable-refactoring-heading = Kolayca genişletilebilir
 cli-maintainable-refactoring-description =
-        Rust allows you to be flexible in the way you organize your code. Start
-        with just a single file and, when you need more features, refactor your
-        application with the confidence that you aren’t breaking anything.
-cli-maintainable-refactoring-link = Refactoring Rust
+        Rust, kodunuzu düzenlerken esnek olmanıza olanak tanır.
+        Yalnızca tek bir dosyayla başlayın ve daha fazla özelliğe ihtiyaç duyduğunuzda,
+        hiçbir şeyi bozmadığınıza güvenerek uygulamanızı yeniden düzenleyin.
+cli-maintainable-refactoring-link = Rustta yeniden düzenleme
 
 
 ## templates/components/what/cli/example.hbs
 
-cli-example-description = Writing a command-line app is a great way to learn Rust.
-cli-example-inputs-heading = Define your inputs
-cli-example-main-heading = Write your tool
-cli-example-link = Learn more with the CLI book
+cli-example-description = Bir komut satırı uygulaması yazmak Rust öğrenmek için harika bir yoldur.
+cli-example-inputs-heading = Girdilerinizi tanımlayın
+cli-example-main-heading = Uygulamanızı yazın
+cli-example-link = Komut satırı uygulamaları hakkında daha fazla bilgi
 
 
 ## templates/components/what/cli/production.hbs

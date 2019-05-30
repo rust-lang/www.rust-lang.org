@@ -1,6 +1,6 @@
 
 # index.hbs
-tagline =  A language empowering everyone { $linebreak } to build reliable and efficient software.
+tagline =  Güvenilir ve verimli bir yazılım { $linebreak } oluşturmak için herkesi teşvik eden bir dil.
 get-started = Get Started
 homepage-version = Version { $number }
 

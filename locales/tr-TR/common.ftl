@@ -5,7 +5,7 @@ rust = Rust
 get-started-exclamation = Başlayın!
 getting-started = Başlangıç
 why-rust = Neden Rust?
-production-use = Üretim kullanımı
+production-use = Üretimde kullanımı
 
 ## components/nav.hbs
 
@@ -29,7 +29,7 @@ footer-policies = Şartlar ve politikalar
 footer-coc = Davranış Kuralları
 footer-licenses = Lisanslar
 footer-media = Logo Politikası ve Medya Rehberi
-footer-security = Güvenlik Açıkları
+footer-security = Güvenlik Politikası
 footer-policies-all = Tüm Politikalar
 footer-social = Sosyal
 footer-get-help = Yardım alın!
