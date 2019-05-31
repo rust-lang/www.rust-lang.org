@@ -158,6 +158,13 @@ fn index() -> Template {
     render_index(ENGLISH.into())
 }
 
+#[get("/favicon.ico", rank = 0)]
+fn favicon() -> Option<Cached<NamedFile>> {
+    NamedFile::open("static/images/favicon.ico")
+        .ok()
+        .map(|file| file.cached(vec![CacheDirective::MaxAge(3600)]))
+}
+
 #[get("/<locale>", rank = 3)]
 fn index_locale(locale: SupportedLocale) -> Template {
     render_index(locale.0)
@@ -513,6 +520,7 @@ fn main() {
                 production,
                 subject,
                 files,
+                favicon,
                 logos,
                 components,
                 index_locale,
