@@ -7,7 +7,7 @@ governance-rfc-blurb = ˙ʎʇᴉlɐnb ɹoɟ ǝɔnɐs ʇǝɹɔǝs s’ʇsnɹ sᴉ
 governance-learn-more = ǝɹoɯ uɹɐǝ˥
 governance-roadmap-blurb = ˙pǝsnɔoɟ ssǝɔoɹd ʇuǝɯdolǝʌǝp ǝɥʇ ƃuᴉdǝǝʞ ɹoɟ lɐᴉʇuǝssǝ sᴉ uoᴉsᴉʌ pǝɹɐɥs sᴉɥ┴
         ˙ɹɐǝʎ ʇɐɥʇ ɹoɟ suoᴉʇɐɹᴉdsɐ ɹno ʇno ƃuᴉʎɐl dɐɯpɐoɹ ʎlɹɐǝʎ ɐ ɥsᴉlqɐʇsǝ oʇ pǝsn oslɐ sᴉ ssǝɔoɹd ƆℲɹ ǝɥ┴
-governance-roadmap-read = dɐɯpɐoɹ 8Ɩ0ᄅ ǝɥʇ pɐǝɹ
+governance-roadmap-read = dɐɯpɐoɹ 6Ɩ0ᄅ ǝɥʇ pɐǝɹ
 governance-teams-header = sɯɐǝ┴
 governance-wgs-header = sdnoɹפ ƃuᴉʞɹoM
 governance-members = sʇɔɐʇuoƆ ⅋ sɹǝqɯǝW
