@@ -9,6 +9,10 @@ production-use = Production use
 learn-more = Learn More
 discord = Discord
 
+## components/layout.hbs
+
+meta-description = A language empowering everyone to build reliable and efficient software.
+
 ## components/nav.hbs
 
 nav-install = Install
