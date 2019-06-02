@@ -30,7 +30,7 @@ tools-build-deploy-description =
 tools-automation-heading = Otomasyonla gelen hız
 tools-automation-description =
     Rust'ın endüstri düzeyi araçları işbirliğini
-    korkusuz yapar ve takımların asıl konuya odaklanmasını sağlar.
+    korkusuz yapar ve ekiplerin asıl konuya odaklanmasını sağlar.
 tools-automation-rustfmt-heading = Rustfmt
 tools-automation-rustfmt-description =
     Rustfmt, Rust kodunu otomatik olarak düzenler,

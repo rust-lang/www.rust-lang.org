@@ -29,6 +29,6 @@ security-disclosure-description =
     <p>Bu işlem zaman alabilir, özellikle diğer projelere bakım yapan kişilerle işbirliği gerekliyse. Hatayı zamanında düzeltmek için mümkün olan en fazla çaba sarf edilecektir. Bunlara rağmen sürüm yayınlama sürecimizi takip etmek bilgilendirmenin tutarlı bir şekilde işlendiğinden emin olmamızı sağlayacaktır.</p>
 security-receiving-heading = Güvenlik güncellemelerini alma
 security-receiving-description =
-    <p>Güvenlik duyurularını almanın en iyi yolu <a href="{ -rust-security-announcements-mailing-list-href }">Rust güvenlik duyuruları e-posta listesine</a> (ayrıca { -rustlang-security-announcements-subscribe-anchor }'a e-posta göndererek de abone olabilirsiniz) abone olmaktır. Bu listenin trafiği çok azdır ve liste, ambargo kalktığı gibi halka açık bildirimleri alır.</p>
+    <p>Güvenlik duyurularını almanın en iyi yolu <a href="{ -rust-security-announcements-mailing-list-href }">Rust güvenlik duyuruları e-posta listesine</a> (ayrıca { -rustlang-security-announcements-subscribe-anchor } adresine e-posta göndererek de abone olabilirsiniz) abone olmaktır. Bu listenin trafiği çok azdır ve liste, ambargo kalktığı gibi halka açık bildirimleri alır.</p>
     <p>Güvenlik açıklarını ambargonun kaldırılmasından 72 saat önce { -distros-openwall-email-anchor } kanalıyla duyuracağız. Bu, Linux dağıtımlarının paketlerini güncellemesi için zaman tanıyacaktır.</p>
 security-pgp-key-heading = Düz metin PGP anahtarı
