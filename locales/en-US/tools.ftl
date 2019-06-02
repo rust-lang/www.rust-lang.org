@@ -1,4 +1,5 @@
-# tools/index.hbs
+## tools/index.hbs
+
 tools-editor-support-heading = First-class editor support
 tools-editor-support-description = Whether you prefer working with code from the
         command line, or using rich graphical editors, there’s a Rust
@@ -51,7 +52,8 @@ tools-automation-cargo-doc-description = Cargo’s doc builder makes it so no AP
 tools-automation-cargo-doc-link = Go to site
 
 
-# tools/install.hbs
+## tools/install.hbs
+
 install-page-heading = Install Rust
 
 install-using-rustup-heading = Using rustup (Recommended)

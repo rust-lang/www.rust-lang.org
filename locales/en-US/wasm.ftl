@@ -40,7 +40,6 @@ wasm-get-started-mdn-description =
         Learn more about WebAssembly on the Mozilla Developer Network.
 wasm-get-started-mdn-link = Check it out
 
-
 ## Plays well with JavaScript (templates/components/what/wasm/js.hbs)
 
 wasm-js-heading = Plays well with JavaScript

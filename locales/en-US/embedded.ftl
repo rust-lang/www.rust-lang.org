@@ -91,6 +91,7 @@ embedded-testimonials-airborne-attribution =
         &ndash; Dr. Adam Greig, Instrumentation Engineer, Airborne Engineering Ltd.
 
 embedded-testimonials-49nord-alt = 49nord logo
+
 # "Fluent" requires a square bracket which is the first character of a line to be escaped like this: {"["} See https://projectfluent.org/fluent/guide/special.html
 embedded-testimonials-49nord-quote =
         {"["}Rust] enables us to ship software faster and more correct than we thought possible. Thanks to Rust, we can take memory safety for granted, while other benefits of a zero-overhead language with a sophisticated type system help us develop maintainable software. <b>Rust makes our customers happy, as well as our engineers.</b>

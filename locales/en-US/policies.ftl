@@ -3,7 +3,6 @@
 ## templates/policies/index.hbs
 
 policies-page-heading = Policies
-
 policies-page-description = This page links to the comprehensive set of Rust’s policies.
 
 policies-code-of-conduct-link = Code of Conduct

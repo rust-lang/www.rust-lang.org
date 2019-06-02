@@ -1,11 +1,11 @@
 
-# index.hbs
+## index.hbs
 tagline =  A language empowering everyone { $linebreak } to build reliable and efficient software.
 get-started = Get Started
 homepage-version = Version { $number }
 
 
-# components/panels/production.hbs
+## components/panels/production.hbs
 production-title = Rust in production
 production-blurb = Hundreds of companies around the world are using Rust in production
         today for fast, low-resource, cross-platform solutions. Software you know
@@ -27,7 +27,7 @@ production-testimonial-yelp-attribution = Antonio Verardi, Infrastructure Engine
 production-testimonial-yelp-alt = Yelp Logo
 
 
-# components/panels/language-values.hbs
+## components/panels/language-values.hbs
 
 language-values-performance = Performance
 language-values-performance-blurb = Rust is blazingly fast and memory-efficient: with no runtime or
@@ -45,7 +45,7 @@ language-values-productivity-blurb = Rust has great documentation, a friendly co
           and build tool, smart multi-editor support with auto-completion and 
           type inspections, an auto-formatter, and more.
 
-# components/panels/domains.hbs
+## components/panels/domains.hbs
 domains-title = Build it in Rust
 domains-blurb = In 2018, the Rust community decided to improve programming experience
         for a few distinct domains (see <a
@@ -76,7 +76,7 @@ domains-embedded-blurb = Targeting low-resource devices?
 domains-embedded-alt = an embedded device chip
 
 
-# components/panels/get-involved.hbs
+## components/panels/get-involved.hbs
 get-involved = Get involved
 
 get-involved-read-rust = Read Rust

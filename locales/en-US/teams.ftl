@@ -163,3 +163,4 @@ governance-team-wg-nll-description = Implementing the new MIR-based borrow check
 
 governance-team-alumni-name = Rust team alumni
 governance-team-alumni-description = enjoying a leisurely retirement
+

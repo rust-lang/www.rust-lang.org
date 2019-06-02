@@ -136,3 +136,4 @@ learn-ferris = <p>Ferris is the unofficial mascot of the Rust Community. Many Ru
                <p>Ferris is a name playing off of the adjective, “ferrous,” meaning of or pertaining to iron. Since Rust often forms on iron, it seemed like a fun origin for our mascot’s name!</p>
                <p>You can find more images of Ferris on <a href="http://rustacean.net/">http://rustacean.net/</a>.
 learn-ferris-alt = a gif of ferris scurrying side to side
+

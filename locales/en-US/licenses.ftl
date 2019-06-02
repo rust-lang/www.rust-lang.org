@@ -1,5 +1,4 @@
 ### Translation file for page: https://www.rust-lang.org/policies/licenses
-
 ## templates/policies/licenses.hbs
 
 licenses-page-heading = Licenses

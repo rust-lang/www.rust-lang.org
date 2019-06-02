@@ -43,3 +43,4 @@ footer-attribution = Maintained by the Rust Team. See a typo?
         <a href="https://github.com/rust-lang/www.rust-lang.org">Send a fix here</a>!
 
 footer-old-site = Looking for the <a href="https://prev.rust-lang.org">previous website</a>?
+

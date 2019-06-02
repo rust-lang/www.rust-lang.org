@@ -1,6 +1,6 @@
-# Works in conjunction with team data from teams.ftl
+## Works in conjunction with team data from teams.ftl
 
-# governance/index.hbs
+## governance/index.hbs
 governance-header = Governance
 governance-tagline = How Rust is built by its community
 governance-roadmap-rfc = Roadmap and RFC process
@@ -15,10 +15,10 @@ governance-roadmap-read = Read the 2019 Roadmap
 governance-teams-header = Teams
 governance-wgs-header = Working Groups
 
-# governance/index-team.hbs
+## governance/index-team.hbs
 governance-members = Members & Contacts
 
-# governance/group-team.hbs
+## governance/group-team.hbs
 governance-team-email = Email the { $teamname }
 governance-team-repository = { $teamname } repository
 governance-team-discord = { $channel } on Discord

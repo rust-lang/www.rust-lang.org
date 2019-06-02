@@ -1,6 +1,5 @@
 ### Translation file for page: https://www.rust-lang.org/what/cli
 
-
 ## templates/what/cli.hbs
 
 cli-page-heading = Command-line apps
