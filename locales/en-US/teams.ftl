@@ -90,7 +90,7 @@ governance-team-wg-llvm-name = LLVM
 governance-team-wg-llvm-description = Working with LLVM upstream to represent Rust in its development
 
 governance-team-wg-grammar-name = Grammar
-governance-team-wg-grammar-description = Working out a the official, formal grammar for Rust and validating it against existing implementations.
+governance-team-wg-grammar-description = Working out the official, formal grammar for Rust and validating it against existing implementations.
 
 governance-team-mods-discourse-name = Discourse moderators
 governance-team-mods-discourse-description = Moderating users.rust-lang.org and internals.rust-lang.org
@@ -163,4 +163,3 @@ governance-team-wg-nll-description = Implementing the new MIR-based borrow check
 
 governance-team-alumni-name = Rust team alumni
 governance-team-alumni-description = enjoying a leisurely retirement
-
