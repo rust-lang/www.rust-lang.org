@@ -217,14 +217,15 @@ impl HelperDef for I18NHelper {
             .expect("Pontoon not set in context")
             .as_bool()
             .expect("Pontoon must be boolean");
+        let in_context = pontoon && !id.ends_with("-alt");
 
         let response = self.lookup(lang, &id, args.as_ref());
-        if pontoon {
+        if in_context {
             out.write(&format!("<span data-l10n-id='{}'>", id))
                 .map_err(RenderError::with)?;
         }
         out.write(&response).map_err(RenderError::with)?;
-        if pontoon {
+        if in_context {
             out.write("</span>").map_err(RenderError::with)?;
         }
         Ok(())
@@ -296,11 +297,12 @@ impl HelperDef for TeamHelper {
             .expect("Pontoon not set in context")
             .as_bool()
             .expect("Pontoon must be boolean");
+        let in_context = pontoon && !id.ends_with("-alt");
         let team_name = team["name"].as_str().unwrap();
 
         let fluent_id = format!("governance-team-{}-{}", team_name, id);
 
-        if pontoon {
+        if in_context {
             out.write(&format!("<span data-l10n-id='{}'>", fluent_id))
                 .map_err(RenderError::with)?;
         }
@@ -315,7 +317,7 @@ impl HelperDef for TeamHelper {
             let english = team["website_data"][id].as_str().unwrap();
             out.write(&english).map_err(RenderError::with)?;
         }
-        if pontoon {
+        if in_context {
             out.write("</span>").map_err(RenderError::with)?;
         }
         Ok(())
