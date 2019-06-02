@@ -217,7 +217,7 @@ impl HelperDef for I18NHelper {
             .expect("Pontoon not set in context")
             .as_bool()
             .expect("Pontoon must be boolean");
-        let in_context = pontoon && !id.ends_with("-alt");
+        let in_context = pontoon && !id.ends_with("-alt") && !id.starts_with("meta-");
 
         let response = self.lookup(lang, &id, args.as_ref());
         if in_context {
@@ -297,7 +297,7 @@ impl HelperDef for TeamHelper {
             .expect("Pontoon not set in context")
             .as_bool()
             .expect("Pontoon must be boolean");
-        let in_context = pontoon && !id.ends_with("-alt");
+        let in_context = pontoon && !id.ends_with("-alt") && !id.starts_with("meta-");
         let team_name = team["name"].as_str().unwrap();
 
         let fluent_id = format!("governance-team-{}-{}", team_name, id);
