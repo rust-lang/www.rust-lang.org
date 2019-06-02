@@ -15,8 +15,6 @@ production-blurb = Hundreds of companies around the world are using Rust in prod
         uses Rust. <strong>From startups to large
         corporations, from embedded devices to scalable web services, Rust is a great fit.</strong>
 
-production-learn-more = Learn More
-
 production-testimonial-npm = My biggest compliment to Rust is that it's boring, and this is an amazing compliment.
 production-testimonial-npm-attribution = Chris Dickinson, Engineer at npm, Inc
 production-testimonial-npm-alt = npm Logo
@@ -52,7 +50,6 @@ domains-blurb = In 2018, the Rust community decided to improve programming exper
         href="https://blog.rust-lang.org/2018/03/12/roadmap.html">the 2018
         roadmap</a>). For these, you can find many high-quality crates and some
         awesome guides on how to get started.
-domains-learn-more = Learn More
 
 domains-cli = Command Line
 domains-cli-blurb = Whip up a CLI tool quickly with Rust’s robust ecosystem.
