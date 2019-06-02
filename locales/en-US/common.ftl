@@ -6,6 +6,8 @@ get-started-exclamation = Get started!
 getting-started = Getting started
 why-rust = Why Rust?
 production-use = Production use
+learn-more = Learn More
+discord = Discord
 
 ## components/nav.hbs
 
@@ -36,7 +38,7 @@ footer-get-help = Get help!
 
 footer-alt-twitter = Twitter
 footer-alt-youtube = youtube logo
-footer-alt-discord = Discord
+footer-alt-discord = { discord }
 footer-alt-github = GitHub
 
 footer-attribution = Maintained by the Rust Team. See a typo?

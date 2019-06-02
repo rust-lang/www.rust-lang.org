@@ -1,22 +1,19 @@
 <div class="row">
   <div id="platform-instructions-unix" class="instructions db">
-    <p>It looks like you’re running macOS, Linux, or another Unix-like OS. To download Rustup and install Rust, run the following in your terminal, then follow the on-screen instructions.</p>
+    <p>{{text tools-rustup-unixy}}</p>
     <pre><code class="db w-100">curl https://sh.rustup.rs -sSf | sh</code></pre>
   </div>
   <div id="platform-instructions-win" class="instructions dn">
-    <p>It looks like you’re running Windows. To install Rust, download and run</p>
+    <p>{{text tools-rustup-windows}}</p>
     <a href="https://win.rustup.rs" class="button button-secondary">rustup‑init.exe</a>
-    <p>...then follow the onscreen instructions.</p>
-    <p><b>Windows Subsystem for Linux</b></p>
-    <p>If you’re a Windows Subsystem for Linux user run the following in your terminal, then follow the on-screen instructions to install Rust.</p>
+    <p><b>{{text tools-rustup-wsl-heading}}</b></p>
+    <p>{{text tools-rustup-wsl}}</p>
     <pre><code class="db w-100">curl https://sh.rustup.rs -sSf | sh</code></pre>
   </div>
   <div id="platform-instructions-unknown" class="instructions dn">
     <!-- unrecognized platform: ask for help -->
     <p>
-      Rust runs on Windows, Linux, macOS, FreeBSD and NetBSD. If
-      you are on one of these platforms and are seeing this then please
-      report an issue with the following values:
+      {{text tools-rustup-unknown}}
     </p>
     <div class="install-details code">
       <div>navigator.platform:
@@ -27,39 +24,32 @@
       </div>
     </div>
     <br/>
-    <a href="https://github.com/rust-lang/www.rust-lang.org/issues/new" class="button button-secondary">Report an Issue</a>
+    <a href="https://github.com/rust-lang/www.rust-lang.org/issues/new" class="button button-secondary">{{text tools-rustup-report}}</a>
     <hr/>
     <div>
       <p>
-        To install Rust, if you are running Unix,<br>run the following
-        in your terminal, then follow the on-screen instructions.
+        {{text tools-rustup-manual-unixy}}
       </p>
       <code class="db w-100">curl https://sh.rustup.rs -sSf | sh</code>
     </div>
     <hr>
     <div>
       <p>
-        If you are running Windows,<br>download and run
-        <a href="https://win.rustup.rs">rustup‑init.exe</a>
-        then follow the on-screen instructions.
+        {{text tools-rustup-manual-windows}}
       </p>
     </div>
   </div>
   <div id="platform-instructions-default" class="instructions dn">
     <div>
       <p>
-        To install Rust, if you are running a Unix such as WSL, Linux or macOS,<br>
-        run the following
-        in your terminal, then follow the on-screen instructions.
+        {{tools-rustup-manual-default}}
       </p>
       <pre><code class="db w-100">curl https://sh.rustup.rs -sSf | sh</code></pre>
     </div>
     <hr>
     <div>
       <p>
-        If you are running Windows,<br>download and run
-        <a href="https://win.rustup.rs">rustup‑init.exe</a>
-        then follow the on-screen instructions.
+        {{text tools-rustup-manual-default-windows}}
       </p>
     </div>
   </div>
