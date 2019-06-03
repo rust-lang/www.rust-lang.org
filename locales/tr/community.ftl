@@ -43,7 +43,7 @@ community-irr-header = Increasing Rust's Reach
 community-irr = Increasing Rust's Reach, mayıs ayının ortasından ağustos ayının ortasına kadar üç (3) aylık bir ortaklık için Rust toplumunda ve teknoloji endüstrisinde yeterince temsil edilmeyen bireylerle projenin tüm bölümlerinden Rust ekibi üyelerini eşleştiren bir programdır. Her bir ortaklık, bir Rust projesinde çalışmak üzere haftada 3-5 saatlik bir taahhüt vermeyi kabul eder.
 community-irr-button = İnternet Sitesini Ziyaret Edin
 community-standards-header = Topluluk Standartları
-community-standards = Kendimizi cinsiyet, cinsel yönelim, engel, etnik, din veya benzer kişisel özellik gözetmeksizin; samimi, güvenli ve misafirperver bir ortam hazırlamaya adadık. <a href={ baseurl }>Davranış kurallarımız</a>, tüm resmi Rust forumlarındaki davranış standartlarını belirler.
+community-standards = Kendimizi cinsiyet, cinsel yönelim, engel, etnik, din veya benzer kişisel özellik gözetmeksizin; samimi, güvenli ve misafirperver bir ortam hazırlamaya adadık. <a href="{ $url }">Davranış kurallarımız</a>, tüm resmi Rust forumlarındaki davranış standartlarını belirler.
 community-mod-button = Yönetim ekibine mesaj gönder
 community-coc-button = davranış kurallarını oku
 community-mod-guidelines-button = yönetim kılavuzunu oku
