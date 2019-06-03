@@ -68,7 +68,7 @@ community-standards =
         We are committed to providing a friendly, safe and welcoming environment
         for all, regardless of gender, sexual orientation, disability, ethnicity,
         religion, or similar personal characteristic. Our
-        <a href="{{baseurl}}/policies/code-of-conduct">code of conduct</a> sets the
+        <a href="{ $url }">code of conduct</a> sets the
         standards for behavior in all official Rust forums.
         <br /><br />
         If you feel you have been or are being harassed or made uncomfortable by a

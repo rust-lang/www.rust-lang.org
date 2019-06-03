@@ -182,7 +182,9 @@
     </header>
     <div class="f3 f2-l">
       <p>
-        {{text community-standards}}
+        {{#text community-standards}}
+          {{#textparam url}}{{baseurl}}/policies/code-of-conduct{{/textparam}}
+        {{/text}}
       </p>
     </div>
 
