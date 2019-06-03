@@ -4,7 +4,6 @@
 security-page-heading = Güvenlik Politikası
 security-reporting-heading = Raporlama
 security-reporting-link = security@rust-lang.org'a E-Posta Gönder
-# Anchor text for 
 security-reporting-description =
     <p>Emniyet, Rust'ın temel prensiplerinden biridir. Buradan yola çıkarak, dilin kendisinin de güvenli bir yapı olmasını sağlamalıyız. Sorumluluk sahibi bir şekilde, bulduğunuz sorunları paylaşmaya zaman ayırdığınız için teşekkür ederiz.</p>
     <p>Rust'ta bulunan bütün güvenlik hataları, e-posta ile { -security-at-rust-lang-org-anchor } adresine bildirilmelidir. Bu liste, küçük bir güvenlik ekibine iletilir. E-postalarınız 24 saat içerisinde değerlendirilecektir. Bununla birlikte 48 saat içerisinde bildirinize istinaden izlenecek olan adımların bulunduğu detaylı bir e-posta alacaksınız. Dilerseniz, bildirinizi <a href="{ -rust-security-team-key-href }">açık anahtarımızla</a> şifreleyebilirsiniz. Bu anahtar, aynı zamanda <a href="{ -rust-pgp-key-mit-keyserver-href }">MIT’nin anahtar sunucusunda</a> ve <a href="#key">aşağıda da üretilmektedir</a>.</p>
@@ -13,7 +12,7 @@ security-reporting-description =
     <ul>
      <li>Güvenlik koordinatörü ile doğrudan irtibata geçin ({ -security-coordinator-email-anchor } (<a href="{ -security-coordinator-public-key-href }">açık anahtar</a>)).</li>
      <li>Yedek irtibat ile doğrudan irtibata geçin ({ -backup-security-contact-email-anchor } (<a href="{ -backup-security-contact-public-key-href }">açık anahtar</a>)).</li>
-     <li><a href="{ -internals-rust-lang-org-href }">Özel forumlarda</a></li> gönderi paylaşın.</li>
+     <li><a href="{ -internals-rust-lang-org-href }">İç forumda</a></li> gönderi paylaşın.</li>
     </ul>
     <p>Lütfen tartışma forumlarının halka açık alan olduğunu unutmayınız. Sorununuzu ilgili yerlere ulaştırmaya çalışırken sorununuz hakkında bilgi vermekten kaçının. Sadece güvenlik ekibinden birisine ulaşmaya çalıştığınızı söylemek yeterli olacaktır.</p>
 security-disclosure-heading = Açıklama politikası
