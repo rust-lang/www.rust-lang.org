@@ -5,9 +5,12 @@ get-started-exclamation = Başlayın!
 getting-started = Başlarken
 why-rust = Neden Rust?
 production-use = Üretimde kullanım
+learn-more = Daha fazla bilgi edinin
+discord = Discord
 
 ## components/layout.hbs
 
+meta-description = Güvenilir ve verimli bir yazılım oluşturmak için herkesi teşvik eden bir dil.
 
 ## components/nav.hbs
 
@@ -44,3 +47,4 @@ footer-old-site = <a href="https://prev.rust-lang.org">Önceki siteye</a> mi bak
 
 ## what/index.hbs
 
+what-header = Ne

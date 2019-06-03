@@ -1,4 +1,5 @@
-# tools/index.hbs
+## tools/index.hbs
+
 tools-editor-support-heading = Birinci sınıf metin düzenleyici desteği
 tools-editor-support-description =
     İster komut satırından kod yazarak çalışmayı tercih edin
@@ -50,7 +51,9 @@ tools-automation-cargo-doc-description =
     <code class="nowrap">cargo doc</code> ile yerel olarak erişebilirsiniz ve
     <a href="https://docs.rs">docs.rs</a> ile herkese açık cratelere çevirmiçi ulaşabilirsiniz.
 tools-automation-cargo-doc-link = Siteye git
-# tools/install.hbs
+
+## tools/install.hbs
+
 install-page-heading = Rust'ı Yükle
 install-using-rustup-heading = Rustup kullanmak (Önerilen)
 install-notes-heading = Rust kurulumu hakkında notlar
@@ -106,3 +109,16 @@ install-other-methods-description =
     çoğu geliştiricinin Rust'u yüklemesi için tercih ettiği yoldur.
     Ancak, kurulum için başka yöntemler de kullanılabilir.
 install-other-methods-link = Daha fazla bilgi edinin
+
+## components/tools/rustup.hbs
+
+tools-rustup-unixy = Görünüşe bakılırsa macOS, Linux veya Unix tabanlı bir işletim sistemi kullanıyorsunuz. Rustup'ı indirmek ve Rust'ı yüklemek için uçbiriminizde şunları çalıştırın ve daha sonra ekranınıza gelen talimatları izleyin.
+tools-rustup-windows = Görünüşe bakılırsa Windows kullanıyorsunuz. Rust'ı yüklemek için şunu indirin ve çalıştırın. Ardından ekrandaki talimatları izleyin.
+tools-rustup-wsl-heading = Linux için Windows altsistemi
+tools-rustup-wsl = Eğer Linux için Windows Altsistemi kullanıcısıysanız Rust'ı yüklemek için uçbiriminizde şunları çalıştırın ve ardından ekrandaki talimatlari izleyin.
+tools-rustup-unknown = Rust, Windows'ta, Linux'ta, macOS'ta, FreeBSD'de ve NetBSD'de çalışır. Eğer bu platformlardan birisini kullanıyorsanız ve bunu görüyorsanız lütfen aşağıdaki değerlerle birlikte sorunu bildirin.
+tools-rustup-report = Bir sorun bildirin
+tools-rustup-manual-unixy = Eğer Unix kullanıyorsanız Rust'ı yüklemek için <br>uçbiriminizde şunları çalıştırın. Ardından ekrandaki talimatları izleyin.
+tools-rustup-manual-windows = Eğer Windows kullanıyorsanız<br><a href="https://win.rustup.rs">rustup‑init.exe</a>'yi indirin ve çalıştırın. Ardından ekrandaki talimatları izleyin.
+tools-rustup-manual-default = Eğer WSL, Linux veya macOS gibi bir Unix işletim sistemi kullanıyorsanız Rust'ı yüklemek için <br> uçbiriminizde şunları çalıştırın. Ardından ekrandaki talimatları izleyin.
+tools-rustup-manual-default-windows = Eğer Windows kullanıyorsanız <br><a href="https://win.rustup.rs">rustup‑init.exe</a>'yi indirin ve çalıştırın. Ardından ekrandaki talimatları izleyin.

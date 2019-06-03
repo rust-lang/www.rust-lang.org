@@ -23,8 +23,8 @@ cli-pitch-ship-link = Rust kodu nasıl dağıtılır?
 cli-pitch-config-img-alt = Bir not ve bir dişli
 cli-pitch-config-heading = Güçlü yapılandırma
 cli-pitch-config-description =
-    Yapılandırma dosyalarını platformlar arasında taşımak Rust ile
-    kolaydır. Rust sizin için isim alanlarını ve formatları organize edecektir.
+    Rust ile yapılandırma dosyalarını platformlar arasında taşımak 
+    kolaydır. Rust, sizin için isim alanları ile uğraşır ve onları düzenler.
 cli-pitch-config-link = Yapılandırmaya başlayın
 cli-pitch-manuals-img-alt = Yardım kılavuzu
 cli-pitch-manuals-heading = Kılavuzlar? Oldu bilin!
@@ -35,7 +35,7 @@ cli-pitch-manuals-link = Nasıl yapıldığını öğrenin
 cli-pitch-machines-img-alt = Borular
 cli-pitch-machines-heading = Veri içeri, veri dışarı
 cli-pitch-machines-description =
-    İnsanlarla konuşmasına ek olarak; Rust, makinelerle
+    İnsanlarla konuşmasına ek olarak Rust, makinelerle
     konuşmanızı sağlayan harika araçlara sahiptir.
 cli-pitch-machines-link = Makinelerle konuşun
 cli-pitch-logging-img-alt = Üst üste 3 ağaç kütüğü
