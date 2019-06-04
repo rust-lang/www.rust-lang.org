@@ -18,6 +18,7 @@ production-yelp-alt = yelp logo
 
 production-share = Does your company use Rust? Consider sharing your experience with us!
 production-share-button = Reach out to the production users team
+production-users-page = Want to learn more about who uses Rust in production?
 production-users-button = Check out the users page
 
 
