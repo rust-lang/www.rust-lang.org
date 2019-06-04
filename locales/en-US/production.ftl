@@ -31,3 +31,7 @@ production-contact-core = Message the Core Team
 production-license-header = License
 production-license = Rust is dually licensed under the Apache License Version 2.0 and the MIT license, making it suitable for all sorts of projects.
 production-license-link = Policies: License
+
+## templates/production/users.hbs
+
+production-users-page = Production users

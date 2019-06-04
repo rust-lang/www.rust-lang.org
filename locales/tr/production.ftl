@@ -22,4 +22,4 @@ production-contact-core = Çekirdek Ekibine Mesaj At
 production-license-header = Lisans
 production-license = Rust, Apache Lisansı Sürüm 2.0 ve MIT lisansı ile her türlü projeye uygun olması için çifte olarak lisanslanmıştır.
 production-license-link = Politikalar: Lisans
-production-users = Kullanıcılar
+production-users-heading = Kullanıcılar
