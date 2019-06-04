@@ -18,7 +18,7 @@ production-yelp-alt = yelp logo
 
 production-share = Does your company use Rust? Consider sharing your experience with us!
 production-share-button = Reach out to the production users team
-production-users-page = Want to learn more about who uses Rust in production?
+production-users = Want to learn more about who uses Rust in production?
 production-users-button = Check out the users page
 
 
@@ -31,5 +31,3 @@ production-contact-core = Message the Core Team
 production-license-header = License
 production-license = Rust is dually licensed under the Apache License Version 2.0 and the MIT license, making it suitable for all sorts of projects.
 production-license-link = Policies: License
-
-production-users = Users
