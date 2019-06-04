@@ -91,6 +91,23 @@ struct Context<T: ::serde::Serialize> {
     pontoon_enabled: bool,
     assets: AssetFiles,
 }
+
+impl<T: ::serde::Serialize> Context<T> {
+    fn new(page: String, title: String, is_landing: bool, data: T, lang: String) -> Self {
+        Self {
+            page,
+            title,
+            parent: LAYOUT.into(),
+            is_landing,
+            data,
+            baseurl: baseurl(&lang),
+            lang,
+            pontoon_enabled: pontoon_enabled(),
+            assets: ASSETS.clone(),
+        }
+    }
+}
+
 #[derive(Clone, Serialize)]
 struct CSSFiles {
     app: String,
@@ -279,17 +296,7 @@ fn not_found(req: &Request) -> Template {
 fn not_found_locale(lang: String) -> Template {
     let page = "404";
     let title = format!("{} - Rust programming language", page).to_string();
-    let context = Context {
-        page: "404".to_string(),
-        title,
-        parent: LAYOUT.to_string(),
-        is_landing: false,
-        data: (),
-        lang,
-        baseurl: String::new(),
-        pontoon_enabled: pontoon_enabled(),
-        assets: ASSETS.clone(),
-    };
+    let context = Context::new("404".into(), title, false, (), lang);
     Template::render(page, &context)
 }
 
@@ -362,57 +369,29 @@ fn render_index(lang: String) -> Template {
 
     let page = "index".to_string();
     let title = "Rust programming language".to_string();
-
-    let context = Context {
-        page: page.clone(),
-        title,
-        parent: LAYOUT.to_string(),
-        is_landing: true,
-        data: IndexData {
-            rust_version: rust_version::rust_version().unwrap_or(String::new()),
-            rust_release_post: rust_version::rust_release_post().map_or(String::new(), |v| {
-                format!("https://blog.rust-lang.org/{}", v)
-            }),
-        },
-        baseurl: baseurl(&lang),
-        lang,
-        pontoon_enabled: pontoon_enabled(),
-        assets: ASSETS.clone(),
+    let data = IndexData {
+        rust_version: rust_version::rust_version().unwrap_or(String::new()),
+        rust_release_post: rust_version::rust_release_post().map_or(String::new(), |v| {
+            format!("https://blog.rust-lang.org/{}", v)
+        }),
     };
+    let context = Context::new(page.clone(), title, true, data, lang);
     Template::render(page, &context)
 }
 
 fn render_category(category: Category, lang: String) -> Template {
     let page = category.index();
     let title = get_title(&category.name());
-    let context = Context {
-        page: category.name().to_string(),
-        title,
-        parent: LAYOUT.to_string(),
-        is_landing: false,
-        data: (),
-        baseurl: baseurl(&lang),
-        lang,
-        pontoon_enabled: pontoon_enabled(),
-        assets: ASSETS.clone(),
-    };
+    let context = Context::new(category.name().to_string(), title, false, (), lang);
+
     Template::render(page, &context)
 }
 
 fn render_production(lang: String) -> Template {
     let page = "production/users".to_string();
     let title = "Users - Rust programming language".to_string();
-    let context = Context {
-        page: page.clone(),
-        title,
-        parent: LAYOUT.to_string(),
-        is_landing: false,
-        data: load_users_data(),
-        baseurl: baseurl(&lang),
-        lang,
-        pontoon_enabled: pontoon_enabled(),
-        assets: ASSETS.clone(),
-    };
+    let context = Context::new(page.clone(), title, false, load_users_data(), lang);
+
     Template::render(page, &context)
 }
 
@@ -421,17 +400,8 @@ fn render_governance(lang: String) -> Result<Template, Status> {
         Ok(data) => {
             let page = "governance/index".to_string();
             let title = "Governance - Rust programming language".to_string();
-            let context = Context {
-                page: page.clone(),
-                title,
-                parent: LAYOUT.to_string(),
-                is_landing: false,
-                data,
-                baseurl: baseurl(&lang),
-                lang,
-                pontoon_enabled: pontoon_enabled(),
-                assets: ASSETS.clone(),
-            };
+            let context = Context::new(page.clone(), title, false, data, lang);
+
             Ok(Template::render(page, &context))
         }
         Err(err) => {
@@ -450,17 +420,7 @@ fn render_team(
         Ok(data) => {
             let page = "governance/group".to_string();
             let title = get_title(&data.team.website_data.as_ref().unwrap().name);
-            let context = Context {
-                page: page.clone(),
-                title,
-                parent: LAYOUT.to_string(),
-                is_landing: false,
-                data,
-                baseurl: baseurl(&lang),
-                lang,
-                pontoon_enabled: pontoon_enabled(),
-                assets: ASSETS.clone(),
-            };
+            let context = Context::new(page.clone(), title, false, data, lang);
             Ok(Template::render(page, &context))
         }
         Err(err) => {
@@ -483,17 +443,8 @@ fn render_team(
 fn render_subject(category: Category, subject: String, lang: String) -> Template {
     let page = format!("{}/{}", category.name(), subject.as_str()).to_string();
     let title = get_title(&subject);
-    let context = Context {
-        page: subject,
-        title,
-        parent: LAYOUT.to_string(),
-        is_landing: false,
-        data: (),
-        baseurl: baseurl(&lang),
-        lang,
-        pontoon_enabled: pontoon_enabled(),
-        assets: ASSETS.clone(),
-    };
+    let context = Context::new(subject, title, false, (), lang);
+
     Template::render(page, &context)
 }
 
