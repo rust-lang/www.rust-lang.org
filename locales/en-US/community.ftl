@@ -8,7 +8,7 @@ community-twir = Stay up to date with the Rust community!
 community-twir-button = This Week in Rust
 community-team-contact = We’d like to hear from you! Not sure where or who to ask a question? Want to get involved but aren’t sure how?
           The community team is eager to connect you with someone who can help!
-community-team-button = email community@rust-lang.org
+community-team-button = email { ENGLISH("community@rust-lang.org") }
 
 community-where = Where to talk
 
