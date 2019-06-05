@@ -1,6 +1,6 @@
 # Translation Guidelines
 
-The Rust website can be translated into multiple languages using [fluent](https://github.com/projectfluent) and [pontoon](https://github.com/mozilla/pontoon). Note that these features are currently in development.
+The Rust website can be translated into multiple languages using [fluent](https://github.com/projectfluent) and on our own [pontoon instance](https://pontoon.rust-lang.org). Note that these features are currently in development.
 
 ## What can be translated
 
@@ -8,7 +8,9 @@ All text on the website can be translated. Some texts, especially policies, can 
 
 ## Forming a translation team
 
-Translation teams for any language need at least _three_ members. This is to avoid translations to "drop out" of support too quickly. If you feel like having a team, please get in touch with the [community team](mailto:community-team@rust-lang.org) to apply for a translation. We'll make sure to get you set up.
+Translation teams for any language need at least _three_ members. This is to avoid translations to "drop out" of support too quickly. If you feel like having a team, please get in touch with the [community team](mailto:community-team@rust-lang.org) to apply for a translation. Have all team members register at the [pontoon](https://pontoon.rust-lang.org) and send us their email addresses. We'll make sure to get you set up as managers. Managers can manage their translation teams through the "permission" tab in the web interface, including appointing new managers.
+
+Please note that as a manager, you work on the representation of the Rust project in your locale. Make sure to understand and act with that responsibility and only promote well-trusted people to a manager role.
 
 Teams ideally consist only of native speakers. Even within one language it can be useful to have editors from multiple backgrounds, to find a consistent language. For translators, strong writing skills matter. For reviewing, a keen eye and a good feeling for oddities is important.
 
@@ -16,7 +18,7 @@ Any language that can muster a constantly working and up to date translation is 
 
 ## How to get your translation published
 
-You will have 2 weeks time for an initial translation of the page, after which we will start to check up on you.
+You will have 2 weeks time for an initial translation of the page, after which we will start to check up on you. Please note the section on policies below.
 
 If you finished your task and all members of the team agree that the translation is done, it will go to trial for another two weeks. In this time, we encourage people to read the translation and give feedback.
 
@@ -24,8 +26,38 @@ After this time, we evaluate the state of the translation with the goal to make 
 
 ## How to translate
 
-Note: this section is minimal due to the final translation service being setup.
+Anyone can give suggestions to a translation by signing up to the pontoon instance and using the "suggest" function. Managers and Translators can review.
 
-Translations are done via keys: for example, a key name `rust-claim` in the website source will expand to "A language empowering everyone..." in the English translation. Additional translations will override this key with their own phrase.
+Translations are done via keys: for example, a key name `rust-claim` in the website source will expand to "A language empowering everyone..." in the English translation. Translations will override this key with their own phrase. Some translations use [_variables_](https://projectfluent.org/fluent/guide/variables.html) to interpolate other text. For example, some string may say `rls-text = Read more about RLS <a href="{ $href }">here</a>`, in which case the website is setting the `$href` variable to the actual link. Be sure to include this in the translation as well. This is typically used to interpolate links, complex HTML, and code blocks. Furthermore, some things like security emails and keys are included using [_terms_](https://projectfluent.org/fluent/guide/terms.html), which look like variables but start with a `-`. The protocol is the same here, make sure the term is included in the translation.
 
-Each translation must be reviewed by a second member of the team for quality control.
+Each translation must be reviewed by a second member of the team for quality control. Follow this workflow:
+
+### Suggesting a translation
+
+* Log in on [pontoon](https://pontoon.rust-lang.org)
+* Navigate to the language you want to translate
+* Navigate to the project you want to translate
+* Pick one of the files
+* Find an untranslated key or the one you want to change
+  * You can use the filter "Untranslated" for quickly finding new ones
+* Click the gear icon and make sure to check "make suggestions"
+  * The button should clearly read "suggest"
+  * This is very important for project managers, as they can work without
+* Translate the key at hand and hit suggest for as long as you want
+
+### Reviewing translations
+
+* Log in on [pontoon](https://pontoon.rust-lang.org)
+* Navigate to the language you want to review
+* Navigate to the project you want to review
+* Find an unreviewed key
+  * You can use the filter "Unreviewed" for quickly finding them
+* Navigate to "HISTORY"
+  * You see the proposed suggestions. Check the checkmark to accept one, or the cross to refuse.
+* You may add a better suggestions, which others can in turn review
+
+## Special case: Policies
+
+All policy documents outside other then English must contain a link to the original on top, indicating that the English translation is binding and the translation is a best effort.
+
+Also, a translation team can decide to leave any policies untranslated, instead opting for just linking to the English translation with an appropriate wording.

@@ -19,7 +19,7 @@
 
   <div class=" w-100 w-auto-l flex-none flex justify-center pv4 pv-0-l languages">
     <label for="language-nav" class="hidden">{{text choose-language}}</label>
-    <select id="language-nav">
+    <select id="language-nav" data-current-lang="{{lang}}">
       {{> components/languages-dropdown}}
     </select>
   </div>

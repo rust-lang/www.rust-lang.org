@@ -2,26 +2,26 @@
 
 <header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-    <h1>Production</h1>
+    <h1>{{text production-page-title}}</h1>
   </div>
 </header>
 
 <section id="whitepapers" class="purple">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>Whitepapers</h2>
+      <h2>{{text production-whitepapers}}</h2>
       <div class="highlight"></div>
     </header>
     <div class="flex flex-column flex-row-l">
       <div class="mw-50-l mr4-l pt0 flex flex-column justify-between-l">
         <h3>npm</h3>
-        <p>Read how <a href="https://www.npmjs.com/">npm</a>, who runs the JavaScript Registry of the same name, found Rust to be boring to deploy.</p>
-        <a class="button button-secondary" href="/static/pdfs/Rust-npm-Whitepaper.pdf">Read the whitepaper</a>
+        <p>{{text production-npm}}</p>
+        <a class="button button-secondary" href="/static/pdfs/Rust-npm-Whitepaper.pdf">{{text production-read-whitepaper}}</a>
       </div>
       <div class="mt5 mt0-l mw-50-l ml4-l pt0 flex flex-column justify-between-l">
         <h3>Tilde</h3>
-        <p>Learn how Rust helps <a href="http://www.tilde.io/">Tilde</a>, makers of <a href="https://www.skylight.io/">Skylight</a>, use minimal resources to enable feature-rich performance monitoring of their customers’ applications.</p>
-        <a class="button button-secondary" href="/static/pdfs/Rust-Tilde-Whitepaper.pdf">Read the whitepaper</a>
+        <p>{{text production-tilde}}</p>
+        <a class="button button-secondary" href="/static/pdfs/Rust-Tilde-Whitepaper.pdf">{{text production-read-whitepaper}}</a>
       </div>
     </div>
   </div>
@@ -30,32 +30,32 @@
 <section id="prod-highlights" class="white">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>Highlights</h2>
+      <h2>{{text production-highlights}}</h2>
       <div class="highlight"></div>
     </header>
     <div class="flex-none flex-l mb5-l">
       <div class="w-100 w-70-l pr5-l">
         <h3>Dropbox</h3>
         <p>
-          Several components of the Dropbox core file-storage system were written in Rust as one step in part of a larger project to pursue greater datacenter efficiency. It’s currently used by all Dropbox storage today, serving >500 million users.
+          {{text production-dropbox}}
         </p>
-        <a href="https://www.wired.com/2016/03/epic-story-dropboxs-exodus-amazon-cloud-empire/" class="button button-secondary">Read More</a>
+        <a href="https://www.wired.com/2016/03/epic-story-dropboxs-exodus-amazon-cloud-empire/" class="button button-secondary">{{text production-read-more}}</a>
       </div>
       <div class="w-100 mv5 mv0-l w-30-l tc">
-        <img alt="dropbox logo" src="/static/images/dropbox.svg" />
+        <img alt="{{text production-dropbox-alt}}" src="/static/images/dropbox.svg" />
       </div>
     </div>
     <hr noshade size="1"/>
     <div class="flex-none flex-l mt5-l">
       <div class="w-100 w-30-l tc">
-        <img alt="yelp logo" src="/static/images/user-logos/yelp.png" />
+        <img alt="{{text production-yelp-alt}}" src="/static/images/user-logos/yelp.png" />
       </div>
       <div class="w-100 w-70-l">
         <h3>Yelp</h3>
         <p>
-          Yelp has developed a framework in Rust for real-time A/B testing. It’s used across all Yelp websites and apps, and experiment subjects range from UX to internal infrastructure. Rust was chosen because it’s as fast as C (cheap to run) and safer than C (cheap to maintain).
+          {{text production-yelp}}
         </p>
-        <a href="https://www.youtube.com/watch?v=u6ZbF4apABk" class="button button-secondary">Watch the Video</a>
+        <a href="https://www.youtube.com/watch?v=u6ZbF4apABk" class="button button-secondary">{{text production-watch-video}}</a>
       </div>
     </div>
   </div>
@@ -65,12 +65,12 @@
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <div class="flex-l mt4-l">
       <div class="w-100 w-50-l pr5-l">
-        <h3>Does your company use Rust? Consider sharing your experience with us!</h3>
-        <a href="mailto:production@rust-lang.org" class="button button-secondary">Reach out to the production users team</a>
+        <h3>{{text production-share}}</h3>
+        <a href="mailto:production@rust-lang.org" class="button button-secondary">{{text production-share-button}}</a>
       </div>
       <div class="w-100 w-50-l mt5 mt0-l">
-        <h3>Want to learn more about who uses Rust in production?</h3>
-        <a href="{{baseurl}}/production/users" class="button button-secondary">Check out the users page</a>
+        <h3>{{text production-users}}</h3>
+        <a href="{{baseurl}}/production/users" class="button button-secondary">{{text production-users-button}}</a>
       </div>
     </div>
   </div>
@@ -78,35 +78,35 @@
 
 <section class="green" id="production-domains">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-    <h3>See how companies are using tools in specific development domains!</h3>
+    <h3>{{text production-domain}}</h3>
     <div class="flex-none flex-l">
       <div class="w-100 ph6 ph0-l w-25-l" id="command-line">
         <div class="domain-icon">
-          <img src="/static/images/cli.svg" alt="cli" />
-          <h3>Command-line</h3>
+          <img src="/static/images/cli.svg" alt="{{text domains-cli-alt}}" />
+          <h3>{{text domains-cli}}</h3>
         </div>
-        <a href="{{baseurl}}/what/cli#production" class="button button-secondary">Learn More</a>
+        <a href="{{baseurl}}/what/cli#production" class="button button-secondary">{{text learn-more}}</a>
       </div>
       <div class="w-100 ph6 ph0-l w-25-l ml5-l mt5 mt0-l" id="web-assembly">
         <div class="domain-icon">
-          <img src="/static/images/webassembly.svg" alt="webassembly" />
-          <h3>WebAssembly</h3>
+          <img src="/static/images/webassembly.svg" alt="{{text domains-wasm-alt}}" />
+          <h3>{{text domains-wasm}}</h3>
         </div>
-        <a href="{{baseurl}}/what/wasm#production" class="button button-secondary">Learn More</a>
+        <a href="{{baseurl}}/what/wasm#production" class="button button-secondary">{{text learn-more}}</a>
       </div>
       <div class="w-100 ph6 ph0-l w-25-l ml5-l mt5 mt0-l" id="networking">
         <div class="domain-icon">
-          <img src="/static/images/networking.svg" alt="networking" />
-          <h3>Networking</h3>
+          <img src="/static/images/networking.svg" alt="{{text domains-net-alt}}" />
+          <h3>{{text domains-net}}</h3>
         </div>
-        <a href="{{baseurl}}/what/networking#production" class="button button-secondary">Learn More</a>
+        <a href="{{baseurl}}/what/networking#production" class="button button-secondary">{{text learn-more}}</a>
       </div>
       <div class="w-100 ph6 ph0-l w-25-l ml5-l mt5 mt0-l" id="embedded">
         <div class="domain-icon">
-          <img src="/static/images/embedded.svg" alt="embedded" />
-          <h3>Embedded</h3>
+          <img src="/static/images/embedded.svg" alt="{{text domains-embedded-alt}}" />
+          <h3>{{text domains-embedded}}</h3>
         </div>
-        <a href="{{baseurl}}/what/embedded#production" class="button button-secondary">Learn More</a>
+        <a href="{{baseurl}}/what/embedded#production" class="button button-secondary">{{text learn-more}}</a>
       </div>
     </div>
   </div>
@@ -116,19 +116,19 @@
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3 flex-l">
     <div class="w-50-l mr4-l" id="supporting-rust">
       <header>
-        <h2>Supporting Rust</h2>
+        <h2>{{text production-support}}</h2>
         <div class="highlight"></div>
       </header>
-      <p>Interested in sponsoring work on Rust? A Rust conference? We’d love to hear from you.</p>
-      <a href="mailto:core@rust-lang.org" class="button button-secondary">Message the Core Team</a>
+      <p>{{text production-sponsor}}</p>
+      <a href="mailto:core@rust-lang.org" class="button button-secondary">{{text production-contact-core}}</a>
     </div>
     <div class="w-50-l ml4-l mt5 mt0-l" id="license">
       <header>
-        <h2>License</h2>
+        <h2>{{text production-license-header}}</h2>
         <div class="highlight"></div>
       </header>
-      <p>Rust is dually licensed under the Apache License Version 2.0 and the MIT license, making it suitable for all sorts of projects.</p>
-      <a href="{{baseurl}}/policies/licenses" class="button button-secondary">Policies: License</a>
+      <p>{{text production-license}}</p>
+      <a href="{{baseurl}}/policies/licenses" class="button button-secondary">{{text production-license-link}}</a>
     </div>
   </div>
 </section>

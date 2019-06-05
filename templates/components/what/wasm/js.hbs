@@ -1,33 +1,26 @@
 <section id="wasm-plays-well-with-javascript" class="red">
     <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
         <header>
-            <h2>Plays well with JavaScript</h2>
+            <h2>{{text wasm-js-heading}}</h2>
             <div class="highlight"></div>
         </header>
-        <div class="row">
-            <div class="row-column">
-                <h3 class="tc-l">Augment, don’t replace</h3>
+        <div class="flex flex-column flex-row-l pv4 pv0-l">
+            <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l pl4-l">
+                <h3 class="tc-l">{{text wasm-js-augment-heading}}</h3>
                 <p class="flex-grow-1">
-                    The dream of WebAssembly is not to kill JavaScript but to work
-                    alongside of it, to help super charge processing-heavy or low-level
-                    tasks &mdash; tasks that benefit from Rust’s focus on performance.
+                    {{text wasm-js-augment-description}}
                 </p>
             </div>
-            <div class="row-column">
-                <h3 class="tc-l">Works with familiar toolchains</h3>
+            <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l pl4-l">
+                <h3 class="tc-l">{{text wasm-js-toolchains-heading}}</h3>
                 <p class="flex-grow-1">
-                    Publish Rust WebAssembly packages to package registries like npm.
-                    Bundle and ship them with webpack, Parcel, and others.
-                    Maintain them with tools like <code>npm audit</code> and Greenkeeper.
+                    {{text wasm-js-toolchains-description}}
                 </p>
             </div>
-            <div class="row-column">
-                <h3 class="tc-l">Seamless interop</h3>
+            <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l pl4-l">
+                <h3 class="tc-l">{{text wasm-js-interop-heading}}</h3>
                 <p class="flex-grow-1">
-                    Automatically generate binding code between Rust, WebAssembly, and JavaScript APIs.
-                    Take advantage of libraries like <a href="https://rustwasm.github.io/wasm-bindgen/web-sys/index.html"><code>web-sys</code></a>
-                    that
-                    provide pre-packaged bindings for the entire web platform.
+                    {{text wasm-js-interop-description}}
                 </p>
             </div>
         </div>

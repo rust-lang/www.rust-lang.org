@@ -1,11 +1,11 @@
 
-# index.hbs
+## index.hbs
 tagline =  A language empowering everyone { $linebreak } to build reliable and efficient software.
 get-started = Get Started
 homepage-version = Version { $number }
 
 
-# components/panels/production.hbs
+## components/panels/production.hbs
 production-title = Rust in production
 production-blurb = Hundreds of companies around the world are using Rust in production
         today for fast, low-resource, cross-platform solutions. Software you know
@@ -14,8 +14,6 @@ production-blurb = Hundreds of companies around the world are using Rust in prod
         and <a href="https://blog.cloudflare.com/cloudflare-workers-as-a-serverless-rust-platform/">Cloudflare</a>,
         uses Rust. <strong>From startups to large
         corporations, from embedded devices to scalable web services, Rust is a great fit.</strong>
-
-production-learn-more = Learn More
 
 production-testimonial-npm = My biggest compliment to Rust is that it's boring, and this is an amazing compliment.
 production-testimonial-npm-attribution = Chris Dickinson, Engineer at npm, Inc
@@ -27,8 +25,7 @@ production-testimonial-yelp-attribution = Antonio Verardi, Infrastructure Engine
 production-testimonial-yelp-alt = Yelp Logo
 
 
-# components/panels/language-values.hbs
-language-values-why-rust = Why Rust?
+## components/panels/language-values.hbs
 
 language-values-performance = Performance
 language-values-performance-blurb = Rust is blazingly fast and memory-efficient: with no runtime or
@@ -46,14 +43,13 @@ language-values-productivity-blurb = Rust has great documentation, a friendly co
           and build tool, smart multi-editor support with auto-completion and 
           type inspections, an auto-formatter, and more.
 
-# components/panels/domains.hbs
+## components/panels/domains.hbs
 domains-title = Build it in Rust
 domains-blurb = In 2018, the Rust community decided to improve programming experience
         for a few distinct domains (see <a
         href="https://blog.rust-lang.org/2018/03/12/roadmap.html">the 2018
         roadmap</a>). For these, you can find many high-quality crates and some
         awesome guides on how to get started.
-domains-learn-more = Learn More
 
 domains-cli = Command Line
 domains-cli-blurb = Whip up a CLI tool quickly with Rust’s robust ecosystem.
@@ -77,7 +73,7 @@ domains-embedded-blurb = Targeting low-resource devices?
 domains-embedded-alt = an embedded device chip
 
 
-# components/panels/get-involved.hbs
+## components/panels/get-involved.hbs
 get-involved = Get involved
 
 get-involved-read-rust = Read Rust

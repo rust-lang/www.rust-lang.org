@@ -62,27 +62,18 @@ pre > code {
   white-space: pre;
 }
 
-@mixin code-space-full-width {
-  padding: 1rem 1.5rem;
-  margin: 0 .2rem;
-}
-
-@mixin code-space-inline {
-  padding: .2rem .5rem;
-  margin: 0 .2rem;
-}
 
 @mixin code-highlight-white {
   color: white;
-  background-color: rgba(white, 0.15);
+  background-color: rgba(black, 0.3);
   border: 1px solid #E1E1E1;
   border-radius: $border-radius;
 }
 
 @mixin code-highlight-black {
   color: black;
-  background-color: rgba(69, 76, 82, 0.05);
-  border: 1px solid rgba(69, 76, 82, 0.25);
+  background-color: rgba(black, 0.05);
+  border: 1px solid rgba(black, 0.25);
   border-radius: $border-radius;
 }
 
@@ -224,76 +215,6 @@ section .container {
   padding-top: 20px;
 }
 
-.row {
-  display: flex;
-  flex-direction: column;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-
-  @media all and (min-width: 60rem) {
-    flex-direction: row;
-    padding-top: 0;
-    padding-bottom: 0;
-    margin: 0 -0.5rem;
-  }
-
-  .row-column {
-    padding-left: 0;
-    padding-top: 0;
-    padding-bottom: 2rem;
-    display: flex;
-    flex-direction: column;
-
-    &.with-image {
-      flex-direction: row;
-      align-items: start;
-
-      @media all and (min-width: 60rem) {
-        flex-direction: column;
-        align-items: center;
-
-        & > * {
-          flex: 1;
-        }
-
-        img {
-          flex: initial;
-        }
-      }
-
-      img {
-        display: block;
-        margin-right: 2rem;
-
-        @media all and (min-width: 60rem) {
-          margin-right: 0;
-          margin-bottom: 2rem;
-        }
-      }
-    }
-
-    @media all and (min-width: 60rem) {
-      padding: 1rem 0.5rem 0 0.5rem;
-      max-width: 34rem;
-      flex: 1;
-      align-items: center;
-    }
-  }
-}
-
-.push-button-down {
-  display: flex;
-  flex-direction: column;
-
-  & > * {
-    flex: 1;
-  }
-
-  .button {
-    flex: initial;
-  }
-}
-
 // TODO:  remove when switching to Tachyons -- these are overrides for Skeleton.
 ul.nav, ul.nav li {
   margin-bottom: 0;
@@ -360,7 +281,6 @@ a.brand {
   }
   code {
     @include code-highlight-white();
-    @include code-space-inline();
   }
 }
 
@@ -385,7 +305,6 @@ a.brand {
   } 
   code {
     @include code-highlight-white();
-    @include code-space-full-width();
   }
 }
 
@@ -409,7 +328,6 @@ a.brand {
   }
   code {
     @include code-highlight-black();
-    @include code-space-inline();
   }
 }
 
@@ -434,7 +352,6 @@ a.brand {
   }
   code {
     @include code-highlight-white();
-    @include code-space-inline();
   }
 }
 
@@ -653,12 +570,6 @@ blockquote::before {
   }
 }
 
-#embedded-get-started, #embedded-why-rust {
-  img {
-    width: 40%;
-  }
-}
-
 #embedded-users {
   img {
     width: 80%;
@@ -821,10 +732,6 @@ blockquote::before {
   clear: both;
   border: 1px white solid;
   padding: 20px;
-}
-
-.languages {
-  display: none;
 }
 
 .testimonial {

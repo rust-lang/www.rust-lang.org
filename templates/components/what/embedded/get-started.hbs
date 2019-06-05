@@ -1,49 +1,55 @@
 <section id="embedded-get-started" class="red">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>Get started!</h2>
+      <h2>{{text get-started-exclamation}}</h2>
       <div class="highlight"></div>
     </header>
     <div class="flex flex-column flex-row-l">
-      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l" id="discovery-book">
+      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l" id="discovery-book">
         <div class="v-top tc-l">
-          <img src="/static/images/chip1.svg" alt="DIP-6 package" class="mw3 mw4-ns"/>
+          <img src="/static/images/chip1.svg" alt="{{text embedded-get-started-discovery-book-alt}}"
+            class="mw3 mw4-ns"/>
         </div>
-        <h3 class="tc-l">The discovery book</h3>
-
-        <p class="flex-grow-1">
-          Learn embedded development from the ground up&mdash;using Rust!
-        </p>
-        <a href="https://docs.rust-embedded.org/discovery/" class="button button-secondary">Read</a>
+        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+          <h3 class="tc-l">{{text embedded-get-started-discovery-book-heading}}</h3>
+          <p class="flex-grow-1">
+            {{text embedded-get-started-discovery-book-description}}
+          </p>
+          <a href="https://docs.rust-embedded.org/discovery/" class="button button-secondary">{{text embedded-get-started-read-link}}</a>
+        </div>
       </div>
-      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l" id="embedded-rust-book">
-        <div class="domain-icon">
-          <img src="/static/images/chip2.svg" alt="TFQP-16 package" class="mw3 mw4-ns"/>
-          <h3>The Embedded Rust book</h3>
+      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l" id="discovery-book">
+        <div class="v-top tc-l">
+          <img src="/static/images/chip2.svg" alt="{{text embedded-get-started-embedded-rust-book-alt}}"
+            class="mw3 mw4-ns"/>
         </div>
-        <p class="flex-grow-1">
-          Already familiar with Embedded development?
-          Jump in with Rust and start reaping the benefits.
-        </p>
-        <a href="https://docs.rust-embedded.org/book/" class="button button-secondary">Read</a>
+        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+          <h3 class="tc-l">{{text embedded-get-started-embedded-rust-book-heading}}</h3>
+          <p class="flex-grow-1">
+            {{text embedded-get-started-embedded-rust-book-description}}
+          </p>
+          <a href="https://docs.rust-embedded.org/book/" class="button button-secondary">{{text embedded-get-started-read-link}}</a>
+        </div>
       </div>
       <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l" id="embedonomicon">
         <div class="v-top tc-l">
-          <img src="/static/images/chip3.svg" alt="BGA package" class="mw3 mw4-ns"/>
+          <img src="/static/images/chip3.svg" alt="{{text embedded-get-started-embedonomicon-alt}}"
+            class="mw3 mw4-ns"/>
         </div>
-        <h3 class="tc-l">The Embedonomicon</h3>
-
-        <p class="flex-grow-1">
-          Look under the hood of foundational embedded libraries.
-        </p>
-        <a href="https://docs.rust-embedded.org/embedonomicon/" class="button button-secondary">Read</a>
+        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+          <h3 class="tc-l">{{text embedded-get-started-embedonomicon-heading}}</h3>
+          <p class="flex-grow-1">
+            {{text embedded-get-started-embedonomicon-description}}
+          </p>
+          <a href="https://docs.rust-embedded.org/embedonomicon/" class="button button-secondary">{{text embedded-get-started-read-link}}</a>
+        </div>
       </div>
     </div>
     <hr>
-    <div class="tc">
+    <div class="tc pl4-l">
       <p>
         <a href="https://docs.rust-embedded.org/" class="button button-secondary">
-          More Documentation
+          {{text embedded-get-started-more-documentation-link}}
         </a>
     </div>
   </div>

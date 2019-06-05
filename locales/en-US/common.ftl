@@ -1,6 +1,19 @@
-# Translations that appear on most/all pages
+## Translations that appear on many pages
 
-# components/nav.hbs
+rust = Rust
+
+get-started-exclamation = Get started!
+getting-started = Getting started
+why-rust = Why Rust?
+production-use = Production use
+learn-more = Learn More
+discord = Discord
+
+## components/layout.hbs
+
+meta-description = A language empowering everyone to build reliable and efficient software.
+
+## components/nav.hbs
 
 nav-install = Install
 nav-learn = Learn
@@ -13,7 +26,8 @@ choose-language = Language
 
 nav-logo-alt = Rust Logo
 
-# components/footer.hbs
+## components/footer.hbs
+
 footer-doc = Documentation
 footer-ask = Ask a Question on the Users Forum
 footer-status = Check Website Status
@@ -28,10 +42,13 @@ footer-get-help = Get help!
 
 footer-alt-twitter = Twitter
 footer-alt-youtube = youtube logo
-footer-alt-discord = Discord
+footer-alt-discord = { discord }
 footer-alt-github = GitHub
 
 footer-attribution = Maintained by the Rust Team. See a typo?
         <a href="https://github.com/rust-lang/www.rust-lang.org">Send a fix here</a>!
 
 footer-old-site = Looking for the <a href="https://prev.rust-lang.org">previous website</a>?
+
+## what/index.hbs
+what-header = What

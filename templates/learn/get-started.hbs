@@ -2,117 +2,90 @@
 
 <header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-    <h1>Getting started</h1>
-    <h2 class="subtitle">Quickly set up a Rust development environment and write a small app!</h2>
+    <h1>{{text getting-started}}</h1>
+    <h2 class="subtitle">{{text learn-setup}}</h2>
   </div>
 </header>
 
 <section id="installing-rust" class="purple">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>Installing Rust</h2>
+      <h2>{{text learn-install-heading}}</h2>
       <div class="highlight highlight"></div>
     </header>
-    <p>You can try Rust online in the Rust Playground without installing anything on your computer.</p>
-    <a href="https://play.rust-lang.org/" class="button button-secondary">Try Rust without installing</a>
+    <p>{{text learn-play}}</p>
+    <a href="https://play.rust-lang.org/" class="button button-secondary">{{text learn-play-button}}</a>
     <hr />
 
-    <h3>Rustup: the Rust installer and version management tool</h3>
-    <p>The primary way that folks install Rust is through a tool called Rustup, which is a Rust installer
-      and version management tool.</p>
+    <h3>{{text learn-install-rustup-header}}</h3>
+    <p>{{text learn-install-rustup}}</p>
     {{> components/tools/rustup }}
     <br /><br />
-    <a href="{{baseurl}}/tools/install" class="button button-secondary">Learn more about installation</a>
+    <a href="{{baseurl}}/tools/install" class="button button-secondary">{{text learn-install-rustup-button}}</a>
     <hr />
 
-    <h3>Cargo: the Rust build tool and package manager</h3>
-    <p>When you install Rustup you’ll also get the latest stable version of the Rust build tool and
-      package manager, also known as Cargo. Cargo does lots of things:</p>
-    <ul>
-      <li>build your project with <code>cargo build</code></li>
-      <li>run your project with <code>cargo run</code></li>
-      <li>test your project with <code>cargo test</code></li>
-      <li>build documentation for your project with <code>cargo doc</code></li>
-      <li>publish a library to <a href="https://crates.io">crates.io</a> with <code>cargo publish</code></li>
-    </ul>
-    <p>To test that you have Rust and Cargo installed, you can run this in your terminal of choice:</p>
-    <p><code>cargo --version</code></p>
-    <a href="https://doc.rust-lang.org/cargo/index.html" class="button button-secondary">Read
-        the cargo book</a>
+    <h3>{{text learn-install-cargo-header}}</h3>
+    {{text learn-install-cargo}}
+    <a href="https://doc.rust-lang.org/cargo/index.html" class="button button-secondary">{{text learn-install-cargo-button}}</a>
     <hr />
 
-    <h3>Other tools</h3>
-    <p>Rust support is available in many editors:</p>
+    <h3>{{text learn-install-other}}</h3>
+    <p>{{text learn-install-editors}}</p>
     {{> components/tools/editors }}
     <br />
-    <p>You can install a code formatting tool (Rustfmt) with <code>rustup component add rustfmt</code>,
-      and a linting tool (Clippy) with <code>rustup component add clippy</code>.</p>
+    <p>{{text learn-install-fmt-clippy}}</p>
   </div>
 </section>
 
 <section id="generating-new-project" class="red">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>Generating a new project</h2>
+      <h2>{{text learn-generating}}</h2>
       <div class="highlight"></div>
     </header>
-    <p>Let’s write a small application with our new Rust development environment. To start, we’ll use Cargo to
-      make a new project for us. In your terminal of choice run:</p>
-    <p><code>cargo new hello-rust</code></p>
-    <p>This will generate a new directory called <code>hello-rust</code> with the following files:</p>
+    {{#text learn-generating-steps}}
+    {{#textparam tree}}
     <pre><code>hello-rust
 |- Cargo.toml
 |- src
   |- main.rs</code></pre>
-    <p><code>Cargo.toml</code> is the manifest file for Rust. It’s where you keep metadata for your project, as well as
-      dependencies.</p>
-    <p><code>src/main.rs</code> is where we’ll write our application code.</p>
-    <hr/>
-    <p><code>cargo new</code> generates a "Hello, world!" project for us! We can run this program by moving into the new directory that we made and running this in our terminal:</p>
-    <p><code>cargo run</code></p>
-    <p>You should see this in your terminal:</p>
+    {{/textparam}}
+    {{#textparam output}}
     <pre><code>$ cargo run
    Compiling hello-rust v0.1.0 (/Users/ag_dubs/rust/hello-rust)
     Finished dev [unoptimized + debuginfo] target(s) in 1.34s
      Running `target/debug/hello-rust`
 Hello, world!</code></pre>
+    {{/textparam}}
+    {{/text}}
   </div>
 </section>
 
 <section id="installing-dependencies" class="white">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>Adding dependencies</h2>
+      <h2>{{text learn-dependencies}}</h2>
       <div class="highlight"></div>
     </header>
-    <p>Let’s add a dependency to our application. You can find all sorts of libraries on <a href="https://crates.io">crates.io</a>, the package registry for Rust. In Rust, we often refer to
-      packages as “crates.”</p>
-    <p>In this project, we’ll use a crate called <a href="https://crates.io/crates/ferris-says"><code>ferris-says</code></a>.
-      <p>In our <code>Cargo.toml</code> file we’ll add this information (that we got from the crate page):</p>
+    {{#text learn-dependencies-steps}}
+    {{#textparam cargotoml}}
       <pre><code>[dependencies]
 ferris-says = "0.1"</code></pre>
-      <p>Now we can run:</p>
-      <code>cargo build</code>
-      <p>...and Cargo will install our dependency for us.</p>
-      <p>You’ll see that running this command created a new file for us, <code>Cargo.lock</code>. This file is a log of
-        the exact versions of the dependencies we are using locally.</p>
-      <p>To use this dependency, we can open <code>main.rs</code>, remove everything that’s in there (it’s just another
-        example), and add this line to it:</p>
-      <pre><code>use ferris_says::say;</code></pre>
-      <p>This line means that we can now use the <code>say</code> function that the <code>ferris-says</code> crate
-        exports for us.</p>
+    {{/textparam}}
+    {{/text}}
+
   </div>
 </section>
 
 <section id="a-small-rust-app" class="green">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>A small Rust application</h2>
+      <h2>{{text learn-app}}</h2>
       <div class="highlight"></div>
     </header>
-    <p>Now let’s write a small application with our new dependency. In our <code>main.rs</code>, add the following
-      code:</p>
-    <pre><code>use ferris_says::say; // from the previous step
+    {{#text learn-app-steps}}
+    {{#textparam code}}
+<pre><code>use ferris_says::say; // from the previous step
 use std::io::{stdout, BufWriter};
 
 fn main() {
@@ -124,9 +97,8 @@ fn main() {
     say(out, width, &mut writer).unwrap();
 }
     </code></pre>
-    <p>Once we save that, we can run our application by typing:</p>
-    <p><code>cargo run</code></p>
-    <p>Assuming everything went well, you should see your application print this to the screen:</p>
+    {{/textparam}}
+    {{#textparam output}}
     <pre><code>----------------------------
 | Hello fellow Rustaceans! |
 ----------------------------
@@ -137,34 +109,32 @@ fn main() {
                '_   -   _'
                / '-----' \
     </code></pre>
+    {{/textparam}}
+    {{/text}}
+    
   </div>
 </section>
 
 <section id="read-the-docs" class="purple">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>Learn more!</h2>
+      <h2>{{text learn-read-docs-header}}</h2>
       <div class="highlight"></div>
     </header>
-    <p>You’re a Rustacean now! Welcome! We’re so glad to have you. When you’re ready, hop over to our Learn page, where
-      you can find lots of books that will help you to continue on your Rust adventure.</p>
-    <a href="{{baseurl}}/learn" class="button button-secondary">learn more!</a>
+    <p>{{text learn-read-docs}}</p>
+    <a href="{{baseurl}}/learn" class="button button-secondary">{{text learn-read-docs-button}}</a>
   </div>
 </section>
 
 <section id="ferris" class="white">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>Who’s this crab, Ferris?</h2>
+      <h2>{{text learn-ferris-who}}</h2>
       <div class="highlight"></div>
     </header>
-    <p>Ferris is the unofficial mascot of the Rust Community. Many Rust programmers call themselves “Rustaceans,”
-      a play on the word “<a href="https://en.wikipedia.org/wiki/Crustacean">crustacean</a>.” We refer to Ferris with
-      the pronouns “they,” “them,” etc., rather than with gendered pronouns.</p>
-    <p>Ferris is a name playing off of the adjective, “ferrous,” meaning of or pertaining to iron. Since Rust often
-      forms on iron, it seemed like a fun origin for our mascot’s name!</p>
-    <p>You can find more images of Ferris on <a href="http://rustacean.net/">http://rustacean.net/</a>.
-      <img alt="a gif of ferris scurrying side to side" width="540" height="180"
+{{text learn-ferris}}
+
+      <img alt="{{text learn-ferris-alt}}" width="540" height="180"
            src="/static/images/ferris.gif" />
   </div>
 </section>

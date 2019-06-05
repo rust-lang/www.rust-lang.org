@@ -9,6 +9,7 @@ extern crate serde_json;
 extern crate rocket;
 extern crate rust_team_data;
 extern crate sass_rs;
+extern crate siphasher;
 extern crate toml;
 
 extern crate rocket_contrib;
@@ -22,6 +23,7 @@ extern crate regex;
 extern crate handlebars;
 
 mod cache;
+mod caching;
 mod category;
 mod headers;
 mod i18n;
@@ -32,8 +34,11 @@ mod teams;
 
 use production::User;
 
+use std::collections::hash_map::DefaultHasher;
+use std::env;
 use std::fs;
 use std::fs::File;
+use std::hash::Hasher;
 use std::io::prelude::*;
 use std::iter::FromIterator;
 use std::path::{Path, PathBuf};
@@ -41,16 +46,38 @@ use std::path::{Path, PathBuf};
 use rand::seq::SliceRandom;
 
 use rocket::{
-    http::Status,
+    http::{RawStr, Status},
+    request::{FromParam, Request},
     response::{NamedFile, Redirect},
 };
+
 use rocket_contrib::templates::Template;
 
 use sass_rs::{compile_file, Options};
 
 use category::Category;
 
+use caching::{Cached, Caching};
 use i18n::{I18NHelper, SupportedLocale, TeamHelper};
+use rocket::http::hyper::header::CacheDirective;
+
+lazy_static! {
+    static ref ASSETS: AssetFiles = {
+        let app_css_file = compile_sass("app");
+        let fonts_css_file = compile_sass("fonts");
+        let vendor_css_file = concat_vendor_css(vec!["skeleton", "tachyons"]);
+        let app_js_file = concat_app_js(vec!["tools-install"]);
+
+        AssetFiles {
+            css: CSSFiles {
+                app: app_css_file,
+                fonts: fonts_css_file,
+                vendor: vendor_css_file,
+            },
+            js: JSFiles { app: app_js_file },
+        }
+    };
+}
 
 #[derive(Serialize)]
 struct Context<T: ::serde::Serialize> {
@@ -61,10 +88,48 @@ struct Context<T: ::serde::Serialize> {
     data: T,
     lang: String,
     baseurl: String,
+    pontoon_enabled: bool,
+    assets: AssetFiles,
+}
+
+impl<T: ::serde::Serialize> Context<T> {
+    fn new(page: String, title: String, is_landing: bool, data: T, lang: String) -> Self {
+        Self {
+            page,
+            title,
+            parent: LAYOUT.into(),
+            is_landing,
+            data,
+            baseurl: baseurl(&lang),
+            lang,
+            pontoon_enabled: pontoon_enabled(),
+            assets: ASSETS.clone(),
+        }
+    }
+}
+
+#[derive(Clone, Serialize)]
+struct CSSFiles {
+    app: String,
+    fonts: String,
+    vendor: String,
+}
+#[derive(Clone, Serialize)]
+struct JSFiles {
+    app: String,
+}
+#[derive(Clone, Serialize)]
+struct AssetFiles {
+    css: CSSFiles,
+    js: JSFiles,
 }
 
 static LAYOUT: &str = "components/layout";
 static ENGLISH: &str = "en-US";
+
+fn pontoon_enabled() -> bool {
+    env::var("RUST_WWW_PONTOON").is_ok()
+}
 
 fn baseurl(lang: &str) -> String {
     if lang == "en-US" {
@@ -83,22 +148,38 @@ fn get_title(page_name: &str) -> String {
 
 #[get("/components/<_file..>", rank = 1)]
 fn components(_file: PathBuf) -> Template {
-    not_found()
+    not_found_locale(ENGLISH.into())
+}
+
+#[get("/<locale>/components/<_file..>", rank = 11)]
+fn components_locale(locale: SupportedLocale, _file: PathBuf) -> Template {
+    not_found_locale(locale.0)
 }
 
 #[get("/logos/<file..>", rank = 1)]
-fn logos(file: PathBuf) -> Option<NamedFile> {
-    NamedFile::open(Path::new("static/logos").join(file)).ok()
+fn logos(file: PathBuf) -> Option<Cached<NamedFile>> {
+    NamedFile::open(Path::new("static/logos").join(file))
+        .ok()
+        .map(|file| file.cached(vec![CacheDirective::MaxAge(3600)]))
 }
 
 #[get("/static/<file..>", rank = 1)]
-fn files(file: PathBuf) -> Option<NamedFile> {
-    NamedFile::open(Path::new("static/").join(file)).ok()
+fn files(file: PathBuf) -> Option<Cached<NamedFile>> {
+    NamedFile::open(Path::new("static/").join(file))
+        .ok()
+        .map(|file| file.cached(vec![CacheDirective::MaxAge(3600)]))
 }
 
 #[get("/")]
 fn index() -> Template {
     render_index(ENGLISH.into())
+}
+
+#[get("/favicon.ico", rank = 0)]
+fn favicon() -> Option<Cached<NamedFile>> {
+    NamedFile::open("static/images/favicon.ico")
+        .ok()
+        .map(|file| file.cached(vec![CacheDirective::MaxAge(3600)]))
 }
 
 #[get("/<locale>", rank = 3)]
@@ -198,46 +279,85 @@ fn redirect_locale(_locale: redirect::Locale, dest: redirect::Destination) -> Re
 }
 
 #[catch(404)]
-fn not_found() -> Template {
+fn not_found(req: &Request) -> Template {
+    let lang = if let Some(next) = req.uri().segments().next() {
+        if let Ok(lang) = SupportedLocale::from_param(RawStr::from_str(next)) {
+            lang.0
+        } else {
+            ENGLISH.into()
+        }
+    } else {
+        ENGLISH.into()
+    };
+
+    not_found_locale(lang)
+}
+
+fn not_found_locale(lang: String) -> Template {
     let page = "404";
     let title = format!("{} - Rust programming language", page).to_string();
-    let context = Context {
-        page: "404".to_string(),
-        title,
-        parent: LAYOUT.to_string(),
-        is_landing: false,
-        data: (),
-        lang: ENGLISH.to_string(),
-        baseurl: String::new(),
-    };
+    let context = Context::new("404".into(), title, false, (), lang);
     Template::render(page, &context)
 }
 
 #[catch(500)]
 fn catch_error() -> Template {
-    not_found()
+    not_found_locale(ENGLISH.into())
 }
 
-fn compile_sass(filename: &str) {
+fn hash_css(css: &str) -> String {
+    let mut hasher = DefaultHasher::new();
+    hasher.write(css.as_bytes());
+    hasher.finish().to_string()
+}
+
+fn compile_sass(filename: &str) -> String {
     let scss_file = format!("./src/styles/{}.scss", filename);
-    let css_file = format!("./static/styles/{}.css", filename);
 
     let css = compile_file(&scss_file, Options::default())
         .expect(&format!("couldn't compile sass: {}", &scss_file));
+
+    let css_sha = format!("{}_{}", filename, hash_css(&css));
+    let css_file = format!("./static/styles/{}.css", css_sha);
+
     let mut file =
         File::create(&css_file).expect(&format!("couldn't make css file: {}", &css_file));
     file.write_all(&css.into_bytes())
         .expect(&format!("couldn't write css file: {}", &css_file));
+
+    String::from(&css_file[1..])
 }
 
-fn concat_vendor_css(files: Vec<&str>) {
+fn concat_vendor_css(files: Vec<&str>) -> String {
     let mut concatted = String::new();
     for filestem in files {
         let vendor_path = format!("./static/styles/{}.css", filestem);
         let contents = fs::read_to_string(vendor_path).expect("couldn't read vendor css");
         concatted.push_str(&contents);
     }
-    fs::write("./static/styles/vendor.css", &concatted).expect("couldn't write vendor css");
+
+    let css_sha = format!("vendor_{}", hash_css(&concatted));
+    let css_path = format!("./static/styles/{}.css", &css_sha);
+
+    fs::write(&css_path, &concatted).expect("couldn't write vendor css");
+
+    String::from(&css_path[1..])
+}
+
+fn concat_app_js(files: Vec<&str>) -> String {
+    let mut concatted = String::new();
+    for filestem in files {
+        let vendor_path = format!("./static/scripts/{}.js", filestem);
+        let contents = fs::read_to_string(vendor_path).expect("couldn't read app js");
+        concatted.push_str(&contents);
+    }
+
+    let js_sha = format!("app_{}", hash_css(&concatted));
+    let js_path = format!("./static/scripts/{}.js", &js_sha);
+
+    fs::write(&js_path, &concatted).expect("couldn't write app js");
+
+    String::from(&js_path[1..])
 }
 
 fn render_index(lang: String) -> Template {
@@ -249,51 +369,29 @@ fn render_index(lang: String) -> Template {
 
     let page = "index".to_string();
     let title = "Rust programming language".to_string();
-
-    let context = Context {
-        page: page.clone(),
-        title,
-        parent: LAYOUT.to_string(),
-        is_landing: true,
-        data: IndexData {
-            rust_version: rust_version::rust_version().unwrap_or(String::new()),
-            rust_release_post: rust_version::rust_release_post().map_or(String::new(), |v| {
-                format!("https://blog.rust-lang.org/{}", v)
-            }),
-        },
-        baseurl: baseurl(&lang),
-        lang,
+    let data = IndexData {
+        rust_version: rust_version::rust_version().unwrap_or(String::new()),
+        rust_release_post: rust_version::rust_release_post().map_or(String::new(), |v| {
+            format!("https://blog.rust-lang.org/{}", v)
+        }),
     };
+    let context = Context::new(page.clone(), title, true, data, lang);
     Template::render(page, &context)
 }
 
 fn render_category(category: Category, lang: String) -> Template {
     let page = category.index();
     let title = get_title(&category.name());
-    let context = Context {
-        page: category.name().to_string(),
-        title,
-        parent: LAYOUT.to_string(),
-        is_landing: false,
-        data: (),
-        baseurl: baseurl(&lang),
-        lang,
-    };
+    let context = Context::new(category.name().to_string(), title, false, (), lang);
+
     Template::render(page, &context)
 }
 
 fn render_production(lang: String) -> Template {
     let page = "production/users".to_string();
     let title = "Users - Rust programming language".to_string();
-    let context = Context {
-        page: page.clone(),
-        title,
-        parent: LAYOUT.to_string(),
-        is_landing: false,
-        data: load_users_data(),
-        baseurl: baseurl(&lang),
-        lang,
-    };
+    let context = Context::new(page.clone(), title, false, load_users_data(), lang);
+
     Template::render(page, &context)
 }
 
@@ -302,15 +400,8 @@ fn render_governance(lang: String) -> Result<Template, Status> {
         Ok(data) => {
             let page = "governance/index".to_string();
             let title = "Governance - Rust programming language".to_string();
-            let context = Context {
-                page: page.clone(),
-                title,
-                parent: LAYOUT.to_string(),
-                is_landing: false,
-                data,
-                baseurl: baseurl(&lang),
-                lang,
-            };
+            let context = Context::new(page.clone(), title, false, data, lang);
+
             Ok(Template::render(page, &context))
         }
         Err(err) => {
@@ -329,15 +420,7 @@ fn render_team(
         Ok(data) => {
             let page = "governance/group".to_string();
             let title = get_title(&data.team.website_data.as_ref().unwrap().name);
-            let context = Context {
-                page: page.clone(),
-                title,
-                parent: LAYOUT.to_string(),
-                is_landing: false,
-                data,
-                baseurl: baseurl(&lang),
-                lang,
-            };
+            let context = Context::new(page.clone(), title, false, data, lang);
             Ok(Template::render(page, &context))
         }
         Err(err) => {
@@ -360,23 +443,12 @@ fn render_team(
 fn render_subject(category: Category, subject: String, lang: String) -> Template {
     let page = format!("{}/{}", category.name(), subject.as_str()).to_string();
     let title = get_title(&subject);
-    let context = Context {
-        page: subject,
-        title,
-        parent: LAYOUT.to_string(),
-        is_landing: false,
-        data: (),
-        baseurl: baseurl(&lang),
-        lang,
-    };
+    let context = Context::new(subject, title, false, (), lang);
+
     Template::render(page, &context)
 }
 
 fn main() {
-    compile_sass("app");
-    compile_sass("fonts");
-    concat_vendor_css(vec!["skeleton", "tachyons"]);
-
     let templating = Template::custom(|engine| {
         engine
             .handlebars
@@ -399,6 +471,7 @@ fn main() {
                 production,
                 subject,
                 files,
+                favicon,
                 logos,
                 components,
                 index_locale,
@@ -407,6 +480,7 @@ fn main() {
                 team_locale,
                 production_locale,
                 subject_locale,
+                components_locale,
                 redirect,
                 redirect_pdfs,
                 redirect_bare_en_us,

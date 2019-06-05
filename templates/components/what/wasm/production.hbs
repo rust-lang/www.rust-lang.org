@@ -1,62 +1,48 @@
 <section id="production" class="white">
     <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
         <header>
-            <h2>Production use</h2>
+            <h2>{{text production-use}}</h2>
             <div class="highlight"></div>
         </header>
         <div class="testimonials">
             <div class="testimonial flex flex-row">
                 <div class="w-30-l tc pa5">
-                  <img src="/static/images/user-logos/cloudflare.svg" alt="cloudflare logo" />
+                  <img src="/static/images/user-logos/cloudflare.svg" alt="{{text wasm-production-cloudflare-alt}}" />
                 </div>
                 <div class="w-70-l">
                     <blockquote>
-                       We can compile Rust to WASM, and call it from Serverless functions woven into the very fabric of the Internet. That’s huge and I can’t wait to do more of it.
+                       {{text wasm-production-cloudflare-quote}}
                     </blockquote>
                     <p class="attribution">
-                        &ndash;  Steven Pack,
-                        <a href="https://blog.cloudflare.com/cloudflare-workers-as-a-serverless-rust-platform/">
-                            Serverless Rust with Cloudflare Workers
-                        </a>
-
+                        &ndash; {{text wasm-production-cloudflare-attribution href="https://blog.cloudflare.com/cloudflare-workers-as-a-serverless-rust-platform/"}}
                     </p>
                 </div>
             </div>
             <div class="testimonial flex flex-row">
                 <div class="w-70-l">
                     <blockquote>
-                        The JavaScript implementation [of the <code>source-map</code> library]
-                        has accumulated convoluted code in the name of performance, and we
-                        replaced it with idiomatic Rust. Rust does not force us to choose
-                        between clearly expressing intent and runtime performance.
+                        {{text wasm-production-mozilla-quote}}
                     </blockquote>
                     <p class="attribution">
-                        &ndash; Nick Fitzgerald,
-                        <a href="https://hacks.mozilla.org/2018/01/oxidizing-source-maps-with-rust-and-webassembly/">
-                            Oxidizing Source Maps with Rust and WebAssembly
-                        </a>
+                        &ndash; {{text wasm-production-mozilla-attribution href="https://hacks.mozilla.org/2018/01/oxidizing-source-maps-with-rust-and-webassembly/"}}
                     </p>
                 </div>
                 <div class="w-30-l tc pa3">
                     <a href="https://hacks.mozilla.org/2018/01/oxidizing-source-maps-with-rust-and-webassembly/" class="db">
-                        <img src="/static/images/firefox.png" alt="firefox" />
+                        <img src="/static/images/firefox.png" alt="{{text wasm-production-mozilla-alt}}" />
                     </a>
                 </div>
             </div>
             <div class="testimonial flex flex-row">
                 <div class="w-30-l tc pa5">
-                  <img src="/static/images/dropbox.svg" alt="dropbox" />
+                  <img src="/static/images/dropbox.svg" alt="{{text wasm-production-dropbox-alt}}" />
                 </div>
                 <div class="w-70-l">
                     <blockquote>
-                        [Rust’s] properties make it easy to embed the DivANS codec in a
-                        webpage with WASM, as shown above.
+                        {{text wasm-production-dropbox-quote}}
                     </blockquote>
                     <p class="attribution">
-                        &ndash; Daniel Reiter Horn and Jongmin Baek,
-                        <a href="https://blogs.dropbox.com/tech/2018/06/building-better-compression-together-with-divans/">
-                            Building Better Compression Together with DivANS
-                        </a>
+                        &ndash; {{text wasm-production-dropbox-attribution href="https://blogs.dropbox.com/tech/2018/06/building-better-compression-together-with-divans/"}}
                     </p>
                 </div>
             </div>
