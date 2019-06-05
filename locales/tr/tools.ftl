@@ -114,8 +114,8 @@ install-other-methods-link = Daha fazla bilgi edinin
 
 tools-rustup-unixy = Görünüşe bakılırsa macOS, Linux veya Unix tabanlı bir işletim sistemi kullanıyorsunuz. Rustup'ı indirmek ve Rust'ı yüklemek için uçbiriminizde şunları çalıştırın ve daha sonra ekranınıza gelen talimatları izleyin.
 tools-rustup-windows = Görünüşe bakılırsa Windows kullanıyorsunuz. Rust'ı yüklemek için şunu indirin ve çalıştırın. Ardından ekrandaki talimatları izleyin.
-tools-rustup-wsl-heading = Linux için Windows altsistemi
-tools-rustup-wsl = Eğer Linux için Windows Altsistemi kullanıcısıysanız Rust'ı yüklemek için uçbiriminizde şunları çalıştırın ve ardından ekrandaki talimatlari izleyin.
+tools-rustup-wsl-heading = Windows için Linux Altsistemi
+tools-rustup-wsl = Eğer Windows için Linux Altsistemi kullanıcısıysanız Rust'ı yüklemek için uçbiriminizde şunları çalıştırın ve ardından ekrandaki talimatları izleyin.
 tools-rustup-unknown = Rust, Windows'ta, Linux'ta, macOS'ta, FreeBSD'de ve NetBSD'de çalışır. Eğer bu platformlardan birisini kullanıyorsanız ve bunu görüyorsanız lütfen aşağıdaki değerlerle birlikte sorunu bildirin.
 tools-rustup-report = Bir sorun bildirin
 tools-rustup-manual-unixy = Eğer Unix kullanıyorsanız Rust'ı yüklemek için <br>uçbiriminizde şunları çalıştırın. Ardından ekrandaki talimatları izleyin.
