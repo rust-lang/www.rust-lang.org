@@ -20,12 +20,29 @@ cli-pitch-manuals-img-alt = Manuel d'aide
 cli-pitch-manuals-heading = Les manuels ? C'est fait.
 cli-pitch-manuals-description = Générez automatiquement les pages de manuel pour votre application. Packagez juste les fichier générés et c'est fait.
 cli-pitch-manuals-link = Apprendre comment
+cli-pitch-machines-description = En plus de parler aux humains, Rust a d'excellents outils pour vous aider à parler aux machines.
+cli-pitch-machines-link = Communiquer avec les machines
+cli-pitch-logging-img-alt = 3 rondins de bois empilés
+cli-pitch-logging-heading = Journalisation flexible
+cli-pitch-logging-description = C'est facile d'ajouter de la journalisation, et même encore plus facile de configurer ses différentes cibles avec différents styles.
+cli-pitch-logging-link = Journaliser, tracer, comprendre
 
 ## templates/components/what/cli/maintainable.hbs
 
+cli-maintainable-heading = Une base de code maintenable
+cli-maintainable-errors-heading = Attrapez les erreurs <em>maintenant</em>
+cli-maintainable-errors-link = La gestion des erreurs de Rust
+cli-maintainable-refactoring-link = Refactoriser en Rust
 
 ## templates/components/what/cli/example.hbs
 
+cli-example-inputs-heading = Définir vos entrées
+cli-example-main-heading = Écrire votre outil
+cli-example-link = Apprendre d'avantage avec le Book de la ligne de commande
 
 ## templates/components/what/cli/production.hbs
 
+cli-production-sentry-img-alt = logo de Sentry
+cli-production-sentry-attribution = &ndash; Armin Ronacher,
+cli-production-habitat-attribution = &ndash; Fletcher Nichol,
+cli-production-habitat-img-alt = logo de Habitat
