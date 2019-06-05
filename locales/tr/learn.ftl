@@ -1,6 +1,6 @@
 ## learn/index.hbs
 
-learn-learn-rust = Rust Öğrenin
+learn-page-title = Rust Öğrenin
 learn-begin = Rust'a Başlayın
 learn-book = "Rust'ın kitabı" olarak da bilinen <cite>Rust Programlama Dili</cite> kitabı, size dilin prensipleri ve dil ile ilgili genel bir bakış kazandıracaktır. Kitapta ilerledikçe birkaç proje yapacak, sonuna doğru ise dili sağlam bir şekilde anlayacaksınız.
 learn-book-button = Kitabı Oku!
@@ -44,6 +44,7 @@ learn-unstable-button = Kararsız sürümle ilgili kitabı oku
 
 ## learn/get-started.hbs
 
+learn-get-started-page-title = { getting-started }
 learn-setup = Hızlıca bir Rust geliştirme ortamı oluşturun ve küçük bir uygulama yazın!
 learn-install-heading = Rust'ı Kurmak
 learn-play = Rust'ı çevrimiçi olarak Rust Oyun Alanı'nda bilgisayarınıza herhangi bir şey yüklemeden deneyebilirsiniz.

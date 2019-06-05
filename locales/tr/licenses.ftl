@@ -3,7 +3,7 @@
 
 ## templates/policies/licenses.hbs
 
-licenses-page-heading = Lisanslar
+policies-licenses-page-title = Lisanslar
 licenses-license-heading = Lisans
 licenses-license-general-description = Rust Programlama Dili ve diğer bütün resmi projeler, bu internet sitesi dahil, genellikle çift lisanslıdır:
 licenses-apache-v-2-0-link = Apache Lisansı, Sürüm 2.0

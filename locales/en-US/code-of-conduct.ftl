@@ -2,7 +2,7 @@
 
 ## templates/policies/code-of-conduct.hbs
 
-coc-page-heading = Code of conduct
+policies-code-of-conduct-page-title = Code of conduct
 
 coc-conduct-heading = Conduct
 coc-conduct-description =

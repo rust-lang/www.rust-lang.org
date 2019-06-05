@@ -3,7 +3,7 @@
 
 
 ## Page title
-media-guide-page-heading = Media guide
+policies-media-guide-page-title = Media guide
 
 ## Art license
 media-guide-art-license-heading = Art license

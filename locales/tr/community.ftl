@@ -1,6 +1,6 @@
 ## templates/community/index.hbs
 
-community-heading = Topluluk
+community-page-title = Topluluk
 community-blurb = Rust programlama dili birçok özelliğe sahip ancak Rust'ın en güçlü özelliği Rust'ın deneyimini gerçekten cazip kılmak için bir araya gelmiş topluluğudur.
 community-twir = Rust topluluğu ile birlikte güncel kalın!
 community-twir-button = Rust'ta Bu Hafta

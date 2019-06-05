@@ -1,5 +1,7 @@
 ## tools/index.hbs
 
+tools-page-title = Tools
+
 tools-editor-support-heading = First-class editor support
 tools-editor-support-description = Whether you prefer working with code from the
         command line, or using rich graphical editors, there’s a Rust
@@ -54,7 +56,7 @@ tools-automation-cargo-doc-link = Go to site
 
 ## tools/install.hbs
 
-install-page-heading = Install Rust
+tools-install-page-title = Install Rust
 
 install-using-rustup-heading = Using rustup (Recommended)
 

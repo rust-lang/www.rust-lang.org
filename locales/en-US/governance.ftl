@@ -1,7 +1,7 @@
 ## Works in conjunction with team data from teams.ftl
 
 ## governance/index.hbs
-governance-header = Governance
+governance-page-title = Governance
 governance-tagline = How Rust is built by its community
 governance-roadmap-rfc = Roadmap and RFC process
 governance-rfc-blurb = Each major decision in Rust starts as a Request for Comments (RFC).

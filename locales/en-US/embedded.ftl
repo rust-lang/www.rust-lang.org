@@ -3,7 +3,7 @@
 ## templates/what/embedded.hbs
 
 # Page Title
-embedded-page-title = Embedded devices
+what-embedded-page-title = Embedded devices
 
 
 ## Why Rust? (templates/components/what/pitch.hbs)

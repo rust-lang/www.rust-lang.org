@@ -2,7 +2,7 @@
 
 ## templates/what/cli.hbs
 
-cli-page-heading = Command-line apps
+what-cli-page-title = Command-line apps
 
 
 ## templates/components/what/cli/pitch.hbs

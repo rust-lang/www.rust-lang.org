@@ -3,7 +3,7 @@
 
 ## templates/policies/index.hbs
 
-policies-page-heading = Politikalar
+policies-page-title = Politikalar
 policies-page-description = Bu sayfa, Rust’in politikalarının kapsamlı bir setini içerir.
 policies-code-of-conduct-link = Davranış Kuralları
 policies-licenses-link = Lisanslar

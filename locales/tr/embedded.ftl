@@ -4,7 +4,7 @@
 ## templates/what/embedded.hbs
 
 # Page Title
-embedded-page-title = Gömülü cihazlar
+what-embedded-page-title = Gömülü cihazlar
 
 ## Why Rust? (templates/components/what/pitch.hbs)
 

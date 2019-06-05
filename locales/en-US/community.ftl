@@ -1,6 +1,6 @@
 ## templates/community/index.hbs
 
-community-heading = Community
+community-page-title = Community
 community-blurb =  The Rust programming language has many qualities, but Rust’s greatest
           strength is the community of people who come together to make working in
           Rust a rewarding experience.

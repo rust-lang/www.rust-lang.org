@@ -1,7 +1,7 @@
 ### Translation file for page: https://www.rust-lang.org/policies/security
 ### templates/policies/security.hbs
 
-security-page-heading = Güvenlik Politikası
+policies-security-page-title = Güvenlik Politikası
 security-reporting-heading = Raporlama
 security-reporting-link = { ENGLISH("security@rust-lang.org") }'a E-Posta Gönder
 security-reporting-description =

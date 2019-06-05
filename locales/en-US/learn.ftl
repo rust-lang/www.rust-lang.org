@@ -1,6 +1,6 @@
 ## learn/index.hbs
 
-learn-learn-rust = Learn Rust
+learn-page-title = Learn Rust
 learn-begin = Get started with Rust
 
 learn-book = Affectionately nicknamed “the book,” <cite>The Rust Programming Language</cite> will give you an overview of the language from first principles. You’ll build a few projects along the way, and by the end, you’ll have a solid grasp of the language.
@@ -63,6 +63,8 @@ learn-unstable = The Unstable Book has documentation for unstable features that 
 learn-unstable-button = Read the unstable book
 
 ## learn/get-started.hbs
+
+learn-get-started-page-title = { getting-started }
 
 learn-setup = Quickly set up a Rust development environment and write a small app!
 

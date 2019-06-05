@@ -3,7 +3,7 @@
 
 ## templates/what/cli.hbs
 
-cli-page-heading = Applications en ligne de commande
+what-cli-page-title = Applications en ligne de commande
 
 ## templates/components/what/cli/pitch.hbs
 
