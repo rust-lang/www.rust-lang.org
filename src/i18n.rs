@@ -354,6 +354,22 @@ pub fn create_bundle(lang: &str, resources: &'static Vec<FluentResource>) -> Flu
             .expect("Failed to add FTL resources to the bundle.");
     }
 
+    bundle.add_function("EMAIL", |values, _named| {
+        let email = match *values.get(0)?.as_ref()? {
+            FluentValue::String(ref s) => s,
+            _ => return None,
+        };
+        Some(FluentValue::String(format!("<a href='mailto:{0}' lang='en-US'>{0}</a>", email)))
+    }).expect("could not add function");
+
+    bundle.add_function("ENGLISH", |values, _named| {
+        let text = match *values.get(0)?.as_ref()? {
+            FluentValue::String(ref s) => s,
+            _ => return None,
+        };
+        Some(FluentValue::String(format!("<span lang='en-US'>{0}</span>", text)))
+    }).expect("could not add function");
+
     bundle
 }
 
