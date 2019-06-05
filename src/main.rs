@@ -92,10 +92,16 @@ struct Context<T: ::serde::Serialize> {
 }
 
 impl<T: ::serde::Serialize> Context<T> {
-    fn new(page: String, title: &str, is_landing: bool, data: T, lang: String) -> Self {
+    fn new(page: String, title_id: &str, is_landing: bool, data: T, lang: String) -> Self {
+        let helper = I18NHelper::new();
+        let title = if title_id.is_empty() {
+            "".into()
+        } else {
+            helper.lookup(&lang, title_id, None)
+        };
         Self {
             page,
-            title: title.into(),
+            title,
             parent: LAYOUT.into(),
             is_landing,
             data,
@@ -287,7 +293,7 @@ fn not_found(req: &Request) -> Template {
 
 fn not_found_locale(lang: String) -> Template {
     let page = "404";
-    let context = Context::new("404".into(), "404", false, (), lang);
+    let context = Context::new("404".into(), "404-page-title", false, (), lang);
     Template::render(page, &context)
 }
 
@@ -371,20 +377,21 @@ fn render_index(lang: String) -> Template {
 
 fn render_category(category: Category, lang: String) -> Template {
     let page = category.index();
-    let context = Context::new(
-        category.name().to_string(),
-        &category.name(),
-        false,
-        (),
-        lang,
-    );
+    let title_id = format!("{}-page-title", category.name());
+    let context = Context::new(category.name().to_string(), &title_id, false, (), lang);
 
     Template::render(page, &context)
 }
 
 fn render_production(lang: String) -> Template {
     let page = "production/users".to_string();
-    let context = Context::new(page.clone(), "Users", false, load_users_data(), lang);
+    let context = Context::new(
+        page.clone(),
+        "production-page-title",
+        false,
+        load_users_data(),
+        lang,
+    );
 
     Template::render(page, &context)
 }
@@ -393,7 +400,7 @@ fn render_governance(lang: String) -> Result<Template, Status> {
     match teams::index_data() {
         Ok(data) => {
             let page = "governance/index".to_string();
-            let context = Context::new(page.clone(), "Governance", false, data, lang);
+            let context = Context::new(page.clone(), "governance-page-title", false, data, lang);
 
             Ok(Template::render(page, &context))
         }
@@ -412,7 +419,7 @@ fn render_team(
     match teams::page_data(&section, &team) {
         Ok(data) => {
             let page = "governance/group".to_string();
-            let name = data.team.website_data.as_ref().unwrap().name.clone();
+            let name = format!("governance-team-{}-name", data.team.name);
             let context = Context::new(page.clone(), &name, false, data, lang);
             Ok(Template::render(page, &context))
         }
@@ -435,7 +442,8 @@ fn render_team(
 
 fn render_subject(category: Category, subject: String, lang: String) -> Template {
     let page = format!("{}/{}", category.name(), subject.as_str()).to_string();
-    let context = Context::new(subject.clone(), &subject, false, (), lang);
+    let title_id = format!("{}-{}-page-title", category.name(), subject);
+    let context = Context::new(subject.clone(), &title_id, false, (), lang);
 
     Template::render(page, &context)
 }
