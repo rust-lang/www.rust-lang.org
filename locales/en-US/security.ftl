@@ -1,7 +1,7 @@
 ### Translation file for page: https://www.rust-lang.org/policies/security
 ### templates/policies/security.hbs
 
-security-page-heading = Security policy
+policies-security-page-title = Security policy
 
 security-reporting-heading = Reporting
 security-reporting-link = email { ENGLISH("security@rust-lang.org") }

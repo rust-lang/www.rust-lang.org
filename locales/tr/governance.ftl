@@ -1,7 +1,7 @@
 # Works in conjunction with team data from teams.ftl
 
 # governance/index.hbs
-governance-header = Yönetim
+governance-page-title = Yönetim
 governance-tagline = Rust'ın kendi topluluğu tarafından nasıl yapıldığı
 governance-roadmap-rfc = Yol haritası ve yorumlar isteği süreci (RFC)
 governance-rfc-blurb =

@@ -3,7 +3,7 @@
 
 ## templates/policies/code-of-conduct.hbs
 
-coc-page-heading = Davranış Kuralları
+policies-code-of-conduct-page-title = Davranış Kuralları
 coc-conduct-heading = Davranış
 coc-conduct-description =
     <ul>

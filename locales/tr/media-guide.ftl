@@ -4,7 +4,7 @@
 
 ## Page title
 
-media-guide-page-heading = Medya Rehberi
+policies-media-guide-page-title = Medya Rehberi
 
 ## Art license
 

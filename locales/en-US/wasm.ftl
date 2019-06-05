@@ -2,7 +2,8 @@
 
 ## Web-Assembly (templates/what/wasm.hbs)
 
-wasm-page-title = Web&shy;Assembly
+what-wasm-page-title = WebAssembly
+what-wasm-page-heading = Web&shy;Assembly
 
 
 ## Why Rust? (templates/components/what/wasm/pitch.hbs)

@@ -1,5 +1,7 @@
 ## tools/index.hbs
 
+tools-page-title = Araçlar
+
 tools-editor-support-heading = Birinci sınıf metin düzenleyici desteği
 tools-editor-support-description =
     İster komut satırından kod yazarak çalışmayı tercih edin
@@ -54,7 +56,7 @@ tools-automation-cargo-doc-link = Siteye git
 
 ## tools/install.hbs
 
-install-page-heading = Rust'ı Yükle
+tools-install-page-title = Rust'ı Yükle
 install-using-rustup-heading = Rustup kullanmak (Önerilen)
 install-notes-heading = Rust kurulumu hakkında notlar
 install-notes-getting-started-description =

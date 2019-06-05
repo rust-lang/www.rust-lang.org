@@ -3,7 +3,7 @@
 
 ## templates/what/cli.hbs
 
-cli-page-heading = Komut satırı uygulamaları
+what-cli-page-title = Komut satırı uygulamaları
 
 ## templates/components/what/cli/pitch.hbs
 

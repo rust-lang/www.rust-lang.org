@@ -26,4 +26,4 @@ production-license-link = Politikalar: Lisans
 
 ## templates/production/users.hbs
 
-production-users-page = Üretimde Rust Kullananlar
+production-users-page-title = Üretimde Rust Kullananlar

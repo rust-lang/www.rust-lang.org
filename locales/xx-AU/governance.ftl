@@ -1,4 +1,4 @@
-governance-header = ǝɔuɐuɹǝʌoפ
+governance-page-title = ǝɔuɐuɹǝʌoפ
 governance-tagline = ʎʇᴉunɯɯoɔ sʇᴉ ʎq ʇlᴉnq sᴉ ʇsnɹ ʍoH
 governance-roadmap-rfc = ssǝɔoɹd ƆℲɹ puɐ dɐɯpɐoɹ
 governance-rfc-blurb = ˙ʎʇᴉlɐnb ɹoɟ ǝɔnɐs ʇǝɹɔǝs s’ʇsnɹ sᴉ uoᴉʇɐɹǝqᴉlǝp ʎʇᴉunɯɯoɔ sᴉɥʇ 'snonpɹɐ sǝɯᴉʇǝɯos ɥƃnoɥ┴

@@ -1,6 +1,6 @@
 ## templates/what/networking.hbs
 
-networking-header = Networking
+what-networking-page-title = Networking
 
 ## templates/components/what/networking/get-started.hbs
 

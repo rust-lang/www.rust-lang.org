@@ -40,7 +40,6 @@ use std::fs;
 use std::fs::File;
 use std::hash::Hasher;
 use std::io::prelude::*;
-use std::iter::FromIterator;
 use std::path::{Path, PathBuf};
 
 use rand::seq::SliceRandom;
@@ -93,7 +92,13 @@ struct Context<T: ::serde::Serialize> {
 }
 
 impl<T: ::serde::Serialize> Context<T> {
-    fn new(page: String, title: String, is_landing: bool, data: T, lang: String) -> Self {
+    fn new(page: String, title_id: &str, is_landing: bool, data: T, lang: String) -> Self {
+        let helper = I18NHelper::new();
+        let title = if title_id.is_empty() {
+            "".into()
+        } else {
+            helper.lookup(&lang, title_id, None)
+        };
         Self {
             page,
             title,
@@ -137,13 +142,6 @@ fn baseurl(lang: &str) -> String {
     } else {
         format!("/{}", lang)
     }
-}
-
-fn get_title(page_name: &str) -> String {
-    let mut v: Vec<char> = page_name.replace("-", " ").chars().collect();
-    v[0] = v[0].to_uppercase().nth(0).unwrap();
-    let page_name = String::from_iter(v);
-    format!("{} - Rust programming language", page_name).to_string()
 }
 
 #[get("/components/<_file..>", rank = 1)]
@@ -295,8 +293,7 @@ fn not_found(req: &Request) -> Template {
 
 fn not_found_locale(lang: String) -> Template {
     let page = "404";
-    let title = format!("{} - Rust programming language", page).to_string();
-    let context = Context::new("404".into(), title, false, (), lang);
+    let context = Context::new("404".into(), "404-page-title", false, (), lang);
     Template::render(page, &context)
 }
 
@@ -368,29 +365,33 @@ fn render_index(lang: String) -> Template {
     }
 
     let page = "index".to_string();
-    let title = "Rust programming language".to_string();
     let data = IndexData {
         rust_version: rust_version::rust_version().unwrap_or(String::new()),
         rust_release_post: rust_version::rust_release_post().map_or(String::new(), |v| {
             format!("https://blog.rust-lang.org/{}", v)
         }),
     };
-    let context = Context::new(page.clone(), title, true, data, lang);
+    let context = Context::new(page.clone(), "", true, data, lang);
     Template::render(page, &context)
 }
 
 fn render_category(category: Category, lang: String) -> Template {
     let page = category.index();
-    let title = get_title(&category.name());
-    let context = Context::new(category.name().to_string(), title, false, (), lang);
+    let title_id = format!("{}-page-title", category.name());
+    let context = Context::new(category.name().to_string(), &title_id, false, (), lang);
 
     Template::render(page, &context)
 }
 
 fn render_production(lang: String) -> Template {
     let page = "production/users".to_string();
-    let title = "Users - Rust programming language".to_string();
-    let context = Context::new(page.clone(), title, false, load_users_data(), lang);
+    let context = Context::new(
+        page.clone(),
+        "production-users-page-title",
+        false,
+        load_users_data(),
+        lang,
+    );
 
     Template::render(page, &context)
 }
@@ -399,8 +400,7 @@ fn render_governance(lang: String) -> Result<Template, Status> {
     match teams::index_data() {
         Ok(data) => {
             let page = "governance/index".to_string();
-            let title = "Governance - Rust programming language".to_string();
-            let context = Context::new(page.clone(), title, false, data, lang);
+            let context = Context::new(page.clone(), "governance-page-title", false, data, lang);
 
             Ok(Template::render(page, &context))
         }
@@ -419,8 +419,8 @@ fn render_team(
     match teams::page_data(&section, &team) {
         Ok(data) => {
             let page = "governance/group".to_string();
-            let title = get_title(&data.team.website_data.as_ref().unwrap().name);
-            let context = Context::new(page.clone(), title, false, data, lang);
+            let name = format!("governance-team-{}-name", data.team.name);
+            let context = Context::new(page.clone(), &name, false, data, lang);
             Ok(Template::render(page, &context))
         }
         Err(err) => {
@@ -442,8 +442,8 @@ fn render_team(
 
 fn render_subject(category: Category, subject: String, lang: String) -> Template {
     let page = format!("{}/{}", category.name(), subject.as_str()).to_string();
-    let title = get_title(&subject);
-    let context = Context::new(subject, title, false, (), lang);
+    let title_id = format!("{}-{}-page-title", category.name(), subject);
+    let context = Context::new(subject.clone(), &title_id, false, (), lang);
 
     Template::render(page, &context)
 }
