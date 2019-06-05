@@ -18,7 +18,7 @@ Any language that can muster a constantly working and up to date translation is 
 
 ## How to get your translation published
 
-You will have 2 weeks time for an initial translation of the page, after which we will start to check up on you.
+You will have 2 weeks time for an initial translation of the page, after which we will start to check up on you. Please note the section on policies below.
 
 If you finished your task and all members of the team agree that the translation is done, it will go to trial for another two weeks. In this time, we encourage people to read the translation and give feedback.
 
@@ -56,6 +56,8 @@ Each translation must be reviewed by a second member of the team for quality con
   * You see the proposed suggestions. Check the checkmark to accept one, or the cross to refuse.
 * You may add a better suggestions, which others can in turn review
 
-## Policies
+## Special case: Policies
 
 All policy documents outside other then English must contain a link to the original on top, indicating that the English translation is binding and the translation is a best effort.
+
+Also, a translation team can decide to leave any policies untranslated, instead opting for just linking to the English translation with an appropriate wording.

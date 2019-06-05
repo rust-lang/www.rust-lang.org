@@ -1,9 +1,8 @@
 ### Translation file for page: https://www.rust-lang.org/what/cli
 
-
 ## templates/what/cli.hbs
 
-cli-page-heading = Command-line apps
+what-cli-page-title = Command-line apps
 
 
 ## templates/components/what/cli/pitch.hbs

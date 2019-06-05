@@ -2,7 +2,8 @@
 
 ## Web-Assembly (templates/what/wasm.hbs)
 
-wasm-page-title = Web&shy;Assembly
+what-wasm-page-title = WebAssembly
+what-wasm-page-heading = Web&shy;Assembly
 
 
 ## Why Rust? (templates/components/what/wasm/pitch.hbs)
@@ -39,7 +40,6 @@ wasm-get-started-mdn-alt = MDN logo
 wasm-get-started-mdn-description =
         Learn more about WebAssembly on the Mozilla Developer Network.
 wasm-get-started-mdn-link = Check it out
-
 
 ## Plays well with JavaScript (templates/components/what/wasm/js.hbs)
 

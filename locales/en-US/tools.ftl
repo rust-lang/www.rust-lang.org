@@ -1,4 +1,7 @@
-# tools/index.hbs
+## tools/index.hbs
+
+tools-page-title = Tools
+
 tools-editor-support-heading = First-class editor support
 tools-editor-support-description = Whether you prefer working with code from the
         command line, or using rich graphical editors, there’s a Rust
@@ -51,8 +54,9 @@ tools-automation-cargo-doc-description = Cargo’s doc builder makes it so no AP
 tools-automation-cargo-doc-link = Go to site
 
 
-# tools/install.hbs
-install-page-heading = Install Rust
+## tools/install.hbs
+
+tools-install-page-title = Install Rust
 
 install-using-rustup-heading = Using rustup (Recommended)
 
@@ -142,3 +146,26 @@ install-other-methods-description = The installation described above, via
         <code>rustup</code>, is the preferred way to install Rust for most
         developers. However, Rust can be installed via other methods as well.
 install-other-methods-link = Learn more
+
+## components/tools/rustup.hbs
+
+tools-rustup-unixy = It looks like you’re running macOS, Linux, or another Unix-like OS. To download Rustup and install Rust, run the following in your terminal, then follow the on-screen instructions.
+tools-rustup-windows = It looks like you’re running Windows. To install Rust, download and run the following, and then follow the onscreen instructions.
+tools-rustup-wsl-heading = Windows Subsystem for Linux
+tools-rustup-wsl = If you’re a Windows Subsystem for Linux user run the following in your terminal, then follow the on-screen instructions to install Rust.
+tools-rustup-unknown = Rust runs on Windows, Linux, macOS, FreeBSD and NetBSD. If you are on one of these platforms and are seeing this then please report an issue with the following values:
+tools-rustup-report = Report an Issue
+tools-rustup-manual-unixy = To install Rust, if you are running Unix, <br>run the following in your terminal, then follow the on-screen instructions.
+tools-rustup-manual-windows = If you are running Windows,<br>download and run <a href="https://win.rustup.rs">rustup‑init.exe</a> then follow the on-screen instructions.
+tools-rustup-manual-default = To install Rust, if you are running a Unix such as WSL, Linux or macOS,<br> run the following in your terminal, then follow the on-screen instructions.
+tools-rustup-manual-default-windows = If you are running Windows,<br>download and run <a href="https://win.rustup.rs">rustup‑init.exe</a> then follow the on-screen instructions.
+
+## components/tools/editors.hbs
+
+tools-editor-vscode = VS Code
+tools-editor-sublime = Sublime Text 3
+tools-editor-atom = Atom
+tools-editor-idea = IntelliJ IDEA
+tools-editor-eclipse = Eclipse
+tools-editor-vim = Vim
+tools-editor-emacs = Emacs

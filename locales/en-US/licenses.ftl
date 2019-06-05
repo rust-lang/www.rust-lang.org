@@ -1,8 +1,7 @@
 ### Translation file for page: https://www.rust-lang.org/policies/licenses
-
 ## templates/policies/licenses.hbs
 
-licenses-page-heading = Licenses
+policies-licenses-page-title = Licenses
 
 licenses-license-heading = License
 licenses-license-general-description =

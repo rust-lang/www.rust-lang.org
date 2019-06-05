@@ -2,7 +2,7 @@
 
 <header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-    <h1>Community</h1>
+    <h1>{{text community-page-title}}</h1>
   </div>
 </header>
 
@@ -11,22 +11,19 @@
     <div class="flex flex-column flex-row-l">
       <div class="mw-50-l mh2-l pt0 flex flex-column justify-between-l">
         <p>
-          The Rust programming language has many qualities, but Rust’s greatest
-          strength is the community of people who come together to make working in
-          Rust a rewarding experience.
+         {{text community-blurb}}
         </p>
         <p>
-          Stay up to date with the Rust community!
+          {{text community-twir}}
         </p>
-        <a href="https://this-week-in-rust.org/" class="button button-secondary mb3">This Week in Rust</a>
+        <a href="https://this-week-in-rust.org/" class="button button-secondary mb3">{{text community-twir-button}}</a>
       </div>
       <div class="mw-50-l mh2-l pt0 flex flex-column justify-between-l">
         <p>
-          We’d like to hear from you! Not sure where or who to ask a question? Want to get involved but aren’t sure how?
-          The community team is eager to connect you with someone who can help!
+          {{text community-team-contact}}
         </p>
 
-        <a href="mailto:community@rust-lang.org" class="button button-secondary mb3">email community@rust-lang.org</a>
+        <a href="mailto:community@rust-lang.org" class="button button-secondary mb3">{{text community-team-button}}</a>
       </div>
     </div>
 
@@ -36,54 +33,48 @@
 <section id="contribute-talk" class="white">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>Where to talk</h2>
+      <h2>{{text community-where}}</h2>
       <div class="highlight"></div>
     </header>
     <div class="flex flex-column flex-row-l">
       <div class="mw-33-l mh3-l pt0 flex flex-column justify-start" id="users-forum">
         <div>
-          <h3 class="mt0 mb4">Users forum</h3>
+          <h3 class="mt0 mb4">{{text community-urlo-header}}</h3>
           <p>
-            The Rust Users Forum is a place for Rust users to communicate about
-            anything and everything related to Rust. Ask questions here,
-            coordinate on project ideas, whatever you like!
+            {{text community-urlo}}
           </p>
         </div>
 
-        <a href="https://users.rust-lang.org" class="button button-secondary">Visit
-          Forum</a>
+        <a href="https://users.rust-lang.org" class="button button-secondary">{{text community-discourse-button}}</a>
       </div>
 
       <div class="mw-33-l mh3-l pt4 pt0-l flex flex-column justify-start" id="internals-forum">
         <div>
-          <h3 class="mt0 mb4">Internals forum</h3>
+          <h3 class="mt0 mb4">{{text community-irlo-header}}</h3>
           <p>
-            The Rust Internals Forum is a place for discussion about the
-            development of Rust itself &ndash; including work on the compiler
-            as well as the design of the language and the standard library.
+            {{text community-irlo}}
           </p>
         </div>
-        <a href="https://internals.rust-lang.org/" class="button button-secondary">Visit
-          Forum</a>
+
+        <a href="https://internals.rust-lang.org" class="button button-secondary">{{text community-discourse-button}}</a>
+
       </div>
 
       <div class="mw-33-l mh3-l pt4 pt0-l flex flex-column justify-start" id="chat-platforms">
         <div>
-          <h3 class="mt0 mb4">Chat platforms</h3>
+          <h3 class="mt0 mb4">{{text community-chat-header}}</h3>
           <p>
-            Development of Rust, and general chatter happens on several chat
-            platforms. Check out general channels and more on the Rust Discord server,
-            or check out the teams page to find where specific teams meet.
+            {{text community-chat}}
           </p>
         </div>
 
         {{!-- TODO: remove padding and margin once global declarations are gone --}}
         <ul class="list pa0 ma0">
           <li class="mb3">
-            <a href="https://discord.gg/rust-lang" class="button button-secondary">Discord</a>
+            <a href="https://discord.gg/rust-lang" class="button button-secondary">{{text discord}}</a>
           </li>
           <li class="mb3">
-            <a href="{{baseurl}}/governance" class="button button-secondary">Learn more about teams</a>
+            <a href="{{baseurl}}/governance" class="button button-secondary">{{text community-teams-learn}}</a>
           </li>
         </ul>
       </div>
@@ -94,65 +85,52 @@
 <section id="community-events" class="green">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>Events</h2>
+      <h2>{{text community-events-header}}</h2>
       <div class="highlight"></div>
     </header>
     <div class="flex flex-column flex-row-l">
       <div class="mw-50-l mh3-l pt0 flex flex-column justify-between" id="meetups-usergroups">
         <div>
-          <h3 class="mt0 mb4">Find a local meetup or conference</h3>
+          <h3 class="mt0 mb4">{{text community-meetup-header}}</h3>
           <p>
-            There are more than 90 Meetups and several conferences worldwide in over 35 countries.
-            Rustaceans meet periodically in Rust User Groups. They are a great
-            introduction to the community and a great way to learn and socialize
-            with other people with a similar interest. Meetings are usually
-            informal and open to everyone.
+            {{text community-meetup}}
           </p>
         </div>
         <ul class="list ma0 pa0">
           <li class="mb3">
             <a href="https://calendar.google.com/calendar/embed?showTitle=0&showPrint=0&showTabs=0&showCalendars=0&mode=AGENDA&height=400&wkst=1&bgcolor=%23FFFFFF&src=apd9vmbc22egenmtu5l6c5jbfc%40group.calendar.google.com&color=%23691426&ctz=Europe%2FMadrid"
-              class="button button-secondary">View Calendar</a>
+              class="button button-secondary">{{text community-calendar}}</a>
           </li>
           <li class="mb3">
             <a href="https://blog.rust-lang.org/2019/05/20/The-2019-Rust-Event-Lineup.html"
-              class="button button-secondary">Check out the 2019 Conference Lineup</a>
+              class="button button-secondary">{{text community-conference-lineup}}</a>
           </li>
         </ul>
       </div>
       <div class="mw-50-l mh3-l pt4 pt0-l flex flex-column justify-between" id="conferences">
         <div>
-          <h3 class="mt0 mb4">Run your own event</h3>
-          <p>
-            As Rust grows, we’re excited to help folks start their own local events.
-            From hack and learns, to meetups, to conferences, the Rust Events Team is
-            ready to help support you.
-          </p>
-          <p>
-            Registering your event helps us to keep track of our community efforts and
-            allows us to connect you to speakers or other members in your area.
-          </p>
+          <h3 class="mt0 mb4">{{text community-event-run-header}}</h3>
+          {{text community-event-run}}
         </div>
         <ul class="list ma0 pa0">
         <li class="mb3">
-          <a href="https://github.com/rust-community/events-team#-rust-events-team" class="button button-secondary">Check
-            out the events team repo</a>
+          <a href="https://github.com/rust-community/events-team#-rust-events-team" class="button button-secondary">{{text community-events-repo}}</a>
         </li>
         <li class="mb3">
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSf52YXGhqBaHtCXtVna4iHYMK7IQaTqUW6V-ztsZC8C2TBInQ/viewform"
-            class="button button-secondary">Register your event</a>
+            class="button button-secondary">{{text community-event-register}}</a>
         </li>
         </ul>
       </div>
     </div>
-    <img src="/static/images/rustfest.jpg" alt="RustFest participants">
+    <img src="/static/images/rustfest.jpg" alt="{{text community-rustfest-alt}}">
   </div>
 </section>
 
 <section id="rustbridge" class="white">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>RustBridge</h2>
+      <h2>{{text community-rustbridge-header}}</h2>
       <div class="highlight"></div>
     </header>
 
@@ -162,19 +140,17 @@
       </div>
       <div class="mw-67-l mh3-l">
         <p>
-          RustBridge is a workshop focused on getting underrepresented people
-          with a background in another programming language to learn Rust and
-          join the community.
+          {{text community-rustbridge}}
         </p>
-        <a href="https://github.com/rustbridge/team" class="button button-secondary">Check out the Rustbridge repo</a>
+        <a href="https://github.com/rustbridge/team" class="button button-secondary">{{text community-rustbridge-button}}</a>
       </div>
     </div>
 
     <ul class="list ma0 pa0 flex flex-column flex-row-ns flex-wrap-m flex-nowrap-l justify-center">
-      <li class="tc max-width-half-m ph1-ns mb3"><img src="/static/images/rustbridge-rustconf.jpg" alt="RustBridge at RustConf" /></li>
-      <li class="tc max-width-half-m ph1-ns mb3"><img src="/static/images/rustbridge-paris.jpg" alt="RustBridge Paris" /></li>
-      <li class="tc max-width-half-m ph1-ns mb3"><img src="/static/images/rustbridge-berlin.jpg" alt="RustBridge Berlin" /></dv>
-      <li class="tc max-width-half-m ph1-ns mb3"><img src="/static/images/rustbridge-rbr.jpg" alt="RustBridge at Rust Belt Rust" /></li>
+      <li class="tc max-width-half-m ph1-ns mb3"><img src="/static/images/rustbridge-rustconf.jpg" alt="{{text community-rustbridge-rustconf-alt}}" /></li>
+      <li class="tc max-width-half-m ph1-ns mb3"><img src="/static/images/rustbridge-paris.jpg" alt="{{text community-rustbridge-paris-alt}}" /></li>
+      <li class="tc max-width-half-m ph1-ns mb3"><img src="/static/images/rustbridge-berlin.jpg" alt="{{text community-rustbridge-berlin-alt}}" /></dv>
+      <li class="tc max-width-half-m ph1-ns mb3"><img src="/static/images/rustbridge-rbr.jpg" alt="{{text community-rustbridge-rbr-alt}}" /></li>
     </ul>
   </div>
 </section>
@@ -182,7 +158,7 @@
 <section id="rustreach" class="red">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center">
     <header>
-      <h2>Increasing Rust’s Reach</h2>
+      <h2>{{text community-irr-header}}</h2>
       <div class="highlight"></div>
     </header>
     <div class="w-100 flex flex-column flex-row-l">
@@ -190,10 +166,9 @@
         <img src="/static/images/rustreach.jpg" alt="increasing rust's reach logo"/>
       </div>
       <div class="mw-67-l mh3-l">
-        <p>
-          Increasing Rust’s Reach is a program that matches Rust team members from all parts of the project with individuals who are underrepresented in Rust’s community and the tech industry for a partnership of three (3) months, from mid-May to mid-August. Each partnership agrees to a commitment of 3–5 hours per week working on a Rust Project.
+        <p> {{text community-irr}}
         </p>
-        <a href="http://reach.rust-lang.org/" class="button button-secondary">Visit Website</a>
+        <a href="http://reach.rust-lang.org/" class="button button-secondary">{{text community-irr-button}}</a>
       </div>
     </div>
   </div>
@@ -202,31 +177,21 @@
 <section id="conduct" class="green">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>Community Standards</h2>
+      <h2>{{text community-standards-header}}</h2>
       <div class="highlight"></div>
     </header>
     <div class="f3 f2-l">
       <p>
-        We are committed to providing a friendly, safe and welcoming environment
-        for all, regardless of gender, sexual orientation, disability, ethnicity,
-        religion, or similar personal characteristic. Our
-        <a href="{{baseurl}}/policies/code-of-conduct">code of conduct</a> sets the
-        standards for behavior in all official Rust forums.
-
-        <br /><br />
-
-        If you feel you have been or are being harassed or made uncomfortable by a
-        community member, please contact any of the
-        <a href="mailto:rust-mods@rust-lang.org">Rust Moderation Team</a>
-        immediately. Whether you are a regular contributor or a newcomer, we care
-        about making the community a safe space for you.
+        {{#text community-standards}}
+          {{#textparam url}}{{baseurl}}/policies/code-of-conduct{{/textparam}}
+        {{/text}}
       </p>
     </div>
 
     <div class="flex flex-column flex-row-l justify-between">
-      <a href="mailto:rust-mods@rust-lang.org" class="button button-secondary mw-33-l mh3-l w-100 mb3">Message the moderation team</a>
-      <a href="{{baseurl}}/policies/code-of-conduct" class="button button-secondary mw-33-l mh3-l w-100 mb3">read the code of conduct</a>
-      <a href="{{baseurl}}/policies/code-of-conduct#moderation" class="button button-secondary mw-33-l mh3-l w-100 mb3">read the moderation guidelines</a>
+      <a href="mailto:rust-mods@rust-lang.org" class="button button-secondary mw-33-l mh3-l w-100 mb3">{{text community-mod-button}}</a>
+      <a href="{{baseurl}}/policies/code-of-conduct" class="button button-secondary mw-33-l mh3-l w-100 mb3">{{text community-coc-button}}</a>
+      <a href="{{baseurl}}/policies/code-of-conduct#moderation" class="button button-secondary mw-33-l mh3-l w-100 mb3">{{text community-mod-guidelines-button}}</a>
     </div>
   </div>
 </section>

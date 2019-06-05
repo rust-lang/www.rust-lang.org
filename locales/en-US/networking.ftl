@@ -1,6 +1,6 @@
 ## templates/what/networking.hbs
 
-networking-header = Networking
+what-networking-page-title = Networking
 
 ## templates/components/what/networking/get-started.hbs
 
@@ -61,8 +61,3 @@ networking-production-testimonial-1aim =
     backend in production since end of 2015 and it has never failed us so far!
 
 networking-production-testimonial-1aim-attribution = Yann Leretaille, <a href="{ $href }">1aim</a>
-
-
-
-
-

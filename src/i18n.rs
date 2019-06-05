@@ -217,14 +217,16 @@ impl HelperDef for I18NHelper {
             .expect("Pontoon not set in context")
             .as_bool()
             .expect("Pontoon must be boolean");
+        let in_context =
+            pontoon && !id.ends_with("-title") && !id.ends_with("-alt") && !id.starts_with("meta-");
 
         let response = self.lookup(lang, &id, args.as_ref());
-        if pontoon {
+        if in_context {
             out.write(&format!("<span data-l10n-id='{}'>", id))
                 .map_err(RenderError::with)?;
         }
         out.write(&response).map_err(RenderError::with)?;
-        if pontoon {
+        if in_context {
             out.write("</span>").map_err(RenderError::with)?;
         }
         Ok(())
@@ -296,11 +298,12 @@ impl HelperDef for TeamHelper {
             .expect("Pontoon not set in context")
             .as_bool()
             .expect("Pontoon must be boolean");
+        let in_context = pontoon && !id.ends_with("-alt") && !id.starts_with("meta-");
         let team_name = team["name"].as_str().unwrap();
 
         let fluent_id = format!("governance-team-{}-{}", team_name, id);
 
-        if pontoon {
+        if in_context {
             out.write(&format!("<span data-l10n-id='{}'>", fluent_id))
                 .map_err(RenderError::with)?;
         }
@@ -315,7 +318,7 @@ impl HelperDef for TeamHelper {
             let english = team["website_data"][id].as_str().unwrap();
             out.write(&english).map_err(RenderError::with)?;
         }
-        if pontoon {
+        if in_context {
             out.write("</span>").map_err(RenderError::with)?;
         }
         Ok(())
@@ -351,6 +354,32 @@ pub fn create_bundle(lang: &str, resources: &'static Vec<FluentResource>) -> Flu
             .add_resource(res)
             .expect("Failed to add FTL resources to the bundle.");
     }
+
+    bundle
+        .add_function("EMAIL", |values, _named| {
+            let email = match *values.get(0)?.as_ref()? {
+                FluentValue::String(ref s) => s,
+                _ => return None,
+            };
+            Some(FluentValue::String(format!(
+                "<a href='mailto:{0}' lang='en-US'>{0}</a>",
+                email
+            )))
+        })
+        .expect("could not add function");
+
+    bundle
+        .add_function("ENGLISH", |values, _named| {
+            let text = match *values.get(0)?.as_ref()? {
+                FluentValue::String(ref s) => s,
+                _ => return None,
+            };
+            Some(FluentValue::String(format!(
+                "<span lang='en-US'>{0}</span>",
+                text
+            )))
+        })
+        .expect("could not add function");
 
     bundle
 }
