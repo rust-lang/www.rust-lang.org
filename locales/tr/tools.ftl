@@ -124,3 +124,13 @@ tools-rustup-manual-unixy = Eğer Unix kullanıyorsanız Rust'ı yüklemek için
 tools-rustup-manual-windows = Eğer Windows kullanıyorsanız<br><a href="https://win.rustup.rs">rustup‑init.exe</a>'yi indirin ve çalıştırın. Ardından ekrandaki talimatları izleyin.
 tools-rustup-manual-default = Eğer WSL, Linux veya macOS gibi bir Unix işletim sistemi kullanıyorsanız Rust'ı yüklemek için <br> uçbiriminizde şunları çalıştırın. Ardından ekrandaki talimatları izleyin.
 tools-rustup-manual-default-windows = Eğer Windows kullanıyorsanız <br><a href="https://win.rustup.rs">rustup‑init.exe</a>'yi indirin ve çalıştırın. Ardından ekrandaki talimatları izleyin.
+
+## components/tools/editors.hbs
+
+tools-editor-vscode =  { ENGLISH("VS Code") }
+tools-editor-sublime =  { ENGLISH("Sublime Text 3") }
+tools-editor-atom =  { ENGLISH("Atom") }
+tools-editor-idea =  { ENGLISH("IntelliJ IDEA") }
+tools-editor-eclipse =  { ENGLISH("Eclipse") }
+tools-editor-vim =  { ENGLISH("Vim") }
+tools-editor-emacs =  { ENGLISH("Emacs") }

@@ -159,3 +159,13 @@ tools-rustup-manual-unixy = To install Rust, if you are running Unix, <br>run th
 tools-rustup-manual-windows = If you are running Windows,<br>download and run <a href="https://win.rustup.rs">rustup‑init.exe</a> then follow the on-screen instructions.
 tools-rustup-manual-default = To install Rust, if you are running a Unix such as WSL, Linux or macOS,<br> run the following in your terminal, then follow the on-screen instructions.
 tools-rustup-manual-default-windows = If you are running Windows,<br>download and run <a href="https://win.rustup.rs">rustup‑init.exe</a> then follow the on-screen instructions.
+
+## components/tools/editors.hbs
+
+tools-editor-vscode = VS Code
+tools-editor-sublime = Sublime Text 3
+tools-editor-atom = Atom
+tools-editor-idea = IntelliJ IDEA
+tools-editor-eclipse = Eclipse
+tools-editor-vim = Vim
+tools-editor-emacs = Emacs
