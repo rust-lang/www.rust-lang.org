@@ -217,7 +217,8 @@ impl HelperDef for I18NHelper {
             .expect("Pontoon not set in context")
             .as_bool()
             .expect("Pontoon must be boolean");
-        let in_context = pontoon && !id.ends_with("-alt") && !id.starts_with("meta-");
+        let in_context =
+            pontoon && !id.ends_with("-title") && !id.ends_with("-alt") && !id.starts_with("meta-");
 
         let response = self.lookup(lang, &id, args.as_ref());
         if in_context {
