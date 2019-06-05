@@ -72,7 +72,6 @@ domains-embedded-blurb = Targeting low-resource devices?
             Rust has you covered.
 domains-embedded-alt = an embedded device chip
 
-
 ## components/panels/get-involved.hbs
 get-involved = Get involved
 
