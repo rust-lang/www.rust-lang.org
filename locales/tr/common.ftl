@@ -11,6 +11,8 @@ discord = Discord
 ## components/layout.hbs
 
 meta-description = Güvenilir ve verimli bir yazılım oluşturmak için herkesi teşvik eden bir dil.
+page-title = { $pagename } - Rust Programlama Dili
+index-title = Rust Programlama Dili
 
 ## components/nav.hbs
 
