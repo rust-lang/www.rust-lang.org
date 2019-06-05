@@ -2,6 +2,7 @@
 
 rust = Rust
 
+
 get-started-exclamation = Get started!
 getting-started = Getting started
 why-rust = Why Rust?
@@ -12,6 +13,8 @@ discord = Discord
 ## components/layout.hbs
 
 meta-description = A language empowering everyone to build reliable and efficient software.
+page-title = { $pagename } - Rust Programming Language
+index-title = Rust Programming Language
 
 ## components/nav.hbs
 
