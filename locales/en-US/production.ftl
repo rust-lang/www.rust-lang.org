@@ -34,4 +34,4 @@ production-license-link = Policies: License
 
 ## templates/production/users.hbs
 
-production-users-page = Production users
+production-users-page-title = Production users

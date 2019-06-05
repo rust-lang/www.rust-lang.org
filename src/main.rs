@@ -387,7 +387,7 @@ fn render_production(lang: String) -> Template {
     let page = "production/users".to_string();
     let context = Context::new(
         page.clone(),
-        "production-page-title",
+        "production-users-page-title",
         false,
         load_users_data(),
         lang,
