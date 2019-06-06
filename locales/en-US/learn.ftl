@@ -16,7 +16,7 @@ learn-doc-heading = Read the core documentation
 learn-doc = All of this documentation is also available locally using the <code>rustup doc</code> command, which will open up these resources for you in your browser without requiring a network connection!
 
 learn-doc-std = Comprehensive guide to the Rust standard library APIs.
-learn-doc-std-button = The standard 
+learn-doc-std-button = The standard library
 
 learn-doc-edition = Guide to the Rust editions.
 learn-doc-edition-button = Edition Guide
