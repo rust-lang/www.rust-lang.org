@@ -40,7 +40,7 @@ footer-social = Sosyal
 footer-get-help = Yardım alın!
 footer-alt-twitter = Twitter
 footer-alt-youtube = youtube logosu
-footer-alt-discord = Discord
+footer-alt-discord = { discord }
 footer-alt-github = GitHub
 footer-attribution =
     Rust Ekibi tarafından geliştirilmektedir. Yazım hatasına mı rastladınız?

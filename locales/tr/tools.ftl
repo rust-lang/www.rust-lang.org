@@ -1,14 +1,12 @@
 ## tools/index.hbs
 
 tools-page-title = Araçlar
-
 tools-editor-support-heading = Birinci sınıf metin düzenleyici desteği
 tools-editor-support-description =
     İster komut satırından kod yazarak çalışmayı tercih edin
     ister zengin grafiksel düzenleyiciler kullanın ortada sizin düzenleyici
     seçiminize uygun Rust entegrasyonu vardır. Ya da kendi düzenleyicinizi
-    <a href="https://github.com/rust-lang/rls">Rust Dil Sunucusu</a> kullanarak
-    yapabilirsiniz.
+    <a href="https://github.com/rust-lang/rls">Rust Dil Sunucusu</a> kullanarak yapabilirsiniz.
 tools-build-heading = Yapılarınıza sakinlik getirin
 tools-build-description =
     Cargo, Rust için yapım aracıdır. Bütün ortak eylemleri
@@ -26,7 +24,7 @@ tools-build-test-description =
     çözümleri sağlar.
 tools-build-deploy-heading = Yayınla
 tools-build-deploy-description =
-    <code class="nowrap">cargo build</code> kodu her plafrom için
+    <code class="nowrap">cargo build</code> kodu her platform için
     ekstra bilgi taşımayan ikili kod oluşturur. Kodunuz tek bir komutla Windows'u,
     Linux'u, OSX'i ve webi hedef alabilir. Hepsi sipariş usulü yapı dosyalarına gerek 
     olmadan modern bir arayüzün parçası.
@@ -51,7 +49,7 @@ tools-automation-cargo-doc-description =
     Cargo'nun belgelendirmecisi işinizi halleder. Bu da 
     hiçbir UPA'nın belgelendirmesiz ortaya çıkmamasını sağlar.
     <code class="nowrap">cargo doc</code> ile yerel olarak erişebilirsiniz ve
-    <a href="https://docs.rs">docs.rs</a> ile herkese açık cratelere çevirmiçi ulaşabilirsiniz.
+    <a href="https://docs.rs">docs.rs</a> ile herkese açık cratelere çevrimiçi ulaşabilirsiniz.
 tools-automation-cargo-doc-link = Siteye git
 
 ## tools/install.hbs
@@ -121,16 +119,16 @@ tools-rustup-wsl = Eğer Windows için Linux Altsistemi kullanıcısıysanız Ru
 tools-rustup-unknown = Rust, Windows'ta, Linux'ta, macOS'ta, FreeBSD'de ve NetBSD'de çalışır. Eğer bu platformlardan birisini kullanıyorsanız ve bunu görüyorsanız lütfen aşağıdaki değerlerle birlikte sorunu bildirin.
 tools-rustup-report = Bir sorun bildirin
 tools-rustup-manual-unixy = Eğer Unix kullanıyorsanız Rust'ı yüklemek için <br>uçbiriminizde şunları çalıştırın. Ardından ekrandaki talimatları izleyin.
-tools-rustup-manual-windows = Eğer Windows kullanıyorsanız<br><a href="https://win.rustup.rs">rustup‑init.exe</a>'yi indirin ve çalıştırın. Ardından ekrandaki talimatları izleyin.
+tools-rustup-manual-windows = Eğer Windows kullanıyorsanız <br><a href="https://win.rustup.rs">{ ENGLISH("rustup-init.exe") }</a>'yi indirin ve çalıştırın. Ardından ekrandaki talimatları izleyin.
 tools-rustup-manual-default = Eğer WSL, Linux veya macOS gibi bir Unix işletim sistemi kullanıyorsanız Rust'ı yüklemek için <br> uçbiriminizde şunları çalıştırın. Ardından ekrandaki talimatları izleyin.
-tools-rustup-manual-default-windows = Eğer Windows kullanıyorsanız <br><a href="https://win.rustup.rs">rustup‑init.exe</a>'yi indirin ve çalıştırın. Ardından ekrandaki talimatları izleyin.
+tools-rustup-manual-default-windows = Eğer Windows kullanıyorsanız <br><a href="https://win.rustup.rs">{ ENGLISH("rustup-init.exe") }</a>'yi indirin ve çalıştırın. Ardından ekrandaki talimatları izleyin.
 
 ## components/tools/editors.hbs
 
-tools-editor-vscode =  { ENGLISH("VS Code") }
-tools-editor-sublime =  { ENGLISH("Sublime Text 3") }
-tools-editor-atom =  { ENGLISH("Atom") }
-tools-editor-idea =  { ENGLISH("IntelliJ IDEA") }
-tools-editor-eclipse =  { ENGLISH("Eclipse") }
-tools-editor-vim =  { ENGLISH("Vim") }
-tools-editor-emacs =  { ENGLISH("Emacs") }
+tools-editor-vscode = { ENGLISH("VS Code") }
+tools-editor-sublime = { ENGLISH("Sublime Text 3") }
+tools-editor-atom = { ENGLISH("Atom") }
+tools-editor-idea = { ENGLISH("IntelliJ IDEA") }
+tools-editor-eclipse = { ENGLISH("Eclipse") }
+tools-editor-vim = { ENGLISH("Vim") }
+tools-editor-emacs = { ENGLISH("Emacs") }
