@@ -34,7 +34,7 @@ community-event-register = Etkinliğinizi kaydedin
 community-rustfest-alt = Rustfest katılımcıları
 community-rustbridge-header = Rustbridge
 community-rustbridge = RustBridge, Rust öğrenmek ve topluluğa katılmak için başka bir dille uğraşmış tanınmayan insanları Rust'a katmak için odaklanmış bir atölyedir.
-community-rustbridge-button = Rustbridge deposuna göz atın
+community-rustbridge-button = { ENGLISH("Rustbridge") } deposuna göz atın
 community-rustbridge-rustconf-alt = RustConf'ta RustBridge
 community-rustbridge-paris-alt = RustBridge Paris
 community-rustbridge-berlin-alt = RustBridge Berlin
@@ -43,7 +43,16 @@ community-irr-header = Increasing Rust's Reach
 community-irr = Increasing Rust's Reach, mayıs ayının ortasından ağustos ayının ortasına kadar üç (3) aylık bir ortaklık için Rust toplumunda ve teknoloji endüstrisinde yeterince temsil edilmeyen bireylerle projenin tüm bölümlerinden Rust ekibi üyelerini eşleştiren bir programdır. Her bir ortaklık, bir Rust projesinde çalışmak üzere haftada 3-5 saatlik bir taahhüt vermeyi kabul eder.
 community-irr-button = İnternet Sitesini Ziyaret Edin
 community-standards-header = Topluluk Standartları
-community-standards = Kendimizi cinsiyet, cinsel yönelim, engel, etnik, din veya benzer kişisel özellik gözetmeksizin; samimi, güvenli ve misafirperver bir ortam hazırlamaya adadık. <a href="{ $url }">Davranış kurallarımız</a>, tüm resmi Rust forumlarındaki davranış standartlarını belirler.
+community-standards =
+    Kendimizi cinsiyet, cinsel yönelim, engel, etnik, din veya benzer
+    kişisel özellik gözetmeksizin; samimi, güvenli ve misafirperver bir ortam
+    hazırlamaya adadık. <a href="{ $url }">Davranış kurallarımız</a>, tüm resmi Rust forumlarındaki
+    davranış standartlarını belirler.
+    <br /><br />
+    Bir topluluk üyesi tarafından taciz edildiğinizi veya rahatsız edildiğinizi
+    düşünüyorsanız lütfen bir an önce { EMAIL("rust-mods@rust-lang.org") }Rust Yönetim Ekibi</a>
+    ile iletişime geçin. İster düzenli bir katılımcı olun, ister yeni bir katılımcı olun,
+    topluluğumuzu sizin için güvenli bir alan haline getirmeye özen gösteriyoruz.
 community-mod-button = Yönetim ekibine mesaj gönder
 community-coc-button = davranış kurallarını oku
 community-mod-guidelines-button = yönetim kılavuzunu oku

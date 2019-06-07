@@ -1,6 +1,6 @@
 ## templates/what/networking.hbs
 
-what-networking-page-title = Ağ sistemleri
+what-networking-page-title = Ağ Sistemleri
 
 ## templates/components/what/networking/get-started.hbs
 
