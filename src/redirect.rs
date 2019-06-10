@@ -61,7 +61,6 @@ impl<'r> FromParam<'r> for Locale {
             "ru-RU" => Ok(Locale("ru-RU")),
             "sv-SE" => Ok(Locale("sv-SE")),
             "vi-VN" => Ok(Locale("vi-VN")),
-            "zh-CN" => Ok(Locale("zh-CN")),
             _ => Err(NoRedirectFound),
         }
     }
