@@ -38,10 +38,10 @@ footer-security = 安全问题公示
 footer-policies-all = 政策总览
 footer-social = 社交
 footer-get-help = 获得帮助！
-footer-alt-twitter = Twitter
+footer-youtube-alt = Twitter
 footer-alt-youtube = youtube 标志
-footer-alt-discord = { discord }
-footer-alt-github = GitHub
+footer-discord-alt = { discord }
+footer-github-alt = GitHub
 footer-attribution =
     由 Rust 团队维护。发现了错别字？
     <a href="https://github.com/rust-lang/www.rust-lang.org">在这里提交修复</a>！
