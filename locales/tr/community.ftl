@@ -50,7 +50,7 @@ community-standards =
     davranış standartlarını belirler.
     <br /><br />
     Bir topluluk üyesi tarafından taciz edildiğinizi veya rahatsız edildiğinizi
-    düşünüyorsanız lütfen bir an önce { EMAIL("rust-mods@rust-lang.org") }Rust Yönetim Ekibi</a>
+    hissediyorsanız lütfen bir an önce { EMAIL("rust-mods@rust-lang.org") }Rust Yönetim Ekibi</a>
     ile iletişime geçin. İster düzenli bir katılımcı olun, ister yeni bir katılımcı olun,
     topluluğumuzu sizin için güvenli bir alan haline getirmeye özen gösteriyoruz.
 community-mod-button = Yönetim ekibine mesaj gönder
