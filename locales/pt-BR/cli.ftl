@@ -9,6 +9,9 @@ what-cli-page-title = Aplicações de linha de comando
 
 cli-pitch-solid-img-alt = Escudo com uma marca de verificação
 cli-pitch-solid-heading = Sólido e rápido
+cli-pitch-solid-link = Garantias do Rust
+cli-pitch-ship-img-alt = caixa com marca de verificação
+cli-pitch-ship-heading = Fácil distribuição
 
 ## templates/components/what/cli/maintainable.hbs
 
