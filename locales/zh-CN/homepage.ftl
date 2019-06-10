@@ -57,7 +57,7 @@ domains-embedded-alt = 嵌入式设备芯片
 
 ## components/panels/get-involved.hbs
 
-get-involved = 参与其中
+get-involved = 加入社区
 get-involved-read-rust = 阅读
 get-involved-read-rust-blurb = 我们热爱文档！查看在线书籍，以及重要的博客文章和用户指南。
 get-involved-read-rust-link = 阅读学习资源
