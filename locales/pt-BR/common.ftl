@@ -38,10 +38,10 @@ footer-security = Denuncia de Vulnerabilidades
 footer-policies-all = Todas as políticas
 footer-social = Social
 footer-get-help = Busque ajuda!
-footer-alt-twitter = Twitter
+footer-youtube-alt = Twitter
 footer-alt-youtube = logo do youtube
-footer-alt-discord = { discord }
-footer-alt-github = GitHub
+footer-discord-alt = { discord }
+footer-github-alt = GitHub
 footer-attribution =
     Mantido pela Equipe Rust. Encontrou algum erro?
     <a href="https://github.com/rust-lang/www.rust-lang.org">Envie uma correção aqui</a>!

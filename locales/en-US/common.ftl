@@ -43,10 +43,10 @@ footer-policies-all = All Policies
 footer-social = Social
 footer-get-help = Get help!
 
-footer-alt-twitter = Twitter
+footer-youtube-alt = Twitter
 footer-alt-youtube = youtube logo
-footer-alt-discord = { discord }
-footer-alt-github = GitHub
+footer-discord-alt = { discord }
+footer-github-alt = GitHub
 
 footer-attribution = Maintained by the Rust Team. See a typo?
         <a href="https://github.com/rust-lang/www.rust-lang.org">Send a fix here</a>!

@@ -27,10 +27,10 @@ footer-policies-all = sǝᴉɔᴉloԀ ll∀
 footer-social = lɐᴉɔoS
 footer-get-help = ¡dlǝɥ ʇǝפ
 
-footer-alt-twitter = ɹǝʇʇᴉʍ┴
+footer-youtube-alt = ɹǝʇʇᴉʍ┴
 footer-alt-youtube = oƃol ǝqnʇnoʎ
-footer-alt-discord = pɹoɔsᴉp
-footer-alt-github = qnHʇᴉפ
+footer-discord-alt = pɹoɔsᴉp
+footer-github-alt = qnHʇᴉפ
 footer-attribution = ¡ <a href="https://github.com/rust-lang/www.rust-lang.org">ǝɹǝɥ xᴉɟ ɐ puǝS</a>
         ¿odʎʇ ɐ ǝǝS ˙ɯɐǝ┴ ʇsnɹ ǝɥʇ ʎq pǝuᴉɐʇuᴉɐW
 footer-old-site = <a href="https://prev.rust-lang.org">ǝʇᴉsqǝʍ snoᴉʌǝɹd</a> ǝɥʇ ɹoɟ ƃuᴉʞoo˥
