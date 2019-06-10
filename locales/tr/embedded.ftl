@@ -41,7 +41,7 @@ embedded-showcase-video-description = <a href="https://vimeo.com">Vimeo</a> arac
 embedded-get-started-discovery-book-alt = DIP-6 paketi
 embedded-get-started-discovery-book-heading = Keşif kitabı
 embedded-get-started-discovery-book-description = Gömülü geliştirme yapmayı&mdash;Rust kullanarak sıfırdan öğrenin!
-embedded-get-started-embedded-rust-book-alt = TFQP-16 paketi
+embedded-get-started-embedded-rust-book-alt = QFP-20 paketi
 embedded-get-started-embedded-rust-book-heading = Gömülü Rust Kitabı
 embedded-get-started-embedded-rust-book-description = Zaten gömülü geliştirmeyle haşır neşir misiniz? Atlayın ve Rust'ın faydalarının tadını çıkarın.
 embedded-get-started-embedonomicon-alt = BGA paketi
