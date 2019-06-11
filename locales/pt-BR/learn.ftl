@@ -6,3 +6,4 @@ learn-book-button = Leia o Livro!
 
 ## learn/get-started.hbs
 
+learn-get-started-page-title = { getting-started }
