@@ -8,8 +8,7 @@ homepage-version = 版本 { $number }
 
 production-title = 生产环境中的 Rust
 production-blurb =
-    全世界已有数百家公司在生产环境中使用 Rust，以达到快速、跨平台、低资源占用的目的。
-    其中包括很多著名且受欢迎的软件，例如 <a href="https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka-stylo/">Firefox</a>、
+    全世界已有数百家公司在生产环境中使用 Rust，以达到快速、跨平台、低资源占用的目的。很多著名且受欢迎的软件，例如 <a href="https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka-stylo/">Firefox</a>、
     <a href="https://blogs.dropbox.com/tech/2016/06/lossless-compression-with-brotli/">Dropbox</a>
     和 <a href="https://blog.cloudflare.com/cloudflare-workers-as-a-serverless-rust-platform/">Cloudflare</a>
     都在使用 Rust。<strong>从初创公司到大型企业，从嵌入式设备到可扩展的 Web 服务，Rust 都完全合适。</strong>
@@ -29,17 +28,14 @@ language-values-reliability-blurb = Rust 丰富的类型系统和所有权模型
 language-values-productivity = 生产力
 language-values-productivity-blurb =
     Rust 拥有出色的文档、友好的编译器和清晰的错误提示信息，
-     还集成了一流的工具 —— 包管理器和构建工具，
+    还集成了一流的工具 —— 包管理器和构建工具，
     智能地自动补全和类型检验的多编辑器支持，
     以及自动格式化程序等等。
 
 ## components/panels/domains.hbs
 
 domains-title = 用 Rust 构建应用
-domains-blurb =
-    2018 年，Rust 社区决定在几个不同的领域中提升编程体验
-    （见 <a href="https://blog.rust-lang.org/2018/03/12/roadmap.html">2018 年路线图</a>）。
-    对此，您可以找到许多高质量的 crate 和一些精彩的入门指南。
+domains-blurb = 2018 年，Rust 社区决定在几个不同的领域中提升编程体验（见 <a href="https://blog.rust-lang.org/2018/03/12/roadmap.html">2018 年路线图</a>）。您可以找到许多高质量的 crate 和一些精彩的入门指南。
 domains-cli = 命令行
 domains-cli-blurb = 使用 Rust 强大的生态系统快速实现命令行工具。Rust 可助您放心维护，轻松分发应用程序。
 domains-cli-alt = 终端
@@ -52,7 +48,7 @@ domains-net = 网络
 domains-net-blurb = 可预见的性能，极小的资源损耗，坚如磐石的可靠性。Rust 极其适合网络服务。
 domains-net-alt = 云和节点
 domains-embedded = 嵌入式
-domains-embedded-blurb = 针对资源匮乏的设备？需要底层控制而又不失上层抽象的便利？那么 Rust 绝对让您满意。
+domains-embedded-blurb = 针对资源匮乏的设备？需要底层控制而又不失上层抽象的便利？Rust 包您满意！
 domains-embedded-alt = 嵌入式设备芯片
 
 ## components/panels/get-involved.hbs
@@ -65,5 +61,5 @@ get-involved-watch-rust = 观看
 get-involved-watch-rust-blurb = Rust 社区有一个专门的 YouTube 频道，收集了大量的演示文稿和教程。
 get-involved-watch-rust-link = 观看学习视频
 get-involved-contribute = 贡献代码
-get-involved-contribute-blurb = Rust 是真正由社区驱动的项目，我们欢迎业余爱好者和专业用户，从新手到经验丰富的专业人士我们都欢迎。参与项目，协助我们，让 Rust 变得更好！
+get-involved-contribute-blurb = Rust 是真正由社区驱动的项目，无论是业余爱好者还是专业用户，从初来乍到的新手到经验丰富的专家我们都欢迎。参与项目，协助我们，让 Rust 变得更好！
 get-involved-contribute-link = 阅读《贡献指南》

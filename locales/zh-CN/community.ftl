@@ -32,7 +32,7 @@ community-event-run =
      </p>
 community-events-repo = 访问活动团队的 Github
 community-event-register = 注册活动
-community-rustfest-alt = Rustfest 与会者
+community-rustfest-alt = Rustfest 参会者
 community-rustbridge-header = Rustbridge
 community-rustbridge = RustBridge 是一个专注于让具有不同编程语言背景的人学习 Rust 并加入社区的研讨会。
 community-rustbridge-button = 访问 Rustbridge 的 Github
@@ -41,16 +41,14 @@ community-rustbridge-paris-alt = RustBridge 巴黎
 community-rustbridge-berlin-alt = RustBridge 柏林
 community-rustbridge-rbr-alt = RustBridge 在 Rust Belt Rust 大会
 community-irr-header = 与日俱增的 Rust 影响力
-community-irr = 与日俱增的 Rust 影响力是一个计划，它将来自项目各个部分的 Rust 团队与 Rust 社区和技术行业中具有代表性的个人相匹配，达成从 3 月中旬到 8 月中旬，为期三个月的合作伙伴关系。每个合作伙伴承诺进行每周工作 3-5 小时的Rust项目的工作。
+community-irr = 「与日俱增的 Rust 影响力」是一项合作计划。在该计划中，自 5 月中旬到 8 月中旬，来自项目各个部分的 Rust 团队成员，将与 Rust 社区和科技行业中少有发言权的个人，进行为期三个月的合作。每组合作伙伴承诺，他们会在一个 Rust 项目上每周投入 3-5 小时。
 community-irr-button = 访问网站
 community-standards-header = 社区准则
 community-standards =
     我们致力于建设一个对每个人都友好、安全以及开放的环境，无关性别、性取向、残障、种族、
-            地区或者类似的个人特征。我们在所有的官方论坛制定了<a href="{ $url }">行为准则</a>。
-            <br /><br />
-            如果您觉得被某个社区成员骚扰或者令您感到不适，请立即联系
-            <a href="mailto:rust-mods@rust-lang.org">Rust 审查团队</a> 的任何成员。无论您是贡献者还是新人，
-            我们都会为您创造一个安全的社区空间。
+    地区或者类似的个人特征。我们的<a href="{ $url }">行为准则</a>为所有 Rust 官方论坛上的行为设置了一个标准。
+    <br /><br />
+    如果您觉得某个社区成员骚扰您或者令您感到不适，请立即联系 <a href="mailto:rust-mods@rust-lang.org">Rust 审查团队</a> 的任何成员。无论您是贡献者还是新人，我们都会为您营造一个安全的交流空间。
 community-mod-button = 联系审查团队
 community-coc-button = 阅读《行为准则》
 community-mod-guidelines-button = 阅读《审查指南》

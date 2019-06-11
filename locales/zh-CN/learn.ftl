@@ -4,18 +4,18 @@ learn-page-title = 学习 Rust
 learn-begin = 开启您的 Rust 之旅
 learn-book =
     <strong>《Rust 程序设计语言》</strong>被亲切地称为“圣经”。本书从基本原则出发，给出了
-            Rust 语言的概览。您将在阅读本书的过程中构建几个项目，在读完本书后，就能对 Rust 语言有一个扎实的掌握。
+            Rust 语言的概览。您将在阅读本书的过程中构建几个项目，读完本书后，您就能扎实地掌握 Rust 语言。
 learn-book-button = 阅读本书！
 learn-rustlings = 此外，Rustlings 课程会指导您下载并设置 Rust 工具链，在命令行中教您阅读和编写 Rust 代码的语法基础。它可以运行在您自己的环境中，是《通过例子学 Rust》之外的另一种选择。
 learn-rustlings-button = 学习 Rustlings 课程！
 learn-rbe = 如果您不喜欢阅读大量的文档来学习语言，那么《通过例子学 Rust》就能涵盖您要学的知识。虽然本书花了很多篇幅来解释代码，但它展示的代码很丰富，并且尽量减少了文字解释。它还包括很多练习！
 learn-rbe-button = 阅读《通过例子学 Rust》！
-learn-use = 跟随 Rust 一起成长
+learn-use = 与 Rust 共同成长
 learn-doc-heading = 阅读核心文档
-learn-doc = 以下所有文档都可以用 <code>rustup doc</code> 命令在本地阅读，它可以在您的浏览器中离线打开这些资源！
+learn-doc = 以下所有文档都可以用 <code>rustup doc</code> 命令在本地阅读，它会在您的浏览器中离线打开这些资源！
 learn-doc-std = 详尽的 Rust 标准库 API 手册。
 learn-doc-std-button = 标准库
-learn-doc-edition = Rust 版本指南
+learn-doc-edition = Rust 版本指南。
 learn-doc-edition-button = 版本指南
 learn-doc-cargo = Rust 的包管理器和构建系统。
 learn-doc-cargo-button = Cargo 之书
@@ -38,10 +38,10 @@ learn-reference-alt = 书架图标
 learn-reference = 《参考手册》并非正式的语言规范，但它比“圣经”更加详尽而全面。
 learn-reference-button = 阅读《参考手册》
 learn-nomicon-alt = 双手捧火
-learn-nomicon = 《Rust 秘典》是Unsafe Rust 的黑魔法指南。它有时被称作“死灵书”。
+learn-nomicon = 《Rust 秘典》是 Unsafe Rust 的黑魔法指南。它有时被称作“死灵书”。
 learn-nomicon-button = 阅读《Rust 秘典》
 learn-unstable-alt = 手洒星光
-learn-unstable = 《未稳定特性手册》中包含了您只能在 Nightly 版 Rust 中使用的不稳定特性的文档。
+learn-unstable = 《未稳定特性手册》覆盖了当前只能在 nightly Rust 中使用的还未稳定的特性。
 learn-unstable-button = 阅读《未稳定特性手册》
 
 ## learn/get-started.hbs
@@ -52,9 +52,9 @@ learn-install-heading = 安装 Rust
 learn-play = 您可以在 Rust Playground 上在线试用 Rust 而无需在计算机上安装任何东西。
 learn-play-button = 无需安装，直接尝试 Rust
 learn-install-rustup-header = Rustup：Rust安装器和版本管理工具
-learn-install-rustup = 安装 Rust 的主要方式是通过 Rustup 这一工具，它既是一个Rust安装器又是一个版本管理工具。
+learn-install-rustup = 安装 Rust 的主要方式是通过 Rustup 这一工具，它既是一个 Rust 安装器又是一个版本管理工具。
 learn-install-rustup-button = 了解更多关于安装的细节
-learn-install-cargo-header = Cargo: Rust 的构建工具和包管理器
+learn-install-cargo-header = Cargo：Rust 的构建工具和包管理器
 learn-install-cargo =
     <p>您在安装 Rustup 时，也会安装 Rust 构建工具和包管理器的最新稳定版，即
     Cargo。Cargo 可以做很多事情：</p>

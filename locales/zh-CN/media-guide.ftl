@@ -9,14 +9,14 @@ policies-media-guide-page-title = 媒体使用手册
 ## Art license
 
 media-guide-art-license-heading = 艺术作品许可
-media-guide-art-license-description = <p>Rust 和 Cargo 图标（位图和矢量图）为 Mozilla 所有，按照<a href="https://creativecommons.org/licenses/by/4.0/deed.zh">创作共用-署名（CC-BY）</a>许可协议分发。这是最宽松的创作共用许可协议，它允许用于任何目的的重用和修改，其限制是分发者必须“给出适当的署名，提供指向本许可协议的链接，同时标明是否（对原始作品）作了修改。”<strong>注意，这些图标和 Rust 与 Cargo 名字的使用均受商标法管辖。我们的商标政策见下</strong>。</p>
+media-guide-art-license-description = <p>Rust 和 Cargo 图标（位图和矢量图）为 Mozilla 所有，按照<a href="https://creativecommons.org/licenses/by/4.0/deed.zh">创作共用-署名（CC-BY）</a>许可协议分发。这是最宽松的创作共用许可协议，它允许出于任何目的的重用和修改。其限制是分发者必须“给出适当的署名，提供指向本许可协议的链接，同时标明是否（对原始作品）作了修改。”<strong>注意，这些图标和 Rust 与 Cargo 名字的使用均受商标法管辖。我们的商标政策见下</strong>。</p>
 
 ## Trademark policy
 
 media-guide-trademark-policy-heading = 商标政策
 media-guide-trademark-policy-description =
-    <p>Rust 和 Cargo 的名字和品牌让我们可以指明哪些属于 Rust 社区官方，哪些不属于。我们对它们可以出现的地方十分小心。但与此同时，我们希望尽可能多地创造性地使用这些品牌。这里制定的政策解释了我们如何平衡二者。如果您想要使用这些名字或品牌，特别是以商业的形式，请阅读本页或随时<a href="mailto:trademark@rust-lang.org">联系我们</a>询问相关事宜。</p>
-    <p><b>简而言之：</b>大部分 Rust/Cargo 的名字和徽标的非商业性使用都是允许的，无需申请授权；大部分商业性的使用需要申请授权。对于其他情况而言，最重要的规则是商标的使用不能明示或暗示受到 Rust 项目的任何认可。</p>
+    <p>Rust 和 Cargo 的名字和品牌让我们可以指明哪些部分属于 Rust 社区中官方，哪些不属于。我们对它们可以出现的地方非常谨慎。但与此同时，我们希望尽可能多地创造性地使用这些品牌。这里制定的政策解释了我们如何平衡二者。如果您想要使用这些名字或品牌，特别是作为商业用途，请阅读本页或随时<a href="mailto:trademark@rust-lang.org">联系我们</a>询问相关事宜。</p>
+    <p><b>简而言之：</b>大部分 Rust/Cargo 的名字和徽标的非商业使用都是允许的，无需申请授权；大部分商业使用需要申请授权。对于其他情况而言，最重要的规则是商标的使用不能明示或暗示受到 Rust 项目的任何认可。</p>
     <p>如果您对 Rust 商标的预期用途是否需要申请授权有任何疑问，请通过 <a href="mailto:trademark@rust-lang.org">trademark@rust-lang.org</a> 与我们联系。</p>
     <p>本文档部分源于 <a href="https://www.python.org/psf/trademarks/">Python 软件基金会商标使用政策</a>。本文档并非 Mozilla 商标政策的官方声明，但有助于澄清 Mozilla 的商标政策与 Rust 之间的关系。</p>
 
