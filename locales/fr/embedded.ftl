@@ -20,13 +20,17 @@ embedded-pitch-portability-alt = Chariot à bagage
 embedded-pitch-portability-heading = Portabilité
 embedded-pitch-portability-description = Écrivez une bibliothèque ou un driver une fois et utilisez le dans différents systèmes, allant de tout petits microcontrôleurs à de puissants SBCs.
 embedded-pitch-community-heading = Géré par la communité
+embedded-learn-more-link = En apprendre d'avantage
 
 ## Showcase (templates/components/what/showcase.hbs)
 
+embedded-showcase-heading = Présentation
+embedded-showcase-quote = J'étais si excité quand J'ai fait la découverte Rust, de Mozilla. Rust est un nouveau langage de programmation avec pour slogan : "sûr, rapide ou concurrent ; choisissez en trois". Il a également un avenir assuré avec une communauté forte et impliquée.
 embedded-showcase-see-more-link = Voir plus
 
 ## Get started! (templates/components/what/embedded/get-started.hbs)
 
+embedded-get-started-discovery-book-heading = Le Discovery Book
 embedded-get-started-read-link = Lire
 embedded-get-started-more-documentation-link = Plus de documentation
 
