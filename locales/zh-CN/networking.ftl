@@ -28,5 +28,5 @@ networking-production-testimonial-mozilla = 将推送连接基础服务迁移到
 networking-production-testimonial-mozilla-attribution = Benjamin Bangert，高级工程师，Mozilla
 networking-production-testimonial-buoyant = Rust 是 Linkerd 项目技术路线图的基础。它的类型系统允许我们在不牺牲运行时性能的情况下构建模块化、可测试、可组合的单元。不过，最令人惊讶的是 Rust 的生命周期和借用检查系统使我们避免了大量的资源泄露。使用 Rust 两年后，我实在无法想象用其它语言如何才能完成此项工作。
 networking-production-testimonial-buoyant-attribution = Oliver Gould, CTO, <a href="{ $href }">Buoyant</a>
-networking-production-testimonial-1aim = Rust 强大的类型系统支持安全的重构，并可以在编译时捕获大量的 bug。它的低内存占用和高性能，加上内存安全的保证和绝对可靠的错误处理，使它成为我们编写安全、关键和复杂的后端业务逻辑的理想选择。超高的稳定性使得 Rust 应用程序成为了我们技术栈中最不需要担心的部分。自 2015 年底以来，我们一直在生产环境几乎 100% 的使用 Rust 后端服务，它从来没有让我们失望！
+networking-production-testimonial-1aim = Rust 强大的类型系统支持安全的重构，并可以在编译时捕获大量的 bug。它的低内存占用和高性能，加上内存安全的保证和绝对可靠的错误处理，使它成为我们编写安全、关键和复杂的后端业务逻辑的理想选择。超高的稳定性使得 Rust 应用程序成为了我们技术栈中最不需要担心的部分。自 2015 年底以来，我们在生产环境几乎 100% 的使用 Rust 后端服务，它从来没有让我们失望！
 networking-production-testimonial-1aim-attribution = Yann Leretaille, <a href="{ $href }">1aim</a>
