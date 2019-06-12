@@ -4,9 +4,11 @@
 ## Web-Assembly (templates/what/wasm.hbs)
 
 what-wasm-page-title = WebAssembly
+what-wasm-page-heading = Web&shy;Assembly
 
 ## Why Rust? (templates/components/what/wasm/pitch.hbs)
 
+wasm-why-rust-predictable-heading = Performance prédictible
 wasm-why-rust-small-code-alt = Un microscope
 wasm-why-rust-amenities-alt = Bagages
 
