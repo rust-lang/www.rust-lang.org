@@ -38,10 +38,10 @@ footer-security = Güvenlik Açıklaması
 footer-policies-all = Tüm Politikalar
 footer-social = Sosyal
 footer-get-help = Yardım alın!
-footer-alt-twitter = Twitter
+footer-youtube-alt = Twitter
 footer-alt-youtube = youtube logosu
-footer-alt-discord = { discord }
-footer-alt-github = GitHub
+footer-discord-alt = { discord }
+footer-github-alt = GitHub
 footer-attribution =
     Rust Ekibi tarafından geliştirilmektedir. Yazım hatasına mı rastladınız?
     <a href="https://github.com/rust-lang/www.rust-lang.org">Düzeltmeyi buraya gönderin</a>!

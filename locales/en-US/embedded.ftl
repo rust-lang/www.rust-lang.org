@@ -62,7 +62,7 @@ embedded-get-started-discovery-book-heading = The Discovery book
 embedded-get-started-discovery-book-description =
         Learn embedded development from the ground up&mdash;using Rust!
 
-embedded-get-started-embedded-rust-book-alt = TFQP-16 package
+embedded-get-started-embedded-rust-book-alt = QFP-20 package
 embedded-get-started-embedded-rust-book-heading = The Embedded Rust book
 embedded-get-started-embedded-rust-book-description =
         Already familiar with Embedded development? Jump in with Rust and start reaping the benefits.
