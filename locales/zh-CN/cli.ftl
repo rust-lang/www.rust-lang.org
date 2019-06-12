@@ -54,10 +54,10 @@ cli-example-link = 阅读《命令行指南》了解更多信息
 ## templates/components/what/cli/production.hbs
 
 cli-production-sentry-img-alt = Sentry 标志
-cli-production-sentry-quote = 我们喜欢 Rust 的一个原因是 crates.io 的生态。[......] 这有很多超棒的的基础设施来用于构建强大的命令行界面。
+cli-production-sentry-quote = 我们喜欢 Rust 的一个原因是 crates.io 的生态。[......] 现在有很多超棒的的基础设施来构建强大的命令行接口。
 cli-production-sentry-attribution = &ndash; Armin Ronacher,
 cli-production-sentry-link = 《Rust 在 Sentry 中的应用》 &ndash; PolyConf 2017 大会
-cli-production-habitat-quote = 我很庆幸选择了这些代码库。 [......] 使用 Rust 来编写基于命令行或控制台的工具给我带来很大的好处，它针对不同的目标系统进行编译非常方便。
+cli-production-habitat-quote = 我很庆幸有这些代码库。 [......] 使用 Rust 来编写基于命令行或控制台的工具给我带来很大的好处，它针对不同的目标系统进行编译非常方便。
 cli-production-habitat-attribution = &ndash; Fletcher Nichol,
 cli-production-habitat-link = 《把 Rust 带进生产环境》 &ndash; RustFest Kyiv大会
 cli-production-habitat-img-alt = Habitat 标志
