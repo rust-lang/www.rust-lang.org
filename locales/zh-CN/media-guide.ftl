@@ -9,7 +9,7 @@ policies-media-guide-page-title = 媒体使用手册
 ## Art license
 
 media-guide-art-license-heading = 艺术作品许可
-media-guide-art-license-description = <p>Rust 和 Cargo 图标（位图和矢量图）为 Mozilla 所有，按照<a href="https://creativecommons.org/licenses/by/4.0/deed.zh">创作共用-署名（CC-BY）</a>许可协议分发。这是最宽松的创作共用许可协议，它允许出于任何目的的重用和修改。其限制是分发者必须“给出适当的署名，提供指向本许可协议的链接，同时标明是否（对原始作品）作了修改。”<strong>注意，这些图标和 Rust 与 Cargo 名字的使用均受商标法管辖。我们的商标政策见下</strong>。</p>
+media-guide-art-license-description = <p>Rust 和 Cargo 图标（位图和矢量图）为 Mozilla 所有，按照<a href="https://creativecommons.org/licenses/by/4.0/deed.zh">创作共用-署名（CC-BY）</a>许可协议分发。这是最宽松的创作共用许可证，它允许出于任何目的的重用和修改。其限制是分发者必须“给出适当的署名，提供指向本许可证的链接，同时标明是否（对原始作品）作了修改。”<strong>注意，这些图标和 Rust 与 Cargo 名字的使用均受商标法管辖。我们的商标政策见下</strong>。</p>
 
 ## Trademark policy
 

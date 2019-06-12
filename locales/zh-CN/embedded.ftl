@@ -34,7 +34,7 @@ embedded-showcase-heading = 展示用例
 embedded-showcase-quote = “当我偶遇由 Mozilla 出品的 Rust 语言时，我特别激动。Rust 是一门新的编程语言，口号是 ‘安全，快速，并发 &ndash; 三者兼顾’。它还拥有一个可靠的未来，以及一个强大且专注的用户社区。”
 embedded-showcase-quote-attribution = &ndash; Jonathan Pallant, 高级顾问, Cambridge Consultants
 embedded-showcase-see-more-link = 查看更多
-embedded-showcase-video-description = <a href="https://vimeo.com/224912526">《用 Rust 保卫未来》</a> 由 <a href="https://vimeo.com/cambridgeconsultants">Cambridge Consultants</a> 在 <a href="https://vimeo.com">Vimeo</a> 平台上发表。
+embedded-showcase-video-description = 《<a href="https://vimeo.com/224912526">用 Rust 保卫未来</a> 》由 <a href="https://vimeo.com/cambridgeconsultants">Cambridge Consultants</a> 在 <a href="https://vimeo.com">Vimeo</a> 平台上发表。
 
 ## Get started! (templates/components/what/embedded/get-started.hbs)
 

@@ -5,7 +5,7 @@ tools-editor-support-heading = 主流编辑器支持
 tools-editor-support-description =
     无论您喜欢用命令行还是可视化编辑器，都有适合的 Rust 集成供您选择。
     您也可以使用 <a href="https://github.com/rust-lang/rls">Rust 语言服务（RLS）</a>来为自己的编辑器添加 Rust 支持。
-tools-build-heading = 构建体验顺畅
+tools-build-heading = 流畅的构建体验
 tools-build-description = Cargo 是 Rust 的构建工具，它将常用命令集于一身，无需引入其它命令。
 tools-build-install-heading = 安装
 tools-build-install-description =
@@ -20,7 +20,7 @@ tools-build-deploy-description =
     <code class="nowrap">cargo build</code>
     可为不同平台构建精炼的可执行文件。仅需一行命令，您的代码就能针对
     Windows、Linux、macOS 和 Web 进行编译。支持全部现代平台接口，无需定制构建文件。
-tools-automation-heading = 利用自动化加速
+tools-automation-heading = 利用自动化加速开发
 tools-automation-description = Rust 的工业级工具能够让团队无惧协作，专注于重要的任务。
 tools-automation-rustfmt-heading = Rustfmt
 tools-automation-rustfmt-description = Rustfmt 用于自动格式化 Rust 代码，使代码更加容易阅读、编写和维护。最重要的一点是：您再也不必为空格或大括号位置而争论了。
