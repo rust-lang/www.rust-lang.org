@@ -22,7 +22,7 @@ production-testimonial-yelp-alt = Yelp 标志
 ## components/panels/language-values.hbs
 
 language-values-performance = 高性能
-language-values-performance-blurb = Rust 速度极快，内存利用率极高。Rust 没有运行时和垃圾回收器，能胜任性能要求特别高的服务，可运行于嵌入式设备之上，并且能轻松和其他语言集成。
+language-values-performance-blurb = Rust 速度惊人且内存利用率极高。由于没有运行时和垃圾回收，它能够胜任对性能要求特别高的服务，可以在嵌入式设备上运行，还能轻松和其他语言集成。
 language-values-reliability = 可靠性
 language-values-reliability-blurb = Rust 丰富的类型系统和所有权模型保证了内存安全和线程安全，让您在编译期就能够消除各种各样的错误。
 language-values-productivity = 生产力
@@ -40,9 +40,7 @@ domains-cli = 命令行
 domains-cli-blurb = 使用 Rust 强大的生态系统快速实现命令行工具。Rust 可助您放心维护，轻松分发应用程序。
 domains-cli-alt = 终端
 domains-wasm = WebAssembly
-domains-wasm-blurb =
-    使用 Rust 来增强 JavaScript，每次一个模块。发布到
-    npm，使用 webpack 打包，然后您就可以感受到惊人的速度了。
+domains-wasm-blurb = 使用 Rust 来逐个增强您的 JavaScript 模块。发布到 npm，使用 webpack 打包，即可感受到惊人的速度提升。
 domains-wasm-alt = 带拼图元素的齿轮
 domains-net = 网络
 domains-net-blurb = 可预见的性能，极小的资源占用，坚如磐石的可靠性。Rust 极其适合网络服务。
@@ -58,8 +56,8 @@ get-involved-read-rust = 阅读
 get-involved-read-rust-blurb = 我们热爱文档！查看在线书籍，以及重要的博客文章和用户指南。
 get-involved-read-rust-link = 阅读学习资源
 get-involved-watch-rust = 观看
-get-involved-watch-rust-blurb = Rust 社区有一个专门的 YouTube 频道，收集了大量的演示文稿和教程。
+get-involved-watch-rust-blurb = Rust 社区有专门的 YouTube 频道，内含大量的演示文稿和教程。
 get-involved-watch-rust-link = 观看学习视频
 get-involved-contribute = 贡献代码
-get-involved-contribute-blurb = Rust 是真正由社区驱动的项目，欢迎大家来贡献力量！无论您是业余爱好者还是生产级用户，也不管您是初来乍到的新手还是经验丰富的专家，都欢迎您来帮助我们，一起让 Rust 变得更好！
+get-involved-contribute-blurb = Rust 是真正由社区驱动的项目。我们欢迎您的帮助，无论您是业余爱好者还是生产级用户，也不管您是初来乍到的新手还是经验丰富的专家。让我们一起把 Rust 变得更好！
 get-involved-contribute-link = 阅读《贡献指南》
