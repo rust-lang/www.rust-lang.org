@@ -31,6 +31,7 @@ embedded-showcase-see-more-link = Voir plus
 ## Get started! (templates/components/what/embedded/get-started.hbs)
 
 embedded-get-started-discovery-book-heading = Le Discovery Book
+embedded-get-started-embedded-rust-book-heading = Le Rust Book embarqué
 embedded-get-started-embedonomicon-description = Regardez sous le capot des bibliothèques fondation pour l'embarqué
 embedded-get-started-read-link = Lire
 embedded-get-started-more-documentation-link = Plus de documentation
