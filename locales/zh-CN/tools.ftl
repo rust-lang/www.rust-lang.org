@@ -13,7 +13,7 @@ tools-build-install-description =
     站在巨人的肩膀上，您的团队可远离重复，专注创新。
 tools-build-test-heading = 测试
 tools-build-test-description =
-    利用 Rust 出色的测试工具，您将对代码充满信心。<code class="nowrap">cargo test</code>
+    Rust 出色的测试工具能让您对代码放心。<code class="nowrap">cargo test</code>
     是 Rust 统一的测试方案。测试代码既可写在功能代码之后，也可放在独立文件中，它满足您所有的测试需求。
 tools-build-deploy-heading = 部署
 tools-build-deploy-description =

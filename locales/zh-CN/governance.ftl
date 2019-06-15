@@ -4,7 +4,7 @@
 ## governance/index.hbs
 
 governance-page-title = 治理
-governance-tagline = 如何通过社区来创建 Rust
+governance-tagline = 社区如何构筑 Rust
 governance-roadmap-rfc = 路线图和 RFC 流程
 governance-rfc-blurb =
     Rust 中的每个重要决定都是从征求意见稿（RFC）开始的。
