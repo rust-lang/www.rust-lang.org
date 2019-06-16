@@ -9,8 +9,10 @@ production-watch-video = Assista o Vídeo
 production-dropbox-alt = logo da Dropbox
 production-yelp-alt = logo da Yelp
 production-users-button = Confira a página de usuários
+production-support = Apoiando Rust
 production-contact-core = Fale com a Equipe Principal
 production-license-header = Licença
+production-license-link = Políticas: Licenças
 
 ## templates/production/users.hbs
 

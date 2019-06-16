@@ -34,8 +34,11 @@ wasm-get-started-mdn-link = Confira
 
 wasm-js-heading = Funciona bem com JavaScript
 wasm-js-augment-heading = Melhore, não substitua
+wasm-js-augment-description = O sonho do WebAssembly não é acabar com o JavaScript, mas sim trabalhar junto para ajudar a lidar com tarefas de processamento pesado ou de baixo nível &mdash; tarefas que se beneficiam do foco de Rust em performance.
 wasm-js-toolchains-heading = Funciona com conjunto de ferramentas familiares
+wasm-js-toolchains-description = Publique pacotes de Rust WebAssembly em registros de pacotes como npm. Integre com o webpack, Parcel, e outros. Mantenha seus pacote com ferramentas como <code>npm audit</code> e Greenkeeper.
 wasm-js-interop-heading = Interoperabilidade homogênea
+wasm-js-interop-description = Gere automaticamente integração entre Rust, WebAssembly, e JavaScript. Aproveite de bibliotecas como <a href="https://rustwasm.github.io/wasm-bindgen/web-sys/index.html"><code>web-sys</code></a> que provê integrações pré-empacotadas para toda a plataforma web.
 
 ## Production use (templates/components/what/wasm/production.hbs)
 

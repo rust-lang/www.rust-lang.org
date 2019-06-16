@@ -39,6 +39,7 @@ embedded-showcase-video-description = <a href="https://vimeo.com/224912526">Secu
 ## Get started! (templates/components/what/embedded/get-started.hbs)
 
 embedded-get-started-discovery-book-alt = Pacote DIP-6
+embedded-get-started-discovery-book-heading = O livro Discovery
 embedded-get-started-discovery-book-description = Aprenda desenvolvimento embarcado do zero usando Rust!
 embedded-get-started-embedded-rust-book-alt = Pacote TFQP-16
 embedded-get-started-embedded-rust-book-heading = O livro sobre Embarcados em Rust
@@ -52,6 +53,7 @@ embedded-get-started-more-documentation-link = Mais documentação
 ## Production use (templates/components/what/embedded/testimonials.hbs)
 
 embedded-testimonials-sensirion-alt = Logo da Sensirion
+embedded-testimonials-sensirion-quote = Na Sensirion nós recentemente usamos Rust para criar um demonstrador embarcado para o <a href="https://sensirion-automotive.com/products#PM2_5">Sensor de Material Particulado</a> da Sensirion. Por causa da fácil compilação cruzada e da disponibilidade de muitos <i>crates</i> de ótima qualidade no crates.io <b>nós rapidamente chegamos a um demostrador rápido e robusto.</b>
 embedded-testimonials-sensirion-attribution = &ndash; Raphael Nestler, Engenheiro Software, Sensirion
 embedded-testimonials-airborne-alt = Logo da Airborne Engineering Ltd
 embedded-testimonials-airborne-attribution = &ndash; Dr. Adam Greig, Engenheiro de Instrumentatação, Airborne Engineering Ltd.

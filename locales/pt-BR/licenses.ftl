@@ -5,6 +5,9 @@
 
 policies-licenses-page-title = Licenças
 licenses-license-heading = Licença
+licenses-license-general-description = A linguagem de programação Rust e todos os outros projetos oficiais, incluindo esse website, geralmente possuem duas licenças:
+licenses-apache-v-2-0-link = Licença Apache, Versão 2.0
 licenses-mit-link = Licença MIT
 licenses-license-email-link = Contate a Equipe Principal (Core Team)
 licenses-attribution-heading = Atribuição
+licenses-attribution-description = Ícones feitos por <a href="http://www.freepik.com" title="Freepik">Freepik</a> de <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>, licenciados sob <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC-3.0-BY</a>
