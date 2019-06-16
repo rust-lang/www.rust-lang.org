@@ -19,6 +19,7 @@ wasm-why-rust-amenities-heading = Fonctionnalités modernes
 
 wasm-get-started-wasm-alt = Le logo de WebAssembly
 wasm-get-started-wasm-link = En apprendre plus
+wasm-get-started-mdn-alt = logo MDN
 wasm-get-started-mdn-description = En apprendre plus au sujet de WebAssembly en consultant Mozilla Developer Network.
 
 ## Plays well with JavaScript (templates/components/what/wasm/js.hbs)
@@ -30,3 +31,4 @@ wasm-js-interop-heading = Interopérabilité sans accroc
 
 wasm-production-cloudflare-alt = Logo de cloudflare
 wasm-production-mozilla-alt = firefox
+wasm-production-dropbox-alt = dropbox

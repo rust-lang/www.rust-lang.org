@@ -1,5 +1,6 @@
 ## learn/index.hbs
 
+learn-page-title = Apprendre Rust
 learn-begin = Commencer avec Rust
 learn-book = Affectueusement surnommé le "Book", <cite>The Rust Programming Language</cite> vous donnera une vue d'ensemble du langage depuis ses premiers principes. Vous construirez quelques projets au long du chemin, et à la fin, vous aurez une solide compréhension du langage.
 learn-book-button = Lire le Book !
