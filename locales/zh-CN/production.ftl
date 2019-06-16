@@ -8,7 +8,7 @@ production-tilde = 了解 Rust 如何帮助 <a href="http://www.tilde.io/">Tilde
 production-highlights = 亮点
 production-read-more = 阅读更多
 production-watch-video = 观看视频
-production-dropbox = Dropbox 核心文件存储系统的多个模块是用 Rust 写的，因为它作为大型项目的一部分，需要追求更高的数据中心效率。它目前应用于所有的 Dropbox 存储系统，服务超过5亿用户。
+production-dropbox = Dropbox 核心文件存储系统的多个模块是用 Rust 写的，因为它作为大型项目的一部分，需要追求更高的数据中心效率。目前，它应用于所有的 Dropbox 存储系统，为超过 5 亿用户服务。
 production-dropbox-alt = dropbox 标志
 production-yelp = Yelp 使用 Rust 开发了一个实时 A/B 测试的框架。它广泛应用于所有的 Yelp 网页和应用，选择 Rust 是因为它和 C 语言一样快（运行代价小），同时比 C 语言更安全（易于维护）。
 production-yelp-alt = yelp 标志

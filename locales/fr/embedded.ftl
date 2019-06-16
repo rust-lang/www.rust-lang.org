@@ -3,6 +3,8 @@
 
 ## templates/what/embedded.hbs
 
+# Page Title
+what-embedded-page-title = Matériel embarqué
 
 ## Why Rust? (templates/components/what/pitch.hbs)
 
@@ -14,6 +16,7 @@ embedded-pitch-memory-description = L'allocation de mémoire dynamique est optio
 embedded-pitch-concurrency-alt = Engrenages
 embedded-pitch-concurrency-heading = Concurrence apaisée
 embedded-pitch-concurrency-description = Rust rend impossible de partager accidentellement un état entre deux threads. Qu’elle que soit l’approche concurrentielle que vous voulez utiliser, vous bénéficierez toujours des assurances fortes de Rust.
+embedded-pitch-interop-alt = Poignée de main
 embedded-pitch-interop-heading = Interopérabilité
 embedded-pitch-interop-description = Intégrez Rust à votre code C ou tirez profit d’un SDK existant pour écrire une application Rust.
 embedded-pitch-portability-alt = Chariot à bagage
@@ -31,6 +34,7 @@ embedded-showcase-see-more-link = Voir plus
 ## Get started! (templates/components/what/embedded/get-started.hbs)
 
 embedded-get-started-discovery-book-heading = Le Discovery Book
+embedded-get-started-embedded-rust-book-heading = Le Rust Book embarqué
 embedded-get-started-embedonomicon-description = Regardez sous le capot des bibliothèques fondation pour l'embarqué
 embedded-get-started-read-link = Lire
 embedded-get-started-more-documentation-link = Plus de documentation

@@ -7,6 +7,7 @@ what-cli-page-title = Applications en ligne de commande
 
 ## templates/components/what/cli/pitch.hbs
 
+cli-pitch-solid-img-alt = Bouclier avec une coche de validation
 cli-pitch-solid-heading = Solide et rapide
 cli-pitch-solid-description = Même si vous écrivez un script court et ponctuel, vous pouvez être assuré qu'il est rapide, facilement testable, et retourne des informations utiles.
 cli-pitch-solid-link = Les garanties de Rust
@@ -22,6 +23,7 @@ cli-pitch-manuals-img-alt = Manuel d'aide
 cli-pitch-manuals-heading = Les manuels ? C'est fait.
 cli-pitch-manuals-description = Générez automatiquement les pages de manuel pour votre application. Packagez juste les fichier générés et c'est fait.
 cli-pitch-manuals-link = Apprendre comment
+cli-pitch-machines-img-alt = Tuyaux
 cli-pitch-machines-description = En plus de parler aux humains, Rust a d'excellents outils pour vous aider à parler aux machines.
 cli-pitch-machines-link = Communiquer avec les machines
 cli-pitch-logging-img-alt = 3 rondins de bois empilés

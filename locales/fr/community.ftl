@@ -3,6 +3,8 @@
 community-page-title = Communauté
 community-blurb = Le langage de programmation Rust a de nombreuses qualités, mais sa plus grande force réside dans sa communauté, qui rassemble nombre d’entre nous pour faire de Rust une expérience gratifiante.
 community-twir = Restez au courant de la communauté Rust !
+community-team-contact = Nous aimerions avoir de vos nouvelles ! Pas sûr de savoir où et à qui poser une question ? Vous voulez participer mais n'êtes pas sûr de comment ? L'équipe communauté est impatiente de vous mettre en contact avec quelqu'un qui peut vous aider !
+community-team-button = email { ENGLISH("community@rust-lang.org") }
 community-where = Où discuter
 community-urlo-header = Forum des utilisateurs
 community-urlo = Le forum des utilisateurs est un endroit où les utilisateurs communiquent à propos de tout et n'importe quoi lié à Rust. Posez des questions ici, coordonnez des idées de projet; tout ce que vous souhaitez !
@@ -26,6 +28,8 @@ community-event-run =
     <p>
       Enregistrer votre évènement nous aide à garder la trace des efforts de notre communauté et nous permet de vous mettre en contact avec des présentateurs et d'autres membres autour de vous.
     </p>
+community-events-repo = Consulter le dépôt de l’équipe événement
+community-event-register = Enregistrez votre événement
 community-rustfest-alt = Participants à la Rustfest
 community-rustbridge-header = Rustbridge
 community-rustbridge = RustBridge est un atelier de travail visant à permettre aux personnes sous-représentées, avec une expérience dans d'autres langages de programmation, d'apprendre le Rust et de rejoindre la communauté.
@@ -34,7 +38,7 @@ community-rustbridge-rustconf-alt = RustBridge à la RustConf
 community-rustbridge-paris-alt = RustBridge Paris
 community-rustbridge-berlin-alt = RustBridge Berlin
 community-rustbridge-rbr-alt = RustBridge à la Rust Belt
-community-irr = Faire Connaître Rust est un programme qui associe les membres des équipes Rust de toutes les parties du projet avec des individus qui sont sous-représentés dans la communauté Rust et l'industrie des technologies pour un partenariat de trois (3) mois, de mi-Mai à mi-Août. Chaque partenariat s'engage pour 3 à 5 heures par semaine sur un projet Rust.
+community-irr-header = Faire Connaître Rust
 community-irr-button = Visiter le site Web
 community-standards-header = Les standards de la communauté
 community-standards =

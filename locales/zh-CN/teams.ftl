@@ -108,4 +108,4 @@ governance-team-operations-description = 处理版本发布，机器人和基础
 governance-team-wg-nll-name = 非词法作用域生命周期（NLL）
 governance-team-wg-nll-description = 实现基于 MIR 的全新借用检查系统和非词法作用域生命周期。
 governance-team-alumni-name = Rust 团队前队友
-governance-team-alumni-description = 正在享受悠闲的退役生活
+governance-team-alumni-description = 正在享受退居幕后的悠闲生活

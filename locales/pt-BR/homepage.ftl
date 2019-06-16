@@ -1,5 +1,6 @@
 ## index.hbs
 
+tagline = Uma linguagem empoderando a todos { $linebreak } a construir softwares confiáveis e eficientes.
 get-started = Inicie
 homepage-version = Versão{ $number }
 
@@ -11,6 +12,8 @@ production-testimonial-npm = Meu maior elogio a Rust é que ela é entediante, e
 production-testimonial-npm-attribution = Chris Dickinson, Engenheiro na npm, Inc
 production-testimonial-npm-alt = Logo da npm
 production-testimonial-yelp = Toda a documentação, ferramentas, e comunidade é ótima - você possui todas as ferramentas para escreve código Rust com sucesso.
+production-testimonial-yelp-attribution = Antonio Verardi, Engenheiro de Infraestrutura
+production-testimonial-yelp-alt = Logo da Yelp
 
 ## components/panels/language-values.hbs
 
@@ -20,9 +23,12 @@ language-values-productivity = Produtividade
 
 ## components/panels/domains.hbs
 
+domains-title = Construa com Rust
+domains-blurb = Em 2018, a comunidade de Rust decidiu melhorar a experiencia de programar em alguns domínios distintos (veja <a href="https://blog.rust-lang.org/2018/03/12/roadmap.html">o planejamento para 2018</a>). Para estes, você pode encontrar várias <i>crates</i> de alta qualidade e alguns guias para lhe ajudar a começar.
 domains-cli = Linha de Comando
 domains-cli-alt = terminal
 domains-wasm = WebAssembly
+domains-wasm-alt = engrenagem com elementos de quebra-cabeça
 domains-net = Redes
 domains-net-alt = uma nuvem com vários nós
 domains-embedded = Embarcados
@@ -34,4 +40,6 @@ get-involved = Participe
 get-involved-read-rust = Leia Rust
 get-involved-read-rust-link = Leia o livro
 get-involved-watch-rust = Veja Rust
+get-involved-watch-rust-link = Assista os Vídeos
+get-involved-contribute = Contribua código
 get-involved-contribute-link = Leia o Guia de Contribuição
