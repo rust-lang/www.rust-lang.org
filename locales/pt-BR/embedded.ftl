@@ -56,8 +56,12 @@ embedded-testimonials-sensirion-alt = Logo da Sensirion
 embedded-testimonials-sensirion-quote = Na Sensirion nós recentemente usamos Rust para criar um demonstrador embarcado para o <a href="https://sensirion-automotive.com/products#PM2_5">Sensor de Material Particulado</a> da Sensirion. Por causa da fácil compilação cruzada e da disponibilidade de muitos <i>crates</i> de ótima qualidade no crates.io <b>nós rapidamente chegamos a um demostrador rápido e robusto.</b>
 embedded-testimonials-sensirion-attribution = &ndash; Raphael Nestler, Engenheiro Software, Sensirion
 embedded-testimonials-airborne-alt = Logo da Airborne Engineering Ltd
+embedded-testimonials-airborne-quote = Nós na Airborne Engineering Ltd. usamos Rust recentemente para escrever nosso <i>bootloader Ethernet</i>, <a href="https://github.com/airborneengineering/blethrs">blethrs</a>, para nosso sistema interno de aquisição de dados. <b>Rust é uma linguagem promissora e estamos animados para usá-la em futuros projetos, embarcados ou não.</b>
 embedded-testimonials-airborne-attribution = &ndash; Dr. Adam Greig, Engenheiro de Instrumentatação, Airborne Engineering Ltd.
 embedded-testimonials-49nord-alt = Logo 49nord
+# "Fluent" requires a square bracket which is the first character of a line to be escaped like this: {"["} See https://projectfluent.org/fluent/guide/special.html
+embedded-testimonials-49nord-quote = { "[" }Rust] nos permite entregar software mais rápido e mais correto do que imaginávamos ser possível. Graças a Rust, podemos tratar segurança de memória como uma garantia, enquanto outros benefícios de uma linguagem com custo zero de abstrações e um sofisticado sistema de tipos, nos ajudam a desenvolver software sustentavelmente. <b>Rust deixa nossos clientes felizes, e nossos engenheiros também.</b>
 embedded-testimonials-49nord-attribution = &ndash; Marc Brinkmann, CEO, 49nord
 embedded-testimonials-terminal-tech-alt = Logo da Terminal Technologies
+embedded-testimonials-terminal-tech-quote = <b>Nós realmente achamos incrível que possamos usar uma boa linguagem moderna no ambiente dos sistemas embarcados</b>, onde geralmente não existem alternativas para C/C++
 embedded-testimonials-terminal-tech-attribution = &ndash; Aleksei Arbuzov, Engenheiro de Software Senior, Terminal Technologies
