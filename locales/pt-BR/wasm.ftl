@@ -43,7 +43,13 @@ wasm-js-interop-description = Gere automaticamente integração entre Rust, WebA
 ## Production use (templates/components/what/wasm/production.hbs)
 
 wasm-production-cloudflare-alt = logo da cloudflare
+wasm-production-cloudflare-quote = Você pode compilar Rust para WASM, e chamar o código a partir de funções Serverless amarradas as fundações da Internet. Isso é incrível e mal posso esperar para trabalhar mais nisso.
 wasm-production-cloudflare-attribution = Steven Pack, <a href="{ $href }">Serverless Rust with Cloudflare Workers</a>
 wasm-production-mozilla-alt = firefox
+# If an opening square bracket is the first character on a line, it must be escaped like this: {"["}. See https://projectfluent.org/fluent/guide/special.html
+wasm-production-mozilla-quote = A implementação em JavaScript [da biblioteca de <code>source-map</code>] acumulou muito código complicado em nome de performance, e nos trocamos isso por código idiomático em Rust. Rust não nos força escolher entre expressar claramente nossas intenções e performance durante execução.
 wasm-production-mozilla-attribution = Nick Fitzgerald, <a href="{ $href }">Oxidizing Source Maps with Rust and WebAssembly</a>
 wasm-production-dropbox-alt = dropbox
+# If an opening square bracket is the first character on a line, it must be escaped like this: {"["}. See https://projectfluent.org/fluent/guide/special.html
+wasm-production-dropbox-quote = As propriedades { "[" }do Rust] torna fácil embarcar o codec DivANS em uma página web com WASM, como mostramos acima.
+wasm-production-dropbox-attribution = Daniel Reiter Horn e Jongmin Baek, <a href="{ $href }">Building Better Compression Together with DivANS</a>

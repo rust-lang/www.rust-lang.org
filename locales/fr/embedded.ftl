@@ -22,6 +22,7 @@ embedded-pitch-interop-description = Intégrez Rust à votre code C ou tirez pro
 embedded-pitch-portability-alt = Chariot à bagage
 embedded-pitch-portability-heading = Portabilité
 embedded-pitch-portability-description = Écrivez une bibliothèque ou un driver une fois et utilisez le dans différents systèmes, allant de tout petits microcontrôleurs à de puissants SBCs.
+embedded-pitch-community-alt = Logo Bouclier
 embedded-pitch-community-heading = Géré par la communité
 embedded-learn-more-link = En apprendre d'avantage
 
