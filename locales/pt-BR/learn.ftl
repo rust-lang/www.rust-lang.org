@@ -103,6 +103,11 @@ learn-app-steps =
     <p>Assumindo que tudo deu certo, você deveria ver a seguinte saída na sua tela:</p>
     { $output }
 learn-read-docs-header = Aprenda mais!
+learn-read-docs = Agora você é um(a) Rustáceo! Seja bem vindo(a)! Estamos muito felizes de ter você aqui. Quando estiver pronto(a), confira nossa página sobre Aprendizagem, onde você encontrará vários livros para seguir com sua jornada sobre Rust.
 learn-read-docs-button = aprenda mais!
 learn-ferris-who = Quem é esse caranguejo, Ferris?
+learn-ferris =
+    <p>Ferris é a mascote não oficial da comunidade Rust. Muitas pessoas que programam Rust se consideram Rustáceos (“Rustaceans”), uma piadinha com a palavra “<a href="https://en.wikipedia.org/wiki/Crustacean">crustáceos</a>.” Em inglês, nos referimentos à Ferris usando pronomes neutro ao invés de usar pronomes com gênero.</p>
+    <p>Ferris é um nome brincando com o adjetivo ferroso (“ferrous,”) que significa "do ferro ou que contém ferro". Como Rust (ferrugem em português) surge em ferro, isso pareceu ser uma origem divertida para o nome da mascote!</p>
+    <p>Você pode achar mais imagens da mascote Ferris no site <a href="http://rustacean.net/">http://rustacean.net/</a>.
 learn-ferris-alt = Um gif do Ferris andando de um lado para o outro
