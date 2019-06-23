@@ -12,6 +12,13 @@
 1. To build the app and run the server, run `cargo watch -x run` in your terminal.
 1. Navigate to http://localhost:7878 in your browser. If you make any updates to the styles, or any other project files, `cargo watch` will automatically restart the server for you, all you have to do is refresh your browser to see your changes.
 
+#### Building on Windows
+
+If you have issues comiling `sass-sys` on Windows 10, try the following:
+
+- Upgrade to VS Build Tools 2019
+- Open `x64 Native Developer Console for VS 2019` from the Start menu, and execute the commands there.
+
 ### Where to edit
 
 - If you would like to edit styles, you should edit [`src/styles/app.scss`](src/styles/app.scss). 

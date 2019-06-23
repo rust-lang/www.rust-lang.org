@@ -1555,16 +1555,16 @@ dependencies = [
 [[package]]
 name = "sass-rs"
 version = "0.2.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
+source = "git+https://github.com/bltavares/sass-rs?branch=compile-on-windows-vs2019#2e8289539fcb2b11812b666b5104d94744fa93b6"
 dependencies = [
  "libc 0.2.55 (registry+https://github.com/rust-lang/crates.io-index)",
- "sass-sys 0.4.9 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sass-sys 0.4.10 (git+https://github.com/bltavares/sass-rs?branch=compile-on-windows-vs2019)",
 ]
 
 [[package]]
 name = "sass-sys"
-version = "0.4.9"
-source = "registry+https://github.com/rust-lang/crates.io-index"
+version = "0.4.10"
+source = "git+https://github.com/bltavares/sass-rs?branch=compile-on-windows-vs2019#2e8289539fcb2b11812b666b5104d94744fa93b6"
 dependencies = [
  "cc 1.0.37 (registry+https://github.com/rust-lang/crates.io-index)",
  "libc 0.2.55 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2129,7 +2129,7 @@ dependencies = [
  "rocket 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "rocket_contrib 0.4.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "rust_team_data 1.0.0 (git+https://github.com/rust-lang/team)",
- "sass-rs 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sass-rs 0.2.2 (git+https://github.com/bltavares/sass-rs?branch=compile-on-windows-vs2019)",
  "serde 1.0.91 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_derive 1.0.91 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde_json 1.0.39 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -2327,8 +2327,8 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum ryu 0.2.8 (registry+https://github.com/rust-lang/crates.io-index)" = "b96a9549dc8d48f2c283938303c4b5a77aa29bfbc5b54b084fb1630408899a8f"
 "checksum safemem 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = "8dca453248a96cb0749e36ccdfe2b0b4e54a61bfef89fb97ec621eb8e0a93dd9"
 "checksum same-file 1.0.4 (registry+https://github.com/rust-lang/crates.io-index)" = "8f20c4be53a8a1ff4c1f1b2bd14570d2f634628709752f0702ecdd2b3f9a5267"
-"checksum sass-rs 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)" = "cabcf7c6e55053f359911187ac401409aad2dc14338cae972dec266fee486abd"
-"checksum sass-sys 0.4.9 (registry+https://github.com/rust-lang/crates.io-index)" = "2166010e0b24c6ec7c2d7fb64011a01cd8296d3460893265c2007b07ba2c8313"
+"checksum sass-rs 0.2.2 (git+https://github.com/bltavares/sass-rs?branch=compile-on-windows-vs2019)" = "<none>"
+"checksum sass-sys 0.4.10 (git+https://github.com/bltavares/sass-rs?branch=compile-on-windows-vs2019)" = "<none>"
 "checksum schannel 0.1.15 (registry+https://github.com/rust-lang/crates.io-index)" = "f2f6abf258d99c3c1c5c2131d99d064e94b7b3dd5f416483057f308fea253339"
 "checksum scopeguard 0.3.3 (registry+https://github.com/rust-lang/crates.io-index)" = "94258f53601af11e6a49f722422f6e3425c52b06245a5cf9bc09908b174f5e27"
 "checksum security-framework 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)" = "eee63d0f4a9ec776eeb30e220f0bc1e092c3ad744b2a379e3993070364d3adc2"

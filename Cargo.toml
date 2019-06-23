@@ -16,13 +16,17 @@ rocket = "0.4.1"
 serde = "1.0"
 serde_derive = "1.0"
 serde_yaml = "0.8.7"
-sass-rs = "0.2.1"
+# sass-rs = "0.2.1"
 reqwest = "0.9.5"
 toml = "0.4"
 serde_json = "1.0"
 rust_team_data = { git = "https://github.com/rust-lang/team" }
 handlebars = "1.1.0"
 siphasher = "0.2.3"
+
+[dependencies.sass-rs]
+git = "https://github.com/bltavares/sass-rs"
+branch = "compile-on-windows-vs2019"
 
 [dependencies.rocket_contrib]
 version = "*"
