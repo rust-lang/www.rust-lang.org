@@ -10,6 +10,7 @@ $purple: #403D58;
 $yellow: #FFD45E;
 $border-radius: 4px;
 $link-color: #1EAEDB;
+$footer-gray: #303030;
 
 html {
   font-size: 62.5%
@@ -372,7 +373,7 @@ header h1 {
 
 footer {
   padding: 30px 0;
-  background-color: black;
+  background-color: $footer-gray;
   color: white;
 
   p {
