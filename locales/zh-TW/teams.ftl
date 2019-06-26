@@ -1,0 +1,9 @@
+governance-team-wg-bindgen-name = Bindgen 工作組
+governance-team-clippy-name = Clippy
+governance-team-mods-name = 審核團隊
+governance-team-wg-learning-name = 教學
+governance-team-cargo-name = Cargo 團隊
+governance-team-core-name = Core 團隊
+governance-team-community-content-name = 內容團隊
+governance-team-docs-name = 文件團隊
+governance-team-wg-rls-2-name = RLS 2.0
