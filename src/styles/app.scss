@@ -126,7 +126,7 @@ header h1 {
 header h2 {
   font-size: 4.2rem;
   line-height: 1.25;
-  font-weight: 300;  
+  font-weight: 300;
 }
 
 section h3 {
@@ -288,7 +288,7 @@ a.brand {
     &:hover, &:focus {
       border-color: white;
     }
-  } 
+  }
   code {
     @include code-highlight-white();
   }
@@ -342,7 +342,7 @@ a.brand {
 }
 
 h3 {
-  font-weight: 800; 
+  font-weight: 800;
   font-size: 1.5em;
   letter-spacing: normal;
 }
@@ -482,7 +482,7 @@ blockquote::before {
   width: auto;
   height: auto;
   margin: auto;
-  display: block;  
+  display: block;
 }
 
 .user-logo {
@@ -670,13 +670,13 @@ blockquote::before {
       margin-top: 20px;
     }
   }
+}
 
   section header {
     padding: {
       top: 10px;
       bottom: 30px;
     }
-
     h2 {
       font-size: 3rem;
     }
@@ -723,7 +723,7 @@ blockquote::before {
 .testimonial {
   display: flex;
   align-items: center;
-  
+
   @media only screen and (max-width: 545px) {
     display: block;
   }
