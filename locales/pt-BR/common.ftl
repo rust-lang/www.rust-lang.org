@@ -16,7 +16,7 @@ index-title = A linguagem de programação Rust
 
 ## components/nav.hbs
 
-nav-install = Instalar
+nav-install = Instale
 nav-learn = Aprenda
 nav-tools = Ferramentas
 nav-governance = Governança

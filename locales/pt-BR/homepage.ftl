@@ -1,8 +1,8 @@
 ## index.hbs
 
 tagline = Uma linguagem empoderando a todos { $linebreak } a construir softwares confiáveis e eficientes.
-get-started = Inicie
-homepage-version = Versão{ $number }
+get-started = Comece Agora
+homepage-version = Versão { $number }
 
 ## components/panels/production.hbs
 
@@ -56,7 +56,7 @@ get-involved = Participe
 get-involved-read-rust = Leia Rust
 get-involved-read-rust-blurb = Adoramos documentação! Dê uma olhada nos livros disponíveis online, e também nas nossas principais publicações no blog e guias de usuários.
 get-involved-read-rust-link = Leia o livro
-get-involved-watch-rust = Veja Rust
+get-involved-watch-rust = Assista Rust
 get-involved-watch-rust-blurb = A Comunidade Rust possui um canal no YouTube dedicado a colecionar uma vasta quantidade de apresentações e tutoriais.
 get-involved-watch-rust-link = Assista os Vídeos
 get-involved-contribute = Contribua código
