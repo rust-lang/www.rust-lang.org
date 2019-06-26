@@ -42,10 +42,6 @@ body {
 }
 
 code {
-  overflow: auto;
-}
-
-code {
   padding: .2rem .5rem;
   margin: 0 .2rem;
   font-size: 90%;
@@ -55,13 +51,6 @@ code {
   border-radius: 4px;
   overflow: auto;
 }
-
-pre > code {
-  display: block;
-  padding: 1rem 1.5rem;
-  white-space: pre;
-}
-
 
 @mixin code-highlight-white {
   color: white;
@@ -692,7 +681,6 @@ blockquote::before {
       font-size: 3rem;
     }
   }
-}
 
 .team {
   text-align: center;
@@ -753,4 +741,8 @@ blockquote::before {
 
 .download-link {
   color: $link-color;
+}
+
+#pb4 {
+    padding-bottom: 3.8em;
 }
