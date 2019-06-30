@@ -9,7 +9,7 @@ what-cli-page-title = 命令列應用程式
 
 cli-pitch-solid-img-alt = 打勾的盾牌
 cli-pitch-solid-heading = 可靠且迅速
-cli-pitch-solid-description = 就算只是要寫一個簡短的一次性腳本，您都可以確保它是迅速、易於測試且能提供有用的輸出資訊。
+cli-pitch-solid-description = 就算只是要寫一個簡短的一次性腳本，您都可以確保它是快速、易於測試且能提供有用的輸出資訊。
 cli-pitch-solid-link = Rust 的保障
 cli-pitch-ship-img-alt = 打勾的箱子
 cli-pitch-ship-heading = 容易發行
@@ -41,7 +41,7 @@ cli-maintainable-errors-description = 如果設置文件遺失或損壞了呢？
 cli-maintainable-errors-link = Rust 的錯誤處理
 cli-maintainable-refactoring-img-alt = 命令列不是造火箭
 cli-maintainable-refactoring-heading = 方便後續擴展
-cli-maintainable-refactoring-description = Rust 讓你能靈活地組織程式碼。從單一檔案開始，到當您需要更多功能而重構代碼時，您都能確保不會破壞任何內容。
+cli-maintainable-refactoring-description = Rust 讓你能靈活地組織程式碼。從單一檔案開始，到當您需要更多功能而重構程式碼時，您都能確保不會破壞任何內容。
 cli-maintainable-refactoring-link = 重構 Rust
 
 ## templates/components/what/cli/example.hbs
