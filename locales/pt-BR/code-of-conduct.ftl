@@ -6,6 +6,8 @@
 policies-code-of-conduct-page-title = Código de Conduta
 coc-conduct-heading = Conduta
 coc-conduct-description =
+    Essa página é traduzida pela comunidade, e a tradução é mantida na base do melhor esforço. Se refira ao <a href="https://www.rust-lang.org/policies/code-of-conduct">documento original</a> para saber os termos oficiais que serão garantidos.
+    
     <ul>
       <li>Estamos empenhados a prover um ambiente amigável, seguro e receptivo a todos, independentemente do nível de experiência, identidade e expressão de gênero, orientação sexual, incapacitação, aparência, porte físico, raça, etnia, idade, religião, nacionalidade, ou qualquer outra característica similar.</li>
       <li>Por favor evite usar pseudônimos sexuais explicitamente ou outros apelidos que possam desviar de um ambiente amigável, seguro e receptivo para todos.</li>
@@ -20,6 +22,8 @@ coc-conduct-description-team-anchor-text = Time de Moderação Rust
 coc-conduct-email-button = Entre em contato com a Equipe de Moderação Rust
 coc-moderation-heading = Moderação
 coc-moderation-description =
+    <p>Essa página é traduzida pela comunidade, e a tradução é mantida na base do melhor esforço. Se refira ao <a href="https://www.rust-lang.org/policies/code-of-conduct">documento original</a> para saber os termos oficiais que serão garantidos.</p>
+    
     <p>Essas são as políticas de sustentação dos padrões de conduta da nossa comunidade. Se você sentir que uma discussão precisa de moderação, por favor entre em contato com a { $coc-rust-moderation-team-anchor }.</p>
     <ol>
     	<li>Observações que violam os padrões de conduta Rust, incluindo observações de ódio, nocivas, opressivas, ou exclusórias, não são permitidas. (Xingar é permitido, desde que nunca direcionado a outro usuário, e nunca de forma odiosa.)</li>

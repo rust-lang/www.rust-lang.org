@@ -46,7 +46,7 @@ install-notes-getting-started-description =
 install-notes-rustup-heading = Gerenciamento de ferramentas com <code>rustup</code>
 install-notes-rustup-description =
     <p>
-      Rust é intalado e gerenciado pela ferramenta
+      Rust é instalado e gerenciado pela ferramenta
       <a href="https://github.com/rust-lang/rustup.rs"><code>rustup</code></a>.
       Rust possui um rápido processo
     <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
@@ -64,9 +64,9 @@ install-notes-rustup-description =
     executando <code>rustup update</code>.
     </p>
     <p>
-      For more information see the
+      Para mais informações confira a documentação do
       <a href="https://github.com/rust-lang/rustup.rs/blob/master/README.md">
-      <code>rustup</code> documentation</a>.
+      <code>rustup</code></a>.
     </p>
 install-notes-path-heading = Configurando a variável de ambiente <code>PATH</code>
 install-notes-path-description =
