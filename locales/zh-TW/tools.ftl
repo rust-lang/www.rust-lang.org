@@ -50,7 +50,7 @@ install-notes-path-description =
       </span>
       <span class="platform-specific win dn">
         <code>%USERPROFILE%\.cargo\bin</code>
-      </span> 目錄中。您也可以在這裡找到 Rust 工具鏈，包括 <code>rustc</code>, <code>cargo</code>, and <code>rustup</code>。
+      </span> 目錄中。您也可以在這裡找到 Rust 工具鏈，包括 <code>rustc</code>、<code>cargo</code> 以及 <code>rustup</code>。
     </p>
     <p>
       因此，Rust 開發者通常會把這個目錄加入 <a href="https://en.wikipedia.org/wiki/PATH_(variable)">

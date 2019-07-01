@@ -1,6 +1,6 @@
 ## index.hbs
 
-tagline = 讓每個人都能打造出可靠又高效軟體的程式語言
+tagline = 讓每個人都能打造出{ $linebreak }可靠又高效軟體的程式語言
 get-started = 立即開始
 homepage-version = 版本 { $number }
 
