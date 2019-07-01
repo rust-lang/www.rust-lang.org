@@ -4,7 +4,7 @@
 
 ## Page title
 
-policies-media-guide-page-title = 媒體素材使用指南
+policies-media-guide-page-title = 媒體使用指南
 
 ## Art license
 
@@ -42,24 +42,24 @@ media-guide-tm-use-heading = 商標使用
 media-guide-tm-use-appearance-heading = 正式、聯名，及代言的商標揭露
 media-guide-tm-use-appearance-description =
     <p>最基本的原則是，除非取得 Rust 核心團隊的書面授權，否則不得以 Rust 專案或 Mozilla 正式、聯名，或代言進行商標揭露。這是我們保障使用者與開發者免於混淆的基本方式。</p>
-    <p>此規則與感知管理相關，因此較主觀且難以清楚界定。有些直觀的方式可避免爭議，例如標示非常明顯的「非官方」文字，倘若您有任何疑問，我們十分樂意提供協助，僅需發送電子郵件至 { EMAIL("trademark@rust-lang.org") }。</p>
+    <p>此規則與感知管理相關，因此較主觀且難以清楚界定。有些直觀的方式可避免爭議，例如標示非常明顯的「非官方」字樣，倘若您有任何疑問，我們十分樂意提供協助，僅需發送電子郵件至 { EMAIL("trademark@rust-lang.org") }。</p>
 media-guide-tm-use-basics-heading = 基本用法：指涉 Rust/Cargo 時
 media-guide-tm-use-basics-description =
     <p>如同其他商標，Rust 與 Cargo 的文字標記能夠以最少的限制代指 Rust 程式語言與 Cargo 套件管理器以及其倉儲</p>
     <p>它們不能用於：</p>
     <ul>
-      <li>代指其他任何編程語言；</li>
+      <li>代指其他任何程式語言；</li>
       <li>以某種方式誤導或暗示與 Rust 程式語言無關的模組、工具、文件或其他資源；</li>
-      <li>以某種方式使社群混淆 Rust 程式語言是否開源並且可以自由使用</li>
+      <li>以某種方式使社群混淆 Rust 程式語言是否開源並且可以自由使用。</li>
     </ul>
 media-guide-tm-use-implicit-approval-heading = 無需明確核准的用法
 media-guide-tm-use-implicit-approval-description =
     <p>很多時候，您在使用 Rust 商標時，不需要明確的批准。<strong>如上所述，您可以使用 Rust 商標，但是以下所有使用 Rust 商標的情況中，您必須確認上面不會出現「官方」的字樣。</strong></p>
     <ul>
       <li>聲明軟體使用 Rust 程式語言編寫，兼容 Rust 程式語言，或者包含 Rust 程式語言，以上皆是允許的。在這些情況下，您可以使用 Rust 商標來指明，這無需事先申請與批准。這點均適用於非商業與商業的使用。</li>
-      <li>在非商業的產品中使用 Rust 商標，如 RustPostgres 或  Rustymine，或者在 GitHub 程式碼庫的名字中使用 Rust 字眼，指出使用 Rust 程式語言或是用於 Rust 程式語言，都是被允許的。這類的使用也可以包含 Rust 的圖示，即便是以修改過的形式使用 Rust 圖示也是被允許的。對於商業產品（包含群眾募資或是被贊助的），請向 { EMAIL("trademark@rust-lang.org") } 確認您使用的圖標沒有出現「官方」字樣</li>
+      <li>在非商業的產品中使用 Rust 商標，如 RustPostgres 或  Rustymine，或者在 GitHub 程式碼庫的名字中使用 Rust 字眼，指出使用 Rust 程式語言或是用於 Rust 程式語言，都是被允許的。這類的使用也可以包含 Rust 的圖示，即便是以修改過的形式使用 Rust 圖示也是被允許的。對於商業產品（包含群眾募資或是被贊助的），請向 { EMAIL("trademark@rust-lang.org") } 確認您使用的圖標沒有出現「官方」字樣。</li>
       <li>在 T 恤、帽子與其他藝術品或商品上，只要他們不被銷售，即便是以修改過後的形式使用的 Rust 商標，給個人或小型社群成員使用也是被允許的。如果您想在 Rust 附屬的活動中分發帶有 Rust 商標的商品請向 { EMAIL("trademark@rust-lang.org") }聯繫我們取得授權。</li>
-      <li>對於免費參加的活動，使用 Rust 商標（即便以修改過後的形式）進行聚會，教學等社交活動也是被允許的。對於商業性質的活動（包括受到贊助的），請向 { EMAIL("trademark@rust-lang.org") } 登記。不過，「RustCamp」、「RustCon」、「RustConf」沒有明確授權不允許使用。此外，與上述所有用途一樣，若沒有書面授權， <strong>活動不能被聲明為官方認可或由 Rust 專案舉辦</strong></li>
+      <li>對於免費參加的活動，使用 Rust 商標（即便以修改過後的形式）進行聚會，教學等社交活動也是被允許的。對於商業性質的活動（包括受到贊助的），請向 { EMAIL("trademark@rust-lang.org") } 登記。不過，「RustCamp」、「RustCon」、「RustConf」沒有明確授權不允許使用。此外，與上述所有用途一樣，若沒有書面授權， <strong>不得聲明活動為官方認可或由 Rust 專案舉辦。</strong></li>
       <li>在書籍或出版物，如「Rust Journal」或「Rust Cookbook」中使用 Rust 商標是允許的。</li>
       <li>在網站、小冊子、文件、學術論文、書籍和產品包裝上使用文字「Rust」來代指 Rust 程式語言是被允許的。</li>
     </ul>
@@ -77,7 +77,7 @@ media-guide-tm-use-explicit-approval-description =
 
 media-guide-helping-out-heading = 請您協助
 media-guide-helping-out-description =
-    <p>身為 Rust 社群的一員，請留意可疑的 Rust 標誌與「Rust」文字標記的使用。您可以向 { EMAIL("trademark@rust-lang.org") } 回報可能的誤用。我們會評估每一個案並採取合理的措施。</p>¶
+    <p>身為 Rust 社群的一員，請留意可疑的 Rust 標誌與「Rust」文字標記的使用。您可以向 { EMAIL("trademark@rust-lang.org") } 回報可能的誤用。我們會評估每一個案並採取合理的措施。</p>
     <p>請勿逕行與商標使用者聯繫投訴。這應由 Mozilla 及其代表處理。謝謝！</p>
     <p>如果您對推廣 Rust 或使用其商標有特別的問題或疑慮，請與 Rust 核心團隊聯繫。</p>
 media-guide-helping-out-link = 發送電子郵件至 Rust 核心團隊

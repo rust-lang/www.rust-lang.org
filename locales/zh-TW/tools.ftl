@@ -6,7 +6,7 @@ tools-editor-support-description = 無論您喜歡使用命令列還是視覺化
 tools-build-heading = 平穩的建構流程
 tools-build-description = Cargo 是 Rust 的建構工具。它用一道指令整合了所有常用功能，無需額外工作。
 tools-build-install-heading = 安裝
-tools-build-install-description = <a href="https://crates.io">crates.io</a> 上面有成千上萬的套件，很可能早就有您正在尋找的解決方案。站在巨人的肩膀上，讓你的團隊拋下重覆工作，專注創新。
+tools-build-install-description = <a href="https://crates.io">crates.io</a> 上面有成千上萬的套件，很可能早就有您正在尋找的解決方案。站在巨人的肩膀上，讓你的團隊拋下重複工作，專注創新。
 tools-build-test-heading = 測試
 tools-build-test-description = Rust 優秀的測試工具讓您可以對程式碼充滿信心。<code class="nowrap">cargo test</code> 是統一的 Rust 測試工具。您可以直接在程式碼內寫下測試，或是另外寫在獨立檔案中：它滿足您所有的測試需求。
 tools-build-deploy-heading = 佈署
