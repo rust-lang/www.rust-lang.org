@@ -33,6 +33,6 @@ coc-moderation-description =
     </ol>
     <p>在 Rust 社群，我們努力多付出一些，互相照顧。不要只關注在技術上無懈可擊，盡量做好您自己。特別是避免陷入攻擊性或被敏感性問題糾纏。尤其是當別人偏離主題時，這通常會導致不必要的鬥爭、傷害情感、損害信任，更糟糕的是，這些事情會讓人們離開社群。 </p>
     <p>如果有人對您所說或做過的事情提出異議，不要急於自衛，先停止做他們抱怨的事情並道歉。即使您覺得自己被誤解或受到不公平的指控，也很有可能會有更好的溝通方式——請記住，讓您的 Rustaceans 同伴感到舒適是您的責任。每個人都希望好好相處，我們來這裡最初和最根本的目的是想談論很酷的技術。您會發現，只要您贏得他們的信任，人們就會積極地表現出善意和寬恕。 </p>
-    <p>上述執行政策強制適用於所有 Rust 官方場所；包括 Discord 頻道（https://discord.gg/rust-lang）、rust-lang、rust-lang-nursery 和 rust-lang-deprecated 在 Github 的倉庫、rust-lang.org（users.rust-lang.org、internals.rust-lang.org）的所有論壇。對於採用 Rust 行為準則的其他專案，請聯繫這些專案的維護人員以便執行此公約。如果您希望將此行為準則用於您自己的專案，請考慮明確提出您的審查政策或使用您自己的審查政策的改編副本，以避免混淆。 </p>
+    <p>上述執行政策強制適用於所有 Rust 官方場所；包括 Discord 頻道（https://discord.gg/rust-lang）、rust-lang、rust-lang-nursery 和 rust-lang-deprecated 的 Github repository、rust-lang.org（users.rust-lang.org、internals.rust-lang.org）的所有論壇。對於採用 Rust 行為準則的其他專案，請聯繫這些專案的維護人員以便執行此公約。如果您希望將此行為準則用於您自己的專案，請考慮明確提出您的審查政策或使用您自己的審查政策的改編副本，以避免混淆。 </p>
     <p><i>改編自《<a href="http://blog.izs.me/post/30036893703/policy-on-trolling">Node.js 關於惡意破壞的政策</a>》以及《 <a href ="https://www.contributor-covenant.org/version/1/3/0/">貢獻者公約 v1.3.0 </a>》。 </i></p>
 coc-moderation-description-team-anchor-text = Rust 審核團隊

@@ -59,5 +59,5 @@ cli-production-sentry-attribution = &ndash; Armin Ronacher,
 cli-production-sentry-link = 《Rust 在 Sentry 中的應用》 &ndash; PolyConf 2017
 cli-production-habitat-quote = 我從沒後悔有這些函式庫。[…] 使用 Rust 製作 CLI 或是控制台的工具帶給我很大的好處，它非常善於針對不同目標系統進行編譯。
 cli-production-habitat-attribution = &ndash; Fletcher Nichol,
-cli-production-habitat-link = 《把 Rust 帶進生產環境》 &ndash; RustFest Kyiv
+cli-production-habitat-link = 《把 Rust 帶進正式環境》 &ndash; RustFest Kyiv
 cli-production-habitat-img-alt = Habitat 標誌
