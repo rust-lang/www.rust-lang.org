@@ -14,7 +14,7 @@ tools-build-deploy-description = <code class="nowrap">cargo build</code> 可為�
 tools-automation-heading = 利用自動化加速開發
 tools-automation-description = Rust 工業級的工具讓團隊放心合作，專注在最重要的工作上。
 tools-automation-rustfmt-heading = Rustfmt
-tools-automation-rustfmt-description = Rustfmt 可以自動編排程式碼，讓它們更容易閱讀、編寫及維護。最重要的是：不用再爭論空格或大括號擺哪邊了。
+tools-automation-rustfmt-description = Rustfmt 可以自動格式化程式碼，讓它們更容易閱讀、編寫及維護。最重要的是：不用再爭論空格或大括號擺哪邊了。
 tools-automation-rustfmt-link = 前往 repo
 tools-automation-clippy-heading = Clippy
 tools-automation-clippy-description = <i>「看起來您正在實作 Iterator」</i> <br> Clippy 協助所有經驗不同的開發人員寫出符合慣例的程式碼，並且推行標準寫法。
@@ -28,7 +28,7 @@ tools-automation-cargo-doc-link = 前往網站
 tools-install-page-title = 安裝 Rust
 install-using-rustup-heading = 使用 rustup (推薦)
 install-notes-heading = Rust 安裝須知
-install-notes-getting-started-description = 如果您正要開始使用 Rust，需要一份更完整的教學，請見 <a href="{ $getting-started-href }">開始使用</a> 頁面。
+install-notes-getting-started-description = 如果您正要開始使用 Rust，需要一份更完整的教學，請見<a href="{ $getting-started-href }">開始使用</a>頁面。
 install-notes-rustup-heading = 用 <code>rustup</code> 管理工具鏈
 install-notes-rustup-description =
     <p>
@@ -50,7 +50,7 @@ install-notes-path-description =
       </span>
       <span class="platform-specific win dn">
         <code>%USERPROFILE%\.cargo\bin</code>
-      </span> 目錄中。您也可以在這裡找到 Rust 工具鏈，包括 <code>rustc</code>, <code>cargo</code>, and <code>rustup</code>。
+      </span> 目錄中。您也可以在這裡找到 Rust 工具鏈，包括 <code>rustc</code>、<code>cargo</code> 以及 <code>rustup</code>。
     </p>
     <p>
       因此，Rust 開發者通常會把這個目錄加入 <a href="https://en.wikipedia.org/wiki/PATH_(variable)">

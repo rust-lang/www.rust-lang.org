@@ -47,7 +47,6 @@ governance-team-wg-governance-description = Travailler à améliorer la gouverna
 governance-team-community-events-name = Équipe évènements
 governance-team-community-events-description = Supporter des évènements communautaires par le biais de ressources et connaissances diverses.
 governance-team-wg-embedded-name = Groupe de travail matériel embarqué
-governance-team-wg-embedded-description = Concentrer notre travail sur l’expérience globale d’utiliser Rust dans des environnements limités en ressource et sur des plateformes non-traditionnelles.
 governance-team-crates-io-name = Équipe crates.io
 governance-team-crates-io-description = Gestion des opérations, du développement et politique de crates.io
 governance-team-community-rustbridge-name = Équipe RustBridge

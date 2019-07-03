@@ -24,7 +24,7 @@ production-testimonial-yelp-alt = Yelp Logosu
 
 language-values-performance = Performans
 language-values-performance-blurb =
-    Rust inanılmaz hızlı ve bellek tasarruflu. Çöp toplayıcısı veya çalışma zamanı olmadan
+    Rust inanılmaz hızlı ve bellek tasarrufludur. Çöp toplayıcısı veya çalışma zamanı olmadan
     performans açısından kritik öneme sahip servisleri çalıştırabilir, gömülü cihazlarda
     çalışabilir ve diğer dillerle kolayca entegre olabilir.
 language-values-reliability = Güvenilirlik

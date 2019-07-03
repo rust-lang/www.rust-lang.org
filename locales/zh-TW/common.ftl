@@ -10,7 +10,7 @@ discord = Discord
 
 ## components/layout.hbs
 
-meta-description = 一門賦予每個人建構出可靠且高效軟體能力的程式語言。
+meta-description = 讓每個人都能打造出可靠又高效軟體的程式語言。
 page-title = { $pagename } - Rust 程式設計語言
 index-title = Rust 程式設計語言
 

@@ -10,7 +10,7 @@ what-embedded-page-title = 嵌入式裝置
 
 embedded-pitch-analysis-alt = 顯微鏡
 embedded-pitch-analysis-heading = 強大的靜態分析
-embedded-pitch-analysis-description = 在編譯時強制要求引腳和外圍設置，確保資源不會被您的應用程式中非預期的部分使用。
+embedded-pitch-analysis-description = 腳位與週邊設備的配置在編譯時便完成了，確保資源不會被您的應用程式中非預期的部分使用。
 embedded-pitch-memory-alt = RAM
 embedded-pitch-memory-heading = 靈活的記憶體管理
 embedded-pitch-memory-description = 動態記憶體配置是選擇性的，您可以使用全域分配器與動態資料結構，或者不用堆積並完全使用靜態分配。
@@ -22,7 +22,7 @@ embedded-pitch-interop-heading = 互操作性
 embedded-pitch-interop-description = Rust 能整合進 C 的程式碼中，也可以使用現有的 SDK 編寫 Rust 應用程式。
 embedded-pitch-portability-alt = 行李推車
 embedded-pitch-portability-heading = 可移植性
-embedded-pitch-portability-description = 只要編寫函式褲或驅動程式一次，就能在各種不同的系統中使用，從微小的單晶片到強力的 SBC 都行。
+embedded-pitch-portability-description = 只要編寫函式庫或驅動程式一次，就能在各種不同的系統中使用，從微小的單晶片到強力的 SBC 都行。
 embedded-pitch-community-alt = 盾牌標誌
 embedded-pitch-community-heading = 社群驅動
 embedded-pitch-community-description = 作為 Rust 開源專案的一部份，我們有一流的開源社群與商業夥伴進行嵌入式系統的支援。

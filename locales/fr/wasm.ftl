@@ -11,13 +11,15 @@ what-wasm-page-heading = Web&shy;Assembly
 wasm-why-rust-predictable-alt = Engrenages
 wasm-why-rust-predictable-heading = Performance prédictible
 wasm-why-rust-small-code-alt = Un microscope
-wasm-why-rust-small-code-heading = Code succint
+wasm-why-rust-small-code-heading = Code succinct
 wasm-why-rust-amenities-alt = Bagages
 wasm-why-rust-amenities-heading = Fonctionnalités modernes
+wasm-why-rust-amenities-description = Un écosystème vivant de bibliothèques pour vous aider à démarrer sur les chapeaux de roue. Des abstractions expressives à coût zéro. Et une communauté accueillante pour vous aider à apprendre.
 
 ## Get started! (templates/components/what/wasm/get-started.hbs)
 
 wasm-get-started-wasm-alt = Le logo de WebAssembly
+wasm-get-started-wasm-description = Apprenez-en plus sur la machine virtuelle rapide, sûre et ouverte appelée WebAssembly, et lisez son standard.
 wasm-get-started-wasm-link = En apprendre plus
 wasm-get-started-mdn-alt = logo MDN
 wasm-get-started-mdn-description = En apprendre plus au sujet de WebAssembly en consultant Mozilla Developer Network.
