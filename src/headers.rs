@@ -29,7 +29,7 @@ impl Fairing for InjectHeaders {
         for (key, value) in HEADERS {
             response.set_header(Header::new(*key, *value));
         }
-        let csp = if super::pontoon_enabled() {
+        let csp = if *super::PONTOON_ENABLED {
             HEADER_CSP_PONTOON
         } else {
             HEADER_CSP_NORMAL
