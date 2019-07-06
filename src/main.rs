@@ -57,7 +57,7 @@ use sass_rs::{compile_file, Options};
 use category::Category;
 
 use caching::{Cached, Caching};
-use i18n::{I18NHelper, SupportedLocale, TeamHelper};
+use i18n::{I18NHelper, LocaleInfo, SupportedLocale, TeamHelper, EXPLICIT_LOCALE_INFO};
 use rocket::http::hyper::header::CacheDirective;
 
 lazy_static! {
@@ -89,6 +89,7 @@ struct Context<T: ::serde::Serialize> {
     baseurl: String,
     pontoon_enabled: bool,
     assets: AssetFiles,
+    locales: &'static [LocaleInfo],
 }
 
 impl<T: ::serde::Serialize> Context<T> {
@@ -109,6 +110,7 @@ impl<T: ::serde::Serialize> Context<T> {
             lang,
             pontoon_enabled: pontoon_enabled(),
             assets: ASSETS.clone(),
+            locales: EXPLICIT_LOCALE_INFO,
         }
     }
 }
