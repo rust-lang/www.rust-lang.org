@@ -9,10 +9,13 @@ what-embedded-page-title = Dispositivo embedded
 ## Why Rust? (templates/components/what/pitch.hbs)
 
 embedded-pitch-analysis-alt = Un microscopio
+embedded-pitch-analysis-heading = Potente static analysis del codice
+embedded-pitch-analysis-description = Assicura la configurazione dei pin e delle periferiche in fase di compilazione. La garanzia che le risorse non saranno utilizzate da altre componenti dell' applicazione.
 embedded-pitch-memory-alt = Una barra di RAM
 embedded-pitch-memory-heading = Gestione flessibile della memoria
 embedded-pitch-memory-description = L'allocazione dinamica della memoria è opzionale. Puoi usare un allocatore globale e strutture dati dinamiche. O escludere del tutto l'heap e allocare staticamente tutto.
 embedded-pitch-concurrency-alt = Ingranaggi
+embedded-pitch-concurrency-heading = Concorrenza senza preoccupazioni
 embedded-pitch-concurrency-description = Rust fa in modo che sia impossibile condividere accidentalmente stati fra differenti thread. Usa l'approccio alla concorrenza che preferisci, godrai comunque delle garanzie di Rust.
 embedded-pitch-interop-alt = Stretta di mano
 embedded-pitch-interop-heading = Interoperabilità

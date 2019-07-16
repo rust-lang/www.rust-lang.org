@@ -16,6 +16,7 @@ production-share = La tua azienda usa Rust? Condividi la tua esperienza con noi!
 production-share-button = Mettiti in contatto con il Production Users Team
 production-users = Vuoi saperne di più da chi usa Rust in produzione?
 production-users-button = Guarda la pagina degli utenti
+production-domain = Scopri come le aziende usano gli strumenti in specifici ambiti di sviluppo!
 production-support = Supporta Rust
 production-sponsor = Sei interessato a sponsorizzare dello sviluppo su Rust? O una conferenza su Rust? Saremmo felicissimi di entrare in contatto!
 production-contact-core = Manda un messaggio al Core Team
