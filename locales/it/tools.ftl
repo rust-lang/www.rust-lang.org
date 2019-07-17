@@ -1,25 +1,25 @@
 ## tools/index.hbs
 
 tools-page-title = Strumenti
-tools-editor-support-heading = Supporto di primo livello per gli editor
-tools-editor-support-description = C'è un integrazione per Rust per ogni esigenza, sia che tu preferisca scrivere codice da riga di comando o usando un editor o IDE. Oppure puoi semplicemente creare una nuova integrazione da solo usando il <a href="https://github.com/rust-lang/rls">Rust Language Server</a>
+tools-editor-support-heading = Pieno supporto per gli editor
+tools-editor-support-description = Sia che tu preferisca scrivere codice da riga di comando o usare un editor o IDE, troverai supporto a Rust nel tuo editor preferito. Oppure puoi semplicemente creare il supporto usando il <a href="https://github.com/rust-lang/rls">Rust Language Server</a>
 tools-build-heading = Porta serenità nelle tue build
-tools-build-description = Cargo è lo strumento per compilare in Rust, racchiude tutte le azioni più comuni in un singolo comando. Nessun boilerplate aggiuntivo è necessario.
+tools-build-description = Cargo è lo strumento per compilare in Rust, racchiude tutte le azioni più comuni in un singolo comando. Nessun boilerplate.
 tools-build-install-heading = Installa
 tools-build-install-description =
     Con decine di migliaia di librerie, c'è una buona probabilità che <a href="https://crates.io">crates.io</a> abbia la soluzione che stai cercando. 
-    Stai sulle spalle dei giganti e porta il tuo team dalla ripetizione verso l'innovazione.
+    Stai sulle spalle dei giganti e porta il tuo team dalla ripetizione portandolo verso l'innovazione.
 tools-build-test-heading = Test
-tools-build-test-description = Prendi confidenza con il tuo codice grazie agli eccellenti strumenti per testare in Rust. <code class="nowrap">cargo test</code> è la soluzione unificata di Rust per il testing. Puoi scrivere i test accanto al tuo codice o organizzarli in file separati: la soluzione per tutte le esigenze di testing.
+tools-build-test-description = Fidati del tuo codice grazie agli eccellenti strumenti per testare in Rust. <code class="nowrap">cargo test</code> è la soluzione unificata di Rust per il testing. Puoi scrivere i test accanto al tuo codice o organizzarli in file separati: la soluzione per tutte le esigenze.
 tools-build-deploy-heading = Deploy
 tools-build-deploy-description = <code class="nowrap">cargo build</code> crea binari efficienti per ogni piattaforma. Con un semplice comando il tuo codice è adatto per Windows, Linux, OSX e il web. Tutto con un'interfaccia moderna, senza bisogno di build file personalizzati.
-tools-automation-heading = Velocità grazie all'automazione
-tools-automation-description = Gli strumenti di qualità industriale di Rust rendono la collaborazione semplice, permettendo ai team di concentrarsi sulle cose importanti.
+tools-automation-heading = Rapidità grazie all'automazione
+tools-automation-description = Gli strumenti di qualità di Rust rendono la collaborazione semplice, permettendo ai team di concentrarsi sulle cose importanti.
 tools-automation-rustfmt-heading = Rustfmt
-tools-automation-rustfmt-description = Rustfmt formatta automaticamente il tuo codice Rust, rendendolo semplice da leggere, scrivere e mantenere. Ma sopratutto niente più dibattiti sullo spacing o la posizione delle parentesi.
+tools-automation-rustfmt-description = Rustfmt formatta automaticamente il tuo codice Rust, rendendolo semplice da leggere, scrivere e mantenere. Ma soprattutto niente più dibattiti sugli spazi nel codice o la posizione delle parentesi.
 tools-automation-rustfmt-link = Vai al repo
 tools-automation-clippy-heading = Clippy
-tools-automation-clippy-description = <i>"Si direbbe che stai scrivendo un Iterator."</i><br> Clippy aiuta sviluppatori di qualunque livello a scrivere codice idiomatico, e applica gli standard.
+tools-automation-clippy-description = <i>"Si direbbe che stai scrivendo un Iterator."</i><br> Clippy aiuta sviluppatori di qualunque livello a scrivere codice idiomatico applicando gli standard.
 tools-automation-clippy-link = Vai al repo
 tools-automation-cargo-doc-heading = Cargo Doc
 tools-automation-cargo-doc-description = Il compilatore della documentazione di Cargo fa in modo che non ci sia più una API senza documentazione. E' disponibile in locale tramite <code class="nowrap">cargo doc</code> e online per i crate pubblici <a href="https://docs.rs">docs.rs</a>.

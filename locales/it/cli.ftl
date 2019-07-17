@@ -3,7 +3,7 @@
 
 ## templates/what/cli.hbs
 
-what-cli-page-title = Applicazioni da linea di comando
+what-cli-page-title = Applicazioni a linea di comando
 
 ## templates/components/what/cli/pitch.hbs
 
@@ -12,16 +12,16 @@ cli-pitch-solid-heading = Robusto e veloce
 cli-pitch-solid-description = Anche se devi solo scrivere un breve script da usare una volta e via, puoi stare sicuro che sarà veloce, semplice da testare e che avrà un output utile verso l'utente.
 cli-pitch-solid-link = Le garanzie di Rust
 cli-pitch-ship-img-alt = Scatola con una spunta
-cli-pitch-ship-heading = Distribuzione facile
-cli-pitch-ship-description = Compila tutta l'applicazione in singolo file binario&mdash;i tuoi utenti non avranno bisogno di runtime o librerie installate.
+cli-pitch-ship-heading = Di facile distribuzione
+cli-pitch-ship-description = Compila tutta l'applicazione in singolo file binario: i tuoi utenti non avranno bisogno di runtime o librerie installate.
 cli-pitch-ship-link = Come rilasciare codice Rust
 cli-pitch-config-img-alt = Un foglietto e un ingranaggio
 cli-pitch-config-heading = Configurazione robusta
 cli-pitch-config-description = Gestisci facilmente i file di configurazione su più piattaforme. Rust gestirà per te namespace e i vari formati.
 cli-pitch-config-link = Inizia a configurare
 cli-pitch-manuals-img-alt = Documentazione
-cli-pitch-manuals-heading = Documentazione? fatto.
-cli-pitch-manuals-description = Genera automaticamente la documentazione per la tua applicazione, basta impacchettare i file generati e hai finito.
+cli-pitch-manuals-heading = Documentazione? Fatto.
+cli-pitch-manuals-description = Genera automaticamente la documentazione per la tua applicazione: basta impacchettare i file generati e hai finito.
 cli-pitch-manuals-link = Scopri di più
 cli-pitch-machines-img-alt = Tubi
 cli-pitch-machines-heading = Dati in ingresso, dati in uscita
@@ -46,9 +46,9 @@ cli-maintainable-refactoring-link = Rust Refactoring
 
 ## templates/components/what/cli/example.hbs
 
-cli-example-description = Scrivere una applicazione da linea di commando è un ottimo modo per imparare Rust.
+cli-example-description = Scrivere una applicazione a linea di commando è un ottimo modo per imparare Rust.
 cli-example-inputs-heading = Definisci l'input
-cli-example-main-heading = Scrivi i tuoi tool
+cli-example-main-heading = Scrivi il tuo tool
 cli-example-link = Impara di più con il CLI book
 
 ## templates/components/what/cli/production.hbs
@@ -56,7 +56,7 @@ cli-example-link = Impara di più con il CLI book
 cli-production-sentry-img-alt = logo sentry
 cli-production-sentry-quote =
     Una delle ragioni per cui abbiamo apprezzato Rust è l'ecosistema crates.io [...]
-    Ci sono tante soluzioni pronte per l'uso per creare ottime interfacce da linea di comando.
+    Ci sono tante soluzioni pronte per l'uso per creare ottime interfacce a linea di comando.
 cli-production-sentry-attribution = &ndash; Armin Ronacher,
 cli-production-sentry-link = Rust at Sentry &ndash; PolyConf 2017
 cli-production-habitat-quote = Non ho nessun rimpianto da quando ho a che fare con questa codebase. [...] Usare Rust per creare CLI o applicazioni da console è per me un valore aggiunto. E' veramente ottimo se devi compilare per differenti architetture.

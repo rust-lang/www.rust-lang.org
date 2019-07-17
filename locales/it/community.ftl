@@ -1,19 +1,19 @@
 ## templates/community/index.hbs
 
 community-page-title = Community
-community-blurb = Rust ha tantissime qualità, ma la sua più grande forza è la community di persone che si uniscono per far sì che lavorare in Rust sia un'esperienza gratificante.
-community-twir = Resta aggiornato con la community di Rust!
+community-blurb = Rust ha tantissime qualità, ma la sua più grande forza è la community di persone che si uniscono per far sì che lavorare con Rust sia un'esperienza gratificante.
+community-twir = Resta aggiornato con la community!
 community-twir-button = This Week in Rust
 community-team-contact = Dicci la tua! Non sei sicuro di dove o a chi chiedere? Vuoi dare il tuo contributo ma non sai come? Il community team saprà sicuramente metterti in contatto con qualcuno che può aiutarti!
 community-team-button = email { ENGLISH("community@rust-lang.org") }
-community-where = Dove parlare
+community-where = Luoghi dove comunicare
 community-urlo-header = Forum utenti
-community-urlo = Il forum degli utenti è un posto dove gli utenti Rust possono discutere di qualsiasi argomento riguardante Rust. Puoi fare domande, coordinarti su idee per progetti o su qualsiasi altra cosa ti incuriosisca!
+community-urlo = Questo forum è il posto dove gli utenti Rust possono discutere di qualsiasi argomento riguardante li linguaggio. Puoi fare domande, coordinarti su idee per progetti o su qualsiasi altra cosa ti incuriosisca!
 community-discourse-button = Visita il Forum
-community-irlo-header = Internals forum
-community-irlo = Il forum per gli "internals" di Rust è il luogo per discussioni sullo sviluppo di Rust stesso &ndash; dal design del linguaggio, della libreria standard fino allo sviluppo del compiler.
+community-irlo-header = Forum internals
+community-irlo = Il forum per gli "internals" di Rust è il luogo per discussioni sullo sviluppo di Rust stesso &ndash; dal design del linguaggio, della libreria standard fino allo sviluppo del compilatore.
 community-chat-header = Piattaforme social
-community-chat = Lo sviluppo di Rust e le discussioni in generale si tengono su molteplici piattaforme. Dai un'occhiata ai vari canali sul server Discord Rust, oppure controlla sulle pagine dei vari team dove si ritrovano.
+community-chat = Lo sviluppo di Rust e le discussioni in generale si tengono su molteplici piattaforme. Dai un'occhiata ai vari canali sul server Discord Rust, oppure dai un'occhiata alla pagina per trovare dove i vari team si ritrovano.
 community-teams-learn = Scopri di più sui team
 community-events-header = Eventi
 community-meetup-header = Cerca una conferenza oppure un meetup locale
@@ -40,9 +40,9 @@ community-rustbridge-paris-alt = Parigi RustBridge
 community-rustbridge-berlin-alt = Berlino RustBridge
 community-rustbridge-rbr-alt = RustBridge al Rust Belt Rust
 community-irr-header = Increasing Rust's Reach
-community-irr = "Increasing Rust's Reach" è un programma volto a far incontrare componenti del team Rust - impegnati in varie parti del progetto, con membri sottorappresentati nella community di Rust e aziende del settore, per una partnership di tre (3) mesi, da metà maggio a metà agosto. L'accordo di partnership è rappresentato da circa 3-5 ore settimanali allocate su un progetto Rust.
+community-irr = "Increasing Rust's Reach" è un programma volto a far incontrare componenti del team Rust impegnati in varie parti del progetto, con membri sottorappresentati nella community di Rust e aziende del settore, per una partnership di tre (3) mesi, da metà maggio a metà agosto. L'accordo di partnership è rappresentato da circa 3-5 ore settimanali allocate su un progetto Rust.
 community-irr-button = Visita il sito
-community-standards-header = Standard della Community
+community-standards-header = Gli standard della Community
 community-standards =
     Ci impegniamo a offrire un ambiente sicuro, amichevole e accogliente per tutti, senza distinzione di sesso, orientamento sessuale, disabilità, etnia, religione e caratteristiche personali simili. Il nostro <a href="{ $url }">Codice di Condotta</a> detta gli standard su come comportarsi in tutti i forum officiali di Rust.
     <br /><br />

@@ -9,11 +9,11 @@ what-wasm-page-heading = Web&shy;Assembly
 ## Why Rust? (templates/components/what/wasm/pitch.hbs)
 
 wasm-why-rust-predictable-alt = Ingranaggi
-wasm-why-rust-predictable-heading = Prestazioni riproducibili
-wasm-why-rust-predictable-description = Nessuna pausa improvvisa dovuta al garbage collector. Nessun calo improvviso di prestazioni dovuto al compilatore JIT. Solo controllo di basso livello insieme a una ergonomicità di alto livello.
+wasm-why-rust-predictable-heading = Prestazioni predicibili
+wasm-why-rust-predictable-description = Nessuna pausa improvvisa dovuta al garbage collector. Nessun calo improvviso di prestazioni dovuto al compilatore JIT. Avrai invece un controllo di basso livello e a una ergonomicità di alto livello.
 wasm-why-rust-small-code-alt = Un microscopio
 wasm-why-rust-small-code-heading = Codice generato di piccole dimensioni
-wasm-why-rust-small-code-description = Codice generato di piccole dimensioni significa caricare la pagina più velocemente. Un file <code>.wasm</code> non include roba inutile, come un garbage collector. Ottimizzazioni avanzate e ripulitura dal codice inutilizzato.
+wasm-why-rust-small-code-description = Codice generato di piccole dimensioni significa caricare la pagina più velocemente. Un file <code>.wasm</code> non include roba inutile, come un garbage collector: ottimizzazioni spinte e ripulitura dal codice inutilizzato.
 wasm-why-rust-amenities-alt = Valigia
 wasm-why-rust-amenities-heading = Comodità moderne
 wasm-why-rust-amenities-description = Un ecosistema vivace di librerie che ti aiutano a partire a tutto gas. Astrazioni espressive e a costo zero. E una community accogliente che ti aiuta a imparare.
@@ -34,7 +34,7 @@ wasm-get-started-mdn-link = Scopri di più
 
 wasm-js-heading = A fianco del JavaScript
 wasm-js-augment-heading = Aggiungi, non sostituire
-wasm-js-augment-description = Il sogno del WebAssembly non è far fuori il tuo JavaScript ma di lavorarci insieme, dando una super-carica in task impegnativi o di basso livello &mdash; che beneficiano di tutte le prestazioni di Rust.
+wasm-js-augment-description = Il sogno del WebAssembly non è far fuori il tuo JavaScript ma di lavorarci insieme, dando una super-carica in task impegnativi o di basso livello, che beneficiano di tutte le prestazioni di Rust.
 wasm-js-toolchains-heading = Utilizza strumenti familiari
 wasm-js-toolchains-description = Pubblica pacchetti Rust in WebAssembly su repository come npm. Crea bundle con webpack, Parcel e altro ancora. Fai manutenzione con strumenti come <code>npm audit</code> e Greenkeeper.
 wasm-js-interop-heading = Interoperabilità senza interruzioni
@@ -43,7 +43,7 @@ wasm-js-interop-description = Genera automaticamente i binding fra le API Rust, 
 ## Production use (templates/components/what/wasm/production.hbs)
 
 wasm-production-cloudflare-alt = logo cloudflare
-wasm-production-cloudflare-quote = Compiliamo da Rust a WASM per invocare funzioni Serveless direttamente dal cuore di Internet. E' incredibile e non vedo l'ora di aggiungerne altre.
+wasm-production-cloudflare-quote = Compiliamo da Rust a WASM per invocare funzioni Serveless direttamente dal cuore di Internet. E' incredibile: non vedo l'ora di aggiungerne altre.
 wasm-production-cloudflare-attribution = Steven Pack, <a href="{ $href }">Serverless Rust with Cloudflare Workers</a>
 wasm-production-mozilla-alt = firefox
 # If an opening square bracket is the first character on a line, it must be escaped like this: {"["}. See https://projectfluent.org/fluent/guide/special.html

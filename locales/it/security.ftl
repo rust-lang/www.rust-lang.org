@@ -3,9 +3,9 @@
 
 policies-security-page-title = Policy di sicurezza
 security-reporting-heading = Segnalazioni
-security-reporting-link = contatta { ITALIAN("security@rust-lang.org") }
+security-reporting-link = contatta { ENGLISH("security@rust-lang.org") }
 security-reporting-description =
-    <p>La sicurezza è uno dei principi fondamentali di RUST, e per questo fine vogliamo assicurarci che l'implementazione di Rust sia sicura. Vi ringraziamo per il tempo che impiegherete in una comunicazione responsabile di eventuali problemi riscontrati.</p>
+    <p>La sicurezza è uno dei principi fondamentali di Rust, e per questo fine vogliamo assicurarci che l'implementazione sia sicura. Vi ringraziamo per il tempo che impiegherete per comunicarci in modo responsabile eventuali problemi riscontrati.</p>
     <p>Qualunque bug di sicurezza in una distribuzione di Rust dovrebbe essere comunicato via email a { -security-at-rust-lang-org-anchor }. Questa mailing list inoltra l'email a un piccolo team addetto alla sicurezza. La segnalazione verrà presa in carico entro 24 ore, riceverete una risposta dettagliata entro 48 ore. Se preferite, potete criptare la segnalazione usando <a href="{ -rust-security-team-key-href }">la nostra chiave GPG pubblica</a>. Questa chiave è disponibile anche <a href="{ -rust-pgp-key-mit-keyserver-href }">sul keyserver del MIT</a> ed è copiata <a href="#security-pgp-key">qua sotto</a>.</p>
     <p>Questo indirizzo email riceve molto spam, quindi assicuratevi che l'oggetto sia chiaro per evitare che la segnalazione non venga notata. Dopo una prima risposta, il team addetto alla sicurezza farà in modo di tenervi informati sui progressi, al fine di sistemare il problema e rilasciare un completo annuncio pubblico. Come raccomandato dalla <a href="{ -wikipedia-rfpolicy-href }">RFPolicy</a>, questi aggiornamenti saranno inviati almeno ogni cinque giorni. In realtà, è più probabile che vengano emanati ogni 24-48 ore.</p>
     <p>Se non ricevete una risposta alla mail entro 48 ore, o non avete ricevuto notizie dal team nel giro di cinque giorni, ci sono alcune cose che potete fare (nell'ordine):</p>
