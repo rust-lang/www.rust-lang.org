@@ -15,7 +15,7 @@ security-reporting-description =
         <li>Pubblicare una segnalazione sul <a href="{ -internals-rust-lang-org-href }">forum dello sviluppo interno</a></li>
       </ul>
     <p>Per favore tenete presente che le discussioni sul forum sono pubbliche. Se decidete di comunicare una segnalazione, non discutetene in pubblico. Per favore limitatevi a cercare di contattare qualcuno del team della sicurezza.</p>
-security-disclosure-heading = Policy pubblicazione bollettini di sicurezza
+security-disclosure-heading = Policy di sicurezza
 security-disclosure-description =
     <p>Il progetto Rust utilizza un processo di pubblicazione delle segnalazioni in cinque passi:</p>
     <ol>
@@ -28,6 +28,6 @@ security-disclosure-description =
     <p>Per questo processo occorre tempo, specialmente quando il coordinamento richiede mantainer di altri progetti. Verrà fatto ogni sforzo per gestire il bug nel minor tempo possibile, ma comunque à importante seguire il processo di rilascio per assicurare che la pubblicazione sia gestita in modo coerente.</p>
 security-receiving-heading = Ricevere gli aggiornamenti di sicurezza
 security-receiving-description =
-    <p>Il modo migliore</p> per ricevere gli annunci di sicurezza è sottoscrivere la <a href="{ -rust-security-announcements-mailing-list-href }">mailing list per gli annunci di sicurezza</a> (in alternativa mandare una mail a { -rustlang-security-announcements-subscribe-anchor }). La mailing list ha poco traffico e riceve le notifiche al momento che la pubblicazione à decisa.</p>
+    <p>Il modo migliore per ricevere gli annunci di sicurezza è sottoscrivere la <a href="{ -rust-security-announcements-mailing-list-href }">mailing list per gli annunci di sicurezza</a> (in alternativa mandare una mail a { -rustlang-security-announcements-subscribe-anchor }). La mailing list ha poco traffico e riceve le notifiche al momento che la pubblicazione à decisa.</p>
     <p>Annunceremo le vulnerabilità di sicurezza 72 ore prima che la pubblicazione sia autorizzata su { -distros-openwall-email-anchor }, in modo che le distribuzioni Linux possano aggiornare i propri pacchetti.</p>
 security-pgp-key-heading = Chiave GPG in formato testo
