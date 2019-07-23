@@ -53,6 +53,10 @@ pub const EXPLICIT_LOCALE_INFO: &[LocaleInfo] = &[
         lang: "tr",
         text: "Türkçe",
     },
+    LocaleInfo {
+        lang: "it",
+        text: "Italiano",
+    },
 ];
 
 pub fn build_fallbacks() -> HashMap<String, Vec<String>> {
