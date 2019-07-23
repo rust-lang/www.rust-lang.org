@@ -57,7 +57,7 @@ use sass_rs::{compile_file, Options};
 use category::Category;
 
 use caching::{Cached, Caching};
-use i18n::{I18NHelper, SupportedLocale, TeamHelper};
+use i18n::{I18NHelper, LocaleInfo, SupportedLocale, TeamHelper, EXPLICIT_LOCALE_INFO};
 use rocket::http::hyper::header::CacheDirective;
 
 lazy_static! {
@@ -76,19 +76,21 @@ lazy_static! {
             js: JSFiles { app: app_js_file },
         }
     };
+    static ref PONTOON_ENABLED: bool = env::var("RUST_WWW_PONTOON").is_ok();
 }
 
 #[derive(Serialize)]
 struct Context<T: ::serde::Serialize> {
     page: String,
     title: String,
-    parent: String,
+    parent: &'static str,
     is_landing: bool,
     data: T,
     lang: String,
     baseurl: String,
     pontoon_enabled: bool,
-    assets: AssetFiles,
+    assets: &'static AssetFiles,
+    locales: &'static [LocaleInfo],
 }
 
 impl<T: ::serde::Serialize> Context<T> {
@@ -102,13 +104,14 @@ impl<T: ::serde::Serialize> Context<T> {
         Self {
             page,
             title,
-            parent: LAYOUT.into(),
+            parent: LAYOUT,
             is_landing,
             data,
             baseurl: baseurl(&lang),
             lang,
-            pontoon_enabled: pontoon_enabled(),
-            assets: ASSETS.clone(),
+            pontoon_enabled: *PONTOON_ENABLED,
+            assets: &ASSETS,
+            locales: EXPLICIT_LOCALE_INFO,
         }
     }
 }
@@ -131,10 +134,6 @@ struct AssetFiles {
 
 static LAYOUT: &str = "components/layout";
 static ENGLISH: &str = "en-US";
-
-fn pontoon_enabled() -> bool {
-    env::var("RUST_WWW_PONTOON").is_ok()
-}
 
 fn baseurl(lang: &str) -> String {
     if lang == "en-US" {

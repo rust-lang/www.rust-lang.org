@@ -26,6 +26,39 @@ lazy_static! {
     static ref FALLBACKS: HashMap<String, Vec<String>> = build_fallbacks();
 }
 
+#[derive(Serialize)]
+pub struct LocaleInfo {
+    pub lang: &'static str,
+    pub text: &'static str,
+}
+
+pub const EXPLICIT_LOCALE_INFO: &[LocaleInfo] = &[
+    LocaleInfo {
+        lang: "en-US",
+        text: "English",
+    },
+    LocaleInfo {
+        lang: "zh-CN",
+        text: "简体中文",
+    },
+    LocaleInfo {
+        lang: "zh-TW",
+        text: "正體中文",
+    },
+    LocaleInfo {
+        lang: "pt-BR",
+        text: "Português",
+    },
+    LocaleInfo {
+        lang: "tr",
+        text: "Türkçe",
+    },
+    LocaleInfo {
+        lang: "it",
+        text: "Italiano",
+    },
+];
+
 pub fn build_fallbacks() -> HashMap<String, Vec<String>> {
     LOCALES
         .iter()
