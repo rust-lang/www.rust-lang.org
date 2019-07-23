@@ -2,7 +2,7 @@
 
 rust = Rust
 get-started-exclamation = Inizia!
-getting-started = Inizio
+getting-started = Per iniziare
 why-rust = Perché Rust?
 production-use = Uso in produzione
 learn-more = Scopri di più
@@ -10,7 +10,7 @@ discord = Discord
 
 ## components/layout.hbs
 
-meta-description = Un linguaggio di programmazione che permette a chiunque di realizzare software efficiente e affidabile.
+meta-description = Un linguaggio di programmazione che permette a chiunque di realizzare software efficienti e affidabili.
 page-title = { $pagename } - Rust Programming Language
 index-title = Rust Programming Language
 
@@ -43,7 +43,7 @@ footer-alt-youtube = logo youtube
 footer-discord-alt = { discord }
 footer-github-alt = GitHub
 footer-attribution =
-    Mantenuto dal Team Rust, Vedi un errore?
+    Mantenuto dal Team Rust. Vedi un errore?
     <a href="https://github.com/rust-lang/www.rust-lang.org">manda una correzione qui</a>!
 footer-old-site = Stavi cercando il <a href="https://prev.rust-lang.org">vecchio sito</a>?
 

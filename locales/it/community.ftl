@@ -1,33 +1,33 @@
 ## templates/community/index.hbs
 
 community-page-title = Community
-community-blurb = Rust ha tantissime qualità, ma la sua più grande forza è la community di persone che si uniscono per far sì che lavorare con Rust sia un'esperienza gratificante.
+community-blurb = Rust ha tantissime qualità, ma la sua forza principale è la community di persone che si riuniscono per rendere il lavoro con Rust un'esperienza gratificante.
 community-twir = Resta aggiornato con la community!
 community-twir-button = This Week in Rust
 community-team-contact = Dicci la tua! Non sei sicuro di dove o a chi chiedere? Vuoi dare il tuo contributo ma non sai come? Il community team saprà sicuramente metterti in contatto con qualcuno che può aiutarti!
-community-team-button = email { ENGLISH("community@rust-lang.org") }
-community-where = Luoghi dove comunicare
+community-team-button = e-mail { ENGLISH("community@rust-lang.org") }
+community-where = Dove comunicare
 community-urlo-header = Forum utenti
-community-urlo = Questo forum è il posto dove gli utenti Rust possono discutere di qualsiasi argomento riguardante li linguaggio. Puoi fare domande, coordinarti su idee per progetti o su qualsiasi altra cosa ti incuriosisca!
+community-urlo = Questo forum è il luogo in cui gli utenti Rust possono discutere di qualsiasi argomento riguardante li linguaggio. Puoi porre domande, coordinarti su idee per progetti o fare qualsiasi cosa che vuoi!
 community-discourse-button = Visita il Forum
 community-irlo-header = Forum internals
-community-irlo = Il forum per gli "internals" di Rust è il luogo per discussioni sullo sviluppo di Rust stesso &ndash; dal design del linguaggio, della libreria standard fino allo sviluppo del compilatore.
+community-irlo = Il forum per gli "internals" di Rust è dedicato alle discussioni sullo sviluppo di Rust stesso: dal design del linguaggio e dalla libreria standard fino allo sviluppo del compilatore.
 community-chat-header = Piattaforme social
-community-chat = Lo sviluppo di Rust e le discussioni in generale si tengono su molteplici piattaforme. Dai un'occhiata ai vari canali sul server Discord Rust, oppure dai un'occhiata alla pagina per trovare dove i vari team si ritrovano.
+community-chat = Lo sviluppo di Rust e le discussioni in generale si tengono su molteplici piattaforme. Dai un'occhiata ai vari canali sul server Discord Rust, oppure visita la pagina per trovare i ritrovi dei vari team.
 community-teams-learn = Scopri di più sui team
 community-events-header = Eventi
-community-meetup-header = Cerca una conferenza oppure un meetup locale
-community-meetup = Ci sono oltre 90 Meetup e numerose conferenze sparse in 35 paesi in tutto il mondo. I "Rustcean" si incontrano periodicamente negli Rust User Groups. I Rust User Groups sono un modo perfetto per presentarsi alla community ed ancora meglio se si vuole imparare o anche solo socializzare con persone vicine ai propri interessi. I meeting solitamente sono eventi informali e aperti a tutti.
+community-meetup-header = Cerca una conferenza o un meetup locale
+community-meetup = Ci sono oltre 90 Meetup e numerose conferenze sparse in 35 paesi di tutto il mondo. I "Rustacean" si incontrano periodicamente negli Rust User Group. I Rust User Group sono un modo perfetto per presentarsi alla community ed ancora meglio se si vuole imparare o anche solo socializzare con persone che condividono i propri interessi. Gli incontri sono solitamente eventi informali e aperti a tutti.
 community-calendar = Vai al Calendario
 community-conference-lineup = Guarda dove si terranno le conferenze nel 2019
 community-event-run-header = Organizza il tuo evento
 community-event-run =
     <p>
-    Più Rust cresce, più siamo felici di aiutare la gente ad organizzare il proprio evento locale.
-    Dagli "hack and learn", ai meetup, alle conferenze, il Rust Events Team è pronto a supportarti nelle tue iniziative.
+    Più Rust cresce, più siamo felici di aiutare la gente a organizzare il proprio evento locale.
+    Dagli "hack and learn" ai meetup e alle conferenze, il Rust Events Team è pronto a sostenerti nelle tue iniziative.
     </p>
     <p>
-    Registrando il tuo evento ci aiuti a tenere traccia delle iniziative dell'intera community, permettendoci di metterti in contatto con speaker o anche altri membri nella tua zona.
+    Registrando il tuo evento ci aiuterai a tenere traccia delle iniziative dell'intera community, permettendoci di metterti in contatto con speaker o altri membri nella tua zona.
     </p>
 community-events-repo = Guarda il repository degli eventi del team
 community-event-register = Registra il tuo evento
@@ -44,9 +44,9 @@ community-irr = "Increasing Rust's Reach" è un programma volto a far incontrare
 community-irr-button = Visita il sito
 community-standards-header = Gli standard della Community
 community-standards =
-    Ci impegniamo a offrire un ambiente sicuro, amichevole e accogliente per tutti, senza distinzione di sesso, orientamento sessuale, disabilità, etnia, religione e caratteristiche personali simili. Il nostro <a href="{ $url }">Codice di Condotta</a> detta gli standard su come comportarsi in tutti i forum officiali di Rust.
+    Ci impegniamo a offrire un ambiente sicuro, amichevole e accogliente per tutti, indipendentemente da sesso, orientamento sessuale, disabilità, etnia, religione e simili. Il nostro <a href="{ $url }">Codice di Condotta</a> detta gli standard di comportamento in tutti i forum officiali di Rust.
     <br /><br />
-    Se pensi di essere stato vittima o che stai subendo molestie o che qualche membro della community ti stia mettendo a disagio, per favore contatta qualcuno del <a href="mailto:rust-mods@rust-lang.org">Team di moderazione</a> immediatamente. Che tu sia un contributor regolare o un nuovo arrivato, ci prenderemo cura di far sì che la community sia per te un luogo sicuro.
+    Se pensi di essere o di essere stato vittima o che un membro della community ti faccia sentire a disagio, contatta immediatamente un membro del <a href="mailto:rust-mods@rust-lang.org">Team di moderazione</a>. Che tu sia un contributor regolare o un nuovo arrivato, ci assicureremo di rendere la community un luogo sicuro per te.
 community-mod-button = Manda un messaggio al team di moderazione
 community-coc-button = Leggi il Codice di Condotta
 community-mod-guidelines-button = Leggi le linee guida per i moderatori
