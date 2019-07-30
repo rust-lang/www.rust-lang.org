@@ -64,7 +64,7 @@ lazy_static! {
     static ref ASSETS: AssetFiles = {
         let app_css_file = compile_sass("app");
         let fonts_css_file = compile_sass("fonts");
-        let vendor_css_file = concat_vendor_css(vec!["skeleton", "tachyons"]);
+        let vendor_css_file = concat_vendor_css(vec!["tachyons"]);
         let app_js_file = concat_app_js(vec!["tools-install"]);
 
         AssetFiles {

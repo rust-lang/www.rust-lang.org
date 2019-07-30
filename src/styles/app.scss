@@ -107,10 +107,6 @@ p {
   font-size: 0.8em;
 }
 
-.button.button-secondary--no-skeleton {
-  margin-bottom: 0;
-}
-
 code.code-header {
   background-color: rgba(127, 127, 127, 0.25);
   font-size: 2rem;
@@ -210,11 +206,6 @@ ol {
 
 section .container {
   padding-top: 20px;
-}
-
-// TODO:  remove when switching to Tachyons -- these are overrides for Skeleton.
-ul.nav, ul.nav li {
-  margin-bottom: 0;
 }
 
 .nav a {
