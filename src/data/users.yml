@@ -488,11 +488,6 @@
   logo: tcell.png
   how: "<a href='https://www.tcell.io/2017/06/agents-rust/'>tCell's agent is built using Rust</a> and runs in the app server as a means to collect data and block attacks."
 -
-  name: Structure Systems
-  url: https://www.structure.systems
-  logo: structuresystems.svg
-  how: "We develop software in Rust that helps organizations comply with information privacy/data protection rules."
--
   name: 10x Genomics
   url: https://www.10xgenomics.com/
   logo: 10x-genomics.svg
