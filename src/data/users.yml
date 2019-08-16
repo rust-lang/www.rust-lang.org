@@ -243,6 +243,11 @@
   logo: kupibilet.svg
   how: "We use Rust for our ticket search engine."
 -
+  name: Lark
+  url: https://www.larksuite.com
+  logo: lark.png
+  how: "Lark combines a multitude of essential collaboration tools in a single interconnected platform, including Chat, Calendar, Creation, Cloud storage and App Center. These functions are always in sync, and are easy access from one to the next."
+-
   name: LINE
   url: https://line.me/
   logo: line.png
