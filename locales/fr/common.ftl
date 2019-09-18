@@ -1,7 +1,7 @@
 ## Translations that appear on many pages
 
 rust = Rust
-get-started-exclamation = Commencer!
+get-started-exclamation = Commencer !
 getting-started = Commencer
 why-rust = Pourquoi Rust ?
 production-use = Utilisation en production

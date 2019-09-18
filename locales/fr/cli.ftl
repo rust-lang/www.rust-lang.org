@@ -9,26 +9,26 @@ what-cli-page-title = Applications en ligne de commande
 
 cli-pitch-solid-img-alt = Bouclier avec une coche de validation
 cli-pitch-solid-heading = Solide et rapide
-cli-pitch-solid-description = Même si vous écrivez un script court et ponctuel, vous pouvez être assuré qu'il est rapide, facilement testable, et retourne des informations utiles.
+cli-pitch-solid-description = Même si vous écrivez un script court et ponctuel, vous pouvez être assuré qu'il est rapide, facilement testable, et renvoie des informations utiles.
 cli-pitch-solid-link = Les garanties de Rust
-cli-pitch-ship-img-alt = boite avec une coche de validation
+cli-pitch-ship-img-alt = boîte avec une coche de validation
 cli-pitch-ship-heading = Distribution facile
 cli-pitch-ship-description = Compilez tout en un seul binaire&mdash;pas besoin pour vos utilisateurs d'avoir un runtime ou des bibliothèques installées
 cli-pitch-ship-link = Comment livrer du code en Rust
 cli-pitch-config-img-alt = Page de notes avec un engrenage
 cli-pitch-config-heading = Configuration robuste
-cli-pitch-config-description = Manipulez avec facilité les fichiers de configuration quelque soit la plateforme. Rust gère les formats ainsi que les namespaces pour vous.
+cli-pitch-config-description = Manipulez avec facilité les fichiers de configuration quelle que soit la plateforme. Rust gère les formats ainsi que les namespaces pour vous.
 cli-pitch-config-link = Commencer à configurer
 cli-pitch-manuals-img-alt = Manuel d'aide
 cli-pitch-manuals-heading = Les manuels ? C'est fait.
-cli-pitch-manuals-description = Générez automatiquement les pages de manuel pour votre application. Packagez juste les fichier générés et c'est fait.
+cli-pitch-manuals-description = Générez automatiquement les pages de manuel pour votre application. Packagez juste les fichiers générés et c'est fait.
 cli-pitch-manuals-link = Apprendre comment
 cli-pitch-machines-img-alt = Tuyaux
 cli-pitch-machines-description = En plus de parler aux humains, Rust a d'excellents outils pour vous aider à parler aux machines.
 cli-pitch-machines-link = Communiquer avec les machines
 cli-pitch-logging-img-alt = 3 rondins de bois empilés
 cli-pitch-logging-heading = Journalisation flexible
-cli-pitch-logging-description = C'est facile d'ajouter de la journalisation, et même encore plus facile de configurer ses différentes cibles avec différents styles.
+cli-pitch-logging-description = Il est facile d'ajouter de la journalisation, et même encore plus facile de configurer ses différentes cibles avec différents styles.
 cli-pitch-logging-link = Journaliser, tracer, comprendre
 
 ## templates/components/what/cli/maintainable.hbs

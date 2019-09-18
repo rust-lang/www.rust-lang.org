@@ -21,19 +21,9 @@ feels about it. For the moment, large design changes are made exclusively by the
 team (listed above). If you have concerns or thoughts for small changes, please
 file an issue so that we can discuss it first!
 
-### Design
-
-The site currently uses two frameworks: [Tachyons] and [Skeleton].
-
-The team is currently in the process of transitioning from Skeleton to Tachyons.
-This is a somewhat complicated transition, so if you would like to update CSS,
-please file an issue.
-
-[@yoshuawuyts] and [@chriskrycho] are the current developers on this transition.
-Please direct issues and questions to them!
+The site currently uses [Tachyons].
 
 [Tachyons]: http://tachyons.io/
-[Skeleton]: http://getskeleton.com/
 
 ### Content
 

@@ -10,6 +10,7 @@ discord = Discord
 
 ## components/layout.hbs
 
+meta-description = 讓每個人都能打造出可靠又高效軟體的程式語言。
 page-title = { $pagename } - Rust 程式設計語言
 index-title = Rust 程式設計語言
 
@@ -34,12 +35,16 @@ footer-coc = 行為準則
 footer-licenses = 授權條款
 footer-media = 商標政策與媒體指南
 footer-security = 安全問題揭露
-footer-policies-all = 政策總攬
+footer-policies-all = 政策總覽
+footer-social = 社群媒體
 footer-get-help = 取得協助！
 footer-youtube-alt = Twitter
 footer-alt-youtube = youtube 標誌
 footer-discord-alt = { discord }
 footer-github-alt = GitHub
+footer-attribution = 由 Rust 團隊維護，發現錯字了嗎？<a href="https://github.com/rust-lang/www.rust-lang.org">請在此提交修復</a>！
+footer-old-site = 想查看<a href="https://prev.rust-lang.org">舊版網站</a>嗎？
 
 ## what/index.hbs
 
+what-header = 對象
