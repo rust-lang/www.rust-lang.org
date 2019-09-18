@@ -14,6 +14,8 @@ policies-media-guide-page-title = メディアガイド
 
 ## The Rust trademarks
 
+media-guide-rust-trademarks-rust-img-alt = Rustロゴ
+media-guide-rust-trademarks-cargo-img-alt = Cargoロゴ
 
 ## Using the trademarks
 

@@ -11,9 +11,14 @@ what-wasm-page-heading = Web&shy;Assembly
 
 ## Get started! (templates/components/what/wasm/get-started.hbs)
 
+wasm-get-started-book-alt = wasm フェリス
+wasm-get-started-mdn-alt = MDN ロゴ
 
 ## Plays well with JavaScript (templates/components/what/wasm/js.hbs)
 
 
 ## Production use (templates/components/what/wasm/production.hbs)
 
+wasm-production-cloudflare-alt = cloudflareロゴ
+wasm-production-mozilla-alt = firefox
+wasm-production-dropbox-alt = dropbox
