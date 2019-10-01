@@ -1,11 +1,17 @@
 ## index.hbs
 
+tagline = 効率的で信頼できるソフトウェアを { $linebreak } 誰もがつくれる言語
 get-started = はじめる
 homepage-version = バージョン { $number }
 
 ## components/panels/production.hbs
 
+production-title = Rustの活用事例
+production-testimonial-npm = 私の Rust に対する最大の賛辞は退屈だということで、これはすばらしい褒め言葉なんです。
+production-testimonial-npm-attribution = Chris Dickinson, npm, Inc のエンジニア
+production-testimonial-npm-alt = npm ロゴ
 production-testimonial-yelp-attribution = Antonio Verardi, インフラストラクチャエンジニア
+production-testimonial-yelp-alt = Yelp ロゴ
 
 ## components/panels/language-values.hbs
 
@@ -29,4 +35,5 @@ get-involved = 参加しよう
 get-involved-read-rust = Rust を読む
 get-involved-watch-rust = Rust を観る
 get-involved-watch-rust-link = 動画を観る
+get-involved-contribute = コードに貢献する
 get-involved-contribute-link = コントリビューションガイドを読む

@@ -130,3 +130,4 @@ tools-editor-idea = IntelliJ IDEA
 tools-editor-eclipse = Eclipse
 tools-editor-vim = Vim
 tools-editor-emacs = Emacs
+tools-editor-geany = Geany

@@ -123,11 +123,6 @@
   logo: cloudflare.svg
   how: "We are <a href='https://blog.cloudflare.com/tag/rust/'>using Rust</a> as a replacement for memory-unsafe languages (particularly C) and are using it in our core edge logic."
 -
-  name: CodePicnic
-  url: https://codepicnic.com
-  logo: codepicnic.png
-  how: "We provide Rust <a href='https://codepicnic.com/posts/console-of-the-day-rust-f7664060cc52bc6f3d620bcedc94a4b6/?utm_source=twitter&utm_medium=blog&utm_term=codepicnic+rust&utm_campaign=codepicnic_features_201702'>sandboxes</a> people can play around with, as well as fork to expand examples and apps they want to."
--
   name: Coursera
   url: https://www.coursera.org
   logo: coursera.png
@@ -152,11 +147,6 @@
   url: https://cultivatehq.com/
   logo: cultivate-logo.svg
   how: "<a href='https://cultivatehq.com/posts/how-we-built-a-visual-studio-code-extension-for-iot-prototyping/'>We used Rust as a bridge between a VSCode extension and IoT devices</a>."
--
-  name: Dazta
-  url: https://www.dazta.com
-  logo: dazta.svg
-  how: "Building intelligent financial product with Rust."
 -
   name: Delimiter
   url: https://www.delimiter.com/
@@ -243,6 +233,11 @@
   logo: kupibilet.svg
   how: "We use Rust for our ticket search engine."
 -
+  name: Lark
+  url: https://www.larksuite.com
+  logo: lark.png
+  how: "Lark combines a multitude of essential collaboration tools in a single interconnected platform, including Chat, Calendar, Creation, Cloud storage and App Center. These functions are always in sync, and are easy access from one to the next."
+-
   name: LINE
   url: https://line.me/
   logo: line.png
@@ -282,11 +277,6 @@
   url: http://www.npmjs.com
   logo: npm.svg
   how: "Replacing C and rewriting performance-critical bottlenecks in the registry service architecture."
--
-  name: Omnijar Studio
-  url: https://omnijar.studio
-  logo: omnijar-studio.svg
-  how: "Performant and efficient code across a lot of cloud services and core products, from ML to data services."
 -
   name: OneSignal
   url: https://onesignal.com
@@ -377,11 +367,6 @@
   url: https://stratumsecurity.com/
   logo: stratum.png
   how: "Data exfiltration testing and Application Security."
--
-  name: superscale networks
-  url: https://www.superscale.io/
-  logo: superscale.svg
-  how: "We run rust-mips on tens of thousands of linux routers with 4-16Mb RAM. Rust is the only modern language that has low enough runtime constrains to make this possible."
 -
   name: System76
   url: https://system76.com/
@@ -487,11 +472,6 @@
   url: https://www.tcell.io
   logo: tcell.png
   how: "<a href='https://www.tcell.io/2017/06/agents-rust/'>tCell's agent is built using Rust</a> and runs in the app server as a means to collect data and block attacks."
--
-  name: Structure Systems
-  url: https://www.structure.systems
-  logo: structuresystems.svg
-  how: "We develop software in Rust that helps organizations comply with information privacy/data protection rules."
 -
   name: 10x Genomics
   url: https://www.10xgenomics.com/

@@ -9,21 +9,25 @@ policies-media-guide-page-title = Guida alle risorse di comunicazione
 ## Art license
 
 media-guide-art-license-heading = Licenza per gli artwork
-media-guide-art-license-description = <p>I loghi di Rust e Cargo (in formato bitmap e vettoriale) sono di proprietà di Mozilla e distribuiti secondo i termini della <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license (CC-BY)</a>. Questa è la licenza Creative Commons più permissiva, che permette riutilizzo e modifiche per qualunque scopo. Le restrizioni per coloro che reddistribuiscono i loghi sono che si deve "riconoscere una menzione di paternità adeguata, fornire un link alla licenza e indicare se sono state effettuate delle modifiche". <strong>Da notare che l'uso dei loghi e dei nomi Rust e Cargo sono parimenti regolamentati in quanto marchi registrati; la nostra policy sui marchi registrati à descritta qua sotto</strong>.</p>
+media-guide-art-license-description =
+    <p>Questa pagina è stata tradotta dalla community al meglio delle nostre conoscenze. Si consiglia di fare riferimento alla <a href="https://www.rust-lang.org/policies/media-guide">versione in inglese</a> di questo documento per la versione ufficiale.</p>
+    <p>I loghi di Rust e Cargo (in formato bitmap e vettoriale) sono di proprietà di Mozilla e distribuiti secondo i termini della <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license (CC-BY)</a>. Questa è la licenza Creative Commons più permissiva, che permette riutilizzo e modifiche per qualunque scopo. Le restrizioni per coloro che reddistribuiscono i loghi sono che si deve "riconoscere una menzione di paternità adeguata, fornire un link alla licenza e indicare se sono state effettuate delle modifiche". <strong>Da notare che l'uso dei loghi e dei nomi Rust e Cargo sono parimenti regolamentati in quanto marchi registrati; la nostra policy sui marchi registrati à descritta qua sotto</strong>.</p>
 
 ## Trademark policy
 
 media-guide-trademark-policy-heading = Policy marchi registrati
 media-guide-trademark-policy-description =
+    <p>Questa pagina è stata tradotta dalla community al meglio delle nostre conoscenze. Si consiglia di fare riferimento alla <a href="https://www.rust-lang.org/policies/media-guide">versione in inglese</a> di questo documento per la versione ufficiale.</p>
     <p>I nomi e i marchi Rust e Cargo rendono possibile distinguere cosa è parte della community Rust e cosa non lo è. Quindi prestiamo attenzione su cosa permettiamo di utilizzare. Allo stesso tempo, vogliamo permettere quanto più possibile un uso creativo di questi marchi. La policy qui descritta spiega come cerchiamo di bilanciare queste due cose. Se vuoi usare questi nomi o questi marchi, specialmente per fini commerciali, ti preghiamo di leggere questa pagina e sentiti libero di <a href="mailto:trademark@rust-lang.org">scriverci</a> con le tue domande!</p>
     <p><b>In breve:</b> nella maggior parte dei casi, l'uso per fini non commerciali dei nomi e dei loghi Rust/Cargo non richiede autorizzazione; per scopi commerciali, invece, è richiesta un'autorizzazione. In entrambi i casi, la regola principale è che l'utilizzo dei marchi commerciali non implica supporto ufficiale da parte del progetto Rust.</p>
     <p>Per qualunque dubbio circa l'autorizzazione all'utilizzo che vorresti fare del marchio, non esitare a contattarci su { EMAIL("trademark@rust-lang.org") }.</p>
-    <p>Questo documento à derivato in parte dalla <a href="https://www.python.org/psf/trademarks/">Python Software Foundation Trademark Usage Policy</a>. Questo documento non rappresenta una dichiarazione ufficiale da parte di Mozilla, ma aiuta a chiarificare la politica di Mozilla sui marchi registrati relativi a Rust.</p>
+    <p>Questo documento è derivato in parte dalla <a href="https://www.python.org/psf/trademarks/">Python Software Foundation Trademark Usage Policy</a>. Questo documento non rappresenta una dichiarazione ufficiale da parte di Mozilla, ma aiuta a chiarificare la politica di Mozilla sui marchi registrati relativi a Rust.</p>
 
 ## The Rust trademarks
 
 media-guide-rust-trademarks-heading = Marchi registrati di Rust
 media-guide-rust-trademarks-description =
+    <p>Questa pagina è stata tradotta dalla community al meglio delle nostre conoscenze. Si consiglia di fare riferimento alla <a href="https://www.rust-lang.org/policies/media-guide">versione in inglese</a> di questo documento per la versione ufficiale.</p>
     <p>Il linguaggio di programmazione Rust è un progetto open source, comunitario e governato da un core team. E' anche sponsorizzato dalla Mozilla Foundation ("Mozilla"), che possiede e protegge i marchi e i loghi Rust e Cargo ("i Marchi Rust"). Questo documento fornisce informazioni circa l'uso dei Marchi Rust volti allo specifico linguaggio di programmazione, così come a fornire esempi di utilizzo per coloro che intendono usare questi marchi. Inoltre, vengono fornite spiegazioni se un certo uso è approvato o richiede autorizzazione. Questo documento è di supplemento alla <a href="https://www.mozilla.org/foundation/trademarks/policy/">policy ufficiale di Mozilla sui marchi registrati</a>.</p>
     <p>I Marchi Rust includono due termini e due loghi:</p>
     <ul>
@@ -41,6 +45,7 @@ media-guide-rust-trademarks-cargo-img-alt = logo cargo
 media-guide-tm-use-heading = Uso dei marchi registrati
 media-guide-tm-use-appearance-heading = Utilizzo ufficiale, affiliato o sponsorizzato
 media-guide-tm-use-appearance-description =
+    <p>Questa pagina è stata tradotta dalla community al meglio delle nostre conoscenze. Si consiglia di fare riferimento alla <a href="https://www.rust-lang.org/policies/media-guide">versione in inglese</a> di questo documento per la versione ufficiale.</p>
     <p>La regola base è che i marchi Rust, senza autorizzazione scritta, non devono apparire a un osservatore casuale come provenienti, affiliati o sponsorizzati da parte del progetto Rust o di Mozilla. Questo è il modo fondamentale in cui proteggiamo utenti e sviluppatori da possibili fraintendimenti.</p>
     <p>Dal momento che questa regola gestisce una percezione soggettiva, talvolta è difficile spiegare concretamente. Ci sono modi ovvi per evitare problemi, ad esempio evidenziare il termine "non ufficiale"; ad ogni modo, in caso di dubbi siamo assolutamente a disposizione per aiutare; basta mandare una mail a { EMAIL("trademark@rust-lang.org") }.</p>
 media-guide-tm-use-basics-heading = Le basi: riferimenti a Rust/Cargo
