@@ -51,6 +51,11 @@ code {
   border: 1px solid #E1E1E1;
   border-radius: 4px;
   overflow: auto;
+
+  &.block {
+    display: block;
+    white-space: pre;
+  }
 }
 
 @mixin code-highlight-white {
@@ -739,5 +744,5 @@ blockquote::before {
 }
 
 #pb4 {
-    padding-bottom: 3.8em;
+    padding-bottom: 3.25em;
 }
