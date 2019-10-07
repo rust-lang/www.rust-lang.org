@@ -60,6 +60,7 @@ impl Data {
             .for_each(|team| match team.team.kind {
                 TeamKind::Team => data.teams.push(team),
                 TeamKind::WorkingGroup => data.wgs.push(team),
+                _ => {}
             });
 
         data.teams.sort_by_key(|index_team| {
@@ -97,6 +98,7 @@ impl Data {
             .for_each(|team| match team.kind {
                 TeamKind::Team => subteams.push(team),
                 TeamKind::WorkingGroup => wgs.push(team),
+                _ => {}
             });
 
         Ok(PageData {
@@ -132,6 +134,7 @@ fn kind_to_str(kind: TeamKind) -> &'static str {
     match kind {
         TeamKind::Team => "teams",
         TeamKind::WorkingGroup => "wgs",
+        _ => "UNSUPPORTED",
     }
 }
 
@@ -166,11 +169,13 @@ mod tests {
                     name: "John Doe".into(),
                     github: "johnd".into(),
                     is_lead: false,
+                    github_id: 1234,
                 },
                 TeamMember {
                     name: "Jane Doe".into(),
                     github: "janed".into(),
                     is_lead: true,
+                    github_id: 1234,
                 },
             ],
             website_data: Some(TeamWebsite {
@@ -182,6 +187,7 @@ mod tests {
                 discord: None,
                 weight: 0,
             }),
+            github: None,
         }
     }
 
