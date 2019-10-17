@@ -108,7 +108,7 @@ governance-team-docs-name = Documentation team
 governance-team-docs-description = ensuring Rust has fantastic documentation
 
 governance-team-reference-name = Reference team
-governance-team-reference-description = working on the rust reference
+governance-team-reference-description = working on the Rust reference
 
 governance-team-compiler-contributors-name = Compiler team contributors
 governance-team-compiler-contributors-description = folks who contribute on a regular basis
@@ -147,7 +147,7 @@ governance-team-infra-name = Infrastructure team
 governance-team-infra-description = infrastructure supporting the Rust project itself: CI, releases, bots, metrics
 
 governance-team-wg-gamedev-name = Game development working group
-governance-team-wg-gamedev-description = Focusing on making rust the default choice for game development.
+governance-team-wg-gamedev-description = Focusing on making Rust the default choice for game development.
 
 governance-team-wg-pgo-name = Profile-guided optimization
 governance-team-wg-pgo-description = Implementing profile-guided optimization for rustc
