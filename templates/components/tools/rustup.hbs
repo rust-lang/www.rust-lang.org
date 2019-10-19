@@ -1,14 +1,14 @@
 <div class="row">
   <div id="platform-instructions-unix" class="instructions db">
     <p>{{text tools-rustup-unixy}}</p>
-    <pre><code class="db w-100">curl https://sh.rustup.rs -sSf | sh</code></pre>
+    <pre><code class="db w-100">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></pre>
   </div>
   <div id="platform-instructions-win" class="instructions dn">
     <p>{{text tools-rustup-windows}}</p>
     <a href="https://win.rustup.rs" class="button button-secondary">rustup‑init.exe</a>
     <p><b>{{text tools-rustup-wsl-heading}}</b></p>
     <p>{{text tools-rustup-wsl}}</p>
-    <pre><code class="db w-100">curl https://sh.rustup.rs -sSf | sh</code></pre>
+    <pre><code class="db w-100">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></pre>
   </div>
   <div id="platform-instructions-unknown" class="instructions dn">
     <!-- unrecognized platform: ask for help -->
@@ -30,7 +30,7 @@
       <p>
         {{text tools-rustup-manual-unixy}}
       </p>
-      <code class="db w-100">curl https://sh.rustup.rs -sSf | sh</code>
+      <code class="db w-100">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code>
     </div>
     <hr>
     <div>
@@ -44,7 +44,7 @@
       <p>
         {{tools-rustup-manual-default}}
       </p>
-      <pre><code class="db w-100">curl https://sh.rustup.rs -sSf | sh</code></pre>
+      <pre><code class="db w-100">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></pre>
     </div>
     <hr>
     <div>
