@@ -53,6 +53,11 @@ code {
   overflow: auto;
 }
 
+pre > code {
+  display: block;
+  white-space: pre;
+}
+
 @mixin code-highlight-white {
   color: white;
   background-color: rgba(black, 0.3);
