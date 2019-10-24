@@ -3,11 +3,6 @@
 # See CONTRIBUTING.md for details on how to contribute to this file
 
 -
-  name: 1aim
-  url: https://1aim.com/
-  logo: 1aim.svg
-  how: "Modern, secure and universal access management."
--
   name: 360dialog
   url: http://www.360dialog.com
   logo: 360dialog.png
