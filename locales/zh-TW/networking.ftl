@@ -28,5 +28,3 @@ networking-production-testimonial-mozilla = 將我們的 Push 的基礎設施遷
 networking-production-testimonial-mozilla-attribution = Benjamin Bangert, Staff Engineer, Mozilla
 networking-production-testimonial-buoyant = Rust 是 Linkerd 專案的基礎，它的型態系統讓我們得以建造模組化、可測試且易於組合的元件，同時不會犧牲執行時的效能。最讓我們訝異的是 Rust 的 lifetime 與 borrow 機制，它讓我們避免了大量的資源洩露問題。在這兩年後，我無法想像要如何使用其它語言來完成這個工作。
 networking-production-testimonial-buoyant-attribution = Oliver Gould, CTO, <a href="{ $href }">Buoyant</a>
-networking-production-testimonial-1aim = Rust 強大的型態系統使我們可以安全的重構程式，並在編譯時就找出許多錯誤，它的低資源消耗與高效能，加上記憶體安全的保證與可靠的錯誤處理，是我們撰寫極須安全性，且具有複雜的商業邏輯的後端的良好選擇。超高的穩定性意謂著我們的 Rust 程式在我們的系統中是最後一塊該擔心的部份。自 2015 年底，它已經上線做為我們的後端服務，至今未曾讓我們失望！
-networking-production-testimonial-1aim-attribution = Yann Leretaille, <a href="{ $href }">1aim</a>
