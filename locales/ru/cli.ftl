@@ -8,16 +8,19 @@ what-cli-page-title = Приложения командной строки
 ## templates/components/what/cli/pitch.hbs
 
 cli-pitch-solid-img-alt = Щит с галочкой
+cli-pitch-solid-heading = Надёжный и быстрый
 cli-pitch-solid-description =
     Даже если вы просто пишете короткий одноразовый
     скрипт, вы можете быть уверены, что он будет быстрым, легко тестируемым и даст
     полезный вывод.
 cli-pitch-solid-link = Гарантии Rust
+cli-pitch-ship-img-alt = Коробка с галочкой
 cli-pitch-ship-heading = Лёгкое распространение
 cli-pitch-ship-description = Скомпилировано в один исполняемый файл&mdash; Вашим пользователям не нужна установленная среда выполнения или библиотеки.
 cli-pitch-ship-link = Как доставить код Rust
 cli-pitch-config-img-alt = Записка и шестерёнка
 cli-pitch-config-heading = Надёжная конфигурация
+cli-pitch-config-description = Лёгкая обработка конфигурационных файлов на разных платформах. Rust за вас разберётся с пространствами имён и форматами.
 cli-pitch-config-link = Начнём настройку
 cli-pitch-manuals-img-alt = Справочное руководство
 cli-pitch-manuals-heading = Руководства? Готово.
@@ -27,7 +30,9 @@ cli-pitch-machines-img-alt = Трубы
 cli-pitch-machines-heading = Входные данные, выходные данные
 cli-pitch-machines-description = В дополнение к общению с людьми, Rust имеет отличные инструменты для общения с машинами.
 cli-pitch-machines-link = Взаимодействие с машинами
+cli-pitch-logging-img-alt = 3 полена, сложенные друг на друга
 cli-pitch-logging-heading = Гибкое логирование
+cli-pitch-logging-description = Легко добавить ведение журнала и ещё проще настроить его для разных целей и с разными стилями.
 cli-pitch-logging-link = Логгируй, трассируй, понимай
 
 ## templates/components/what/cli/maintainable.hbs
@@ -35,6 +40,7 @@ cli-pitch-logging-link = Логгируй, трассируй, понимай
 cli-maintainable-heading = Поддерживаемая кодовая база
 cli-maintainable-errors-img-alt = структура приложения командной строки
 cli-maintainable-errors-heading = <em>Перехват ошибок</em>
+cli-maintainable-errors-description = Что, если конфигурационный файл отсутствует или повреждён? Что, если значение одной из переменных среды окружения не установлено? Об этих случаях легко забыть! Но благодаря подходу к обработке ошибок и дизайну библиотек, Rust укажет на такие ситуации ещё до того, как вы запустите свою программу.
 cli-maintainable-errors-link = Обработка ошибок в Rust
 cli-maintainable-refactoring-img-alt = приложение командной строки это не ракетостроение
 cli-maintainable-refactoring-heading = Легко расширяемый в дальнейшем
@@ -43,6 +49,7 @@ cli-maintainable-refactoring-link = Рефакторинг кода на Rust
 
 ## templates/components/what/cli/example.hbs
 
+cli-example-description = Написание приложений командной строки - это отличный способ изучить Rust.
 cli-example-inputs-heading = Определите ваши входные данные
 cli-example-main-heading = Напишите Ваш инструмент
 cli-example-link = Узнайте больше с CLI book

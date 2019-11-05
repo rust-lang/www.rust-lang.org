@@ -33,6 +33,8 @@ footer-status = Проверить статус сайта
 footer-policies = Условия и политики
 footer-coc = Правила поведения
 footer-licenses = Лицензии
+footer-media = Руководство по политике в отношении логотипов и СМИ
+footer-security = Отчёты об уязвимостях
 footer-policies-all = Все политики
 footer-social = Социальные сети
 footer-get-help = Получить помощь!
@@ -45,3 +47,4 @@ footer-old-site = Ищете <a href="https://prev.rust-lang.org">предыду
 
 ## what/index.hbs
 
+what-header = Варианты использования

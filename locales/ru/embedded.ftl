@@ -10,15 +10,19 @@ what-embedded-page-title = Встраиваемые устройства
 
 embedded-pitch-analysis-alt = Микроскоп
 embedded-pitch-analysis-heading = Мощный статический анализ
+embedded-pitch-analysis-description = Принудительная настройка контактов и периферийных устройств во время компиляции. Гарантия того, что ресурсы не будут использоваться не предназначенными частями приложения.
 embedded-pitch-memory-alt = Планка памяти
 embedded-pitch-memory-heading = Гибкая память
 embedded-pitch-memory-description = Динамическое распределение памяти не является обязательным. Используйте глобальный распределитель и динамические структуры данных. Или вообще исключить кучу и статически распределить всё.
 embedded-pitch-concurrency-alt = Шестерни
 embedded-pitch-concurrency-heading = Написание параллельного кода без страха
+embedded-pitch-concurrency-description = Rust делает невозможным случайное разделение состояния между потоками. Используйте любые подходы к параллелизму, которые вам нравятся, и вы всё равно получите строгие гарантии Rust.
 embedded-pitch-interop-alt = Рукопожатие
 embedded-pitch-interop-heading = Совместимость
 embedded-pitch-interop-description = Интегрируйте Rust в вашу существующую кодовую базу на C или используйте существующий SDK для написания приложения на Rust.
+embedded-pitch-portability-alt = Тележка для багажа
 embedded-pitch-portability-heading = Переносимость
+embedded-pitch-portability-description = Один раз напишите библиотеку или драйвер и используйте его с разными системами начиная от очень маленьких микроконтроллеров, до мощных интегрированных плат.
 embedded-pitch-community-alt = Логотип Shield
 embedded-pitch-community-heading = Движимый сообществом
 embedded-pitch-community-description = В рамках open source проекта Rust, поддержка встраиваемых систем движется, при поддержке коммерческих партнёров, лучшим в своём классе open source сообществом.
@@ -52,6 +56,7 @@ embedded-testimonials-sensirion-alt = Логотип Sensirion
 embedded-testimonials-sensirion-quote = Мы в Sensirion недавно использовали Rust для создания демонстрации <a href="https://sensirion-automotive.com/products#PM2_5">Particulate Matter Sensor</a>. Благодаря простой кросс-компиляции и доступности большого количества высококачественных пакетов на crates.io <b>мы быстро получили быстрый и надёжный демонстратор</b>.
 embedded-testimonials-sensirion-attribution = &ndash; Raphael Nestler, Software Engineer, Sensirion
 embedded-testimonials-airborne-alt = Логотип Airborne Engineering Ltd
+embedded-testimonials-airborne-quote = Мы в Airborne Engineering Ltd. недавно использовали Rust чтобы написать внутреннюю систему сбора данных на Ethernet загрузчике, <a href="https://github.com/airborneengineering/blethrs">blethrs</a>. <b>Rust является перспективным языком и мы будем рады использовать его в наших будущих проектах, встраиваемых и не только.</b>
 embedded-testimonials-airborne-attribution = &ndash; Dr. Adam Greig, Instrumentation Engineer, Airborne Engineering Ltd.
 embedded-testimonials-49nord-alt = Логотип 49nord
 # "Fluent" requires a square bracket which is the first character of a line to be escaped like this: {"["} See https://projectfluent.org/fluent/guide/special.html
