@@ -218,6 +218,11 @@
   logo: iqlusion.svg
   how: "Rust is the main language we use to develop in-house and OSS software, and used for infrastructure/devops tools as well as cryptographic key management services."
 -
+  name: Knoldus
+  url: https://www.knoldus.com
+  logo: knoldus-logo.png
+  how: "We use Rust in [IoT Based Project] Security System Projects(<a href='https://blog.knoldus.com/hawk-image-recognition-project-using-rust-and-aws-services/'>Image Recognition System</a>) and also [Networking Based Project] in Monitoring of Networking Protocols like DHCP and Active Directory."
+-
   name: krypt.co
   url: https://krypt.co
   logo: krypt.co.png
