@@ -9,5 +9,6 @@ policies-code-of-conduct-link = 行為準則
 policies-licenses-link = 授權條款
 policies-media-guide-link = 商標政策與媒體指南
 policies-security-link = 安全資訊揭露
+policies-privacy-link = 隱私權注意事項
 policies-reach-out-description = 找不到您要找的內容嗎？有任何問題嗎？請聯絡我們！
 policies-reach-out-link = 聯絡核心團隊

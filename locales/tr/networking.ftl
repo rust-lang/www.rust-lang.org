@@ -37,7 +37,3 @@ networking-production-testimonial-mozilla = Push bağlantı altyapımızı Rust'
 networking-production-testimonial-mozilla-attribution = Benjamin Bangert, Personel Mühendisi, Mozilla
 networking-production-testimonial-buoyant = Rust, Linkerd projesinin teknoloji yol haritasının temelini oluşturur. Veri tipi sistemi, çalışma zamanı performansından ödün vermeden modüler, test edilebilir, bütünleştirilebilir birimler oluşturmamızı sağlar. En şaşırtıcı olanı ise, Rust’ın yaşam süresi / ödünç alma kontrol sisteminin büyük miktarda kaynak sızıntısından kaçınmamıza nasıl olanak sağladığıdır. 2 yıldan sonra, iş için başka bir dil kullanmayı gerçekten düşünemiyorum.
 networking-production-testimonial-buoyant-attribution = Oliver Gould, CTO, <a href="{ $href }">Buoyant</a>
-networking-production-testimonial-1aim =
-    Rust'un güçlü veri tipi sistemi emniyetli yeniden düzenleme sağlar ve derleme zamanında birçok hata sınıfını yakalar. Garantili hafıza güvenliği ile tamamlanan düşük ayak izi ve yüksek performans
-    ve son derece sağlam hata yönetimi, sunucu uygulamalarımız için güvenlik açısından kritik ve karmaşık bir iş mantığı yazmak için mükemmeldir. Endişelenmemiz gereken son kısmın ultra yüksek stabilite sahibi Rust uygulamalarımızın olduğuydu. 2015'in sonundan bu yana üretimde neredeyse %100 Rust sunucu uygulaması çalıştırdık ve şimdiye kadar hiç başarısız olmadı!
-networking-production-testimonial-1aim-attribution = Yann Leretaille, <a href="{ $href }">1aim</a>
