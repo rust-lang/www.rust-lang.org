@@ -38,12 +38,8 @@ pub const EXPLICIT_LOCALE_INFO: &[LocaleInfo] = &[
         text: "English",
     },
     LocaleInfo {
-        lang: "zh-CN",
-        text: "简体中文",
-    },
-    LocaleInfo {
-        lang: "zh-TW",
-        text: "正體中文",
+        lang: "it",
+        text: "Italiano",
     },
     LocaleInfo {
         lang: "pt-BR",
@@ -54,8 +50,12 @@ pub const EXPLICIT_LOCALE_INFO: &[LocaleInfo] = &[
         text: "Türkçe",
     },
     LocaleInfo {
-        lang: "it",
-        text: "Italiano",
+        lang: "zh-CN",
+        text: "简体中文",
+    },
+    LocaleInfo {
+        lang: "zh-TW",
+        text: "正體中文",
     },
 ];
 
