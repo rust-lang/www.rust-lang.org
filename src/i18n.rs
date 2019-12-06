@@ -181,10 +181,16 @@ impl HelperDef for I18NHelper {
             ));
         };
 
-        let id = if let Some(id) = id.path() {
-            id
+        if id.path().is_some() {
+            return Err(RenderError::new(
+                "{{fluent}} takes a string parameter with no path",
+            ));
+        }
+
+        let id = if let Json::String(ref s) = *id.value() {
+            s
         } else {
-            return Err(RenderError::new("{{fluent}} takes an identifier parameter"));
+            return Err(RenderError::new("{{fluent}} takes a string parameter"));
         };
 
         let mut args = if h.hash().is_empty() {
@@ -219,17 +225,25 @@ impl HelperDef for I18NHelper {
                             block.name
                         )));
                     }
+
                     let id = if let Some(el) = block.params.get(0) {
-                        if let Parameter::Name(ref s) = *el {
-                            s
+                        if let Parameter::Literal(ref s) = *el {
+                            if let Json::String(ref s) = *s {
+                                s
+                            } else {
+                                return Err(RenderError::new(
+                                    "{{fluentparam}} takes a string parameter",
+                                ));
+                            }
                         } else {
                             return Err(RenderError::new(
-                                "{{fluentparam}} takes an identifier parameter",
+                                "{{fluentparam}} takes a string parameter",
                             ));
                         }
                     } else {
                         return Err(RenderError::new("{{fluentparam}} must have one parameter"));
                     };
+
                     if let Some(ref tpl) = block.template {
                         let mut s = StringOutput::default();
                         tpl.render(reg, context, rcx, &mut s)?;
