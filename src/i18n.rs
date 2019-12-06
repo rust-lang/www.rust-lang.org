@@ -177,14 +177,14 @@ impl HelperDef for I18NHelper {
             id
         } else {
             return Err(RenderError::new(
-                "{{text}} must have at least one parameter",
+                "{{fluent}} must have at least one parameter",
             ));
         };
 
         let id = if let Some(id) = id.path() {
             id
         } else {
-            return Err(RenderError::new("{{text}} takes an identifier parameter"));
+            return Err(RenderError::new("{{fluent}} takes an identifier parameter"));
         };
 
         let mut args = if h.hash().is_empty() {
@@ -213,9 +213,9 @@ impl HelperDef for I18NHelper {
             let args = args.as_mut().unwrap();
             for element in &tpl.elements {
                 if let TemplateElement::HelperBlock(ref block) = element {
-                    if block.name != "textparam" {
+                    if block.name != "fluentparam" {
                         return Err(RenderError::new(format!(
-                            "{{{{text}}}} can only contain {{{{textparam}}}} elements, not {}",
+                            "{{{{fluent}}}} can only contain {{{{fluentparam}}}} elements, not {}",
                             block.name
                         )));
                     }
@@ -224,11 +224,11 @@ impl HelperDef for I18NHelper {
                             s
                         } else {
                             return Err(RenderError::new(
-                                "{{textparam}} takes an identifier parameter",
+                                "{{fluentparam}} takes an identifier parameter",
                             ));
                         }
                     } else {
-                        return Err(RenderError::new("{{textparam}} must have one parameter"));
+                        return Err(RenderError::new("{{fluentparam}} must have one parameter"));
                     };
                     if let Some(ref tpl) = block.template {
                         let mut s = StringOutput::default();

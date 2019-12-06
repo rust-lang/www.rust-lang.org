@@ -451,7 +451,7 @@ fn main() {
     let templating = Template::custom(|engine| {
         engine
             .handlebars
-            .register_helper("text", Box::new(I18NHelper::new()));
+            .register_helper("fluent", Box::new(I18NHelper::new()));
         engine
             .handlebars
             .register_helper("team-text", Box::new(TeamHelper::new()));
