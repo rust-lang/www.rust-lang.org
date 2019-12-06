@@ -58,7 +58,8 @@ use sass_rs::{compile_file, Options};
 use category::Category;
 
 use caching::{Cached, Caching};
-use i18n::{I18NHelper, LocaleInfo, SupportedLocale, TeamHelper, EXPLICIT_LOCALE_INFO};
+use handlebars_fluent::{loader::Loader, FluentHelper};
+use i18n::{create_loader, LocaleInfo, SupportedLocale, TeamHelper, EXPLICIT_LOCALE_INFO};
 use rocket::http::hyper::header::CacheDirective;
 
 lazy_static! {
@@ -96,7 +97,7 @@ struct Context<T: ::serde::Serialize> {
 
 impl<T: ::serde::Serialize> Context<T> {
     fn new(page: String, title_id: &str, is_landing: bool, data: T, lang: String) -> Self {
-        let helper = I18NHelper::new();
+        let helper = create_loader();
         let title = if title_id.is_empty() {
             "".into()
         } else {
@@ -476,7 +477,7 @@ fn main() {
     let templating = Template::custom(|engine| {
         engine
             .handlebars
-            .register_helper("fluent", Box::new(I18NHelper::new()));
+            .register_helper("fluent", Box::new(FluentHelper::new(create_loader())));
         engine
             .handlebars
             .register_helper("team-text", Box::new(TeamHelper::new()));
