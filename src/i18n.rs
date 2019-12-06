@@ -177,14 +177,20 @@ impl HelperDef for I18NHelper {
             id
         } else {
             return Err(RenderError::new(
-                "{{text}} must have at least one parameter",
+                "{{fluent}} must have at least one parameter",
             ));
         };
 
-        let id = if let Some(id) = id.path() {
-            id
+        if id.path().is_some() {
+            return Err(RenderError::new(
+                "{{fluent}} takes a string parameter with no path",
+            ));
+        }
+
+        let id = if let Json::String(ref s) = *id.value() {
+            s
         } else {
-            return Err(RenderError::new("{{text}} takes an identifier parameter"));
+            return Err(RenderError::new("{{fluent}} takes a string parameter"));
         };
 
         let mut args = if h.hash().is_empty() {
@@ -213,23 +219,31 @@ impl HelperDef for I18NHelper {
             let args = args.as_mut().unwrap();
             for element in &tpl.elements {
                 if let TemplateElement::HelperBlock(ref block) = element {
-                    if block.name != "textparam" {
+                    if block.name != "fluentparam" {
                         return Err(RenderError::new(format!(
-                            "{{{{text}}}} can only contain {{{{textparam}}}} elements, not {}",
+                            "{{{{fluent}}}} can only contain {{{{fluentparam}}}} elements, not {}",
                             block.name
                         )));
                     }
+
                     let id = if let Some(el) = block.params.get(0) {
-                        if let Parameter::Name(ref s) = *el {
-                            s
+                        if let Parameter::Literal(ref s) = *el {
+                            if let Json::String(ref s) = *s {
+                                s
+                            } else {
+                                return Err(RenderError::new(
+                                    "{{fluentparam}} takes a string parameter",
+                                ));
+                            }
                         } else {
                             return Err(RenderError::new(
-                                "{{textparam}} takes an identifier parameter",
+                                "{{fluentparam}} takes a string parameter",
                             ));
                         }
                     } else {
-                        return Err(RenderError::new("{{textparam}} must have one parameter"));
+                        return Err(RenderError::new("{{fluentparam}} must have one parameter"));
                     };
+
                     if let Some(ref tpl) = block.template {
                         let mut s = StringOutput::default();
                         tpl.render(reg, context, rcx, &mut s)?;
