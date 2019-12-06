@@ -2,7 +2,7 @@
 
 <header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-    <h1>{{text tools-page-title}}</h1>
+    <h1>{{fluent tools-page-title}}</h1>
   </div>
 </header>
 
@@ -10,7 +10,7 @@
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
       <h2>
-        {{text tools-editor-support-heading}}
+        {{fluent tools-editor-support-heading}}
       </h2>
       <div class="highlight highlight-yellow"></div>
     </header>
@@ -18,11 +18,11 @@
     <div class="tools-row">
       <div id="tools-write-ide-prose">
       <p>
-      {{#text tools-editor-support-description}}
-        {{#textparam rls-link}}
-          <a href="https://github.com/rust-lang/rls">{{text rust-language-server}}</a>
-        {{/textparam}}
-      {{/text}}  
+      {{#fluent tools-editor-support-description}}
+        {{#fluentparam rls-link}}
+          <a href="https://github.com/rust-lang/rls">{{fluent rust-language-server}}</a>
+        {{/fluentparam}}
+      {{/fluent}}  
       </div>
     </div>
     {{> components/tools/editors }}
@@ -33,36 +33,36 @@
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
       <h2>
-        {{text tools-build-heading}}
+        {{fluent tools-build-heading}}
       </h2>
       <div class="highlight highlight-red"></div>
     </header>
     <p>
-      {{text tools-build-description}}
+      {{fluent tools-build-description}}
     </p>
     <div class="flex-none flex-l flex-row">
       <div class="mt2 w-100" id="packages">
         <h3 class="code-header">
-          {{text tools-build-install-heading}}
+          {{fluent tools-build-install-heading}}
         </h3>
         <p>
-          {{text tools-build-install-description}}
+          {{fluent tools-build-install-description}}
         </p>
       </div>
       <div class="mt2 w-100 ml5-l" id="linting">
         <h3 class="code-header">
-          {{text tools-build-test-heading}}
+          {{fluent tools-build-test-heading}}
         </h3>
         <p>
-          {{text tools-build-test-description}}
+          {{fluent tools-build-test-description}}
         </p>
       </div>
       <div class="mt2 w-100 ml5-l" id="deployment">
         <h3 class="code-header">
-          {{text tools-build-deploy-heading}}
+          {{fluent tools-build-deploy-heading}}
         </h3>
         <p>
-          {{text tools-build-deploy-description}}
+          {{fluent tools-build-deploy-description}}
         </p>
       </div>
     </div>
@@ -73,44 +73,44 @@
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
       <h2>
-        {{text tools-automation-heading}}
+        {{fluent tools-automation-heading}}
       </h2>
       <div class="highlight highlight-red"></div>
     </header>
     <br>
     <p>
-      {{text tools-automation-description}}
+      {{fluent tools-automation-description}}
     </p>
     <div class="flex-none flex-l flex-row">
       <div class="mt5 mt2-l flex flex-column w-100">
         <h3 class="code-header">
-          {{text tools-automation-rustfmt-heading}}
+          {{fluent tools-automation-rustfmt-heading}}
         </h3>
         <p class="flex-grow-1">
-          {{text tools-automation-rustfmt-description}}
+          {{fluent tools-automation-rustfmt-description}}
         </p>
         <a href="https://github.com/rust-lang/rustfmt"
-             class="button button-secondary">{{text tools-automation-rustfmt-link}}</a>
+             class="button button-secondary">{{fluent tools-automation-rustfmt-link}}</a>
       </div>
       <div class="mt5 mt2-l flex flex-column w-100 ml5-l">
         <h3 class="code-header">
-          {{text tools-automation-clippy-heading}}
+          {{fluent tools-automation-clippy-heading}}
         </h3>
         <p class="flex-grow-1">
-          {{text tools-automation-clippy-description}}
+          {{fluent tools-automation-clippy-description}}
         </p>
          <a href="https://github.com/rust-lang/rust-clippy"
-             class="button button-secondary">{{text tools-automation-clippy-link}}</a>
+             class="button button-secondary">{{fluent tools-automation-clippy-link}}</a>
       </div>
       <div class="mt5 mt2-l flex flex-column w-100 ml5-l">
         <h3 class="code-header">
-          {{text tools-automation-cargo-doc-heading}}
+          {{fluent tools-automation-cargo-doc-heading}}
         </h3>
         <p class="flex-grow-1">
-          {{text tools-automation-cargo-doc-description}}
+          {{fluent tools-automation-cargo-doc-description}}
         </p>
         <a href="https://docs.rs/"
-             class="button button-secondary">{{text tools-automation-cargo-doc-link}}</a>
+             class="button button-secondary">{{fluent tools-automation-cargo-doc-link}}</a>
       </div>
     </div>
   </div>

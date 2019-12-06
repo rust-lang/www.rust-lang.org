@@ -10,17 +10,17 @@
             <div class="flex flex-column ml5-l mt4 mt0-l">
                 {{#if team.website_data.email}}
                     <a class="button button-secondary" href="mailto:{{team.website_data.email}}">
-                    {{#text governance-team-email}}{{#textparam teamname}}{{team-text team name}}{{/textparam}}{{/text}}
+                    {{#fluent governance-team-email}}{{#fluentparam teamname}}{{team-text team name}}{{/fluentparam}}{{/fluent}}
                     </a>
                 {{/if}}
                 {{#if team.website_data.repo}}
                     <a class="button button-secondary" href="{{team.website_data.repo}}">
-                        {{#text governance-team-repository}}{{#textparam teamname}}{{team-text team name}}{{/textparam}}{{/text}}
+                        {{#fluent governance-team-repository}}{{#fluentparam teamname}}{{team-text team name}}{{/fluentparam}}{{/fluent}}
                     </a>
                 {{/if}}
                 {{#if team.website_data.discord}}
                     <a class="button button-secondary" href="{{team.website_data.discord.url}}">
-                        {{#text governance-team-discord}}{{#textparam channel}}{{team.website_data.discord.channel}}{{/textparam}}{{/text}}
+                        {{#fluent governance-team-discord}}{{#fluentparam channel}}{{team.website_data.discord.channel}}{{/fluentparam}}{{/fluent}}
                     </a>
                 {{/if}}
             </div>
@@ -28,7 +28,7 @@
     </div>
     {{#if team.members}}
         <header class="pb4 pt0">
-            <h2 class="f2">{{text governance-members-header}}</h2>
+            <h2 class="f2">{{fluent governance-members-header}}</h2>
         </header>
         <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
             {{#each team.members as |member|}}
@@ -39,14 +39,14 @@
                     <div class="flex flex-column w-100">
                         <h3 class="{{#unless member.is_lead}}fw4{{/unless}} ma0 mb2">{{member.name}}</h3>
                         <div>
-                        {{#text governance-user-github}}
-                            {{#textparam link}}
+                        {{#fluent governance-user-github}}
+                            {{#fluentparam link}}
                                 <a href="https://github.com/{{member.github}}">{{member.github}}</a>
-                            {{/textparam}}
-                        {{/text}}
+                            {{/fluentparam}}
+                        {{/fluent}}
                         </div>
                         {{#if member.is_lead}}
-                            <div>{{text governance-user-team-leader}}</div>
+                            <div>{{fluent governance-user-team-leader}}</div>
                         {{/if}}
                     </div>
                 </div>
