@@ -35,7 +35,7 @@ pub(crate) fn render_data(lang: &str) -> Vec<RenderSponsor> {
         .map(|s| RenderSponsor {
             name: &s.name,
             is_not_first: true, // Will be changed later
-            logo_path: format!("/static/images/sponsor-logos/{}.png", s.id),
+            logo_path: format!("/static/images/sponsor-logos/{}.svg", s.id),
             logo_alt_i18n: i18n.lookup(lang, &format!("sponsors-{}-alt", s.id), None),
             description_i18n: i18n.lookup(lang, &format!("sponsors-{}", s.id), None),
         })
