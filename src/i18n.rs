@@ -385,6 +385,12 @@ pub fn read_from_dir<P: AsRef<Path>>(dirname: P) -> io::Result<Vec<FluentResourc
     let mut result = Vec::new();
     for dir_entry in read_dir(dirname)? {
         let entry = dir_entry?;
+
+        // Prevent loading non-FTL files as translations, such as VIM temporary files.
+        if entry.path().extension().and_then(|e| e.to_str()) != Some("ftl") {
+            continue;
+        }
+
         let resource = read_from_file(entry.path())?;
         result.push(resource);
     }
