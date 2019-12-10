@@ -8,6 +8,9 @@
 # - The alt of the image is the Fluent translation "sponsors-<id>-alt"
 # - The description paragraph is the Fluent translation "sponsors-<id>"
 
+- id: 1password
+  name: 1Password
+
 - id: aws
   name: AWS
 
