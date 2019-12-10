@@ -17,46 +17,22 @@
       {{fluent "sponsors-caveat"}}
     </p>
 
+    {{#each data as |sponsor|}}
+    {{#if sponsor.is_not_first}}
+    <hr size="1" noshade>
+    {{/if}}
     <div class="flex-none flex-l mt5-l">
       <div class="w-100 w-30-l tc">
-        <img alt="{{fluent "sponsors-microsoft-alt"}}" src="/static/images/sponsor-logos/microsoft.png" />
+        <img alt="{{sponsor.logo_alt_i18n}}" src="{{sponsor.logo_path}}" />
       </div>
       <div class="w-100 w-70-l">
-        <h3>Microsoft Azure</h3>
+        <h3>{{sponsor.name}}</h3>
         <p>
-          {{fluent "sponsors-microsoft"}}
+          {{sponsor.description_i18n}}
         </p>
       </div>
     </div>
-
-    <hr noshade size="1"/>
-
-    <div class="flex-none flex-l mt5-l">
-      <div class="w-100 w-30-l tc">
-        <img alt="{{fluent "sponsors-aws-alt"}}" src="/static/images/sponsor-logos/aws.png" />
-      </div>
-      <div class="w-100 w-70-l">
-        <h3>AWS</h3>
-        <p>
-          {{fluent "sponsors-aws"}}
-        </p>
-      </div>
-    </div>
-
-    <hr noshade size="1"/>
-
-    <div class="flex-none flex-l mt5-l">
-      <div class="w-100 w-30-l tc">
-        <img alt="{{fluent "sponsors-mozilla-alt"}}" src="/static/images/sponsor-logos/mozilla.png" />
-      </div>
-      <div class="w-100 w-70-l">
-        <h3>Mozilla</h3>
-        <p>
-          {{fluent "sponsors-mozilla"}}
-        </p>
-      </div>
-    </div>
-
+    {{/each}}
   </div>
 </section>
 
