@@ -20,7 +20,10 @@
     <h3>{{fluent "learn-install-rustup-header"}}</h3>
     <p>{{fluent "learn-install-rustup"}}</p>
     {{> components/tools/rustup }}
-    <br /><br />
+    <br />
+    <h3>{{fluent "learn-install-rustup-update-header"}}</h3>
+    <p>{{#fluent "learn-install-rustup-update"}}{{#fluentparam "update-command"}}<code>rustup update</code>{{/fluentparam}}{{/fluent}}</p>
+    <br />
     <a href="{{baseurl}}/tools/install" class="button button-secondary">{{fluent "learn-install-rustup-button"}}</a>
     <hr />
 
@@ -111,7 +114,7 @@ fn main() {
     </code></pre>
     {{/fluentparam}}
     {{/fluent}}
-    
+
   </div>
 </section>
 
