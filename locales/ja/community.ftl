@@ -1,5 +1,29 @@
 ## templates/community/index.hbs
 
 community-page-title = コミュニティ
+community-twir = Rustコミュニティの最新情報を見逃さないようにしましょう！
+community-twir-button = This Week in Rust
+community-team-contact = 私たちはあなたの意見を聞きたいです！どこで誰に質問すればいいかわかりませんか？参加したいけれどどうすればいいかわかりませんか？コミュニティチームはあなたを手助けできる人と繋ぎたいと思っています！
+community-team-button = { ENGLISH("community@rust-lang.org") } にメールを送る
+community-where = 議論の場
 community-urlo-header = ユーザーフォーラム
+community-discourse-button = フォーラムにアクセスする
+community-irlo-header = インターナルフォーラム
+community-chat-header = チャットプラットフォーム
+community-teams-learn = チームについてもっと知る
+community-events-header = イベント
 community-calendar = カレンダーを見る
+community-conference-lineup = 2019年のカンファレンス一覧を確認する
+community-timetill-cta = timetill.rsでカンファレンス一覧を見る
+community-event-run-header = イベントを開催する
+community-events-repo = イベントチームのリポジトリを確認する
+community-event-register = イベントを登録する
+community-rustfest-alt = Rustfest参加者
+community-rustbridge-header = Rustbridge
+community-rustbridge-button = Rustbridgeのリポジトリを確認する
+community-rustbridge-rustconf-alt = RustConfでのRustBridge
+community-irr-button = ウェブサイトにアクセスする
+community-standards-header = コミュニティ規定
+community-mod-button = モデレーションチームにメッセージを送る
+community-coc-button = 行動規範を読む
+community-mod-guidelines-button = モデレーションガイドラインを読む
