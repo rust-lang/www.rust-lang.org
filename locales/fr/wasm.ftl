@@ -10,6 +10,7 @@ what-wasm-page-heading = Web&shy;Assembly
 
 wasm-why-rust-predictable-alt = Engrenages
 wasm-why-rust-predictable-heading = Performance prédictible
+wasm-why-rust-predictable-description = Pas de pause imprédictible due à un ramasse-miettes. Pas de gouffre à performance lié à un compilateur JIT. Juste un contrôle de bas-niveau couplé à l’ergonomie du haut-niveau.
 wasm-why-rust-small-code-alt = Un microscope
 wasm-why-rust-small-code-heading = Code succinct
 wasm-why-rust-amenities-alt = Bagages
