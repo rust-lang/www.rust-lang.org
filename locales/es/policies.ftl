@@ -9,5 +9,6 @@ policies-code-of-conduct-link = Código de conducta
 policies-licenses-link = Licencias
 policies-media-guide-link = Política de logos y guía de medios
 policies-security-link = Divulgaciones de seguridad
+policies-privacy-link = Aviso de privacidad
 policies-reach-out-description = ¿No encuentras lo que buscas? ¿Tienes una pregunta? ¡Contáctanos!
 policies-reach-out-link = Contacta al equipo <em>core</em>

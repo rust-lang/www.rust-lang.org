@@ -66,7 +66,7 @@ community-standards =
     de comportamiento en todos los foros oficiales de Rust.
     <br/><br/>
     Si sientes que has sido objeto de acoso o algún participante de la comunidad te ha hecho sentir incómodo,
-    por favor contacta a con el <a href="mailto:rust-mods@rust-lang.org">equipo de moderación de Rust</a> inmediatamente.
+    por favor contacta a con el <a href="mailto:rust-mods@rust-lang.org">equipo de moderación de Rust</a> inmediatamente. Tanto si eres un contribuidor habitual o un recién llegado, nos preocupamos por hacer de la comunidad un entorno seguro para ti.
 community-mod-button = Envía un mensaje al equipo de moderación
 community-coc-button = lee el código de conducta
 community-mod-guidelines-button = lee las pautas de moderación
