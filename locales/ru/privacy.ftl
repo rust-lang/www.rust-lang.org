@@ -3,4 +3,4 @@
 
 ## templates/policies/privacy.hbs
 
-policies-privacy-page-title = Уведомление о конфеденциальности Rust
+policies-privacy-page-title = Уведомление о конфиденциальности Rust

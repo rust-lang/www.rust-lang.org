@@ -11,4 +11,4 @@ policies-media-guide-link = Руководство по политике в от
 policies-security-link = Отчёты об уязвимостях
 policies-privacy-link = Уведомление о конфиденциальности
 policies-reach-out-description = Не нашли того, что искали? Есть вопросы? Свяжитесь с нами!
-policies-reach-out-link = Написать в Core Team
+policies-reach-out-link = Связаться с Core Team
