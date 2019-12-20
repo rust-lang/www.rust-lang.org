@@ -1,4 +1,5 @@
-use crate::i18n::I18NHelper;
+use crate::i18n::create_loader;
+use handlebars_fluent::loader::Loader;
 use rand::seq::SliceRandom;
 use std::error::Error;
 
@@ -28,7 +29,7 @@ pub(crate) struct RenderSponsor {
 }
 
 pub(crate) fn render_data(lang: &str) -> Vec<RenderSponsor> {
-    let i18n = I18NHelper::new();
+    let i18n = create_loader();
 
     let mut sponsors = SPONSORS
         .iter()
