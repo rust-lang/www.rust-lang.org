@@ -3,7 +3,7 @@
 
 ## templates/what/cli.hbs
 
-what-cli-page-title = Приложения командной строки
+what-cli-page-title = Приложения CLI
 
 ## templates/components/what/cli/pitch.hbs
 
@@ -16,7 +16,7 @@ cli-pitch-solid-description =
 cli-pitch-solid-link = Гарантии Rust
 cli-pitch-ship-img-alt = Коробка с галочкой
 cli-pitch-ship-heading = Лёгкое распространение
-cli-pitch-ship-description = Скомпилировано в один исполняемый файл&mdash; Вашим пользователям не нужна установленная среда выполнения или библиотеки.
+cli-pitch-ship-description = Скомпилировано в один исполняемый файл &mdash; Вашим пользователям не нужна установленная среда выполнения или библиотеки.
 cli-pitch-ship-link = Как доставить код Rust
 cli-pitch-config-img-alt = Записка и шестерёнка
 cli-pitch-config-heading = Надёжная конфигурация
@@ -28,11 +28,11 @@ cli-pitch-manuals-description = Создавайте справочные стр
 cli-pitch-manuals-link = Узнайте, как
 cli-pitch-machines-img-alt = Трубы
 cli-pitch-machines-heading = Входные данные, выходные данные
-cli-pitch-machines-description = В дополнение к общению с людьми, Rust имеет отличные инструменты для общения с машинами.
-cli-pitch-machines-link = Взаимодействие с машинами
+cli-pitch-machines-description = В дополнение к общению с людьми, Rust имеет отличные инструменты для общения с компьютерами.
+cli-pitch-machines-link = Взаимодействие с компьютерами
 cli-pitch-logging-img-alt = 3 полена, сложенные друг на друга
 cli-pitch-logging-heading = Гибкое логирование
-cli-pitch-logging-description = Легко добавить ведение журнала и ещё проще настроить его для разных целей и с разными стилями.
+cli-pitch-logging-description = Легко добавить журналирование и ещё проще настроить его для разных целей и с разными стилями.
 cli-pitch-logging-link = Логгируй, трассируй, понимай
 
 ## templates/components/what/cli/maintainable.hbs
@@ -43,7 +43,7 @@ cli-maintainable-errors-heading = <em>Перехват ошибок</em>
 cli-maintainable-errors-description = Что, если конфигурационный файл отсутствует или повреждён? Что, если значение одной из переменных среды окружения не установлено? Об этих случаях легко забыть! Но благодаря подходу к обработке ошибок и дизайну библиотек, Rust укажет на такие ситуации ещё до того, как вы запустите свою программу.
 cli-maintainable-errors-link = Обработка ошибок в Rust
 cli-maintainable-refactoring-img-alt = приложение командной строки это не ракетостроение
-cli-maintainable-refactoring-heading = Легко расширяемый в дальнейшем
+cli-maintainable-refactoring-heading = Легко расширяемый в будущем
 cli-maintainable-refactoring-description = Rust позволяет вам быть гибким при организации кода. Начините с одного файла и, когда вам понадобится больше функций, реорганизуйте ваше приложение и будьте уверены, что вы ничего не нарушите.
 cli-maintainable-refactoring-link = Рефакторинг кода на Rust
 
@@ -57,10 +57,10 @@ cli-example-link = Узнайте больше с CLI book
 ## templates/components/what/cli/production.hbs
 
 cli-production-sentry-img-alt = Логотип sentry
-cli-production-sentry-quote = Одной из причин, по которой нам понравился Rust, была экосистема crates.io. [...] Существует много действительно хорошей уже существующей инфраструктуры для создание очень хороших интерфейсов командной строки.
+cli-production-sentry-quote = Одной из причин, по которой нам понравился Rust, была экосистема crates.io. [...] Здесь вы можете найти много действительно хороших готовых реализаций, для создания замечательных интерфейсов командной строки.
 cli-production-sentry-attribution = &ndash; Armin Ronacher,
 cli-production-sentry-link = Rust в Sentry &ndash; PolyConf 2017
-cli-production-habitat-quote = Я не жалею о том, что живу в этой кодовой базе. […] Это было своего рода дополнительным бонусом для меня: использование Rust для создания CLI или консольных инструментов. Он очень хорош при компиляции для разных целевых систем.
+cli-production-habitat-quote = Я не жалею о том, что живу в этой кодовой базе. […] Это было своего рода дополнительным бонусом для меня: использование Rust для создания CLI или консольных инструментов. Он очень хорош при компиляции под разные целевые системы.
 cli-production-habitat-attribution = &ndash; Fletcher Nichol,
 cli-production-habitat-link = Использование Rust на основном сервере &ndash; RustFest Kyiv
 cli-production-habitat-img-alt = Логотип Habitat

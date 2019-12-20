@@ -70,7 +70,7 @@ learn-install-editors = Rust tiene soporte en muchos editores:
 learn-install-fmt-clippy = Puedes instalar la herramienta para dar formato al código (Rustfmt) con <code>rustup component add rustfmt</code>, y la herramienta de limpieza de código (Clippy) con <code>rustup component add clippy</code>.
 learn-generating = Generar un nuevo proyecto
 learn-generating-steps =
-    <p>Escribamos una pequeña aplicación con nuestro nuevo entorno de desarrollo de Rust. Para empezar usaremos Cargo para crear un nuevo proyecto. En tu terminal preferido ejecuta:</p>
+    <p>Escribamos una pequeña aplicación con nuestro nuevo entorno de desarrollo de Rust. Para empezar, usaremos Cargo para crear un nuevo proyecto. En tu terminal preferido ejecuta:</p>
     <p><code>cargo new hello-rust</code></p>
     <p>Esto generará un nuevo directorio llamado <code>hello-rust</code> con los siguientes archivos:</p>
     { $tree }

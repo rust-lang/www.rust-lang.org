@@ -21,7 +21,7 @@ wasm-why-rust-amenities-description = Живая экосистема библи
 ## Get started! (templates/components/what/wasm/get-started.hbs)
 
 wasm-get-started-wasm-alt = Логотип WebAssembly
-wasm-get-started-wasm-description = Узайте больше о быстрой, безопасной и открытой виртуальной машине, зовущейся WebAssembly, и ознакомьтесь с её стандартом.
+wasm-get-started-wasm-description = Узнайте больше о быстрой, безопасной и открытой виртуальной машине, зовущейся WebAssembly, и ознакомьтесь с её стандартом.
 wasm-get-started-wasm-link = Узнать больше
 wasm-get-started-book-alt = wasm ferris
 wasm-get-started-book-description = Узнайте как собрать, отладить, профилировать и развёртывать WebAssembly приложения с помощью Rust!
@@ -38,7 +38,7 @@ wasm-js-augment-description = Мечта WebAssembly &mdash; не убить Jav
 wasm-js-toolchains-heading = Работает с привычным набором инструментов
 wasm-js-toolchains-description = Публикуйте пакеты WebAssembly, созданные с Rust, в реестр пакетов, такой как npm. Упаковывайте и отправляйте их с webpack, Parcel и подобными. Поддерживайте их с помощью таких инструментов, как <code>npm audit</code> и Greenkeeper.
 wasm-js-interop-heading = Бесшовная совместимость
-wasm-js-interop-description = Автоматически создавайте кодовые привязки между Rust, WebAssembly и JavaScript API. Получите преимущества таких библиотек, как <a href="https://rustwasm.github.io/wasm-bindgen/web-sys/index.html"><code>web-sys</code></a>, предоставляющих предварительно упакованные привязки для всех web-плафторм.
+wasm-js-interop-description = Автоматически создавайте кодовые привязки между Rust, WebAssembly и JavaScript API. Получите преимущества таких библиотек, как <a href="https://rustwasm.github.io/wasm-bindgen/web-sys/index.html"><code>web-sys</code></a>, предоставляющих предварительно упакованные привязки для всех web-платформ.
 
 ## Production use (templates/components/what/wasm/production.hbs)
 

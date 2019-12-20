@@ -3,6 +3,7 @@
 
 policies-security-page-title = Politique de sécurité
 security-reporting-heading = Signaler
+security-reporting-link = email { ENGLISH("security@rust-lang.org") }
 security-disclosure-heading = Politique de divulgation
 security-disclosure-description =
     <p>Le projet Rust dispose d'un processus de divulgation en cinq étapes.</p>
@@ -15,3 +16,4 @@ security-disclosure-description =
     </ol>
     <p>Ce processus peut prendre un certain temps, notamment lorsqu'il est nécessaire de coordonner différents mainteneurs impliqués sur d'autres projets. Tous les efforts seront faits afin de résoudre le bug de la façon la plus réactive possible, cependant il est important de respecter le processus de déploiement des versions ci-dessus afin de s'assurer que la divulgation est gérée de façon consistante.</p>
 security-receiving-heading = Recevoir des mises à jour de sécurité
+security-pgp-key-heading = Clé PGP en texte brut

@@ -746,3 +746,8 @@ blockquote::before {
 #pb4 {
     padding-bottom: 3.8em;
 }
+
+.max-height-5rem {
+    /* Tachyons is missing this class */
+    max-height: 5rem;
+}

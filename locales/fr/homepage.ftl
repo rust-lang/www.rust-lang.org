@@ -33,15 +33,19 @@ domains-cli-blurb = Créez un outil en ligne de commande rapidement avec l'écos
 domains-cli-alt = terminal
 domains-wasm = WebAssembly
 domains-wasm-blurb = Utilisez Rust pour décupler les capacités de votre JavaScript, un module à la fois. Publiez sur npm, empaquetez avec Webpack et vous êtes prêt·e.
+domains-wasm-alt = engrenage avec des pièces de puzzle
 domains-net = Réseau
 domains-net-blurb = Performance prédictibles. Faible consommation de ressources. Fiable comme le roc. Rust est taillé pour les services réseau.
 domains-net-alt = un nuage avec des nœuds
 domains-embedded = Embarqué
+domains-embedded-blurb = Vous visez du matériel à faibles ressources ? Vous avez besoin d'un contrôle bas niveau sans renoncer aux avantages du haut niveau ? Rust est fait pour vous.
+domains-embedded-alt = une puce embarquée
 
 ## components/panels/get-involved.hbs
 
 get-involved = S'impliquer
 get-involved-read-rust = Lire sur Rust
+get-involved-read-rust-blurb = Nous adorons la documentation ! Jetez un œil aux livres disponibles en ligne, ainsi que les articles clefs de blogs et guides utilisateurs.
 get-involved-read-rust-link = Lire le Book
 get-involved-watch-rust = Regarder sur Rust
 get-involved-watch-rust-blurb = La communauté Rust a une chaîne YouTube dédiée rassemblant une grande variété de présentations et de tutoriels.
@@ -49,3 +53,6 @@ get-involved-watch-rust-link = Regarder les vidéos
 get-involved-contribute = Contribuer au code
 get-involved-contribute-blurb = Rust est un véritable effort communautaire et nous accueillons les contributions : des amateurs aux professionnels, des débutants aux experts. Venez nous aider à rendre l'expérience Rust encore meilleure !
 get-involved-contribute-link = Lire le guide de contribution
+
+## components/panels/thanks.hbs
+

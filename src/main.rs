@@ -30,6 +30,7 @@ mod i18n;
 mod production;
 mod redirect;
 mod rust_version;
+mod sponsors;
 mod teams;
 
 use production::User;
@@ -57,7 +58,8 @@ use sass_rs::{compile_file, Options};
 use category::Category;
 
 use caching::{Cached, Caching};
-use i18n::{I18NHelper, LocaleInfo, SupportedLocale, TeamHelper, EXPLICIT_LOCALE_INFO};
+use handlebars_fluent::{loader::Loader, FluentHelper};
+use i18n::{create_loader, LocaleInfo, SupportedLocale, TeamHelper, EXPLICIT_LOCALE_INFO};
 use rocket::http::hyper::header::CacheDirective;
 
 lazy_static! {
@@ -95,7 +97,7 @@ struct Context<T: ::serde::Serialize> {
 
 impl<T: ::serde::Serialize> Context<T> {
     fn new(page: String, title_id: &str, is_landing: bool, data: T, lang: String) -> Self {
-        let helper = I18NHelper::new();
+        let helper = create_loader();
         let title = if title_id.is_empty() {
             "".into()
         } else {
@@ -226,6 +228,16 @@ fn production() -> Template {
 #[get("/<locale>/production/users", rank = 10)]
 fn production_locale(locale: SupportedLocale) -> Template {
     render_production(locale.0)
+}
+
+#[get("/sponsors")]
+fn sponsors() -> Template {
+    render_sponsors(ENGLISH.into())
+}
+
+#[get("/<locale>/sponsors", rank = 10)]
+fn sponsors_locale(locale: SupportedLocale) -> Template {
+    render_sponsors(locale.0)
 }
 
 #[get("/<category>/<subject>", rank = 4)]
@@ -395,6 +407,20 @@ fn render_production(lang: String) -> Template {
     Template::render(page, &context)
 }
 
+fn render_sponsors(lang: String) -> Template {
+    println!("foo");
+    let page = "sponsors/index".to_string();
+    let context = Context::new(
+        page.clone(),
+        "sponsors-page-title",
+        false,
+        sponsors::render_data(&lang),
+        lang,
+    );
+
+    Template::render(page, &context)
+}
+
 fn render_governance(lang: String) -> Result<Template, Status> {
     match teams::index_data() {
         Ok(data) => {
@@ -451,7 +477,7 @@ fn main() {
     let templating = Template::custom(|engine| {
         engine
             .handlebars
-            .register_helper("text", Box::new(I18NHelper::new()));
+            .register_helper("fluent", Box::new(FluentHelper::new(create_loader())));
         engine
             .handlebars
             .register_helper("team-text", Box::new(TeamHelper::new()));
@@ -468,6 +494,7 @@ fn main() {
                 governance,
                 team,
                 production,
+                sponsors,
                 subject,
                 files,
                 favicon,
@@ -478,6 +505,7 @@ fn main() {
                 governance_locale,
                 team_locale,
                 production_locale,
+                sponsors_locale,
                 subject_locale,
                 components_locale,
                 redirect,
