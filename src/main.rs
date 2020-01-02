@@ -304,7 +304,7 @@ fn not_found(req: &Request) -> Template {
 
 fn not_found_locale(lang: String) -> Template {
     let page = "404";
-    let context = Context::new("404".into(), "404-page-title", false, (), lang);
+    let context = Context::new("404".into(), "error404-page-title", false, (), lang);
     Template::render(page, &context)
 }
 
