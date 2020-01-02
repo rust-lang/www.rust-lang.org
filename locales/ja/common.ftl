@@ -4,11 +4,13 @@ rust = Rust
 get-started-exclamation = はじめましょう！
 getting-started = はじめに
 why-rust = なぜRustか？
+production-use = 本番環境での利用
 learn-more = もっと読む
 discord = Discord
 
 ## components/layout.hbs
 
+meta-description = 効率的で信頼性のあるソフトウェアを書く力を与える言語
 page-title = { $pagename } - Rustプログラミング言語
 index-title = Rustプログラミング言語
 
@@ -32,6 +34,7 @@ footer-policies = 規約とポリシー
 footer-coc = 行動規範
 footer-licenses = ライセンス
 footer-media = ロゴポリシーとメディアガイド
+footer-security = セキュリティ開示
 footer-policies-all = 全てのポリシー
 footer-social = ソーシャルメディア
 footer-get-help = ヘルプ
@@ -44,3 +47,4 @@ footer-old-site = <a href="https://prev.rust-lang.org">以前のウェブサイ�
 
 ## what/index.hbs
 
+what-header = 使用例

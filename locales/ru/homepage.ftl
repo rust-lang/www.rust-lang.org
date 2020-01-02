@@ -59,3 +59,11 @@ get-involved-contribute-link = Читать руководство
 
 ## components/panels/thanks.hbs
 
+thanks-title = Благодарности
+thanks-blurb = Rust не существовал бы без щедрого вклада времени, работы и ресурсов от отдельных лиц и компаний. Мы очень благодарны за поддержку!
+thanks-individuals-header = Отдельные участники
+thanks-individuals-blurb = Rust - это проект сообщества, и он очень благодарен за многочисленные вклады сообщества, которые он получает.
+thanks-individuals-link = Посмотреть отдельных участников
+thanks-companies-header = Корпоративные спонсоры
+thanks-companies-blurb = Проект Rust получает поддержку от компаний через пожертвования для инфраструктуры.
+thanks-companies-link = Посмотреть спонсоров
