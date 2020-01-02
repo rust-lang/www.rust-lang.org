@@ -71,6 +71,10 @@ pub const EXPLICIT_LOCALE_INFO: &[LocaleInfo] = &[
         lang: "it",
         text: "Italiano",
     },
+    LocaleInfo {
+        lang: "ru",
+        text: "Русский",
+    },
 ];
 
 lazy_static! {
