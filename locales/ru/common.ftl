@@ -22,6 +22,7 @@ nav-tools = Инструменты
 nav-governance = Управление
 nav-community = Сообщество
 nav-blog = Блог
+nav-playground = Песочница
 choose-language = Язык
 nav-logo-alt = Логотип Rust
 
