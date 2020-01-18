@@ -56,6 +56,24 @@ Each translation must be reviewed by a second member of the team for quality con
   * You see the proposed suggestions. Check the checkmark to accept one, or the cross to refuse.
 * You may add a better suggestions, which others can in turn review
 
+### Locally testing translations                                         
+
+It can be useful to locally preview the translation to evaluate if the layout breaks (example with different graphemes).                             
+
+In order to check the changes, you need:
+
+* Clone the website code repository
+
+* [Run the website locally](https://github.com/rust-lang/www.rust-lang.org#running-the-app-locally)
+
+* Download from Pontoon the translation you're currently working on
+
+![2020-01-18_00-01-1579304647](https://user-images.githubusercontent.com/6098822/72654165-a2577000-398e-11ea-96f0-d44c5111d754.jpg)
+
+* Copy the downloaded file into `locales/<lang>` of your local copy of the website
+
+* Restart the website locally everytime you change a local file
+
 ## Special case: Policies
 
 All policy documents outside other then English must contain a link to the original on top, indicating that the English translation is binding and the translation is a best effort.
