@@ -24,6 +24,7 @@ nav-tools = Tools
 nav-governance = Governance
 nav-community = Community
 nav-blog = Blog
+nav-playground = Playground
 
 choose-language = Language
 
