@@ -60,7 +60,7 @@ learn-install-cargo =
       <li>запускает ваш проект с <code>cargo run</code></li>
       <li>тестирует ваш проект с <code>cargo test</code></li>
       <li>собирает документацию для вашего проекта с <code>cargo doc</code></li>
-      <li>публикует билиоитеку на <a href="https://crates.io">crates.io</a> с <code>cargo publish</code></li>
+      <li>публикует библиотеку на <a href="https://crates.io">crates.io</a> с <code>cargo publish</code></li>
     </ul>
     <p>Чтобы удостовериться, что Rust и Cargo установлены, вы можете запустить в терминале следующую команду:</p>
     <p><code>cargo --version</code></p>
