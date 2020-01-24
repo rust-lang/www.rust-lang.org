@@ -4,6 +4,7 @@
 ## templates/policies/index.hbs
 
 policies-page-title = ポリシー
+policies-page-description = このページはRustのポリシーに関するリンク集です。
 policies-code-of-conduct-link = 行動規範
 policies-licenses-link = ライセンス
 policies-media-guide-link = ロゴポリシーおよびメディアガイド

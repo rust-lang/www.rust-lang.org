@@ -26,6 +26,7 @@ embedded-pitch-portability-description = ライブラリやドライバを一度
 embedded-pitch-community-alt = 盾ロゴ
 embedded-pitch-community-heading = コミュニティドリブン
 embedded-pitch-community-description = 組込みシステムのサポートはRustオープンソースプロジェクトの一環として、最高クラスのオープンソースコミュニティによってパートナー企業からの支援を受けつつ行われています。
+embedded-learn-more-link = もっと知る
 
 ## Showcase (templates/components/what/showcase.hbs)
 
