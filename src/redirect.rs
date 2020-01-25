@@ -30,7 +30,7 @@ impl<'r> FromParam<'r> for Destination {
             "install.html" => "/tools/install",
             "legal.html" => "/policies",
             "other-installers.html" => {
-                "https://forge.rust-lang.org/other-installation-methods.html"
+                "https://forge.rust-lang.org/infra/other-installation-methods.html"
             }
             "security.html" => "/policies/security",
             "team.html" => "/governance",
