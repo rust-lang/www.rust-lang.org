@@ -31,7 +31,7 @@ struct Data {
 }
 
 impl Data {
-    fn load() -> Result<Self, Box<Error>> {
+    fn load() -> Result<Self, Box<dyn Error>> {
         Ok(Data {
             teams: crate::cache::get::<Vec<Team>>(get_teams)?,
         })
@@ -42,7 +42,7 @@ impl Data {
         Data { teams }
     }
 
-    fn index_data(self) -> Result<IndexData, Box<Error>> {
+    fn index_data(self) -> Result<IndexData, Box<dyn Error>> {
         let mut data = IndexData::default();
 
         self.teams
@@ -72,14 +72,13 @@ impl Data {
         Ok(data)
     }
 
-    pub fn page_data(self, section: &str, team_name: &str) -> Result<PageData, Box<Error>> {
+    pub fn page_data(self, section: &str, team_name: &str) -> Result<PageData, Box<dyn Error>> {
         // Find the main team first
         let main_team = self
             .teams
             .iter()
             .filter(|team| team.website_data.as_ref().map(|ws| ws.page.as_str()) == Some(team_name))
-            .filter(|team| kind_to_str(team.kind) == section)
-            .next()
+            .find(|team| kind_to_str(team.kind) == section)
             .cloned()
             .ok_or(TeamNotFound)?;
 
@@ -109,15 +108,15 @@ impl Data {
     }
 }
 
-pub fn index_data() -> Result<IndexData, Box<Error>> {
+pub fn index_data() -> Result<IndexData, Box<dyn Error>> {
     Data::load()?.index_data()
 }
 
-pub fn page_data(section: &str, team_name: &str) -> Result<PageData, Box<Error>> {
+pub fn page_data(section: &str, team_name: &str) -> Result<PageData, Box<dyn Error>> {
     Data::load()?.page_data(section, team_name)
 }
 
-fn get_teams() -> Result<Box<Any>, Box<Error>> {
+fn get_teams() -> Result<Box<dyn Any>, Box<dyn Error>> {
     let resp: Teams = reqwest::get(&format!("{}/teams.json", BASE_URL))?
         .error_for_status()?
         .json()?;
