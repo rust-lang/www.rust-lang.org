@@ -87,6 +87,12 @@ pub struct TeamHelper {
 
 impl TeamHelper {
     pub fn new() -> Self {
+        Self::default()
+    }
+}
+
+impl Default for TeamHelper {
+    fn default() -> Self {
         Self {
             i18n: create_loader(),
         }
