@@ -34,7 +34,7 @@ language-values-performance-blurb = Rust is blazingly fast and memory-efficient:
 
 language-values-reliability = Reliability
 language-values-reliability-blurb = Rust’s rich type system and ownership model guarantee memory-safety
-          and thread-safety &mdash; and enable you to eliminate many classes of
+          and thread-safety &mdash; enable you to eliminate many classes of
           bugs at compile-time.
 
 language-values-productivity = Productivity
