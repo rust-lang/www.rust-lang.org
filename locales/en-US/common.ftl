@@ -10,6 +10,13 @@ production-use = Production use
 learn-more = Learn More
 discord = Discord
 
+## components/panels/domain.hbs
+
+cli-learn-more = Building Tools
+wasm-learn-more = Writing Web Apps
+net-learn-more = Working On Servers
+embedded-learn-more = Starting With Embedded
+
 ## components/layout.hbs
 
 meta-description = A language empowering everyone to build reliable and efficient software.
