@@ -1,0 +1,2 @@
+/* global hljs */
+hljs.initHighlightingOnLoad()

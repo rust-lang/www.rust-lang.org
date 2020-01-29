@@ -58,20 +58,6 @@ pre > code {
   white-space: pre;
 }
 
-@mixin code-highlight-white {
-  color: white;
-  background-color: rgba(black, 0.3);
-  border: 1px solid #e1e1e1;
-  border-radius: $border-radius;
-}
-
-@mixin code-highlight-black {
-  color: black;
-  background-color: rgba(black, 0.05);
-  border: 1px solid rgba(black, 0.25);
-  border-radius: $border-radius;
-}
-
 .button,
 button {
   display: inline-block;
@@ -274,9 +260,6 @@ a.brand {
       border-color: white;
     }
   }
-  code {
-    @include code-highlight-white();
-  }
 }
 
 .green {
@@ -299,9 +282,6 @@ a.brand {
       border-color: white;
     }
   }
-  code {
-    @include code-highlight-white();
-  }
 }
 
 .white {
@@ -322,9 +302,6 @@ a.brand {
     &:focus {
       border-color: $gray;
     }
-  }
-  code {
-    @include code-highlight-black();
   }
 }
 
@@ -347,9 +324,6 @@ a.brand {
     &:focus {
       border-color: white;
     }
-  }
-  code {
-    @include code-highlight-white();
   }
 }
 
