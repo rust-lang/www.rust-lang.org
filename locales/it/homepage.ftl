@@ -60,3 +60,14 @@ get-involved-watch-rust-link = Guarda i Video
 get-involved-contribute = Contribuisci
 get-involved-contribute-blurb = Rust è davvero uno sforzo collettivo di una community e ogni contributo da parte di hobbisti e utenti che lo usano in produzione sono i benvenuti, dai principianti ai professionisti. Aiutaci a migliorare l'esperienza d'uso di Rust!
 get-involved-contribute-link = Leggi la guida per contribuire
+
+## components/panels/thanks.hbs
+
+thanks-title = Ringraziamenti
+thanks-blurb = Rust non potrebbe esistere senza un generoso contributo in termini di tempo, lavoro e risorse individuali o da parte di aziende. Siamo estremamente riconoscenti per il vostro supporto!
+thanks-individuals-header = Contributi individuali
+thanks-individuals-blurb = Rust è un progetto community ed è estremamente riconoscente per i numerosi contributi ricevuti da parte della comunità.
+thanks-individuals-link = Contributi individuali
+thanks-companies-header = Contributi aziendali
+thanks-companies-blurb = Rust riceve supporto da aziende attraverso donazioni per l'infrastruttura
+thanks-companies-link = Visualizza gli sponsor

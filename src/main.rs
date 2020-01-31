@@ -1,4 +1,5 @@
 #![feature(proc_macro_hygiene, decl_macro)]
+#![cfg_attr(test, deny(warnings))]
 
 #[macro_use]
 extern crate lazy_static;
@@ -38,9 +39,7 @@ use production::User;
 use std::collections::hash_map::DefaultHasher;
 use std::env;
 use std::fs;
-use std::fs::File;
 use std::hash::Hasher;
-use std::io::prelude::*;
 use std::path::{Path, PathBuf};
 
 use rand::seq::SliceRandom;
@@ -323,15 +322,13 @@ fn compile_sass(filename: &str) -> String {
     let scss_file = format!("./src/styles/{}.scss", filename);
 
     let css = compile_file(&scss_file, Options::default())
-        .expect(&format!("couldn't compile sass: {}", &scss_file));
+        .unwrap_or_else(|_| panic!("couldn't compile sass: {}", &scss_file));
 
     let css_sha = format!("{}_{}", filename, hash_css(&css));
     let css_file = format!("./static/styles/{}.css", css_sha);
 
-    let mut file =
-        File::create(&css_file).expect(&format!("couldn't make css file: {}", &css_file));
-    file.write_all(&css.into_bytes())
-        .expect(&format!("couldn't write css file: {}", &css_file));
+    fs::write(&css_file, css.into_bytes())
+        .unwrap_or_else(|_| panic!("couldn't write css file: {}", &css_file));
 
     String::from(&css_file[1..])
 }
@@ -377,10 +374,9 @@ fn render_index(lang: String) -> Template {
 
     let page = "index".to_string();
     let data = IndexData {
-        rust_version: rust_version::rust_version().unwrap_or(String::new()),
-        rust_release_post: rust_version::rust_release_post().map_or(String::new(), |v| {
-            format!("https://blog.rust-lang.org/{}", v)
-        }),
+        rust_version: rust_version::rust_version().unwrap_or_else(String::new),
+        rust_release_post: rust_version::rust_release_post()
+            .map_or_else(String::new, |v| format!("https://blog.rust-lang.org/{}", v)),
     };
     let context = Context::new(page.clone(), "", true, data, lang);
     Template::render(page, &context)
@@ -466,9 +462,9 @@ fn render_team(
 }
 
 fn render_subject(category: Category, subject: String, lang: String) -> Template {
-    let page = format!("{}/{}", category.name(), subject.as_str()).to_string();
+    let page = format!("{}/{}", category.name(), subject.as_str());
     let title_id = format!("{}-{}-page-title", category.name(), subject);
-    let context = Context::new(subject.clone(), &title_id, false, (), lang);
+    let context = Context::new(subject, &title_id, false, (), lang);
 
     Template::render(page, &context)
 }

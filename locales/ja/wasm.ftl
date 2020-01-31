@@ -19,6 +19,7 @@ wasm-why-rust-amenities-alt = 荷物
 wasm-get-started-wasm-alt = WebAssemblyロゴ
 wasm-get-started-wasm-link = もっと学ぶ
 wasm-get-started-book-alt = wasm フェリス
+wasm-get-started-book-description = Rustを使ったWebAssemblyアプリケーションのビルド、デバッグ、プロファイル、そしてデプロイの方法を学ぼう！
 wasm-get-started-mdn-alt = MDNロゴ
 wasm-get-started-mdn-description = Mozilla Developer NetworkでWebAssemblyについてもっと学ぶ
 wasm-get-started-mdn-link = 確認する

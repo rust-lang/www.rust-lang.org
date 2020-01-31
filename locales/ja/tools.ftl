@@ -21,9 +21,14 @@ tools-install-page-title = Rust をインストール
 install-using-rustup-heading = rustup を使う（おすすめ）
 install-notes-heading = Rust のインストールについての注意
 install-other-methods-heading = その他のインストール方法
+install-other-methods-description = 上記の<code>rustup</code>によるインストールが、ほとんどの開発者にとってRustをインストールをする好ましい方法です。しかし、Rustは他の方法でもインストールすることができます。
+install-other-methods-link = もっと知る
 
 ## components/tools/rustup.hbs
 
+tools-rustup-unixy = あなたはmacOSかLinuxまたはその他のUnix系OSを使用しているようです。RustupをダウンロードしてRustをインストールするには、ターミナルで以下のコマンドを実行してください。それから画面に表示される指示に従ってください。
+tools-rustup-windows = あなたはWindowsを使用しているようです。Rustをインストールするには、以下のコマンドをダウンロードして実行してください。それから画面に表示される指示に従ってください。
+tools-rustup-wsl-heading = Windows Subsystem for Linux
 tools-rustup-wsl = あなたがWindows Subsystem for Linuxのユーザーであるなら、下記をターミナル上で実行し、スクリーン上の説明に従ってRustをインストールしてください。
 tools-rustup-report = 問題を報告する
 

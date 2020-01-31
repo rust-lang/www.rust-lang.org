@@ -1,19 +1,19 @@
-@import 'tachyons-ext';
+@import "tachyons-ext";
 
-$body-font: 'Fira Sans', Helvetica, Arial, sans-serif;
-$header-font: 'Alfa Slab One', serif;
+$body-font: "Fira Sans", Helvetica, Arial, sans-serif;
+$header-font: "Alfa Slab One", serif;
 
-$gray: #454C52;
-$red: #C14566;
+$gray: #454c52;
+$red: #c14566;
 $green: #398277;
-$purple: #403D58;
-$yellow: #FFD45E;
+$purple: #403d58;
+$yellow: #ffd45e;
 $border-radius: 4px;
-$link-color: #1EAEDB;
+$link-color: #1eaedb;
 $footer-gray: #303030;
 
 html {
-  font-size: 62.5%
+  font-size: 62.5%;
 }
 
 @media screen and (min-width: 30em) {
@@ -33,7 +33,7 @@ body {
   display: flex;
   flex-direction: column;
   & > #main-content {
-      flex: 1;
+    flex: 1;
   }
 }
 
@@ -43,12 +43,12 @@ body {
 }
 
 code {
-  padding: .2rem .5rem;
-  margin: 0 .2rem;
+  padding: 0.2rem 0.5rem;
+  margin: 0 0.2rem;
   font-size: 90%;
   white-space: nowrap;
-  background: #F1F1F1;
-  border: 1px solid #E1E1E1;
+  background: #f1f1f1;
+  border: 1px solid #e1e1e1;
   border-radius: 4px;
   overflow: auto;
 }
@@ -56,20 +56,6 @@ code {
 pre > code {
   display: block;
   white-space: pre;
-}
-
-@mixin code-highlight-white {
-  color: white;
-  background-color: rgba(black, 0.3);
-  border: 1px solid #E1E1E1;
-  border-radius: $border-radius;
-}
-
-@mixin code-highlight-black {
-  color: black;
-  background-color: rgba(black, 0.05);
-  border: 1px solid rgba(black, 0.25);
-  border-radius: $border-radius;
 }
 
 .button,
@@ -80,7 +66,7 @@ button {
   padding: 8px 30px;
   text-align: center;
   font-weight: 600;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 4px;
@@ -88,7 +74,8 @@ button {
   cursor: pointer;
   box-sizing: border-box;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     outline: 0;
   }
 }
@@ -109,7 +96,8 @@ code.code-header {
   margin: 0 0 3px 0;
 }
 
-header h1, section h2 {
+header h1,
+section h2 {
   z-index: 999999;
   position: relative;
   letter-spacing: 1px;
@@ -137,7 +125,8 @@ section h3 {
   line-height: 1.3;
 }
 
-section p, code {
+section p,
+code {
   line-height: 1.6;
 }
 
@@ -151,7 +140,8 @@ header .button.button-download {
   font-size: 2.25rem;
   margin-top: 20px;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     border-color: black;
   }
 }
@@ -181,8 +171,8 @@ section {
   }
 
   h2 {
-      font-family: $body-font;
-      font-weight: 800;
+    font-family: $body-font;
+    font-weight: 800;
   }
 
   h3 {
@@ -265,12 +255,10 @@ a.brand {
     border-color: $purple;
     color: white;
     text-decoration: none;
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       border-color: white;
     }
-  }
-  code {
-    @include code-highlight-white();
   }
 }
 
@@ -289,17 +277,15 @@ a.brand {
     border-color: $purple;
     color: white;
     text-decoration: none;
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       border-color: white;
     }
-  }
-  code {
-    @include code-highlight-white();
   }
 }
 
 .white {
-   color: black;
+  color: black;
   .highlight {
     background-color: $yellow;
   }
@@ -312,12 +298,10 @@ a.brand {
     border-color: $yellow;
     color: $gray;
     text-decoration: none;
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       border-color: $gray;
     }
-  }
-  code {
-    @include code-highlight-black();
   }
 }
 
@@ -336,12 +320,10 @@ a.brand {
     border-color: $red;
     color: white;
     text-decoration: none;
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       border-color: white;
     }
-  }
-  code {
-    @include code-highlight-white();
   }
 }
 
@@ -418,7 +400,7 @@ footer .attribution {
 }
 
 footer .languages {
-  color: $gray
+  color: $gray;
 }
 
 blockquote {
@@ -431,7 +413,7 @@ blockquote {
 }
 
 blockquote::before {
-  content: '“';
+  content: "“";
   color: $gray;
   font-size: 3em;
   position: absolute;
@@ -493,7 +475,8 @@ blockquote::before {
   min-height: 300px;
 }
 
-#share-your-experience h3, #production-domains h3 {
+#share-your-experience h3,
+#production-domains h3 {
   padding-bottom: 20px;
   text-align: center;
 }
@@ -523,7 +506,6 @@ blockquote::before {
     color: black;
   }
 }
-
 
 #rust-trademarks {
   img {
@@ -635,8 +617,8 @@ blockquote::before {
   background-color: rgba(white, 0.15);
   border: 1px solid rgba(white, 0.65);
   margin-bottom: 20px;
-  padding: .2rem .5rem;
-  margin: 0 .2rem;
+  padding: 0.2rem 0.5rem;
+  margin: 0 0.2rem;
   border-radius: 4px;
 }
 
@@ -672,15 +654,15 @@ blockquote::before {
   }
 }
 
-  section header {
-    padding: {
-      top: 10px;
-      bottom: 30px;
-    }
-    h2 {
-      font-size: 3rem;
-    }
+section header {
+  padding: {
+    top: 10px;
+    bottom: 30px;
   }
+  h2 {
+    font-size: 3rem;
+  }
+}
 
 .team {
   text-align: center;
@@ -744,10 +726,10 @@ blockquote::before {
 }
 
 #pb4 {
-    padding-bottom: 3.8em;
+  padding-bottom: 3.8em;
 }
 
 .max-height-5rem {
-    /* Tachyons is missing this class */
-    max-height: 5rem;
+  /* Tachyons is missing this class */
+  max-height: 5rem;
 }

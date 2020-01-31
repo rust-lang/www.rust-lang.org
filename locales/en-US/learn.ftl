@@ -74,6 +74,8 @@ learn-play-button = Try Rust without installing
 
 learn-install-rustup-header = Rustup: the Rust installer and version management tool
 learn-install-rustup = The primary way that folks install Rust is through a tool called Rustup, which is a Rust installer and version management tool.
+learn-install-rustup-update-header = Is rustup up to date?
+learn-install-rustup-update = Rust updates very frequently. If you have installed Rustup some time ago, chances are your Rust version is out of date. Get the latest version of Rust by running { $update-command }.
 learn-install-rustup-button = Learn more about installation
 
 

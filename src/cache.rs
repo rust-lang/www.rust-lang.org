@@ -5,16 +5,16 @@ use std::sync::RwLock;
 use std::thread;
 use std::time::Instant;
 
-type Generator = fn() -> Result<Box<Any>, Box<Error>>;
+type CacheItem = (Box<dyn Any + Send + Sync>, Instant);
+type Generator = fn() -> Result<Box<dyn Any>, Box<dyn Error>>;
 
 const CACHE_TTL_SECS: u64 = 120;
 
 lazy_static! {
-    static ref CACHE: RwLock<HashMap<Generator, (Box<Any + Send + Sync>, Instant)>> =
-        RwLock::new(HashMap::new());
+    static ref CACHE: RwLock<HashMap<Generator, CacheItem>> = RwLock::new(HashMap::new());
 }
 
-pub fn get<T>(generator: Generator) -> Result<T, Box<Error>>
+pub fn get<T>(generator: Generator) -> Result<T, Box<dyn Error>>
 where
     T: Send + Sync + Clone + 'static,
 {
@@ -41,7 +41,7 @@ where
     })
 }
 
-fn update_cache<T>(generator: Generator) -> Result<T, Box<Error>>
+fn update_cache<T>(generator: Generator) -> Result<T, Box<dyn Error>>
 where
     T: Send + Sync + Clone + 'static,
 {
@@ -70,7 +70,7 @@ mod tests {
     fn test_cache_basic() {
         static GENERATOR_CALLED: AtomicBool = AtomicBool::new(false);
 
-        fn generator() -> Result<Box<Any>, Box<Error>> {
+        fn generator() -> Result<Box<dyn Any>, Box<dyn Error>> {
             GENERATOR_CALLED.store(true, Ordering::SeqCst);
             Ok(Box::new("hello world"))
         }
@@ -90,7 +90,7 @@ mod tests {
     fn test_cache_refresh() {
         static GENERATOR_CALLED: AtomicBool = AtomicBool::new(false);
 
-        fn generator() -> Result<Box<Any>, Box<Error>> {
+        fn generator() -> Result<Box<dyn Any>, Box<dyn Error>> {
             GENERATOR_CALLED.store(true, Ordering::SeqCst);
             thread::sleep(Duration::from_millis(100));
             Ok(Box::new("hello world"))
@@ -125,7 +125,7 @@ mod tests {
     fn test_errors_skip_cache() {
         static GENERATOR_CALLED: AtomicBool = AtomicBool::new(false);
 
-        fn generator() -> Result<Box<Any>, Box<Error>> {
+        fn generator() -> Result<Box<dyn Any>, Box<dyn Error>> {
             GENERATOR_CALLED.store(true, Ordering::SeqCst);
             Err("an error".into())
         }

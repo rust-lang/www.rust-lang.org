@@ -7,15 +7,14 @@ use toml;
 static MANIFEST_URL: &str = "https://static.rust-lang.org/dist/channel-rust-stable.toml";
 static RELEASES_FEED_URL: &str = "https://blog.rust-lang.org/releases.json";
 
-fn fetch_rust_version() -> Result<Box<Any>, Box<Error>> {
+fn fetch_rust_version() -> Result<Box<dyn Any>, Box<dyn Error>> {
     let manifest = reqwest::get(MANIFEST_URL)?.text()?.parse::<toml::Value>()?;
     let rust_version = manifest["pkg"]["rust"]["version"].as_str().unwrap();
-    let version: String =
-        rust_version[..rust_version.find(' ').unwrap_or(rust_version.len())].to_string();
+    let version: String = rust_version.split(' ').next().unwrap().to_owned();
     Ok(Box::new(version))
 }
 
-fn fetch_rust_release_post() -> Result<Box<Any>, Box<Error>> {
+fn fetch_rust_release_post() -> Result<Box<dyn Any>, Box<dyn Error>> {
     let releases = reqwest::get(RELEASES_FEED_URL)?
         .text()?
         .parse::<serde_json::Value>()?;

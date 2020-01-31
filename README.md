@@ -1,7 +1,7 @@
 # www.rust-lang.org
 > the home of the rust website
 
-[![Build Status](https://travis-ci.com/rust-lang/blog.rust-lang.org.svg?branch=master)](https://travis-ci.com/rust-lang/blog.rust-lang.org)
+![CI](https://github.com/rust-lang/www.rust-lang.org/workflows/CI/badge.svg)
 
 ## Development
 

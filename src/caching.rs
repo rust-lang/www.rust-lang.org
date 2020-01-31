@@ -34,7 +34,7 @@ where
     fn cached(self, directives: Vec<CacheDirective>) -> Cached<Self> {
         Cached {
             inner: self,
-            directives: directives,
+            directives,
         }
     }
 }
