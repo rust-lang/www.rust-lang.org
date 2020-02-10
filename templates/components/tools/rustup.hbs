@@ -5,10 +5,19 @@
   </div>
   <div id="platform-instructions-win" class="instructions dn">
     <p>{{fluent "tools-rustup-windows"}}</p>
-    <a href="https://win.rustup.rs" class="button button-secondary">rustup‑init.exe</a>
-    <p><b>{{fluent "tools-rustup-wsl-heading"}}</b></p>
-    <p>{{fluent "tools-rustup-wsl"}}</p>
-    <pre><code class="db w-100">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></pre>
+    <div class="mw9 center ph3-ns">
+    <div class="cf ph2-ns">
+      <div class="fl w-100 w-50-ns pa2">
+      <a href="https://static.rust-lang.org/rustup/dist/i686-pc-windows-msvc/rustup-init.exe" class="button button-secondary">{{fluent "install-rustup32-button"}}</a>
+      </div>
+      <div class="fl w-100 w-50-ns pa2">
+      <a href="https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-msvc/rustup-init.exe" class="button button-secondary">{{fluent "install-rustup64-button"}}</a>
+      </div>
+    </div>
+  </div>
+  <h3 class="mt4">{{fluent "tools-rustup-wsl-heading"}}</h3>
+  <p>{{fluent "tools-rustup-wsl"}}</p>
+  <pre><code class="db w-100">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></pre>
   </div>
   <div id="platform-instructions-unknown" class="instructions dn">
     <!-- unrecognized platform: ask for help -->
