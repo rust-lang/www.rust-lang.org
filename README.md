@@ -3,6 +3,8 @@
 
 ![CI](https://github.com/rust-lang/www.rust-lang.org/workflows/CI/badge.svg)
 
+* [**View Staging (master)**](http://www-staging.rust-lang.org)
+
 ## Development
 
 ### Running the app locally
