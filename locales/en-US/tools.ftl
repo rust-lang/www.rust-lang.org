@@ -60,6 +60,10 @@ tools-install-page-title = Install Rust
 
 install-using-rustup-heading = Using rustup (Recommended)
 
+install-rustup32-button = Download <span class="nowrap">rustup-init.exe</span> <span class="nowrap">(32-bit)</span>
+
+install-rustup64-button = Download <span class="nowrap">rustup-init.exe</span> <span class="nowrap">(64-bit)</span>
+
 install-notes-heading = Notes about Rust installation
 
 install-notes-getting-started-description = If you're just getting started with
@@ -149,8 +153,8 @@ install-other-methods-link = Learn more
 
 ## components/tools/rustup.hbs
 
-tools-rustup-unixy = It looks like you’re running macOS, Linux, or another Unix-like OS. To download Rustup and install Rust, run the following in your terminal, then follow the on-screen instructions.
-tools-rustup-windows = It looks like you’re running Windows. To install Rust, download and run the following, and then follow the onscreen instructions.
+tools-rustup-unixy = It looks like you’re running macOS, Linux, or another Unix-like OS. To download Rustup and install Rust, run the following in your terminal, then follow the on-screen instructions. See <a href="https://forge.rust-lang.org/infra/other-installation-methods.html">"Other Installation Methods"</a> if you are on Windows.
+tools-rustup-windows = It looks like you’re running Windows. To start using Rust, download the installer, then run the program and follow the onscreen instructions. See <a href="https://forge.rust-lang.org/infra/other-installation-methods.html">"Other Installation Methods"</a> if you are not on Windows.
 tools-rustup-wsl-heading = Windows Subsystem for Linux
 tools-rustup-wsl = If you’re a Windows Subsystem for Linux user run the following in your terminal, then follow the on-screen instructions to install Rust.
 tools-rustup-unknown = Rust runs on Windows, Linux, macOS, FreeBSD and NetBSD. If you are on one of these platforms and are seeing this then please report an issue with the following values:
