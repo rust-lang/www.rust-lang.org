@@ -1,21 +1,50 @@
 use reqwest;
 use serde_json;
 use std::any::Any;
+use std::env;
 use std::error::Error;
 use toml;
 
 static MANIFEST_URL: &str = "https://static.rust-lang.org/dist/channel-rust-stable.toml";
 static RELEASES_FEED_URL: &str = "https://blog.rust-lang.org/releases.json";
 
+enum FetchTarget {
+    Manifest,
+    ReleasesFeed,
+}
+
+fn fetch(target: FetchTarget) -> Result<reqwest::Response, Box<dyn Error>> {
+    let proxy_env = env::var("http_proxy")
+        .or_else(|_| env::var("HTTPS_PROXY"))
+        .ok();
+
+    let client = match proxy_env {
+        Some(proxy_env) => {
+            let proxy = reqwest::Proxy::https(&proxy_env).unwrap();
+            reqwest::ClientBuilder::new().proxy(proxy).build().unwrap()
+        }
+        None => reqwest::Client::new(),
+    };
+
+    let url = match target {
+        FetchTarget::Manifest => MANIFEST_URL,
+        FetchTarget::ReleasesFeed => RELEASES_FEED_URL,
+    };
+
+    Ok(client.get(url).send()?)
+}
+
 fn fetch_rust_version() -> Result<Box<dyn Any>, Box<dyn Error>> {
-    let manifest = reqwest::get(MANIFEST_URL)?.text()?.parse::<toml::Value>()?;
+    let manifest = fetch(FetchTarget::Manifest)?
+        .text()?
+        .parse::<toml::Value>()?;
     let rust_version = manifest["pkg"]["rust"]["version"].as_str().unwrap();
     let version: String = rust_version.split(' ').next().unwrap().to_owned();
     Ok(Box::new(version))
 }
 
 fn fetch_rust_release_post() -> Result<Box<dyn Any>, Box<dyn Error>> {
-    let releases = reqwest::get(RELEASES_FEED_URL)?
+    let releases = fetch(FetchTarget::ReleasesFeed)?
         .text()?
         .parse::<serde_json::Value>()?;
     let url = releases["releases"][0]["url"].as_str().unwrap().to_string();
