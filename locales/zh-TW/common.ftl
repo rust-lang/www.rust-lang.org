@@ -42,7 +42,7 @@ footer-youtube-alt = Twitter
 footer-alt-youtube = youtube 標誌
 footer-discord-alt = { discord }
 footer-github-alt = GitHub
-footer-attribution = 由 Rust 團隊維護，發現錯字了嗎？<a href="https://github.com/rust-lang/www.rust-lang.org">請在此提交修復</a>！
+footer-attribution = 由 Rust 團隊維護，發現錯字了嗎？<a href="https://github.com/rust-lang/www.rust-lang.org/issues/new/choose">請在此提交修復！</a>
 footer-old-site = 想查看<a href="https://prev.rust-lang.org">舊版網站</a>嗎？
 
 ## what/index.hbs
