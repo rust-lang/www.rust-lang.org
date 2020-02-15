@@ -44,7 +44,7 @@ footer-discord-alt = { discord }
 footer-github-alt = GitHub
 footer-attribution =
     Mantido pela Equipe Rust. Encontrou algum erro?
-    <a href="https://github.com/rust-lang/www.rust-lang.org">Envie uma correção aqui</a>!
+    <a href="https://github.com/rust-lang/www.rust-lang.org/issues/new/choose">Envie uma correção aqui!</a>
 footer-old-site = Procurando pelo <a href="https://prev.rust-lang.org">site antigo</a>?
 
 ## what/index.hbs
