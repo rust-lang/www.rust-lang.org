@@ -8,6 +8,9 @@ production-use = 本番環境での利用
 learn-more = もっと読む
 discord = Discord
 
+## components/panels/domain.hbs
+
+
 ## components/layout.hbs
 
 meta-description = 効率的で信頼性のあるソフトウェアを書く力を与える言語
@@ -22,6 +25,7 @@ nav-tools = ツール
 nav-governance = ガバナンス
 nav-community = コミュニティ
 nav-blog = ブログ
+nav-playground = Playground
 choose-language = 言語
 nav-logo-alt = Rustのロゴ
 
