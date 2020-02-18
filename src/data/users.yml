@@ -33,6 +33,11 @@
   logo: aisenz.svg
   how: "Rust contributes to our LoRaWAN services and industry solutions in performance, reliability, and productivity."
 -
+  name: Aleph Alpha
+  url: https://aleph-alpha.de/
+  logo: alephalpha.svg
+  how: "Rust is the backbone technology for our data pipelines, infrastructure modules and machine learning tasks."
+-
   name: Algorithmia
   url: https://algorithmia.com/
   logo: algorithmia.png

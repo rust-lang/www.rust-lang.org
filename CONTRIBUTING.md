@@ -37,7 +37,7 @@ page of the site.
 
 If you would like your company to be displayed on the 'Production' page
 (i.e. would like to edit `src/data/users.yml`), you should
-e-mail production@rust-lang.org (please do *not* raise a PR) with:
+e-mail core@rust-lang.org (please do *not* raise a PR) with:
 
  - Your company name, URL and logo.
  - A one short sentence describing your usage of Rust, ideally with a link

@@ -3,6 +3,8 @@
 
 ![CI](https://github.com/rust-lang/www.rust-lang.org/workflows/CI/badge.svg)
 
+* [**View Staging (master)**](http://www-staging.rust-lang.org)
+
 ## Development
 
 ### Running the app locally
@@ -21,3 +23,7 @@
 ### Contributing
 
 Please read our [`CONTRIBUTING.md`](CONTRIBUTING.md) before submitting a PR!
+
+### Deployment
+
+www.rust-lang.org is currently hosted on Heroku. The `master` branch is automatically deployed to [www-staging.rust-lang.org](https://www-staging.rust-lang.org) and the `deploy` branch is a snapshot of `master` that is manually updated and automatically deployed to www.rust-lang.org .

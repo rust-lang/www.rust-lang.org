@@ -8,6 +8,9 @@ production-use = 本番環境での利用
 learn-more = もっと読む
 discord = Discord
 
+## components/panels/domain.hbs
+
+
 ## components/layout.hbs
 
 meta-description = 効率的で信頼性のあるソフトウェアを書く力を与える言語
@@ -22,6 +25,7 @@ nav-tools = ツール
 nav-governance = ガバナンス
 nav-community = コミュニティ
 nav-blog = ブログ
+nav-playground = Playground
 choose-language = 言語
 nav-logo-alt = Rustのロゴ
 
@@ -42,7 +46,7 @@ footer-youtube-alt = Twitter
 footer-alt-youtube = youtubeのロゴ
 footer-discord-alt = { discord }
 footer-github-alt = GitHub
-footer-attribution = Rustチームによって管理されています。誤字を見つけましたか？<a href="https://github.com/rust-lang/www.rust-lang.org">修正を送ってください</a>！
+footer-attribution = Rustチームによって管理されています。誤字を見つけましたか？<a href="https://github.com/rust-lang/www.rust-lang.org/issues/new/choose">修正を送ってください！</a>
 footer-old-site = <a href="https://prev.rust-lang.org">以前のウェブサイト</a>をお探しですか？
 
 ## what/index.hbs
