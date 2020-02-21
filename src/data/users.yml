@@ -216,7 +216,7 @@
   name: ImageOptim
   url: https://imageoptim.com
   logo: imageoptim.png
-  how: 'High-efficiency modern JPEG encoder written in Rust is at the heart of the <a href="https://imageoptim.com/api">image compression web service</a>.'
+  how: 'High-efficiency modern JPEG encoder written in Rust is at the heart of the <a href="https://imageoptim.com/api">image compression web service</a>.'
 -
   name: iqlusion
   url: https://iqlusion.io
@@ -382,6 +382,11 @@
   url: https://www.telenordigital.com/
   logo: telenordigital.png
   how: "Increasing performance and reliability of a concurrent webhook delivery service."
+-
+  name: Terramagna
+  url: https://www.terramagna.com.br
+  logo: terramagna.svg
+  how: "We use Rust to create services that bring safety to agribusiness financing."
 -
   name: Tessel
   url: https://www.tessel.io
