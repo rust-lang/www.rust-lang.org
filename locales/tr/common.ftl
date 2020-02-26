@@ -8,6 +8,13 @@ production-use = Üretimde kullanım
 learn-more = Daha fazla bilgi edinin
 discord = Discord
 
+## components/panels/domain.hbs
+
+cli-learn-more = Araçlar Yazmak
+wasm-learn-more = Web Uygulamaları Yazmak
+net-learn-more = Sunucular Üzerinde Çalışmak
+embedded-learn-more = Gömülü Cihazlar İle Başlamak
+
 ## components/layout.hbs
 
 meta-description = Güvenilir ve verimli bir yazılım oluşturmak için herkesi teşvik eden bir dil.
@@ -22,6 +29,7 @@ nav-tools = Araçlar
 nav-governance = Yönetim
 nav-community = Topluluk
 nav-blog = Blog
+nav-playground = Deneme alanı
 choose-language = Dil
 nav-logo-alt = Rust Logosu
 

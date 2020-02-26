@@ -73,3 +73,10 @@ get-involved-watch-rust-link = Videoları izleyin
 get-involved-contribute = Koda katkıda bulunun
 get-involved-contribute-blurb = Rust gerçek anlamda bir topluluk eseri. Meraklısından üretim kullanıcısına, yeni gelenlerden uzmanlara herkesin katkılarına açığız. Rust deneyimini daha da iyi yapmamıza yardımcı olun!
 get-involved-contribute-link = Katkı Kılavuzunu Okuyun
+
+## components/panels/thanks.hbs
+
+thanks-title = Teşekkürler
+thanks-individuals-header = Bireyler
+thanks-individuals-blurb = Rust bir topluluk projesidir ve topluluktan aldığı bol destek için müteşekkirdir.
+thanks-companies-link = Sponsorları gör
