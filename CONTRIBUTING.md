@@ -7,13 +7,6 @@ public. Please file an issue with suggestions!
 
 **tl;dr: Always file an issue first.**
 
-**Contacts:** [@ashleygwilliams], [@aturon], [@chriskrycho], [@yoshuawuyts]
-
-[@ashleygwilliams]: https://github.com/ashleygwilliams
-[@aturon]: https://github.com/aturon
-[@chriskrycho]: https://github.com/chriskrycho
-[@yoshuawuyts]: https://github.com/yoshuawuyts
-
 ## Design and Content
 
 Design and content are complicated thing, and many folks have lots of polarizing
@@ -21,14 +14,7 @@ feels about it. For the moment, large design changes are made exclusively by the
 team (listed above). If you have concerns or thoughts for small changes, please
 file an issue so that we can discuss it first!
 
-The site currently uses [Tachyons].
-
-[Tachyons]: http://tachyons.io/
-
 ### Content
-
-The content of the site is currently overseen by [@aturon]. Please direct issues
-and questions to him.
 
 The content is largely owned by the associated team or working group. If you
 have thoughts, it can be useful to discuss those with the lead(s) of those
@@ -54,9 +40,6 @@ displays, consider submitting your image at a resolution of at least
 400px by 200px.
 
 ## Development
-
-Currently, [@ashleygwilliams] is the primary developer on the site. If
-you need help or have any questions please direct them to [@ashleygwilliams].
 
 Before filing a PR to the site, please file an issue. This way we can ensure
 that the work you are doing meets the requirements of the site and will be very
