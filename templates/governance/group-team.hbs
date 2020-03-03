@@ -52,5 +52,26 @@
                 </div>
             {{/each}}
         </div>
+        {{#if team.alumni}}
+            <header class="pb3 pt3">
+                <h2 class="f2">{{fluent "governance-alumni-header"}}</h2>
+            </header>
+            <p>{{fluent "governance-alumni-thanks"}}</p>
+            <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                {{#each team.alumni as |member|}}
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                    <a class="mr4 w3 h3 flex-no-shrink" href="https://github.com/{{member.github}}">
+                        <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/{{member.github}}">
+                    </a>
+                    <div>
+                        {{member.name}}
+                        <div class="f4">
+                            GitHub: <a href="https://github.com/{{member.github}}">{{member.github}}</a>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        {{/if}}
     {{/if}}
 </div>

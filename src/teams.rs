@@ -177,6 +177,7 @@ mod tests {
                     github_id: 1234,
                 },
             ],
+            alumni: Vec::new(),
             website_data: Some(TeamWebsite {
                 name: format!("Team {}", name),
                 description: format!("Description of {}", name),
