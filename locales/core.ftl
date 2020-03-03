@@ -12,9 +12,9 @@
 -security-coordinator-public-key-href =
         https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0xDAE717EFE9424541
 -backup-security-contact-email-anchor =
-        <a href="mailto:alex@alexcrichton.com" lang="en-US">Alex Crichton</a>
+        <a href="mailto:pietro@pietroalbini.org" lang="en-US">Pietro Albini</a>
 -backup-security-contact-public-key-href =
-        https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0x5D54B6F551FF5E33
+        https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0x0490381A6F58BCDA
 
 -internals-rust-lang-org-href =
         https://internals.rust-lang.org/
