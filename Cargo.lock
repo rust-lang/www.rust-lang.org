@@ -1571,7 +1571,7 @@ dependencies = [
 [[package]]
 name = "rust_team_data"
 version = "1.0.0"
-source = "git+https://github.com/rust-lang/team#72484fc50e2bdef3847c31f6f863861f97310ebc"
+source = "git+https://github.com/rust-lang/team#2e7be25063a8e8b9fcca22485b95a88433472a38"
 dependencies = [
  "indexmap 1.3.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "serde 1.0.104 (registry+https://github.com/rust-lang/crates.io-index)",
