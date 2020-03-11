@@ -18,6 +18,7 @@ cli-pitch-ship-link = Rust-Code ausliefern
 cli-pitch-config-img-alt = Icon mit Notiz-Zettel und Zahnrad
 cli-pitch-config-heading = Robuste Konfiguration
 cli-pitch-config-description = Plattformübergreifend mit Konfigurationsdateien arbeiten? Kein Problem. Rust kümmert sich um Bennenung und Formate.
+cli-pitch-config-link = Konfiguration beginnen
 cli-pitch-manuals-img-alt = Icon mit "--help"-Buch
 cli-pitch-manuals-heading = Man-Pages? Fertig.
 cli-pitch-manuals-description = Automatisiere das Erstellen von Man-Pages. Pack einfach die erzeugten Dateien zu deinem Programm und fertig!
@@ -29,6 +30,7 @@ cli-pitch-machines-link = Sprich mit Maschinen
 cli-pitch-logging-img-alt = Icon mit drei Holzklötzen
 cli-pitch-logging-heading = Flexibles Logging
 cli-pitch-logging-description = Füge einfach Log-Nachrichten ein und gib sie in verschiedenen Formaten und Stilen aus.
+cli-pitch-logging-link = Loggen, ermitteln, verstehen
 
 ## templates/components/what/cli/maintainable.hbs
 
