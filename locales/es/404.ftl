@@ -5,4 +5,4 @@
 
 error404-page-title = 404
 error404-subtitle = Uuuppsss, esta página no existe :-(
-error404-img-alt = imagen 404 no encontrado
+error404-img-alt = 404 imagen no encontrada
