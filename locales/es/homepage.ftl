@@ -8,7 +8,7 @@ homepage-version = Versión { $number }
 
 production-title = Rust en producción
 production-blurb =
-    Cientos de compañías de todo el mundo están usando Rust en producción actualmente en
+    Cientos de compañías de todo el mundo están actualmente usando Rust en producción en
     soluciones multiplataforma rápidas con bajo consumo de recursos. Software conocido y admirado como
     <a href="https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka-stylo/">Firefox</a>,
     <a href="https://blogs.dropbox.com/tech/2016/06/lossless-compression-with-brotli/">Dropbox</a>
@@ -37,9 +37,9 @@ language-values-reliability-blurb =
 language-values-productivity = Productividad
 language-values-productivity-blurb =
     Rust tiene una documentación genial, un compilador accesible con mensajes de
-    error útiles, y herramientas de primera: un gestor de paquetes y de proyecto
+    error útiles, y herramientas de primera: gestor de paquetes y de proyecto
     integrado, soporte avanzado multi-editor con autocompletado e
-    inspecciones de tipos, un auto-formateador, etc.
+    inspecciones de tipos, auto-formateador, etc.
 
 ## components/panels/domains.hbs
 
@@ -75,7 +75,7 @@ get-involved-read-rust-blurb =
     ¡Nos encanta la documentación! Echa un vistazo a los libros disponibles online,
     así como a entradas en blogs claves y guías de usuario.
 get-involved-read-rust-link = Leer el libro
-get-involved-watch-rust = Ver Rust
+get-involved-watch-rust = Ver vídeos sobre Rust
 get-involved-watch-rust-blurb = La comunidad de Rust tiene un canal de Youtube con un gran número de charlas y tutoriales.
 get-involved-watch-rust-link = Ver los vídeos
 get-involved-contribute = Contribuir al código
@@ -88,7 +88,7 @@ thanks-title = Gracias
 thanks-blurb = Rust no existiría sin las generosas contribuciones de tiempo, trabajo y recursos de individuos y empresas. ¡Estamos muy agradecidos por el apoyo!
 thanks-individuals-header = Individuos
 thanks-individuals-blurb = Rust es un proyecto comunitario y está muy agradecido por las numerosas contribuciones que recibe.
-thanks-individuals-link = Ver contribuidores individuales.
+thanks-individuals-link = Ver contribuidores individuales
 thanks-companies-header = Patrocinadores corporativos
 thanks-companies-blurb = El proyecto Rust recibe apoyo de empresas mediante donaciones de infraestructura.
 thanks-companies-link = Ver patrocinadores

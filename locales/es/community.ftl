@@ -26,7 +26,7 @@ community-irlo =
 community-chat-header = Plataformas de chat
 community-chat =
     Las charlas sobre el desarrollo de Rust y otros asuntos generales tienen lugar en diversas plataformas de chat.
-    Echa un vistazo a los canales generales y al servidor de Discord de Rust, o a las página de los equipos si quieres averiguar donde se comunican los miembros de un equipo específico.
+    Echa un vistazo a los canales generales y al servidor de Discord de Rust, o a las páginas de los equipos si quieres averiguar dónde se comunican los miembros de un equipo específico.
 community-teams-learn = Saber más sobre los equipos
 community-events-header = Eventos
 community-meetup-header = Encuentra un meetup o una conferencia local

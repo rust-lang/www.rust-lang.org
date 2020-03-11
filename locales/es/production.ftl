@@ -8,7 +8,7 @@ production-tilde = Descubre cómo Rust le facilita a <a href="http://www.tilde.i
 production-highlights = Destacados
 production-read-more = Leer más
 production-watch-video = Ver el vídeo
-production-dropbox = Varios componentes del sistema principal de almacenamiento de ficheros de Dropbox están escritos en Rust, como parte de un proyecto más amplio para aumentar la eficiencia de sus centros de datos. Actualmente todo el almacenamiento de Dropbox lo usan y sirven a >500 millones de usuarios.
+production-dropbox = Varios componentes del sistema principal de almacenamiento de ficheros de Dropbox están escritos en Rust, como parte de un proyecto más amplio para aumentar la eficiencia de sus centros de datos. Actualmente es usado por todo el almacenamiento de Dropbox, que sirve a más de 500 millones de usuarios.
 production-dropbox-alt = Logo de Dropbox
 production-yelp = Yelp ha desarrollado un <em>framework</em> en Rust para tests A/B en tiempo real. Se usa en todos las páginas y apps de Yelp, para lanzar experimentos en áreas desde UX hasta infraestructura interna. Eligieron Rust porque es tan rápido como C (bajo coste de ejecución) y más seguro que este (bajo coste de mantenimiento).
 production-yelp-alt = Logo de Yelp
