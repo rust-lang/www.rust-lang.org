@@ -10,6 +10,10 @@ discord = Discord
 
 ## components/panels/domain.hbs
 
+cli-learn-more = ツールを作る
+wasm-learn-more = webアプリケーションを書く
+net-learn-more = サーバーを動かす
+embedded-learn-more = 組込から始める
 
 ## components/layout.hbs
 

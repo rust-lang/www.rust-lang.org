@@ -52,8 +52,16 @@ pub const EXPLICIT_LOCALE_INFO: &[LocaleInfo] = &[
         text: "English",
     },
     LocaleInfo {
+        lang: "es",
+        text: "Español",
+    },
+    LocaleInfo {
         lang: "it",
         text: "Italiano",
+    },
+    LocaleInfo {
+        lang: "ja",
+        text: "日本語",
     },
     LocaleInfo {
         lang: "pt-BR",

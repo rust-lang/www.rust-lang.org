@@ -8,7 +8,7 @@ tools-build-description = Cargo es la herramienta de construcción para Rust. Em
 tools-build-install-heading = Instala
 tools-build-install-description = Con decenas de miles de paquetes, es muy probable que <a href="https://crates.io">crates.io</a> tenga la solución que estás buscando. Apóyate sobre los hombros de gigantes y haz que tu equipo pase de la repetición a la innovación.
 tools-build-test-heading = Prueba
-tools-build-test-description = Genera confianza en tu código a través de las excelentes herramientas de Rust para hacer pruebas. <code class = "nowrap">cargo test </code> es la solución unificada de Rust para hacer pruebas. Escribe las pruebas junto a tu código, o en archivos separados: una solución para todas las necesidades de pruebas.
+tools-build-test-description = Genera confianza en tu código a través de las excelentes herramientas de Rust para hacer pruebas. <code class = "nowrap">cargo test</code> es la solución unificada de Rust para hacer pruebas. Escribe las pruebas junto a tu código, o en archivos separados: una solución para todas las necesidades de pruebas.
 tools-build-deploy-heading = Despliega
 tools-build-deploy-description = <code class="nowrap">cargo build</code> crea binarios ajustados a cada plataforma. Con un solo comando tu código puede ser destinado a Windows, Linux, OSX, y la web. Todo es parte de una interfaz moderna, sin necesidad de archivos  compilados específicos.
 tools-automation-heading = Velocidad mediante automatización
@@ -17,7 +17,7 @@ tools-automation-rustfmt-heading = Rustfmt
 tools-automation-rustfmt-description = Rustfmt formatea automáticamente el código Rust, haciendo que sea más fácil de leer, escribir y mantener. Y más importante: nunca más será necesario debatir sobre el espaciado o la posición de las llaves.
 tools-automation-rustfmt-link = Ir al repositorio
 tools-automation-clippy-heading = Clippy
-tools-automation-clippy-description = <i>“parece que estás escribiendo un iterador.”</i> <br> Clippy ayuda a los desarrolladores de todos los niveles de experiencia a escribir código idiomático, y hacer cumplir las normas.
+tools-automation-clippy-description = <i>“Parece que estás escribiendo un iterador.”</i> <br> Clippy ayuda a los desarrolladores de todos los niveles de experiencia a escribir código idiomático, y hacer cumplir las normas.
 tools-automation-clippy-link = Ir al repositorio
 tools-automation-cargo-doc-heading = Cargo Doc
 tools-automation-cargo-doc-description = La documentación de Cargo hace que no haya API sin documentar. Está disponible localmente mediante <code class="nowrap">cargo doc</code>, y en línea en <a href="https://docs.rs">docs.rs</a> para crates públicas.
@@ -27,6 +27,8 @@ tools-automation-cargo-doc-link = Ir al sitio web
 
 tools-install-page-title = Instalar Rust
 install-using-rustup-heading = Usando rustup (recomendado)
+install-rustup32-button = Descarga <span class="nowrap">rustup-init.exe</span> <span class="nowrap">(32 bits)</span>
+install-rustup64-button = Descarga <span class="nowrap">rustup-init.exe</span> <span class="nowrap">(64 bits)</span>
 install-notes-heading = Notas sobre la instalación de Rust
 install-notes-getting-started-description = Si estás empezando con Rust y te gustaría una guía más detallada, visita nuestra pagina <a href="{ $getting-started-href }">cómo empezar</a>.
 install-notes-rustup-heading = Gestión del conjunto de herramientas con <code>rustup</code>
@@ -44,15 +46,15 @@ install-notes-rustup-description =
     destinos adicionales de compilación cruzada.
     </p>
     <p>
-    Si ha instalado <code>rustup</code> en el pasado, puede actualizar su instalación ejecutando
+    Si has instalado <code>rustup</code> en el pasado, puedes actualizar tu instalación ejecutando
     <code>rustup update</code>.
     </p>
     <p>
-    Para más información visite la documentación de
+    Para más información visita la documentación de
     <a href="https://github.com/rust-lang/rustup.rs/blob/master/README.md">
           <code>rustup</code></a>.
     </p>
-install-notes-path-heading = Configurando la variable de entorno <code>PATH</code>
+install-notes-path-heading = Configurar la variable de entorno <code>PATH</code>
 install-notes-path-description =
     <p>
     En el entorno de desarrollo de Rust, todas las herramientas son instaladas en el directorio
@@ -67,7 +69,7 @@ install-notes-path-description =
     <p>
     Por consiguiente, es habitual para los desarrolladores de Rust incluir este directorio en su variable de entorno
      <a href="https://en.wikipedia.org/wiki/PATH_(variable)">
-    <code>PATH</code></a> Durante la instalación <code>rustup</code> intentará configurar la variable <code>PATH</code>.
+    <code>PATH</code></a>. Durante la instalación <code>rustup</code> intentará configurar la variable <code>PATH</code>.
     Debido a las diferencias entre plataformas, consolas de comandos y errores en <code>rustup</code>, las modificaciones de la variable
     <code>PATH</code> podrían no tener efecto hasta que la consola sea reiniciada o el usuario cierre su sesión, o incluso no funcionar después de todo.
     </p>

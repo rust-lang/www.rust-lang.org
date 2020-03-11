@@ -44,7 +44,7 @@ cli-maintainable-errors-description =
     ¿Qué pasa si el archivo de configuración no existe o está corrupto? ¿Y si el contenido
     de esa variable de entorno está vacío? ¡Son casos fáciles de olvidar! Pero gracias a su
     forma de tratar los errores y al diseño de su biblioteca, Rust te guiará en esas situaciones
-    de "qué pasa si" antes de que ejecutes tu programa.
+    de "qué pasa si" incluso antes de que ejecutes tu programa.
 cli-maintainable-errors-link = La gestión de errores en Rust
 cli-maintainable-refactoring-img-alt = Las CLI no son ingeniería espacial
 cli-maintainable-refactoring-heading = Extiende con facilidad más tarde
@@ -72,7 +72,7 @@ cli-production-sentry-link = Rust at Sentry &ndash; PolyConf 2017
 cli-production-habitat-quote =
     No tengo ninguna queja por tener que trabajar con esta base de código. [...] Esto fue
     como un extra para mí: usar Rust para crear aplicaciones y herramientas para línea
-    de comandos. Es fantástico poder compilar para diferentes arquitecturas.
+    de comandos. Es muy bueno compilando para diferentes arquitecturas.
 cli-production-habitat-attribution = &ndash; Fletcher Nichol,
 cli-production-habitat-link = Taking Rust to Production &ndash; RustFest Kyiv
 cli-production-habitat-img-alt = logo de Habitat

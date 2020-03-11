@@ -77,6 +77,10 @@ get-involved-contribute-link = Katkı Kılavuzunu Okuyun
 ## components/panels/thanks.hbs
 
 thanks-title = Teşekkürler
+thanks-blurb = Rust; bireylerin ve kurumların cömert zaman, iş ve kaynak katkıları olmadan var olamazdı. Destekleriniz için minnettarız!
 thanks-individuals-header = Bireyler
 thanks-individuals-blurb = Rust bir topluluk projesidir ve topluluktan aldığı bol destek için müteşekkirdir.
+thanks-individuals-link = Bireysel katkıcıları gör
+thanks-companies-header = Kurumsal sponsorlar
+thanks-companies-blurb = Rust projesi altyapı bağışıyla şirketlerden destek almaktadır.
 thanks-companies-link = Sponsorları gör

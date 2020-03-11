@@ -72,10 +72,12 @@ In order to check the changes, you need:
 
 * Copy the downloaded file into `locales/<lang>` of your local copy of the website
 
+* Make sure your language is in the `EXPLICIT_LOCALE_INFO` array in `src/i18n.rs`
+
 * Restart the website locally everytime you change a local file
 
 ## Special case: Policies
 
-All policy documents outside other then English must contain a link to the original on top, indicating that the English translation is binding and the translation is a best effort.
+All policy documents outside other than English must contain a link to the original on top, indicating that the English translation is binding and the translation is a best effort.
 
 Also, a translation team can decide to leave any policies untranslated, instead opting for just linking to the English translation with an appropriate wording.

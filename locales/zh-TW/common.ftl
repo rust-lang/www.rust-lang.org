@@ -8,6 +8,13 @@ production-use = 產品應用
 learn-more = 了解更多
 discord = Discord
 
+## components/panels/domain.hbs
+
+cli-learn-more = 建置工具
+wasm-learn-more = 編寫網頁應用程式
+net-learn-more = 在伺服器上運作
+embedded-learn-more = 從嵌入式系統開始
+
 ## components/layout.hbs
 
 meta-description = 讓每個人都能打造出可靠又高效軟體的程式語言。
@@ -22,6 +29,7 @@ nav-tools = 工具
 nav-governance = 治理
 nav-community = 社群
 nav-blog = 網誌
+nav-playground = 遊樂場
 choose-language = 語言
 nav-logo-alt = Rust 標誌
 

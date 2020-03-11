@@ -56,3 +56,14 @@ get-involved-watch-rust-link = 觀賞教學影片
 get-involved-contribute = 貢獻程式碼
 get-involved-contribute-blurb = Rust 完全由社群驅動，我們十分歡迎志同道合的人與正式環境的使用者來參與貢獻。不管是剛加入新手或歷練豐富的專家，都歡迎協助我們讓 Rust 的體驗更加完善！
 get-involved-contribute-link = 閱讀貢獻指南
+
+## components/panels/thanks.hbs
+
+thanks-title = 鳴謝
+thanks-blurb = 若沒有個人和企業慷慨貢獻時間、勞力和資源，Rust 將不會存在。我們非常感謝這些人的付出！
+thanks-individuals-header = 個人貢獻者
+thanks-individuals-blurb = Rust 是個社群專案，也十分感謝收到許多來自社群的貢獻
+thanks-individuals-link = 查看個人貢獻者
+thanks-companies-header = 企業法人贊助商
+thanks-companies-blurb = Rust 專案收到來自這些企業贊助的基礎設施資源
+thanks-companies-link = 查看贊助商

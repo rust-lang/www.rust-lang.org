@@ -5,10 +5,7 @@
 
 policies-licenses-page-title = Licencias
 licenses-license-heading = LIcencia
-licenses-license-general-description =
-    (Esta una traducción meramente informativa de la <a href="https://www.rust-lang.org/en-US/policies/licenses">página original en inglés</a>)
-    
-    El lenguaje de programación Rust y todos los demás proyectos oficiales, incluyendo este sitio web, tienen normalmente una licencia doble:
+licenses-license-general-description = El lenguaje de programación Rust y todos los demás proyectos oficiales, incluyendo este sitio web, tienen normalmente una licencia doble:
 licenses-apache-v-2-0-link = Apache License, Versión 2.0
 licenses-mit-link = MIT license
 licenses-license-specific-description =
