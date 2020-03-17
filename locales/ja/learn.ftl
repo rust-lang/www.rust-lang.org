@@ -58,7 +58,7 @@ learn-install-cargo-header = Cargo：Rustビルドツールおよびパッケー
 learn-install-cargo =
     <p>Rustupをインストールすると、Rustのビルドツール兼パッケージマネージャであるCargoの最新安定版が同時に手に入ります。Cargoはたくさんのことをします：</p>
     <ul>
-     <li>プロジェクトのビルドには<code>cargo build</code><li>
+     <li>プロジェクトのビルドには<code>cargo build</code></li>
      <li>プロジェクトの実行には<code>cargo run</code></li>
      <li>プロジェクトのテストには<code>cargo test</code></li>
      <li>プロジェクトのドキュメントのビルドには<code>cargo doc</code></li>
