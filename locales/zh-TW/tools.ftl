@@ -27,6 +27,8 @@ tools-automation-cargo-doc-link = 前往網站
 
 tools-install-page-title = 安裝 Rust
 install-using-rustup-heading = 使用 rustup (推薦)
+install-rustup32-button = 下載 <span class="nowrap">rustup-init.exe</span> <span class="nowrap">（32 位元）</span>
+install-rustup64-button = 下載 <span class="nowrap">rustup-init.exe</span> <span class="nowrap">（64 位元）</span>
 install-notes-heading = Rust 安裝須知
 install-notes-getting-started-description = 如果您正要開始使用 Rust，需要一份更完整的教學，請見<a href="{ $getting-started-href }">開始使用</a>頁面。
 install-notes-rustup-heading = 用 <code>rustup</code> 管理工具鏈
