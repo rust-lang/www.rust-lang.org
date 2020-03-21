@@ -22,7 +22,7 @@ language-values-performance-blurb = Rustは非常に高速でメモリ効率が�
 language-values-reliability = 信頼性
 language-values-reliability-blurb = Rustの豊かな型システムと所有権モデルによりメモリ安全性とスレッド安全性が保証されます。さらに様々な種類のバグをコンパイル時に排除することが可能です。
 language-values-productivity = 生産性
-language-values-productivity-blurb = Rustには優れたドキュメント、有用なエラーメッセージを備えた使いやすいコンパイラ、および統合されたパッケージマネージャとビルドツール、自動補完と型検査をサポートするスマートマルチエディタ、自動フォーマッタといった一流のツール群が数多く揃っています。
+language-values-productivity-blurb = Rustには優れたドキュメント、有用なエラーメッセージを備えた使いやすいコンパイラ、および統合されたパッケージマネージャとビルドツール、多数のエディタに対応するスマートな自動補完と型検査機能、自動フォーマッタといった一流のツール群が数多く揃っています。
 
 ## components/panels/domains.hbs
 
