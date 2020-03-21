@@ -1,8 +1,31 @@
 ## templates/community/index.hbs
 
+community-page-title = Społeczność
+community-twir = Pozostań na bieżąco ze społecznością Rusta!
+community-twir-button = W tym tygodniu w Ruście
 community-team-button = email { ENGLISH("community@rust-lang.org") }
+community-urlo-header = Forum użytkowników
+community-discourse-button = Odwiedź Forum
+community-irlo-header = Forum wewnętrzne
+community-chat-header = Platformy czatowe
+community-teams-learn = Dowiedz się więcej o zespołach
 community-events-header = Wydarzenia
+community-meetup-header = Znajdź lokalne spotkanie lub konferencję
 community-calendar = Zobacz kalendarz
+community-conference-lineup = Zobacz Listę Konferencji na rok 2020
+community-timetill-cta = Zobacz listę konferencji na timetill.rs
+community-event-run-header = Zorganizuj własne wydarzenie
+community-event-register = Zajerestruj swoje wydarzenie
+community-rustfest-alt = Uczestnicy Rustfest
 community-rustbridge-header = Rustbridge
+community-rustbridge-button = Sprawdź repozytorium Rustbridge
+community-rustbridge-rustconf-alt = RustBridge na RustConf
 community-rustbridge-paris-alt = RustBridge Paryż
 community-rustbridge-berlin-alt = RustBridge Berlin
+community-rustbridge-rbr-alt = RustBridge na Rust Belt Rust
+community-irr-header = Zwiększanie Zasięgu Rusta
+community-irr-button = Odwiedź Witrynę
+community-standards-header = Standardy Społeczności
+community-mod-button = Napisz do zespołu moderacyjnego
+community-coc-button = przeczytaj kodeks postępowania
+community-mod-guidelines-button = przeczytaj wytyczne dotyczące moderacji

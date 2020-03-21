@@ -5,10 +5,15 @@ tools-build-install-heading = Instaluj
 tools-build-test-heading = Testuj
 tools-automation-heading = Prędkość poprzez automatyzację
 tools-automation-rustfmt-heading = Rustfmt
+tools-automation-rustfmt-link = Idź do repozytorium
 tools-automation-clippy-heading = Clippy
 
 ## tools/install.hbs
 
+install-rustup32-button = Pobierz <span class="nowrap">rustup-init.exe</span> <span class="nowrap">(32-bit)</span>
+install-rustup64-button = Pobierz <span class="nowrap">rustup-init.exe</span> <span class="nowrap">(64-bit)</span>
+install-notes-path-heading = Konfiguracja zmiennej środowiskowej <code>PATH</code>
+install-other-methods-heading = Inne metody instalacji
 install-other-methods-link = Dowiedz się więcej
 
 ## components/tools/rustup.hbs
