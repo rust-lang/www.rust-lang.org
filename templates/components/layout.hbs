@@ -49,6 +49,7 @@
         {{#each locales as |locale| ~}}
             <link rel="alternate" href="/{{locale.lang}}" hreflang="{{locale.lang}}">
         {{/each~}}
+        <link rel="alternate" href="/" hreflang="x-default">
     {{/if}}
 
     <!-- Custom Highlight pack with: Rust, Markdown, TOML, Bash, JSON, YAML,
