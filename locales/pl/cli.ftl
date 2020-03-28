@@ -64,6 +64,7 @@ cli-maintainable-refactoring-link = Refaktoryzacja Rust
 cli-example-description = Pisanie aplikacji wiersza poleceń to świetny sposób na uczenie się Rusta.
 cli-example-inputs-heading = Zdefiniuj wejścia
 cli-example-main-heading = Stwórz swoje narzędzie
+cli-example-link = Naucz się więcej z naszego podręcznika CLI
 
 ## templates/components/what/cli/production.hbs
 

@@ -10,6 +10,9 @@ discord = Discord
 
 ## components/panels/domain.hbs
 
+cli-learn-more = Tworzenie Narzędzi
+wasm-learn-more = Pisanie Aplikacji Webowych
+net-learn-more = Praca z Serwerami
 embedded-learn-more = Programuj Systemy Wbudowane
 
 ## components/layout.hbs
@@ -52,3 +55,4 @@ footer-old-site = Szukasz <a href="https://prev.rust-lang.org">poprzedniej wersj
 
 ## what/index.hbs
 
+what-header = Co
