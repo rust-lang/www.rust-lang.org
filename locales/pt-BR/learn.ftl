@@ -51,6 +51,8 @@ learn-play = Você pode experimentar Rust online pelo Rust Playground sem instal
 learn-play-button = Teste Rust sem instalar
 learn-install-rustup-header = Rustup: o instalador e gerenciador de versões de Rust
 learn-install-rustup = A principal maneira usada para instalar Rust é através da ferramenta chamada Rustup, que é um instalador e um gerenciador de versões.
+learn-install-rustup-update-header = O rustup está atualizado?
+learn-install-rustup-update = Rust é atualizado com bastante frequência. Se você instalou o Rustup há algum tempo, é possível que sua versão do Rust esteja desatualizada. Baixe a última versão do Rust rodando { $update-command }.
 learn-install-rustup-button = Leia mais sobre instalação
 learn-install-cargo-header = Cargo: a ferramenta de compilação e gerenciamento de pacotes
 learn-install-cargo =
@@ -107,7 +109,7 @@ learn-read-docs = Agora você é um(a) Rustáceo! Seja bem vindo(a)! Estamos mui
 learn-read-docs-button = aprenda mais!
 learn-ferris-who = Quem é esse caranguejo, Ferris?
 learn-ferris =
-    <p>Ferris é a mascote não oficial da comunidade Rust. Muitas pessoas que programam Rust se consideram Rustáceos (“Rustaceans”), uma piadinha com a palavra “<a href="https://en.wikipedia.org/wiki/Crustacean">crustáceos</a>.” Em inglês, nos referimentos à Ferris usando pronomes neutro ao invés de usar pronomes com gênero.</p>
-    <p>Ferris é um nome brincando com o adjetivo ferroso (“ferrous”) que significa "do ferro ou que contém ferro". Como Rust (ferrugem em português) surge em ferro, isso pareceu ser uma origem divertida para o nome da mascote!</p>
+    <p>Ferris é a mascote não oficial da comunidade Rust. Muitas pessoas que programam Rust se consideram Rustáceos (“Rustaceans”), uma piadinha com a palavra “<a href="https://en.wikipedia.org/wiki/Crustacean">crustáceos</a>.” Em inglês, nos referimos a Ferris usando pronomes neutros ao invés de usar pronomes com gênero.</p>
+    <p>Ferris é um nome que brinca com o adjetivo ferroso (“ferrous”) que significa "do ferro ou que contém ferro". Como Rust (ferrugem, em Português) surge em ferro, isso pareceu ser uma origem divertida para o nome da mascote!</p>
     <p>Você pode achar mais imagens da mascote Ferris no site <a href="http://rustacean.net/">http://rustacean.net/</a>.
 learn-ferris-alt = Um gif do Ferris andando de um lado para o outro
