@@ -72,7 +72,7 @@ learn-install-cargo =
 learn-install-cargo-button = 阅读《Cargo 之书》
 learn-install-other = 其它工具
 learn-install-editors = Rust 支持多种编辑器：
-learn-install-fmt-clippy = 您可以用 <code>rustup component add rustfmt</code> 安装代码格式化工具 Rustfmt，用 <code>rustup component add clippy</code> 安装 lint 工具 Clippy。
+
 learn-generating = 创建新项目
 learn-generating-steps =
     <p>我们将在新的 Rust 开发环境中编写一个小应用。首先用 Cargo
