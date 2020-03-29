@@ -69,7 +69,7 @@ learn-install-cargo =
 learn-install-cargo-button = cargoブックを読む
 learn-install-other = その他のツール
 learn-install-editors = Rustは多くのエディタでサポートされています：
-learn-install-fmt-clippy = <code>rustup component add rustfmt</code>でコード整形ツールであるRustfmtを、<code>rustup component add clippy</code>でlintツールであるClippyをインストールすることができます。
+
 learn-generating = 新しいプロジェクトを作成する
 learn-generating-steps =
     <p>新しいRust開発環境で小さなアプリケーションを書きましょう。始めにCargoを使って新しいプロジェクトを作りましょう。好きなターミナルで以下を実行します：</p>
