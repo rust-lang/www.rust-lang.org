@@ -1,6 +1,6 @@
 
 ## index.hbs
-tagline =  믿을 수 있고 효율적인 소프트웨어를 만드는 { $linebreak } 모두에게 힘을 주는 언어입니.
+tagline =  믿을 수 있고 효율적인 소프트웨어를 만드는 { $linebreak } 모두에게 힘을 주는 언어입니다.
 get-started = 시작하기
 homepage-version = 버전 { $number }
 
@@ -25,6 +25,7 @@ production-testimonial-yelp-alt = Yelp Logo
 
 
 ## components/panels/language-values.hbs
+language-value-title = 왜 러스트인가?
 
 language-values-performance = 성능
 language-values-performance-blurb = 러스트는 미친듯이 빠르고 메모리 효율적입니다. 런타임이나 가비지 콜렉터가 없어도
@@ -45,13 +46,13 @@ domains-blurb = 2018년, 러스트 커뮤니티는 몇 개의 뚜렷한 도메�
         이것들을 통, 여러분은 많은 고급 크레이트들과 시작하는 방법에 대한 멋진 가이드들 찾을 수 있습니다.
 
 domains-cli = 커맨드 라인
-domains-cli-blurb = 러스트의 강력한 에코시스템을 통해 CLI 툴을 Whip up.
+domains-cli-blurb = 러스트의 강력한 에코시스템을 통해 CLI 툴을 띄우세요.
             러스트는 여러분이 안심하고 앱을 유지하고 배포할 수 있도록 도와줍니다.
 domains-cli-alt = terminal
 
 domains-wasm = 웹 어셈블리
-domains-wasm-blurb = 러스트를 사용하여 자바스크립트와 모듈을 한 번에 극대화시키세요.
-          NPM에 퍼블리싱하고, 웹팩과 번들하여, 가장 앞서나가세요.
+domains-wasm-blurb = 러스트를 사용하여 자바스크립트와 모듈을 한 번에 극대화하세요.
+          NPM에 퍼블리싱하고, 웹팩과 번들하여, 가장 앞서 나가세요.
 domains-wasm-alt = gear with puzzle piece elements
 
 domains-net = 네트워킹
