@@ -16,12 +16,12 @@ production-blurb = 전세계에 수백개의 기업들이 빠른 속도, 적은 
 
 production-testimonial-npm = 내가 러스트에게 할 수 있는 최고의 칭찬은 지루하다는 것이다. 이는 어마어마한 칭찬이다.
 production-testimonial-npm-attribution = Chris Dickison, Engineer at npm, Inc
-production-testimonial-npm-alt = npm Logo
+production-testimonial-npm-alt = npm 로고
 
 
 production-testimonial-yelp = 신뢰할 수 있는 코드를 작성하는데 성공하는 모든 문서, 툴링, 커뮤니티를 가지고 있다.
 production-testimonial-yelp-attribution = Antonio Verardi, Infrastructure Engineer
-production-testimonial-yelp-alt = Yelp Logo
+production-testimonial-yelp-alt = Yelp 로고
 
 
 ## components/panels/language-values.hbs
