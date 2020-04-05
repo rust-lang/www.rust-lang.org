@@ -28,7 +28,7 @@ language-values-reliability-blurb = Rust 丰富的类型系统和所有权模型
 language-values-productivity = 生产力
 language-values-productivity-blurb =
     Rust 拥有出色的文档、友好的编译器和清晰的错误提示信息，
-    还集成了一流的工具 —— 包管理器和构建工具，
+    还集成了一流的工具——包管理器和构建工具，
     智能地自动补全和类型检验的多编辑器支持，
     以及自动格式化代码等等。
 

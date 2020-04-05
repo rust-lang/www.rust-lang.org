@@ -11,7 +11,7 @@ production-blurb = Centenas de empresas ao redor do mundo já estão usando Rust
 production-testimonial-npm = Meu maior elogio à Rust é que ela é entediante, e isso é um elogio incrível.
 production-testimonial-npm-attribution = Chris Dickinson, Engenheiro na npm, Inc
 production-testimonial-npm-alt = Logo da npm
-production-testimonial-yelp = Toda a documentação, ferramentas, e comunidade é ótima - você possui todas as ferramentas para escreve código Rust com sucesso.
+production-testimonial-yelp = Toda a documentação, ferramentas e comunidade são ótimas - você possui todas as ferramentas para escrever código Rust com sucesso.
 production-testimonial-yelp-attribution = Antonio Verardi, Engenheiro de Infraestrutura
 production-testimonial-yelp-alt = Logo da Yelp
 
@@ -62,3 +62,14 @@ get-involved-watch-rust-link = Assista os Vídeos
 get-involved-contribute = Contribua código
 get-involved-contribute-blurb = Rust realmente é um esforço comunitário, e nós aceitamos contribuições vindas de amadores a profissionais, e de iniciantes a especialistas. Nos ajude a tornar a experiência com Rust ainda melhor!
 get-involved-contribute-link = Leia o Guia de Contribuição
+
+## components/panels/thanks.hbs
+
+thanks-title = Agradecimentos
+thanks-blurb = Rust não existiria sem as generosas contribuições de tempo, trabalho e recursos de pessoas e empresas. Somos muito gratos pelo apoio!
+thanks-individuals-header = Pessoas
+thanks-individuals-blurb = Rust é um projeto da comunidade e é muito grato pelas muitas contribuições que recebe.
+thanks-individuals-link = Veja os colaboradores individuais
+thanks-companies-header = Patrocinadores corporativos
+thanks-companies-blurb = O projeto Rust recebe apoio de empresas através da doação de infraestrutura.
+thanks-companies-link = Veja os patrocinadores

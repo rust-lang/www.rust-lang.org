@@ -69,7 +69,7 @@ learn-install-cargo =
 learn-install-cargo-button = Cargo Kitabını Oku
 learn-install-other = Diğer araçlar
 learn-install-editors = Rust desteği birçok düzenleyicide mevcut:
-learn-install-fmt-clippy = Kod düzenleme (Rustfmt) ve kod ayıklama (Clippy) araçlarını yüklemek için ise sırasıyla <code>rustup component add rustfmt</code> ve <code>rustup component add clippy</code> kodları çalıştırılabilir.
+
 learn-generating = Yeni bir proje oluşturmak
 learn-generating-steps =
     <p>Haydi yeni Rust geliştirme ortamımızla küçük bir uygulama yazalım. Başlamak için, Cargo'nun bizim için yeni bir proje oluşturmasını sağlayacağız. Tercih ettiğiniz uçbiriminizde bu kodları çalıştırabilirsiniz:</p>

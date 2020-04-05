@@ -8,6 +8,13 @@ production-use = Uso em produção
 learn-more = Aprenda mais
 discord = Discord
 
+## components/panels/domain.hbs
+
+cli-learn-more = Construindo Ferramentas
+wasm-learn-more = Escrevendo Aplicações Web
+net-learn-more = Trabalhando em Servidores
+embedded-learn-more = Começando com Embarcados
+
 ## components/layout.hbs
 
 meta-description = Uma linguagem empoderando qualquer pessoa a construir software confiável e eficiente.
@@ -22,6 +29,7 @@ nav-tools = Ferramentas
 nav-governance = Governança
 nav-community = Comunidade
 nav-blog = Blog
+nav-playground = Playground
 choose-language = Linguagem
 nav-logo-alt = Logo Rust
 

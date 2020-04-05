@@ -29,3 +29,5 @@ governance-team-discord = Discord 上的{ $channel }
 governance-user-github = GitHub: { $link }
 governance-user-team-leader = 团队领导
 governance-members-header = 成员
+governance-alumni-header = 前队友
+governance-alumni-thanks = 我们也想感谢所有过去的成员，他们的贡献是无价的！

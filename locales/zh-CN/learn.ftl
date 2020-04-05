@@ -49,7 +49,7 @@ learn-unstable-button = 阅读《未稳定特性手册》
 learn-get-started-page-title = { getting-started }
 learn-setup = 快速配置 Rust 开发环境并编写一个小应用！
 learn-install-heading = 安装 Rust
-learn-play = 您可以在 Rust Playground 上在线试用 Rust 而无需在计算机上安装任何东西。
+learn-play = 您可以在 Rust 演练场上在线试用 Rust 而无需在计算机上安装任何东西。
 learn-play-button = 无需安装，直接尝试 Rust
 learn-install-rustup-header = Rustup：Rust安装器和版本管理工具
 learn-install-rustup = 安装 Rust 的主要方式是通过 Rustup 这一工具，它既是一个 Rust 安装器又是一个版本管理工具。
@@ -72,7 +72,6 @@ learn-install-cargo =
 learn-install-cargo-button = 阅读《Cargo 之书》
 learn-install-other = 其它工具
 learn-install-editors = Rust 支持多种编辑器：
-learn-install-fmt-clippy = 您可以用 <code>rustup component add rustfmt</code> 安装代码格式化工具 Rustfmt，用 <code>rustup component add clippy</code> 安装 lint 工具 Clippy。
 learn-generating = 创建新项目
 learn-generating-steps =
     <p>我们将在新的 Rust 开发环境中编写一个小应用。首先用 Cargo
