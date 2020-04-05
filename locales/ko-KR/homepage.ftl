@@ -48,23 +48,23 @@ domains-blurb = 2018년, 러스트 커뮤니티는 몇 개의 뚜렷한 도메�
 domains-cli = 커맨드 라인
 domains-cli-blurb = 러스트의 강력한 에코시스템을 통해 CLI 툴을 실행하세요.
             러스트는 여러분이 안심하고 앱을 유지하고 배포할 수 있도록 도와줍니다.
-domains-cli-alt = terminal
+domains-cli-alt = 터미널
 
 domains-wasm = 웹 어셈블리
 domains-wasm-blurb = 러스트를 사용하여 자바스크립트와 모듈을 한 번에 극대화하세요.
           NPM에 퍼블리싱하고, 웹팩과 번들하여 먼저 앞서 나가세요.
-domains-wasm-alt = gear with puzzle piece elements
+domains-wasm-alt = 퍼즐 조각
 
 domains-net = 네트워킹
 domains-net-blurb = 예측 가능한 성능. 작은 리소스 설치 공간. 견고한 신뢰.
             러스트는 네트워크 서비스에도 좋습니다.
-domains-net-alt = a cloud with nodes
+domains-net-alt = 클라우드와 노드들
 
 domains-embedded = 임베디드
 domains-embedded-blurb = 리소스가 적은 장치를 대상으로 하십니까?
             높은 수준의 편의성을 포기하지 않고 낮은 수준의 제어가 필요합니까?
             러스트가 감당할 수 있습니다.
-domains-embedded-alt = an embedded device chip
+domains-embedded-alt = 임베디드 기기 칩
 
 ## components/panels/get-involved.hbs
 get-involved = 관여하기
