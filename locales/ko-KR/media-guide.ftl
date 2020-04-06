@@ -6,20 +6,20 @@
 policies-media-guide-page-title = Media guide
 
 ## Art license
-media-guide-art-license-heading = Art license
+media-guide-art-license-heading = 예술 라이센스
 media-guide-art-license-description = 
-        <p>The Rust and Cargo logos (bitmap and vector) are owned by Mozilla and distributed under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license (CC-BY)</a>. This is the most permissive Creative Commons license, and allows reuse and modifications for any purpose. The restrictions are that distributors must “give appropriate credit, provide a link to the license, and indicate if changes were made.” <strong>Note that use of these logos, and the Rust and Cargo names, is also governed by trademark; our trademark policy is described below</strong>.</p>
+        <p>러스트와 카고 (비트맵과 벡터)로고의 소유권은 모질라 재단에 있으며, <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license (CC-BY)</a>의 조건에 따라 배포됩니다. 이것은 Creative Commons 라이센스 중 가장 관대하며, 어떤 목적으로든 재사용 및 수정 가능합니다. 제한사항은 배포자가 “적절한 신용을 주고, 면허에 대한 링크를 제공하며, 변경이 이루어졌는지 표시”해야 하는 것입니다. <ul></ul><strong>이러한 로고의 사용과 러스트 및 카고 이름 또한 상호에 의해 관리된다는 점에 유의하십시오. 우리의 상호 정책은 아래에 설명되어 있습니다.</strong></p>
 
 ## Trademark policy
-media-guide-trademark-policy-heading = Trademark policy
+media-guide-trademark-policy-heading = 상호 정책
 media-guide-trademark-policy-description = 
-        <p>The Rust and Cargo names and brands make it possible to say what is officially part of the Rust community, and what isn’t. So we’re careful about where we allow them to appear. But at the same time, we want to allow for as much creative use of these brands as we can. The policy laid out here explains how we strike a balance. If you want to use these names or brands, especially in a commercial way, please read this page or feel free to <a href="mailto:trademark@rust-lang.org">reach out</a> and ask us about it!</p>
+        <p>러스트와 카고라는 이름과 브랜드는 공식적으로 러스트 공동체의 일부인 것과 그렇지 않은 것을 구분하는 것을 가능하게 합니다. 그래서 우리는 어디에 나타날 수 있도록 허락해야 하는지에 대해 조심스럽습니다. 하지만 동시에 우리는 가능한 한 이러한 브랜드의 창조적인 사용을 허용하고 싶습니다. 여기에 제시된 정책은 우리가 어떻게 균형을 잡는지 설명합니다. 만약 이런 이름 또는 브랜드를 특히 상업적으로 사용하고 싶다면, 이 페이지를 주의깊게 읽거나 <a href="mailto:trademark@rust-lang.org">여기</a>로 자유롭게 문의하십시오!</p>
         <p><b>TL;DR</b>: Most non-commercial uses of the Rust/Cargo names and logos are allowed and do not require permission; most commercial uses require permission. In either case, the most important rule is that uses of the trademarks cannot appear official or imply any endorsement by the Rust project.</p>
         <p>If you have any doubts about whether your intended use of a Rust Trademark requires permission, please contact us at { EMAIL("trademark@rust-lang.org") }.</p>
         <p>This document was derived in part from the <a href="https://www.python.org/psf/trademarks/">Python Software Foundation Trademark Usage Policy</a>. This document is not an official statement of Mozilla trademark policy, but serves to clarify Mozilla’s trademark policy as it relates to Rust.</p>
 
 ## The Rust trademarks
-media-guide-rust-trademarks-heading = The Rust trademarks
+media-guide-rust-trademarks-heading = 러스트 상호
 media-guide-rust-trademarks-description = 
         <p>The Rust programming language is an open source, community project governed by a core team. It is also sponsored by the Mozilla Foundation (“Mozilla”), which owns and protects the Rust and Cargo trademarks and logos (the “Rust Trademarks”). This document provides information about use of the Rust Trademarks specific to a programming language, as well as examples of common ways people might want to use these trademarks, with explanations as to whether those uses are OK or not or require permission. This document supplements the <a href="https://www.mozilla.org/foundation/trademarks/policy/">official Mozilla trademark policy</a> which governs use of all Mozilla trademarks.</p>
         <p>The Rust Trademarks include two word marks and two logos:</p>
@@ -35,7 +35,7 @@ media-guide-rust-trademarks-cargo-img-alt = cargo logo
 
 
 ## Using the trademarks
-media-guide-tm-use-heading = Using the trademarks
+media-guide-tm-use-heading = 상호 사용하기
 
 media-guide-tm-use-appearance-heading = Appearing official, affiliated, or endorsed
 media-guide-tm-use-appearance-description = 
@@ -74,7 +74,7 @@ media-guide-tm-use-explicit-approval-description =
         </ul>
 
 ## Helping out
-media-guide-helping-out-heading = Helping out
+media-guide-helping-out-heading = 도움주기
 media-guide-helping-out-description =
         <p>As a member of the Rust community, please keep an eye out for questionable uses of the Rust logo and “Rust” word mark. You can report potential misuse to { EMAIL("trademark@rust-lang.org") }. We will evaluate each case and take appropriate action.</p>
         <p>Please do not approach users of the trademarks with a complaint. That should be left to Mozilla and its representatives. Thanks!</p>
