@@ -76,39 +76,39 @@ learn-install-rustup-header = 러스트업 (Rustup): 러스트 인스톨러와 �
 learn-install-rustup = 러스트를 설치하는 주된 방법은 러스트 인스톨러 및 버전 관리 툴인 러스트업 (Rustup)을 사용하는 것입니다.
 learn-install-rustup-update-header = 최신 버전인가요?
 learn-install-rustup-update = 러스트는 자주 업데이트 됩니다. 러스트를 설치한 지 꽤 되었다면, 여러분의 버전이 오래된 버전일 가능성이 있습니다. { $update-command } 명령어로 러스트를 최신 버전으로 업데이트 하세요.
-learn-install-rustup-button = 설치에 대해 자세히 알아보
+learn-install-rustup-button = 설치에 대해 자세히 알아보기
 
 
-learn-install-cargo-header = Cargo: the Rust build tool and package manager
-learn-install-cargo = <p>When you install Rustup you’ll also get the latest stable version of the Rust build tool and package manager, also known as Cargo. Cargo does lots of things:</p>
+learn-install-cargo-header = 카고: 러스트 빌드 툴 및 패키지 매니저
+learn-install-cargo = <p>러스트업을 설치하면 최신의 안정적인 버전의 러스트 빌드 도구와 패키지 매니저(카고)도 제공받을 수 있습니다. 카고는 많은 일을 합니다.:</p>
                         <ul>
-                          <li>build your project with <code>cargo build</code></li>
-                          <li>run your project with <code>cargo run</code></li>
-                          <li>test your project with <code>cargo test</code></li>
-                          <li>build documentation for your project with <code>cargo doc</code></li>
-                          <li>publish a library to <a href="https://crates.io">crates.io</a> with <code>cargo publish</code></li>
+                          <li><code>cargo build</code> 명령어로 여러분의 프로젝트를 빌드하세요.</li>
+                          <li><code>cargo run</code> 명령어로 여러분의 프로젝트를 실행하세요.</li>
+                          <li><code>cargo test</code> 명령어로 여러분의 프로젝트를 테스트하세요.</li>
+                          <li><code>cargo doc</code> 명령어로 프로젝트 문서를 빌드하세요.</li>
+                          <li><code>cargo publish</code></li> 명령어로 <a href="https://crates.io">crates.io</a>에 여러분 라이브러리를 올려보세요.
                         </ul>
-                        <p>To test that you have Rust and Cargo installed, you can run this in your terminal of choice:</p>
+                        <p>터미널에서 아래의 명령어로 러스트 및 카고가 설치되어 있는지 테스트하세요.</p>
                         <p><code>cargo --version</code></p>
-learn-install-cargo-button = Read the cargo book
+learn-install-cargo-button = 카고 북 읽
 
-learn-install-other = Other tools
-learn-install-editors = Rust support is available in many editors:
+learn-install-other = 기타 도구
+learn-install-editors = 많은 에디터에서 러스트를 사용할 수 있습니다.
 
-learn-generating = Generating a new project
-learn-generating-steps = <p>Let’s write a small application with our new Rust development environment. To start, we’ll use Cargo to make a new project for us. In your terminal of choice run:</p>
+learn-generating = 새 프로젝트 생성하기
+    learn-generating-steps = <p>새 러스트 개발 환경에 작은 앱을 작성해보세요. 우리는 카고를 사용하여 새 프로젝트를 생성할 것 입니다. 당신의 터미널에서 아래의 명령어를 실행해보세요.</p>
     <p><code>cargo new hello-rust</code></p>
-    <p>This will generate a new directory called <code>hello-rust</code> with the following files:</p>
+    <p>이 명령어는 <code>hello-rust</code>라 새 디렉토리와 함께 아래의 파일들을 생성할 것 입니다.</p>
     { $tree }
-    <p><code>Cargo.toml</code> is the manifest file for Rust. It’s where you keep metadata for your project, as well as dependencies.</p>
-    <p><code>src/main.rs</code> is where we’ll write our application code.</p>
+    <p><code>Cargo.toml</code> 파일은 러스트의 공식 파일이며, 프로젝트의 메타데이터와 종속성을 보관할 수 있는 위치입니다.</p>
+    <p><code>src/main.rs</code> 파일은 우리 코드를 작성할 곳입니다.</p>
     <hr/>
-    <p><code>cargo new</code> generates a "Hello, world!" project for us! We can run this program by moving into the new directory that we made and running this in our terminal:</p>
+    <p><code>cargo new</code> 파일은 "Hello, world!" 프로젝트를 생성해줍니다! 우리는 우리가 만든 새로운 디렉토리로 이동하여 터미널에서 실행함으로써 이 프로그램을 실행할 수 있습니다.</p>
     <p><code>cargo run</code></p>
-    <p>You should see this in your terminal:</p>
+    <p>여러분의 터미널에서 아래와 같은 메세지를 볼 수 있을 것입니다.</p>
     { $output }
 
-learn-dependencies = Adding dependencies
+learn-dependencies = 종속성 추가하기
 learn-dependencies-steps = <p>Let’s add a dependency to our application. You can find all sorts of libraries on <a href="https://crates.io">crates.io</a>, the package registry for Rust. In Rust, we often refer to packages as “crates.”</p>
       <p>In this project, we’ll use a crate called <a href="https://crates.io/crates/ferris-says"><code>ferris-says</code></a>.
       <p>In our <code>Cargo.toml</code> file we’ll add this information (that we got from the crate page):</p>
