@@ -80,7 +80,7 @@ learn-install-rustup-button = 설치에 대해 자세히 알아보기
 
 
 learn-install-cargo-header = 카고: 러스트 빌드 툴 및 패키지 매니저
-learn-install-cargo = <p>러스트업을 설치하면 최신의 안정적인 버전의 러스트 빌드 도구와 패키지 매니저(카고)도 제공받을 수 있습니다. 카고는 많은 일을 합니다.:</p>
+learn-install-cargo = <p>러스트업을 설치하면 최신의 안정적인 버전의 러스트 빌드 도구와 패키지 매니저(카고)도 제공받을 수 있습니다. 카고는 많은 일을 합니다.</p>
                         <ul>
                           <li><code>cargo build</code> 명령어로 여러분의 프로젝트를 빌드하세요.</li>
                           <li><code>cargo run</code> 명령어로 여러분의 프로젝트를 실행하세요.</li>
@@ -90,17 +90,17 @@ learn-install-cargo = <p>러스트업을 설치하면 최신의 안정적인 버
                         </ul>
                         <p>터미널에서 아래의 명령어로 러스트 및 카고가 설치되어 있는지 테스트하세요.</p>
                         <p><code>cargo --version</code></p>
-learn-install-cargo-button = 카고 북 읽
+learn-install-cargo-button = 카고 북 읽기
 
 learn-install-other = 기타 도구
 learn-install-editors = 많은 에디터에서 러스트를 사용할 수 있습니다.
 
 learn-generating = 새 프로젝트 생성하기
-    learn-generating-steps = <p>새 러스트 개발 환경에 작은 앱을 작성해보세요. 우리는 카고를 사용하여 새 프로젝트를 생성할 것 입니다. 당신의 터미널에서 아래의 명령어를 실행해보세요.</p>
+learn-generating-steps = <p>새 러스트 개발 환경에 작은 앱을 작성해보세요. 우리는 카고를 사용하여 새 프로젝트를 생성할 것 입니다. 당신의 터미널에서 아래의 명령어를 실행해보세요.</p>
     <p><code>cargo new hello-rust</code></p>
-    <p>이 명령어는 <code>hello-rust</code>라 새 디렉토리와 함께 아래의 파일들을 생성할 것 입니다.</p>
+    <p>이 명령어는 <code>hello-rust</code>라는 새 디렉토리와 함께 아래의 파일들을 생성할 것 입니다.</p>
     { $tree }
-    <p><code>Cargo.toml</code> 파일은 러스트의 공식 파일이며, 프로젝트의 메타데이터와 종속성을 보관할 수 있는 위치입니다.</p>
+    <p><code>Cargo.toml</code> 파일은 러스트의 공식 파일이며, 프로젝트의 메타데이터와 의존성을 보관할 수 있는 위치입니다.</p>
     <p><code>src/main.rs</code> 파일은 우리 코드를 작성할 곳입니다.</p>
     <hr/>
     <p><code>cargo new</code> 파일은 "Hello, world!" 프로젝트를 생성해줍니다! 우리는 우리가 만든 새로운 디렉토리로 이동하여 터미널에서 실행함으로써 이 프로그램을 실행할 수 있습니다.</p>
@@ -108,34 +108,34 @@ learn-generating = 새 프로젝트 생성하기
     <p>여러분의 터미널에서 아래와 같은 메세지를 볼 수 있을 것입니다.</p>
     { $output }
 
-learn-dependencies = 종속성 추가하기
-learn-dependencies-steps = <p>Let’s add a dependency to our application. You can find all sorts of libraries on <a href="https://crates.io">crates.io</a>, the package registry for Rust. In Rust, we often refer to packages as “crates.”</p>
-      <p>In this project, we’ll use a crate called <a href="https://crates.io/crates/ferris-says"><code>ferris-says</code></a>.
-      <p>In our <code>Cargo.toml</code> file we’ll add this information (that we got from the crate page):</p>
+learn-dependencies = 의존성 추가하기
+learn-dependencies-steps = <p>우리의 앱에 의존성을 추가해보도록 하겠습니다. 러스트 패키지 레지스트리인 <a href="https://crates.io">crates.io</a>에서 모든 종류의 라이브러리를 찾을 수 있습니다. 러스트에서 우리 패키지를 "크레이트"라고 부르기도 합니다.</p>
+      <p>이 프로젝트에서, 우리는 <a href="https://crates.io/crates/ferris-says"></a><code>ferris-says</code>라고 불리 크레이트를 사용할 것입니다.
+      <p>우리의 <code>Cargo.toml</code> 파일에 크레이트 페이지에서 받은 정보를 추가할 것입니다.</p>
       { $cargotoml }
-      <p>Now we can run:</p>
+      <p>이제 우리는 실행할 수 있습니다.</p>
       <code>cargo build</code>
-      <p>...and Cargo will install our dependency for us.</p>
-      <p>You’ll see that running this command created a new file for us, <code>Cargo.lock</code>. This file is a log of the exact versions of the dependencies we are using locally.</p>
-      <p>To use this dependency, we can open <code>main.rs</code>, remove everything that’s in there (it’s just another example), and add this line to it:</p>
+      <p>...그리고 카고는 우리를 위해서 의존성 설치를 할 것입니다.</p>
+      <p>이 명령을 실행하면 <code>Cargo.lock</code>이라 새로운 파일이 생긴 것 알 수 있을 것입니다. 이 파일 우리가 로컬에서 사용하고 있는 의존성의 정확한 버전을 기록한 것입니다.</p>
+      <p>이 의존성을 사용하기 위해 <code>main.rs</code>를 열고, 그 안에 있는 모든 것을 제거하고(또 하나의 예시일 뿐입니다.) 이 줄을 여기에 추가할 수 있습니다.</p>
       <pre><code>use ferris_says::say;</code></pre>
-      <p>This line means that we can now use the <code>say</code> function that the <code>ferris-says</code> crate exports for us.</p>
+      <p>이 라인은 우리가 <code>ferris-says</code> 크레이트 속 <code>say</code> 기능을 사용할 수 있다는 것을 의미합니다.</p>
 
-learn-app = A small Rust application
-learn-app-steps = <p>Now let’s write a small application with our new dependency. In our <code>main.rs</code>, add the following code:</p>
+learn-app = 작은 러스트 애플리케이션
+learn-app-steps = <p>자! 이제 우리는 새로운 의존성을 사용하여 작은 프로그램을 작성해보겠습니다. 우리의 <code>main.rs</code>에 아래의 코드를 추가하세요.</p>
     { $code }
-    <p>Once we save that, we can run our application by typing:</p>
+    <p>한 번 저장하면, 우리는 그저 아래의 명령어만으로 프로그램을 실행할 수 있습니다.</p>
     <p><code>cargo run</code></p>
-    <p>Assuming everything went well, you should see your application print this to the screen:</p>
+    <p>모든 것이 잘 되었다고 가정했을 때, 화면에 출력된 여러분의 프로그램을 보세요.</p>
     { $output }
 
-learn-read-docs-header = Learn more!
-learn-read-docs = You’re a Rustacean now! Welcome! We’re so glad to have you. When you’re ready, hop over to our Learn page, where you can find lots of books that will help you to continue on your Rust adventure.
-learn-read-docs-button = learn more!
+learn-read-docs-header = 더 알아보기!
+learn-read-docs = 환영합니다! 당신은 이제 러스타시안입니다! 당신이 우리와 함께하게 되어서 기쁩니다. 준비가 되었으면, 우리의 학습 페이지로 이동하세요. 여기에서 여러분의 러스트 모험을 계속할 수 있도록 도와줄 많은 책들을 찾을 수 있습니다.
+learn-read-docs-button = 더 알아보기!
 
-learn-ferris-who = Who’s this crab, Ferris?
-learn-ferris = <p>Ferris is the unofficial mascot of the Rust Community. Many Rust programmers call themselves “Rustaceans,” a play on the word “<a href="https://en.wikipedia.org/wiki/Crustacean">crustacean</a>.” We refer to Ferris with the pronouns “they,” “them,” etc., rather than with gendered pronouns.</p>
-               <p>Ferris is a name playing off of the adjective, “ferrous,” meaning of or pertaining to iron. Since Rust often forms on iron, it seemed like a fun origin for our mascot’s name!</p>
-               <p>You can find more images of Ferris on <a href="http://rustacean.net/">http://rustacean.net/</a>.
+learn-ferris-who = 페리스? 이 게는 뭐죠?
+learn-ferris = <p>페리스는 러스트 커뮤니티의 비공식 마스코트입니다. 대부분의 러스트 프로그래머들은 “<a href="https://en.wikipedia.org/wiki/Crustacean">크러스타시안</a>”이라는 단어를 말장난 해 “러스타시안”이라 칭합니다. 우리는 페리스를 부를 때, 성별 대명사가 아닌 “그” 또는 “그들” 등의 대명사를 붙여서 부릅니다.</p>
+               <p>페리스라는 이름은 철이라는 뜻의 형용사인 “ferrous”의 말장난입니다. 녹(Rust)은 철에서 종종 생성되기 때문에, 우리 마스코트 이름에 있어서 재미있는 기원처럼 보였습니다!</p>
+               <p><a href="http://rustacean.net/">http://rustacean.net/</a>에서 더 많은 페리스의 이미지를 찾아볼 수 있습니다.
 learn-ferris-alt = a gif of ferris scurrying side to side
 
