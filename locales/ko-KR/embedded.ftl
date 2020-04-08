@@ -21,7 +21,7 @@ embedded-pitch-memory-description =
 embedded-pitch-concurrency-alt = 기어
 embedded-pitch-concurrency-heading = 두려움이 없는 동시성
 embedded-pitch-concurrency-description =
-        러스트는 스레드 간의 상태를 실수로 공유하는 것을 불가능하게 만듭니다. 어떠한 동시성 접근법을 사용하던지, 당신은 여전히 러스트의 강력한 보증을 받을 것입니다.
+        러스트는 스레드 간의 상태를 실수로 공유하는 것을 불가능하게 만듭니다. 어떠한 동시성 접근법을 사용하던지, 여러분은 여전히 러스트의 강력한 보증을 받을 것입니다.
 
 embedded-pitch-interop-alt = 악수
 embedded-pitch-interop-heading = 상호운용성

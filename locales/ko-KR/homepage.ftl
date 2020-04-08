@@ -11,7 +11,7 @@ production-blurb = 전세계에 수백개의 기업들이 빠른 속도, 적은 
         <a href="https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka-stylo/">파이어폭스</a>,
         <a href="https://blogs.dropbox.com/tech/2016/06/lossless-compression-with-brotli/">드랍박스</a>,
         그리고 <a href="https://blog.cloudflare.com/cloudflare-workers-as-a-serverless-rust-platform/">클라우드플레어</a>,
-        와 같이 당신이 알고있는, 또한 사랑하는 이 소프트웨어들은 러스트를 사용합니다. <strong>스타트업 기업부터 큰 법인까지,
+        와 같이 여러분이 알고있는, 또한 사랑하는 이 소프트웨어들은 러스트를 사용합니다. <strong>스타트업 기업부터 큰 법인까지,
         임베디드 기기들부터 확장 가능 한 웹 서비스까지, 러스트는 매우 적합합니다.</strong>
 
 production-testimonial-npm = 내가 러스트에게 할 수 있는 최고의 칭찬은 지루하다는 것이다. 이는 어마어마한 칭찬이다.

@@ -55,7 +55,7 @@ learn-reference = 참고 문헌은 정식 규격은 아니지만, 책보다 더 
 learn-reference-button = 레퍼런스 읽기
 
 learn-nomicon-alt = 캠프파이어
-learn-nomicon = 러스토노미콘은 안전하지 않은 러스트의 암흑 예술에 대한 당신의 지침서입니다. '노미콘'이라고 부르기도 합니다.
+learn-nomicon = 러스토노미콘은 안전하지 않은 러스트의 암흑 예술에 대한 여러분의 지침서입니다. '노미콘'이라고 부르기도 합니다.
 learn-nomicon-button = 노미콘 읽기
 
 learn-unstable-alt = 꽃가루 뿌리기
@@ -96,7 +96,7 @@ learn-install-other = 기타 도구
 learn-install-editors = 많은 에디터에서 러스트를 사용할 수 있습니다.
 
 learn-generating = 새 프로젝트 생성하기
-learn-generating-steps = <p>새 러스트 개발 환경에 작은 앱을 작성해보세요. 우리는 카고를 사용하여 새 프로젝트를 생성할 것 입니다. 당신의 터미널에서 아래의 명령어를 실행해보세요.</p>
+learn-generating-steps = <p>새 러스트 개발 환경에 작은 앱을 작성해보세요. 우리는 카고를 사용하여 새 프로젝트를 생성할 것 입니다. 여러분의 터미널에서 아래의 명령어를 실행해보세요.</p>
     <p><code>cargo new hello-rust</code></p>
     <p>이 명령어는 <code>hello-rust</code>라는 새 디렉토리와 함께 아래의 파일들을 생성할 것 입니다.</p>
     { $tree }
@@ -130,7 +130,7 @@ learn-app-steps = <p>자! 이제 우리는 새로운 의존성을 사용하여 �
     { $output }
 
 learn-read-docs-header = 더 알아보기!
-learn-read-docs = 환영합니다! 당신은 이제 러스타시안입니다! 당신이 우리와 함께하게 되어서 기쁩니다. 준비가 되었으면, 우리의 학습 페이지로 이동하세요. 여기에서 여러분의 러스트 모험을 계속할 수 있도록 도와줄 많은 책들을 찾을 수 있습니다.
+learn-read-docs = 환영합니다! 여러분은 이제 러스타시안입니다! 여러분이 우리와 함께하게 되어서 기쁩니다. 준비가 되었으면, 우리의 학습 페이지로 이동하세요. 여기에서 여러분의 러스트 모험을 계속할 수 있도록 도와줄 많은 책들을 찾을 수 있습니다.
 learn-read-docs-button = 더 알아보기!
 
 learn-ferris-who = 페리스? 이 게는 뭐죠?

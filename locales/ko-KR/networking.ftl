@@ -30,8 +30,8 @@ networking-pitch-secure-alt = 방패
 
 networking-pitch-concurrent-header = 규모에 따른 동시성
 networking-pitch-concurrent =
-    당신에게 적합한 동시성 접근법을 혼합하여 사용하세요.
-    러스트는 당신이 스레드나 작업 간에 상태를 실수로 공유하지 않도록 해줍니다.
+    여러분에게 적합한 동시성 접근법을 혼합하여 사용하세요.
+    러스트는 여러분이 스레드나 작업 간에 상태를 실수로 공유하지 않도록 해줍니다.
     그것은 여러분이 두려움 없이 모든 마지막 스케일링을 짜낼 수 있게 해줍니다.
 networking-pitch-concurrent-alt = 연결된 기어
 
