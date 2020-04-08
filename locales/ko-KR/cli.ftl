@@ -62,7 +62,7 @@ cli-maintainable-refactoring-link = 러스트 리팩토링하기
 
 cli-example-description = 커맨드라인 앱을 쓰는 것은 러스트를 배우는 좋은 방법입니다.
 cli-example-inputs-heading = 입력을 정의하세요.
-cli-example-main-heading = 당신만의 툴을 작성하세요.
+cli-example-main-heading = 여러분만의 툴을 작성하세요.
 cli-example-link = 커맨드라인 더 알아보기
 
 
