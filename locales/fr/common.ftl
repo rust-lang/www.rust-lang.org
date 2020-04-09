@@ -8,9 +8,16 @@ production-use = Utilisation en production
 learn-more = En savoir plus
 discord = Discord
 
+## components/panels/domain.hbs
+
+cli-learn-more = Outils de compilation
+wasm-learn-more = Écrire des Applications Web
+net-learn-more = Travailler sur des serveurs
+embedded-learn-more = Débuter avec l'embarqué
+
 ## components/layout.hbs
 
-meta-description = Un langage habilitant chacun à construire des logiciels fiables et efficaces.
+meta-description = Un langage permettant à chacun de construire des logiciels fiables et efficaces.
 page-title = { $pagename } — Le langage de programmation Rust
 index-title = Le langage de programmation Rust
 
@@ -22,6 +29,7 @@ nav-tools = Outils
 nav-governance = Gouvernance
 nav-community = Communauté
 nav-blog = Blog
+nav-playground = Bac à sable
 choose-language = Langue
 nav-logo-alt = Logo de Rust
 

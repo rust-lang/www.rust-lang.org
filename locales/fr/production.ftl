@@ -26,3 +26,4 @@ production-license-link = Politiques des licences
 
 ## templates/production/users.hbs
 
+production-users-page-title = Rust en production

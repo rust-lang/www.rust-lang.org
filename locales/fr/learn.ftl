@@ -14,7 +14,7 @@ learn-doc = Toute cette documentation est également disponible localement en ut
 learn-doc-std = Guide complet de l'API de la bibliothèque standard Rust.
 learn-doc-std-button = La bibliothèque standard
 learn-doc-edition = Guide des éditions de Rust.
-learn-doc-edition-button = Guide des editions
+learn-doc-edition-button = Guide des éditions
 learn-doc-cargo = Un livre sur le gestionnaire de paquets et le système de compilation de Rust.
 learn-doc-cargo-button = Le Book (livre) de Cargo
 learn-doc-rustdoc = Apprenez comment faire de fantastiques documentations pour votre crate (paquet).
@@ -36,7 +36,7 @@ learn-reference-alt = icône étagère de livres
 learn-reference = La "Référence" n'est pas une spécification formelle, mais elle est plus détaillée et complète que le Book.
 learn-reference-button = Lire la référence
 learn-nomicon-alt = deux mains couvrant une flamme
-learn-nomicon = Le Rustonomicon est votre guide dans les arts sombres du Rust unsafe. Il est parfois appelé le " ’nomicon" .
+learn-nomicon = Le Rustonomicon est votre guide dans les arts sombres du Rust unsafe. Il est parfois appelé "le ’nomicon" .
 learn-nomicon-button = Lire le ’nomicon.
 learn-unstable-alt = Une main lâchant des objets scintillants.
 learn-unstable = Le Unstable Book contient la documentation des fonctionnalités instables que vous pouvez seulement utiliser avec les versions nightly de Rust
@@ -50,7 +50,9 @@ learn-install-heading = Installer Rust
 learn-play = Vous pouvez essayer Rust en ligne dans le Rust Playground sans rien installer sur votre ordinateur.
 learn-play-button = Essayer Rust sans l'installer
 learn-install-rustup-header = Rustup : l'outil d'installation de Rust et gestionnaire de versions
-learn-install-rustup = La première façon avec laquelle les gens installent Rust est au moyen d'un outil nommé Rustup, qui est un outil d'installation de Rust et un gestionnaire de version.
+learn-install-rustup = La principale façon d'installer Rust est au moyen d'un outil nommé Rustup, qui est un outil d'installation de Rust et un gestionnaire de versions.
+learn-install-rustup-update-header = Est-ce que rustup est à jour ?
+learn-install-rustup-update = Rust évolue souvent. Si vous avez installé Rustup il y a longtemps, il est possible que votre version de Rust ne soit plus à jour. Récupérez la dernière version via la commande { $update-command }.
 learn-install-rustup-button = En savoir plus sur l'installation
 learn-install-cargo-header = Cargo: l'outil de build et gestionnaire de paquets
 learn-install-cargo =
@@ -67,7 +69,6 @@ learn-install-cargo =
 learn-install-cargo-button = Lire le Book de Cargo
 learn-install-other = Autres outils
 learn-install-editors = Rust est supporté dans de nombreux d'éditeurs:
-
 learn-generating = Générer un nouveau projet
 learn-generating-steps =
     <p>Écrivons une petite application avec notre nouvel environnement de développement Rust. Pour commencer, nous utiliserons Cargo pour créer un nouveau projet pour nous. Dans le terminal de votre choix exécutez : </p>
@@ -104,7 +105,7 @@ learn-app-steps =
     { $output }
 learn-read-docs-header = En savoir plus !
 learn-read-docs = Vous êtes maintenant un Rustacé ! Bienvenue ! Nous sommes heureux de vous compter parmi nous. Quand vous serez prêt·e, faites un saut sur notre  page « Apprendre », où vous pourrez trouver beaucoup de livres qui vous aideront a continuer votre aventure en Rust.
-learn-read-docs-button = en savoir plus!
+learn-read-docs-button = en savoir plus !
 learn-ferris-who = Qui est ce crabe, Ferris ?
 learn-ferris = <p>Ferris est la mascotte non officielle de la communauté Rust. Beaucoup de programmeurs Rust s'appellent eux-mêmes "Rustacés", un jeu de mot avec  “<a href="https://fr.wikipedia.org/wiki/Crustacé">crustacé</a>.”  <p>Ferris est un nom jouant avec l'adjectif , “ferreux,” étant donné que la rouille (Rust en anglais) se forme souvent sur le fer, cela semblait une origine amusante pour le nom de notre mascotte !</p> <p>Vous pouvez trouver plus d'images de Ferris sur <a href="http://rustacean.net/">http://rustacean.net/</a>.
 learn-ferris-alt = gif de ferris se promenant d'un côté à l'autre
