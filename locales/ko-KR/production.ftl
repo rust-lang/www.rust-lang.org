@@ -1,11 +1,11 @@
 
 ## templates/production/index.hbs
 production-page-title = Production
-production-whitepapers = Whitepapers
-production-read-whitepaper = Read the whitepaper
+production-whitepapers = 백서
+production-read-whitepaper = 백서 읽기
 
-production-npm = Read how <a href="https://www.npmjs.com/">npm</a>, who runs the JavaScript Registry of the same name, found Rust to be boring to deploy.
-production-tilde = Learn how Rust helps <a href="http://www.tilde.io/">Tilde</a>, makers of <a href="https://www.skylight.io/">Skylight</a>, use minimal resources to enable feature-rich performance monitoring of their customers’ applications.
+production-npm = 동일한 이름의 자바스크립트 레지스트리를 실행하는 <a href="https://www.npmjs.com/">npm</a>이 어떻게 러스트를 효율적으로 사용하는 것이 지루하다는 것을 알게되었는지 읽어보세요.
+production-tilde = <a href="https://www.skylight.io/">Skylight</a>의 제조업체인 <a href="http://www.tilde.io/">Tilde</a> 최소한 리소스를 사용하여 고객이 애플리케이션에 대한 풍부한 성능 모니터링을 지원하는 방법에 대해 알아보세요.
 
 
 production-highlights = Highlights
