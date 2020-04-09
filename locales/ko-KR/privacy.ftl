@@ -9,164 +9,145 @@ policies-privacy-page-version =
 
 policies-privacy-page-intro =
     <p>
-      The Rust Project oversees a number of projects, including the
-      <a href="{ $baseurl }/">Rust website</a>,
-      <a href="https://crates.io">crates.io</a>, and
-      <a href="https://docs.rs">docs.rs</a>. This privacy notice explains what
-      we do with personal information.
+      러스트 프로젝트는
+      <a href="{ $baseurl }/">러스트 홈페이지</a>,
+      <a href="https://crates.io">crates.io</a>, 그리고
+      <a href="https://docs.rs">docs.rs</a>를 포함 많은 프로젝트를 감독합니다.
+      이 개인 정보 공지는 우리가 개인 정보로 무엇을 하는 설명합니다.
     </p>
 
 policies-privacy-page-rust-lang-org-desc =
     <p>
-      The Rust website at <a href="{ $baseurl }/">rust-lang.org</a> is a project
-      of the <a href="{ $baseurl }/governance/teams/core">Core team</a> and the
-      <a href="{ $baseurl }/governance/teams/community">Community team.</a>
+      <a href="{ $baseurl }/">rust-lang.org</a>의 러스트 홈페이지는
+      <a href="{ $baseurl }/governance/teams/core">코어 팀</a>과
+      <a href="{ $baseurl }/governance/teams/community">커뮤니티 팀</a>의 프로젝트입니다.
     </p>
 
     <dl>
-      <dt>Visitor logs:</dt>
+      <dt>방문자 기록:</dt>
       <dd>
-        When you visit rust-lang.org, we receive your IP address as part of
-        our standard server logs. We store these logs for 1 year.
+        rust-lang.org를 방문하면, 우리는 표준 서버 로그의 일부로써 여러분의 IP 주소를 받습니다.
+        그리고 이 기록을 1년간 보관합니다.
       </dd>
     </dl>
 
 policies-privacy-page-crates-io-desc =
     <p>
-      <a href="https://crates.io">Crates.io</a> is managed by members of the
-      <a href="{ $baseurl }/governance/teams/crates-io">Crates.io</a> and
-      <a href="{ $baseurl }/governance/teams/core">Rust core</a> teams.
+      <a href="https://crates.io">Crates.io</a>는
+      <a href="{ $baseurl }/governance/teams/crates-io">Crates.io</a>과
+      <a href="{ $baseurl }/governance/teams/core">러스트 코어 팀</a>의 멤버들에 의해 운영됩니다.
     </p>
 
     <dl>
-      <dt>Logging in with GitHub:</dt>
+      <dt>깃허브로 로그인:</dt>
       <dd>
         <p>
-          Crates.io requires users to have a
-          <a href="https://github.com">GitHub account</a>
-          in order to log in and use the service. When you log in to Crates.io
-          using a GitHub account, we receive your GitHub username and avatar. If
-          you share a display name or public email address in your GitHub public
-          profile, we also receive that information.
+          Crates.io는 사용자가 서비스에 로그인하기 위해
+          <a href="https://github.com">깃허브 계정</a>을 가지고 있어야 합니다.
+          여러분이 깃허브 계정을 사용하여 Crates.io에 로그인하면, 우리는 여러분의 깃허브 사용자 이름과 아바타 정보를 받습니다.
+          깃허브 공개 프로필에서 표시 이름이나 메일 주소를 공유하면 해당 정보도 수신됩니다.
         </p>
       </dd>
 
-      <dt>Email addresses:</dt>
+      <dt>이메일 주소:</dt>
       <dd>
         <p>
-          You must have a verified email address to publish a crate. We receive
-          any public email address associated with your GitHub account. You can
-          also choose to submit a different address to associate with your
-          Crates.io activity. We will only use your email address to contact you
-          about your account.
+          크레이트를 게시하려면 확인된 이메일 주소가 있어야 합니다. 
+          우리는 깃허브 계정과 관련된 모든 메일 주소를 받습니다. 
+          또한 Crates.io 활동과 연결할 다른 주소를 제출하도록 선택할 수 있습니다. 
+          우리는 오직 여러분의 이메일 주소를 여러분에게 연락하기 위해 사용할 것이다.
         </p>
       </dd>
 
-      <dt>Visitor logs:</dt>
+      <dt>방문자 기록:</dt>
       <dd>
         <p>
-          When you visit Crates.io, we receive your IP address and user-agent
-          header as part of our standard server logs. We store these logs for 1
-          year.
+          Crates.io를 방문하면, 우리는 표준 서버 로그의 일부로써 여러분의 IP 주소 사용자 에이전트 헤더를 받습니다.
+          그리고 이 기록을 1년간 보관합니다.
         </p>
       </dd>
 
-      <dt>Information uploaded to crates:</dt>
+      <dt>크레이트에 업로드 된 정보:</dt>
       <dd>
         <p>
-          All crates on Crates.io are public, including the list of crate owners’
-          user names and the crate upload date. Anyone may view or download a
-          crate’s contents. Because of the public nature of Crates.io, any
-          personal data you might include in a Cargo.toml file uploaded to
-          a crate will be publicly available. For example, if an email address
-          is in the `authors` field in the Cargo.toml file, that email address
-          will also be public.
+          Crates.io의 모든 크레이트는 크레이트 소유자의 사용자 이름 목록과 크레이트 업로드 날짜를 포함하여 공개되어 있습니다.
+          누구나 크레이트의 내용을 보거나 다운로드 할 수 있습니다.
+          Crates.io의 공공성 때문에, 크레이트에 업로드된 Cargo.toml 파일에 포함할 수 있는 모든 개인 데이터가 공개될 것입니다.
+          예를 들어, 메일 주소가 Cargo.toml 파일의 "auters" 필드에 있는 경우 해당 메일 주소도 공개됩니다.
         </p>
         <p>
-          Due to its public nature, be aware if you include any private
-          information in a crate, that information may be indexed by search
-          engines or used by third parties. Sensitive information should not be
-          included in a crate file.
+          공공성 때문에 크레이트에 개인 정보를 포함시킬 경우 검색 엔진에 의해 정보가 색인화되거나 제3자가 사용할 수 있다는 점에 유의하세요.
+          중요한 정보는 크레이트 파일에 포함되지 않아야 합니다.
         </p>
       </dd>
 
-      <dt>Publication of site-related data: </dt>
+      <dt>사이트 관련 데이터 개시: </dt>
       <dd>
         <p>
-          Crates.io uses the Google Visualization API to create graphs for each
-          crate showing downloads over the last 90 days. Those graphs can be seen
-          at the bottom of each crate’s page.
+          Crates.io은 구글 시각화 API를 사용하여 지난 90일 동안의 다운로드를 보여주는 각 상자에 대한 그래프를 생성합니다.
+          그 그래프는 각 크레이트 페이지의 하단에서 볼 수 있습니다.
         </p>
       </dd>
     </dl>
 
 policies-privacy-page-docs-rs-desc =
     <p>
-      <a href="https://docs.rs">Docs.rs</a> is managed by the members of the
-      <a href="{ $baseurl }/governance/teams/dev-tools#rustdoc">Rustdoc team</a>
-      and <a href="{ $baseurl }/governance/teams/core">Rust core team</a>. The
-      project collects and uses data as described in this privacy notice.
+      <a href="https://docs.rs">Docs.rs</a>는
+      <a href="{ $baseurl }/governance/teams/dev-tools#rustdoc">러스트문서 팀</a>
+      과 <a href="{ $baseurl }/governance/teams/core">러스트 코어 팀</a>이 관리하고 있습니다.
+      이 프로젝트는 개인 정보 보호 고지서에 설명된 대로 데이터를 수집하여 사용합니다.
     </p>
 
     <p>
-      Docs.rs is an open source project to host documentation of crates for the
-      Rust Programming Language. It automatically builds crates' documentation
-      released on <a href="https://crates.io">crates.io</a> using the nightly
-      release of the Rust compiler. All information from crates that is
-      published on docs.rs is also available publicly on crates.io.
+    Docs.rs은 러스트 프로그래밍 언어의 크레이트 설명서를 호스트하는 오픈 소스 프로젝트입니다.
+    그것은 러스트 컴파일러의 나이틀리 릴리즈를 이용하여 <a href="https://crates.io">crates.io</a>에 발매된 크레이트의 문서를 자동으로 만듭니다.
+    docs.rs에 게시된 상자의 모든 정보는 crates.io에서 공개됩니다.
+
     </p>
 
 
-policies-privacy-page-forums-title = Forums
+policies-privacy-page-forums-title = 포럼
 policies-privacy-page-forums-desc =
     <p>
-      <a href="{ $baseurl }/governance/teams/community">The Rust Community team</a>
-      administers the
-      <a href="https://users.rust-lang.org">Users Forum</a> and the
-      <a href="https://internals.rust-lang.org">Internals Forum</a>. Posts on
-      these forums are public. If you sign up to participate in these forums, we
-      collect your email address and name. As administrators of the forum, we
-      have access to usage information regarding your interactions with it, such
-      as posts published and read, and time spent on the site.
+      <a href="{ $baseurl }/governance/teams/community">The Rust Community team</a>은
+      <a href="https://users.rust-lang.org">사용자 포럼</a>과
+      <a href="https://internals.rust-lang.org">국제 포럼</a>을 관리합니다.
+      이 포럼의 게시물은 공개적입니다. 당신이 이 포럼에 참가하기 위해 등록한다면, 우리는 당신의 메일 주소와 이름을 수집합니다.
+      포럼의 관리자로서 우리는 게시 및 게시물 읽기 같은 사이트에서 보내는 시간을 포럼과의 상호 작용에 관한 사용 정보에 접근할 수 있습니다.
     </p>
 
-policies-privacy-page-third-parties-title = Third-party Services
+policies-privacy-page-third-parties-title = 써드 파티 서비스
 policies-privacy-page-third-parties-desc =
     <p>
-      The Users Forum and Internals Forum on rust-lang.org are hosted by
-      <a href="https://www.discourse.org/">Discourse</a> and use its open source
-      discussion platform. Discourse’s privacy policy is available
-      <a href="https://www.discourse.org/privacy">here</a>.
+      rust-lang.org의 사용자 포럼 국제 포럼은 <a href="https://www.discourse.org/">Discourse</a>이
+      주최하고 Discourse의 오픈 소스 토론 플랫폼을 사용합니다.
+      Discourse의 개인 정보 보호 정책은 <a href="https://www.discourse.org/privacy">여기</a>에서 확인할 수 있습니다.
     </p>
 
     <p>
-      We use Mailgun to send email. Mailgun’s privacy policy is available
-      <a href="https://www.mailgun.com/privacy-policy">here</a>.
+      우리는 메일을 보내기 위해 메일건을 사용합니다. 메일건의 개인 정보 보호 정책은
+      <a href="https://www.mailgun.com/privacy-policy">여기</a>에서 확인할 수 있습니다.
     </p>
 
     <p>
-      GitHub login is used for authentication in Crates.io and (optionally) in
-      the forums. GitHub’s Privacy Statement can be found
-      <a href="https://help.github.com/en/articles/github-privacy-statement">here</a>.
+      깃허브 로그인은 Crates.io 및 포럼(의 프로그램) 인증에 사용됩니다.
+      깃허브의 개인 정보 보호 정책은 <a href="https://help.github.com/en/articles/github-privacy-statement">여기</a>에서 확인할 수 있습니다.
     </p>
 
     <p>
-      Some Rust team members use the Zulip and Discord platforms for
-      community collaboration. Zulip’s privacy notice is available
-      <a href="https://zulipchat.com/privacy/">here</a>.
-      Discord’s privacy notice is available
-      <a href="https://discordapp.com/privacy">here</a>.
+      일부 러스트 팀 구성원들은 지역사회 협력을 위해 줄립과 디스코드를 사용합니다.
+      줄립의 프라이버시 알림은 <a href="https://zulipchat.com/privacy/">여기</a>에서 확인할 수 있습니다.
+      디스코드의 개인 정보 보호 정책은 <a href="https://discordapp.com/privacy">여기</a>에서 확인할 수 있습니다.
     </p>
 
-policies-privacy-page-contact-title = Contact
+policies-privacy-page-contact-title = 연락
 policies-privacy-page-contact-desc =
     <p>
-      For data subject access requests, or any questions about this privacy
-      notice, please email support at
-      <a href="mailto:privacy@rust-lang.org">privacy@rust-lang.org</a>
+      데이터 주체 액세스 요청 또는 이 개인 정보 보호 통지에 대한 문의는
+      <a href="mailto:privacy@rust-lang.org">privacy@rust-lang.org</a>으로 이메일을 보내주세요.
     </p>
 
-    <p>Alternatively, you may contact us at:</p>
+    <p>또는 여기서 우리를 만날 수 있습니다.</p>
 
     <address>
       Mozilla Corporation<br>
