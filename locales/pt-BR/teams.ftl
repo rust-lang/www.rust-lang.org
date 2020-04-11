@@ -55,7 +55,6 @@ governance-team-release-name = Time de lançamentos
 governance-team-release-description = rastreando regressões, estabilizações e produzindo binários do Rust
 governance-team-wg-wasm-name = Grupo de trabalho WebAssembly (WASM)
 governance-team-wg-wasm-description = Focando na experiência de ponta a ponta em embarcar código Rust em bibliotecas e aplicações JS através do WebAssembly.
-governance-team-wg-rustc-dev-guide-name = Aprendizagem
 governance-team-wg-rustc-dev-guide-description = Torna o compilador fácil de aprender ao garantir que o guia rustc e a documentação da API estejam "completos"
 governance-team-libs-name = Time de bibliotecas
 governance-team-libs-description = a biblioteca padrão Rust, crates rust-lang, convenções e suporte ao ecossistema

@@ -55,7 +55,6 @@ governance-team-release-name = リリースチーム
 governance-team-release-description = リグレッションと安定化の追跡や、Rustのリリースを行います
 governance-team-wg-wasm-name = WebAssembly（WASM）ワーキンググループ
 governance-team-wg-wasm-description = WebAssemblyを通してJSライブラリやアプリケーションにRustコードを組み込む、エンドツーエンドの体験に焦点を絞っています。
-governance-team-wg-rustc-dev-guide-name = ラーニングワーキンググループ
 governance-team-wg-rustc-dev-guide-description = rustc-guideとAPIドキュメントを「完全」なものにすることでコンパイラを学びやすいものにします
 governance-team-libs-name = ライブラリチーム
 governance-team-libs-description = Rust標準ライブラリ、rust-langのクレート、規約、そしてエコシステムのサポート
