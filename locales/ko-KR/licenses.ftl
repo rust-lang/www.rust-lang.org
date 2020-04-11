@@ -14,6 +14,6 @@ licenses-license-specific-description =
         <p>러스트 프로젝트 또는 관련 프로젝트에 대한 라이센스 부여 방법에 대한 구체적인 질문이 있는 경우 러스트 코어 팀에 문의하십시오.</p>
 licenses-license-email-link = 코어 팀에 메일 보내기
 
-    licenses-attribution-heading = 기여
+licenses-attribution-heading = 기여
 licenses-attribution-description =
         아이콘은 <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>의 <a href="http://www.freepik.com" title="Freepik">Freepik</a>에 의해 제작되었으며, <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC-3.0-BY</a>에서 부여된 라이센스입니다.
