@@ -89,7 +89,7 @@ policies-privacy-page-crates-io-desc =
         <p>
           Crates.io utiliza la API de Google Visualization para crear gráficas para cada
           <em>crate</em> que muestran las descargas en los últimos 90 días. Estas gráficas
-          pueden verse al final de la página de cada <em>crate<em>.
+          pueden verse al final de la página de cada <em>crate</em>.
         </p>
       </dd>
     </dl>
