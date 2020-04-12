@@ -83,8 +83,8 @@ governance-team-release-description = Tracking regressions and stabilizations, a
 governance-team-wg-wasm-name = WebAssembly (WASM) working group
 governance-team-wg-wasm-description = Improving on the end-to-end experience of embedding Rust code in JS libraries and apps via WebAssembly
 
-governance-team-wg-learning-name = Learning working group
-governance-team-wg-learning-description = Making the compiler easier to learn by ensuring that the compiler guide and API documentation are updated
+governance-team-wg-rustc-dev-guide-name = Rustc Dev Guide working group
+governance-team-wg-rustc-dev-guide-description = Making the compiler easier to learn by ensuring that the compiler guide and API documentation are updated
 
 governance-team-libs-name = Library team
 governance-team-libs-description = Developing and managing the Rust standard library, official rust-lang crates, code conventions, and ecosystem support
