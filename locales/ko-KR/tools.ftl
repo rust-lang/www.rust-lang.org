@@ -2,17 +2,14 @@
 
 tools-page-title = Tools
 
-tools-editor-support-heading = First-class editor support
-tools-editor-support-description = Whether you prefer working with code from the
-        command line, or using rich graphical editors, there’s a Rust
-        integration available for your editor of choice. Or you can build your
-        own using the <a href="https://github.com/rust-lang/rls">Rust Language Server</a>
+tools-editor-support-heading = 퍼스트 클래스 에디터 지원
+tools-editor-support-description = 커맨드 라인에서 코드를 사용하는 것이 좋든, 풍부한 그래픽 편집기를 사용하는 것이 좋든, 여러가지 선택지가 있습니다.
+        또는 <a href="https://github.com/rust-lang/rls">러스트 언어 서버</a>를 이용해서 직접 만들 수 있습니다.
 
-tools-build-heading = Bring calmness to your builds
-tools-build-description = Cargo is the build tool for Rust. It bundles all
-        common actions into a single command. No boilerplate required.
+tools-build-heading = 빌드에 안정성을 추가하기
+tools-build-description = 카고는 러스트를 위한 빌드 툴입니다. 이것은 모든 일반적인 행동을 하나의 명령어로 묶어줍니다. 상용 코드가 필요하지 않습니다.
 
-tools-build-install-heading = Install
+tools-build-install-heading = 설치
 tools-build-install-description = With tens of thousands of packages, there’s a
         good chance <a href="https://crates.io">crates.io</a> has the solution
         you’re looking for. Stand on the shoulders of giants, and move your team
