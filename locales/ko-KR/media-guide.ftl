@@ -5,10 +5,16 @@
 ## Page title
 policies-media-guide-page-title = Media guide
 
+
 ## Art license
 media-guide-art-license-heading = 예술 라이센스
-media-guide-art-license-description = 
+
+# The first line of under discription is lead "Korean Language User" to original English policy link.
+media-guide-art-license-description =
+        <p><b><a href="https://www.rust-lang.org/policies/media-guide"> 전체 원문 보기</b></a></p>
+
         <p>러스트와 카고 (비트맵과 벡터)로고의 소유권은 모질라 재단에 있으며, <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license (CC-BY)</a>의 조건에 따라 배포됩니다. 이것은 Creative Commons 라이센스 중 가장 관대하며, 어떤 목적으로든 재사용 및 수정 가능합니다. 제한사항은 배포자가 “적절한 신용을 주고, 면허에 대한 링크를 제공하며, 변경이 이루어졌는지 표시”해야 하는 것입니다. <ul></ul><strong>이러한 로고의 사용과 러스트 및 카고 이름 또한 상호에 의해 관리된다는 점에 유의하십시오. 우리의 상호 정책은 아래에 설명되어 있습니다.</strong></p>
+
 
 ## Trademark policy
 media-guide-trademark-policy-heading = 상호 정책
