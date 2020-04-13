@@ -68,7 +68,8 @@ wasm-production-cloudflare-attribution =
 wasm-production-mozilla-alt = firefox
 # If an opening square bracket is the first character on a line, it must be escaped like this: {"["}. See https://projectfluent.org/fluent/guide/special.html
 wasm-production-mozilla-quote =
-        [<code>source-map</code> 라이브러리]의 자바스크립트 구현은 성능이라는 이름으로 난해한 코드를 축적하여 관용적인 러스트로 대체하였습니다. 러스트는 우리가 의도를 분명히 표현하는 것과 런타임 성능을 선택하는 것을 강요하지 않습니다.
+        <code>source-map</code> 라이브러리의 자바스크립트 구현은 성능이라는 이름으로 난해한 코드를 축적하여 관용적인 러스트로 대체하였습니다.
+        러스트는 우리가 의도를 분명히 표현하는 것과 런타임 성능을 선택하는 것을 강요하지 않습니다.
 wasm-production-mozilla-attribution =
         Nick Fitzgerald, <a href="{ $href }">Oxidizing Source Maps with Rust and WebAssembly</a>
 
