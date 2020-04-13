@@ -51,6 +51,7 @@ governance-team-rustdoc-description = Développer et maintenir les outils de doc
 governance-team-wg-secure-code-name = Sécurité du code
 governance-team-wg-secure-code-description = Faciliter l'écriture de code sécurisé en Rust
 governance-team-release-name = Équipe livrables
+governance-team-release-description = Suivre les régressions et stabilisations, publier les mises à jour du compilateur
 governance-team-wg-wasm-name = WebAssembly (wasm)
 governance-team-wg-wasm-description = Améliorer l'expérience d'inclusion de code Rust dans les applications et bibliothèques JS avec WebAssembly
 governance-team-wg-rustc-dev-guide-description = Rendre le compilateur plus facile à apprendre en s’assurant que les documentations de l’API et le guide de rustc soient « complets »
