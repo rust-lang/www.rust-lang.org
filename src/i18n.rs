@@ -83,7 +83,7 @@ pub const EXPLICIT_LOCALE_INFO: &[LocaleInfo] = &[
         lang: "zh-TW",
         text: "正體中文",
     },
-    LocaleInfo{
+    LocaleInfo {
         lang: "ko-KR",
         text: "한국어",
     },
