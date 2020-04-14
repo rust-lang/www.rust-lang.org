@@ -508,7 +508,7 @@ dependencies = [
  "failure",
  "failure_derive",
  "fluent-locale",
- "fluent-syntax 0.9.1",
+ "fluent-syntax 0.9.3",
  "intl_pluralrules",
  "rental",
 ]
@@ -527,9 +527,9 @@ checksum = "18279f7e946e0f08b253cd25ffedf6347f3811b37becf120d574dd0a44c3d906"
 
 [[package]]
 name = "fluent-syntax"
-version = "0.9.1"
+version = "0.9.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7be7427364d95bc7b59f3b7cd0b1a74bb70c2ee0ae667b63b853d359470dc85c"
+checksum = "ac0f7e83d14cccbf26e165d8881dcac5891af0d85a88543c09dd72ebd31d91ba"
 
 [[package]]
 name = "fnv"
@@ -679,7 +679,7 @@ dependencies = [
  "fluent",
  "fluent-bundle 0.6.0",
  "fluent-locale",
- "fluent-syntax 0.9.1",
+ "fluent-syntax 0.9.3",
  "handlebars",
  "lazy_static",
  "serde_json",
@@ -2427,7 +2427,7 @@ dependencies = [
  "fluent",
  "fluent-bundle 0.6.0",
  "fluent-locale",
- "fluent-syntax 0.9.1",
+ "fluent-syntax 0.9.3",
  "handlebars",
  "handlebars-fluent",
  "lazy_static",
