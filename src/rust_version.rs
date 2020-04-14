@@ -1,9 +1,6 @@
-use reqwest;
-use serde_json;
 use std::any::Any;
 use std::env;
 use std::error::Error;
-use toml;
 
 static MANIFEST_URL: &str = "https://static.rust-lang.org/dist/channel-rust-stable.toml";
 static RELEASES_FEED_URL: &str = "https://blog.rust-lang.org/releases.json";
