@@ -491,7 +491,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9ebe7532e1e5146a909de9e019e31835a84b5dee3eeb234561e525844f3cf3bf"
 dependencies = [
  "fluent-bundle 0.11.0",
- "unic-langid",
+ "unic-langid 0.8.0",
 ]
 
 [[package]]
@@ -503,7 +503,7 @@ dependencies = [
  "criterion",
  "failure",
  "failure_derive",
- "fluent-locale",
+ "fluent-locale 0.4.1",
  "fluent-syntax 0.8.0",
  "intl_pluralrules 1.0.3",
  "rental",
@@ -517,7 +517,7 @@ checksum = "169bdc8d6b068daf445ed7cdfe86ca7a51e5b6b3126cdbd92d724537fb93364a"
 dependencies = [
  "failure",
  "failure_derive",
- "fluent-locale",
+ "fluent-locale 0.4.1",
  "fluent-syntax 0.9.3",
  "intl_pluralrules 1.0.3",
  "rental",
@@ -535,7 +535,7 @@ dependencies = [
  "intl_pluralrules 6.0.0",
  "rental",
  "smallvec 1.1.0",
- "unic-langid",
+ "unic-langid 0.8.0",
 ]
 
 [[package]]
@@ -544,7 +544,7 @@ version = "0.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fe5815efd5542e40841cd34ef9003822352b04c67a70c595c6758597c72e1f56"
 dependencies = [
- "unic-langid",
+ "unic-langid 0.8.0",
 ]
 
 [[package]]
@@ -552,6 +552,15 @@ name = "fluent-locale"
 version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4a54a80f8d4153a0390516480b155b8495408f00a4eebd386ed4d7b4532c7e01"
+
+[[package]]
+name = "fluent-locale"
+version = "0.10.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "50f626739113990f6ee64eff9b9e92621688dfd8a5d1b6eab94741bb5eddbc96"
+dependencies = [
+ "unic-langid 0.6.1",
+]
 
 [[package]]
 name = "fluent-syntax"
@@ -721,7 +730,7 @@ checksum = "04c6b3a239c6d8634a60f40487ecfa5e3382fa8fd2334c1d02378482c012c23a"
 dependencies = [
  "fluent 0.5.0",
  "fluent-bundle 0.6.0",
- "fluent-locale",
+ "fluent-locale 0.4.1",
  "fluent-syntax 0.9.3",
  "handlebars",
  "lazy_static",
@@ -887,7 +896,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9867e2d65d82936ef34217ed0f87b639a94384e93a0676158142c861c705391f"
 dependencies = [
  "type-map",
- "unic-langid",
+ "unic-langid 0.8.0",
 ]
 
 [[package]]
@@ -907,7 +916,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d82c14d8eece42c03353e0ce86a4d3f97b1f1cef401e4d962dca6c6214a85002"
 dependencies = [
  "tinystr",
- "unic-langid",
+ "unic-langid 0.8.0",
 ]
 
 [[package]]
@@ -2308,11 +2317,29 @@ checksum = "8f00ed7be0c1ff1e24f46c3d2af4859f7e863672ba3a6e92e7cff702bf9f06c2"
 
 [[package]]
 name = "unic-langid"
+version = "0.6.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "7f209d65ab52de48d87c1845576d2d44f2b36553b8daa4c7f7a7383781f5750c"
+dependencies = [
+ "unic-langid-impl 0.6.2",
+]
+
+[[package]]
+name = "unic-langid"
 version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "24d81136159f779c35b10655f45210c71cd5ca5a45aadfe9840a61c7071735ed"
 dependencies = [
- "unic-langid-impl",
+ "unic-langid-impl 0.8.0",
+]
+
+[[package]]
+name = "unic-langid-impl"
+version = "0.6.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f7b22a3f781a9cb3588f751337fa7989472923973d546020d91da8e5d1cd5544"
+dependencies = [
+ "tinystr",
 ]
 
 [[package]]
@@ -2529,7 +2556,7 @@ version = "0.1.0"
 dependencies = [
  "fluent 0.11.0",
  "fluent-bundle 0.6.0",
- "fluent-locale",
+ "fluent-locale 0.10.1",
  "fluent-syntax 0.9.3",
  "handlebars",
  "handlebars-fluent",
