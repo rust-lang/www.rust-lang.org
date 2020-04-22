@@ -36,13 +36,16 @@ cli-pitch-machines-description =
 cli-pitch-machines-link = Komunikuj się z maszynami
 cli-pitch-logging-img-alt = 3 kłody drewna ułożone jedna na drugiej
 cli-pitch-logging-heading = Elastyczne logowanie
+cli-pitch-logging-description =
+    Dodanie logowania jest łatwe, tak samo jak
+    skonfigurowanie go dla różnych wyjść i w różnych stylach.
 cli-pitch-logging-link = Loguj, śledź, zrozum
 
 ## templates/components/what/cli/maintainable.hbs
 
 cli-maintainable-heading = Łatwy do utrzymania kod źródłowy
 cli-maintainable-errors-img-alt = struktura aplikacji wiersza poleceń
-cli-maintainable-errors-heading = Wyłapuj błędy <em>teraz</em>
+cli-maintainable-errors-heading = Wyłap błędy <em>od razu</em>
 cli-maintainable-errors-description =
     Co jeśli plik konfiguracyjny jest niedostępny lub niepoprawny? Co jeśli
     jakaś jedna zmienna środowiskowa jest pusta? Tego typu rzeczy łatwo
@@ -75,6 +78,10 @@ cli-production-sentry-quote =
     bardzo przyjaznych aplikacji wiersza poleceń.
 cli-production-sentry-attribution = &ndash; Armin Ronacher,
 cli-production-sentry-link = Rust w Sentry &ndash; PolyConf 2017
+cli-production-habitat-quote =
+    Życie z tą bazą kodu? Niczego nie żałuję. [...] Dodatkową korzyścią
+    było korzystanie z Rusta przy tworzeniu aplikacji CLI. Jest 
+    bardzo dobry kiedy przychodzi do kompilacji na różne systemy docelowe.
 cli-production-habitat-attribution = &ndash; Fletcher Nichol,
 cli-production-habitat-link = Używanie Rusta w Produkcji &ndash; RustFest Kyiv
 cli-production-habitat-img-alt = Logo Habitat

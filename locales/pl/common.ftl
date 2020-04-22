@@ -17,6 +17,7 @@ embedded-learn-more = Programuj Systemy Wbudowane
 
 ## components/layout.hbs
 
+meta-description = Język umożliwiający każdemu budowanie niezawodnego i wydajnego oprogramowania.
 page-title = { $pagename } - Język Programowania Rust
 index-title = Język Programowania Rust
 

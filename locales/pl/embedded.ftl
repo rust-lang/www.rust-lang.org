@@ -9,14 +9,17 @@ what-embedded-page-title = Urządzenia wbudowane
 ## Why Rust? (templates/components/what/pitch.hbs)
 
 embedded-pitch-analysis-alt = Mikroskop
+embedded-pitch-analysis-heading = Silna statyczna analiza
 embedded-pitch-memory-alt = Kostka RAM
 embedded-pitch-memory-heading = Elastyczna pamięć
 embedded-pitch-memory-description = Dynamiczna alokacja pamięci jest opcjonalna. Korzystaj z globalnego alokatora i dynamicznych struktur danych, albo pozbądź się pamięci heap i przydzielaj całą pamięć statycznie.
 embedded-pitch-concurrency-alt = Zębatki
+embedded-pitch-concurrency-heading = Nieustraszona współbieżność
 embedded-pitch-interop-alt = Uścisk dłoni
 embedded-pitch-interop-heading = Interoperacyjność
 embedded-pitch-portability-alt = Wózek na bagaż
 embedded-pitch-portability-heading = Przenośność
+embedded-pitch-community-alt = Logo Tarczy
 embedded-pitch-community-heading = Tworzone przez społeczność
 embedded-learn-more-link = Dowiedz się więcej
 
@@ -34,7 +37,9 @@ embedded-get-started-discovery-book-alt = Paczka DIP-6
 embedded-get-started-discovery-book-description = Naucz się programowania na systemach wbudowanych od zera &mdash; z Rustem!
 embedded-get-started-embedded-rust-book-alt = Paczka QFP-20
 embedded-get-started-embedded-rust-book-heading = Rust dla Systemów Wbudowanych
+embedded-get-started-embedded-rust-book-description = Znasz już podstawy systemów wbudowanych? Przeskocz na Rusta i przekonaj się ile możesz zyskać.
 embedded-get-started-embedonomicon-alt = paczka BGA
+embedded-get-started-read-link = Czytaj
 embedded-get-started-more-documentation-link = Więcej dokumentacji
 
 ## Production use (templates/components/what/embedded/testimonials.hbs)

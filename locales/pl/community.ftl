@@ -1,6 +1,7 @@
 ## templates/community/index.hbs
 
 community-page-title = Społeczność
+community-blurb = O Ruście można mówić wiele dobrego, ale nadal niewątpliwie najsilniejszą stroną tego projektu jest stojąca za nim społeczność ludzi którzy wspólnie upewniają się, że praca z tym językiem jest prawdziwie satysfakcjonującym doświadczeniem.
 community-twir = Pozostań na bieżąco ze społecznością Rusta!
 community-twir-button = W tym tygodniu w Ruście
 community-team-button = email { ENGLISH("community@rust-lang.org") }
@@ -18,6 +19,7 @@ community-event-run-header = Zorganizuj własne wydarzenie
 community-event-register = Zajerestruj swoje wydarzenie
 community-rustfest-alt = Uczestnicy Rustfest
 community-rustbridge-header = Rustbridge
+community-rustbridge = RustBridge to warsztaty mające na celu pomoc osobom z niedostatecznie reprezentowanych grup, nauczenie ich Rusta oraz ułatwienie im dołączenia do społeczności.
 community-rustbridge-button = Sprawdź repozytorium Rustbridge
 community-rustbridge-rustconf-alt = RustBridge na RustConf
 community-rustbridge-paris-alt = RustBridge Paryż

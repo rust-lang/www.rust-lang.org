@@ -14,9 +14,8 @@ extern crate siphasher;
 extern crate toml;
 
 extern crate rocket_contrib;
-extern crate serde;
 #[macro_use]
-extern crate serde_derive;
+extern crate serde;
 
 extern crate fluent_bundle;
 extern crate regex;

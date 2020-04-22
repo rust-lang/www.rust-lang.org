@@ -1,4 +1,3 @@
-use reqwest;
 use rust_team_data::v1::{Team, TeamKind, Teams, BASE_URL};
 use std::any::Any;
 use std::cmp::Reverse;
