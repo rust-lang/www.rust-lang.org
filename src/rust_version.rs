@@ -10,7 +10,7 @@ enum FetchTarget {
     ReleasesFeed,
 }
 
-fn fetch(target: FetchTarget) -> Result<reqwest::Response, Box<dyn Error>> {
+fn fetch(target: FetchTarget) -> Result<reqwest::blocking::Response, Box<dyn Error>> {
     let proxy_env = env::var("http_proxy")
         .or_else(|_| env::var("HTTPS_PROXY"))
         .ok();
@@ -18,9 +18,12 @@ fn fetch(target: FetchTarget) -> Result<reqwest::Response, Box<dyn Error>> {
     let client = match proxy_env {
         Some(proxy_env) => {
             let proxy = reqwest::Proxy::https(&proxy_env).unwrap();
-            reqwest::ClientBuilder::new().proxy(proxy).build().unwrap()
+            reqwest::blocking::ClientBuilder::new()
+                .proxy(proxy)
+                .build()
+                .unwrap()
         }
-        None => reqwest::Client::new(),
+        None => reqwest::blocking::Client::new(),
     };
 
     let url = match target {

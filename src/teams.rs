@@ -116,7 +116,7 @@ pub fn page_data(section: &str, team_name: &str) -> Result<PageData, Box<dyn Err
 }
 
 fn get_teams() -> Result<Box<dyn Any>, Box<dyn Error>> {
-    let resp: Teams = reqwest::get(&format!("{}/teams.json", BASE_URL))?
+    let resp: Teams = reqwest::blocking::get(&format!("{}/teams.json", BASE_URL))?
         .error_for_status()?
         .json()?;
 
