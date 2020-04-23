@@ -18,7 +18,10 @@ fn fetch(target: FetchTarget) -> Result<reqwest::blocking::Response, Box<dyn Err
     let client = match proxy_env {
         Some(proxy_env) => {
             let proxy = reqwest::Proxy::https(&proxy_env).unwrap();
-            reqwest::blocking::ClientBuilder::new().proxy(proxy).build().unwrap()
+            reqwest::blocking::ClientBuilder::new()
+                .proxy(proxy)
+                .build()
+                .unwrap()
         }
         None => reqwest::blocking::Client::new(),
     };
