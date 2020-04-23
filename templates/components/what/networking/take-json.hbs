@@ -1,8 +1,8 @@
-#[derive(FromForm)]
+#[derive(Deserialize)]
 struct Task { name: String, completed: bool }
 
 #[post("/", data = "&lt;task&gt;")]
-fn new(task: Form&lt;Task&gt;) -> Flash&lt;Redirect&gt; {
+fn new(task: Json&lt;Task&gt;) -> Flash&lt;Redirect&gt; {
     if task.name.is_empty() {
         Flash::error(Redirect::to("/"),
             "Cannot be empty.")
