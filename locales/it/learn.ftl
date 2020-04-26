@@ -51,6 +51,8 @@ learn-play = Puoi provare Rust online nel Rust Playground senza installare nient
 learn-play-button = Prova Rust senza installare niente
 learn-install-rustup-header = Rustup: il tool che installa Rust e il sistema di gestione delle versioni
 learn-install-rustup = Il modo principale con cui si può installare Rust è attraverso il tool chiamato Rustup, serve per installare e gestire le varie versioni del compilatore.
+learn-install-rustup-update-header = Rustup é aggiornato?
+learn-install-rustup-update = Rust si aggiorna molto spesso. Se hai installato Rustup da diverso tempo, molto probabilmente la tua versione di Rust é datata. Aggiorna Rust all'ultima versione eseguendo { $update-command }
 learn-install-rustup-button = Leggi di più sull'installazione
 learn-install-cargo-header = Cargo: il package manager che usi anche per compilare i sorgenti
 learn-install-cargo =
@@ -67,7 +69,6 @@ learn-install-cargo =
 learn-install-cargo-button = Leggi il Cargo Book
 learn-install-other = Altri strumenti
 learn-install-editors = Il supporto per Rust è disponibile in vari editor di testo:
-
 learn-generating = Crea un nuovo progetto
 learn-generating-steps =
     <p>Scriviamo una piccola applicazione tramite il nostro nuovo ambiente di sviluppo Rust. Per iniziare, useremo Cargo per crearci il progetto. Esegui sulla tua console:</p>

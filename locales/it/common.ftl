@@ -8,6 +8,13 @@ production-use = Uso in produzione
 learn-more = Scopri di più
 discord = Discord
 
+## components/panels/domain.hbs
+
+cli-learn-more = Tool per lo Sviluppo
+wasm-learn-more = Scrivi Applicazioni per il Web
+net-learn-more = Lavora sui Server
+embedded-learn-more = Inizia con l'Embedded
+
 ## components/layout.hbs
 
 meta-description = Un linguaggio di programmazione che permette a chiunque di realizzare software efficienti e affidabili.
@@ -22,6 +29,7 @@ nav-tools = Strumenti
 nav-governance = Governance
 nav-community = Community
 nav-blog = Blog
+nav-playground = Playground
 choose-language = Lingua
 nav-logo-alt = Logo di Rust
 

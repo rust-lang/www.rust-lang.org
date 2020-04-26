@@ -27,3 +27,5 @@ governance-team-discord = { $channel } su Discord
 governance-user-github = GitHub: { $link }
 governance-user-team-leader = Team leader
 governance-members-header = Membri
+governance-alumni-header = Alumni
+governance-alumni-thanks = Vogliamo rigraziare i membri che hanno partecipato in passato per il loro inestimabile contributo!
