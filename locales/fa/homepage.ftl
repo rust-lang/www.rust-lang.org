@@ -1,5 +1,6 @@
 ## index.hbs
 
+get-started = شروع کنید
 
 ## components/panels/production.hbs
 

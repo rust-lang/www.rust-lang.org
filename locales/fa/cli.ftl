@@ -15,6 +15,11 @@ cli-pitch-ship-heading = توزیع ساده
 cli-pitch-ship-link = چگونگی انتشار کد های Rust
 cli-pitch-config-img-alt = یک یادداشت و چرخ دنده
 cli-pitch-config-heading = پیکربندی قدرتمند
+cli-pitch-config-link = شروع پیکربندی
+cli-pitch-manuals-img-alt = کتابچه راهنما
+cli-pitch-manuals-heading = دفترچه راهنما؟ آماده است.
+cli-pitch-manuals-link = یادبگیرید چگونه
+cli-pitch-machines-img-alt = Pipe
 cli-pitch-machines-heading = ورود داده، خروج داده
 cli-pitch-machines-link = با ماشین‌ها ارتباط برقرار کنید
 cli-pitch-logging-link = لاگ گرفتن، دنبال کردن، درک کردن
@@ -23,6 +28,7 @@ cli-pitch-logging-link = لاگ گرفتن، دنبال کردن، درک کرد
 
 cli-maintainable-errors-img-alt = ساختار برنامه خط فرمان
 cli-maintainable-errors-link = مدیریت خطا  Rust
+cli-maintainable-refactoring-heading = به آسانی بعدا گسترش می یابد
 
 ## templates/components/what/cli/example.hbs
 
