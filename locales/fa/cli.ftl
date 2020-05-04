@@ -12,6 +12,7 @@ cli-pitch-solid-heading = قوی و سریع
 cli-pitch-solid-link = Rust ضمانت می‌کند
 cli-pitch-ship-img-alt = مربع با علامت تیک
 cli-pitch-ship-heading = توزیع ساده
+cli-pitch-ship-description = همه چیز رو به یک فایل اجرایی کامپایل کنید &mdash کاربران شما برای اجرای برنامه ها نیازی به نصب کتابخانه ها و برنامه های جانبی ندارن.
 cli-pitch-ship-link = چگونگی انتشار کد های Rust
 cli-pitch-config-img-alt = یک یادداشت و چرخ دنده
 cli-pitch-config-heading = پیکربندی قدرتمند
@@ -21,7 +22,9 @@ cli-pitch-manuals-heading = دفترچه راهنما؟ آماده است.
 cli-pitch-manuals-link = یادبگیرید چگونه
 cli-pitch-machines-img-alt = Pipe
 cli-pitch-machines-heading = ورود داده، خروج داده
+cli-pitch-machines-description = علاوه بر صحبت با انسان ها، Rust ابزار های قدرتمندی دارد تا به شما کمک کند با ماشین ها صحبت کنید.
 cli-pitch-machines-link = با ماشین‌ها ارتباط برقرار کنید
+cli-pitch-logging-heading = logging منعطف
 cli-pitch-logging-link = لاگ گرفتن، دنبال کردن، درک کردن
 
 ## templates/components/what/cli/maintainable.hbs
