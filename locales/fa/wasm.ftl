@@ -15,6 +15,7 @@ wasm-why-rust-amenities-heading = امکانات مدرن
 ## Get started! (templates/components/what/wasm/get-started.hbs)
 
 wasm-get-started-wasm-alt = لوگوی WebAssembly
+wasm-get-started-wasm-link = یادگیری بیشتر
 wasm-get-started-mdn-alt = لوگوی MDN
 
 ## Plays well with JavaScript (templates/components/what/wasm/js.hbs)
@@ -23,3 +24,5 @@ wasm-get-started-mdn-alt = لوگوی MDN
 ## Production use (templates/components/what/wasm/production.hbs)
 
 wasm-production-cloudflare-alt = لوگوی Cloudflare
+wasm-production-mozilla-alt = فایرفاکس
+wasm-production-dropbox-alt = دراپ باکس
