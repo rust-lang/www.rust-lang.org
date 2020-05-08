@@ -54,7 +54,7 @@ install-notes-rustup-description =
     <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
     de lançamentos a cada 6 semanas
      </a> e suporta
-      <a href="https://forge.rust-lang.org/platform-support.html">um grande número de plataformas</a>, 
+      <a href="https://forge.rust-lang.org/release/platform-support.html">um grande número de plataformas</a>, 
     o que faz com que sempre existam uma grande quantidade de 
     binários.
     <code>rustup</code> gerencia esses binários consistentemente

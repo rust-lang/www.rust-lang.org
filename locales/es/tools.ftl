@@ -40,7 +40,7 @@ install-notes-rustup-description =
     <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
     proceso rápido de lanzamiento
     </a> de 6 semanas y soporta un
-    <a href="https://forge.rust-lang.org/platform-support.html">gran número de plataformas</a>, así que hay muchas compilaciones de Rust disponibles en
+    <a href="https://forge.rust-lang.org/release/platform-support.html">gran número de plataformas</a>, así que hay muchas compilaciones de Rust disponibles en
     cualquier momento. <code>rustup</code> gestiona éstas compilaciones de forma consistente en cada plataforma que soporta Rust, habilitando la instalación de Rust
     de los canales de versiones beta y nightly, así como soporte para
     destinos adicionales de compilación cruzada.
