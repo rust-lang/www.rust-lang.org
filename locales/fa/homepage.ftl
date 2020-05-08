@@ -44,4 +44,6 @@ get-involved-contribute-link = راهنمای مشارکت را بخوانید
 thanks-title = سپاسگزاریم
 thanks-blurb = Rust بدون مشارکت‌های سخاوتمندانه افراد و شرکت‌ها از زمان، کار و منابع وجود نخواهد داشت. ما از حمایت‌ها بسیار سپاسگزاریم!
 thanks-individuals-header = افراد
+thanks-individuals-link = مشاهده مشارکت کنندگان
+thanks-companies-header = حامیان شرکت
 thanks-companies-link = مشاده حامیان
