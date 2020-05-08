@@ -70,7 +70,7 @@ install-notes-rustup-description =
       yönetilir. Rust'ın 6 haftalık <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
         hızlı yayımlama süreci
       </a> vardır ve 
-      <a href="https://forge.rust-lang.org/platform-support.html">çok sayıda platformu</a> destekler. Bu yüzden her zaman Rust'ın birçok
+      <a href="https://forge.rust-lang.org/release/platform-support.html">çok sayıda platformu</a> destekler. Bu yüzden her zaman Rust'ın birçok
       yapısı vardır. <code>rustup</code> Rust'ın desteklediği her platformda bu yapıları tutarlı bir şekilde
       yönetir. Bu durum, Rust'ın beta ve nightly yayın kanallarından yüklenmesine ve farklı hedeflere 
       derlenmesine katkıda bulunur.

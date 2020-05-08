@@ -37,7 +37,7 @@ install-notes-rustup-description =
       Rust est installé et géré par l'outil <a href="https://github.com/rust-lang/rustup.rs"><code>rustup</code></a>. Rust suit un 
       <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
         processus de publication rapide
-      </a> avec une nouvelle version toutes les six semaines et il supporte un <a href="https://forge.rust-lang.org/platform-support.html">grand nombre de plateformes</a>, donc il y a de nombreuses versions de Rust disponibles en même temps. <code>rustup</code> gère ces différentes versions de manière consistante sur toutes les plateformes supportées par Rust, permettant l'installation de Rust depuis les canaux beta et nightly ainsi que le support de cibles de cross-compilation supplémentaires.
+      </a> avec une nouvelle version toutes les six semaines et il supporte un <a href="https://forge.rust-lang.org/release/platform-support.html">grand nombre de plateformes</a>, donc il y a de nombreuses versions de Rust disponibles en même temps. <code>rustup</code> gère ces différentes versions de manière consistante sur toutes les plateformes supportées par Rust, permettant l'installation de Rust depuis les canaux beta et nightly ainsi que le support de cibles de cross-compilation supplémentaires.
     </p>
     <p>
       Si vous avez installé <code>rustup</code> dans le passé, vous pouvez mettre à jour votre installation en exécutant : <code>rustup update</code>.
