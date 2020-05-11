@@ -19,3 +19,6 @@
 
 - id: mozilla
   name: Mozilla
+
+- id: github
+  name: GitHub
