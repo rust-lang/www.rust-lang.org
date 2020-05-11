@@ -38,6 +38,7 @@ nav-logo-alt = Logo Rust
 footer-doc = Documentação
 footer-ask = Faça uma Pergunta no Fórum de Usuários
 footer-status = Confira o status do website
+footer-sup-doc = Rust Forge (Documentação para contribuidores)
 footer-policies = Termos e políticas
 footer-coc = Código de Conduta
 footer-licenses = Licenças
