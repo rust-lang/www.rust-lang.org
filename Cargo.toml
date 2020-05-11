@@ -15,7 +15,7 @@ rand = "0.7"
 regex = "1"
 rocket = "0.4.1"
 serde = { version = "1.0", features = ["derive"] }
-serde_yaml = "0.8.7"
+serde_yaml = "0.8.12"
 sass-rs = "0.2.1"
 reqwest = { version = "0.10.4", features = ["blocking", "json"] }
 toml = "0.5"
