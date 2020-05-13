@@ -34,7 +34,7 @@ install-notes-getting-started-description = 如果您正要開始使用 Rust，�
 install-notes-rustup-heading = 用 <code>rustup</code> 管理工具鏈
 install-notes-rustup-description =
     <p>
-      <a href="https://github.com/rust-lang/rustup.rs"><code>rustup</code></a> 是負責安裝及管理 Rust 的工具。Rust 以六星期為週期進行<a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">快速的版本發行</a>，而且支援<a href="https://forge.rust-lang.org/platform-support.html">大量不同的平台</a>，因此不論何時 Rust 都有許多不同的建構版本。<code>rustup</code> 在所有平台上用統一的方式管理這些不同版本，讓您可以同時安裝 beta 或 nightly 通道的 Rust 工具，或是進行跨平台編譯。
+      <a href="https://github.com/rust-lang/rustup.rs"><code>rustup</code></a> 是負責安裝及管理 Rust 的工具。Rust 以六星期為週期進行<a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">快速的版本發行</a>，而且支援<a href="https://forge.rust-lang.org/release/platform-support.html">大量不同的平台</a>，因此不論何時 Rust 都有許多不同的建構版本。<code>rustup</code> 在所有平台上用統一的方式管理這些不同版本，讓您可以同時安裝 beta 或 nightly 通道的 Rust 工具，或是進行跨平台編譯。
     </p>
     <p>
       如果您之前已經安裝過 <code>rustup</code>，您可以用 <code>rustup update</code> 指令來更新它。

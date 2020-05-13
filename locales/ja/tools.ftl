@@ -37,7 +37,7 @@ install-notes-rustup-heading = <code>rustup</code>を使ったツールチェー
 install-notes-rustup-description =
     <p>
     Rustは<a href="https://github.com/rust-lang/rustup.rs"><code>rustup</code></a>というツールによってインストール・管理されます。
-    Rustには６週間ごとの<a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">ラピッドリリースプロセス</a>があり、<a href="https://forge.rust-lang.org/platform-support.html">多数のプラットフォーム</a>をサポートしているので、 数多くのビルドがいつても利用できます。
+    Rustには６週間ごとの<a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">ラピッドリリースプロセス</a>があり、<a href="https://forge.rust-lang.org/release/platform-support.html">多数のプラットフォーム</a>をサポートしているので、 数多くのビルドがいつても利用できます。
     <code>rustup</code>はこれらのビルドを、Rustがサポートしているすべてのプラットフォームで一貫した方法で管理し、betaやnightly版のリリースチャンネルや、追加のクロスコンパイルターゲットもサポートしています。
     </p>
     <p>

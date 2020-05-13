@@ -79,7 +79,7 @@ install-notes-rustup-description =
           <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
             rapid release process
           </a> and supports a
-          <a href="https://forge.rust-lang.org/platform-support.html">great
+          <a href="https://forge.rust-lang.org/release/platform-support.html">great
           number of platforms</a>, so there are many builds of Rust available at
           any time. <code>rustup</code> manages these builds in a consistent way
           on every platform that Rust supports, enabling installation of Rust

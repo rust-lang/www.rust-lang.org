@@ -3,11 +3,15 @@
 tools-page-title = ابزارها
 tools-build-install-heading = نصب
 tools-build-test-heading = تست
+tools-build-deploy-heading = دیپلوی
+tools-automation-rustfmt-heading = Rustfmt
 tools-automation-cargo-doc-link = برو به سایت
 
 ## tools/install.hbs
 
 tools-install-page-title = نصب Rust
+install-other-methods-heading = سایر روش‌های نصب
+install-other-methods-link = آموزش بیشتر
 
 ## components/tools/rustup.hbs
 

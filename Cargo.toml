@@ -6,7 +6,7 @@ edition = "2018"
 
 [dependencies]
 lazy_static = "1.2.0"
-fluent = "0.11"
+fluent = "0.12"
 fluent-bundle = "0.6.0"
 fluent-syntax = "0.9.3"
 fluent-locale = "0.10.1"
@@ -15,14 +15,14 @@ rand = "0.7"
 regex = "1"
 rocket = "0.4.1"
 serde = { version = "1.0", features = ["derive"] }
-serde_yaml = "0.8.7"
+serde_yaml = "0.8.12"
 sass-rs = "0.2.1"
-reqwest = "0.9"
+reqwest = { version = "0.10.4", features = ["blocking", "json"] }
 toml = "0.5"
 serde_json = "1.0"
 rust_team_data = { git = "https://github.com/rust-lang/team" }
 handlebars = "1.1.0"
-siphasher = "0.3.2"
+siphasher = "0.3.3"
 
 [dependencies.rocket_contrib]
 version = "0.4"
