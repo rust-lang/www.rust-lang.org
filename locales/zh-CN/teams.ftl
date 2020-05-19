@@ -55,6 +55,7 @@ governance-team-release-name = 发布团队
 governance-team-release-description = 跟踪回归测试，稳定化并发布 Rust。
 governance-team-wg-wasm-name = WebAssembly（WASM）工作组
 governance-team-wg-wasm-description = 专注于在 JS 库和应用中通过 WebAssembly 嵌入 Rust 代码的端到端体验。
+governance-team-wg-rustc-dev-guide-name = Rustc 开发指南工作组
 governance-team-wg-rustc-dev-guide-description = 确保 rustc 指南和 API 文档的“完整”，让学习编译器变得更简单。
 governance-team-libs-name = 库团队
 governance-team-libs-description = Rust 标准库、rust-lang 包、代码约定以及生态的支持。
