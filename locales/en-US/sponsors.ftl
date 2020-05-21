@@ -15,6 +15,9 @@ sponsors-microsoft = Microsoft Azure is sponsoring builders for Rust’s CI infr
 sponsors-aws-alt = Amazon Web Services
 sponsors-aws = Amazon Web Services (AWS) is providing hosting for release artifacts (compilers, libraries, tools, and source code), serving those artifacts to users through CloudFront, preventing regressions with Crater on EC2, and managing other Rust-related infrastructure hosted on AWS.
 
+sponsors-google-cloud-alt = Google Cloud
+sponsors-google-cloud = Google Cloud is providing support for the Rust Project by helping prevent compiler regressions with Crater.
+
 sponsors-mozilla-alt = Mozilla
 sponsors-mozilla = Mozilla is providing the Rust project with Heroku services for crates.io, Zoom.us services for team video calls, Mailgun services for emails, and Discourse for the Users and Internals forums.
 
