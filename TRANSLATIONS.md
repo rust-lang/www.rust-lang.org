@@ -6,15 +6,32 @@ The Rust website can be translated into multiple languages using [fluent](https:
 
 All text on the website can be translated. Some texts, especially policies, can be translated, but the English version will be the binding one.
 
+## Existing translation teams
+
+- [`de`](https://rust-lang.zulipchat.com/#narrow/stream/231802-t-community.2Fl10n.2Fde)
+- [`es`](https://rust-lang.zulipchat.com/#narrow/stream/226069-t-community.2Fl10n.2Fes)
+- [`fa`](https://rust-lang.zulipchat.com/#narrow/stream/231801-t-community.2Fl10n.2Ffa)
+- [`fr`](https://rust-lang.zulipchat.com/#narrow/stream/226175-t-community.2Fl10n.2Ffr)
+- [`it`](https://rust-lang.zulipchat.com/#narrow/stream/226070-t-community.2Fl10n.2Fit)
+- [`ja`](https://rust-lang.zulipchat.com/#narrow/stream/226071-t-community.2Fl10n.2Fja)
+- [`pl`](https://rust-lang.zulipchat.com/#narrow/stream/226319-t-community.2Fl10n.2Fpl)
+- [`pt`](https://rust-lang.zulipchat.com/#narrow/stream/226072-t-community.2Fl10n.2Fpt)
+- [`ru`](https://rust-lang.zulipchat.com/#narrow/stream/226073-t-community.2Fl10n.2Fru)
+- [`tr`](https://rust-lang.zulipchat.com/#narrow/stream/226074-t-community.2Fl10n.2Ftr)
+- [`zh`](https://rust-lang.zulipchat.com/#narrow/stream/226075-t-community.2Fl10n.2Fzh)
+
 ## Forming a translation team
 
-Translation teams for any language need at least _three_ members. This is to avoid translations to "drop out" of support too quickly. If you feel like having a team, please get in touch with the [community team](mailto:community-team@rust-lang.org) to apply for a translation. Have all team members register at the [pontoon](https://pontoon.rust-lang.org) and send us their email addresses. We'll make sure to get you set up as managers. Managers can manage their translation teams through the "permission" tab in the web interface, including appointing new managers.
+Translation teams for any language need at least _three_ members. This is to avoid translations to "drop out" of support too quickly. If you feel like having a team, please get in touch with the [localization team][zulip] ([email][zemail]) to apply for a translation. Have all team members register at the [pontoon](https://pontoon.rust-lang.org) and send us their email addresses. We'll make sure to get you set up as managers. Managers can manage their translation teams through the "permission" tab in the web interface, including appointing new managers.
 
 Please note that as a manager, you work on the representation of the Rust project in your locale. Make sure to understand and act with that responsibility and only promote well-trusted people to a manager role.
 
 Teams ideally consist only of native speakers. Even within one language it can be useful to have editors from multiple backgrounds, to find a consistent language. For translators, strong writing skills matter. For reviewing, a keen eye and a good feeling for oddities is important.
 
 Any language that can muster a constantly working and up to date translation is qualified.
+
+[zulip]: https://rust-lang.zulipchat.com/#narrow/stream/226068-t-community.2Fl10n
+[zemail]: mailto:localization@rust-lang.org
 
 ## How to get your translation published
 

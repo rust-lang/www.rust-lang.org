@@ -4,7 +4,8 @@
 #
 # The name of the sponsor is defined here and left untranslated in the page.
 # The other parts of the page are derived from the sponsor's ID:
-# - The logo is located in static/images/sponsor-logos/<id>.svg
+# - The logo is located in static/images/sponsor-logos/<id>.<logo-format>
+#   By default the logo format is SVG.
 # - The alt of the image is the Fluent translation "sponsors-<id>-alt"
 # - The description paragraph is the Fluent translation "sponsors-<id>"
 
@@ -13,6 +14,11 @@
 
 - id: aws
   name: AWS
+
+- id: google-cloud
+  name: Google Cloud
+  logo-format: png
+  vertical-logo: true
 
 - id: microsoft
   name: Microsoft Azure

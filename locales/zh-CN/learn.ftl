@@ -18,19 +18,19 @@ learn-doc-std-button = 标准库
 learn-doc-edition = Rust 版本指南。
 learn-doc-edition-button = 版本指南
 learn-doc-cargo = Rust 的包管理器和构建系统。
-learn-doc-cargo-button = Cargo 之书
+learn-doc-cargo-button = Cargo 手册
 learn-doc-rustdoc = 学习如何为您的 crate 编写完美的文档。
-learn-doc-rustdoc-button = rustdoc 之书
+learn-doc-rustdoc-button = rustdoc 手册
 learn-doc-rustc = 熟悉 Rust 编译器中可用的选项。
-learn-doc-rustc-button = rustc 之书
+learn-doc-rustc-button = rustc 手册
 learn-doc-error = 深入解释了您可能会遇到的编译错误。
 learn-doc-error-button = 编译错误索引表
 learn-domain = 在应用领域中点亮您的技能树
-learn-domain-cli-button = 命令行之书
+learn-domain-cli-button = 命令行手册
 learn-domain-cli = 学习如何用 Rust 构建高效的命令行应用。
-learn-domain-wasm-button = WebAssembly 之书
+learn-domain-wasm-button = WebAssembly 手册
 learn-domain-wasm = 通过 WebAssembly 用 Rust 构建浏览器原生的库。
-learn-domain-embedded-button = 嵌入式之书
+learn-domain-embedded-button = 嵌入式手册
 learn-domain-embedded = 熟练掌握用 Rust 编写微控制器和其它嵌入式系统程序。
 learn-master = 精通 Rust
 learn-master-text = 对 Rust 中的黑魔法感到好奇？在这里，您可以深入理解其本质。
@@ -69,7 +69,7 @@ learn-install-cargo =
     </ul>
     <p>要检查您是否安装了 Rust 和 Cargo，可以在终端中运行：</p>
     <p><code>cargo --version</code></p>
-learn-install-cargo-button = 阅读《Cargo 之书》
+learn-install-cargo-button = 阅读《Cargo 手册》
 learn-install-other = 其它工具
 learn-install-editors = Rust 支持多种编辑器：
 learn-generating = 创建新项目

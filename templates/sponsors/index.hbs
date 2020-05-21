@@ -23,7 +23,7 @@
     {{/if}}
     <div class="flex-none flex-l mt5-l">
       <div class="mv3 mv0-ns w-100 w-30-l tc flex items-center justify-center">
-        <img class="ph5 max-height-5rem" alt="{{sponsor.logo_alt_i18n}}" src="{{sponsor.logo_path}}" />
+        <img class="ph5 {{#if sponsor.vertical_logo}}max-height-10rem{{else}}max-height-5rem{{/if}}" alt="{{sponsor.logo_alt_i18n}}" src="{{sponsor.logo_path}}" />
       </div>
       <div class="w-100 w-70-l">
         <h3>{{sponsor.name}}</h3>

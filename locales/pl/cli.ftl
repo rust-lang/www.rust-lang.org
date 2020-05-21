@@ -27,6 +27,7 @@ cli-pitch-config-description =
     Rust zajmie się nazwami i formatami za ciebie.
 cli-pitch-config-link = Rozpocznij konfigurację
 cli-pitch-manuals-img-alt = Podręcznik
+cli-pitch-manuals-description = Automatycznie generuj podręczniki dla swoich aplikacji. Wystarczy, że spakujesz wygenerowane pliki, i gotowe.
 cli-pitch-manuals-link = Dowiedz się jak
 cli-pitch-machines-img-alt = Rury
 cli-pitch-machines-heading = Dane wchodzą, dane wychodzą

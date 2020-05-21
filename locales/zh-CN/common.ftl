@@ -38,6 +38,7 @@ nav-logo-alt = Rust 标志
 footer-doc = 文档
 footer-ask = 在用户论坛提问
 footer-status = 检查网站状态
+footer-sup-doc = Rust Forge（贡献者文档）
 footer-policies = 条款与政策
 footer-coc = 行为准则
 footer-licenses = 许可证
