@@ -9,6 +9,7 @@ sponsors-microsoft-alt = Microsoft Azure
 sponsors-microsoft = Microsoft Azure 为 Rust 的 CI 基础设施赞助了构建器。值得注意的是，资源消耗极大的 rust-lang/rust 仓库正在使用它。
 sponsors-aws-alt = Amazon Web Services
 sponsors-aws = Amazon Web Services (AWS) 为发布产物（编译器、库、工具和源代码）提供托管，通过 CloudFront 将这些产物提供给用户，在 EC2 上运行 Crater 整个生态系统范围的回归测试，并管理其他托管在 AWS 上的 与Rust 相关的基础设施。
+sponsors-google-cloud-alt = Google Cloud
 sponsors-mozilla-alt = Mozilla
 sponsors-mozilla = Mozilla 为 Rust 项目提供了 crates.io 的 Heroku 服务、团队视频通话的 Zoom.us 服务、邮件的 Mailgun 服务，以及用户和内部论坛的 Discourse。
 sponsors-support = 支持 Rust
