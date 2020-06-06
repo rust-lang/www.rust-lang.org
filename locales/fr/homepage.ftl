@@ -54,7 +54,7 @@ get-involved-read-rust-link = Lire le Book
 get-involved-watch-rust = Regarder sur Rust
 get-involved-watch-rust-blurb = La communauté Rust a une chaîne YouTube dédiée rassemblant une grande variété de présentations et de tutoriels.
 get-involved-watch-rust-link = Regarder les vidéos
-get-involved-contribute = Contribuez du code
+get-involved-contribute = Contribuer du code
 get-involved-contribute-blurb = Rust est un véritable effort communautaire et nous accueillons les contributions : des amateurs aux professionnels, des débutants aux experts. Venez nous aider à rendre l'expérience Rust encore meilleure !
 get-involved-contribute-link = Lire le guide de contribution
 
