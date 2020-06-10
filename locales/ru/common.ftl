@@ -8,6 +8,12 @@ production-use = Промышленное использование
 learn-more = Узнать больше
 discord = Discord
 
+## components/panels/domain.hbs
+
+cli-learn-more = Инструменты сборки
+wasm-learn-more = Написание web-приложений
+net-learn-more = Работа на сервере
+
 ## components/layout.hbs
 
 meta-description = Язык, позволяющий каждому создавать надёжное и эффективное программное обеспечение.
