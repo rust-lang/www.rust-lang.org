@@ -776,6 +776,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "handlebars"
+version = "3.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6c8ae96a0e0dacf151557ccba95a7a80889f8e74a784484377739628fcdb3996"
+dependencies = [
+ "log 0.4.8",
+ "pest",
+ "pest_derive",
+ "quick-error",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
 name = "handlebars-fluent"
 version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -785,7 +799,7 @@ dependencies = [
  "fluent-bundle 0.6.0",
  "fluent-locale 0.4.1",
  "fluent-syntax 0.9.3",
- "handlebars",
+ "handlebars 1.1.0",
  "lazy_static",
  "serde_json",
 ]
@@ -1723,7 +1737,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e3946ca815127041d8f64455561031d058c22ae1b135251502c5ea523cf9e14b"
 dependencies = [
  "glob",
- "handlebars",
+ "handlebars 1.1.0",
  "log 0.4.8",
  "notify",
  "rocket",
@@ -2507,7 +2521,7 @@ dependencies = [
  "fluent-bundle 0.6.0",
  "fluent-locale 0.10.1",
  "fluent-syntax 0.9.3",
- "handlebars",
+ "handlebars 3.2.1",
  "handlebars-fluent",
  "lazy_static",
  "rand",
