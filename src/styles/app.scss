@@ -344,11 +344,12 @@ h3 {
 .highlight {
   height: 12px;
   position: relative;
-  top: -6px;
+  top: 0;
   left: -10px;
   width: 120%;
   max-width: 90vw;
   line-height: 1.6;
+  border-radius: 2px;
 }
 
 footer {
