@@ -21,7 +21,7 @@ learn-reference-button = ارجاع را مطالعه کنید
 
 ## learn/get-started.hbs
 
-learn-install-rustup-update-header = آیا rustup به روز است؟
+learn-install-rustup-update-header = آیا Rust به روز است؟
 learn-install-rustup-button = در مورد نصب بیشتر بدانید
 learn-install-cargo-button = کتاب cargo را بخوانید
 learn-install-other = سایر ابزارها
