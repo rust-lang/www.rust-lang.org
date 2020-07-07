@@ -12,6 +12,9 @@
 - id: 1password
   name: 1Password
 
+- id: arm
+  name: ARM
+
 - id: aws
   name: AWS
 

@@ -9,6 +9,9 @@ sponsors-caveat = Many companies and individuals make significant contributions 
 sponsors-1password-alt = 1Password
 sponsors-1password = 1Password is providing a free 1Password Teams subscription to the Rust Team, used to store and share secrets between team members.
 
+sponsors-arm-alt = ARM
+sponsors-arm = ARM is providing builders for Rust’s CI infrastructure to test the compiler on AArch64.
+
 sponsors-microsoft-alt = Microsoft Azure
 sponsors-microsoft = Microsoft Azure is sponsoring builders for Rust’s CI infrastructure, notably the extremely resource intensive rust-lang/rust repository.
 
