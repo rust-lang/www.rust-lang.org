@@ -10,6 +10,7 @@ sponsors-microsoft = Microsoft Azure спонсирует разработчик
 sponsors-aws-alt = Amazon Web Services
 sponsors-aws = Amazon Web Services (AWS) предоставляет хостинг для артефактов выпуска (компиляторы, библиотеки, инструменты и исходный код), предоставляет эти артефакты пользователям через CloudFront, предотвращает регрессии с помощью Crater на EC2 и управляет другой инфраструктурой, связанной с Rust, размещённой на AWS.
 sponsors-google-cloud-alt = Google Cloud
+sponsors-google-cloud = Google Cloud предоставляет поддержку проекту Rust помогая предотвратить регрессии компилятора при помощи Crater.
 sponsors-mozilla-alt = Mozilla
 sponsors-mozilla = Mozilla предоставляет проекту Rust сервисы Heroku для crates.io, сервисы Zoom.us для групповых видеозвонков, сервисы Mailgun для электронных писем и Discourse для форумов Internal и Users.
 sponsors-support = Поддержать Rust

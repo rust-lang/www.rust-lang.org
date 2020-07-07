@@ -32,6 +32,7 @@ governance-team-wg-compiler-performance-description = Улучшение про�
 governance-team-community-content-name = Content team
 governance-team-community-content-description = Помощь в поддержке сбора и разработка контента сообщества.
 governance-team-wg-async-foundations-name = Async Foundations working group
+governance-team-wg-async-foundations-description = Работает над поддержкой асинхронного программирования в языке и внешних библиотеках
 governance-team-wg-gamedev-name = Game development working group
 governance-team-wg-gamedev-description = Сосредотачивает внимание на том, чтобы сделать Rust выбором по умолчанию для разработки игр.
 governance-team-wg-llvm-name = LLVM
