@@ -1,0 +1,7 @@
+[relabel]
+allow-unauthenticated = [
+    "C-*", "A-*", "E-*", "NLL-*", "O-*", "S-*", "T-*", "WG-*", "F-*",
+    "D-*",
+]
+
+[assign]
