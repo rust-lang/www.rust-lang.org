@@ -8,6 +8,13 @@ production-use = Промышленное использование
 learn-more = Узнать больше
 discord = Discord
 
+## components/panels/domain.hbs
+
+cli-learn-more = Инструменты сборки
+wasm-learn-more = Написание web-приложений
+net-learn-more = Работа на сервере
+embedded-learn-more = Начать с Embedded
+
 ## components/layout.hbs
 
 meta-description = Язык, позволяющий каждому создавать надёжное и эффективное программное обеспечение.
@@ -31,6 +38,7 @@ nav-logo-alt = Логотип Rust
 footer-doc = Документация
 footer-ask = Задать вопрос на пользовательском форуме
 footer-status = Проверить статус сайта
+footer-sup-doc = Rust Forge (Документация для контрибьюторов)
 footer-policies = Условия и политики
 footer-coc = Правила поведения
 footer-licenses = Лицензии

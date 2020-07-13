@@ -51,6 +51,8 @@ learn-play = Вы можете попробовать Rust онлайн в Rust 
 learn-play-button = Попробовать Rust без установки
 learn-install-rustup-header = Rustup: Установщик Rust и инструмент для управления версиями
 learn-install-rustup = Основным способом установки Rust, который используют люди, является Rustup - инструмент для установки и управления версиями Rust.
+learn-install-rustup-update-header = Обновлён ли Rust?
+learn-install-rustup-update = Rust обновляется достаточно часто. Если вы устанавливали Rustup некоторое время назад, есть вероятность что версия Rust устарела. Получите актуальную версию Rust, запустив команду { $update-command }.
 learn-install-rustup-button = Узнать больше о процессе установки
 learn-install-cargo-header = Cargo: Менеджер пакетов и инструмент сборки для Rust
 learn-install-cargo =
@@ -67,7 +69,6 @@ learn-install-cargo =
 learn-install-cargo-button = Читать книгу по cargo
 learn-install-other = Другие инструменты
 learn-install-editors = Поддержка Rust есть во многих редакторах:
-
 learn-generating = Создание нового проекта
 learn-generating-steps =
     <p>Давайте напишем небольшое приложение с нашим новым окружением разработчика. Чтобы начать, мы используем Cargo для создания нового проекта. Запустите в вашем терминале:</p>

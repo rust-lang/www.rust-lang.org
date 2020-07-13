@@ -7,7 +7,7 @@ homepage-version = Version { $number }
 ## components/panels/production.hbs
 
 production-title = Rust en production
-production-blurb = Des centaines d'entreprises, dans le monde entier, utilisent aujourd'hui Rust en production, pour des solutions rapides, multiplateformes et économes en ressources. Des logiciels connus et appréciés, comme <a href="https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka-stylo/">Firefox</a>, <a href="https://blogs.dropbox.com/tech/2016/06/lossless-compression-with-brotli/">Dropbox</a>, et <a href="https://blog.cloudflare.com/cloudflare-workers-as-a-serverless-rust-platform/">Cloudflare</a>, utilisent Rust. <strong> De la startup à la multinationale, du système embarqué au service web à haute disponibilité, Rust est une excellente solution.
+production-blurb = Des centaines d'entreprises, dans le monde entier, utilisent aujourd'hui Rust en production, pour des solutions rapides, multiplateformes et économes en ressources. Des logiciels connus et appréciés, comme <a href="https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka-stylo/">Firefox</a>, <a href="https://blogs.dropbox.com/tech/2016/06/lossless-compression-with-brotli/">Dropbox</a>, et <a href="https://blog.cloudflare.com/cloudflare-workers-as-a-serverless-rust-platform/">Cloudflare</a>, utilisent Rust. <strong> De la startup à la multinationale, du système embarqué au service web à haute disponibilité, Rust est une excellente solution.</strong>
 production-testimonial-npm = Mon meilleur compliment envers Rust est qu'il est ennuyeux, et c'est un fantastique compliment.
 production-testimonial-npm-attribution = Chris Dickinson, Ingénieur chez npm, Inc
 production-testimonial-npm-alt = logo npm
@@ -54,7 +54,7 @@ get-involved-read-rust-link = Lire le Book
 get-involved-watch-rust = Regarder sur Rust
 get-involved-watch-rust-blurb = La communauté Rust a une chaîne YouTube dédiée rassemblant une grande variété de présentations et de tutoriels.
 get-involved-watch-rust-link = Regarder les vidéos
-get-involved-contribute = Contribuez du code
+get-involved-contribute = Contribuer du code
 get-involved-contribute-blurb = Rust est un véritable effort communautaire et nous accueillons les contributions : des amateurs aux professionnels, des débutants aux experts. Venez nous aider à rendre l'expérience Rust encore meilleure !
 get-involved-contribute-link = Lire le guide de contribution
 

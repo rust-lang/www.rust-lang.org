@@ -342,13 +342,14 @@ h3 {
 }
 
 .highlight {
-  height: 24px;
+  height: 12px;
   position: relative;
-  top: -24px;
+  top: 0;
   left: -10px;
   width: 120%;
   max-width: 90vw;
   line-height: 1.6;
+  border-radius: 2px;
 }
 
 footer {
@@ -625,6 +626,13 @@ blockquote::before {
   font-weight: 600;
 }
 
+@media screen and (max-width: 769px) {
+  .highlight {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+}
+
 // Temporary HACK: switch away from this when we switch to using Tachyons for
 // the page titles -- at that time, we should make a simple component class that
 // just composes those classes.
@@ -633,11 +641,6 @@ blockquote::before {
   header {
     h1 {
       font-size: 4rem;
-    }
-
-    .highlight {
-      height: 20px;
-      top: -20px;
     }
 
     h2.subtitle {

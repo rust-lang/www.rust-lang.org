@@ -1,9 +1,8 @@
 # Contributing
 
-A large open source website is a difficult thing to manage. This document will
-explain much of the process that we will use while the site is still private.
-As it develops, we'll also look to see how we can transition from private to
-public. Please file an issue with suggestions!
+A large open source website is a difficult thing to manage. This document
+explains much of the process that we use to contribute. Thank you for your
+interest in contributing to Rust!
 
 **tl;dr: Always file an issue first.**
 
