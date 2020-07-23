@@ -38,6 +38,7 @@ nav-logo-alt = Rustのロゴ
 footer-doc = ドキュメント
 footer-ask = ユーザーフォーラムで質問する
 footer-status = ウェブサイトのステータスを確認する
+footer-sup-doc = Rust Forge （コントリビュータ向けドキュメント）
 footer-policies = 規約とポリシー
 footer-coc = 行動規範
 footer-licenses = ライセンス

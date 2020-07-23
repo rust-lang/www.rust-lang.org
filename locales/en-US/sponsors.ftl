@@ -21,6 +21,9 @@ sponsors-google-cloud = Google Cloud is providing support for the Rust Project b
 sponsors-mozilla-alt = Mozilla
 sponsors-mozilla = Mozilla is providing the Rust project with Heroku services for crates.io, Zoom.us services for team video calls, Mailgun services for emails, and Discourse for the Users and Internals forums.
 
+sponsors-github-alt = GitHub
+sponsors-github = GitHub is honored to be the home for the Rust project and core pieces of its ecosystem as well as the build/CI infrastructure behind the extremely resource intensive rust-lang/rust repository.
+
 sponsors-support = Supporting Rust
 sponsors-sponsor = Interested in sponsoring work on Rust? A Rust conference? We’d love to hear from you.
 sponsors-contact-core = Message the Core Team
