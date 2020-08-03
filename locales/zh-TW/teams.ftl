@@ -55,6 +55,7 @@ governance-team-release-name = 發佈團隊
 governance-team-release-description = 追蹤回歸分析、穩定化並發佈 Rust
 governance-team-wg-wasm-name = WebAssembly (WASM) 工作組
 governance-team-wg-wasm-description = 專注於透過 WebAssembly 嵌入 Rust 程式碼到 JS 函式庫與應用程式的端對端體驗
+governance-team-wg-rustc-dev-guide-name = Rustc 開發指南工作小組
 governance-team-wg-rustc-dev-guide-description = 藉由讓 rustc 指南和 API 文件更加完善，使得學習編譯器更簡單。
 governance-team-libs-name = 函式庫團隊
 governance-team-libs-description = Rust 標準函式庫、rust-lang crates、慣例與生態系之支援
