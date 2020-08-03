@@ -25,7 +25,8 @@ governance-members = 成员和联系方式
 
 governance-team-email = 发送邮件至{ $teamname }
 governance-team-repository = { $teamname } 仓库
-governance-team-discord = Discord 上的{ $channel }
+governance-team-discord = Discord 上的 { $channel }
+governance-team-zulip = Zulip 上的 { $stream }
 governance-user-github = GitHub: { $link }
 governance-user-team-leader = 团队领导
 governance-members-header = 成员
