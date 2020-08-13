@@ -23,6 +23,9 @@
   logo-format: png
   vertical-logo: true
 
+- id: integer32
+  name: Integer 32
+
 - id: microsoft
   name: Microsoft Azure
 

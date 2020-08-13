@@ -21,8 +21,11 @@ sponsors-aws = Amazon Web Services (AWS) is providing hosting for release artifa
 sponsors-google-cloud-alt = Google Cloud
 sponsors-google-cloud = Google Cloud is providing support for the Rust Project by helping prevent compiler regressions with Crater.
 
+sponsors-integer32-alt = Integer 32
+sponsors-integer32 = Integer 32 is providing funding for the Internals forum and monitoring for crates.io.
+
 sponsors-mozilla-alt = Mozilla
-sponsors-mozilla = Mozilla is providing the Rust project with Heroku services for crates.io, Zoom.us services for team video calls, Mailgun services for emails, and Discourse for the Users and Internals forums.
+sponsors-mozilla = Mozilla is providing the Rust project with Heroku services for crates.io, Mailgun services for emails, and Discourse for the Users forum.
 
 sponsors-github-alt = GitHub
 sponsors-github = GitHub is honored to be the home for the Rust project and core pieces of its ecosystem as well as the build/CI infrastructure behind the extremely resource intensive rust-lang/rust repository.
