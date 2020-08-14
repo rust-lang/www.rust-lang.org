@@ -23,6 +23,11 @@
                         {{#fluent "governance-team-discord"}}{{#fluentparam "channel"}}{{team.website_data.discord.channel}}{{/fluentparam}}{{/fluent}}
                     </a>
                 {{/if}}
+                {{#if team.website_data.zulip_stream}}
+                    <a class="button button-secondary" href="{{../data.zulip_domain}}/#narrow/stream/{{team.website_data.zulip_stream}}">
+                        {{#fluent "governance-team-zulip"}}{{#fluentparam "stream"}}#{{team.website_data.zulip_stream}}{{/fluentparam}}{{/fluent}}
+                    </a>
+                {{/if}}
             </div>
         </div>
     </div>

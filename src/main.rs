@@ -60,6 +60,8 @@ use handlebars_fluent::{loader::Loader, FluentHelper};
 use i18n::{create_loader, LocaleInfo, SupportedLocale, TeamHelper, EXPLICIT_LOCALE_INFO};
 use rocket::http::hyper::header::CacheDirective;
 
+const ZULIP_DOMAIN: &str = "https://rust-lang.zulipchat.com";
+
 lazy_static! {
     static ref ASSETS: AssetFiles = {
         let app_css_file = compile_sass("app");

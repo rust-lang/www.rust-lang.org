@@ -20,6 +20,7 @@ struct IndexTeam {
 #[derive(Serialize)]
 pub struct PageData {
     pub team: Team,
+    zulip_domain: &'static str,
     subteams: Vec<Team>,
     wgs: Vec<Team>,
 }
@@ -101,6 +102,7 @@ impl Data {
 
         Ok(PageData {
             team: main_team,
+            zulip_domain: crate::ZULIP_DOMAIN,
             subteams,
             wgs,
         })
@@ -184,6 +186,7 @@ mod tests {
                 email: None,
                 repo: None,
                 discord: None,
+                zulip_stream: None,
                 weight: 0,
             }),
             github: None,

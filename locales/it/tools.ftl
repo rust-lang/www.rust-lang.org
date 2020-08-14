@@ -74,7 +74,7 @@ install-other-methods-link = Scopri di più
 ## components/tools/rustup.hbs
 
 tools-rustup-unixy = Sembra che tu stia usando macOS, Linux o un altro sistema della famiglia Unix. Per scaricare Rustup e installare Rust esegui i seguenti comandi e segui le istruzioni a schermo.
-tools-rustup-windows = Sembra che tu stia usando Windows. Per installare Rust scarica e fai partire il seguente eseguibile e segui le istruzioni a schermo.
+tools-rustup-windows-2 = Sembra che il tuo sistema opertivo sia Windows. Per iniziare ad usare Rust, scarica l'installer, eseguilo ed infine segui i passaggi che ti vengono mostrati. Per completare l'installazione occorre installare <a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">Visual Studio C++ Build tools</a>, ti verrà richiesto in caso risulti mancante. Se invece non sei su Windows, vai alla pagina <a href="https://forge.rust-lang.org/infra/other-installation-methods.html">"Other Rust Installation Methods"</a>.
 tools-rustup-wsl-heading = Windows Subsystem per Linux
 tools-rustup-wsl = Se stai usando Windows Subsystem for Linux esegui i seguenti comandi nel tuo terminale e segui le istruzioni a schermo per installare Rust.
 tools-rustup-unknown = Rust gira su Windows, Linux, macOS, FreeBSD and NetBSD. Se stai usando una di queste piattaforme e stai vedendo questo messaggio segnala l'errore inserendo i seguenti valori:
