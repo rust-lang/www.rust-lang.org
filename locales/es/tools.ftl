@@ -10,7 +10,7 @@ tools-build-install-description = Con decenas de miles de paquetes, es muy proba
 tools-build-test-heading = Prueba
 tools-build-test-description = Genera confianza en tu código a través de las excelentes herramientas de Rust para hacer pruebas. <code class = "nowrap">cargo test</code> es la solución unificada de Rust para hacer pruebas. Escribe las pruebas junto a tu código, o en archivos separados: una solución para todas las necesidades de pruebas.
 tools-build-deploy-heading = Despliega
-tools-build-deploy-description = <code class="nowrap">cargo build</code> crea binarios ajustados a cada plataforma. Con un solo comando tu código puede ser destinado a Windows, Linux, OSX, y la web. Todo es parte de una interfaz moderna, sin necesidad de archivos  compilados específicos.
+tools-build-deploy-description = <code class="nowrap">cargo build</code> crea binarios ajustados a cada plataforma. Con un solo comando tu código puede ser destinado a Windows, Linux, macOS, y la web. Todo es parte de una interfaz moderna, sin necesidad de archivos  compilados específicos.
 tools-automation-heading = Velocidad mediante automatización
 tools-automation-description = Las herramientas de calidad industrial de Rust facilitan la colaboración sin miedo, permitiendo a los equipos centrarse en las tareas que realmente importan.
 tools-automation-rustfmt-heading = Rustfmt

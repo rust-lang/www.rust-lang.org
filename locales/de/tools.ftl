@@ -7,7 +7,7 @@ tools-build-install-heading = Installieren
 tools-build-install-description = Unter den zehntausenden Paketen auf <a href="https://crates.io">crates.io</a> findest du sehr wahrscheinlich die Lösung, nach der du suchst. Stehe auf den Schultern von Riesen und bringe dein Team von Neuerfindung zu Innovation.
 tools-build-test-heading = Testen
 tools-build-test-description = Stärke das Vertrauen in deinen Code mit Rusts exzellenten Test-Werkzeugen. <code class="nowrap">cargo test</code> bietet eine einheitliche Lösung für alle Test-Zwecke. Du kannst Tests neben deinen Code oder in separate Dateien schreiben, wie es dir gefällt.
-tools-build-deploy-description = <code class="nowrap">cargo build</code> erzeugt kleine Binaries für jede Platform. Mit einem einzigen Befehl kannst du Windows, Linux, OSX, und das Web ansteuern. Das alles mithilfe einer modernen Schnittstelle, ohne die Notwendigkeit von maßgeschneiderten Build-Skripten.
+tools-build-deploy-description = <code class="nowrap">cargo build</code> erzeugt kleine Binaries für jede Platform. Mit einem einzigen Befehl kannst du Windows, Linux, macOS, und das Web ansteuern. Das alles mithilfe einer modernen Schnittstelle, ohne die Notwendigkeit von maßgeschneiderten Build-Skripten.
 tools-automation-heading = Geschwindigkeit durch Automatisierung
 tools-automation-rustfmt-heading = Rustfmt
 tools-automation-rustfmt-link = Zum Repo

@@ -10,7 +10,7 @@ tools-build-install-description = 何万ものパッケージがある<a href="h
 tools-build-test-heading = テスト
 tools-build-test-description = Rustの優秀なテストツールでコードに信頼性をもたらしましょう。<code class="nowrap">cargo test</code>はRustの統合テストソリューションです。テストをコードの隣にも別のファイルにも書くことができ、あらゆるテストニーズに解決策を提供します。
 tools-build-deploy-heading = デプロイ
-tools-build-deploy-description = <code class="nowrap">cargo build</code>は、あらゆるプラットフォーム向けに無駄のないバイナリを生成します。1回のコマンドだけで、あなたのコードをWindows、Linux、OSX、そしてウェブ向けにビルドすることができます。すべてがモダンなインターフェイスの一部であり、環境に依ったビルドファイルは必要ありません。
+tools-build-deploy-description = <code class="nowrap">cargo build</code>は、あらゆるプラットフォーム向けに無駄のないバイナリを生成します。1回のコマンドだけで、あなたのコードをWindows、Linux、macOS、そしてウェブ向けにビルドすることができます。すべてがモダンなインターフェイスの一部であり、環境に依ったビルドファイルは必要ありません。
 tools-automation-heading = 自動化のもたらす速度
 tools-automation-description = Rustの実用レベルのツールは心理的安全性をもたらし、チームが重要なタスクに集中できるようにします。
 tools-automation-rustfmt-heading = Rustfmt

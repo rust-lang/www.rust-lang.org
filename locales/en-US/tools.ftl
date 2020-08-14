@@ -27,7 +27,7 @@ tools-build-test-description = Bring confidence to your code through Rust’s
 tools-build-deploy-heading = Deploy
 tools-build-deploy-description = <code class="nowrap">cargo build</code> creates
         lean binaries for every platform. With a single command your code can
-        target Windows, Linux, OSX, and the web. All part of a modern interface,
+        target Windows, Linux, macOS, and the web. All part of a modern interface,
         with no need for bespoke build files.
 
 tools-automation-heading = Velocity through automation
