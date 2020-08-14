@@ -2,7 +2,7 @@
 
 tools-page-title = Strumenti
 tools-editor-support-heading = Pieno supporto per gli editor
-tools-editor-support-description = Sia che tu preferisca scrivere codice da riga di comando o usare un editor o IDE, troverai supporto a Rust nel tuo editor preferito. Oppure puoi semplicemente creare il supporto usando il <a href="https://github.com/rust-lang/rls">Rust Language Server</a>
+tools-editor-support-description = Sia che tu preferisca scrivere codice da riga di comando o usare un editor o IDE, troverai supporto a Rust nel tuo editor preferito. Oppure puoi semplicemente creare il supporto usando il <a href="https://github.com/rust-lang/rls">Rust Language Server</a>.
 tools-build-heading = Porta serenità nelle tue build
 tools-build-description = Cargo è lo strumento per compilare in Rust, racchiude tutte le azioni più comuni in un singolo comando. Nessun boilerplate.
 tools-build-install-heading = Installa

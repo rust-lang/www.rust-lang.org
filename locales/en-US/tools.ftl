@@ -6,7 +6,7 @@ tools-editor-support-heading = First-class editor support
 tools-editor-support-description = Whether you prefer working with code from the
         command line, or using rich graphical editors, there’s a Rust
         integration available for your editor of choice. Or you can build your
-        own using the <a href="https://github.com/rust-lang/rls">Rust Language Server</a>
+        own using the <a href="https://github.com/rust-lang/rls">Rust Language Server</a>.
 
 tools-build-heading = Bring calmness to your builds
 tools-build-description = Cargo is the build tool for Rust. It bundles all

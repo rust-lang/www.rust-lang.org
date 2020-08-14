@@ -2,7 +2,7 @@
 
 tools-page-title = Werkzeuge
 tools-editor-support-heading = Erstklassige Editor-Unterstützung
-tools-editor-support-description = Egal ob du gerne auf der Kommandozeile arbeitest, oder lieber einen mächtigen grafischen Editor verwendest, es gibt eine Integration für deinen Lieblingseditor. Oder du kannst deine Eigene bauen mithilfe des <a href="https://github.com/rust-lang/rls">Rust Language Servers</a>.
+tools-editor-support-description = Egal ob du gerne auf der Kommandozeile arbeitest, oder lieber einen mächtigen grafischen Editor verwendest, es gibt eine Integration für deinen Lieblingseditor. Oder du kannst deine Eigene bauen mithilfe des <a href="https://github.com/rust-lang/rls">Rust Language Server</a>.
 tools-build-install-heading = Installieren
 tools-build-install-description = Unter den zehntausenden Paketen auf <a href="https://crates.io">crates.io</a> findest du sehr wahrscheinlich die Lösung, nach der du suchst. Stehe auf den Schultern von Riesen und bringe dein Team von Neuerfindung zu Innovation.
 tools-build-test-heading = Testen
