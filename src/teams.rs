@@ -23,6 +23,7 @@ pub struct PageData {
     zulip_domain: &'static str,
     subteams: Vec<Team>,
     wgs: Vec<Team>,
+    project_groups: Vec<Team>,
 }
 
 #[derive(Clone)]
@@ -90,6 +91,7 @@ impl Data {
         // Then find all the subteams and wgs
         let mut subteams = Vec::new();
         let mut wgs = Vec::new();
+        let mut project_groups = Vec::new();
         self.teams
             .into_iter()
             .filter(|team| team.website_data.is_some())
@@ -97,6 +99,7 @@ impl Data {
             .for_each(|team| match team.kind {
                 TeamKind::Team => subteams.push(team),
                 TeamKind::WorkingGroup => wgs.push(team),
+                TeamKind::ProjectGroup => project_groups.push(team),
                 _ => {}
             });
 
@@ -105,6 +108,7 @@ impl Data {
             zulip_domain: crate::ZULIP_DOMAIN,
             subteams,
             wgs,
+            project_groups,
         })
     }
 }
@@ -134,6 +138,7 @@ fn kind_to_str(kind: TeamKind) -> &'static str {
     match kind {
         TeamKind::Team => "teams",
         TeamKind::WorkingGroup => "wgs",
+        TeamKind::ProjectGroup => "project-groups",
         _ => "UNSUPPORTED",
     }
 }

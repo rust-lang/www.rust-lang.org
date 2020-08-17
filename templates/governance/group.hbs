@@ -12,6 +12,13 @@
         {{/each}}
     </section>
 {{/if}}
+{{#if data.project_groups}}
+    <section class="green">
+        {{#each data.project_groups as |team|}}
+            {{> governance/group-team}}
+        {{/each}}
+    </section>
+{{/if}}
 {{#if data.wgs}}
     <section class="green">
         {{#each data.wgs as |team|}}
