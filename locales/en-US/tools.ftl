@@ -6,7 +6,7 @@ tools-editor-support-heading = First-class editor support
 tools-editor-support-description = Whether you prefer working with code from the
         command line, or using rich graphical editors, there’s a Rust
         integration available for your editor of choice. Or you can build your
-        own using the <a href="https://github.com/rust-lang/rls">Rust Language Server</a>
+        own using the <a href="https://github.com/rust-lang/rls">Rust Language Server</a>.
 
 tools-build-heading = Bring calmness to your builds
 tools-build-description = Cargo is the build tool for Rust. It bundles all
@@ -27,7 +27,7 @@ tools-build-test-description = Bring confidence to your code through Rust’s
 tools-build-deploy-heading = Deploy
 tools-build-deploy-description = <code class="nowrap">cargo build</code> creates
         lean binaries for every platform. With a single command your code can
-        target Windows, Linux, OSX, and the web. All part of a modern interface,
+        target Windows, Linux, macOS, and the web. All part of a modern interface,
         with no need for bespoke build files.
 
 tools-automation-heading = Velocity through automation

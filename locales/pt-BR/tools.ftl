@@ -6,7 +6,7 @@ tools-editor-support-description =
     Independente se você prefere trabalhar com código a partir
     da linha de comando, ou usando um editor gráfico, existe uma
     extensão Rust disponível para o editor da sua escolha. Ou você pode criar 
-    a sua própria usando <a href="https://github.com/rust-lang/rls">Rust Language Server</a>
+    a sua própria usando <a href="https://github.com/rust-lang/rls">Rust Language Server</a>.
 tools-build-heading = Traga tranquilidade para a compilação
 tools-build-description =
     Cargo é uma ferramenta de automação de compilação para Rust.
@@ -16,7 +16,7 @@ tools-build-install-description = Com dezena de milhares de pacotes, é bem prov
 tools-build-test-heading = Teste
 tools-build-test-description = Traga confiança para seu código através das excelentes ferramentas de testes disponíveis em Rust. <code class="nowrap">cargo test</code> é a solução unificada para testar. Escreva testes próximos ao seu código, ou em arquivos separados: a solução para todas suas necessidades para testes.
 tools-build-deploy-heading = Implante
-tools-build-deploy-description = <code class="nowrap">cargo build</code> cria binários enxutos para todas as plataformas. Com apenas um comando seu código estará disponível para Windows, Linux, OSX, e na <i>web</i>. Tudo isso com uma interface moderna, sem requerer arquivos de configurações sob medidas.
+tools-build-deploy-description = <code class="nowrap">cargo build</code> cria binários enxutos para todas as plataformas. Com apenas um comando seu código estará disponível para Windows, Linux, macOS, e na <i>web</i>. Tudo isso com uma interface moderna, sem requerer arquivos de configurações sob medidas.
 tools-automation-heading = Velocidade através de automação
 tools-automation-description = As ferramentas de qualidade industrial permitem a colaboração sem medo, deixando equipes focarem nas tarefas que realmente importam.
 tools-automation-rustfmt-heading = Rustfmt
