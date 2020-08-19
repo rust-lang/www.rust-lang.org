@@ -23,6 +23,7 @@ serde_json = "1.0"
 rust_team_data = { git = "https://github.com/rust-lang/team" }
 handlebars = "1.1.0"
 siphasher = "0.3.3"
+percent-encoding = "2.1.0"
 
 [dependencies.rocket_contrib]
 version = "0.4"

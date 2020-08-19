@@ -1,3 +1,4 @@
+use percent_encoding::{utf8_percent_encode, AsciiSet, NON_ALPHANUMERIC};
 use rust_team_data::v1::{Team, TeamKind, Teams, BASE_URL};
 use std::any::Any;
 use std::cmp::Reverse;
@@ -30,6 +31,8 @@ pub struct PageData {
 struct Data {
     teams: Vec<Team>,
 }
+
+const ENCODING_SET: AsciiSet = NON_ALPHANUMERIC.remove(b'-').remove(b'_');
 
 impl Data {
     fn load() -> Result<Self, Box<dyn Error>> {
@@ -96,11 +99,21 @@ impl Data {
             .into_iter()
             .filter(|team| team.website_data.is_some())
             .filter(|team| team.subteam_of.as_ref() == Some(&main_team.name))
-            .for_each(|team| match team.kind {
-                TeamKind::Team => subteams.push(team),
-                TeamKind::WorkingGroup => wgs.push(team),
-                TeamKind::ProjectGroup => project_groups.push(team),
-                _ => {}
+            .for_each(|mut team| {
+                // https://github.com/zulip/zulip/blob/159641bab8c248f5b72a4e736462fb0b48e7fa24/static/js/hash_util.js#L20-L25
+                let website_data = team.website_data.as_mut().unwrap();
+                website_data.zulip_stream = website_data.zulip_stream.as_ref().map(|stream| {
+                    utf8_percent_encode(&stream, &ENCODING_SET)
+                        .to_string()
+                        .replace('%', ".")
+                });
+
+                match team.kind {
+                    TeamKind::Team => subteams.push(team),
+                    TeamKind::WorkingGroup => wgs.push(team),
+                    TeamKind::ProjectGroup => project_groups.push(team),
+                    _ => {}
+                }
             });
 
         Ok(PageData {
@@ -230,6 +243,7 @@ mod tests {
         let mut wg = dummy_team("wg");
         wg.subteam_of = Some("main".into());
         wg.kind = TeamKind::WorkingGroup;
+        wg.website_data.as_mut().unwrap().zulip_stream = Some("t-compiler/wg-rls-2.0".to_string());
 
         let other = dummy_team("other");
         let mut other_subteam = dummy_team("other-subteam");
@@ -246,6 +260,11 @@ mod tests {
         assert_eq!(page.subteams[0].name, "subteam");
         assert_eq!(page.wgs.len(), 1);
         assert_eq!(page.wgs[0].name, "wg");
+        let zulip_stream = page.wgs[0]
+            .website_data
+            .as_ref()
+            .and_then(|site| site.zulip_stream.as_deref());
+        assert_eq!(zulip_stream, Some("t-compiler.2Fwg-rls-2.2E0"));
     }
 
     #[test]

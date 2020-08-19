@@ -2517,6 +2517,7 @@ dependencies = [
  "handlebars",
  "handlebars-fluent",
  "lazy_static",
+ "percent-encoding 2.1.0",
  "rand",
  "regex",
  "reqwest",
