@@ -1758,7 +1758,7 @@ dependencies = [
 [[package]]
 name = "rust_team_data"
 version = "1.0.0"
-source = "git+https://github.com/rust-lang/team#769f3e259512d59a8588154520029774560ce0af"
+source = "git+https://github.com/rust-lang/team#241ed0d4e04c1047cd58cf6b946fd63f4a26f966"
 dependencies = [
  "indexmap",
  "serde",
@@ -2517,6 +2517,7 @@ dependencies = [
  "handlebars",
  "handlebars-fluent",
  "lazy_static",
+ "percent-encoding 2.1.0",
  "rand",
  "regex",
  "reqwest",
