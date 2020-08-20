@@ -99,7 +99,7 @@ install-notes-rustup-description =
 install-notes-uninstall-heading = Uninstall Rust
 install-notes-uninstall-description =
         <p>
-          If you at any point you would like to uninstall Rust, you can run
+          If at any point you would like to uninstall Rust, you can run
           <code>rustup self uninstall</code>.
           We'll miss you though!
         </p>
