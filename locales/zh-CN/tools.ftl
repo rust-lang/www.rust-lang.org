@@ -67,6 +67,11 @@ install-notes-rustup-description =
        <a href="https://github.com/rust-lang/rustup.rs/blob/master/README.md">
        <code>rustup</code> 文档</a>。
      </p>
+install-notes-uninstall-heading = 卸载 Rust
+install-notes-uninstall-description =
+    <p>
+      在任何时候如果您想卸载 Rust，您可以运行 <code>rustup self uninstall</code>。但我们会想念您的！
+    </p>
 install-notes-path-heading = 配置 <code>PATH</code> 环境变量
 install-notes-path-description =
     <p>
