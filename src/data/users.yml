@@ -684,3 +684,15 @@
   url: https://kentik.com/
   logo: kentik.svg
   how: "Our advanced network analytics platform relies on <a href='https://www.kentik.com/blog/under-the-hood-how-rust-helps-keep-kentik%27s-performance-on-high'>many Rust components</a>."
+
+-
+  name: YottaDB
+  url: https://yottadb.com/
+  logo: yottadb.svg
+  how: "YottaDB has first-class support for Rust as an interface to the underlying database. We plan for new command line tools to be written in Rust."
+
+-
+  name: 1Password
+  url: https://1password.com/
+  logo: 1password.svg
+  how: "We use Rust to power the entire backend (encryption, networking, database, and business logic) of all our client apps."
