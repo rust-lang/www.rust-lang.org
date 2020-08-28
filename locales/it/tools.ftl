@@ -35,6 +35,13 @@ install-notes-heading = Note sull'installazione di Rust
 install-notes-getting-started-description = Se stai iniziando con Rust e vorresti una guida passo passo più dettagliata, guarda la nostra pagina <a href="{ $getting-started-href }">getting started</a> .
 install-notes-rustup-heading = Gestione della toolchain con <code>rustup</code>
 install-notes-rustup-description = Rust è installato e gestito da <a href="https://github.com/rust-lang/rustup.rs"><code>rustup</code></a>. Rust ha un rapido <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">ciclo di rilasci</a> di 6 settimane e supporta una <a href="https://forge.rust-lang.org/release/platform-support.html">grande quantità di piattaforme</a>, quindi ci sono sempre molteplici build di Rust disponibili. <code>rustup</code> gestisce queste build in maniera coerente su qualsiasi piattaforma supportata dalle release beta e nightly così come il supporto alla cross-compilation per differenti target.
+install-notes-uninstall-heading = Disinstalla Rust
+install-notes-uninstall-description =
+    <p>
+      Per disinstallare Rust in qualunque momento, esegui il comando
+      <code>rustup self uninstall</code>.
+      Peccato, ci mancherai!
+    </p>
 install-notes-path-heading = Configurare la variabile d'ambiente <code>PATH</code>
 install-notes-path-description =
     <p>
