@@ -9,24 +9,32 @@
             <p class="ma0 f2">{{team-text team description}}</p>
             <div class="flex flex-column ml5-l mt4 mt0-l">
                 {{#if team.website_data.email}}
-                    <a class="button button-secondary" href="mailto:{{team.website_data.email}}">
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                        <a class="button button-secondary" href="mailto:{{team.website_data.email}}">
                     {{#fluent "governance-team-email"}}{{#fluentparam "teamname"}}{{team-text team name}}{{/fluentparam}}{{/fluent}}
-                    </a>
+                        </a>
+                    </div>
                 {{/if}}
                 {{#if team.website_data.repo}}
-                    <a class="button button-secondary" href="{{team.website_data.repo}}">
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                        <a class="button button-secondary" href="{{team.website_data.repo}}">
                         {{#fluent "governance-team-repository"}}{{#fluentparam "teamname"}}{{team-text team name}}{{/fluentparam}}{{/fluent}}
-                    </a>
+                        </a>
+                    </div>
                 {{/if}}
                 {{#if team.website_data.discord}}
-                    <a class="button button-secondary" href="{{team.website_data.discord.url}}">
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                        <a class="button button-secondary" href="{{team.website_data.discord.url}}">
                         {{#fluent "governance-team-discord"}}{{#fluentparam "channel"}}{{team.website_data.discord.channel}}{{/fluentparam}}{{/fluent}}
-                    </a>
+                        </a>
+                    </div>
                 {{/if}}
                 {{#if team.website_data.zulip_stream}}
-                    <a class="button button-secondary" href="{{../data.zulip_domain}}/#narrow/stream/{{team.website_data.zulip_stream}}">
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                        <a class="button button-secondary" href="{{../data.zulip_domain}}/#narrow/stream/{{team.website_data.zulip_stream}}">
                         {{#fluent "governance-team-zulip"}}{{#fluentparam "stream"}}#{{team.website_data.zulip_stream}}{{/fluentparam}}{{/fluent}}
-                    </a>
+                        </a>
+                    </div>
                 {{/if}}
             </div>
         </div>
