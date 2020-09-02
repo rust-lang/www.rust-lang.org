@@ -43,6 +43,13 @@ install-notes-rustup-description =
       請參考 <a href="https://github.com/rust-lang/rustup.rs/blob/master/README.md">
       <code>rustup</code> 文件</a> 以取得更多資訊。
     </p>
+install-notes-uninstall-heading = 解除安裝 Rust
+install-notes-uninstall-description =
+    <p>
+      若任何時候想解除安裝 Rust，你可以執行
+      <code>rustup self uninstall</code>。
+      我們會想念你的！
+    </p>
 install-notes-path-heading = 設定 <code>PATH</code> 環境變數
 install-notes-path-description =
     <p>
