@@ -110,5 +110,5 @@ learn-ferris-who = Chi è questo granchietto Ferris?
 learn-ferris =
     <p>Ferris è la mascotte non ufficiale della community Rust. Alcuni programmatori Rust si autodenominano "Rustaceans", un gioco di parole da "<a href="https://it.wikipedia.org/wiki/Crustacea">crostaceo</a>" ("crustacean" in inglese). In inglese, ci si riferisce a Ferris con pronomi personali neutri come "they," "them," ecc.</p>
     <p>Ferris è un nome che gioca sull'aggettivo "ferroso" ("ferrous" in inglese), che indica la presenza di ferro. Dal momento che la ruggine ("rust" in inglese) spesso si forma sul ferro, ci è sembrato divertente questo nome per la mascotte!</p>
-    <p>Puoi trovare altre immagini di Ferris su <a href="http://rustacean.net/">http://rustacean.net/</a>.
+    <p>Puoi trovare altre immagini di Ferris su <a href="https://rustacean.net/">rustacean.net</a>.
 learn-ferris-alt = gif di ferris che si sposta di lato

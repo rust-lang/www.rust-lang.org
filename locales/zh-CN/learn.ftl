@@ -118,6 +118,6 @@ learn-ferris =
     我们用 “they” “them” 等代词，而不用带性别的代词来指代 Ferris。</p>
     <p>Ferris 与形容词“ferrous”相似，它的含义与铁有关。由于 Rust（锈）通常由铁形成，
     因此它算得上是个吉祥物名字的有趣来源。</p>
-    <p>您可以在 <a href="http://rustacean.net/">http://rustacean.net/</a> 上找到更多
+    <p>您可以在 <a href="https://rustacean.net/">rustacean.net</a> 上找到更多
     Ferris 的图片。
 learn-ferris-alt = 一个横着走的 Ferris 动图
