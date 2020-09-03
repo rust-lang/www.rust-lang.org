@@ -111,5 +111,5 @@ learn-ferris-who = 這隻螃蟹是誰？Ferris？
 learn-ferris =
     <p>Ferris 是隻 Rust 社群非官方的吉祥物，許多 Rust 程式設計師會自稱「Rustaceans」，因為這和「<a href="https://en.wikipedia.org/wiki/Crustacean">crustacean</a>」相似。我們指名 Ferris 會用代名詞「they」、「them」等等，而不是帶有性別的代名詞。</p>
     <p>Ferris 的名字近似於形容詞「ferrous」，含意與鐵有關。既然 Rust（銹）通常來自於鐵，我們認為這是個有趣的吉祥物名稱源由！</p>
-    <p>您可以在 <a href="http://rustacean.net/">http://rustacean.net/</a> 找到更多 Ferris 的圖片。
+    <p>您可以在 <a href="https://rustacean.net/">rustacean.net</a> 找到更多 Ferris 的圖片。
 learn-ferris-alt = ferris 橫著行走的 gif

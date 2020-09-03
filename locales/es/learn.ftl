@@ -111,5 +111,5 @@ learn-ferris-who = ¿Quién es este cangrejo, Ferris?
 learn-ferris =
     <p>Ferris es la mascota no oficial de la comunidad de Rust. Muchos programadores de Rust se llaman a sí mismos "Rustaceans", un juego de palabras con "<a href="https://en.wikipedia.org/wiki/Crustacean">crustacean</a>" (crustáceo). En inglés preferimos referirnos a Ferris con los pronombres neutros "they", "them" en vez de los pronombres con género.</p>
     <p>El nombre de Ferris es un juego de palabras con el adjetivo "ferrous" (férreo) que significa "que es de hierro o lo contiene". Dado que el óxido ("rust" en inglés) se forma a menudo sobre el hierro, parece un origen divertido para el nombre de nuestra mascota.</p>
-    <p>Puedes encontrar más imágenes de Ferris en <a href="http://rustacean.net/">http://rustacean.net/</a>.
+    <p>Puedes encontrar más imágenes de Ferris en <a href="https://rustacean.net/">rustacean.net</a>.
 learn-ferris-alt = Un gif de Ferris andando de lado
