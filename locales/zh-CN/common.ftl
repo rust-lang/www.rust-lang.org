@@ -7,6 +7,7 @@ why-rust = 为什么选择 Rust?
 production-use = 产品应用
 learn-more = 了解更多
 discord = Discord
+zulip = Zulip
 
 ## components/panels/domain.hbs
 
