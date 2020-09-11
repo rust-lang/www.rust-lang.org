@@ -326,7 +326,7 @@
   name: QCERT (Qatar's National CERT)
   url: http://qcert.org/
   logo: QCERT-Logo.svg
-  how: "DNS log analysis pipeline entirly written in rust, running on top of our own Rust stream processing platform."
+  how: "DNS log analysis pipeline entirely written in rust, running on top of our own Rust stream processing platform."
 -
   name: Sandstorm
   url: https://sandstorm.io

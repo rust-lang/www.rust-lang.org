@@ -91,7 +91,7 @@ In order to check the changes, you need:
 
 * Make sure your language is in the `EXPLICIT_LOCALE_INFO` array in `src/i18n.rs`
 
-* Restart the website locally everytime you change a local file
+* Restart the website locally every time you change a local file
 
 ## Special case: Policies
 
