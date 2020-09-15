@@ -13,3 +13,8 @@ policies-privacy-link = Privacy Notice
 
 policies-reach-out-description = Didn’t find what you were looking for? Have a question? Please reach out!
 policies-reach-out-link = Message the Core Team
+
+policies-translation-warning =
+    This policy may be translated by Rust community members. If there is any
+    conflict between the <a href="{ $english }">English version</a> and a
+    translation, the English version will apply.
