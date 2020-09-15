@@ -2,7 +2,7 @@
 
 tools-page-title = Strumenti
 tools-editor-support-heading = Pieno supporto per gli editor
-tools-editor-support-description = Sia che tu preferisca scrivere codice da riga di comando o usare un editor o IDE, troverai supporto a Rust nel tuo editor preferito. Oppure puoi semplicemente creare il supporto usando il <a href="https://github.com/rust-lang/rls">Rust Language Server</a>
+tools-editor-support-description = Sia che tu preferisca scrivere codice da riga di comando o usare un editor o IDE, troverai supporto a Rust nel tuo editor preferito. Oppure puoi semplicemente creare il supporto usando il <a href="https://github.com/rust-lang/rls">Rust Language Server</a>.
 tools-build-heading = Porta serenità nelle tue build
 tools-build-description = Cargo è lo strumento per compilare in Rust, racchiude tutte le azioni più comuni in un singolo comando. Nessun boilerplate.
 tools-build-install-heading = Installa
@@ -12,7 +12,7 @@ tools-build-install-description =
 tools-build-test-heading = Test
 tools-build-test-description = Fidati del tuo codice grazie agli eccellenti strumenti per testare in Rust. <code class="nowrap">cargo test</code> è la soluzione unificata di Rust per il testing. Puoi scrivere i test accanto al tuo codice o organizzarli in file separati: la soluzione per tutte le esigenze.
 tools-build-deploy-heading = Deploy
-tools-build-deploy-description = <code class="nowrap">cargo build</code> crea binari efficienti per ogni piattaforma. Con un semplice comando il tuo codice è adatto per Windows, Linux, OSX e il web. Tutto con un'interfaccia moderna, senza bisogno di build file personalizzati.
+tools-build-deploy-description = <code class="nowrap">cargo build</code> crea binari efficienti per ogni piattaforma. Con un semplice comando il tuo codice è adatto per Windows, Linux, macOS e il web. Tutto con un'interfaccia moderna, senza bisogno di build file personalizzati.
 tools-automation-heading = Rapidità grazie all'automazione
 tools-automation-description = Gli strumenti di qualità di Rust rendono la collaborazione semplice, permettendo ai team di concentrarsi sulle cose importanti.
 tools-automation-rustfmt-heading = Rustfmt
@@ -35,6 +35,13 @@ install-notes-heading = Note sull'installazione di Rust
 install-notes-getting-started-description = Se stai iniziando con Rust e vorresti una guida passo passo più dettagliata, guarda la nostra pagina <a href="{ $getting-started-href }">getting started</a> .
 install-notes-rustup-heading = Gestione della toolchain con <code>rustup</code>
 install-notes-rustup-description = Rust è installato e gestito da <a href="https://github.com/rust-lang/rustup.rs"><code>rustup</code></a>. Rust ha un rapido <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">ciclo di rilasci</a> di 6 settimane e supporta una <a href="https://forge.rust-lang.org/release/platform-support.html">grande quantità di piattaforme</a>, quindi ci sono sempre molteplici build di Rust disponibili. <code>rustup</code> gestisce queste build in maniera coerente su qualsiasi piattaforma supportata dalle release beta e nightly così come il supporto alla cross-compilation per differenti target.
+install-notes-uninstall-heading = Disinstalla Rust
+install-notes-uninstall-description =
+    <p>
+      Per disinstallare Rust in qualunque momento, esegui il comando
+      <code>rustup self uninstall</code>.
+      Peccato, ci mancherai!
+    </p>
 install-notes-path-heading = Configurare la variabile d'ambiente <code>PATH</code>
 install-notes-path-description =
     <p>

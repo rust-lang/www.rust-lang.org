@@ -114,7 +114,7 @@ learn-dependencies-steps = <p>Let’s add a dependency to our application. You c
       <p>In our <code>Cargo.toml</code> file we’ll add this information (that we got from the crate page):</p>
       { $cargotoml }
       <p>Now we can run:</p>
-      <code>cargo build</code>
+      <p><code>cargo build</code></p>
       <p>...and Cargo will install our dependency for us.</p>
       <p>You’ll see that running this command created a new file for us, <code>Cargo.lock</code>. This file is a log of the exact versions of the dependencies we are using locally.</p>
       <p>To use this dependency, we can open <code>main.rs</code>, remove everything that’s in there (it’s just another example), and add this line to it:</p>
@@ -136,5 +136,5 @@ learn-read-docs-button = learn more!
 learn-ferris-who = Who’s this crab, Ferris?
 learn-ferris = <p>Ferris is the unofficial mascot of the Rust Community. Many Rust programmers call themselves “Rustaceans,” a play on the word “<a href="https://en.wikipedia.org/wiki/Crustacean">crustacean</a>.” We refer to Ferris with the pronouns “they,” “them,” etc., rather than with gendered pronouns.</p>
                <p>Ferris is a name playing off of the adjective, “ferrous,” meaning of or pertaining to iron. Since Rust often forms on iron, it seemed like a fun origin for our mascot’s name!</p>
-               <p>You can find more images of Ferris on <a href="http://rustacean.net/">http://rustacean.net/</a>.
+               <p>You can find more images of Ferris on <a href="https://rustacean.net/">rustacean.net</a>.
 learn-ferris-alt = a gif of ferris scurrying side to side

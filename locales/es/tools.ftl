@@ -2,7 +2,7 @@
 
 tools-page-title = Herramientas
 tools-editor-support-heading = Soporte de editores de primer nivel
-tools-editor-support-description = Tanto si prefieres trabajar con el código desde la línea de comandos, o utilizando editores gráficos, Rust se integra con tu editor preferido. O puedes integrarlo por tu cuenta usando el <a href="https://github.com/rust-lang/rls">Rust Language Server</a>
+tools-editor-support-description = Tanto si prefieres trabajar con el código desde la línea de comandos, o utilizando editores gráficos, Rust se integra con tu editor preferido. O puedes integrarlo por tu cuenta usando el <a href="https://github.com/rust-lang/rls">Rust Language Server</a>.
 tools-build-heading = Lleva a cabo tus compilaciones con tranquilidad
 tools-build-description = Cargo es la herramienta de construcción para Rust. Empaqueta todas las acciones comunes en un único comando. No necesitas repetir configuración.
 tools-build-install-heading = Instala
@@ -10,7 +10,7 @@ tools-build-install-description = Con decenas de miles de paquetes, es muy proba
 tools-build-test-heading = Prueba
 tools-build-test-description = Genera confianza en tu código a través de las excelentes herramientas de Rust para hacer pruebas. <code class = "nowrap">cargo test</code> es la solución unificada de Rust para hacer pruebas. Escribe las pruebas junto a tu código, o en archivos separados: una solución para todas las necesidades de pruebas.
 tools-build-deploy-heading = Despliega
-tools-build-deploy-description = <code class="nowrap">cargo build</code> crea binarios ajustados a cada plataforma. Con un solo comando tu código puede ser destinado a Windows, Linux, OSX, y la web. Todo es parte de una interfaz moderna, sin necesidad de archivos  compilados específicos.
+tools-build-deploy-description = <code class="nowrap">cargo build</code> crea binarios ajustados a cada plataforma. Con un solo comando tu código puede ser destinado a Windows, Linux, macOS, y la web. Todo es parte de una interfaz moderna, sin necesidad de archivos  compilados específicos.
 tools-automation-heading = Velocidad mediante automatización
 tools-automation-description = Las herramientas de calidad industrial de Rust facilitan la colaboración sin miedo, permitiendo a los equipos centrarse en las tareas que realmente importan.
 tools-automation-rustfmt-heading = Rustfmt
@@ -53,6 +53,13 @@ install-notes-rustup-description =
     Para más información visita la documentación de
     <a href="https://github.com/rust-lang/rustup.rs/blob/master/README.md">
           <code>rustup</code></a>.
+    </p>
+install-notes-uninstall-heading = Desinstalar Rust
+install-notes-uninstall-description =
+    <p>
+      Si en algún momento quieres desinstalar Rust, puedes ejecutar
+      <code>rustup self uninstall</code>.
+      ¡Eso sí, te echaremos de menos!
     </p>
 install-notes-path-heading = Configurar la variable de entorno <code>PATH</code>
 install-notes-path-description =

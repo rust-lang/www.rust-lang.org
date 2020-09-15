@@ -111,5 +111,5 @@ learn-ferris-who = フェリスというこのカニは誰ですか？
 learn-ferris =
     <p>フェリスはRustコミュニティの非公式マスコットです。多くのRustプログラマは自身のことを「Rustacean」と呼びますが、これは<a href="https://en.wikipedia.org/wiki/Crustacean">crustacean</a>の言葉遊びから来ています。私たちはフェリスを指し示すのに、性別を表す代名詞の代わりに「they」や「them」などの代名詞を使います。</p>
     <p>フェリスは、鉄もしくは鉄に関連することを意味する「ferrous」という形容詞に由来する名前です。錆び（Rust）は鉄の上にできることが多いので、マスコットの名前の起源として面白いですね！</p>
-    <p><a href="http://rustacean.net/">http://rustacean.net/</a>では、より多くのフェリスの画像を見つけることができるでしょう。
+    <p><a href="https://rustacean.net/">rustacean.net</a>では、より多くのフェリスの画像を見つけることができるでしょう。
 learn-ferris-alt = 左右に走るフェリスのgif

@@ -26,7 +26,7 @@ tools-build-deploy-heading = Yayınla
 tools-build-deploy-description =
     <code class="nowrap">cargo build</code> kodu her platform için
     ekstra bilgi taşımayan ikili kod oluşturur. Kodunuz tek bir komutla Windows'u,
-    Linux'u, OSX'i ve webi hedef alabilir. Hepsi sipariş usulü yapı dosyalarına gerek 
+    Linux'u, macOS'i ve webi hedef alabilir. Hepsi sipariş usulü yapı dosyalarına gerek 
     olmadan modern bir arayüzün parçası.
 tools-automation-heading = Otomasyonla gelen hız
 tools-automation-description =

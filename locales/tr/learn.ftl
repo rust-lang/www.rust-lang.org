@@ -111,5 +111,5 @@ learn-ferris-who = Bu yengeç de kim, Ferris?
 learn-ferris =
     <p>Ferris, Rust topluluğunun resmi olmayan maskotudur. Birçok Rust programcısı "<a href="https://en.wikipedia.org/wiki/Crustacean">crustacean</a>" ile kelime oyunu yapar ve kendisine "Rustacean" der.</p>
     <p>Ferris,  İngilizcedeki “ferrous” (demir ile alakalı) sıfatının azıcık değiştirilmesiyle meydana gelmiştir. Pas, demirin üzerinde sıklıkla oluştuğu için bu, maskotumuzun ismi için eğlenceli bir hikâye gibi gözüküyor.</p>
-    <p><a href="http://rustacean.net/">http://rustacean.net/</a>'e girip daha fazla Ferris resmi bulabilirsiniz.
+    <p><a href="https://rustacean.net/">rustacean.net</a>'e girip daha fazla Ferris resmi bulabilirsiniz.
 learn-ferris-alt = Ferris'in aceleyle bir taraftan diğer tarafa koşmasının GIF'i

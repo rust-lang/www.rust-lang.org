@@ -7,6 +7,7 @@ community-twir-button = Rust 本周热点
 community-team-contact = 我们期待听到您的意见！不知道去哪、向谁提问？想参与其中却无从入手？社区团队很乐意给您介绍能提供帮助的人！
 community-team-button = 发送邮件至： { ENGLISH("community@rust-lang.org") }
 community-where = 交流平台
+community-learn = 学习平台
 community-urlo-header = 用户论坛
 community-urlo = Rust 用户论坛是 Rust 用户交流任何与 Rust 相关内容的地方。在这里您可以提问，分享项目创意，或者做任何想做的事情！
 community-discourse-button = 访问论坛

@@ -47,7 +47,7 @@ community-standards-header = Gli standard della Community
 community-standards =
     Ci impegniamo a offrire un ambiente sicuro, amichevole e accogliente per tutti, indipendentemente da sesso, orientamento sessuale, disabilità, etnia, religione e simili. Il nostro <a href="{ $url }">Codice di Condotta</a> detta gli standard di comportamento in tutti i forum officiali di Rust.
     <br /><br />
-    Se pensi di essere o di essere stato vittima o che un membro della community ti faccia sentire a disagio, contatta immediatamente un membro del <a href="mailto:rust-mods@rust-lang.org">Team di moderazione</a>. Che tu sia un contributor regolare o un nuovo arrivato, ci assicureremo di rendere la community un luogo sicuro per te.
+    Se ritieni di essere stato importunato da un membro della community o soggetto a situazioni che ti hanno messo a disagio, contatta immediatamente un membro del <a href="mailto:rust-mods@rust-lang.org">Team di moderazione</a>. Che tu sia un contributor regolare o un nuovo arrivato, vogliamo che la community sia un luogo sicuro per te.
 community-mod-button = Manda un messaggio al team di moderazione
 community-coc-button = Leggi il Codice di Condotta
 community-mod-guidelines-button = Leggi le linee guida per i moderatori

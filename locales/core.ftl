@@ -6,7 +6,7 @@
 -wikipedia-rfpolicy-href =
         https://en.wikipedia.org/wiki/RFPolicy
 
-## Security coordinator email addreses and links to their public keys
+## Security coordinator email addresses and links to their public keys
 -security-coordinator-email-anchor =
         <a href="mailto:steve@steveklabnik.com" lang="en-US">Steve Klabnik</a>
 -security-coordinator-public-key-href =
