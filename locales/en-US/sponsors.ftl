@@ -30,6 +30,9 @@ sponsors-mozilla = Mozilla is providing the Rust project with Heroku services fo
 sponsors-github-alt = GitHub
 sponsors-github = GitHub is honored to be the home for the Rust project and core pieces of its ecosystem as well as the build/CI infrastructure behind the extremely resource intensive rust-lang/rust repository.
 
+sponsors-sentry-alt = Sentry
+sponsors-sentry = Sentry is providing error monitoring for services managed by the Rust project.
+
 sponsors-support = Supporting Rust
 sponsors-sponsor = Interested in sponsoring work on Rust? A Rust conference? We’d love to hear from you.
 sponsors-contact-core = Message the Core Team
