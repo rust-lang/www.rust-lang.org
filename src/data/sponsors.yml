@@ -34,3 +34,6 @@
 
 - id: github
   name: GitHub
+
+- id: sentry
+  name: Sentry
