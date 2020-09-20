@@ -19,6 +19,7 @@ sponsors-mozilla-alt = Mozilla
 sponsors-mozilla = Mozilla 为 Rust 项目提供了 crates.io 的 Heroku 服务、团队视频通话的 Zoom.us 服务、邮件的 Mailgun 服务，以及用户和内部论坛的 Discourse。
 sponsors-github-alt = GitHub
 sponsors-github = GitHub 很荣幸成为 Rust 项目及其生态系统核心部分的所在地，以及极耗资源的 rust-lang / rust 储存库背后的构建及 CI 基础设施。
+sponsors-sentry-alt = Sentry
 sponsors-support = 支持 Rust
 sponsors-sponsor = 有兴趣对 Rust 或者大会提供赞助吗？我们非常期待您的来信。
 sponsors-contact-core = 给核心团队发送信息
