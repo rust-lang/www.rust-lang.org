@@ -2519,7 +2519,7 @@ dependencies = [
  "fluent 0.13.1",
  "fluent-bundle 0.6.0",
  "fluent-locale 0.10.1",
- "fluent-syntax 0.9.3",
+ "fluent-syntax 0.10.0",
  "handlebars",
  "handlebars-fluent",
  "lazy_static",
