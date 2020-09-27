@@ -7,6 +7,7 @@ community-twir-button = This Week in Rust
 community-team-contact = Dicci la tua! Non sei sicuro di dove o a chi chiedere? Vuoi dare il tuo contributo ma non sai come? Il community team saprà sicuramente metterti in contatto con qualcuno che può aiutarti!
 community-team-button = e-mail { ENGLISH("community@rust-lang.org") }
 community-where = Dove comunicare
+community-learn = Dove imparare
 community-urlo-header = Forum utenti
 community-urlo = Questo forum è il luogo in cui gli utenti Rust possono discutere di qualsiasi argomento riguardante li linguaggio. Puoi porre domande, coordinarti su idee per progetti o fare qualsiasi cosa che vuoi!
 community-discourse-button = Visita il Forum
