@@ -6,6 +6,18 @@
   </div>
 </header>
 
+{{#if is_translation}}
+<section id="translation-warning" class="green pv4">
+  <div class="w-100 mw-none ph3 pw8-m mw9-l center f3">
+    <p class="mb0">
+      {{#fluent "policies-translation-warning"}}
+        {{#fluentparam "english"}}/policies/security{{/fluentparam}}
+      {{/fluent}}
+    </p>
+  </div>
+</section>
+{{/if}}
+
 <section id="security-reporting" class="purple">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>

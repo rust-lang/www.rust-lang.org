@@ -93,6 +93,7 @@ struct Context<T: ::serde::Serialize> {
     pontoon_enabled: bool,
     assets: &'static AssetFiles,
     locales: &'static [LocaleInfo],
+    is_translation: bool,
 }
 
 impl<T: ::serde::Serialize> Context<T> {
@@ -110,6 +111,7 @@ impl<T: ::serde::Serialize> Context<T> {
             is_landing,
             data,
             baseurl: baseurl(&lang),
+            is_translation: lang != "en-US",
             lang,
             pontoon_enabled: *PONTOON_ENABLED,
             assets: &ASSETS,
