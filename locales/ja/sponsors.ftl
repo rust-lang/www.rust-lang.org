@@ -6,6 +6,7 @@ sponsors-caveat = 多くの企業と個人によって十分な時間および�
 sponsors-1password-alt = 1Password
 sponsors-1password = 1PasswordはRustチームに無償の1Passwordチームサブスクリプションを提供しており、シークレット情報の管理やチームメンバー間での共有に使用されています。
 sponsors-arm-alt = ARM
+sponsors-arm = ARMはAArch64上でコンパイラをテストするためにRustのCIインフラストラクチャにビルダーを提供しています。
 sponsors-microsoft-alt = Microsoft Azure
 sponsors-microsoft = Microsoft AzureはRustのCIインフラ、特に非常にリソースが集中するrust-lang/rustリポジトリのビルダーをスポンサー提供しています。
 sponsors-aws-alt = Amazon Web Services

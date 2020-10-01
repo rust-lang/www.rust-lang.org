@@ -7,6 +7,7 @@ why-rust = なぜRustか？
 production-use = 本番環境での利用
 learn-more = もっと読む
 discord = Discord
+zulip = Zulip
 
 ## components/panels/domain.hbs
 
