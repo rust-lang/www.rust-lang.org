@@ -50,6 +50,13 @@ install-notes-rustup-description =
       <a href="https://github.com/rust-lang/rustup.rs/blob/master/README.md">
       документацию по <code>rustup</code></a>.
     </p>
+install-notes-uninstall-heading = Удалить Rust
+install-notes-uninstall-description =
+    <p>¶
+     Если вы по какой-то причине хотите удалить Rust, вы можете запустить¶
+      <code>rustup self uninstall</code>.¶
+      Нам будет тебя не хватать!¶
+    </p>
 install-notes-path-heading = Настройка переменной окружения <code>PATH</code>
 install-notes-path-description =
     <p>

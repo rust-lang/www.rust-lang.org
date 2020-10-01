@@ -31,7 +31,7 @@ policies-privacy-page-rust-lang-org-desc =
       </dd>
     </dl>
 
-policies-privacy-page-crates-io-desc =
+policies-privacy-page-crates-io-desc--2020-09 =
     <p>
       <a href="https://crates.io">Crates.io</a> is managed by members of the
       <a href="{ $baseurl }/governance/teams/crates-io">Crates.io</a> and
@@ -98,24 +98,39 @@ policies-privacy-page-crates-io-desc =
           at the bottom of each crate’s page.
         </p>
       </dd>
+
+      <dt>Error monitoring:</dt>
+      <dd>
+        <p>
+          Crates.io uses Sentry, an error monitoring service, to help the Rust
+          team discover and fix the performance of the code. When there is an
+          error, Sentry receives basic information about how you interacted
+          with the website and the actions that led to the error. Additionally,
+          your IP address may be disclosed to Sentry as part of the error
+          reporting process but we’ve configured Sentry to delete it as soon as
+          it’s received. Read <a href="https://sentry.io/privacy/">Sentry’s
+          Privacy Policy here</a>.
+        </p>
+      </dd>
     </dl>
 
-policies-privacy-page-docs-rs-desc =
+policies-privacy-page-docs-rs-desc--2020-09 =
     <p>
       <a href="https://docs.rs">Docs.rs</a> is managed by the members of the
-      <a href="{ $baseurl }/governance/teams/dev-tools#rustdoc">Rustdoc team</a>
-      and <a href="{ $baseurl }/governance/teams/core">Rust core team</a>. The
-      project collects and uses data as described in this privacy notice.
+      <a href="{ $baseurl }/governance/teams/dev-tools#docs-rs">docs.rs team</a>
+      and <a href="{ $baseurl }/governance/teams/core">Rust core team</a>.
     </p>
 
-    <p>
-      Docs.rs is an open source project to host documentation of crates for the
-      Rust Programming Language. It automatically builds crates' documentation
-      released on <a href="https://crates.io">crates.io</a> using the nightly
-      release of the Rust compiler. All information from crates that is
-      published on docs.rs is also available publicly on crates.io.
-    </p>
-
+    <dl>
+      <dt>Visitor logs:</dt>
+      <dd>
+        <p>
+          When you visit docs.rs, we receive your IP address and user-agent
+          header as part of our standard server logs. We store these logs for 1
+          year.
+        </p>
+      </dd>
+    </dl>
 
 policies-privacy-page-forums-title = Forums
 policies-privacy-page-forums-desc =

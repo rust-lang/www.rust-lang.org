@@ -7,6 +7,7 @@ why-rust = Perché Rust?
 production-use = Uso in produzione
 learn-more = Scopri di più
 discord = Discord
+zulip = Zulip
 
 ## components/panels/domain.hbs
 

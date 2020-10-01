@@ -498,11 +498,11 @@ dependencies = [
 
 [[package]]
 name = "fluent"
-version = "0.12.0"
+version = "0.13.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3c3b6132d1377d8776409a337c6851d342aee4e85277c96ecd2755c4e0efde1d"
+checksum = "ef9e54ec7b674ae3477d948ae790e90ae24d54fb31c2e7173252978d9b09bdfa"
 dependencies = [
- "fluent-bundle 0.12.0",
+ "fluent-bundle 0.13.1",
  "unic-langid 0.9.0",
 ]
 
@@ -537,12 +537,12 @@ dependencies = [
 
 [[package]]
 name = "fluent-bundle"
-version = "0.12.0"
+version = "0.13.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "01a094d494ab2ed06077e9a95f4e47f446c376de95f6c93045dd88c499bfcd70"
+checksum = "a79916560098f0a57215a489e37b7fc83088949eab7f7977dcc329b254d50c17"
 dependencies = [
  "fluent-langneg",
- "fluent-syntax 0.9.3",
+ "fluent-syntax 0.10.0",
  "intl-memoizer",
  "intl_pluralrules 7.0.0",
  "rental",
@@ -585,6 +585,12 @@ name = "fluent-syntax"
 version = "0.9.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ac0f7e83d14cccbf26e165d8881dcac5891af0d85a88543c09dd72ebd31d91ba"
+
+[[package]]
+name = "fluent-syntax"
+version = "0.10.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9389354f858e38f37d9a249133611a1fcaec469f44773b04ddbd82f4f08d49eb"
 
 [[package]]
 name = "fnv"
@@ -1758,7 +1764,7 @@ dependencies = [
 [[package]]
 name = "rust_team_data"
 version = "1.0.0"
-source = "git+https://github.com/rust-lang/team#a1bb738af6cb26b42d1431a7ba01cbb968ca6386"
+source = "git+https://github.com/rust-lang/team#295fe6d393a318c4fcb62ffc7f874bd4b11a5992"
 dependencies = [
  "indexmap",
  "serde",
@@ -1896,9 +1902,9 @@ dependencies = [
 
 [[package]]
 name = "serde_json"
-version = "1.0.57"
+version = "1.0.58"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "164eacbdb13512ec2745fb09d51fd5b22b0d65ed294a1dcf7285a360c80a675c"
+checksum = "a230ea9107ca2220eea9d46de97eddcb04cd00e92d13dda78e478dd33fa82bd4"
 dependencies = [
  "itoa",
  "ryu",
@@ -2510,10 +2516,10 @@ dependencies = [
 name = "www-rust-lang-org"
 version = "0.1.0"
 dependencies = [
- "fluent 0.12.0",
+ "fluent 0.13.1",
  "fluent-bundle 0.6.0",
  "fluent-locale 0.10.1",
- "fluent-syntax 0.9.3",
+ "fluent-syntax 0.10.0",
  "handlebars",
  "handlebars-fluent",
  "lazy_static",
