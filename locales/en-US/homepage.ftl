@@ -34,13 +34,13 @@ language-values-performance-blurb = Rust is blazingly fast and memory-efficient:
 
 language-values-reliability = Reliability
 language-values-reliability-blurb = Rust’s rich type system and ownership model guarantee memory-safety
-          and thread-safety &mdash; and enable you to eliminate many classes of
+          and thread-safety &mdash; enabling you to eliminate many classes of
           bugs at compile-time.
 
 language-values-productivity = Productivity
 language-values-productivity-blurb = Rust has great documentation, a friendly compiler with useful error
           messages, and top-notch tooling &mdash; an integrated package manager
-          and build tool, smart multi-editor support with auto-completion and 
+          and build tool, smart multi-editor support with auto-completion and
           type inspections, an auto-formatter, and more.
 
 ## components/panels/domains.hbs
@@ -72,7 +72,6 @@ domains-embedded-blurb = Targeting low-resource devices?
             Rust has you covered.
 domains-embedded-alt = an embedded device chip
 
-
 ## components/panels/get-involved.hbs
 get-involved = Get involved
 
@@ -89,3 +88,16 @@ get-involved-contribute = Contribute code
 get-involved-contribute-blurb = Rust is truly a community effort, and we welcome contribution from hobbyists and production users, from
       newcomers and seasoned professionals. Come help us make the Rust experience even better!
 get-involved-contribute-link = Read Contribution Guide
+
+## components/panels/thanks.hbs
+
+thanks-title = Thanks
+thanks-blurb = Rust would not exist without the generous contributions of time, work, and resources from individuals and companies. We are very grateful for the support!
+
+thanks-individuals-header = Individuals
+thanks-individuals-blurb = Rust is a community project and is very thankful for the many community contributions it receives.
+thanks-individuals-link = See individual contributors
+
+thanks-companies-header = Corporate sponsors
+thanks-companies-blurb = The Rust project receives support from companies through the donation of infrastructure.
+thanks-companies-link = See sponsors

@@ -1,46 +1,67 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{lang}}">
   <head>
     <meta charset="utf-8">
-    <title>{{title}}</title>
+    <title>
+        {{#if is_landing}}
+            {{fluent "index-title"}}
+        {{else}}
+            {{#fluent "page-title"}}{{#fluentparam "pagename"}}{{title}}{{/fluentparam}}{{/fluent}}
+        {{/if}}
+        </title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta name="description" content="{{text meta-description}}">
+    <meta name="description" content="{{fluent "meta-description"}}">
 
     <!-- Twitter card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@rustlang">
     <meta name="twitter:creator" content="@rustlang">
     <meta name="twitter:title" content="{{title}}">
-    <meta name="twitter:description" content="{{text meta-description}}">
+    <meta name="twitter:description" content="{{fluent "meta-description"}}">
     <meta name="twitter:image" content="https://www.rust-lang.org/static/images/rust-social.jpg">
 
     <!-- Facebook OpenGraph -->
     <meta property="og:title" content="{{title}}" />
-    <meta property="og:description" content="{{text meta-description}}">
+    <meta property="og:description" content="{{fluent "meta-description"}}">
     <meta property="og:image" content="https://www.rust-lang.org/static/images/rust-social-wide.jpg" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
 
     <!-- styles -->
+    <link rel="stylesheet" href="/static/styles/solarized-dark.css"/>
     <link rel="stylesheet" href="{{assets.css.vendor}}"/>
     <link rel="stylesheet" href="{{assets.css.fonts}}"/>
     <link rel="stylesheet" href="{{assets.css.app}}"/>
 
     <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon-16x16.png">
-    <link rel="shortcut icon" href="/static/images/favicon.ico">
-    <link rel="manifest" href="/static/images/site.webmanifest">
-    <link rel="mask-icon" href="/static/images/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#00aba9">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/images/apple-touch-icon.png?v=ngJW8jGAmR">
+    <link rel="alternate icon" type="image/png" href="/static/images/favicon-16x16.png">
+    <link rel="alternate icon" type="image/png" href="/static/images/favicon-32x32.png">
+    <link rel="icon" type="image/svg+xml" href="/static/images/favicon.svg">
+    <link rel="manifest" href="/static/images/site.webmanifest?v=ngJW8jGAmR">
+    <link rel="mask-icon" href="/static/images/safari-pinned-tab.svg?v=ngJW8jGAmR" color="#000000">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="/static/images/browserconfig.xml?v=ngJW8jGAmR">
     <meta name="theme-color" content="#ffffff">
+
+    {{#if is_landing}}
+        <!-- locales -->
+        {{#each locales as |locale| ~}}
+            <link rel="alternate" href="https://www.rust-lang.org/{{locale.lang}}" hreflang="{{locale.lang}}">
+        {{/each~}}
+        <link rel="alternate" href="https://www.rust-lang.org/" hreflang="x-default">
+    {{/if}}
+
+    <!-- Custom Highlight pack with: Rust, Markdown, TOML, Bash, JSON, YAML,
+         and plaintext. -->
+    <script src="/static/scripts/highlight.pack.js" defer></script>
+    <script src="/static/scripts/init.js" defer></script>
   </head>
-  <body lang="{{lang}}">
+  <body>
     {{> components/nav}}
-    <div id="main-content">
+    <main>
         {{~> page}}
-    </div>
+    </main>
     {{> components/footer}}
     {{#if pontoon_enabled}}
          <script src="https://pontoon.rust-lang.org/pontoon.js"></script>

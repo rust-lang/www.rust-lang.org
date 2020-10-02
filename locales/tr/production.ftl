@@ -10,16 +10,20 @@ production-read-more = Devamını Oku
 production-watch-video = Videoyu İzle
 production-dropbox = Dropbox çekirdek dosya depolama sisteminin birkaç bileşeni, daha büyük veri merkezi verimliliği için daha büyük bir projenin bir parçası olarak Rust'a yazılmıştır. Günümüzde tüm Dropbox depolama alanları tarafından kullanılmakta ve> 500 milyon kullanıcıya hizmet vermektedir.
 production-dropbox-alt = dropbox logosu
-production-yelp = Yelp, gerçek zamanlı A/B testi için Rust'ta bir çatı geliştirdi. Tüm Yelp web sitelerinde ve uygulamalarında bu çatı kullanılmaktadır ve çatının denendiği konular UX'ten dahili altyapıya kadar uzanmaktadır. Rust bu görev için seçildi çünkü C kadar hızlı (ucuz çalışmak için) ve C'den daha ucuz (bakım yapmak için ucuz) idi.
+production-yelp = Yelp, gerçek zamanlı A/B testi için Rust'ta bir çatı geliştirdi. Tüm Yelp web sitelerinde ve uygulamalarında bu çatı kullanılmaktadır ve çatının denendiği konular UX'ten dahili altyapıya kadar uzanmaktadır. Rust bu görev için seçildi çünkü C kadar hızlı (çalışması ucuz) ve C'den daha güvenli (bakım yapması ucuz) idi.
 production-yelp-alt = yelp logosu
-production-share = Şirketiniz Rust mı kullanıyor? Tecrübenizi bizimle paylaşmayı göz önünde bulundurun!
+production-share = Şirketiniz Rust kullanıyor mu? Tecrübenizi bizimle paylaşmayı göz önünde bulundurun!
 production-share-button = Üretim kullanıcıları ekibine ulaşın
+production-users = Üretimde Rust'ı kullananlar hakkında daha fazla bilgi almak mı istiyorsunuz?
 production-users-button = Kullanıcılar sayfasına göz atın
 production-domain = Şirketlerin özel geliştirme alanlarında araçları nasıl kullandığına bakın!
 production-support = Rust'ı Desteklemek
 production-sponsor = Rust'taki çalışmayı desteklemek için meraklı mısınız? Bir Rust konferansı mı? Sizden haber almaktan mutluluk duyarız.
 production-contact-core = Çekirdek Ekibine Mesaj At
 production-license-header = Lisans
-production-license = Rust, Apache Lisansı Sürüm 2.0 ve MIT lisansı ile her türlü projeye uygun olması için çifte olarak lisanslanmıştır.
+production-license = Rust, her türlü projeye uygun olması için Apache Lisansı Sürüm 2.0 ve MIT lisansı ile çifte olarak lisanslanmıştır.
 production-license-link = Politikalar: Lisans
-production-users-heading = Kullanıcılar
+
+## templates/production/users.hbs
+
+production-users-page-title = Üretimde Rust Kullananlar

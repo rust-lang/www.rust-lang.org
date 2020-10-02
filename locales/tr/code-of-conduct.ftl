@@ -3,7 +3,7 @@
 
 ## templates/policies/code-of-conduct.hbs
 
-coc-page-heading = Davranış Kuralları
+policies-code-of-conduct-page-title = Davranış Kuralları
 coc-conduct-heading = Davranış
 coc-conduct-description =
     <ul>
@@ -12,7 +12,7 @@ coc-conduct-description =
      <li>Lütfen nazik olun. Kaba davranmanın bir anlamı yok.</li>
      <li>İnsanların fikir ayrılıkları olabileceğine saygı duyalım ve her tasarı ve uygulama kararının farklı bir takas getirdiğini unutmayalım. Tek bir doğru cevap nadiren karşımıza çıkacaktır.</li>
      <li>Yapılandırılmamış eleştiriyi olabildiğince az yapalım. Eğer denemek istediğiniz sağlam fikirleriniz varsa bir çatal oluşturup nasıl çalıştığını gösterin.</li>
-     <li>Birine hakaret ederseniz, küçük düşürücü harekette bulunursanız veya taciz ederseniz sizi etkileşimin dışında tutarız. Bu, tasvip ettiğimiz bir davranış değildir. Tacizin tanımı için <a href="http://citizencodeofconduct.org/">Sivil Davranış Kuralları</a>'na danışabilirsiniz. Eğer nelerin bu tanıma uyacağı yeterince açık değilse lütfen tanımı okuyunuz. Özellikle, insanları ötekileştirici davranışları kabul etmeyeceğiz.</li>
+     <li>Birine hakaret ederseniz, küçük düşürücü harekette bulunursanız veya taciz ederseniz sizi etkileşimin dışında tutarız. Bu, tasvip ettiğimiz bir davranış değildir. Tacizin tanımı için <a href="https://github.com/stumpsyn/policies/blob/master/citizen_code_of_conduct.md">Sivil Davranış Kuralları</a>'na danışabilirsiniz. Eğer nelerin bu tanıma uyacağı yeterince açık değilse lütfen tanımı okuyunuz. Özellikle, insanları ötekileştirici davranışları kabul etmeyeceğiz.</li>
      <li>Özel taciz de kabul edilemez. Bir topluluk üyesi tarafından geçmişte veya şimdi tacize maruz kaldıysanız veya rahatsız ediliyorsanız, farklılık gözetmeksizin, lütfen hemen yetkili biriyle veya herhangi bir { $coc-rust-moderation-team-anchor } ile iletişime geçin. Düzenli katkıda bulunan ve yeni gelen biri arasında fark gözetmeksizin, bu topluluğu daha güvenli bir hale getirmeyi önemsiyoruz ve arkanızdayız.</li>
      <li>Aynı şekilde, mesaj sağanağı veya konu dışı, ciddi olmayan, saldırgan tavırlı, can sıkıcı veya dikkat çalan davranışlar da hoş karşılanmaz.</li>
     </ul>

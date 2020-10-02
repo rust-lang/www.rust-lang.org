@@ -3,16 +3,16 @@
 
 ## templates/what/cli.hbs
 
-cli-page-heading = Komut satırı uygulamaları
+what-cli-page-title = Komut satırı uygulamaları
 
 ## templates/components/what/cli/pitch.hbs
 
 cli-pitch-solid-img-alt = Onay işareti ile kalkan
 cli-pitch-solid-heading = Sağlam ve hızlı
 cli-pitch-solid-description =
-    Sadece küçük bir betik yazıyor olsanız bile,
-    hızlı, kolay test edilebilir ve yardımcı olan çıktılar verdiğinden emin
-    olabilirsiniz.
+    Sadece bir kerelik bir betik yazıyor olsanız bile,
+    hızlı, kolay test edilebilir olduğundan ve yardımcı çıktılar verdiğinden
+    emin olabilirsiniz.
 cli-pitch-solid-link = Rust’ın verdiği garantiler
 cli-pitch-ship-img-alt = Onay işaretli kutu
 cli-pitch-ship-heading = Kolay dağıtım
@@ -23,8 +23,8 @@ cli-pitch-ship-link = Rust kodu nasıl dağıtılır?
 cli-pitch-config-img-alt = Bir not ve bir dişli
 cli-pitch-config-heading = Güçlü yapılandırma
 cli-pitch-config-description =
-    Rust ile yapılandırma dosyalarını platformlar arasında taşımak 
-    kolaydır. Rust, sizin için isim alanları ile uğraşır ve onları düzenler.
+    Yapılandırma dosyalarını platformlar arasında kolayca
+    taşıyın. Rust, sizin için isim alanları ile uğraşır ve onları düzenler.
 cli-pitch-config-link = Yapılandırmaya başlayın
 cli-pitch-manuals-img-alt = Yardım kılavuzu
 cli-pitch-manuals-heading = Kılavuzlar? Oldu bilin!
@@ -62,7 +62,7 @@ cli-maintainable-refactoring-description =
     Rust, kodunuzu düzenlerken esnek olmanıza olanak tanır.
     Yalnızca tek bir dosyayla başlayın ve daha fazla özelliğe ihtiyaç duyduğunuzda
     hiçbir şeyi bozmadığınızdan emin olarak uygulamanızı yeniden düzenleyin.
-cli-maintainable-refactoring-link = Rust'ta yeniden düzenleme
+cli-maintainable-refactoring-link = Rust'ta Yeniden Düzenleme
 
 ## templates/components/what/cli/example.hbs
 
@@ -85,5 +85,5 @@ cli-production-habitat-quote =
     Rust kullanarak komut satırı uygulaması veya konsol tabanlı araçlar yazmak.
     Rust, farklı hedef sistemlere derlemek için çok iyi bir dil.
 cli-production-habitat-attribution = &ndash; Fletcher Nichol,
-cli-production-habitat-link = Rust ile ürün çıkarmak &ndash; RustFest Kyiv
+cli-production-habitat-link = Rust ile ürün çıkarmak &ndash; RustFest Kiev
 cli-production-habitat-img-alt = Habitat logosu

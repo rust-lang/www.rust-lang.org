@@ -4,7 +4,7 @@
 
 ## Page title
 
-media-guide-page-heading = Medya Rehberi
+policies-media-guide-page-title = Medya Rehberi
 
 ## Art license
 
@@ -17,7 +17,7 @@ media-guide-trademark-policy-heading = Ticari Marka Politikası
 media-guide-trademark-policy-description =
     <p>Rust ve Cargo isimleri ve markaları, nelerin resmi olarak Rust topluluğunu bağlı olduğunu bilmemizi sağlar. Bu sebepten ötürü, bu isim ve ticari markaların nerelerde bulunabileceğini dikkatli bir şekilde kontrol ediyoruz. Aynı zamanda, yaratıcı örneklerin bu isim ve ticari markaları kullanmalarını istiyoruz. Burada belirtilen politika bu dengeyi nasıl kurduğumuzla ilgilidir. Eğer bu isim ve ticari markaları kullanmak istiyorsanız, özellikle ticari bir şekilde, lütfen bu sayfayı okuyup <a href="mailto:trademark@rust-lang.org">bizimle</a> iletişime geçin!</p>
     <p><b>Özetle</b>: Ticari olmayan Rust/Cargo isim ve logolarının kullanılmasında sakınca yoktur ve izin gerektirmez ancak çoğu ticari kullanım izin gerektirir. Her iki durumda da en önemli kural Rust projesinin ticari marka haklarının resmi ya da herhangi bir teşvikte bulunduğuna dair bir algının oluşturulmamasıdır.</p>
-    <p>Rust ticari markasını kullanma amacınızın izin gerektirip gerekmediği hakkında şüpheniz varsa <a href="mailto:trademark@rust-lang.org">trademark@rust-lang.org</a> e-posta adresinden bizimle iletişime geçebilirsiniz.</p>
+    <p>Rust ticari markasını kullanma amacınızın izin gerektirip gerekmediği hakkında şüpheniz varsa { EMAIL("trademark@rust-lang.org") } adresinden bizimle iletişime geçebilirsiniz.</p>
     <p>Bu belge <a href="https://www.python.org/psf/trademarks/">Python Yazılım Vakfı Ticari Marka Hakları Kullanım Koşulları</a>'nden türetilmiştir. Mozilla ticari marka haklarının resmi beyanı olmamakla birlikte Rust projesi ile ilgili olduğu için, Mozilla'nın ticari marka haklarına açıklık getirme amacı taşır.</p>
 
 ## The Rust trademarks
@@ -43,7 +43,7 @@ media-guide-tm-use-heading = Ticari markaları kullanmak
 media-guide-tm-use-appearance-heading = Resmi, bağlı veya onaylanmış olarak görünme
 media-guide-tm-use-appearance-description =
     <p>Rust çekirdek ekibinden yazılı izniniz olmadıkça Rust ticari markaları; resmi, kuruma bağlı veya kurum tarafından desteklenir bir şekilde (sıradan bir izleyiciye) görünemez. Bu kullanıcı ve geliştiricileri kafa karışıklığına maruz bırakmamanın en temel yoludur.</p>
-    <p>Bu kural algıyı yönetmekle ilgili olduğundan, öznel olmakla birlikte, düzgün bir şekilde tespit etmesi zordur. Belirgin bir şekilde resmi olmadığını belirtmek bu tarz problemlerden kaçınmak için oldukça açık bir yoldur fakat sorularınız olduğu durumlarda, sizlere yardımcı olmaktan mutluluk duyarız. <a href="mailto:trademark@rust-lang.org">trademark@rust-lang.org</a> adresi aracılığıyla bize ulaşabilirsiniz.</p>
+    <p>Bu kural algıyı yönetmekle ilgili olduğundan, öznel olmakla birlikte, düzgün bir şekilde tespit etmesi zordur. Belirgin bir şekilde resmi olmadığını belirtmek bu tarz problemlerden kaçınmak için oldukça açık bir yoldur fakat sorularınız olduğu durumlarda, sizlere yardımcı olmaktan mutluluk duyarız. { EMAIL("trademark@rust-lang.org") } adresi aracılığıyla bize ulaşabilirsiniz.</p>
 media-guide-tm-use-basics-heading = Temeller: Rust'a/Cargo'ya referans
 media-guide-tm-use-basics-description =
     <p>Her ticari markada olduğu gibi Rust ve Cargo kelime markaları oldukça az kısıtlamalarla Rust programlama dili veya Cargo paket yöneticisi ve kaydına atıfta bulunmak için kullanılabilir.</p>
@@ -57,9 +57,9 @@ media-guide-tm-use-implicit-approval-heading = Açık onay gerektirmeyen kullan�
 media-guide-tm-use-implicit-approval-description =
     <p>Pek çok kullanım izin gerektirmez. <strong>Fakat aşağıda belirtilen durumlar çerçevesinde Rust marka haklarının kullanımının yukarıda açıklandığı gibi resmi olmadığını belirtmek zorundasınız.</strong></p>
     <ul>
-     <li>Yazılımın Rust programlama dili ile yazıldığını belitrmeye, Rust programlama dili ile uyumlu olduğunu belirtmeye ya da Rust programlama dilini barındırdığını belirtmeye izin verilir. Bunu belirtmek için Rust markalarının kullanımı için ayrı izin almaya gerek yoktur. Bu hem ticari hem de ticari olmayan durumlar için geçerlidir.</li>
-     <li>Rust ticari markalarını tişört, şapka veya diğer sanatsal ürün ya da ticari mallar üzerinde, değiştirilmiş olarak olsa bile, kişisel kullanım veya küçük bir topluluk için satılmadığı sürece kullanabilirsiniz. Eğer Rust ticari markalarını Rust ile ilgili bir etkinlikte dağıtmak istiyorsanız bizimle izin için <a href="mailto:trademark@rust-lang.org">trademark@rust-lang.org</a> adresine e-posta atıp iletişime geçebilirsiniz.</li>
-     <li>Rust ticari markalarını, değiştirilmiş olsa dahi, buluşma, öğretici nitelikte içerikler vb. sosyal etkinliklerde katılım ücretsiz olduğu takdirde kullanmaya izin verilir. Ticari etkinlikler için (sponsorlu olanlar dahil olmak üzere) lütfen bize <a href="mailto:trademark@rust-lang.org">trademark@rust-lang.org</a> adresi aracılığı ile danışın. “RustCamp,” “RustCon” ya da “RustConf” kelimeleri, açıkça izin verilmediği sürece kullanılamaz. Ek olarak, yukarıdaki kullanım senaryoları ile birlikte <strong>etkinlik, resmi bir şekilde teşvik edilmiş veya Rust projesi tarafından yönetiliyor gibi şekillerde yazılı izin olmaksızın gösterilemez</strong>.</li>
+     <li>Yazılımın Rust programlama dili ile yazıldığını belirtmeye, Rust programlama dili ile uyumlu olduğunu belirtmeye ya da Rust programlama dilini barındırdığını belirtmeye izin verilir. Bunu belirtmek için Rust markalarının kullanımı için ayrı izin almaya gerek yoktur. Bu hem ticari hem de ticari olmayan durumlar için geçerlidir.</li>
+     <li>Rust ticari markalarını tişört, şapka veya diğer sanatsal ürün ya da ticari mallar üzerinde, değiştirilmiş olarak olsa bile, kişisel kullanım veya küçük bir topluluk için satılmadığı sürece kullanabilirsiniz. Eğer Rust ticari markalarını Rust ile ilgili bir etkinlikte dağıtmak istiyorsanız bizimle izin için { EMAIL("trademark@rust-lang.org") } adresine e-posta atıp iletişime geçebilirsiniz.</li>
+     <li>Rust ticari markalarını, değiştirilmiş olsa dahi, buluşma, öğretici nitelikte içerikler vb. sosyal etkinliklerde katılım ücretsiz olduğu takdirde kullanmaya izin verilir. Ticari etkinlikler için (sponsorlu olanlar dahil olmak üzere) lütfen bize { EMAIL("trademark@rust-lang.org") } adresi aracılığıyla danışın. “RustCamp,” “RustCon” ya da “RustConf” kelimeleri, açıkça izin verilmediği sürece kullanılamaz. Ek olarak, yukarıdaki kullanım senaryoları ile birlikte <strong>etkinlik, resmi bir şekilde teşvik edilmiş veya Rust projesi tarafından yönetiliyor gibi şekillerde yazılı izin olmaksızın gösterilemez</strong>.</li>
      <li>Rust ticari markalarını “Rust Journal” ya da “Rust Cookbook”  gibi kitaplarda veya yayınlarda kullanmaya izin verilir.</li>
      <li>Rust programlama dili veya Rust projesine web sitelerinde, broşürlerde, belgelemelerde, akademik makalelerde, kitaplarda ve ürün paketlemesinde atıfta bulunurken "Rust" kelimesinin kullanılmasına izin verilir.</li>
     </ul>
@@ -75,8 +75,7 @@ media-guide-tm-use-explicit-approval-description =
 
 media-guide-helping-out-heading = Yardım etmek
 media-guide-helping-out-description =
-    </p>Rust topluluğunun bir üyesi olarak lütfen Rust logosunun ve "Rust" kelimesinin kuşkulu kullanımına göz kulak olun. Olası yanlış kullanımları bildirmek için
-    <a href="mailto:trademark@rust-lang.org">trademark@rust-lang.org</a> adresine e-posta atabilirsiniz. Her durumu ölçüp tartacağız ve uygun işlemi yapacağız. </p>
+    </p>Rust topluluğunun bir üyesi olarak lütfen Rust logosunun ve "Rust" kelimesinin kuşkulu kullanımına göz kulak olun. Olası yanlış kullanımları bildirmek için { EMAIL("trademark@rust-lang.org") } adresine e-posta atabilirsiniz. Her durumu ölçüp tartacağız ve uygun işlemi yapacağız. </p>
     <p>Lütfen ticari markaların kullanıcılarına şikayetlerde bulunmayın. Bu, Mozilla'ya ve onun temsilcilerine bırakılmalıdır. Teşekkürler!</p>
     <p>Eğer Rust'ın ticari markalarını kullanmak veya Rust'ı desteklemek için özel bir sorunuz veya endişeniz varsa lütfen Rust Çekirdek Ekibi ile iletişime geçin. </p>
 media-guide-helping-out-link = Çekirdek Ekibine E-Posta Gönder

@@ -1,4 +1,5 @@
 #![feature(proc_macro_hygiene, decl_macro)]
+#![cfg_attr(test, deny(warnings))]
 
 #[macro_use]
 extern crate lazy_static;
@@ -13,9 +14,8 @@ extern crate siphasher;
 extern crate toml;
 
 extern crate rocket_contrib;
-extern crate serde;
 #[macro_use]
-extern crate serde_derive;
+extern crate serde;
 
 extern crate fluent_bundle;
 extern crate regex;
@@ -30,6 +30,7 @@ mod i18n;
 mod production;
 mod redirect;
 mod rust_version;
+mod sponsors;
 mod teams;
 
 use production::User;
@@ -37,10 +38,7 @@ use production::User;
 use std::collections::hash_map::DefaultHasher;
 use std::env;
 use std::fs;
-use std::fs::File;
 use std::hash::Hasher;
-use std::io::prelude::*;
-use std::iter::FromIterator;
 use std::path::{Path, PathBuf};
 
 use rand::seq::SliceRandom;
@@ -58,14 +56,17 @@ use sass_rs::{compile_file, Options};
 use category::Category;
 
 use caching::{Cached, Caching};
-use i18n::{I18NHelper, SupportedLocale, TeamHelper};
+use handlebars_fluent::{loader::Loader, FluentHelper};
+use i18n::{create_loader, LocaleInfo, SupportedLocale, TeamHelper, EXPLICIT_LOCALE_INFO};
 use rocket::http::hyper::header::CacheDirective;
+
+const ZULIP_DOMAIN: &str = "https://rust-lang.zulipchat.com";
 
 lazy_static! {
     static ref ASSETS: AssetFiles = {
         let app_css_file = compile_sass("app");
         let fonts_css_file = compile_sass("fonts");
-        let vendor_css_file = concat_vendor_css(vec!["skeleton", "tachyons"]);
+        let vendor_css_file = concat_vendor_css(vec!["tachyons"]);
         let app_js_file = concat_app_js(vec!["tools-install"]);
 
         AssetFiles {
@@ -77,33 +78,44 @@ lazy_static! {
             js: JSFiles { app: app_js_file },
         }
     };
+    static ref PONTOON_ENABLED: bool = env::var("RUST_WWW_PONTOON").is_ok();
 }
 
 #[derive(Serialize)]
 struct Context<T: ::serde::Serialize> {
     page: String,
     title: String,
-    parent: String,
+    parent: &'static str,
     is_landing: bool,
     data: T,
     lang: String,
     baseurl: String,
     pontoon_enabled: bool,
-    assets: AssetFiles,
+    assets: &'static AssetFiles,
+    locales: &'static [LocaleInfo],
+    is_translation: bool,
 }
 
 impl<T: ::serde::Serialize> Context<T> {
-    fn new(page: String, title: String, is_landing: bool, data: T, lang: String) -> Self {
+    fn new(page: String, title_id: &str, is_landing: bool, data: T, lang: String) -> Self {
+        let helper = create_loader();
+        let title = if title_id.is_empty() {
+            "".into()
+        } else {
+            helper.lookup(&lang, title_id, None)
+        };
         Self {
             page,
             title,
-            parent: LAYOUT.into(),
+            parent: LAYOUT,
             is_landing,
             data,
             baseurl: baseurl(&lang),
+            is_translation: lang != "en-US",
             lang,
-            pontoon_enabled: pontoon_enabled(),
-            assets: ASSETS.clone(),
+            pontoon_enabled: *PONTOON_ENABLED,
+            assets: &ASSETS,
+            locales: EXPLICIT_LOCALE_INFO,
         }
     }
 }
@@ -127,23 +139,12 @@ struct AssetFiles {
 static LAYOUT: &str = "components/layout";
 static ENGLISH: &str = "en-US";
 
-fn pontoon_enabled() -> bool {
-    env::var("RUST_WWW_PONTOON").is_ok()
-}
-
 fn baseurl(lang: &str) -> String {
     if lang == "en-US" {
         String::new()
     } else {
         format!("/{}", lang)
     }
-}
-
-fn get_title(page_name: &str) -> String {
-    let mut v: Vec<char> = page_name.replace("-", " ").chars().collect();
-    v[0] = v[0].to_uppercase().nth(0).unwrap();
-    let page_name = String::from_iter(v);
-    format!("{} - Rust programming language", page_name).to_string()
 }
 
 #[get("/components/<_file..>", rank = 1)]
@@ -173,13 +174,6 @@ fn files(file: PathBuf) -> Option<Cached<NamedFile>> {
 #[get("/")]
 fn index() -> Template {
     render_index(ENGLISH.into())
-}
-
-#[get("/favicon.ico", rank = 0)]
-fn favicon() -> Option<Cached<NamedFile>> {
-    NamedFile::open("static/images/favicon.ico")
-        .ok()
-        .map(|file| file.cached(vec![CacheDirective::MaxAge(3600)]))
 }
 
 #[get("/<locale>", rank = 3)]
@@ -229,6 +223,16 @@ fn production() -> Template {
 #[get("/<locale>/production/users", rank = 10)]
 fn production_locale(locale: SupportedLocale) -> Template {
     render_production(locale.0)
+}
+
+#[get("/sponsors")]
+fn sponsors() -> Template {
+    render_sponsors(ENGLISH.into())
+}
+
+#[get("/<locale>/sponsors", rank = 10)]
+fn sponsors_locale(locale: SupportedLocale) -> Template {
+    render_sponsors(locale.0)
 }
 
 #[get("/<category>/<subject>", rank = 4)]
@@ -295,8 +299,7 @@ fn not_found(req: &Request) -> Template {
 
 fn not_found_locale(lang: String) -> Template {
     let page = "404";
-    let title = format!("{} - Rust programming language", page).to_string();
-    let context = Context::new("404".into(), title, false, (), lang);
+    let context = Context::new("404".into(), "error404-page-title", false, (), lang);
     Template::render(page, &context)
 }
 
@@ -315,15 +318,13 @@ fn compile_sass(filename: &str) -> String {
     let scss_file = format!("./src/styles/{}.scss", filename);
 
     let css = compile_file(&scss_file, Options::default())
-        .expect(&format!("couldn't compile sass: {}", &scss_file));
+        .unwrap_or_else(|_| panic!("couldn't compile sass: {}", &scss_file));
 
     let css_sha = format!("{}_{}", filename, hash_css(&css));
     let css_file = format!("./static/styles/{}.css", css_sha);
 
-    let mut file =
-        File::create(&css_file).expect(&format!("couldn't make css file: {}", &css_file));
-    file.write_all(&css.into_bytes())
-        .expect(&format!("couldn't write css file: {}", &css_file));
+    fs::write(&css_file, css.into_bytes())
+        .unwrap_or_else(|_| panic!("couldn't write css file: {}", &css_file));
 
     String::from(&css_file[1..])
 }
@@ -368,29 +369,46 @@ fn render_index(lang: String) -> Template {
     }
 
     let page = "index".to_string();
-    let title = "Rust programming language".to_string();
     let data = IndexData {
-        rust_version: rust_version::rust_version().unwrap_or(String::new()),
-        rust_release_post: rust_version::rust_release_post().map_or(String::new(), |v| {
-            format!("https://blog.rust-lang.org/{}", v)
-        }),
+        rust_version: rust_version::rust_version().unwrap_or_else(String::new),
+        rust_release_post: rust_version::rust_release_post()
+            .map_or_else(String::new, |v| format!("https://blog.rust-lang.org/{}", v)),
     };
-    let context = Context::new(page.clone(), title, true, data, lang);
+    let context = Context::new(page.clone(), "", true, data, lang);
     Template::render(page, &context)
 }
 
 fn render_category(category: Category, lang: String) -> Template {
     let page = category.index();
-    let title = get_title(&category.name());
-    let context = Context::new(category.name().to_string(), title, false, (), lang);
+    let title_id = format!("{}-page-title", category.name());
+    let context = Context::new(category.name().to_string(), &title_id, false, (), lang);
 
     Template::render(page, &context)
 }
 
 fn render_production(lang: String) -> Template {
     let page = "production/users".to_string();
-    let title = "Users - Rust programming language".to_string();
-    let context = Context::new(page.clone(), title, false, load_users_data(), lang);
+    let context = Context::new(
+        page.clone(),
+        "production-users-page-title",
+        false,
+        load_users_data(),
+        lang,
+    );
+
+    Template::render(page, &context)
+}
+
+fn render_sponsors(lang: String) -> Template {
+    println!("foo");
+    let page = "sponsors/index".to_string();
+    let context = Context::new(
+        page.clone(),
+        "sponsors-page-title",
+        false,
+        sponsors::render_data(&lang),
+        lang,
+    );
 
     Template::render(page, &context)
 }
@@ -399,8 +417,7 @@ fn render_governance(lang: String) -> Result<Template, Status> {
     match teams::index_data() {
         Ok(data) => {
             let page = "governance/index".to_string();
-            let title = "Governance - Rust programming language".to_string();
-            let context = Context::new(page.clone(), title, false, data, lang);
+            let context = Context::new(page.clone(), "governance-page-title", false, data, lang);
 
             Ok(Template::render(page, &context))
         }
@@ -419,8 +436,8 @@ fn render_team(
     match teams::page_data(&section, &team) {
         Ok(data) => {
             let page = "governance/group".to_string();
-            let title = get_title(&data.team.website_data.as_ref().unwrap().name);
-            let context = Context::new(page.clone(), title, false, data, lang);
+            let name = format!("governance-team-{}-name", data.team.name);
+            let context = Context::new(page.clone(), &name, false, data, lang);
             Ok(Template::render(page, &context))
         }
         Err(err) => {
@@ -441,9 +458,9 @@ fn render_team(
 }
 
 fn render_subject(category: Category, subject: String, lang: String) -> Template {
-    let page = format!("{}/{}", category.name(), subject.as_str()).to_string();
-    let title = get_title(&subject);
-    let context = Context::new(subject, title, false, (), lang);
+    let page = format!("{}/{}", category.name(), subject.as_str());
+    let title_id = format!("{}-{}-page-title", category.name(), subject);
+    let context = Context::new(subject, &title_id, false, (), lang);
 
     Template::render(page, &context)
 }
@@ -452,7 +469,7 @@ fn main() {
     let templating = Template::custom(|engine| {
         engine
             .handlebars
-            .register_helper("text", Box::new(I18NHelper::new()));
+            .register_helper("fluent", Box::new(FluentHelper::new(create_loader())));
         engine
             .handlebars
             .register_helper("team-text", Box::new(TeamHelper::new()));
@@ -469,9 +486,9 @@ fn main() {
                 governance,
                 team,
                 production,
+                sponsors,
                 subject,
                 files,
-                favicon,
                 logos,
                 components,
                 index_locale,
@@ -479,6 +496,7 @@ fn main() {
                 governance_locale,
                 team_locale,
                 production_locale,
+                sponsors_locale,
                 subject_locale,
                 components_locale,
                 redirect,

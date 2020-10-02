@@ -3,11 +3,6 @@
 # See CONTRIBUTING.md for details on how to contribute to this file
 
 -
-  name: 1aim
-  url: https://1aim.com/
-  logo: 1aim.svg
-  how: "Modern, secure and universal access management."
--
   name: 360dialog
   url: http://www.360dialog.com
   logo: 360dialog.png
@@ -37,6 +32,11 @@
   url: https://loraflow.io/
   logo: aisenz.svg
   how: "Rust contributes to our LoRaWAN services and industry solutions in performance, reliability, and productivity."
+-
+  name: Aleph Alpha
+  url: https://aleph-alpha.de/
+  logo: alephalpha.svg
+  how: "Rust is the backbone technology for our data pipelines, infrastructure modules and machine learning tasks."
 -
   name: Algorithmia
   url: https://algorithmia.com/
@@ -123,11 +123,6 @@
   logo: cloudflare.svg
   how: "We are <a href='https://blog.cloudflare.com/tag/rust/'>using Rust</a> as a replacement for memory-unsafe languages (particularly C) and are using it in our core edge logic."
 -
-  name: CodePicnic
-  url: https://codepicnic.com
-  logo: codepicnic.png
-  how: "We provide Rust <a href='https://codepicnic.com/posts/console-of-the-day-rust-f7664060cc52bc6f3d620bcedc94a4b6/?utm_source=twitter&utm_medium=blog&utm_term=codepicnic+rust&utm_campaign=codepicnic_features_201702'>sandboxes</a> people can play around with, as well as fork to expand examples and apps they want to."
--
   name: Coursera
   url: https://www.coursera.org
   logo: coursera.png
@@ -152,11 +147,6 @@
   url: https://cultivatehq.com/
   logo: cultivate-logo.svg
   how: "<a href='https://cultivatehq.com/posts/how-we-built-a-visual-studio-code-extension-for-iot-prototyping/'>We used Rust as a bridge between a VSCode extension and IoT devices</a>."
--
-  name: Dazta
-  url: https://www.dazta.com
-  logo: dazta.svg
-  how: "Building intelligent financial product with Rust."
 -
   name: Delimiter
   url: https://www.delimiter.com/
@@ -186,7 +176,7 @@
   name: Parity Technologies
   url: https://parity.io/
   logo: parity-logo.png
-  how: "<a href='https://www.parity.io/#parity'>Powering the Ethereum revolution.</a>"
+  how: "<a href='https://www.parity.io/'>Blockchain infrastructure for the decentralized web.</a>"
 -
   name: Everlane
   url: http://www.everlane.com/
@@ -226,12 +216,17 @@
   name: ImageOptim
   url: https://imageoptim.com
   logo: imageoptim.png
-  how: 'High-efficiency modern JPEG encoder written in Rust is at the heart of the <a href="https://imageoptim.com/api">image compression web service</a>.'
+  how: 'High-efficiency modern JPEG encoder written in Rust is at the heart of the <a href="https://imageoptim.com/api">image compression web service</a>.'
 -
   name: iqlusion
   url: https://iqlusion.io
   logo: iqlusion.svg
   how: "Rust is the main language we use to develop in-house and OSS software, and used for infrastructure/devops tools as well as cryptographic key management services."
+-
+  name: Knoldus
+  url: https://www.knoldus.com
+  logo: knoldus-logo.png
+  how: "We use Rust in [IoT Based Project] Security System Projects(<a href='https://blog.knoldus.com/hawk-image-recognition-project-using-rust-and-aws-services/'>Image Recognition System</a>) and also [Networking Based Project] in Monitoring of Networking Protocols like DHCP and Active Directory."
 -
   name: krypt.co
   url: https://krypt.co
@@ -242,6 +237,11 @@
   url: https://www.kupibilet.ru/
   logo: kupibilet.svg
   how: "We use Rust for our ticket search engine."
+-
+  name: Lark
+  url: https://www.larksuite.com
+  logo: lark.png
+  how: "Lark combines a multitude of essential collaboration tools in a single interconnected platform, including Chat, Calendar, Creation, Cloud storage and App Center. These functions are always in sync, and are easy access from one to the next."
 -
   name: LINE
   url: https://line.me/
@@ -282,11 +282,6 @@
   url: http://www.npmjs.com
   logo: npm.svg
   how: "Replacing C and rewriting performance-critical bottlenecks in the registry service architecture."
--
-  name: Omnijar Studio
-  url: https://omnijar.studio
-  logo: omnijar-studio.svg
-  how: "Performant and efficient code across a lot of cloud services and core products, from ML to data services."
 -
   name: OneSignal
   url: https://onesignal.com
@@ -331,7 +326,7 @@
   name: QCERT (Qatar's National CERT)
   url: http://qcert.org/
   logo: QCERT-Logo.svg
-  how: "DNS log analysis pipeline entirly written in rust, running on top of our own Rust stream processing platform."
+  how: "DNS log analysis pipeline entirely written in rust, running on top of our own Rust stream processing platform."
 -
   name: Sandstorm
   url: https://sandstorm.io
@@ -378,11 +373,6 @@
   logo: stratum.png
   how: "Data exfiltration testing and Application Security."
 -
-  name: superscale networks
-  url: https://www.superscale.io/
-  logo: superscale.svg
-  how: "We run rust-mips on tens of thousands of linux routers with 4-16Mb RAM. Rust is the only modern language that has low enough runtime constrains to make this possible."
--
   name: System76
   url: https://system76.com/
   logo: system76.svg
@@ -392,6 +382,11 @@
   url: https://www.telenordigital.com/
   logo: telenordigital.png
   how: "Increasing performance and reliability of a concurrent webhook delivery service."
+-
+  name: Terramagna
+  url: https://www.terramagna.com.br
+  logo: terramagna.svg
+  how: "We use Rust to create services that bring safety to agribusiness financing."
 -
   name: Tessel
   url: https://www.tessel.io
@@ -487,11 +482,6 @@
   url: https://www.tcell.io
   logo: tcell.png
   how: "<a href='https://www.tcell.io/2017/06/agents-rust/'>tCell's agent is built using Rust</a> and runs in the app server as a means to collect data and block attacks."
--
-  name: Structure Systems
-  url: https://www.structure.systems
-  logo: structuresystems.svg
-  how: "We develop software in Rust that helps organizations comply with information privacy/data protection rules."
 -
   name: 10x Genomics
   url: https://www.10xgenomics.com/
@@ -694,3 +684,15 @@
   url: https://kentik.com/
   logo: kentik.svg
   how: "Our advanced network analytics platform relies on <a href='https://www.kentik.com/blog/under-the-hood-how-rust-helps-keep-kentik%27s-performance-on-high'>many Rust components</a>."
+
+-
+  name: YottaDB
+  url: https://yottadb.com/
+  logo: yottadb.svg
+  how: "YottaDB has first-class support for Rust as an interface to the underlying database. We plan for new command line tools to be written in Rust."
+
+-
+  name: 1Password
+  url: https://1password.com/
+  logo: 1password.svg
+  how: "We use Rust to power the entire backend (encryption, networking, database, and business logic) of all our client apps."

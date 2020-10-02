@@ -6,15 +6,32 @@ The Rust website can be translated into multiple languages using [fluent](https:
 
 All text on the website can be translated. Some texts, especially policies, can be translated, but the English version will be the binding one.
 
+## Existing translation teams
+
+- [`de`](https://rust-lang.zulipchat.com/#narrow/stream/231802-t-community.2Fl10n.2Fde)
+- [`es`](https://rust-lang.zulipchat.com/#narrow/stream/226069-t-community.2Fl10n.2Fes)
+- [`fa`](https://rust-lang.zulipchat.com/#narrow/stream/231801-t-community.2Fl10n.2Ffa)
+- [`fr`](https://rust-lang.zulipchat.com/#narrow/stream/226175-t-community.2Fl10n.2Ffr)
+- [`it`](https://rust-lang.zulipchat.com/#narrow/stream/226070-t-community.2Fl10n.2Fit)
+- [`ja`](https://rust-lang.zulipchat.com/#narrow/stream/226071-t-community.2Fl10n.2Fja)
+- [`pl`](https://rust-lang.zulipchat.com/#narrow/stream/226319-t-community.2Fl10n.2Fpl)
+- [`pt`](https://rust-lang.zulipchat.com/#narrow/stream/226072-t-community.2Fl10n.2Fpt)
+- [`ru`](https://rust-lang.zulipchat.com/#narrow/stream/226073-t-community.2Fl10n.2Fru)
+- [`tr`](https://rust-lang.zulipchat.com/#narrow/stream/226074-t-community.2Fl10n.2Ftr)
+- [`zh`](https://rust-lang.zulipchat.com/#narrow/stream/226075-t-community.2Fl10n.2Fzh)
+
 ## Forming a translation team
 
-Translation teams for any language need at least _three_ members. This is to avoid translations to "drop out" of support too quickly. If you feel like having a team, please get in touch with the [community team](mailto:community-team@rust-lang.org) to apply for a translation. Have all team members register at the [pontoon](https://pontoon.rust-lang.org) and send us their email addresses. We'll make sure to get you set up as managers. Managers can manage their translation teams through the "permission" tab in the web interface, including appointing new managers.
+Translation teams for any language need at least _three_ members. This is to avoid translations to "drop out" of support too quickly. If you feel like having a team, please get in touch with the [localization team][zulip] ([email][zemail]) to apply for a translation. Have all team members register at the [pontoon](https://pontoon.rust-lang.org) and send us their email addresses. We'll make sure to get you set up as managers. Managers can manage their translation teams through the "permission" tab in the web interface, including appointing new managers.
 
 Please note that as a manager, you work on the representation of the Rust project in your locale. Make sure to understand and act with that responsibility and only promote well-trusted people to a manager role.
 
 Teams ideally consist only of native speakers. Even within one language it can be useful to have editors from multiple backgrounds, to find a consistent language. For translators, strong writing skills matter. For reviewing, a keen eye and a good feeling for oddities is important.
 
 Any language that can muster a constantly working and up to date translation is qualified.
+
+[zulip]: https://rust-lang.zulipchat.com/#narrow/stream/226068-t-community.2Fl10n
+[zemail]: mailto:localization@rust-lang.org
 
 ## How to get your translation published
 
@@ -56,8 +73,28 @@ Each translation must be reviewed by a second member of the team for quality con
   * You see the proposed suggestions. Check the checkmark to accept one, or the cross to refuse.
 * You may add a better suggestions, which others can in turn review
 
+### Locally testing translations                                         
+
+It can be useful to locally preview the translation to evaluate if the layout breaks (example with different graphemes).                             
+
+In order to check the changes, you need:
+
+* Clone the website code repository
+
+* [Run the website locally](https://github.com/rust-lang/www.rust-lang.org#running-the-app-locally)
+
+* Download from Pontoon the translation you're currently working on
+
+![2020-01-18_00-01-1579304647](https://user-images.githubusercontent.com/6098822/72654165-a2577000-398e-11ea-96f0-d44c5111d754.jpg)
+
+* Copy the downloaded file into `locales/<lang>` of your local copy of the website
+
+* Make sure your language is in the `EXPLICIT_LOCALE_INFO` array in `src/i18n.rs`
+
+* Restart the website locally every time you change a local file
+
 ## Special case: Policies
 
-All policy documents outside other then English must contain a link to the original on top, indicating that the English translation is binding and the translation is a best effort.
+All policy documents outside other than English must contain a link to the original on top, indicating that the English translation is binding and the translation is a best effort.
 
 Also, a translation team can decide to leave any policies untranslated, instead opting for just linking to the English translation with an appropriate wording.

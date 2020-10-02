@@ -1,16 +1,16 @@
 ## learn/index.hbs
 
-learn-learn-rust = Rust Öğrenin
+learn-page-title = Rust Öğrenin
 learn-begin = Rust'a Başlayın
 learn-book = "Rust'ın kitabı" olarak da bilinen <cite>Rust Programlama Dili</cite> kitabı, size dilin prensipleri ve dil ile ilgili genel bir bakış kazandıracaktır. Kitapta ilerledikçe birkaç proje yapacak, sonuna doğru ise dili sağlam bir şekilde anlayacaksınız.
 learn-book-button = Kitabı Oku!
 learn-rustlings = Ek olarak, Rustçıklar, Rust araç zincirini indirip kurmanıza rehberlik edecek ve komut satırında dilin temel sözdizimini öğretecektir. Örneklerle Rust'a kendi ortamınızda çalışacak bir alternatif olarak da düşünülebilir.
 learn-rustlings-button = Rustçık kursunu yap!
 learn-rbe = Eğer bir dil hakkında yüzlerce sayfa okumak size göre değilse, Örneklerle Rust tam size göre. Örneklerle Rust, kod hakkında çok fazla bilgi içermesine rağmen pek çok kod örneği de sunacak, bilgilendirme kısmını en aza indirecektir. Ayrıca Örneklerle Rust, pek çok alıştırma da içermektedir!
-learn-rbe-button = Rust'a Örneklerle Göz At!
+learn-rbe-button = Örneklerle Rust'a Göz At!
 learn-use = Rust ile büyüyün
 learn-doc-heading = Çekirdek belgelendirmesini okuyun
-learn-doc = Tüm bu belgelendirme, <code>rustup doc</code> komuduyla yerel olarak da hizmetinizde. Bu komutla, ağ bağlantısı gerekmeksizin tüm bu kaynakları tarayıcınızda görüntüleyebilirsiniz.
+learn-doc = Tüm bu belgelendirme, <code>rustup doc</code> komuduyla yerel olarak da hizmetinizde. Bu komutla, ağ bağlantısı gerekmeksizin tüm bu kaynakları tarayıcınızda görüntüleyebilirsiniz!
 learn-doc-std = Rust standart kütüphanesi UPA'ları için geniş kapsamlı rehber.
 learn-doc-std-button = Standart
 learn-doc-edition = Rust baskıları için rehber.
@@ -33,8 +33,8 @@ learn-domain-embedded = Rust ile Mikrodenetleyici ve diğer gömülü sistemler 
 learn-master = Rust'ta Ustalaş
 learn-master-text = Dilin karanlık köşelerinde ne olduğunu merak ediyor musunuz? İşte işin aslına giden bir yol:
 learn-reference-alt = Kitaplık ikonu
-learn-reference = Referans resmi bir özellik değil, fakat kitaptan daha ayrıntılı ve kapsamlı.
-learn-reference-button = Referansı oku
+learn-reference = Referans, Rust'ın yapısını kitaptan daha ayrıntılı ve kapsamlı açıklamasına rağmen resmi bir kaynak değildir.
+learn-reference-button = Referans'ı oku
 learn-nomicon-alt = Ateşi kucaklayan iki el
 learn-nomicon = Rustonomicon, Rust'ın emniyetsiz karanlık sanatları için bir rehber niteliğindedir. Bazen "the ’nomicon.” da denir.
 learn-nomicon-button = 'nomicon'u Oku
@@ -44,12 +44,15 @@ learn-unstable-button = Kararsız sürümle ilgili kitabı oku
 
 ## learn/get-started.hbs
 
+learn-get-started-page-title = { getting-started }
 learn-setup = Hızlıca bir Rust geliştirme ortamı oluşturun ve küçük bir uygulama yazın!
 learn-install-heading = Rust'ı Kurmak
 learn-play = Rust'ı çevrimiçi olarak Rust Oyun Alanı'nda bilgisayarınıza herhangi bir şey yüklemeden deneyebilirsiniz.
 learn-play-button = Rust'ı kurulum yapmadan deneyin
 learn-install-rustup-header = Rustup: Rust yükleyicisi ve sürüm yönetim aracı
 learn-install-rustup = Rust'ı yüklemenin en iyi yolu Rustup isimli bi araçtan geçer. Rustup, aynı zamanda sürüm yönetim aracıdır.
+learn-install-rustup-update-header = Rust güncel mi?
+learn-install-rustup-update = Rust sıkça güncellenir. Eğer Rustup'ı bir süre önce kurduysanız büyük bir ihtimalle eski bir Rust sürümü kullanıyorsunuzdur. Rust'ın en yeni sürümünü kullanmak için { $update-command } komutunu kullanın.
 learn-install-rustup-button = Kurulum hakkında daha fazla öğren
 learn-install-cargo-header = Cargo: Rust yapı aracı ve paket yöneticisi
 learn-install-cargo =
@@ -66,7 +69,7 @@ learn-install-cargo =
 learn-install-cargo-button = Cargo Kitabını Oku
 learn-install-other = Diğer araçlar
 learn-install-editors = Rust desteği birçok düzenleyicide mevcut:
-learn-install-fmt-clippy = Kod düzenleme (Rustfmt) ve kod ayıklama (Clippy) araçlarını yüklemek için ise sırasıyla <code>rustup component add rustfmt</code> ve <code>rustup component add clippy</code> kodları çalıştırılabilir.
+
 learn-generating = Yeni bir proje oluşturmak
 learn-generating-steps =
     <p>Haydi yeni Rust geliştirme ortamımızla küçük bir uygulama yazalım. Başlamak için, Cargo'nun bizim için yeni bir proje oluşturmasını sağlayacağız. Tercih ettiğiniz uçbiriminizde bu kodları çalıştırabilirsiniz:</p>
@@ -102,11 +105,11 @@ learn-app-steps =
     <p>Her şeyin iyi gittiğini varsayarsak uygulamanızın ekrana şunu yazdırdığını görmelisiniz:</p>
     { $output }
 learn-read-docs-header = Daha fazla bilgi edinin!
-learn-read-docs = Artık sen de bir Rustacean'sın! Hoşgeldin! Seni aramızda gördüğümüz için çok mutluyuz. Hazır olduğunda Rust macerana devam etmen için sana yardım edecek bir sürü kitap bulabileceğin Öğren sayfamıza uğra.
+learn-read-docs = Artık sen de bir Rustacean'sın! Hoş geldin! Seni aramızda gördüğümüz için çok mutluyuz. Hazır olduğunda Rust macerana devam etmen için sana yardım edecek bir sürü kitap bulabileceğin Öğren sayfamıza uğra.
 learn-read-docs-button = daha fazla bilgi edinin!
 learn-ferris-who = Bu yengeç de kim, Ferris?
 learn-ferris =
     <p>Ferris, Rust topluluğunun resmi olmayan maskotudur. Birçok Rust programcısı "<a href="https://en.wikipedia.org/wiki/Crustacean">crustacean</a>" ile kelime oyunu yapar ve kendisine "Rustacean" der.</p>
     <p>Ferris,  İngilizcedeki “ferrous” (demir ile alakalı) sıfatının azıcık değiştirilmesiyle meydana gelmiştir. Pas, demirin üzerinde sıklıkla oluştuğu için bu, maskotumuzun ismi için eğlenceli bir hikâye gibi gözüküyor.</p>
-    <p><a href="http://rustacean.net/">http://rustacean.net/</a>'e girip daha fazla Ferris resmi bulabilirsiniz.
+    <p><a href="https://rustacean.net/">rustacean.net</a>'e girip daha fazla Ferris resmi bulabilirsiniz.
 learn-ferris-alt = Ferris'in aceleyle bir taraftan diğer tarafa koşmasının GIF'i

@@ -2,14 +2,14 @@
 
 <header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-    <h1>{{text install-page-heading}}</h1>
+    <h1>{{fluent "tools-install-page-title"}}</h1>
   </div>
 </header>
 
 <section id="rustup" class="green">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>{{text install-using-rustup-heading}}</h2>
+      <h2>{{fluent "install-using-rustup-heading"}}</h2>
       <div class="highlight"></div>
     </header>
     {{> components/tools/rustup }}
@@ -19,28 +19,32 @@
 <section id="installation-notes" class="white">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>{{text install-notes-heading}}</h2>
+      <h2>{{fluent "install-notes-heading"}}</h2>
       <div class="highlight"></div>
     </header>
     <div>
-      <h3>{{text getting-started}}</h3>
+      <h3>{{fluent "getting-started"}}</h3>
       <p>
-        {{#text install-notes-getting-started-description}}
-          {{#textparam getting-started-href}}
+        {{#fluent "install-notes-getting-started-description"}}
+          {{#fluentparam "getting-started-href"}}
             {{baseurl}}/learn/get-started
-          {{/textparam}}
-        {{/text}}
+          {{/fluentparam}}
+        {{/fluent}}
       </p>
 
-      <h3>{{text install-notes-rustup-heading}}</h3>
-      {{text install-notes-rustup-description}}
+      <div class="platform-specific win dn">
+        <h3>{{fluent "install-notes-windows-heading"}}</h3>
+        {{fluent "install-notes-windows-description"}}
+      </div>
 
-      <h3>{{text install-notes-path-heading}}</h3>
-      {{text install-notes-path-description}}
-    </div>
-    <div class="platform-specific win dn">
-      <h3>{{text install-notes-windows-heading}}</h3>
-      {{text install-notes-windows-description}}
+      <h3>{{fluent "install-notes-rustup-heading"}}</h3>
+      {{fluent "install-notes-rustup-description"}}
+
+      <h3>{{fluent "install-notes-path-heading"}}</h3>
+      {{fluent "install-notes-path-description"}}
+
+      <h3>{{fluent "install-notes-uninstall-heading"}}</h3>
+      {{fluent "install-notes-uninstall-description"}}
     </div>
   </div>
 </section>
@@ -48,14 +52,14 @@
 <section id="other-methods" class="purple">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>{{text install-other-methods-heading}}</h2>
+      <h2>{{fluent "install-other-methods-heading"}}</h2>
       <div class="highlight"></div>
     </header>
     <p>
-      {{text install-other-methods-description}}
+      {{fluent "install-other-methods-description"}}
     </p>
-    <a href="https://forge.rust-lang.org/other-installation-methods.html" class="button button-secondary">
-      {{text install-other-methods-link}}
+    <a href="https://forge.rust-lang.org/infra/other-installation-methods.html" class="button button-secondary">
+      {{fluent "install-other-methods-link"}}
     </a>
   </div>
 </section>

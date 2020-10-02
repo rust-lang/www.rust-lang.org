@@ -3,7 +3,8 @@
 
 ## Web-Assembly (templates/what/wasm.hbs)
 
-wasm-page-title = Web&shy;Assembly
+what-wasm-page-title = WebAssembly
+what-wasm-page-heading = Web&shy;Assembly
 
 ## Why Rust? (templates/components/what/wasm/pitch.hbs)
 
@@ -15,7 +16,7 @@ wasm-why-rust-small-code-heading = Küçük kod büyüklüğü
 wasm-why-rust-small-code-description = Küçük kod boyutu demek hızlı sayfa yüklenmesi demektir. Rust ile oluşturulmuş <code>.wasm</code> çöp toplayıcısı gibi ek bir şey içermez. Gelişmiş optimizasyonlar ve ağaç sallama ile ölü kodları silin.
 wasm-why-rust-amenities-alt = Bagaj
 wasm-why-rust-amenities-heading = Modern kolaylıklar
-wasm-why-rust-amenities-description = Hızlıca birşeyler yapmanıza yardımcı olacak canlı bir kütüphane ekosistemi. Etkileyici, sıfır maliyetli soyutlamalar. Ve öğrenmenize yardımcı olacak misafirperver bir topluluk.
+wasm-why-rust-amenities-description = Hızlıca bir şeyler yapmanıza yardımcı olacak canlı bir kütüphane ekosistemi. Etkileyici, sıfır maliyetli soyutlamalar. Ve öğrenmenize yardımcı olacak misafirperver bir topluluk.
 
 ## Get started! (templates/components/what/wasm/get-started.hbs)
 

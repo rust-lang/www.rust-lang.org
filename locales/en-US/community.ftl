@@ -1,6 +1,6 @@
 ## templates/community/index.hbs
 
-community-heading = Community
+community-page-title = Community
 community-blurb =  The Rust programming language has many qualities, but Rust’s greatest
           strength is the community of people who come together to make working in
           Rust a rewarding experience.
@@ -8,9 +8,10 @@ community-twir = Stay up to date with the Rust community!
 community-twir-button = This Week in Rust
 community-team-contact = We’d like to hear from you! Not sure where or who to ask a question? Want to get involved but aren’t sure how?
           The community team is eager to connect you with someone who can help!
-community-team-button = email community@rust-lang.org
+community-team-button = email { ENGLISH("community@rust-lang.org") }
 
 community-where = Where to talk
+community-learn = Where to learn
 
 community-urlo-header = Users forum
 community-urlo = The Rust Users Forum is a place for Rust users to communicate about
@@ -32,7 +33,8 @@ community-events-header = Events
 community-meetup-header = Find a local meetup or conference
 community-meetup = There are more than 90 Meetups and several conferences worldwide in over 35 countries. Rustaceans meet periodically in Rust User Groups. They are a great introduction to the community and a great way to learn and socialize with other people with a similar interest. Meetings are usually informal and open to everyone.
 community-calendar = View Calendar
-community-conference-lineup = Check out the 2019 Conference Lineup
+community-conference-lineup = Check out the 2020 Conference Lineup
+community-timetill-cta = See conference lineup on timetill.rs
 
 community-event-run-header = Run your own event
 community-event-run =

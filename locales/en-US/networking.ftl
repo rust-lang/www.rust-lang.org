@@ -1,6 +1,6 @@
 ## templates/what/networking.hbs
 
-networking-header = Networking
+what-networking-page-title = Networking
 
 ## templates/components/what/networking/get-started.hbs
 
@@ -51,13 +51,3 @@ networking-production-testimonial-buoyant =
     classes of resource leaks. After 2 years, I really can’t imagine using any other language for
     the job.
 networking-production-testimonial-buoyant-attribution = Oliver Gould, CTO, <a href="{ $href }">Buoyant</a>
-
-networking-production-testimonial-1aim =
-    Rust's powerful type system enables safe refactoring and catches many classes of bugs at
-    compile time. Its low footprint and high performance, complemented by guaranteed memory safety
-    and rock-solid error handling make it perfect for writing security critical and complex
-    business logic for our backend. The ultra-high stability means that our Rust applications are
-    the last part of our stack we ever have to worry about. We have been running a almost 100% Rust
-    backend in production since end of 2015 and it has never failed us so far!
-
-networking-production-testimonial-1aim-attribution = Yann Leretaille, <a href="{ $href }">1aim</a>

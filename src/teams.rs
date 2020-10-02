@@ -1,4 +1,4 @@
-use reqwest;
+use percent_encoding::{utf8_percent_encode, AsciiSet, NON_ALPHANUMERIC};
 use rust_team_data::v1::{Team, TeamKind, Teams, BASE_URL};
 use std::any::Any;
 use std::cmp::Reverse;
@@ -21,8 +21,10 @@ struct IndexTeam {
 #[derive(Serialize)]
 pub struct PageData {
     pub team: Team,
+    zulip_domain: &'static str,
     subteams: Vec<Team>,
     wgs: Vec<Team>,
+    project_groups: Vec<Team>,
 }
 
 #[derive(Clone)]
@@ -30,8 +32,10 @@ struct Data {
     teams: Vec<Team>,
 }
 
+const ENCODING_SET: AsciiSet = NON_ALPHANUMERIC.remove(b'-').remove(b'_');
+
 impl Data {
-    fn load() -> Result<Self, Box<Error>> {
+    fn load() -> Result<Self, Box<dyn Error>> {
         Ok(Data {
             teams: crate::cache::get::<Vec<Team>>(get_teams)?,
         })
@@ -42,7 +46,7 @@ impl Data {
         Data { teams }
     }
 
-    fn index_data(self) -> Result<IndexData, Box<Error>> {
+    fn index_data(self) -> Result<IndexData, Box<dyn Error>> {
         let mut data = IndexData::default();
 
         self.teams
@@ -60,6 +64,7 @@ impl Data {
             .for_each(|team| match team.team.kind {
                 TeamKind::Team => data.teams.push(team),
                 TeamKind::WorkingGroup => data.wgs.push(team),
+                _ => {}
             });
 
         data.teams.sort_by_key(|index_team| {
@@ -71,14 +76,13 @@ impl Data {
         Ok(data)
     }
 
-    pub fn page_data(self, section: &str, team_name: &str) -> Result<PageData, Box<Error>> {
+    pub fn page_data(self, section: &str, team_name: &str) -> Result<PageData, Box<dyn Error>> {
         // Find the main team first
         let main_team = self
             .teams
             .iter()
             .filter(|team| team.website_data.as_ref().map(|ws| ws.page.as_str()) == Some(team_name))
-            .filter(|team| kind_to_str(team.kind) == section)
-            .next()
+            .find(|team| kind_to_str(team.kind) == section)
             .cloned()
             .ok_or(TeamNotFound)?;
 
@@ -90,33 +94,48 @@ impl Data {
         // Then find all the subteams and wgs
         let mut subteams = Vec::new();
         let mut wgs = Vec::new();
+        let mut project_groups = Vec::new();
         self.teams
             .into_iter()
             .filter(|team| team.website_data.is_some())
             .filter(|team| team.subteam_of.as_ref() == Some(&main_team.name))
-            .for_each(|team| match team.kind {
-                TeamKind::Team => subteams.push(team),
-                TeamKind::WorkingGroup => wgs.push(team),
+            .for_each(|mut team| {
+                // https://github.com/zulip/zulip/blob/159641bab8c248f5b72a4e736462fb0b48e7fa24/static/js/hash_util.js#L20-L25
+                let website_data = team.website_data.as_mut().unwrap();
+                website_data.zulip_stream = website_data.zulip_stream.as_ref().map(|stream| {
+                    utf8_percent_encode(&stream, &ENCODING_SET)
+                        .to_string()
+                        .replace('%', ".")
+                });
+
+                match team.kind {
+                    TeamKind::Team => subteams.push(team),
+                    TeamKind::WorkingGroup => wgs.push(team),
+                    TeamKind::ProjectGroup => project_groups.push(team),
+                    _ => {}
+                }
             });
 
         Ok(PageData {
             team: main_team,
+            zulip_domain: crate::ZULIP_DOMAIN,
             subteams,
             wgs,
+            project_groups,
         })
     }
 }
 
-pub fn index_data() -> Result<IndexData, Box<Error>> {
+pub fn index_data() -> Result<IndexData, Box<dyn Error>> {
     Data::load()?.index_data()
 }
 
-pub fn page_data(section: &str, team_name: &str) -> Result<PageData, Box<Error>> {
+pub fn page_data(section: &str, team_name: &str) -> Result<PageData, Box<dyn Error>> {
     Data::load()?.page_data(section, team_name)
 }
 
-fn get_teams() -> Result<Box<Any>, Box<Error>> {
-    let resp: Teams = reqwest::get(&format!("{}/teams.json", BASE_URL))?
+fn get_teams() -> Result<Box<dyn Any>, Box<dyn Error>> {
+    let resp: Teams = reqwest::blocking::get(&format!("{}/teams.json", BASE_URL))?
         .error_for_status()?
         .json()?;
 
@@ -132,6 +151,8 @@ fn kind_to_str(kind: TeamKind) -> &'static str {
     match kind {
         TeamKind::Team => "teams",
         TeamKind::WorkingGroup => "wgs",
+        TeamKind::ProjectGroup => "project-groups",
+        _ => "UNSUPPORTED",
     }
 }
 
@@ -166,13 +187,16 @@ mod tests {
                     name: "John Doe".into(),
                     github: "johnd".into(),
                     is_lead: false,
+                    github_id: 1234,
                 },
                 TeamMember {
                     name: "Jane Doe".into(),
                     github: "janed".into(),
                     is_lead: true,
+                    github_id: 1234,
                 },
             ],
+            alumni: Vec::new(),
             website_data: Some(TeamWebsite {
                 name: format!("Team {}", name),
                 description: format!("Description of {}", name),
@@ -180,8 +204,10 @@ mod tests {
                 email: None,
                 repo: None,
                 discord: None,
+                zulip_stream: None,
                 weight: 0,
             }),
+            github: None,
         }
     }
 
@@ -217,6 +243,7 @@ mod tests {
         let mut wg = dummy_team("wg");
         wg.subteam_of = Some("main".into());
         wg.kind = TeamKind::WorkingGroup;
+        wg.website_data.as_mut().unwrap().zulip_stream = Some("t-compiler/wg-rls-2.0".to_string());
 
         let other = dummy_team("other");
         let mut other_subteam = dummy_team("other-subteam");
@@ -233,6 +260,11 @@ mod tests {
         assert_eq!(page.subteams[0].name, "subteam");
         assert_eq!(page.wgs.len(), 1);
         assert_eq!(page.wgs[0].name, "wg");
+        let zulip_stream = page.wgs[0]
+            .website_data
+            .as_ref()
+            .and_then(|site| site.zulip_stream.as_deref());
+        assert_eq!(zulip_stream, Some("t-compiler.2Fwg-rls-2.2E0"));
     }
 
     #[test]

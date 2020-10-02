@@ -30,7 +30,7 @@ impl<'r> FromParam<'r> for Destination {
             "install.html" => "/tools/install",
             "legal.html" => "/policies",
             "other-installers.html" => {
-                "https://forge.rust-lang.org/other-installation-methods.html"
+                "https://forge.rust-lang.org/infra/other-installation-methods.html"
             }
             "security.html" => "/policies/security",
             "team.html" => "/governance",
@@ -61,7 +61,6 @@ impl<'r> FromParam<'r> for Locale {
             "ru-RU" => Ok(Locale("ru-RU")),
             "sv-SE" => Ok(Locale("sv-SE")),
             "vi-VN" => Ok(Locale("vi-VN")),
-            "zh-CN" => Ok(Locale("zh-CN")),
             _ => Err(NoRedirectFound),
         }
     }

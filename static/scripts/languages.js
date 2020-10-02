@@ -1,10 +1,12 @@
-let dropdown = document.getElementById('language-nav');
+let nav_dropdown = document.getElementById('language-nav');
+let footer_dropdown = document.getElementById('language-footer');
 
-let current_lang = dropdown.getAttribute("data-current-lang");
-dropdown.value = current_lang;
+let current_lang = nav_dropdown.getAttribute("data-current-lang");
+nav_dropdown.value = current_lang;
+footer_dropdown.value = current_lang;
 
-dropdown.onchange = function() {
-    let lang = dropdown.value;
+function langChange() {
+    let lang = this.value;
     if (lang == "en-US") {
         lang = "";
     } else {
@@ -16,3 +18,6 @@ dropdown.onchange = function() {
     }
     window.location = `${lang}${path}`;
 }
+
+nav_dropdown.onchange = langChange;
+footer_dropdown.onchange = langChange;

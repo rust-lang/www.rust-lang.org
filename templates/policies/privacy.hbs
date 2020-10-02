@@ -1,0 +1,83 @@
+{{#*inline "page"}}
+
+<header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <h1>{{fluent "policies-privacy-page-title"}}</h1>
+  </div>
+</header>
+
+{{#if is_translation}}
+<section id="translation-warning" class="green pv4">
+  <div class="w-100 mw-none ph3 pw8-m mw9-l center f3">
+    <p class="mb0">
+      {{#fluent "policies-translation-warning"}}
+        {{#fluentparam "english"}}/policies/privacy{{/fluentparam}}
+      {{/fluent}}
+    </p>
+  </div>
+</section>
+{{/if}}
+
+<section class="purple">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    {{fluent "policies-privacy-page-version" version="1.1" date="2020-09-15"}}
+
+    {{#fluent "policies-privacy-page-intro"}}
+      {{#fluentparam "baseurl"}}{{baseurl}}{{/fluentparam}}
+    {{/fluent}}
+
+    <header>
+      <h2 id="rust-www">rust-lang.org</h2>
+      <div class="highlight"></div>
+    </header>
+
+    {{#fluent "policies-privacy-page-rust-lang-org-desc"}}
+      {{#fluentparam "baseurl"}}{{baseurl}}{{/fluentparam}}
+    {{/fluent}}
+
+    <header>
+      <h2 id="crates-io">crates.io</h2>
+      <div class="highlight"></div>
+    </header>
+
+    {{#fluent "policies-privacy-page-crates-io-desc--2020-09"}}
+      {{#fluentparam "baseurl"}}{{baseurl}}{{/fluentparam}}
+    {{/fluent}}
+
+    <header>
+      <h2 id="docs-rs">docs.rs</h2>
+      <div class="highlight"></div>
+    </header>
+
+    {{#fluent "policies-privacy-page-docs-rs-desc--2020-09"}}
+      {{#fluentparam "baseurl"}}{{baseurl}}{{/fluentparam}}
+    {{/fluent}}
+
+    <header>
+      <h2 id="forums">{{fluent "policies-privacy-page-forums-title"}}</h2>
+      <div class="highlight"></div>
+    </header>
+
+    {{#fluent "policies-privacy-page-forums-desc"}}
+      {{#fluentparam "baseurl"}}{{baseurl}}{{/fluentparam}}
+    {{/fluent}}
+
+    <header>
+      <h2 id="third-party">{{fluent "policies-privacy-page-third-parties-title"}}</h2>
+      <div class="highlight"></div>
+    </header>
+
+    {{fluent "policies-privacy-page-third-parties-desc"}}
+
+    <header>
+      <h2 id="contact">{{fluent "policies-privacy-page-contact-title"}}</h2>
+      <div class="highlight"></div>
+    </header>
+
+    {{fluent "policies-privacy-page-contact-desc"}}
+
+  </div>
+</section>
+
+{{/inline}}
+{{~> (parent)~}}

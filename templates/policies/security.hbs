@@ -2,46 +2,58 @@
 
 <header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-    <h1>{{text security-page-heading}}</h1>
+    <h1>{{fluent "policies-security-page-title"}}</h1>
   </div>
 </header>
+
+{{#if is_translation}}
+<section id="translation-warning" class="green pv4">
+  <div class="w-100 mw-none ph3 pw8-m mw9-l center f3">
+    <p class="mb0">
+      {{#fluent "policies-translation-warning"}}
+        {{#fluentparam "english"}}/policies/security{{/fluentparam}}
+      {{/fluent}}
+    </p>
+  </div>
+</section>
+{{/if}}
 
 <section id="security-reporting" class="purple">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>{{text security-reporting-heading}}</h2>
+      <h2>{{fluent "security-reporting-heading"}}</h2>
       <div class="highlight"></div>
     </header>
-    <p><a class="button button-secondary" href="mailto:security@rust-lang.org">{{text security-reporting-link}}</a></p>
-    {{text security-reporting-description}}
-    <p><a class="button button-secondary" href="mailto:security@rust-lang.org">{{text security-reporting-link}}</a></p>
+    <p><a class="button button-secondary" href="mailto:security@rust-lang.org">{{fluent "security-reporting-link"}}</a></p>
+    {{fluent "security-reporting-description"}}
+    <p><a class="button button-secondary" href="mailto:security@rust-lang.org">{{fluent "security-reporting-link"}}</a></p>
   </div>
 </section>
 
 <section id="security-disclosure-policy" class="green">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>{{text security-disclosure-heading}}</h2>
+      <h2>{{fluent "security-disclosure-heading"}}</h2>
       <div class="highlight"></div>
     </header>
-    {{text security-disclosure-description}}
+    {{fluent "security-disclosure-description"}}
   </div>
 </section>
 
 <section id="security-receiving" class="white">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>{{text security-receiving-heading}}</h2>
+      <h2>{{fluent "security-receiving-heading"}}</h2>
       <div class="highlight"></div>
     </header>
-    {{text security-receiving-description}}
+    {{fluent "security-receiving-description"}}
   </div>
 </section>
 
 <section id="security-pgp-key" class="red">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>{{text security-pgp-key-heading}}</h2>
+      <h2>{{fluent "security-pgp-key-heading"}}</h2>
       <div class="highlight"></div>
     </header>
     <pre><code>-----BEGIN PGP PUBLIC KEY BLOCK-----

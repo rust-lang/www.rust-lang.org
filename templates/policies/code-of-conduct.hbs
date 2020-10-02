@@ -2,36 +2,49 @@
 
 <header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-    <h1>{{text coc-page-heading}}</h1>
+    <h1>{{fluent "policies-code-of-conduct-page-title"}}</h1>
   </div>
 </header>
+
+{{#if is_translation}}
+<section id="translation-warning" class="green pv4">
+  <div class="w-100 mw-none ph3 pw8-m mw9-l center f3">
+    <p class="mb0">
+      {{#fluent "policies-translation-warning"}}
+        {{#fluentparam "english"}}/policies/code-of-conduct{{/fluentparam}}
+      {{/fluent}}
+    </p>
+  </div>
+</section>
+{{/if}}
+
 
 <section id="code-of-conduct" class="red">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>{{text coc-conduct-heading}}</h2>
+      <h2>{{fluent "coc-conduct-heading"}}</h2>
       <div class="highlight"></div>
     </header>
-    {{#text coc-conduct-description}}
-      {{#textparam coc-rust-moderation-team-anchor}}
-        <a href="{{baseurl}}/governance/teams/moderation">{{text coc-conduct-description-team-anchor-text}}</a>
-      {{/textparam}}
-    {{/text}}
-    <p><a class="button button-secondary" href="mailto:rust-mods@rust-lang.org">{{text coc-conduct-email-button}}</a></p>
+    {{#fluent "coc-conduct-description"}}
+      {{#fluentparam "coc-rust-moderation-team-anchor"}}
+        <a href="{{baseurl}}/governance/teams/moderation">{{fluent "coc-conduct-description-team-anchor-text"}}</a>
+      {{/fluentparam}}
+    {{/fluent}}
+    <p><a class="button button-secondary" href="mailto:rust-mods@rust-lang.org">{{fluent "coc-conduct-email-button"}}</a></p>
   </div>
 </section>
 
 <section id="moderation" class="purple">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>{{text coc-moderation-heading}}</h2>
+      <h2>{{fluent "coc-moderation-heading"}}</h2>
       <div class="highlight"></div>
     </header>
-    {{#text coc-moderation-description}}
-      {{#textparam coc-rust-moderation-team-anchor}}
-        <a href="{{baseurl}}/governance/teams/moderation">{{text coc-moderation-description-team-anchor-text}}</a>
-      {{/textparam}}
-    {{/text}}
+    {{#fluent "coc-moderation-description"}}
+      {{#fluentparam "coc-rust-moderation-team-anchor"}}
+        <a href="{{baseurl}}/governance/teams/moderation">{{fluent "coc-moderation-description-team-anchor-text"}}</a>
+      {{/fluentparam}}
+    {{/fluent}}
   </div>
 </section>
 

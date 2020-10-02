@@ -17,7 +17,7 @@ production-yelp = Yelp has developed a framework in Rust for real-time A/B testi
 production-yelp-alt = yelp logo
 
 production-share = Does your company use Rust? Consider sharing your experience with us!
-production-share-button = Reach out to the production users team
+production-share-button = Reach out to the core team
 production-users = Want to learn more about who uses Rust in production?
 production-users-button = Check out the users page
 
@@ -34,4 +34,4 @@ production-license-link = Policies: License
 
 ## templates/production/users.hbs
 
-production-users-page = Production users
+production-users-page-title = Production users

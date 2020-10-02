@@ -2,77 +2,78 @@
 
 <header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-    <h1>{{text getting-started}}</h1>
-    <h2 class="subtitle">{{text learn-setup}}</h2>
+    <h1>{{fluent "learn-get-started-page-title"}}</h1>
+    <h2 class="subtitle">{{fluent "learn-setup"}}</h2>
   </div>
 </header>
 
 <section id="installing-rust" class="purple">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>{{text learn-install-heading}}</h2>
+      <h2>{{fluent "learn-install-heading"}}</h2>
       <div class="highlight highlight"></div>
     </header>
-    <p>{{text learn-play}}</p>
-    <a href="https://play.rust-lang.org/" class="button button-secondary">{{text learn-play-button}}</a>
+    <p>{{fluent "learn-play"}}</p>
+    <a href="https://play.rust-lang.org/" class="button button-secondary">{{fluent "learn-play-button"}}</a>
     <hr />
 
-    <h3>{{text learn-install-rustup-header}}</h3>
-    <p>{{text learn-install-rustup}}</p>
+    <h3>{{fluent "learn-install-rustup-header"}}</h3>
+    <p>{{fluent "learn-install-rustup"}}</p>
     {{> components/tools/rustup }}
-    <br /><br />
-    <a href="{{baseurl}}/tools/install" class="button button-secondary">{{text learn-install-rustup-button}}</a>
-    <hr />
-
-    <h3>{{text learn-install-cargo-header}}</h3>
-    {{text learn-install-cargo}}
-    <a href="https://doc.rust-lang.org/cargo/index.html" class="button button-secondary">{{text learn-install-cargo-button}}</a>
-    <hr />
-
-    <h3>{{text learn-install-other}}</h3>
-    <p>{{text learn-install-editors}}</p>
-    {{> components/tools/editors }}
     <br />
-    <p>{{text learn-install-fmt-clippy}}</p>
+    <h3>{{fluent "learn-install-rustup-update-header"}}</h3>
+    <p>{{#fluent "learn-install-rustup-update"}}{{#fluentparam "update-command"}}<code>rustup update</code>{{/fluentparam}}{{/fluent}}</p>
+    <br />
+    <a href="{{baseurl}}/tools/install" class="button button-secondary">{{fluent "learn-install-rustup-button"}}</a>
+    <hr />
+
+    <h3>{{fluent "learn-install-cargo-header"}}</h3>
+    {{fluent "learn-install-cargo"}}
+    <a href="https://doc.rust-lang.org/cargo/index.html" class="button button-secondary">{{fluent "learn-install-cargo-button"}}</a>
+    <hr />
+
+    <h3>{{fluent "learn-install-other"}}</h3>
+    <p>{{fluent "learn-install-editors"}}</p>
+    {{> components/tools/editors }}
   </div>
 </section>
 
 <section id="generating-new-project" class="red">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>{{text learn-generating}}</h2>
+      <h2>{{fluent "learn-generating"}}</h2>
       <div class="highlight"></div>
     </header>
-    {{#text learn-generating-steps}}
-    {{#textparam tree}}
-    <pre><code>hello-rust
+    {{#fluent "learn-generating-steps"}}
+    {{#fluentparam "tree"}}
+    <pre><code class="plaintext">hello-rust
 |- Cargo.toml
 |- src
   |- main.rs</code></pre>
-    {{/textparam}}
-    {{#textparam output}}
-    <pre><code>$ cargo run
+    {{/fluentparam}}
+    {{#fluentparam "output"}}
+    <pre><code class="console">$ cargo run
    Compiling hello-rust v0.1.0 (/Users/ag_dubs/rust/hello-rust)
     Finished dev [unoptimized + debuginfo] target(s) in 1.34s
      Running `target/debug/hello-rust`
 Hello, world!</code></pre>
-    {{/textparam}}
-    {{/text}}
+    {{/fluentparam}}
+    {{/fluent}}
   </div>
 </section>
 
 <section id="installing-dependencies" class="white">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>{{text learn-dependencies}}</h2>
+      <h2>{{fluent "learn-dependencies"}}</h2>
       <div class="highlight"></div>
     </header>
-    {{#text learn-dependencies-steps}}
-    {{#textparam cargotoml}}
+    {{#fluent "learn-dependencies-steps"}}
+    {{#fluentparam "cargotoml"}}
       <pre><code>[dependencies]
 ferris-says = "0.1"</code></pre>
-    {{/textparam}}
-    {{/text}}
+    {{/fluentparam}}
+    {{/fluent}}
 
   </div>
 </section>
@@ -80,26 +81,26 @@ ferris-says = "0.1"</code></pre>
 <section id="a-small-rust-app" class="green">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>{{text learn-app}}</h2>
+      <h2>{{fluent "learn-app"}}</h2>
       <div class="highlight"></div>
     </header>
-    {{#text learn-app-steps}}
-    {{#textparam code}}
+    {{#fluent "learn-app-steps"}}
+    {{#fluentparam "code"}}
 <pre><code>use ferris_says::say; // from the previous step
 use std::io::{stdout, BufWriter};
 
 fn main() {
     let stdout = stdout();
-    let out = b"Hello fellow Rustaceans!";
-    let width = 24;
+    let message = String::from("Hello fellow Rustaceans!");
+    let width = message.chars().count();
 
     let mut writer = BufWriter::new(stdout.lock());
-    say(out, width, &mut writer).unwrap();
+    say(message.as_bytes(), width, &mut writer).unwrap();
 }
     </code></pre>
-    {{/textparam}}
-    {{#textparam output}}
-    <pre><code>----------------------------
+    {{/fluentparam}}
+    {{#fluentparam "output"}}
+    <pre><code class="plaintext">----------------------------
 | Hello fellow Rustaceans! |
 ----------------------------
               \
@@ -109,32 +110,32 @@ fn main() {
                '_   -   _'
                / '-----' \
     </code></pre>
-    {{/textparam}}
-    {{/text}}
-    
+    {{/fluentparam}}
+    {{/fluent}}
+
   </div>
 </section>
 
 <section id="read-the-docs" class="purple">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>{{text learn-read-docs-header}}</h2>
+      <h2>{{fluent "learn-read-docs-header"}}</h2>
       <div class="highlight"></div>
     </header>
-    <p>{{text learn-read-docs}}</p>
-    <a href="{{baseurl}}/learn" class="button button-secondary">{{text learn-read-docs-button}}</a>
+    <p>{{fluent "learn-read-docs"}}</p>
+    <a href="{{baseurl}}/learn" class="button button-secondary">{{fluent "learn-read-docs-button"}}</a>
   </div>
 </section>
 
 <section id="ferris" class="white">
   <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
     <header>
-      <h2>{{text learn-ferris-who}}</h2>
+      <h2>{{fluent "learn-ferris-who"}}</h2>
       <div class="highlight"></div>
     </header>
-{{text learn-ferris}}
+{{fluent "learn-ferris"}}
 
-      <img alt="{{text learn-ferris-alt}}" width="540" height="180"
+      <img alt="{{fluent "learn-ferris-alt"}}" width="540" height="180"
            src="/static/images/ferris.gif" />
   </div>
 </section>

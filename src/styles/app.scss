@@ -1,18 +1,19 @@
-@import 'tachyons-ext';
+@import "tachyons-ext";
 
-$body-font: 'Fira Sans', Helvetica, Arial, sans-serif;
-$header-font: 'Alfa Slab One', serif;
+$body-font: "Fira Sans", Helvetica, Arial, sans-serif;
+$header-font: "Alfa Slab One", serif;
 
-$gray: #454C52;
-$red: #C14566;
-$green: #398277;
-$purple: #403D58;
-$yellow: #FFD45E;
+$gray: #2a3439;
+$red: #a72145;
+$green: #0b7261;
+$purple: #2e2459;
+$yellow: #ffc832;
 $border-radius: 4px;
-$link-color: #1EAEDB;
+$link-color: #4299bf;
+$footer-gray: $gray;
 
 html {
-  font-size: 62.5%
+  font-size: 62.5%;
 }
 
 @media screen and (min-width: 30em) {
@@ -31,8 +32,8 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  & > #main-content {
-      flex: 1;
+  & > main {
+    flex: 1;
   }
 }
 
@@ -42,61 +43,38 @@ body {
 }
 
 code {
-  overflow: auto;
-}
-
-code {
-  padding: .2rem .5rem;
-  margin: 0 .2rem;
+  padding: 0.2rem 0.5rem;
+  margin: 0 0.2rem;
   font-size: 90%;
   white-space: nowrap;
-  background: #F1F1F1;
-  border: 1px solid #E1E1E1;
+  border: 1px solid #e1e1e1;
   border-radius: 4px;
   overflow: auto;
 }
 
 pre > code {
   display: block;
-  padding: 1rem 1.5rem;
   white-space: pre;
-}
-
-
-@mixin code-highlight-white {
-  color: white;
-  background-color: rgba(black, 0.3);
-  border: 1px solid #E1E1E1;
-  border-radius: $border-radius;
-}
-
-@mixin code-highlight-black {
-  color: black;
-  background-color: rgba(black, 0.05);
-  border: 1px solid rgba(black, 0.25);
-  border-radius: $border-radius;
 }
 
 .button,
 button {
-  display: block;
-  overflow: hidden;
-  height: 38px;
-  padding: 0 30px;
+  display: inline-block;
+  width: 100%;
+  min-height: 38px;
+  padding: 8px 30px;
   text-align: center;
   font-weight: 600;
-  line-height: 38px;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
   text-transform: uppercase;
   text-decoration: none;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   border-radius: 4px;
   border: 1px solid;
   cursor: pointer;
   box-sizing: border-box;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     outline: 0;
   }
 }
@@ -110,10 +88,6 @@ p {
   font-size: 0.8em;
 }
 
-.button.button-secondary--no-skeleton {
-  margin-bottom: 0;
-}
-
 code.code-header {
   background-color: rgba(127, 127, 127, 0.25);
   font-size: 2rem;
@@ -121,8 +95,8 @@ code.code-header {
   margin: 0 0 3px 0;
 }
 
-header h1, section h2 {
-  font-family: $header-font;
+header h1,
+section h2 {
   z-index: 999999;
   position: relative;
   letter-spacing: 1px;
@@ -130,17 +104,19 @@ header h1, section h2 {
 }
 
 header h1 {
+  font-family: $header-font;
   font-size: 8rem;
   margin-bottom: 0;
   margin-top: 0;
   line-height: 1.2;
   font-weight: 300;
+  letter-spacing: 1px;
 }
 
 header h2 {
   font-size: 4.2rem;
   line-height: 1.25;
-  font-weight: 300;  
+  font-weight: 300;
 }
 
 section h3 {
@@ -148,7 +124,8 @@ section h3 {
   line-height: 1.3;
 }
 
-section p, code {
+section p,
+code {
   line-height: 1.6;
 }
 
@@ -162,7 +139,8 @@ header .button.button-download {
   font-size: 2.25rem;
   margin-top: 20px;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     border-color: black;
   }
 }
@@ -191,7 +169,13 @@ section {
     }
   }
 
+  h2 {
+    font-family: $body-font;
+    font-weight: 800;
+  }
+
   h3 {
+    font-weight: 600;
     line-height: 1.3;
   }
 
@@ -202,7 +186,7 @@ section {
 }
 
 ul {
-  list-style: circle;
+  list-style: disc;
   padding-left: 1.5em;
 }
 
@@ -213,11 +197,6 @@ ol {
 
 section .container {
   padding-top: 20px;
-}
-
-// TODO:  remove when switching to Tachyons -- these are overrides for Skeleton.
-ul.nav, ul.nav li {
-  margin-bottom: 0;
 }
 
 .nav a {
@@ -275,12 +254,10 @@ a.brand {
     border-color: $purple;
     color: white;
     text-decoration: none;
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       border-color: white;
     }
-  }
-  code {
-    @include code-highlight-white();
   }
 }
 
@@ -299,17 +276,15 @@ a.brand {
     border-color: $purple;
     color: white;
     text-decoration: none;
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       border-color: white;
     }
-  } 
-  code {
-    @include code-highlight-white();
   }
 }
 
 .white {
-   color: black;
+  color: black;
   .highlight {
     background-color: $yellow;
   }
@@ -322,12 +297,10 @@ a.brand {
     border-color: $yellow;
     color: $gray;
     text-decoration: none;
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       border-color: $gray;
     }
-  }
-  code {
-    @include code-highlight-black();
   }
 }
 
@@ -346,17 +319,15 @@ a.brand {
     border-color: $red;
     color: white;
     text-decoration: none;
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       border-color: white;
     }
-  }
-  code {
-    @include code-highlight-white();
   }
 }
 
 h3 {
-  font-weight: 800; 
+  font-weight: 600;
   font-size: 1.5em;
   letter-spacing: normal;
 }
@@ -370,23 +341,20 @@ h3 {
   border-bottom: 1px dotted white;
 }
 
-header h1 {
-  letter-spacing: 1px;
-}
-
 .highlight {
-  height: 24px;
+  height: 12px;
   position: relative;
-  top: -24px;
+  top: 0;
   left: -10px;
   width: 120%;
   max-width: 90vw;
   line-height: 1.6;
+  border-radius: 2px;
 }
 
 footer {
   padding: 30px 0;
-  background-color: black;
+  background-color: $footer-gray;
   color: white;
 
   p {
@@ -416,7 +384,7 @@ footer {
 
 footer h4 {
   font-size: 1.2em;
-  font-weight: 800;
+  font-weight: 600;
   margin-top: 0;
   margin-bottom: 2rem;
 }
@@ -432,7 +400,7 @@ footer .attribution {
 }
 
 footer .languages {
-  color: $gray
+  color: $gray;
 }
 
 blockquote {
@@ -445,7 +413,7 @@ blockquote {
 }
 
 blockquote::before {
-  content: '“';
+  content: "“";
   color: $gray;
   font-size: 3em;
   position: absolute;
@@ -496,7 +464,7 @@ blockquote::before {
   width: auto;
   height: auto;
   margin: auto;
-  display: block;  
+  display: block;
 }
 
 .user-logo {
@@ -507,7 +475,8 @@ blockquote::before {
   min-height: 300px;
 }
 
-#share-your-experience h3, #production-domains h3 {
+#share-your-experience h3,
+#production-domains h3 {
   padding-bottom: 20px;
   text-align: center;
 }
@@ -537,7 +506,6 @@ blockquote::before {
     color: black;
   }
 }
-
 
 #rust-trademarks {
   img {
@@ -583,6 +551,7 @@ blockquote::before {
   .domain-icon {
     display: block;
     padding-bottom: 0;
+    min-width: 100px;
 
     img {
       max-width: 90px;
@@ -648,13 +617,20 @@ blockquote::before {
   background-color: rgba(white, 0.15);
   border: 1px solid rgba(white, 0.65);
   margin-bottom: 20px;
-  padding: .2rem .5rem;
-  margin: 0 .2rem;
+  padding: 0.2rem 0.5rem;
+  margin: 0 0.2rem;
   border-radius: 4px;
 }
 
 #language-values span {
   font-weight: 600;
+}
+
+@media screen and (max-width: 769px) {
+  .highlight {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
 }
 
 // Temporary HACK: switch away from this when we switch to using Tachyons for
@@ -665,11 +641,6 @@ blockquote::before {
   header {
     h1 {
       font-size: 4rem;
-    }
-
-    .highlight {
-      height: 20px;
-      top: -20px;
     }
 
     h2.subtitle {
@@ -683,16 +654,15 @@ blockquote::before {
       margin-top: 20px;
     }
   }
+}
 
-  section header {
-    padding: {
-      top: 10px;
-      bottom: 30px;
-    }
-
-    h2 {
-      font-size: 3rem;
-    }
+section header {
+  padding: {
+    top: 10px;
+    bottom: 30px;
+  }
+  h2 {
+    font-size: 3rem;
   }
 }
 
@@ -737,7 +707,7 @@ blockquote::before {
 .testimonial {
   display: flex;
   align-items: center;
-  
+
   @media only screen and (max-width: 545px) {
     display: block;
   }
@@ -755,4 +725,18 @@ blockquote::before {
 
 .download-link {
   color: $link-color;
+}
+
+#pb4 {
+  padding-bottom: 3.8em;
+}
+
+.max-height-5rem {
+  /* Tachyons is missing this class */
+  max-height: 5rem;
+}
+
+.max-height-10rem {
+  /* Tachyons is missing this class */
+  max-height: 10rem;
 }

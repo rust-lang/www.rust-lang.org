@@ -1,0 +1,6 @@
+src/ @rust-lang/website
+ci/ @rust-lang/website
+static/ @rust-lang/website
+templates/ @rust-lang/website
+locales/ @rust-lang/website
+*.md @rust-lang/website

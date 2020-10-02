@@ -1,6 +1,6 @@
 ## learn/index.hbs
 
-learn-learn-rust = Learn Rust
+learn-page-title = Learn Rust
 learn-begin = Get started with Rust
 
 learn-book = Affectionately nicknamed “the book,” <cite>The Rust Programming Language</cite> will give you an overview of the language from first principles. You’ll build a few projects along the way, and by the end, you’ll have a solid grasp of the language.
@@ -16,7 +16,7 @@ learn-doc-heading = Read the core documentation
 learn-doc = All of this documentation is also available locally using the <code>rustup doc</code> command, which will open up these resources for you in your browser without requiring a network connection!
 
 learn-doc-std = Comprehensive guide to the Rust standard library APIs.
-learn-doc-std-button = The standard 
+learn-doc-std-button = The standard library
 
 learn-doc-edition = Guide to the Rust editions.
 learn-doc-edition-button = Edition Guide
@@ -64,6 +64,8 @@ learn-unstable-button = Read the unstable book
 
 ## learn/get-started.hbs
 
+learn-get-started-page-title = { getting-started }
+
 learn-setup = Quickly set up a Rust development environment and write a small app!
 
 learn-install-heading = Installing Rust
@@ -72,6 +74,8 @@ learn-play-button = Try Rust without installing
 
 learn-install-rustup-header = Rustup: the Rust installer and version management tool
 learn-install-rustup = The primary way that folks install Rust is through a tool called Rustup, which is a Rust installer and version management tool.
+learn-install-rustup-update-header = Is Rust up to date?
+learn-install-rustup-update = Rust updates very frequently. If you have installed Rustup some time ago, chances are your Rust version is out of date. Get the latest version of Rust by running { $update-command }.
 learn-install-rustup-button = Learn more about installation
 
 
@@ -90,8 +94,6 @@ learn-install-cargo-button = Read the cargo book
 
 learn-install-other = Other tools
 learn-install-editors = Rust support is available in many editors:
-learn-install-fmt-clippy = You can install a code formatting tool (Rustfmt) with <code>rustup component add rustfmt</code>, and a linting tool (Clippy) with <code>rustup component add clippy</code>.
-
 
 learn-generating = Generating a new project
 learn-generating-steps = <p>Let’s write a small application with our new Rust development environment. To start, we’ll use Cargo to make a new project for us. In your terminal of choice run:</p>
@@ -112,7 +114,7 @@ learn-dependencies-steps = <p>Let’s add a dependency to our application. You c
       <p>In our <code>Cargo.toml</code> file we’ll add this information (that we got from the crate page):</p>
       { $cargotoml }
       <p>Now we can run:</p>
-      <code>cargo build</code>
+      <p><code>cargo build</code></p>
       <p>...and Cargo will install our dependency for us.</p>
       <p>You’ll see that running this command created a new file for us, <code>Cargo.lock</code>. This file is a log of the exact versions of the dependencies we are using locally.</p>
       <p>To use this dependency, we can open <code>main.rs</code>, remove everything that’s in there (it’s just another example), and add this line to it:</p>
@@ -134,6 +136,5 @@ learn-read-docs-button = learn more!
 learn-ferris-who = Who’s this crab, Ferris?
 learn-ferris = <p>Ferris is the unofficial mascot of the Rust Community. Many Rust programmers call themselves “Rustaceans,” a play on the word “<a href="https://en.wikipedia.org/wiki/Crustacean">crustacean</a>.” We refer to Ferris with the pronouns “they,” “them,” etc., rather than with gendered pronouns.</p>
                <p>Ferris is a name playing off of the adjective, “ferrous,” meaning of or pertaining to iron. Since Rust often forms on iron, it seemed like a fun origin for our mascot’s name!</p>
-               <p>You can find more images of Ferris on <a href="http://rustacean.net/">http://rustacean.net/</a>.
+               <p>You can find more images of Ferris on <a href="https://rustacean.net/">rustacean.net</a>.
 learn-ferris-alt = a gif of ferris scurrying side to side
-
