@@ -13,6 +13,9 @@ community-team-button = email { ENGLISH("community@rust-lang.org") }
 community-where = Where to talk
 community-learn = Where to learn
 
+community-get-in-contact = Get in contact
+community-read-about = Read about Rust
+
 community-urlo-header = Users forum
 community-urlo = The Rust Users Forum is a place for Rust users to communicate about
             anything and everything related to Rust. Ask questions here,
