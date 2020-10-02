@@ -20,7 +20,7 @@ have thoughts, it can be useful to discuss those with the lead(s) of those
 groups. You can learn more about the teams and working groups on the Governance
 page of the site.
 
-We are currently pausing new company listings for the 'Production' page while
+We are currently pausing for a new company listings for the 'Production' page while
 we figure out a better process for it.
 
 ## Development
