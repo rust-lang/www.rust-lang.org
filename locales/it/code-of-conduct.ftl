@@ -6,7 +6,6 @@
 policies-code-of-conduct-page-title = Codice di condotta
 coc-conduct-heading = Condotta
 coc-conduct-description =
-    Questa pagina è stata tradotta dalla community al meglio delle nostre conoscenze. Si consiglia di fare riferimento alla <a href="https://www.rust-lang.org/policies/code-of-conduct">versione in inglese</a> di questo documento per la versione ufficiale.
     <ul>
       <li>Ci impegniamo a creare un ambiente amichevole, sicuro e accogliente per tutti, a prescindere da livello di esperienza, sesso o orientamento sessuale, disabilità, aspetto fisico, corporatura, razza, etnia, età, religione, nazionalità e altre caratteristiche simili.</li>
       <li>Evita di utilizzare pseudonimi sessualmente espliciti o altri nickname che possano interferire con un ambiente amichevole, sicuro e accogliente per tutti.</li>
