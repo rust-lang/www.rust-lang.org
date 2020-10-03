@@ -400,7 +400,6 @@ fn render_production(lang: String) -> Template {
 }
 
 fn render_sponsors(lang: String) -> Template {
-    println!("foo");
     let page = "sponsors/index".to_string();
     let context = Context::new(
         page.clone(),
