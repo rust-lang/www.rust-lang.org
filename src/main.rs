@@ -43,7 +43,11 @@ use std::path::{Path, PathBuf};
 
 use rand::seq::SliceRandom;
 
-use rocket::{http::{RawStr, Status}, request::{FromParam, Request}, response::{NamedFile, Redirect}};
+use rocket::{
+    http::{RawStr, Status},
+    request::{FromParam, Request},
+    response::{NamedFile, Redirect},
+};
 
 use rocket_contrib::templates::Template;
 
