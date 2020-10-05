@@ -1,67 +1,33 @@
-use std::str::Utf8Error;
+use std::error::Error;
+use rocket::http::Status;
+use regex::Regex;
+use rocket::response::Redirect;
 
-use rocket::{http::RawStr, request::FromParam};
+static REDIRECTS_YML_PATH: &str = "src/data/redirects.yml";
 
-pub struct Destination {
-    pub uri: &'static str,
+lazy_static! {
+    static ref REDIRECTS: Vec<InnerRedirect> = load_redirects(REDIRECTS_YML_PATH).unwrap();
 }
 
-impl<'r> FromParam<'r> for Destination {
-    type Error = NoRedirectFound;
+#[derive(Deserialize, Clone)]
+pub struct InnerRedirect {
+    pub from: String,
+    pub to: String,
+    pub status: Option<u16>
+}
 
-    fn from_param(param: &'r RawStr) -> Result<Self, Self::Error> {
-        let uri = match param.percent_decode()?.as_ref() {
-            "Rust-npm-Whitepaper.pdf" => "Rust-npm-Whitepaper.pdf",
-            "Rust-Chucklefish-Whitepaper.pdf" => "Rust-Chucklefish-Whitepaper.pdf",
-            "Rust-Tilde-Whitepaper.pdf" => "Rust-Tilde-Whitepaper.pdf",
-            "community.html" => "/community",
-            "conduct.html" => "/policies/code-of-conduct",
-            "contribute-bugs.html" => "/community",
-            "contribute-community.html" => "/governance/teams/community",
-            "contribute-compiler.html" => "/governance/teams/language-and-compiler",
-            "contribute-docs.html" => "/governance/teams/documentation",
-            "contribute-libs.html" => "/governance/teams/library",
-            "contribute-tools.html" => "/governance/teams/dev-tools",
-            "contribute.html" => "/community",
-            "documentation.html" => "/learn",
-            "downloads.html" => "/tools/install",
-            "friends.html" => "/production",
-            "index.html" => "/",
-            "install.html" => "/tools/install",
-            "legal.html" => "/policies",
-            "other-installers.html" => {
-                "https://forge.rust-lang.org/infra/other-installation-methods.html"
-            }
-            "security.html" => "/policies/security",
-            "team.html" => "/governance",
-            "user-groups.html" => "/community",
-            _ => return Err(NoRedirectFound),
-        };
-        Ok(Destination { uri })
+impl InnerRedirect {
+    pub fn status(&self) -> Status {
+        Status::from_code(self.status.unwrap_or(302)).unwrap_or(Status::Found)
     }
-}
-
-pub struct Locale(&'static str);
-
-impl<'r> FromParam<'r> for Locale {
-    type Error = NoRedirectFound;
-
-    fn from_param(param: &'r RawStr) -> Result<Self, Self::Error> {
-        match param.percent_decode()?.as_ref() {
-            "de-DE" => Ok(Locale("de-DE")),
-            "en-US" => Ok(Locale("en-US")),
-            "es-ES" => Ok(Locale("es-ES")),
-            "fr-FR" => Ok(Locale("fr-FR")),
-            "id-ID" => Ok(Locale("id-ID")),
-            "it-IT" => Ok(Locale("it-IT")),
-            "ja-JP" => Ok(Locale("ja-JP")),
-            "ko-KR" => Ok(Locale("ko-KR")),
-            "pl-PL" => Ok(Locale("pl-PL")),
-            "pt-BR" => Ok(Locale("pt-BR")),
-            "ru-RU" => Ok(Locale("ru-RU")),
-            "sv-SE" => Ok(Locale("sv-SE")),
-            "vi-VN" => Ok(Locale("vi-VN")),
-            _ => Err(NoRedirectFound),
+    pub fn redirect(&self, to: String) -> Redirect {
+        match self.status() {
+            Status::MovedPermanently => Redirect::permanent(to),
+            Status::Found => Redirect::found(to),
+            Status::SeeOther => Redirect::to(to),
+            Status::TemporaryRedirect => Redirect::temporary(to),
+            Status::PermanentRedirect => Redirect::permanent(to),
+            _ => Redirect::found(to)
         }
     }
 }
@@ -69,8 +35,18 @@ impl<'r> FromParam<'r> for Locale {
 #[derive(Debug)]
 pub struct NoRedirectFound;
 
-impl From<Utf8Error> for NoRedirectFound {
-    fn from(_: Utf8Error) -> Self {
-        Self
+fn load_redirects(path: &str) -> Result<Vec<InnerRedirect>, Box<dyn Error>> {
+    Ok(serde_yaml::from_str(&std::fs::read_to_string(path)?)?)
+}
+
+pub fn find_redirect(from: String) -> Result<Redirect, NoRedirectFound> {
+    for inner_redirect in REDIRECTS.iter() {
+        let rex = Regex::new(&inner_redirect.from).unwrap();
+        if rex.is_match(&from) {
+            let mut redirect_to = String::from("");
+            rex.captures(&from).unwrap().expand(inner_redirect.to.as_str(), &mut redirect_to);
+            return Ok(inner_redirect.redirect(redirect_to))
+        }
     }
+    return Err(NoRedirectFound)
 }

@@ -1,0 +1,82 @@
+---
+
+# Website Redirects setup
+# available keys: from, to, status[optional]
+#
+#   from - is a regex with names & non-named group captures
+#   to - is redirecting to with references to groups as $1 $2 or by name ifi it was captured like (?P<name>.*)
+#   status[optional] - is redirect response status, if not specified default value 302 Found will be used
+#
+# Possible response status values
+#        301 => "Moved Permanently"
+#        302 => "Found"
+#        303 => "See Other"
+#        304 => "Not Modified"
+#        305 => "Use Proxy"
+#        307 => "Temporary Redirect"
+#        308 => "Permanent Redirect"
+
+- from: ^/(en-US/)?pdfs/(?P<file>.*)
+  to: /static/pdfs/$file
+
+- from: ^/(en-US/)?(Rust-npm-Whitepaper|Rust-Chucklefish-Whitepaper|Rust-Tilde-Whitepaper).pdf
+  to: /static/pdfs/$2.pdf
+
+- from: ^/(en-US/)?(community|contribute-bugs|contribute|user-groups)\.html
+  to: /community
+
+- from: ^/(en-US/)?conduct\.html
+  to: /policies/code-of-conduct
+
+- from: ^/(en-US/)?contribute-community.html\.html
+  to: /governance/teams/community
+
+- from: ^/(en-US/)?contribute-compiler\.html
+  to: /governance/teams/language-and-compiler
+
+- from: ^/(en-US/)?contribute-docs\.html
+  to: /governance/teams/documentation
+
+- from: ^/(en-US/)?contribute-libs\.html
+  to: /governance/teams/library
+
+- from: ^/(en-US/)?contribute-tools\.html
+  to: /governance/teams/dev-tools
+
+- from: ^/(en-US/)?documentation\.html
+  to: /learn
+
+- from: ^/(en-US/)?downloads\.html
+  to: /tools/install
+
+- from: ^/(en-US/)?friends\.html
+  to: /production
+
+- from: ^/(en-US/)?install\.html
+  to: /tools/install
+
+- from: ^/(en-US/)?legal\.html
+  to: /policies
+
+- from: ^/(en-US/)?security\.html
+  to: /policies/security
+
+- from: ^/(en-US/)?team\.html
+  to: /governance
+
+- from: ^/(en-US/)?other-installers\.html
+  to: https://forge.rust-lang.org/infra/other-installation-methods.html
+  status: 301
+
+- from: ^/(en-US/)?index\.html
+  to: /
+
+# redirecting en-US to root
+- from: ^/en-US/?$
+  to: /
+  status: 308
+
+# temporary redirect for given locales
+- from: ^/(de-DE|es-ES|fr-FR|id-ID|it-IT|ja-JP|ko-KR|pl-PL|pt-BR|ru-RU|sv-SE|vi-VN)/?(.*)$
+  to: /$2
+  status: 307

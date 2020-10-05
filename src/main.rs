@@ -43,11 +43,7 @@ use std::path::{Path, PathBuf};
 
 use rand::seq::SliceRandom;
 
-use rocket::{
-    http::{RawStr, Status},
-    request::{FromParam, Request},
-    response::{NamedFile, Redirect},
-};
+use rocket::{http::{RawStr, Status}, request::{FromParam, Request}, response::{NamedFile, Redirect}};
 
 use rocket_contrib::templates::Template;
 
@@ -252,49 +248,25 @@ fn load_users_data() -> Vec<Vec<User>> {
     users.chunks(3).map(|s| s.to_owned()).collect()
 }
 
-#[get("/<dest>", rank = 19)]
-fn redirect(dest: redirect::Destination) -> Redirect {
-    Redirect::permanent(dest.uri)
-}
-
-#[get("/pdfs/<dest>")]
-fn redirect_pdfs(dest: redirect::Destination) -> Redirect {
-    Redirect::permanent("/static/pdfs/".to_owned() + dest.uri)
-}
-#[get("/en-US", rank = 1)]
-fn redirect_bare_en_us() -> Redirect {
-    Redirect::permanent("/")
-}
-
-#[get("/<_locale>", rank = 20)]
-fn redirect_bare_locale(_locale: redirect::Locale) -> Redirect {
-    Redirect::temporary("/")
-}
-
-#[get("/en-US/<dest>", rank = 1)]
-fn redirect_en_us(dest: redirect::Destination) -> Redirect {
-    Redirect::permanent(dest.uri)
-}
-
-#[get("/<_locale>/<dest>", rank = 20)]
-fn redirect_locale(_locale: redirect::Locale, dest: redirect::Destination) -> Redirect {
-    // Temporary until locale support is restored.
-    Redirect::temporary(dest.uri)
-}
-
 #[catch(404)]
-fn not_found(req: &Request) -> Template {
-    let lang = if let Some(next) = req.uri().segments().next() {
-        if let Ok(lang) = SupportedLocale::from_param(RawStr::from_str(next)) {
-            lang.0
-        } else {
-            ENGLISH.into()
-        }
-    } else {
-        ENGLISH.into()
-    };
+fn redirect_or_not_found(req: &Request) -> Result<Redirect, Template> {
+    let found_redirect = redirect::find_redirect(req.uri().to_string());
+    match found_redirect {
+        Ok(redirect_to) => Ok(redirect_to),
+        Err(_no_redirect_found) => {
+            let lang = if let Some(next) = req.uri().segments().next() {
+                if let Ok(lang) = SupportedLocale::from_param(RawStr::from_str(next)) {
+                    lang.0
+                } else {
+                    ENGLISH.into()
+                }
+            } else {
+                ENGLISH.into()
+            };
 
-    not_found_locale(lang)
+            Err(not_found_locale(lang))
+        }
+    }
 }
 
 fn not_found_locale(lang: String) -> Template {
@@ -400,7 +372,6 @@ fn render_production(lang: String) -> Template {
 }
 
 fn render_sponsors(lang: String) -> Template {
-    println!("foo");
     let page = "sponsors/index".to_string();
     let context = Context::new(
         page.clone(),
@@ -499,14 +470,8 @@ fn main() {
                 sponsors_locale,
                 subject_locale,
                 components_locale,
-                redirect,
-                redirect_pdfs,
-                redirect_bare_en_us,
-                redirect_bare_locale,
-                redirect_en_us,
-                redirect_locale
             ],
         )
-        .register(catchers![not_found, catch_error])
+        .register(catchers![redirect_or_not_found, catch_error])
         .launch();
 }
