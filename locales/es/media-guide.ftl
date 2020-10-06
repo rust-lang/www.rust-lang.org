@@ -9,15 +9,12 @@ policies-media-guide-page-title = Guía multimedia
 ## Art license
 
 media-guide-art-license-heading = Licencia del material gráfico
-media-guide-art-license-description =
-    <p>(Esta es una traducción de los <a href="https://www.rust-lang.org/policies/media-guide/en-US">términos de licencia originales</a> en inglés, con mero carácter informativo.)</p>
-    <p>Los logos de Rust y Cargo (rasterizados y vectoriales) son propiedad de Mozilla y se distribuyen bajo los términos de la <a href="https://creativecommons.org/licenses/by/4.0/">licencia Creative Commons Attribution (CC-BY)</a>. Esta es la licencia Creative Commons más permisiva, y permite la reutilización o modificación para cualquier propósito. Se aplica la restricción de que quien los distribuye debe "atribuirlos apropiadamente, proporcionar un enlace a la licencia e indicar si se han hecho cambios". <strong>Nótese que estos logos y los términos Rust y Cargo también son marcas registradas; nuestra política de marca se describe más abajo</strong>.</p>
+media-guide-art-license-description = <p>Los logos de Rust y Cargo (rasterizados y vectoriales) son propiedad de Mozilla y se distribuyen bajo los términos de la <a href="https://creativecommons.org/licenses/by/4.0/">licencia Creative Commons Attribution (CC-BY)</a>. Esta es la licencia Creative Commons más permisiva, y permite la reutilización o modificación para cualquier propósito. Se aplica la restricción de que quien los distribuye debe "atribuirlos apropiadamente, proporcionar un enlace a la licencia e indicar si se han hecho cambios". <strong>Nótese que estos logos y los términos Rust y Cargo también son marcas registradas; nuestra política de marca se describe más abajo</strong>.</p>
 
 ## Trademark policy
 
 media-guide-trademark-policy-heading = Política de marcas registradas
 media-guide-trademark-policy-description =
-    <p>(Esta es una traducción de la <a href="https://www.rust-lang.org/policies/media-guide/en-US">política de marca original</a> en inglés, con mero carácter informativo.)</p>
     <p>Los términos y marcas Rust y Cargo regulan qué es oficialmente parte de la comunidad de Rust y qué no lo es. Por lo tanto, somos cuidadosos con dónde autorizamos que aparezcan. Al mismo tiempo, queremos permitir tanto uso creativo de estas marcas como podamos. La política aquí detallada explica como alcanzamos un equilibrio. Si quieres usar estos términos o marcas, en especial si es de manera comercial, lee esta página, ¡o <a href="mailto:trademark@rust-lang.org">contáctanos</a> y pregúntanos!</p>
     <p><b>En resumen:</b> la mayoría de usos de los términos y logos de Rust y Cargo están permitidos y no requieren autorización; la mayoría de usos comerciales requieren autorización. En ambos casos, la regla más importante es que el uso de estas marcas no puede parecer oficial o sugerir el apoyo oficial del proyecto Rust.</p>
     <p>Si tienes dudas sobre si tu caso de uso de la marca registrada de Rust requiere autorización, contáctanos en { EMAIL("trademark@rust-lang.org") }.</p>
@@ -27,7 +24,6 @@ media-guide-trademark-policy-description =
 
 media-guide-rust-trademarks-heading = Las marcas registradas de Rust
 media-guide-rust-trademarks-description =
-    <p>(Esta es una traducción de la <a href="https://www.rust-lang.org/policies/media-guide/en-US">política de marca original</a> en inglés, con mero carácter informativo.)</p>
     <p>El lenguaje de programación Rust es un proyecto comunitario de código abierto gobernado por el equipo <em>core</em>. Está además patrocinado por la Fundación Mozilla ("Mozilla"), que posee y protege las marcas registradas y logos de Rust y Cargo (las "marcas registradas de Rust"). Este documento proporciona información sobre el uso de las marcas registradas de Rust para un lenguaje de programación, así como ejemplos de maneras habituales en las que se podría querer hacer uso de estas marcas, así como explicaciones sobre si esos usos requieren o no autorización. Este documento complementa a la <a href="https://www.mozilla.org/foundation/trademarks/policy/">política oficial de marcas registradas de Mozilla</a> que regula el uso de todas aquellas.</p>
     <p>Las marcas registradas de Rust incluyen dos marcas y dos logos:</p>
     <ul>

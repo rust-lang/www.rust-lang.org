@@ -6,8 +6,6 @@
 policies-code-of-conduct-page-title = Código de conducta
 coc-conduct-heading = Conducta
 coc-conduct-description =
-    <p>(Esta es una traducción meramente informativa de la <a href="">página original</a> en inglés, que contiene la política oficial del proyecto).</p>
-    
     <ul>
       <li>Nos comprometemos a proporcionar un entorno seguro, positivo y acogedor para todos, independientemente de su nivel de experiencia, identidad y expresión de género, orientación sexual, discapacidad, apariencia personal, tamaño corporal, raza, etnia, edad, religión, nacionalidad u otra característica similar.</li>
       <li>Evita el uso de apodos abiertamente sexuales u otros alias que puedan dificultar un entorno seguro, positivo y acogedor para todos.</li>
@@ -22,8 +20,6 @@ coc-conduct-description-team-anchor-text = Equipo de moderación de Rust
 coc-conduct-email-button = Contacta con el equipo de moderación
 coc-moderation-heading = Moderación
 coc-moderation-description =
-    <p>(Esta es una traducción meramente informativa de la <a href="">página original</a> en inglés, que contiene la política oficial del proyecto).</p>
-    
     <p>Estas son las políticas para hacer valer los estándares de conducta de nuestra comunidad. Si crees que un hilo necesita ser moderado, contacta con el { $coc-rust-moderation-team-anchor }.</p>
     <ol>
       <li>Los comentarios que violen los estándares de conducta de Rust, incluyendo comentarios hirientes, opresivos, exclusivos o de odio, no están permitidos. (Las imprecaciones están permitidas, pero nunca contra otro usuario y nunca con contenido de odio).</li>
