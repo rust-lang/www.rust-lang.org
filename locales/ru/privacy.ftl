@@ -26,6 +26,22 @@ policies-privacy-page-rust-lang-org-desc =
         Когда вы посещаете rust-lang.org, мы получаем ваш IP адрес как часть стандартных журналов регистрации сервера. Мы храним эти журналы 1 год.
       </dd>
     </dl>
+policies-privacy-page-docs-rs-desc--2020-09 =
+    <p>
+      <a href="https://docs.rs">Docs.rs</a> управляется участниками
+      <a href="{ $baseurl }/governance/teams/dev-tools#docs-rs">команды docs.rs</a>
+      и <a href="{ $baseurl }/governance/teams/core">Rust Core Team</a>.
+    </p>
+    
+    <dl>
+      <dt>Журнал посещений:</dt>
+      <dd>
+        <p>
+          Когда вы посещаете docs.rs, мы получаем ваш IP адрес как часть 
+          стандартных журналов регистрации сервера. Мы храним эти журналы 1 год. 
+        </p>
+      </dd>
+    </dl>
 policies-privacy-page-forums-title = Форумы
 policies-privacy-page-forums-desc =
     <p>
