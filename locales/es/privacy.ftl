@@ -6,8 +6,6 @@
 policies-privacy-page-title = Aviso de privacidad de Rust
 policies-privacy-page-version = <p>Versión { $version }, con fecha <time datetime="{ $date }">{ $date }</time>.</p>
 policies-privacy-page-intro =
-    <p>(Esta es una traducción del <a href="/en/policies/privacy">aviso de privacidad original en inglés</a>, con mero carácter informativo.)</p>
-    
     <p>
       El proyecto Rust Project supervisa una serie de sitios web, incluyendo el
       <a href="{ $baseurl }/">website de Rust</a>,
@@ -29,7 +27,7 @@ policies-privacy-page-rust-lang-org-desc =
         dichos logs durante 1 año.
       </dd>
     </dl>
-policies-privacy-page-crates-io-desc =
+policies-privacy-page-crates-io-desc--2020-09 =
     <p>
       <a href="https://crates.io">Crates.io</a> lo administran los equipos de
       <a href="{ $baseurl }/governance/teams/crates-io">crates.io</a> y
@@ -92,8 +90,21 @@ policies-privacy-page-crates-io-desc =
           pueden verse al final de la página de cada <em>crate</em>.
         </p>
       </dd>
+    
+      <dt>Monitorización de errores:</dt>
+      <dd>
+        <p>
+          Crates.io utiliza Sentry, un servicio de monitorización de errores, para
+          ayudar al equipo de Rust a descubrir y mejorar el rendimiento del código.
+          Cuando se produce un error, Sentry recibe información básica de cómo has
+          interaccionado en el sitio web y las acciones que lo causaron. Además,
+          tu dirección IP puede ser revelada a Sentry como parte del parte de error,
+          pero lo hemos configurado para que sea borrada inmediatamente.
+          <a href="https://sentry.io/privacy/">Política de privacidad de Sentry</a>.
+        </p>
+      </dd>
     </dl>
-policies-privacy-page-docs-rs-desc =
+policies-privacy-page-docs-rs-desc--2020-09 =
     <p>
       <a href="https://docs.rs">Docs.rs</a> lo administran el
       <a href="{ $baseurl }/governance/teams/dev-tools#rustdoc">equipo de Rustdoc</a>
@@ -101,13 +112,16 @@ policies-privacy-page-docs-rs-desc =
       El proyecto recolecta y usa datos tal y como se describe en este aviso de privacidad.
     </p>
     
-    <p>
-      Docs.rs es un proyecto open source que hospeda documentación de <em>crates</em>
-      para el lenguaje de programación Rust. Este genera la documentación de <em>crates</em>
-      subidas a <a href="https://crates.io">crates.io</a> usando la versión <em>nightly</em>
-      del compilador de Rust. Toda la información de <em>crates</em> publicada en docs.rs
-      también está disponible públicamente en crates.io.
-    </p>
+    <dl>
+      <dt>Registros de visitas:</dt>
+      <dd>
+        <p>
+          Cuando visitas docs.rs, recibimos tu dirección IP y tu cabecera user-agent
+          como parte de nuestro registros de visitas estándar. Guardamos dichos registros
+          durante 1 año.
+        </p>
+      </dd>
+    </dl>
 policies-privacy-page-forums-title = Foros
 policies-privacy-page-forums-desc =
     <p>

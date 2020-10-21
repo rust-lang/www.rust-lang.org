@@ -236,12 +236,16 @@ fn sponsors_locale(locale: SupportedLocale) -> Template {
 }
 
 #[get("/<category>/<subject>", rank = 4)]
-fn subject(category: Category, subject: String) -> Template {
+fn subject(category: Category, subject: String) -> Result<Template, Status> {
     render_subject(category, subject, ENGLISH.into())
 }
 
 #[get("/<locale>/<category>/<subject>", rank = 14)]
-fn subject_locale(category: Category, subject: String, locale: SupportedLocale) -> Template {
+fn subject_locale(
+    category: Category,
+    subject: String,
+    locale: SupportedLocale,
+) -> Result<Template, Status> {
     render_subject(category, subject, locale.0)
 }
 
@@ -400,7 +404,6 @@ fn render_production(lang: String) -> Template {
 }
 
 fn render_sponsors(lang: String) -> Template {
-    println!("foo");
     let page = "sponsors/index".to_string();
     let context = Context::new(
         page.clone(),
@@ -457,12 +460,24 @@ fn render_team(
     }
 }
 
-fn render_subject(category: Category, subject: String, lang: String) -> Template {
+fn render_subject(category: Category, subject: String, lang: String) -> Result<Template, Status> {
+    // Rocket's Template::render method is not really designed to accept arbitrary templates: if a
+    // template is missing, it just returns a Status::InternalServerError, without a way to
+    // distinguish it from a syntax error in the template itself.
+    //
+    // To work around the problem we check whether the template exists beforehand.
+    let path = Path::new("templates")
+        .join(category.name())
+        .join(format!("{}.hbs", subject));
+    if !path.is_file() {
+        return Err(Status::NotFound);
+    }
+
     let page = format!("{}/{}", category.name(), subject.as_str());
     let title_id = format!("{}-{}-page-title", category.name(), subject);
     let context = Context::new(subject, &title_id, false, (), lang);
 
-    Template::render(page, &context)
+    Ok(Template::render(page, &context))
 }
 
 fn main() {
