@@ -447,7 +447,7 @@ fn render_team(
             if err.is::<teams::TeamNotFound>() {
                 match (section.as_str(), team.as_str()) {
                     // Old teams URLs
-                    ("teams", "language-and-compiler") => {
+                    ("teams", "language-and-compiler") | ("teams", "operations") => {
                         Err(Ok(Redirect::temporary("/governance")))
                     }
                     _ => Err(Err(Status::NotFound)),
