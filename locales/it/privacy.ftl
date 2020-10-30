@@ -27,88 +27,95 @@ policies-privacy-page-rust-lang-org-desc =
         dei log standard dei nostri server. Salviamo questi log per 1 anno.
       </dd>
     </dl>
-policies-privacy-page-crates-io-desc =
+policies-privacy-page-crates-io-desc--2020-09 =
     <p>
-      <a href="https://crates.io">Crates.io</a> é gestito dai membri dei team
-      <a href="{ $baseurl }/governance/teams/crates-io">Crates.io</a> e
-      <a href="{ $baseurl }/governance/teams/core">Rust core</a>.
+      <a href="https://crates.io">Crates.io</a> è gestito dai membri del
+      <a href="{ $baseurl }/governance/teams/crates-io">Crates.io</a> e dei
+      <a href="{ $baseurl }/governance/teams/core">Rust core</a> team.
     </p>
     
     <dl>
-      <dt>Login da GitHub:</dt>
+      <dt>Accesso tramite GitHub:</dt>
       <dd>
         <p>
-          Crates.io richiede agli utenti di avere un
-          <a href="https://github.com">account GitHub</a>
-          per effettuare il login e accedere al servizio. Quando effettui il login su Crates.io
-          usando un account GitHub, riceviamo il tuo username e avatar GitHub. Se
-          condividi un nome o un indirizzo email pubblico nel tuo profilo GitHub,
-          riceviamo anche quelle informazioni.
+          Crates.io richiede agli utenti di loggarsi tramite un
+          <a href="https://github.com">GitHub account</a>
+          per usare il servizio. Quando fai login in Crates.io
+          tramite un account GitHub riceviamo il tuo GitHub username e avatar.
+          Se condividi un nome e un indirizzo pubblico nel tuo profilo GitHub,
+          riceviamo anche questi.
         </p>
       </dd>
     
       <dt>Indirizzi email:</dt>
       <dd>
         <p>
-          Devi avere un indirizzo email verificato per pubblicare un crate. Riceviamo
-         qualsiasi indirizzo email pubblico sia associato al tuo account GitHub. Puoi
-          anche scegliere di impostare un indirizzo differente da associare alle tue
-          attività su Crates.io. Usiamo il tuo indirizzo email esclusivamente per comunicazioni
-          riguardanti il tuo account.
+          Per poter pubblicare un crate occorre un indirizzo email verificato.
+          Crates.io riceve già un eventual tuo indirizzo email pubblico del tuo
+          profilo GitHub. Puoi decidere di utilizzare un altro indirizzo email
+          da associare a Crates.io. Ti contattero su questo indirizzo email soltanto
+          per motivi riguardanti il tuo account.
         </p>
       </dd>
     
       <dt>Log delle visite:</dt>
       <dd>
         <p>
-          Quando visiti il sito web Crates.io, riceviamo il tuo indirizzo IP e l'header user-agent
-          come parte dei log standard dei nostri server. Salviamo questi log per 1
-          anno.
+          Quando visiti il sito docs.rs riceviamo il tuo indirizzo IP e l'header User-Agent in quanto parte dei nostri log standard. Conserviamo questi log per un anno.
         </p>
       </dd>
     
-      <dt>Dati caricati nei crate:</dt>
+      <dt>Informazioni caricate insieme al crate:</dt>
       <dd>
         <p>
-          Tutte i crate presenti in Crates.io sono pubblici, inclusa la lista degli username dei proprietari del crate e la data in cui é stato caricato. Chiunque può vedere o scaricare
-          i contenuti di un crate. Poiché Crates.io é pubblico, qualsiasi
-          dato personale incluso nel file Cargo.toml caricato in una
-          crate sarà altrettanto pubblico. Per esempio, se un indirizzo email
-          é nel campo 'authors' del file Cargo.toml, quell'indirizzo email
-          sarà reso pubblico.
+          Tutte le informazioni su Crates.io sono pubbliche, inclusa la lista dei
+          crate e data di upload. Chiunque puo' vedere o scaricare il contenuto di
+          un crate. Poiché Crates.io é pubblico, qualunque dato personale incluso nel
+          file Cargo.toml sarà di conseguenza pubblico. Ad esempio, se c'è un indirizzo email
+          nel campo `authors` del Cargo.toml, quell'indirizzo email sarà anch'esso pubblico.
         </p>
         <p>
-          Per la sua natura pubblica, fai attenzione quando includi informazioni
-          private in un crate, potrebbero essere indicizzate dai motori
-          di ricerca oppure usate da parti terze. Informazioni sensibili non andrebbero
-          incluse in un file all'interno del crate.
+          Data la natura pubblica di un crate, ricorda che qualunque informazione
+          privata che potrebbe essere in un crate viene indicizzata da motori di ricerca
+          o usata da terze parti. Informazioni sensibili non dovrebbero esser incluse in un crate.
         </p>
       </dd>
     
-      <dt>Publicazione di dati relativi al sito: </dt>
+      <dt>Pubblicazione di dati relativi al sito: </dt>
       <dd>
         <p>
-          Crates.io usa le Google Visualization API per create i grafici per ogni
-          crate visualizzando i download degli ultimi 90 giorni. Questi grafici possono essere
-          visualizzati in basso nella pagina di ogni crate.
+          Crates.io utilizza le Google Visualization API per creare grafici dei download degli ultimi 
+          90 giorni per ogni crate. Questi grafici possono essere visti in fondo alla pagina di ciascun crate.
+        </p>
+      </dd>
+    
+      <dt>Monitoring degli errori:</dt>
+      <dd>
+        <p>
+          Crates.io utilizza Sentry, un servizio di monitoraggio degli errori, per
+          aiutare il team a trovare e sistemare problemi di performance. Quando si verifica un errore
+          Sentry riceve informazioni di base su come hai interagito col sito e le azioni
+          che hanno causato l'errore. Inoltre. il tuo indirizzo IP puo' essere comunicato a Sentry in
+          quanto parte del processo di reporting. Abbiamo tuttavia configurato Sentry affinché cancelli
+          questo dato non appena ricevuto. Qui puoi leggere la <a href="https://sentry.io/privacy/">Privacy Policy</a> di Sentry.
         </p>
       </dd>
     </dl>
-policies-privacy-page-docs-rs-desc =
+policies-privacy-page-docs-rs-desc--2020-09 =
     <p>
-      <a href="https://docs.rs">Docs.rs</a> é gestito dai membri del
-      <a href="{ $baseurl }/governance/teams/dev-tools#rustdoc">Rustdoc team</a>
-      e del <a href="{ $baseurl }/governance/teams/core">Rust core team</a>. Il
-      progetto raccoglie e usa i dati come descritto in questa informativa sulla privacy.
+      <a href="https://docs.rs">Docs.rs</a> è gestito dai membri del
+      <a href="{ $baseurl }/governance/teams/dev-tools#docs-rs">docs.rs team</a>
+      e del <a href="{ $baseurl }/governance/teams/core">Rust core team</a>.
     </p>
     
-    <p>
-      Docs.rs é un progetto open-source per l'hosting della documentazione dei crate per il
-      linguaggio di programmazione Rust. Genera automaticamente la documentazione dei crate
-      pubblicati su <a href="https://crates.io">crates.io</a> usando la release nightly
-      del compilatore Rust. Tutte le informazioni dei crate che sono
-      pubblicate su docs.rs sono anche pubblicamente disponibili su crates.io.
-    </p>
+    <dl>
+      <dt>Log delle visite:</dt>
+      <dd>
+        <p>
+          Quando visiti il sito docs.rs riceviamo il tuo indirizzo IP e l'header User-Agent in quanto parte dei nostri log standard. Conserviamo questi log per un anno.
+        </p>
+      </dd>
+    </dl>
 policies-privacy-page-forums-title = Forum
 policies-privacy-page-forums-desc =
     <p>
