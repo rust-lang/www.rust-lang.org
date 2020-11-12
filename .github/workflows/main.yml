@@ -7,14 +7,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
       - name: Formatting
         run: |
           # Install extra rustup components
           rustup component add rustfmt
           cargo fmt --all -- --check
+
       - name: Correct Nightly Version
         # Ensure everything is run and tested with the same nightly version
         run: ci/check-nightly-version.sh
+
       - name: Test
         run: |
           set -euo pipefail
@@ -22,3 +25,6 @@ jobs:
           # Check if the code is good
           cargo build --all --locked
           cargo test --all --locked
+
+      - name: Build the Docker image
+        run: docker build -t website .
