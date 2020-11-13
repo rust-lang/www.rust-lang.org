@@ -1,3 +1,4 @@
+use handlebars::{Context, Handlebars, Helper, HelperResult, Output, RenderContext, RenderError};
 use percent_encoding::{utf8_percent_encode, AsciiSet, NON_ALPHANUMERIC};
 use rust_team_data::v1::{Team, TeamKind, Teams, BASE_URL};
 use std::any::Any;
@@ -99,21 +100,11 @@ impl Data {
             .into_iter()
             .filter(|team| team.website_data.is_some())
             .filter(|team| team.subteam_of.as_ref() == Some(&main_team.name))
-            .for_each(|mut team| {
-                // https://github.com/zulip/zulip/blob/159641bab8c248f5b72a4e736462fb0b48e7fa24/static/js/hash_util.js#L20-L25
-                let website_data = team.website_data.as_mut().unwrap();
-                website_data.zulip_stream = website_data.zulip_stream.as_ref().map(|stream| {
-                    utf8_percent_encode(&stream, &ENCODING_SET)
-                        .to_string()
-                        .replace('%', ".")
-                });
-
-                match team.kind {
-                    TeamKind::Team => subteams.push(team),
-                    TeamKind::WorkingGroup => wgs.push(team),
-                    TeamKind::ProjectGroup => project_groups.push(team),
-                    _ => {}
-                }
+            .for_each(|team| match team.kind {
+                TeamKind::Team => subteams.push(team),
+                TeamKind::WorkingGroup => wgs.push(team),
+                TeamKind::ProjectGroup => project_groups.push(team),
+                _ => {}
             });
 
         Ok(PageData {
@@ -124,6 +115,37 @@ impl Data {
             project_groups,
         })
     }
+}
+
+pub fn encode_zulip_stream(
+    h: &Helper,
+    _: &Handlebars,
+    _: &Context,
+    _: &mut RenderContext,
+    out: &mut dyn Output,
+) -> HelperResult {
+    let zulip_stream = if let Some(p) = h.param(0) {
+        p.value()
+    } else {
+        return Err(RenderError::new(
+            "{{encode-zulip-stream takes 1 parameter}}",
+        ));
+    };
+    let zulip_stream = if let Some(s) = zulip_stream.as_str() {
+        s
+    } else {
+        return Err(RenderError::new(
+            "{{encode-zulip-stream takes a string parameter}}",
+        ));
+    };
+
+    // https://github.com/zulip/zulip/blob/159641bab8c248f5b72a4e736462fb0b48e7fa24/static/js/hash_util.js#L20-L25
+    let stream_encoded = utf8_percent_encode(zulip_stream, &ENCODING_SET)
+        .to_string()
+        .replace('%', ".");
+
+    out.write(&stream_encoded)?;
+    Ok(())
 }
 
 pub fn index_data() -> Result<IndexData, Box<dyn Error>> {
@@ -264,7 +286,7 @@ mod tests {
             .website_data
             .as_ref()
             .and_then(|site| site.zulip_stream.as_deref());
-        assert_eq!(zulip_stream, Some("t-compiler.2Fwg-rls-2.2E0"));
+        assert_eq!(zulip_stream, Some("t-compiler/wg-rls-2.0"));
     }
 
     #[test]
