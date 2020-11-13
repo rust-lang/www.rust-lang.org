@@ -286,7 +286,7 @@ mod tests {
             .website_data
             .as_ref()
             .and_then(|site| site.zulip_stream.as_deref());
-        assert_eq!(zulip_stream, Some("t-compiler.2Fwg-rls-2.2E0"));
+        assert_eq!(zulip_stream, Some("t-compiler/wg-rls-2.0"));
     }
 
     #[test]
