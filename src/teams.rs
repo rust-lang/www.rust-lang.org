@@ -100,13 +100,11 @@ impl Data {
             .into_iter()
             .filter(|team| team.website_data.is_some())
             .filter(|team| team.subteam_of.as_ref() == Some(&main_team.name))
-            .for_each(|team| {
-                match team.kind {
-                    TeamKind::Team => subteams.push(team),
-                    TeamKind::WorkingGroup => wgs.push(team),
-                    TeamKind::ProjectGroup => project_groups.push(team),
-                    _ => {}
-                }
+            .for_each(|team| match team.kind {
+                TeamKind::Team => subteams.push(team),
+                TeamKind::WorkingGroup => wgs.push(team),
+                TeamKind::ProjectGroup => project_groups.push(team),
+                _ => {}
             });
 
         Ok(PageData {
@@ -119,22 +117,26 @@ impl Data {
     }
 }
 
-pub fn encode_zulip_stream (
+pub fn encode_zulip_stream(
     h: &Helper,
     _: &Handlebars,
     _: &Context,
     _: &mut RenderContext,
-    out: &mut dyn Output
+    out: &mut dyn Output,
 ) -> HelperResult {
     let zulip_stream = if let Some(p) = h.param(0) {
         p.value()
     } else {
-        return Err(RenderError::new("{{encode-zulip-stream takes 1 parameter}}"))
+        return Err(RenderError::new(
+            "{{encode-zulip-stream takes 1 parameter}}",
+        ));
     };
     let zulip_stream = if let Some(s) = zulip_stream.as_str() {
         s
     } else {
-        return Err(RenderError::new("{{encode-zulip-stream takes a string parameter}}"))
+        return Err(RenderError::new(
+            "{{encode-zulip-stream takes a string parameter}}",
+        ));
     };
 
     // https://github.com/zulip/zulip/blob/159641bab8c248f5b72a4e736462fb0b48e7fa24/static/js/hash_util.js#L20-L25
