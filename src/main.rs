@@ -34,6 +34,7 @@ mod sponsors;
 mod teams;
 
 use production::User;
+use teams::encode_zulip_stream;
 
 use std::collections::hash_map::DefaultHasher;
 use std::env;
@@ -488,6 +489,9 @@ fn main() {
         engine
             .handlebars
             .register_helper("team-text", Box::new(TeamHelper::new()));
+        engine
+            .handlebars
+            .register_helper("encode-zulip-stream", Box::new(encode_zulip_stream));
     });
 
     rocket::ignite()
