@@ -13,9 +13,9 @@ fluent-locale = "0.10.1"
 handlebars-fluent = "0.2.0"
 rand = "0.7"
 regex = "1"
-rocket = "0.4.5"
+rocket = "0.4.6"
 serde = { version = "1.0", features = ["derive"] }
-serde_yaml = "0.8.13"
+serde_yaml = "0.8.14"
 sass-rs = "0.2.1"
 reqwest = { version = "0.10.8", features = ["blocking", "json"] }
 toml = "0.5"

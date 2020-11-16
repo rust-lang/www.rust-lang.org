@@ -46,6 +46,14 @@ install-notes-rustup-description =
     <p>
     より詳しい情報は<a href="https://github.com/rust-lang/rustup.rs/blob/master/README.md"><code>rustup</code>のドキュメント</a>を参照してください。
     </p>
+install-notes-uninstall-heading = Rustをアンインストールする
+install-notes-uninstall-description =
+    <p>
+      Rustをアンインストールしたくなったときは、
+      <code>rustup self uninstall</code>
+      を実行することでいつでもアンインストールできます。
+      寂しいですけどね！
+    </p>
 install-notes-path-heading = <code>PATH</code>環境変数を設定する
 install-notes-path-description =
      <p>
