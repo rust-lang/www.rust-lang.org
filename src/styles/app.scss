@@ -592,10 +592,6 @@ blockquote::before {
   width: 1px;
 }
 
-.flex-grow {
-  flex-grow: 1;
-}
-
 .flex {
   &.vertical {
     flex-direction: column;
@@ -604,10 +600,6 @@ blockquote::before {
   &.space-around {
     justify-content: space-around;
   }
-}
-
-.flex-no-shrink {
-  flex-shrink: 0;
 }
 
 .install-details {
