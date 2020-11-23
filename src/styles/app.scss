@@ -528,13 +528,10 @@ blockquote::before {
   object-fit: none;
 }
 
-#embedded-project-gallery {
+#embedded-showcase-gallery {
   iframe {
     width: 100%;
     height: 250px;
-  }
-  .button.button-secondary {
-    color: $yellow;
   }
 }
 
