@@ -47,6 +47,13 @@ install-notes-rustup-description =
       <a href="https://github.com/rust-lang/rustup.rs/blob/master/README.md">
       documentation de <code>rustup</code></a>.
     </p>
+install-notes-uninstall-heading = Désinstaller Rust
+install-notes-uninstall-description =
+    <p>
+      Si jamais vous voulez désinstaller Rust, vous pouvez exécuter
+      <code>rustup self uninstall</code>.
+      Mais vous nous manquerez !
+    </p>
 install-notes-path-heading = Configuration de la variable d’environnement <code>PATH</code>
 install-notes-path-description =
     <p>
@@ -85,7 +92,6 @@ install-other-methods-link = En apprendre plus
 ## components/tools/rustup.hbs
 
 tools-rustup-unixy = Il semblerait que vous utilisez macOS, Linux ou un autre OS de type UNIX. Pour télécharger Rustup et installer Rust, exécutez la commande suivante dans votre terminal, puis suivez les instructions à l'écran.
-tools-rustup-windows = Il semblerait que vous utilisez Windows. Pour installer Rust, téléchargez et exécutez le fichier suivant, puis suivez les instruction à l'écran.
 tools-rustup-wsl-heading = Sous-système Windows pour Linux
 tools-rustup-wsl = Si vous êtes un utilisateur du sous-système Windows pour Linux, exécutez la commande suivante dans votre terminal, puis suivez les instructions à l'écran.
 tools-rustup-unknown = Rust fonctionne sur Windows, Linux, macOS, FreeBSD et NetBSD. Si vous êtes sur une de ces plateformes et voyez ceci, veuillez rapporter une erreur avec les valeur suivantes :
