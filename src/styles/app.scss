@@ -151,14 +151,14 @@ section {
   padding: 30px 0 60px 0;
 
   header {
-    padding: 30px 0 60px 0;
+    padding: 10px 0 30px 0;
     display: inline-block;
 
     h2 {
       margin: 0;
       padding: 0;
       letter-spacing: 1px;
-      font-size: 4.2rem;
+      font-size: 3rem;
       line-height: 1.25;
     }
   }
@@ -571,16 +571,6 @@ blockquote::before {
       font-size: 2.5rem;
       line-height: 1.1;
     }
-  }
-}
-
-section header {
-  padding: {
-    top: 10px;
-    bottom: 30px;
-  }
-  h2 {
-    font-size: 3rem;
   }
 }
 
