@@ -37,11 +37,6 @@ body {
   }
 }
 
-#ferris img {
-  display: block;
-  margin: 0 auto;
-}
-
 code {
   padding: 0.2rem 0.5rem;
   margin: 0 0.2rem;
@@ -57,8 +52,7 @@ pre > code {
   white-space: pre;
 }
 
-.button,
-button {
+.button {
   display: inline-block;
   width: 100%;
   min-height: 38px;
@@ -195,10 +189,6 @@ ol {
   padding-left: 1.5em;
 }
 
-section .container {
-  padding-top: 20px;
-}
-
 .nav a {
   color: $gray;
 }
@@ -330,15 +320,6 @@ h3 {
   font-weight: 600;
   font-size: 1.5em;
   letter-spacing: normal;
-}
-
-.get-involved .code {
-  padding-top: 20px;
-}
-
-.get-involved .media {
-  padding-bottom: 20px;
-  border-bottom: 1px dotted white;
 }
 
 .highlight {
@@ -481,10 +462,6 @@ blockquote::before {
   text-align: center;
 }
 
-#learn-more .columns:first-of-type {
-  border-right: 1px black dotted;
-}
-
 #learn-begin {
   p:first-of-type {
     padding-bottom: 20px;
@@ -498,12 +475,6 @@ blockquote::before {
   }
   .domain {
     text-align: center;
-  }
-}
-
-#security-learn-community-key {
-  pre {
-    color: black;
   }
 }
 
@@ -523,11 +494,6 @@ blockquote::before {
   margin-right: 10px;
 }
 
-.tools-row #tools-write-ide-img {
-  flex: none;
-  object-fit: none;
-}
-
 #embedded-showcase-gallery {
   iframe {
     width: 100%;
@@ -535,16 +501,7 @@ blockquote::before {
   }
 }
 
-#embedded-users {
-  img {
-    width: 80%;
-    background-color: white;
-    padding: 20px;
-  }
-}
-
-#cli-pitch,
-#cli-features {
+#cli-pitch {
   .domain-icon {
     display: block;
     padding-bottom: 0;
@@ -559,15 +516,6 @@ blockquote::before {
       padding-bottom: 1em;
       opacity: 0.9;
     }
-  }
-}
-
-#cli-features {
-  h3 code {
-    background-color: transparent;
-    border: none;
-    word-break: break-word;
-    white-space: pre-line;
   }
 }
 
@@ -592,15 +540,6 @@ blockquote::before {
   width: 1px;
 }
 
-.flex {
-  &.vertical {
-    flex-direction: column;
-  }
-
-  &.space-around {
-    justify-content: space-around;
-  }
-}
 
 .install-details {
   background-color: rgba(white, 0.15);
@@ -609,10 +548,6 @@ blockquote::before {
   padding: 0.2rem 0.5rem;
   margin: 0 0.2rem;
   border-radius: 4px;
-}
-
-#language-values span {
-  font-weight: 600;
 }
 
 @media screen and (max-width: 769px) {
@@ -636,12 +571,6 @@ blockquote::before {
       font-size: 2.5rem;
       line-height: 1.1;
     }
-
-    .button.button-primary.button-download {
-      padding: 5px;
-      font-size: 1.5em;
-      margin-top: 20px;
-    }
   }
 }
 
@@ -655,60 +584,12 @@ section header {
   }
 }
 
-.team {
-  text-align: center;
-  padding: 20px;
-  margin: 20px;
-  position: relative;
-  border: 1px solid white;
-  .button {
-    position: absolute;
-    bottom: 5px;
-    width: 80%;
-  }
-  h4 {
-    font-size: 1.5em;
-    font-weight: 600;
-  }
-}
-
-.group-member {
-  float: left;
-  .name {
-    display: block;
-    font-weight: 600;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-  }
-}
-
-.subteam {
-  margin: 20px 0;
-  width: 100%;
-  content: "";
-  display: table;
-  clear: both;
-  border: 1px white solid;
-  padding: 20px;
-}
-
 .testimonial {
   display: flex;
   align-items: center;
 
   @media only screen and (max-width: 545px) {
     display: block;
-  }
-}
-
-.flash {
-  width: 100%;
-  font-size: 1em;
-  padding: 0;
-  margin: 0;
-  h3 {
-    text-align: center;
   }
 }
 
