@@ -55,6 +55,7 @@ code {
 pre > code {
   display: block;
   white-space: pre;
+  width: 100%;
 }
 
 .button,
@@ -722,10 +723,6 @@ section header {
 
 .download-link {
   color: $link-color;
-}
-
-#pb4 {
-  padding-bottom: 3.8em;
 }
 
 .max-height-5rem {
