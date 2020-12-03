@@ -17,7 +17,7 @@ embedded-learn-more = Começando com Embarcados
 
 ## components/layout.hbs
 
-meta-description = Uma linguagem empoderando qualquer pessoa a construir software confiável e eficiente.
+meta-description = Uma linguagem capacitando qualquer pessoa a construir software confiável e eficiente.
 page-title = { $pagename } - Linguagem de Programação Rust
 index-title = A linguagem de programação Rust
 
