@@ -102,6 +102,7 @@ governance-team-wg-mir-opt-description = Écrire des optimisations pour MIR et r
 governance-team-rust-by-example-name = Rust by Exemple
 governance-team-rust-by-example-description = Maintenir et mettre à jour le livre officiel Rust, "Rust by Exemple"
 governance-team-community-name = Communauté
+governance-team-community-description = Supporter et coordonner des évènements, la création de contenus, le programme RustBridge, et mener des sondages au sein de la communauté
 governance-team-wg-rustup-name = Rustup
 governance-team-wg-rustup-description = Concevoir et implémenter Rustup
 governance-team-wg-rustfmt-name = Rustfmt
