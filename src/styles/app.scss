@@ -53,8 +53,15 @@ pre > code {
   width: 100%;
 }
 
-.buttons {
-  min-height: 100px;
+@media (min-width: 64rem) {
+  .buttons {
+    min-height: 100px;
+  }
+}
+@media (max-width: 64rem) {
+  .buttons {
+    min-height: 0px;
+  }
 }
 
 .button {
@@ -87,10 +94,11 @@ p {
   font-size: 0.8em;
 }
 
-.button.button-additional {
-  margin-top: 5px;
-  font-size: 0.6em;
-  min-height: 23px;
+.button-additional {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  font-size: 0.8em;
 }
 
 code.code-header {
