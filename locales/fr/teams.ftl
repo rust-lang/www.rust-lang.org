@@ -31,6 +31,7 @@ governance-team-wg-compiler-performance-name = Performances du compilateur
 governance-team-wg-compiler-performance-description = Améliorer les performances (temps de compilation) de rustc
 governance-team-community-content-name = Équipe contenu
 governance-team-community-content-description = Faciliter la collecte et le développement du contenu communautaire
+governance-team-wg-async-foundations-name = Fondations de l’async
 governance-team-wg-async-foundations-description = Travailler sur le support de la programmation concurrente dans le cœur du langage et les bibliothèques externes
 governance-team-wg-gamedev-name = Développement de jeux
 governance-team-wg-gamedev-description = Faire de Rust le choix par défaut pour le développement de jeux.
