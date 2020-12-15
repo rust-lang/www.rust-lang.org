@@ -53,6 +53,17 @@ pre > code {
   width: 100%;
 }
 
+@media (min-width: 64rem) {
+  .buttons {
+    min-height: 70px;
+  }
+}
+@media (max-width: 64rem) {
+  .buttons {
+    min-height: 0px;
+  }
+}
+
 .button {
   display: inline-block;
   width: 100%;
@@ -80,6 +91,13 @@ p {
 }
 
 .button.button-secondary {
+  font-size: 0.8em;
+}
+
+.button-additional {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
   font-size: 0.8em;
 }
 

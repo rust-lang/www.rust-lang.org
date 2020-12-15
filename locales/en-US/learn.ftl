@@ -5,6 +5,8 @@ learn-begin = Get started with Rust
 
 learn-book = Affectionately nicknamed “the book,” <cite>The Rust Programming Language</cite> will give you an overview of the language from first principles. You’ll build a few projects along the way, and by the end, you’ll have a solid grasp of the language.
 learn-book-button = Read the Book!
+translated-book = {""}
+translated-book-button = {""}
 learn-rustlings = Alternatively, Rustlings guides you through downloading and setting up the Rust toolchain, and teaches you the basics of reading and writing Rust syntax, on the command line. It's an alternative to Rust by Example that works with your own environment.
 learn-rustlings-button = Do the Rustlings course!
 learn-rbe = If reading multiple hundreds of pages about a language isn’t your style, then Rust By Example has you covered. While the book talks about code with a lot of words, RBE shows off a bunch of code, and keeps the talking to a minimum. It also includes exercises!
