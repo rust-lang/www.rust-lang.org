@@ -37,11 +37,6 @@ body {
   }
 }
 
-#ferris img {
-  display: block;
-  margin: 0 auto;
-}
-
 code {
   padding: 0.2rem 0.5rem;
   margin: 0 0.2rem;
@@ -55,10 +50,21 @@ code {
 pre > code {
   display: block;
   white-space: pre;
+  width: 100%;
 }
 
-.button,
-button {
+@media (min-width: 64rem) {
+  .buttons {
+    min-height: 70px;
+  }
+}
+@media (max-width: 64rem) {
+  .buttons {
+    min-height: 0px;
+  }
+}
+
+.button {
   display: inline-block;
   width: 100%;
   min-height: 38px;
@@ -85,6 +91,13 @@ p {
 }
 
 .button.button-secondary {
+  font-size: 0.8em;
+}
+
+.button-additional {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
   font-size: 0.8em;
 }
 
@@ -157,14 +170,14 @@ section {
   padding: 30px 0 60px 0;
 
   header {
-    padding: 30px 0 60px 0;
+    padding: 10px 0 30px 0;
     display: inline-block;
 
     h2 {
       margin: 0;
       padding: 0;
       letter-spacing: 1px;
-      font-size: 4.2rem;
+      font-size: 3rem;
       line-height: 1.25;
     }
   }
@@ -193,10 +206,6 @@ ul {
 ol {
   list-style: decimal;
   padding-left: 1.5em;
-}
-
-section .container {
-  padding-top: 20px;
 }
 
 .nav a {
@@ -330,15 +339,6 @@ h3 {
   font-weight: 600;
   font-size: 1.5em;
   letter-spacing: normal;
-}
-
-.get-involved .code {
-  padding-top: 20px;
-}
-
-.get-involved .media {
-  padding-bottom: 20px;
-  border-bottom: 1px dotted white;
 }
 
 .highlight {
@@ -481,10 +481,6 @@ blockquote::before {
   text-align: center;
 }
 
-#learn-more .columns:first-of-type {
-  border-right: 1px black dotted;
-}
-
 #learn-begin {
   p:first-of-type {
     padding-bottom: 20px;
@@ -498,12 +494,6 @@ blockquote::before {
   }
   .domain {
     text-align: center;
-  }
-}
-
-#security-learn-community-key {
-  pre {
-    color: black;
   }
 }
 
@@ -523,31 +513,14 @@ blockquote::before {
   margin-right: 10px;
 }
 
-.tools-row #tools-write-ide-img {
-  flex: none;
-  object-fit: none;
-}
-
-#embedded-project-gallery {
+#embedded-showcase-gallery {
   iframe {
     width: 100%;
     height: 250px;
   }
-  .button.button-secondary {
-    color: $yellow;
-  }
 }
 
-#embedded-users {
-  img {
-    width: 80%;
-    background-color: white;
-    padding: 20px;
-  }
-}
-
-#cli-pitch,
-#cli-features {
+#cli-pitch {
   .domain-icon {
     display: block;
     padding-bottom: 0;
@@ -562,15 +535,6 @@ blockquote::before {
       padding-bottom: 1em;
       opacity: 0.9;
     }
-  }
-}
-
-#cli-features {
-  h3 code {
-    background-color: transparent;
-    border: none;
-    word-break: break-word;
-    white-space: pre-line;
   }
 }
 
@@ -595,23 +559,6 @@ blockquote::before {
   width: 1px;
 }
 
-.flex-grow {
-  flex-grow: 1;
-}
-
-.flex {
-  &.vertical {
-    flex-direction: column;
-  }
-
-  &.space-around {
-    justify-content: space-around;
-  }
-}
-
-.flex-no-shrink {
-  flex-shrink: 0;
-}
 
 .install-details {
   background-color: rgba(white, 0.15);
@@ -620,10 +567,6 @@ blockquote::before {
   padding: 0.2rem 0.5rem;
   margin: 0 0.2rem;
   border-radius: 4px;
-}
-
-#language-values span {
-  font-weight: 600;
 }
 
 @media screen and (max-width: 769px) {
@@ -647,61 +590,7 @@ blockquote::before {
       font-size: 2.5rem;
       line-height: 1.1;
     }
-
-    .button.button-primary.button-download {
-      padding: 5px;
-      font-size: 1.5em;
-      margin-top: 20px;
-    }
   }
-}
-
-section header {
-  padding: {
-    top: 10px;
-    bottom: 30px;
-  }
-  h2 {
-    font-size: 3rem;
-  }
-}
-
-.team {
-  text-align: center;
-  padding: 20px;
-  margin: 20px;
-  position: relative;
-  border: 1px solid white;
-  .button {
-    position: absolute;
-    bottom: 5px;
-    width: 80%;
-  }
-  h4 {
-    font-size: 1.5em;
-    font-weight: 600;
-  }
-}
-
-.group-member {
-  float: left;
-  .name {
-    display: block;
-    font-weight: 600;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-  }
-}
-
-.subteam {
-  margin: 20px 0;
-  width: 100%;
-  content: "";
-  display: table;
-  clear: both;
-  border: 1px white solid;
-  padding: 20px;
 }
 
 .testimonial {
@@ -713,22 +602,8 @@ section header {
   }
 }
 
-.flash {
-  width: 100%;
-  font-size: 1em;
-  padding: 0;
-  margin: 0;
-  h3 {
-    text-align: center;
-  }
-}
-
 .download-link {
   color: $link-color;
-}
-
-#pb4 {
-  padding-bottom: 3.8em;
 }
 
 .max-height-5rem {

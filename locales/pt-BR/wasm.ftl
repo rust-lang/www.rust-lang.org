@@ -9,7 +9,7 @@ what-wasm-page-heading = Web&shy;Assembly
 ## Why Rust? (templates/components/what/wasm/pitch.hbs)
 
 wasm-why-rust-predictable-alt = Engrenagens
-wasm-why-rust-predictable-heading = Performance previsível
+wasm-why-rust-predictable-heading = Desempenho previsível
 wasm-why-rust-predictable-description = Sem pausas imprevisíveis pelo <i>Garbage Collector<i>. Sem quedas de performance causadas pelo compilador JIT. Apenas controle de baixo nível acompanhado de ergonomia de alto nível.
 wasm-why-rust-small-code-alt = Um microscópio
 wasm-why-rust-small-code-heading = Código pequeno

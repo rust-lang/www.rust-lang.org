@@ -1,6 +1,6 @@
 ## index.hbs
 
-tagline = Uma linguagem empoderando todos { $linebreak } a construir softwares confiáveis e eficientes.
+tagline = Uma linguagem capacitando todos { $linebreak } a construir softwares confiáveis e eficientes.
 get-started = Comece Agora
 homepage-version = Versão { $number }
 
@@ -17,7 +17,7 @@ production-testimonial-yelp-alt = Logo da Yelp
 
 ## components/panels/language-values.hbs
 
-language-values-performance = Performance
+language-values-performance = Desempenho
 language-values-performance-blurb = Rust é extremamente rápido e gerencia memória eficientemente: sem <i>runtime</i> ou <i>garbage collector</i>, podendo potencializar a performance de serviços críticos, rodar em sistemas embarcados, e facilmente integrar-se a outras linguagens.
 language-values-reliability = Confiabilidade
 language-values-reliability-blurb = O rico sistema de tipos de Rust e seu modelo de <i>ownership</i> garantem segurança de memória e segurança de concorrência &mdash; e permite que você elimine muitas categorias de erros durante a compilação.
@@ -40,7 +40,7 @@ domains-wasm-blurb =
 domains-wasm-alt = engrenagem com elementos de quebra-cabeça
 domains-net = Redes
 domains-net-blurb =
-    Performance previsível. Pouco uso de recursos. Alta confiabilidade.
+    Desempenho previsível. Pouco uso de recursos. Alta confiabilidade.
     Rust é ótimo para serviços de rede.
 domains-net-alt = uma nuvem com vários nós
 domains-embedded = Embarcados

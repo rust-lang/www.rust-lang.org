@@ -26,7 +26,7 @@ embedded-pitch-portability-description = Écrivez une bibliothèque ou un driver
 embedded-pitch-community-alt = Logo Bouclier
 embedded-pitch-community-heading = Géré par la communauté
 embedded-pitch-community-description = Faisant partie intégrante de la communauté Rust open source, le support des systèmes embarqués est assuré par une communauté open source de premier choix.
-embedded-learn-more-link = En apprendre davantage
+embedded-learn-more-link = En savoir plus
 
 ## Showcase (templates/components/what/showcase.hbs)
 
