@@ -7,7 +7,6 @@ community-twir-button = W tym tygodniu w Ruście
 community-team-contact =
     Nie masz pewności gdzie lub komu zadać swoje pytanie? Chcesz się zaangażować ale nie wiesz od czego zacząć?
     Zespół ds. społeczności połączy Cię z kimś kto pomoże znaleźć odpowiedzi na Twoje pytania!
-community-team-button = email { ENGLISH("community@rust-lang.org") }
 community-where = Gdzie rozmawiamy
 community-urlo-header = Forum użytkowników
 community-urlo =

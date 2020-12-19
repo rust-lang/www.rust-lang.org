@@ -3,6 +3,7 @@
 
 ## governance/index.hbs
 
+governance-page-title = Zarządzanie
 governance-tagline = Jak Rust jest tworzony przez swoją społeczność
 governance-roadmap-rfc = Plan rozwoju i proces RFC
 governance-rfc-blurb =

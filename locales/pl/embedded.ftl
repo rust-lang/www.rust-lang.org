@@ -10,6 +10,7 @@ what-embedded-page-title = Urządzenia wbudowane
 
 embedded-pitch-analysis-alt = Mikroskop
 embedded-pitch-analysis-heading = Silna statyczna analiza
+embedded-pitch-analysis-description = Wymuś konfigurację pinów i peryferiów na etapie kompilacji. Upewnij się, że Twoja aplikacja nie będzie zużywała cennych zasobów w nieprzewidziany sposób.
 embedded-pitch-memory-alt = Kostka RAM
 embedded-pitch-memory-heading = Elastyczna pamięć
 embedded-pitch-memory-description = Dynamiczna alokacja pamięci jest opcjonalna. Korzystaj z globalnego alokatora i dynamicznych struktur danych, albo pozbądź się pamięci heap i przydzielaj całą pamięć statycznie.
@@ -19,6 +20,7 @@ embedded-pitch-interop-alt = Uścisk dłoni
 embedded-pitch-interop-heading = Interoperacyjność
 embedded-pitch-portability-alt = Wózek na bagaż
 embedded-pitch-portability-heading = Przenośność
+embedded-pitch-portability-description = Napisz bibliotekę lub sterownik raz, i używaj na różnych systemach, od małych mikrokontrolerów po większe komputery jednopłytkowe.
 embedded-pitch-community-alt = Logo Tarczy
 embedded-pitch-community-heading = Tworzone przez społeczność
 embedded-learn-more-link = Dowiedz się więcej
