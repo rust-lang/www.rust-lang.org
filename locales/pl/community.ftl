@@ -7,6 +7,7 @@ community-twir-button = W tym tygodniu w Ruście
 community-team-contact =
     Nie masz pewności gdzie lub komu zadać swoje pytanie? Chcesz się zaangażować ale nie wiesz od czego zacząć?
     Zespół ds. społeczności połączy Cię z kimś kto pomoże znaleźć odpowiedzi na Twoje pytania!
+community-team-button = napisz do { ENGLISH("community@rust-lang.org") }
 community-where = Gdzie rozmawiamy
 community-urlo-header = Forum użytkowników
 community-urlo =
@@ -51,6 +52,7 @@ community-rustbridge-paris-alt = RustBridge Paryż
 community-rustbridge-berlin-alt = RustBridge Berlin
 community-rustbridge-rbr-alt = RustBridge na Rust Belt Rust
 community-irr-header = Zwiększanie Zasięgu Rusta
+community-irr = Zwiększanie Zasięgu Rusta to program, który paruje członków rozmaitych zespołów projektu Rust z osobami, które są niedostatecznie reprezentowane w ramach społeczności Rusta i szerzej w ramach przemysłu informatycznego. W ramach programu zawiązywana jest tymczasowa współpraca między osobami na czas trzech (3) miesięcy, od maja do sierpnia. Oczekiwany czas poświęcony na współpracę to od 3 do 5 godzin tygodniowo spędzone na pracy nad projektami w Ruście.
 community-irr-button = Odwiedź Witrynę
 community-standards-header = Standardy Społeczności
 community-mod-button = Napisz do zespołu moderacyjnego

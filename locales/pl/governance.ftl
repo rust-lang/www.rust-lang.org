@@ -23,6 +23,7 @@ governance-members = Członkowie i Kontakty
 
 ## governance/group-team.hbs
 
+governance-team-email = Napisz do { $teamname }
 governance-team-repository = repozytorium { $teamname }
 governance-team-discord = { $channel } na Discordzie
 governance-user-github = GitHub: { $link }

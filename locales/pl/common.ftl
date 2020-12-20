@@ -30,6 +30,7 @@ nav-tools = Narzędzia
 nav-governance = Zarządzanie
 nav-community = Społeczność
 nav-blog = Blog
+nav-playground = Playground
 choose-language = Język
 nav-logo-alt = Logo Rusta
 

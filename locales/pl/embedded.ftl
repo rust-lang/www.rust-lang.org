@@ -16,6 +16,7 @@ embedded-pitch-memory-heading = Elastyczna pamięć
 embedded-pitch-memory-description = Dynamiczna alokacja pamięci jest opcjonalna. Korzystaj z globalnego alokatora i dynamicznych struktur danych, albo pozbądź się pamięci heap i przydzielaj całą pamięć statycznie.
 embedded-pitch-concurrency-alt = Zębatki
 embedded-pitch-concurrency-heading = Nieustraszona współbieżność
+embedded-pitch-concurrency-description = Rust uniemożliwia dzielenie stanu pomiędzy wątkami. Bez względu na twoje podejście do współbieżności, Rust utrzymuje swoje gwarancje bezpieczeństwa.
 embedded-pitch-interop-alt = Uścisk dłoni
 embedded-pitch-interop-heading = Interoperacyjność
 embedded-pitch-portability-alt = Wózek na bagaż
@@ -23,6 +24,7 @@ embedded-pitch-portability-heading = Przenośność
 embedded-pitch-portability-description = Napisz bibliotekę lub sterownik raz, i używaj na różnych systemach, od małych mikrokontrolerów po większe komputery jednopłytkowe.
 embedded-pitch-community-alt = Logo Tarczy
 embedded-pitch-community-heading = Tworzone przez społeczność
+embedded-pitch-community-description = Jako część projektu open source, jakim jest Rust, wsparcie dla systemów wbudowanych jest tworzone przez najlepszą w swojej klasie otwartą społeczność, wspieraną dodatkowo przez komercyjnych partnerów.
 embedded-learn-more-link = Dowiedz się więcej
 
 ## Showcase (templates/components/what/showcase.hbs)
@@ -36,11 +38,14 @@ embedded-showcase-video-description = <a href="https://vimeo.com/224912526">Zabe
 ## Get started! (templates/components/what/embedded/get-started.hbs)
 
 embedded-get-started-discovery-book-alt = Paczka DIP-6
+embedded-get-started-discovery-book-heading = Podręcznik "Discovery"
 embedded-get-started-discovery-book-description = Naucz się programowania na systemach wbudowanych od zera &mdash; z Rustem!
 embedded-get-started-embedded-rust-book-alt = Paczka QFP-20
 embedded-get-started-embedded-rust-book-heading = Rust dla Systemów Wbudowanych
 embedded-get-started-embedded-rust-book-description = Znasz już podstawy systemów wbudowanych? Przeskocz na Rusta i przekonaj się ile możesz zyskać.
 embedded-get-started-embedonomicon-alt = paczka BGA
+embedded-get-started-embedonomicon-heading = Embedonomicon
+embedded-get-started-embedonomicon-description = Zobacz, co kryje się pod maską podstawowych bibliotek dla systemów wbudowanych.
 embedded-get-started-read-link = Czytaj
 embedded-get-started-more-documentation-link = Więcej dokumentacji
 
