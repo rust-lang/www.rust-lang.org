@@ -22,6 +22,7 @@ media-guide-rust-trademarks-cargo-img-alt = Logo Cargo
 ## Using the trademarks
 
 media-guide-tm-use-heading = Używanie znaków towarowych
+media-guide-tm-use-appearance-heading = Figurowanie jako podmiot oficjalny, powiązany, lub zatwierdzony
 media-guide-tm-use-basics-heading = Podstawy: odnoszenie się do Rusta/Cargo
 media-guide-tm-use-implicit-approval-heading = Zastosowania, które nie wymagają wyraźnego pozwolenia
 media-guide-tm-use-explicit-approval-heading = Zastosowania, które wymagają wyraźnego pozwolenia

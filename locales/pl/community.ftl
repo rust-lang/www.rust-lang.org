@@ -9,6 +9,7 @@ community-team-contact =
     Zespół ds. społeczności połączy Cię z kimś kto pomoże znaleźć odpowiedzi na Twoje pytania!
 community-team-button = napisz do { ENGLISH("community@rust-lang.org") }
 community-where = Gdzie rozmawiamy
+community-get-in-contact = Skontaktuj się
 community-urlo-header = Forum użytkowników
 community-urlo =
     Forum Użytkowników Rusta jest miejscem gdzie Rustianie mogą swobodnie

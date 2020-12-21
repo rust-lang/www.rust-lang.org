@@ -19,6 +19,7 @@ production-testimonial-yelp-alt = Logo Yelp
 language-values-performance = Wydajność
 language-values-performance-blurb = Rust jest oszałamiająco szybki i wydajny pamięciowo: brak środowiska uruchomieniowego i automatycznego odśmiecania pamięci sprawia, że nadaje się do serwisów, w których najważniejsza jest wydajność, może działać w urządzeniach wbudowanych jak i łatwo integrować się z innymi językami.
 language-values-reliability = Niezawodność
+language-values-reliability-blurb = Bogaty system typowania i nowatorski system zarządzania pamięcią dostępne w Ruscie gwarantują bezpieczeństwo w kwestii pamięci oraz w kwestii wątkowości &mdash; tym samym dając Ci możliwość pozbycia się całych grup błędów już na etapie kompilacji.
 language-values-productivity = Produktywność
 language-values-productivity-blurb = Rust dysponuje znakomitą dokumentacją, przyjaznym kompilatorem z zestawem przydatnych wiadomości o błędach, i super narzędziami &mdash; zintegrowanym menadżerem paczek i narzędziem do budowania projektów, inteligentnym wsparciem językowym z auto-dokańczaniem i inspekcją typów działającym ze wszystkimi edytorami tekstu, narzędzie do automatycznego formatowania, i o wiele więcej.
 

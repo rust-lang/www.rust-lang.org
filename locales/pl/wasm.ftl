@@ -29,4 +29,5 @@ wasm-get-started-mdn-alt = Logo MDN
 
 wasm-production-cloudflare-alt = Logo cloudflare
 wasm-production-mozilla-alt = firefox
+wasm-production-mozilla-attribution = Nick Fitzgerald, <a href="{ $href }">Oxidizing Source Maps with Rust and WebAssembly</a>
 wasm-production-dropbox-alt = dropbox

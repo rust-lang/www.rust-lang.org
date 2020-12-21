@@ -52,8 +52,10 @@ embedded-get-started-more-documentation-link = Więcej dokumentacji
 ## Production use (templates/components/what/embedded/testimonials.hbs)
 
 embedded-testimonials-sensirion-alt = Logo Sensirion
+embedded-testimonials-sensirion-quote = W Sensirion użyliśmy ostatnio Rusta, żeby stworzyć wbudowaną demonstrację dla naszego produktu <a href="https://sensirion-automotive.com/products#PM2_5">Particulate Matter Sensor</a>. Łatwa kompilacja krzyżowa i dostępność wielu wysokiej jakości paczek na crates.io umożliwiły nam <b>szybkie i sprawne zbudowanie naszej demonstracji</b>.
 embedded-testimonials-sensirion-attribution = &ndash; Raphael Nestler, Inżynier Oprogramowania, Sensirion
 embedded-testimonials-airborne-alt = Logo Airborne Engineering Ltd
+embedded-testimonials-airborne-quote = W naszej firmie Airborne Engineering Ltd. użyliśmy ostatnio Rusta do napisania Ethernetowego bootloadera, <a href="https://github.com/airborneengineering/blethrs">blethrs</a>, stanowiącego część naszego wewnętrznego systemu gromadzenia danych. <b>Rust jest bardzo obiecującym językiem programowania, nie możemy doczekać się kolejnych projektów z jego udziałem, nie tylko tych na urządzenia wbudowane.</b>
 embedded-testimonials-airborne-attribution = &ndash; Dr. Adam Greig, Inżynier Instrumentacji, Airborne Engineering Ltd.
 embedded-testimonials-49nord-alt = Logo 49nord
 # "Fluent" requires a square bracket which is the first character of a line to be escaped like this: {"["} See https://projectfluent.org/fluent/guide/special.html
