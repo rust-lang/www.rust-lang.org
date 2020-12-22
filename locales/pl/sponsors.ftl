@@ -13,6 +13,7 @@ sponsors-aws-alt = Amazon Web Services
 sponsors-google-cloud-alt = Google Cloud
 sponsors-integer32-alt = Integer 32
 sponsors-mozilla-alt = Mozilla
+sponsors-mozilla = Mozilla udostępnia projektowi Rust serwisy Heroku dla crates.io, serwisy Mailgun dla emaili oraz Discourse dla forum Użytkowników.
 sponsors-github-alt = GitHub
 sponsors-sentry-alt = Sentry
 sponsors-support = Wspieranie Rusta

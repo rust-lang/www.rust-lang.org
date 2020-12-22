@@ -7,6 +7,8 @@ tools-automation-heading = Prędkość poprzez automatyzację
 tools-automation-rustfmt-heading = Rustfmt
 tools-automation-rustfmt-link = Idź do repozytorium
 tools-automation-clippy-heading = Clippy
+tools-automation-clippy-link = Idź do repozytorium
+tools-automation-cargo-doc-heading = Cargo Doc
 tools-automation-cargo-doc-link = Idź do witryny
 
 ## tools/install.hbs

@@ -19,11 +19,23 @@ networking-pitch-footprint =
     Do tego ekosystem Rusta zapewnia produktywną i komfortową pracę.
 networking-pitch-footprint-alt = Pióro
 networking-pitch-secure-header = Bezpieczny i niezawodny
+networking-pitch-secure =
+    Sprawna weryfikacja typów w Ruście uniemożliwia pojawienie się całej plejady bugów.
+    Teraz będziesz wiedzieć dokładnie kiedy, gdzie i jakie obiekty są aktualnie współdzielone czy zmieniane.
+    Kluczem jest złapanie jak największej ilości potencjalnych błędów &mdash; na etapie kompilacji.
 networking-pitch-secure-alt = Tarcza
 networking-pitch-concurrent-header = Współbieżność na dużą skalę
+networking-pitch-concurrent =
+    Używaj takiego podejścia do współbieżności jakie tylko zechcesz.
+    Rust upewni się, że nie udostępnisz przypadkowo stanu aplikacji dwóm wątkom.
+    Dzięki temu możesz tworzyć skalowalne aplikacje bez zamartwiania się szczegółami.
 networking-pitch-concurrent-alt = Połączone zębatki
 
 ## templates/components/what/networking/production.hbs
 
+networking-production-testimonial-mozilla =
+    Migracja naszej infrastruktury połączeń Push do Rusta sprawiła, że teraz kładziemy większy nacisk
+    na poprawność i nasz kod stał się prostszy w utrzymaniu, zachowując jednocześnie znakomitą
+    wydajność. Teraz nasze serwery obsługują nawet do 20 milionów połączeń websocket w godzinach szczytu.
 networking-production-testimonial-mozilla-attribution = Benjamin Bangert, Inżynier Personelu, Mozilla
 networking-production-testimonial-buoyant-attribution = Oliver Gould, CTO, <a href="{ $href }">Buoyant</a>

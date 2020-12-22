@@ -1,6 +1,7 @@
 ## templates/production/index.hbs
 
 production-whitepapers = Publikacje Naukowe
+production-read-whitepaper = Czytaj publikację naukową
 production-npm = Zobacz w jaki sposób <a href="https://www.npmjs.com/">npm</a>, ludzie odpowiedzialni między innymi za Rejestr kodu JavaScript pod tą samą nazwą, przekonali się o nudnych aspektach Rusta. W dobrym tego słowa znaczeniu.
 production-tilde = Zobacz w jaki sposób Rust umożliwia <a href="http://www.tilde.io/">Tilde</a>, twórcom <a href="https://www.skylight.io/">Skylight</a>, tworzyć bogate w funkcje monitorowanie wydajności dla aplikacji ich klientów.
 production-highlights = Wyróżnione
@@ -13,6 +14,7 @@ production-users = Chcesz dowiedzieć się więcej o tym kto używa Rusta w prod
 production-users-button = Zobacz kto korzysta z Rusta
 production-domain = Zobacz jak firmy używają swoich narzędzi w rozmaitych środowiskach i dziedzinach!
 production-support = Wspieranie Rusta
+production-sponsor = Chcesz sponsorować pracę nad Rustem? A może dołożyć się do organizacji konferencji? W obu przypadkach chętnie cię wysłuchamy.
 production-contact-core = Wyślij wiadomość do Głównego Zespołu
 production-license-header = Licencja
 production-license = Rust jest dystrybuowany na zasadach podwójnej licencji: Licencji Apache w Wersji 2.0 lub licencji MIT. Dzięki temu każdy może używać Rusta w swoich projektach.

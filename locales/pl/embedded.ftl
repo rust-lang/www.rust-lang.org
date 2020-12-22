@@ -19,6 +19,7 @@ embedded-pitch-concurrency-heading = Nieustraszona współbieżność
 embedded-pitch-concurrency-description = Rust uniemożliwia dzielenie stanu pomiędzy wątkami. Bez względu na twoje podejście do współbieżności, Rust utrzymuje swoje gwarancje bezpieczeństwa.
 embedded-pitch-interop-alt = Uścisk dłoni
 embedded-pitch-interop-heading = Interoperacyjność
+embedded-pitch-interop-description = Integruj Rusta do swojej bazy kodu C lub korzystaj z istniejących SDK do napisania nowej aplikacji z użyciem Rusta.
 embedded-pitch-portability-alt = Wózek na bagaż
 embedded-pitch-portability-heading = Przenośność
 embedded-pitch-portability-description = Napisz bibliotekę lub sterownik raz, i używaj na różnych systemach, od małych mikrokontrolerów po większe komputery jednopłytkowe.

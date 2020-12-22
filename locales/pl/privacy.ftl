@@ -14,4 +14,5 @@ policies-privacy-page-intro =
       przetwarzamy dane osobowe.
     </p>
 policies-privacy-page-forums-title = Fora
+policies-privacy-page-third-parties-title = Usługi stron trzecich
 policies-privacy-page-contact-title = Kontakt

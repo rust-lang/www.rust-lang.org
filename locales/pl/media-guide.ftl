@@ -8,6 +8,7 @@ policies-media-guide-page-title = Przewodnik medialny
 
 ## Art license
 
+media-guide-art-license-heading = Licencje grafik
 
 ## Trademark policy
 
