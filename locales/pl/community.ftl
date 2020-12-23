@@ -58,6 +58,18 @@ community-irr-header = Zwiększanie Zasięgu Rusta
 community-irr = Zwiększanie Zasięgu Rusta to program, który paruje członków rozmaitych zespołów projektu Rust z osobami, które są niedostatecznie reprezentowane w ramach społeczności Rusta i szerzej w ramach przemysłu informatycznego. W ramach programu zawiązywana jest tymczasowa współpraca między osobami na czas trzech (3) miesięcy, od maja do sierpnia. Oczekiwany czas poświęcony na współpracę to od 3 do 5 godzin tygodniowo spędzone na pracy nad projektami w Ruście.
 community-irr-button = Odwiedź Witrynę
 community-standards-header = Standardy Społeczności
+community-standards =
+    Zależy nam na stworzeniu przyjaznego, bezpiecznego i zachęcającego
+    środowiska dla wszystkich, bez względu na płeć, orientację,
+    niepełnosprawność, pochodzenie, religię, czy inne cechy.  Nasz
+    <a href="{ $url }">kodeks postępowania</a> ustanawia
+    standardy postępowania dla wszystkich oficjalnych forów Rusta.
+    <br /><br />
+    Jeśli ktoś z naszej społeczności sprawia, że czujesz się niekomfortowo lub
+    jesteś przez kogoś prześladowany, prosimy o jak najszybszy kontakt z
+    <a href="mailto:rust-mods@rust-lang.org">Zespołem Moderacyjnym Rusta</a>.
+    Nieważne czy jesteś wieloletnim kontrybutorem, czy nowicjuszem, staramy się
+    zapewnić bezpieczną przestrzeń wymiany myśli wszystkim użytkownikom.
 community-mod-button = Napisz do zespołu moderacyjnego
 community-coc-button = przeczytaj kodeks postępowania
 community-mod-guidelines-button = przeczytaj wytyczne dotyczące moderacji

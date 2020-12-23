@@ -7,6 +7,14 @@ homepage-version = Wersja { $number }
 ## components/panels/production.hbs
 
 production-title = Rust w środowiskach produkcyjnych
+production-blurb =
+    Setki firm na całym świecie tworzą szybkie, wydajne, wieloplatformowe
+    rozwiązania używając Rusta na produkcji. Znane i kochane oprogramowanie,
+    takie jak <a href="https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka-stylo/">Firefox</a>,
+    <a href="https://blogs.dropbox.com/tech/2016/06/lossless-compression-with-brotli/">Dropbox</a>,
+    czy <a href="https://blog.cloudflare.com/cloudflare-workers-as-a-serverless-rust-platform/">Cloudflare</a>,
+    korzystają z Rusta. <strong>Od startupów po wielkie
+    korporacje, od systemów wbudowanych po serwisy webowe, Rust pasuje wszędzie.</strong>
 production-testimonial-npm = Moim największym komplementem dla Rusta to to, że jest nudny. A to wspaniały komplement.
 production-testimonial-npm-attribution = Chris Dickinson, Inżynier w npm, Inc
 production-testimonial-npm-alt = Logo npm
@@ -41,7 +49,7 @@ domains-net-blurb =
     Przewidywalna wydajność. Niewielki ślad zasobów. Ekstremalna niezawodność.
     Rust jest znakomitym wyborem dla serwisów sieciowych.
 domains-net-alt = chmura z węzłami
-domains-embedded = Wbudowane
+domains-embedded = Systemy Wbudowane
 domains-embedded-blurb =
     Celujesz w urządzenia o ograniczonych zasobach?
     Potrzebujesz nisko-poziomowej kontroli ale chcesz zachować wysoko-poziomowe udogodnienia?

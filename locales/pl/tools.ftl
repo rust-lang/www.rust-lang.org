@@ -1,6 +1,7 @@
 ## tools/index.hbs
 
 tools-page-title = Narzędzia
+tools-editor-support-heading = Wzorowe wsparcie dla edytorów
 tools-build-install-heading = Instaluj
 tools-build-test-heading = Testuj
 tools-automation-heading = Prędkość poprzez automatyzację

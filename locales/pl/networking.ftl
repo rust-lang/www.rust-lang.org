@@ -38,4 +38,11 @@ networking-production-testimonial-mozilla =
     na poprawność i nasz kod stał się prostszy w utrzymaniu, zachowując jednocześnie znakomitą
     wydajność. Teraz nasze serwery obsługują nawet do 20 milionów połączeń websocket w godzinach szczytu.
 networking-production-testimonial-mozilla-attribution = Benjamin Bangert, Inżynier Personelu, Mozilla
+networking-production-testimonial-buoyant =
+    Rust jest technologiczną podstawą całego planu na przyszłość dla naszego projektu Linkerd.
+    Jego system typowania pozwala nam budować modularne, testowalne, składalne części bez poświęcania
+    wydajności. Najbardziej zadziwiające było to jak zasady lifetime/borrow checking pozwalają
+    nam uniknąć dużej części błędów, z którymi borykaliśmy się do tej pory. Minęły już 2 lata
+    i nie jestem w stanie sobie wyobrazić sytuacji, w której chcielibyśmy wymienić Rusta na jakikolwiek
+    inny język.
 networking-production-testimonial-buoyant-attribution = Oliver Gould, CTO, <a href="{ $href }">Buoyant</a>

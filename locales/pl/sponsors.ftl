@@ -10,6 +10,7 @@ sponsors-arm = ARM dostarcza buildery dla infrastruktury CI Rusta, pomagającej 
 sponsors-microsoft-alt = Microsoft Azure
 sponsors-microsoft = Microsoft Azure sponsoruje naszą infrastrukturę CI, w szczególności wymagające wyjątkowo dużych zasobów repozytorium rust-lang/rust.
 sponsors-aws-alt = Amazon Web Services
+sponsors-aws = Amazon Web Services (AWS) udostępnia serwery dla hostowania artefaktów wydań języka Rust (kompilatory, biblioteki, narzędzia i kod źródłowy), dostarczając je do użytkowników poprzez CloudFront, zapobiegając regresjom dzięki Crater na EC2 oraz zarządzając innymi powiązanymi z Rustem infrastrukturami hostowanymi na AWS.
 sponsors-google-cloud-alt = Google Cloud
 sponsors-integer32-alt = Integer 32
 sponsors-mozilla-alt = Mozilla

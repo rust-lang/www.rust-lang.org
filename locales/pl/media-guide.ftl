@@ -31,3 +31,4 @@ media-guide-tm-use-explicit-approval-heading = Zastosowania, które wymagają wy
 ## Helping out
 
 media-guide-helping-out-heading = Pomaganie
+media-guide-helping-out-link = Napisz do Głównego Zespołu (Core Team)
