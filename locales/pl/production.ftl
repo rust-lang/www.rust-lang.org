@@ -13,6 +13,7 @@ production-dropbox-alt = Logo Dropbox
 production-yelp = Firma Yelp stworzyła w Ruście framework do testów A/B w czasie rzeczywistym. Jest on używany na wszystkich stronach i aplikacjach Yelp, przedmiotami eksperymentów jest wszystko od problemów z UX po wewnętrzną infrastrukturę. Rust został wybrany do tego zadania ze względu na to, że jest jednocześnie tak szybki jak język C i bezpieczniejszy niż C.
 production-yelp-alt = Logo Yelp
 production-share = Czy twoja firma używa Rusta? Rozważ podzielenie się z nami twoimi doświadczeniami!
+production-share-button = Napisz do głównego zespołu
 production-users = Chcesz dowiedzieć się więcej o tym kto używa Rusta w produkcji?
 production-users-button = Zobacz kto korzysta z Rusta
 production-domain = Zobacz jak firmy używają swoich narzędzi w rozmaitych środowiskach i dziedzinach!

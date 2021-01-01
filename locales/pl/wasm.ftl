@@ -30,6 +30,7 @@ wasm-get-started-mdn-description = Dowiedz się więcej o WebAssembly na Mozilla
 ## Production use (templates/components/what/wasm/production.hbs)
 
 wasm-production-cloudflare-alt = Logo cloudflare
+wasm-production-cloudflare-quote = Możemy kompilować kod Rust do WASM, i następnie wywoływać go z bezserwerowych elementów istniejących już dzisiaj w ramach wszechobecnego internetu. To jest ogromny krok naprzód i nie możemy doczekać się rozwijania tego projektu jeszcze dalej.
 wasm-production-cloudflare-attribution = Steven Pack, <a href="{ $href }">Serverless Rust z Cloudflare Workers</a>
 wasm-production-mozilla-alt = firefox
 wasm-production-mozilla-attribution = Nick Fitzgerald, <a href="{ $href }">Oxidizing Source Maps with Rust and WebAssembly</a>
