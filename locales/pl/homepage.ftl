@@ -34,6 +34,7 @@ language-values-productivity-blurb = Rust dysponuje znakomitą dokumentacją, pr
 ## components/panels/domains.hbs
 
 domains-title = Zbuduj to w Ruscie
+domains-blurb = W 2018 roku społeczność Rusta podjęła się zadania zwiększenia przyjemności pracy z tym językiem jeszcze bardziej w ramach kilku kluczowych aspektów (zobacz <a href="http://blog.rust-lang.org/2018/03/12/roadmap.html">plan działania na 2018 rok</a>). Przykłady dla każdego z nich znajdziesz w dostępnych paczkach (ang. crates) i rozmaitych poradnikach.
 domains-cli = Wiersz Poleceń
 domains-cli-blurb =
     Zbuduj aplikację CLI w mgnieniu oka, korzystając z rozbudowanego ekosystemu Rusta.
