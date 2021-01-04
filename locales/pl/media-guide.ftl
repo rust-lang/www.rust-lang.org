@@ -9,14 +9,30 @@ policies-media-guide-page-title = Przewodnik medialny
 ## Art license
 
 media-guide-art-license-heading = Licencje grafik
+media-guide-art-license-description = <p>Loga Rusta oraz Cargo (zarówno wersje bitmapowe oraz wektorowe) są własnością firmy Mozilla i dystrybuowane są na zasadach licencji <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution license (CC-BY)</a>. Licencja ta jest najbardziej permisywną licencją Creative Commons, pozwalającą na powtórne wykorzystanie oraz wykonywanie modyfikacji w jakimkolwiek celu. Jedynym wymaganiem jest dostarczenie informacji o autorze, linku do licencji, oraz zaznaczenie dokonanych zmian względem oryginału.  <strong>Należy dodać, że wymienione wyżej logotypy, jak i nazwy Rust i Cargo, funkcjonują również jako znaki towarowe, i podlegają w związku z tym zasadom rozpisanym poniżej</strong>.</p>
 
 ## Trademark policy
 
 media-guide-trademark-policy-heading = Polityka znaków towarowych
+media-guide-trademark-policy-description =
+    <p>Nazwy i marki Rust oraz Cargo pozwalają na oznaczenie, co jest oficjalnie częścią projektu i społeczności Rusta a co nie. Staramy się kontrolować miejsca, w których mogą się one pojawić. Jednocześnie zależy nam, aby pozwolić na szerokie i kreatywne zastosowanie tych nazw i marek. Zasady opisane w niniejszym dokumencie opisują sposób, w jaki staramy się osiągnąć ten balans. Jeśli chcesz użyć tych nazw czy marek, zwłaszcza w sposób komercyjny, prosimy o zapoznanie się z wypisanymi tutaj zaleceniami. W razie pytań można kontaktować się z nami mailowo  <a href="mailto:trademark@rust-lang.org">pod tym adresem</a>!</p>
+    <p><b>W skrócie</b>: Niekomercyjne korzystanie z nazw i logotypów Rust/Cargo jest w większości przypadków dozwolone i nie wymaga uzyskania pozwolenia; komercyjne korzystanie wymaga zwykle uzyskania pozwolenia. Najważniejszą zasadą w każdym przypadku korzystania z nazw i logotypów jest upewnienie się, że korzystający nie może zostać mylnie uznany za oficjalną część projektu Rust lub za podmiot w żaden sposób z projektem Rust powiązany lub zatwierdzony.</p>
+    <p>W razie jakichkolwiek wątpliwości dotyczących korzystania ze znaków towarowych Rusta i ewentualnej konieczności uzyskania pozwolenia prosimy o kontakt na email { EMAIL("trademark@rust-lang.org") }.</p>
+    <p>Niniejszy dokument został sporządzony na podstawie <a href="https://www.python.org/psf/trademarks/">Python Software Foundation Trademark Usage Policy</a>. Niniejszy dokument nie jest częścią oficjalnego stanowiska firmy Mozilla w kwestii polityki znaków towarowych, stanowi raczej uproszczoną jego wersję konkretnie w stosunku do projektu Rust.</p>
 
 ## The Rust trademarks
 
 media-guide-rust-trademarks-heading = Znaki towarowe Rusta
+media-guide-rust-trademarks-description =
+    <p>Język programowania Rust jest projektem open source opartym o społeczność, zarządzanym przez główny zespół. Jest on również sponsorowany przez Mozilla Foundation (“Mozilla”), która posiada i chroni znaki towarowe Rust i Cargo oraz logotypy (“Znaki towarowe Rusta”). Niniejszy dokument określa sposoby korzystania ze znaków towarowych Rusta oraz prezentuje przykładowe sytuacje korzystania z tych znaków towarowych, wraz z wyjaśnieniami dotyczącymi korzystania ze znaków towarowych Rusta bez uzyskania wyraźnej zgody. Dokument ten stanowi dodatek do <a href="https://www.mozilla.org/foundation/trademarks/policy/">oficjalnej polityki dot. znaków towarowych firmy Mozilla</a>, która określa zasady korzystania ze wszystkich znaków towarowych należących do Mozilli.</p>
+    <p>W skład znaków towarowych Rusta wchodzą dwa znaki słowne oraz dwa logotypy:</p>
+    <ul>
+      <li>Rust</li>
+      <li>Cargo</li>
+      <li><img src="/logos/rust-logo-blk.svg" alt="{ media-guide-rust-trademarks-rust-img-alt }"></li>
+      <li><img src="/logos/cargo.png" alt="{ media-guide-rust-trademarks-cargo-img-alt }"></li>
+    </ul>
+    <p>Znaki towarowe to nazwy i logotypy, które stanowią o źródle danego towaru czy usługi. Ochrona znaków towarowych projektów open source jest szczególnie ważna. Każdy może zmodyfikować dostępny kod źródłowy i stworzyć na jego podstawie swój produkt. Jest więc istotne, aby jedynie oryginalny produkt, lub wyraźnie zatwierdzone modyfikacje, mogły korzystać z konkretnych znaków przypisanych do tego projektu. Ograniczając możliwość korzystania ze znaków towarowych Rusta, Mozilla oraz projekt Rust pomagają użytkownikom i deweloperom upewnić się, że korzystają oni z oficjalnego oprogramowania tworzonego przez projekt Rust, a nie ze zmodyfikowanej jego wersji. Znak towarowy stanowi zapewnienie o jakości i bezpieczeństwie produktu, z którego korzystają.</p>
 media-guide-rust-trademarks-rust-img-alt = Logo Rust
 media-guide-rust-trademarks-cargo-img-alt = Logo Cargo
 
@@ -24,7 +40,18 @@ media-guide-rust-trademarks-cargo-img-alt = Logo Cargo
 
 media-guide-tm-use-heading = Używanie znaków towarowych
 media-guide-tm-use-appearance-heading = Figurowanie jako podmiot oficjalny, powiązany, lub zatwierdzony
+media-guide-tm-use-appearance-description =
+    <p>Najbardziej podstawowa zasada stanowi, że znaki towarowe Rusta nie mogą być użyte w sposób, który sugerowałby (przeciętnemu odbiorcy), że używający jest oficjalnym reprezentantem, lub jest w jakikolwiek sposób powiązany z projektem Rust lub firmą Mozilla, chyba że używający otrzymał pisemną zgodę od głównego zespołu Rusta. Zasada ta ma na celu zaoszczędzenie dezorientacji użytkownikom i deweloperom.</p>
+    <p>Jako że zasada ta opiera się na subiektywnym pojmowaniu konkretnego sposobu użytkowania znaków towarowych, może się ona okazać trudna w zastosowaniu. Istnieje kilka sposobów na uniknięcie zamieszania, przykładowo dodanie słowa "nieoficjalne" w widocznym miejscu. W razie jakichkolwiek wątpliwości chętnie odpowiemy na państwa pytania { EMAIL("trademark@rust-lang.org") }.</p>
 media-guide-tm-use-basics-heading = Podstawy: odnoszenie się do Rusta/Cargo
+media-guide-tm-use-basics-description =
+    <p>Tak jak w przypadku innych znaków towarowych, nazwy Rust i Cargo mogą być używane praktycznie bez ograniczeń w celu nawiązania do języka programowania Rust oraz managera paczek i rejestru Cargo.</p>
+    <p>Nie mogą być one użyte:</p>
+    <ul>
+      <li>w celu odniesienia do innego języka programowania;</li>
+      <li>w sposób niejasny lub sugerujący powiązanie języka programowania Rust z jakimikolwiek niezwiązanymi z projektem modułami, narzędziami, dokumentacją czy innymi zasobami;</li>
+      <li>w sposoby, które mogą wprowadzić zamieszanie w kwestii istnienia języka programowania Rust jako darmowego w użytkowaniu i funkcjonującego na zasadach open source.</li>
+    </ul>
 media-guide-tm-use-implicit-approval-heading = Zastosowania, które nie wymagają wyraźnego pozwolenia
 media-guide-tm-use-explicit-approval-heading = Zastosowania, które wymagają wyraźnego pozwolenia
 
