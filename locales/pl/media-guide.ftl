@@ -53,9 +53,30 @@ media-guide-tm-use-basics-description =
       <li>w sposoby, które mogą wprowadzić zamieszanie w kwestii istnienia języka programowania Rust jako darmowego w użytkowaniu i funkcjonującego na zasadach open source.</li>
     </ul>
 media-guide-tm-use-implicit-approval-heading = Zastosowania, które nie wymagają wyraźnego pozwolenia
+media-guide-tm-use-implicit-approval-description =
+    <p>W wielu przypadkach nie ma konieczności uzyskania wyraźnego pozwolenia. <strong>W przypadku sytuacji wypisanych poniżej należy jednak upewnić się, że znaki towarowe Rusta nie sprawiają wrażenia oficjalnych, jak wyjaśniono powyżej.</strong></p>
+    <ul>
+      <li>Dozwolone jest zaznaczenie, że oprogramowanie zostało napisane w języku programowania Rust, że jest kompatybilne z językiem programowania Rust lub że zawiera język programowania Rust. W takich przypadkach nie ma potrzeby uzyskania wyraźnego pozwolenia na korzystanie ze znaków towarowych Rusta. Dotyczy to zarówno projektów komercyjnych, jak i niekomercyjnych.</li>
+      <li>Używanie znaków towarowych Rusta w nazwach niekomercyjnych produktów, jak na przykład RustPostgres czy Rustymine, lub w nazwie repozytoriów kodu jest dozwolone, kiedy takie oprogramowanie wiąże się z użytkowaniem języka programowania Rust. Tego rodzaju projekty mogą również korzystać z logo Rusta, łącznie z jego modyfikowanymi wersjami. W przypadku produktów komercyjnych (w tym sponsorowanych przez społeczność lub inne podmioty), prosimy o wcześniejszy kontakt pod adresem { EMAIL("trademark@rust-lang.org") }, aby upewnić się co do poprawności użycia znaków towarowych.</li>
+      <li>Używanie ze znaków towarowych Rusta na koszulkach, czapkach i innych artykułach czy produktach, w tym w formie zmodyfikowanej, jest dozwolone w przypadkach niekomercyjnych. Jeśli chcesz sprzedawać produkty z widniejącymi na nich znakami towarowymi Rusta, przykładowo na wydarzeniach związanych z Rustem, prosimy o kontakt w celu uzyskania pozwolenia na adres email { EMAIL("trademark@rust-lang.org") }.</li>
+      <li>Korzystanie ze znaków towarowych Rusta (w tym w zmodyfikowanej formie) przy organizacji wydarzeń, tworzeniu poradników, i tym podobnych, jest dozwolone, dopóki nie jest pobierana opłata. W przypadku wydarzeń komercyjnych (w tym sponsorowanych) prosimy o kontakt na { EMAIL("trademark@rust-lang.org") }. Jakiekolwiek <strong>wydarzenie nie może widnieć jako oficjalnie powiązane z projektem Rust</strong> bez otrzymania wyraźnego pozwolenia.</li>
+      <li>Używanie znaków towarowych w książkach i publikacjach o nazwach takich jak "Dziennik Rust" czy "Rust Cookbook" jest dozwolone.</li>
+      <li>Dozwolone jest używanie słowa "Rust" na stronach internetowych, w broszurach, dokumentacji, publikacjach naukowych, książkach czy opakowaniach produktów w celu nawiązania do języka programowania Rust lub projektu Rust.</li>
+    </ul>
 media-guide-tm-use-explicit-approval-heading = Zastosowania, które wymagają wyraźnego pozwolenia
+media-guide-tm-use-explicit-approval-description =
+    <ul>
+      <li>Rozpowszechnianie zmodyfikowanej wersji języka programowania Rust lub managera paczek Cargo i nazywanie powstałego w ten sposób oprogramowania Rust czy Cargo wymaga wyraźnego pisemnego pozwolenia głównego zespołu Rusta. Zwykle pozwalamy na takie wykorzystanie nazw, pod warunkiem, że wprowadzone zmiany są (1) stosunkowo nieliczne (2) wyraźnie zaznaczone i zakomunikowane potencjalnym użytkownikom.</li>
+      <li>Sprzedaż koszulek, czapek czy innego rodzaju artykułów wymaga wyraźnej pisemnej zgody głównego zespołu Rusta. Zwykle pozwalamy na takie działanie, pod warunkiem, że (1) jasno zaznaczono, że sprzedawane przedmioty nie są oficjalnie związane z projektem Rust oraz że (2) jasno zaznaczono czy zyski ze sprzedaży zostaną w jakimkolwiek stopniu przeznaczone na wsparcie projektu Rust.</li>
+      <li>Korzystanie ze znaków towarowych Rusta w ramach innego znaku towarowego wymaga pisemnej zgody głównego zespołu Rusta, chyba że mowa o wypadkach wymienionych powyżej.</li>
+      <li>Słowa “RustCamp,” “RustCon” or “RustConf” nie mogą być użyte bez wyraźnego pozwolenia.</li>
+    </ul>
 
 ## Helping out
 
 media-guide-helping-out-heading = Pomaganie
+media-guide-helping-out-description =
+    <p>Prosimy wszystkich członków społeczności Rusta o zgłaszanie wątpliwych przypadków używania logo Rusta oraz nazwy projektu. Zgłoszenia potencjalnych nadużyć przyjmujemy na adres { EMAIL("trademark@rust-lang.org") }. Przyjrzymy się każdemu zgłoszeniu i w razie konieczności podejmiemy niezbędne kroki.</p>
+    <p>Prosimy o niewysyłanie podobnych zgłoszeń bezpośrednio do użytkowników znaków towarowych Rusta i zostawienie tego zadania Mozilli i stronom ją reprezentującym. Dziękujemy!</p>
+    <p>Jeśli masz jakiekolwiek pytania lub wątpliwości dotyczące promowania Rusta, lub korzystania z jego znaków towarowych, prosimy o kontakt z Rust Core Team.</p>
 media-guide-helping-out-link = Napisz do Głównego Zespołu (Core Team)
