@@ -535,11 +535,11 @@ dependencies = [
 
 [[package]]
 name = "fluent"
-version = "0.14.0"
+version = "0.14.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bdb1332a30e4eb0d388961ccd7f3fcbc907d37072caac5aa3fcdb09b372223b2"
+checksum = "e4f3359832f932e4ddbb4c56851623cb50bd08d1ae36e9ec80cfc44f412e1400"
 dependencies = [
- "fluent-bundle 0.14.0",
+ "fluent-bundle 0.14.1",
  "unic-langid 0.9.0",
 ]
 
@@ -574,14 +574,14 @@ dependencies = [
 
 [[package]]
 name = "fluent-bundle"
-version = "0.14.0"
+version = "0.14.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "25eb8ef496c9db4cc473cbfb9dd1ccbfa65117940fe2f998a5e4b37355fa82ce"
+checksum = "4c0cd40fee9f6eb74dfb38f0fa700a92ac4fe702868b04e52018ead90d415332"
 dependencies = [
  "fluent-langneg",
  "fluent-syntax 0.10.1",
  "intl-memoizer",
- "intl_pluralrules 7.0.0",
+ "intl_pluralrules 7.0.1",
  "ouroboros",
  "smallvec",
  "unic-langid 0.9.0",
@@ -1064,9 +1064,9 @@ dependencies = [
 
 [[package]]
 name = "intl_pluralrules"
-version = "7.0.0"
+version = "7.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6c271cdb1f12a9feb3a017619c3ee681f971f270f6757341d6abe1f9f7a98bc3"
+checksum = "b18f988384267d7066cc2be425e6faf352900652c046b6971d2e228d3b1c5ecf"
 dependencies = [
  "tinystr",
  "unic-langid 0.9.0",
@@ -1415,9 +1415,9 @@ dependencies = [
 
 [[package]]
 name = "ouroboros"
-version = "0.5.1"
+version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cc04551635026d3ac7bc646698ea1836a85ed2a26b7094fe1d15d8b14854c4a2"
+checksum = "b0b666c900ea45a357bc7915a4dc8fab7e295f2e756e843aa3c0788d94aa3a29"
 dependencies = [
  "ouroboros_macro",
  "stable_deref_trait",
@@ -1425,9 +1425,9 @@ dependencies = [
 
 [[package]]
 name = "ouroboros_macro"
-version = "0.5.1"
+version = "0.7.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cec33dfceabec83cd0e95a5ce9d20e76ab3a5cbfef59659b8c927f69b93ed8ae"
+checksum = "dfc618f205c0adc415923c74369d45f5f298462fc473711dfc33056a23f23619"
 dependencies = [
  "Inflector",
  "proc-macro2 1.0.24",
@@ -2787,7 +2787,7 @@ dependencies = [
 name = "www-rust-lang-org"
 version = "0.1.0"
 dependencies = [
- "fluent 0.14.0",
+ "fluent 0.14.1",
  "fluent-bundle 0.6.0",
  "fluent-locale 0.10.1",
  "fluent-syntax 0.10.1",
