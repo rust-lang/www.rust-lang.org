@@ -266,6 +266,9 @@ mod tests {
         let main = dummy_team("main");
         let mut subteam = dummy_team("subteam");
         subteam.subteam_of = Some("main".into());
+        let mut subteam2 = dummy_team("subteam2");
+        subteam2.subteam_of = Some("main".into());
+        subteam2.website_data.as_mut().unwrap().weight = 5;
         let mut wg = dummy_team("wg");
         wg.subteam_of = Some("main".into());
         wg.kind = TeamKind::WorkingGroup;
@@ -278,12 +281,21 @@ mod tests {
         other_wg.subteam_of = Some("other".into());
         other_wg.kind = TeamKind::WorkingGroup;
 
-        let data = Data::dummy(vec![main, subteam, wg, other, other_subteam, other_wg]);
+        let data = Data::dummy(vec![
+            main,
+            subteam,
+            subteam2,
+            wg,
+            other,
+            other_subteam,
+            other_wg,
+        ]);
         let page = data.page_data("teams", "main").unwrap();
 
         assert_eq!(page.team.name, "main");
-        assert_eq!(page.subteams.len(), 1);
-        assert_eq!(page.subteams[0].name, "subteam");
+        assert_eq!(page.subteams.len(), 2);
+        assert_eq!(page.subteams[0].name, "subteam2");
+        assert_eq!(page.subteams[1].name, "subteam");
         assert_eq!(page.wgs.len(), 1);
         assert_eq!(page.wgs[0].name, "wg");
         let zulip_stream = page.wgs[0]
