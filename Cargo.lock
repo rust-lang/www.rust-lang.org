@@ -535,11 +535,11 @@ dependencies = [
 
 [[package]]
 name = "fluent"
-version = "0.14.1"
+version = "0.14.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e4f3359832f932e4ddbb4c56851623cb50bd08d1ae36e9ec80cfc44f412e1400"
+checksum = "178b5d86f17a153e33a812f8a8d463054043c121d3e0575816601a22d8326d06"
 dependencies = [
- "fluent-bundle 0.14.1",
+ "fluent-bundle 0.14.3",
  "unic-langid 0.9.0",
 ]
 
@@ -574,15 +574,16 @@ dependencies = [
 
 [[package]]
 name = "fluent-bundle"
-version = "0.14.1"
+version = "0.14.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4c0cd40fee9f6eb74dfb38f0fa700a92ac4fe702868b04e52018ead90d415332"
+checksum = "f2b9ed320a78de7b10d9fb629b399e2746573e11fff071749722ecdf3d18566d"
 dependencies = [
  "fluent-langneg",
  "fluent-syntax 0.10.2",
  "intl-memoizer",
  "intl_pluralrules 7.0.1",
  "ouroboros",
+ "rustc-hash",
  "smallvec",
  "unic-langid 0.9.0",
 ]
@@ -1982,6 +1983,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6e3bad0ee36814ca07d7968269dd4b7ec89ec2da10c4bb613928d3077083c232"
 
 [[package]]
+name = "rustc-hash"
+version = "1.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "08d43f7aa6b08d49f382cde6a7982047c3426db949b1424bc4b7ec9ae12c6ce2"
+
+[[package]]
 name = "rustc_version"
 version = "0.2.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2787,7 +2794,7 @@ dependencies = [
 name = "www-rust-lang-org"
 version = "0.1.0"
 dependencies = [
- "fluent 0.14.1",
+ "fluent 0.14.3",
  "fluent-bundle 0.6.0",
  "fluent-locale 0.10.1",
  "fluent-syntax 0.10.2",
