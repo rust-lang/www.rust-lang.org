@@ -4,6 +4,8 @@ learn-page-title = 學習 Rust
 learn-begin = Rust 入門
 learn-book = <cite>《Rust 程式設計語言》</cite> 常簡稱為「這本書」，它將從基礎概念開始帶給您這門語言的概觀。您將會在閱讀本書的過程中寫一些專案，並在最後扎實地掌握這門語言。
 learn-book-button = 開始閱讀！
+translated-book = https://rust-lang.tw/book-tw/
+translated-book-button = 閱讀非官方翻譯！
 learn-rustlings = 除此之外，Rustlings 課程會引導您下載並設置 Rust 的工具鏈，並在命令列上教您閱讀與編寫 Rust 的基本語法。它是除了《透過範例學習 Rust》之外，能在您自己的環境運行的另一種選擇。
 learn-rustlings-button = 開始 Rustlings 的課程！
 learn-rbe = 如果閱讀一本數百頁的書並不適合您的話，那《透過範例學習 Rust》將是您的選擇。當書本使用一堆文字教學時，《透過範例學習 Rust》則是展示各種範例，並附上最少的文字說明，同時還附有練習題！
@@ -69,7 +71,6 @@ learn-install-cargo =
 learn-install-cargo-button = 閱讀《Cargo 手冊》
 learn-install-other = 其他工具
 learn-install-editors = Rust 支援非常多編輯器：
-
 learn-generating = 產生新專案
 learn-generating-steps =
     <p>讓我們來用我們全新的 Rust 開發環境寫一支小小的應用程式吧。首先我們要先用 Cargo 產生一個新的專案。請在您的終端機執行：</p>

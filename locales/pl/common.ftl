@@ -7,6 +7,7 @@ why-rust = Dlaczego Rust?
 production-use = Użycie w produkcji
 learn-more = Dowiedz się więcej
 discord = Discord
+zulip = Zulip
 
 ## components/panels/domain.hbs
 
@@ -29,6 +30,7 @@ nav-tools = Narzędzia
 nav-governance = Zarządzanie
 nav-community = Społeczność
 nav-blog = Blog
+nav-playground = Playground
 choose-language = Język
 nav-logo-alt = Logo Rusta
 
@@ -37,6 +39,7 @@ nav-logo-alt = Logo Rusta
 footer-doc = Dokumentacja
 footer-ask = Zadaj Pytanie na Forum Użytkowników
 footer-status = Sprawdź Status Witryny
+footer-sup-doc = Rust Forge (Dokumentacja dla Kontrybutorów)
 footer-policies = Warunki i zasady
 footer-coc = Kodeks Postępowania
 footer-licenses = Licencje

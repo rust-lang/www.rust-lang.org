@@ -4,6 +4,8 @@ learn-page-title = Rustを学ぶ
 learn-begin = Rustを始めよう
 learn-book = 「the book」としても親しまれている<cite>プログラミング言語Rust</cite>は、この言語の概観を基本原理から説明します。読み進める中で複数のプロジェクトを構築し、読み終わるまでにはこの言語の確かな理解が得られます。
 learn-book-button = the Bookを読もう！
+translated-book = https://doc.rust-jp.rs/book-ja/
+translated-book-button = 非公式の日本語翻訳版はこちら
 learn-rustlings = あるいはRustlingsなら、コマンドライン上で、Rustのツールチェインのダウンロードとセットアップ方法を確認しながら、Rustの構文の基本的な読み書きを学ぶことができます。Rust by Exampleをあなたの環境で動かすようなものです。
 learn-rustlings-button = Rustlingsコースをやってみよう！
 learn-rbe = ひとつの言語について何百ページも読むのがあなたの好みに合わなければ、 Rust By Exampleにお任せください。the bookはコードをたくさんの言葉で説明しますが、 RBE (Rust By Example)はたくさんのコード例を示し、説明は最小限です。練習問題もあります！
@@ -69,7 +71,6 @@ learn-install-cargo =
 learn-install-cargo-button = cargoブックを読む
 learn-install-other = その他のツール
 learn-install-editors = Rustは多くのエディタでサポートされています：
-
 learn-generating = 新しいプロジェクトを作成する
 learn-generating-steps =
     <p>新しいRust開発環境で小さなアプリケーションを書きましょう。始めにCargoを使って新しいプロジェクトを作りましょう。好きなターミナルで以下を実行します：</p>

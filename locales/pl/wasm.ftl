@@ -20,7 +20,9 @@ wasm-why-rust-amenities-heading = Nowoczesne udogodnienia
 wasm-get-started-wasm-alt = Logo WebAssembly
 wasm-get-started-wasm-link = Dowiedz się więcej
 wasm-get-started-book-alt = wasm ferris
+wasm-get-started-book-link = Przeczytaj Podręcznik
 wasm-get-started-mdn-alt = Logo MDN
+wasm-get-started-mdn-description = Dowiedz się więcej o WebAssembly na Mozilla Developer Network.
 
 ## Plays well with JavaScript (templates/components/what/wasm/js.hbs)
 
@@ -28,5 +30,9 @@ wasm-get-started-mdn-alt = Logo MDN
 ## Production use (templates/components/what/wasm/production.hbs)
 
 wasm-production-cloudflare-alt = Logo cloudflare
+wasm-production-cloudflare-quote = Możemy kompilować kod Rust do WASM, i następnie wywoływać go z bezserwerowych elementów istniejących już dzisiaj w ramach wszechobecnego internetu. To jest ogromny krok naprzód i nie możemy doczekać się rozwijania tego projektu jeszcze dalej.
+wasm-production-cloudflare-attribution = Steven Pack, <a href="{ $href }">Serverless Rust z Cloudflare Workers</a>
 wasm-production-mozilla-alt = firefox
+wasm-production-mozilla-attribution = Nick Fitzgerald, <a href="{ $href }">Oxidizing Source Maps with Rust and WebAssembly</a>
 wasm-production-dropbox-alt = dropbox
+wasm-production-dropbox-attribution = Daniel Reiter Horn i Jongmin Baek, <a href="{ $href }">Budowanie Lepszej Kompresji razem z DivANS</a>

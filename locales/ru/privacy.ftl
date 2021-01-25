@@ -8,8 +8,8 @@ policies-privacy-page-version = <p>Версия { $version } от <time datetime
 policies-privacy-page-intro =
     <p>
       Проект Rust контролирует ряд проектов, в том числе
-      <a href="{ $baseurl }/">Rust website</a>,
-      <a href="https://crates.io">crates.io</a>, and
+      <a href="{ $baseurl }/">сайт Rust</a>,
+      <a href="https://crates.io">crates.io</a> и
       <a href="https://docs.rs">docs.rs</a>. Это уведомление о конфиденциальности объясняет, что
       мы делаем с личной информацией.
     </p>

@@ -40,14 +40,15 @@ use std::collections::hash_map::DefaultHasher;
 use std::env;
 use std::fs;
 use std::hash::Hasher;
+use std::io::Cursor;
 use std::path::{Path, PathBuf};
 
 use rand::seq::SliceRandom;
 
 use rocket::{
-    http::{RawStr, Status},
+    http::{ContentType, RawStr, Status},
     request::{FromParam, Request},
-    response::{NamedFile, Redirect},
+    response::{NamedFile, Redirect, Response},
 };
 
 use rocket_contrib::templates::Template;
@@ -80,6 +81,7 @@ lazy_static! {
         }
     };
     static ref PONTOON_ENABLED: bool = env::var("RUST_WWW_PONTOON").is_ok();
+    static ref ROBOTS_TXT_DISALLOW_ALL: bool = env::var("ROBOTS_TXT_DISALLOW_ALL").is_ok();
 }
 
 #[derive(Serialize)]
@@ -170,6 +172,20 @@ fn files(file: PathBuf) -> Option<Cached<NamedFile>> {
     NamedFile::open(Path::new("static/").join(file))
         .ok()
         .map(|file| file.cached(vec![CacheDirective::MaxAge(3600)]))
+}
+
+#[get("/robots.txt", rank = 1)]
+fn robots_txt() -> Option<Response<'static>> {
+    if *ROBOTS_TXT_DISALLOW_ALL {
+        Some(
+            Response::build()
+                .header(ContentType::Plain)
+                .sized_body(Cursor::new("User-agent: *\nDisallow: /"))
+                .finalize(),
+        )
+    } else {
+        None
+    }
 }
 
 #[get("/")]
@@ -508,6 +524,7 @@ fn main() {
                 sponsors,
                 subject,
                 files,
+                robots_txt,
                 logos,
                 components,
                 index_locale,
