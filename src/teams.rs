@@ -107,6 +107,10 @@ impl Data {
                 _ => {}
             });
 
+        subteams.sort_by_key(|team| Reverse(team.website_data.as_ref().unwrap().weight));
+        wgs.sort_by_key(|team| Reverse(team.website_data.as_ref().unwrap().weight));
+        project_groups.sort_by_key(|team| Reverse(team.website_data.as_ref().unwrap().weight));
+
         Ok(PageData {
             team: main_team,
             zulip_domain: crate::ZULIP_DOMAIN,
