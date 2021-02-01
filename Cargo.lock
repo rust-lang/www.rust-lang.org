@@ -579,7 +579,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f2b9ed320a78de7b10d9fb629b399e2746573e11fff071749722ecdf3d18566d"
 dependencies = [
  "fluent-langneg",
- "fluent-syntax 0.10.2",
+ "fluent-syntax 0.10.3",
  "intl-memoizer",
  "intl_pluralrules 7.0.1",
  "ouroboros",
@@ -626,9 +626,9 @@ checksum = "ac0f7e83d14cccbf26e165d8881dcac5891af0d85a88543c09dd72ebd31d91ba"
 
 [[package]]
 name = "fluent-syntax"
-version = "0.10.2"
+version = "0.10.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6383c60105d231d00b96a289436a2a665177d86c1ce23762bb49e77ff70a118e"
+checksum = "784f660373ea898f712a7e67b43f35bf79608d46112747c29767d087611d716b"
 
 [[package]]
 name = "fnv"
@@ -2797,7 +2797,7 @@ dependencies = [
  "fluent 0.14.3",
  "fluent-bundle 0.6.0",
  "fluent-locale 0.10.1",
- "fluent-syntax 0.10.2",
+ "fluent-syntax 0.10.3",
  "handlebars",
  "handlebars-fluent",
  "lazy_static",
