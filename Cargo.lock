@@ -535,11 +535,11 @@ dependencies = [
 
 [[package]]
 name = "fluent"
-version = "0.14.3"
+version = "0.14.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "178b5d86f17a153e33a812f8a8d463054043c121d3e0575816601a22d8326d06"
+checksum = "960ac6317b829b94c67f9a774e8b56db388405e174855a5a84d4b461ff85b281"
 dependencies = [
- "fluent-bundle 0.14.3",
+ "fluent-bundle 0.14.4",
  "unic-langid 0.9.0",
 ]
 
@@ -574,9 +574,9 @@ dependencies = [
 
 [[package]]
 name = "fluent-bundle"
-version = "0.14.3"
+version = "0.14.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f2b9ed320a78de7b10d9fb629b399e2746573e11fff071749722ecdf3d18566d"
+checksum = "ba3cc2d1c59a0daaa93bb346db97e1ebad1067c5ffedc1af8b937a9d8caa6a77"
 dependencies = [
  "fluent-langneg",
  "fluent-syntax 0.10.3",
@@ -1416,9 +1416,9 @@ dependencies = [
 
 [[package]]
 name = "ouroboros"
-version = "0.7.0"
+version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b0b666c900ea45a357bc7915a4dc8fab7e295f2e756e843aa3c0788d94aa3a29"
+checksum = "069fb33e127cabdc8ad6a287eed9719b85c612d36199777f6dc41ad91f7be41a"
 dependencies = [
  "ouroboros_macro",
  "stable_deref_trait",
@@ -1426,11 +1426,12 @@ dependencies = [
 
 [[package]]
 name = "ouroboros_macro"
-version = "0.7.0"
+version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dfc618f205c0adc415923c74369d45f5f298462fc473711dfc33056a23f23619"
+checksum = "ad938cc920f299d6dce91e43d3ce316e785f4aa4bc4243555634dc2967098fc6"
 dependencies = [
  "Inflector",
+ "proc-macro-error",
  "proc-macro2 1.0.24",
  "quote 1.0.7",
  "syn 1.0.60",
@@ -1604,6 +1605,30 @@ name = "ppv-lite86"
 version = "0.2.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ac74c624d6b2d21f425f752262f42188365d7b8ff1aff74c82e45136510a4857"
+
+[[package]]
+name = "proc-macro-error"
+version = "1.0.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "da25490ff9892aab3fcf7c36f08cfb902dd3e71ca0f9f9517bea02a73a5ce38c"
+dependencies = [
+ "proc-macro-error-attr",
+ "proc-macro2 1.0.24",
+ "quote 1.0.7",
+ "syn 1.0.60",
+ "version_check 0.9.2",
+]
+
+[[package]]
+name = "proc-macro-error-attr"
+version = "1.0.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a1be40180e52ecc98ad80b184934baf3d0d29f979574e439af5a55274b35f869"
+dependencies = [
+ "proc-macro2 1.0.24",
+ "quote 1.0.7",
+ "version_check 0.9.2",
+]
 
 [[package]]
 name = "proc-macro2"
@@ -2794,7 +2819,7 @@ dependencies = [
 name = "www-rust-lang-org"
 version = "0.1.0"
 dependencies = [
- "fluent 0.14.3",
+ "fluent 0.14.4",
  "fluent-bundle 0.6.0",
  "fluent-locale 0.10.1",
  "fluent-syntax 0.10.3",
