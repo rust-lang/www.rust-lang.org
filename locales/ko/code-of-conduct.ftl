@@ -4,3 +4,4 @@
 ## templates/policies/code-of-conduct.hbs
 
 policies-code-of-conduct-page-title = 행동강령
+coc-moderation-heading = 중재
