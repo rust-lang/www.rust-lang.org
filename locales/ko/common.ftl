@@ -1,11 +1,13 @@
 ## Translations that appear on many pages
 
 rust = Rust
+get-started-exclamation = 시작해봅시다!
 getting-started = 시작하기
 why-rust = 왜 Rust일까요?
 production-use = 실사용
 learn-more = 더 알아보기
 discord = Discord
+zulip = Zulip
 
 ## components/panels/domain.hbs
 
@@ -38,6 +40,7 @@ footer-policies = 약관 및 정책
 footer-coc = 행동강령
 footer-licenses = 라이선스
 footer-media = 로고 정책 및 미디어 가이드
+footer-security = 보안 공개
 footer-policies-all = 모든 정책
 footer-get-help = 도움 받기
 footer-youtube-alt = Twitter

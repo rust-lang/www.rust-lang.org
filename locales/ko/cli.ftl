@@ -8,12 +8,15 @@ what-cli-page-title = 명령줄 앱
 ## templates/components/what/cli/pitch.hbs
 
 cli-pitch-solid-img-alt = 체크 표시가 있는 방패 아이콘
+cli-pitch-solid-description = 간단한 일회용 스크립트를 작성할 때에도 쉽고 빠르게 테스트할 수 있으며 쓸만한 결과를 낼 수 있다고 자신할 수 있습니다.
 cli-pitch-solid-link = Rust의 보증
 cli-pitch-ship-img-alt = 체크 표시가 있는 상자 아이콘
 cli-pitch-ship-heading = 손쉬운 배포
+cli-pitch-ship-description = 모든 것을 하나의 바이너리로 컴파일해 사용자가 따로 런타임이나 라이브러리를 설치할 필요가 없습니다.
 cli-pitch-config-img-alt = 노트와 기어 아이콘
 cli-pitch-config-heading = 견고한 구성
 cli-pitch-manuals-img-alt = 설명서 아이콘
+cli-pitch-manuals-link = 방법 알아보기
 cli-pitch-machines-img-alt = 배관 아이콘
 cli-pitch-machines-link = 기계와 소통하기
 cli-pitch-logging-heading = 유연한 로깅
