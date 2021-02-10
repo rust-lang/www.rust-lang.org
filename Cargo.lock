@@ -631,6 +631,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "784f660373ea898f712a7e67b43f35bf79608d46112747c29767d087611d716b"
 
 [[package]]
+name = "fluent-syntax"
+version = "0.11.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c0abed97648395c902868fee9026de96483933faa54ea3b40d652f7dfe61ca78"
+dependencies = [
+ "thiserror",
+]
+
+[[package]]
 name = "fnv"
 version = "1.0.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2316,6 +2325,26 @@ dependencies = [
 ]
 
 [[package]]
+name = "thiserror"
+version = "1.0.23"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "76cc616c6abf8c8928e2fdcc0dbfab37175edd8fb49a4641066ad1364fdab146"
+dependencies = [
+ "thiserror-impl",
+]
+
+[[package]]
+name = "thiserror-impl"
+version = "1.0.23"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9be73a2caec27583d0046ef3796c3794f868a5bc813db689eed00c7631275cd1"
+dependencies = [
+ "proc-macro2 1.0.24",
+ "quote 1.0.7",
+ "syn 1.0.60",
+]
+
+[[package]]
 name = "thread_local"
 version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2822,7 +2851,7 @@ dependencies = [
  "fluent 0.14.4",
  "fluent-bundle 0.6.0",
  "fluent-locale 0.10.1",
- "fluent-syntax 0.10.3",
+ "fluent-syntax 0.11.0",
  "handlebars",
  "handlebars-fluent",
  "lazy_static",
