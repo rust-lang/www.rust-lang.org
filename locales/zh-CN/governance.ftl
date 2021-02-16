@@ -13,7 +13,7 @@ governance-rfc-blurb =
 governance-roadmap-blurb =
     RFC 流程还用来制定年度路线图，阐明我们对该年度的期望。
     这一共同愿景对于确保开发流程的专注至关重要。
-governance-roadmap-read = 阅读 2019 年路线图
+governance-roadmap-read = 阅读 2021 年路线图
 governance-teams-header = 团队
 governance-wgs-header = 工作组
 

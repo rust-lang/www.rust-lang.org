@@ -13,7 +13,7 @@ governance-rfc-blurb =
 governance-roadmap-blurb =
     Proces RFC jest też używany przy tworzeniu corocznych planów działania, gdzie rozpisywane są cele na najbliższe dwanaście miesięcy.
     Uzgodnienie wspólnej wizji jest niezbędne dla utrzymania procesu twórczego na odpowiednich torach.
-governance-roadmap-read = Przeczytaj Plan Działania na rok 2019
+governance-roadmap-read = Przeczytaj Plan Działania na rok 2021
 governance-teams-header = Zespoły
 governance-wgs-header = Grupy Robocze
 
