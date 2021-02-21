@@ -2,8 +2,14 @@
 
 tools-page-title = Narzędzia
 tools-editor-support-heading = Wzorowe wsparcie dla edytorów
+tools-editor-support-description = Nie ważne czy wolisz pracować z kodem z poziomu wiersza poleceń, czy korzystasz z wyrafinowanych graficznych IDE, istnieje duża szansa że integracja Twojego edytora z Rustem już istnieje. Jeśli jest inaczej możesz stworzyć własną z użyciem <a href="https://github.com/rust-lang/rls">Rust Language Server</a>
+tools-build-description =
+    Cargo jest głównym narzędziem do budowania projektów
+    Rust, zbierającym wszystkie niezbędne funkcje pod jedną komendą.
 tools-build-install-heading = Instaluj
 tools-build-test-heading = Testuj
+tools-build-deploy-heading = Wdrażaj
+tools-build-deploy-description = <code class="nowrap">cargo build</code> tworzy smukłe pliki binarne na każdą platformę. Tą jedną komendą możesz celować w publikację na systemy Windows, Linux, macOS, i środowiska webowe. Wszystko to w ramach nowoczesnego interfejsu, bez potrzeby pisania skomplikowanych skryptów kompilacyjnych.
 tools-automation-heading = Prędkość poprzez automatyzację
 tools-automation-rustfmt-heading = Rustfmt
 tools-automation-rustfmt-link = Idź do repozytorium

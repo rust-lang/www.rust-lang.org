@@ -139,6 +139,32 @@ policies-privacy-page-forums-desc =
       opublikowane wpisy, przeczytane wpisy, czy czas spędzony na stronie.
     </p>
 policies-privacy-page-third-parties-title = Usługi stron trzecich
+policies-privacy-page-third-parties-desc =
+    <p>
+      Forum Użytkowników oraz Forum Internals na rust-lang.org są hostowane przez
+      <a href="https://www.discourse.org/">Discourse</a> i korzystają z jego platformy dyskusyjnej open source. Polityka prywatności Discourse jest dostępna
+      <a href="https://www.discourse.org/privacy">pod tym adresem</a>.
+    </p>
+    
+    <p>
+      Używamy serwisu Mailgun do wysyłania emaili. Polityka prywatności
+      Mailgun jest dostępna
+      <a href="https://www.mailgun.com/privacy-policy">pod tym adresem</a>.
+    </p>
+    
+    <p>
+      Korzystamy z GitHub login w celu uwierzytelniania użytkowników na Crates.io oraz (opcjonalnie) na forach. Oświadczenie o ochronie prywatności firmy Github
+    jest dostępne
+      <a href="https://help.github.com/en/articles/github-privacy-statement">pod tym adresem</a>.
+    </p>
+    
+    <p>
+      Niektórzy członkowie zespołów Rusta korzystają z platform Zulip oraz Discord.
+      Informacja o ochronie prywatności Zulip jest dostępna
+      <a href="https://zulipchat.com/privacy/">tutaj</a>.
+      Informacja o ochronie prywatności Discord jest dostępna
+      <a href="https://discordapp.com/privacy">tutaj</a>.
+    </p>
 policies-privacy-page-contact-title = Kontakt
 policies-privacy-page-contact-desc =
     <p>
