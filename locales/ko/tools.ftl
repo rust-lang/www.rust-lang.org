@@ -21,11 +21,35 @@ tools-install-page-title = 러스트 설치
 install-rustup32-button = <span class="nowrap">rustup-init.exe</span> <span class="nowrap">(32-bit)</span> 다운로드
 install-rustup64-button = <span class="nowrap">rustup-init.exe</span> <span class="nowrap">(64-bit)</span> 다운로드
 install-notes-heading = Rust 설치에 대한 참고사항
+install-notes-getting-started-description = Rust를 처음 시작하시고 좀 더 자세한 안내를 원하신다면, <a href="{ $getting-started-href }">getting started</a> 페이지를 봐 주세요.
+install-notes-rustup-heading = <code>rustup</code>으로 툴체인 관리
+install-notes-path-description =
+    <p>
+      Rust 개발 환경 안에서는 모든 도구들이
+      <span class="platform-specific not-win di">
+        <code>~/.cargo/bin</code>
+      </span>
+      <span class="platform-specific win dn">
+        <code>%USERPROFILE%\.cargo\bin</code>
+      </span> 디렉토리에 설치되므로, 이곳이 
+      <code>rustc</code>, <code>cargo</code>, <code>rustup</code> 등을 포함한 Rust 툴체인을 찾을 수 있는 곳입니다.
+    </p>
+    <p>
+      따라서, Rust 개발자들은 관례적으로 이 디렉토리를
+      <a href="https://en.wikipedia.org/wiki/PATH_(variable)">
+      <code>PATH</code> 환경 변수</a>에 포함시키곤 합니다.
+      <code>rustup</code>은 설치 과정 도중에 <code>PATH</code>를 설정하려고 시도할 수 있습니다.
+      여러 플랫폼과 명령 셸 사이의 차이점, 또는 <code>rustup</code>의 버그로 인해, 재시작이나 로그아웃하기 전까지 <code>PATH</code>를 변경한 내용이 반영되지 않거나, 변경이 성공하지 못할 수도 있습니다.
+    </p>
+    <p>
+      만약, 설치 이후에 콘솔에서 <code>rustc --version</code>이 동작하지 않는다면, 이런 이유일 가능성이 높습니다.
+    </p>
 install-notes-windows-heading = Windows 고려사항
 install-other-methods-link = 더 알아보기
 
 ## components/tools/rustup.hbs
 
+tools-rustup-wsl-heading = Linux용 Windows 하위 시스템 (WSL)
 
 ## components/tools/editors.hbs
 
