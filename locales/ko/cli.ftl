@@ -15,6 +15,7 @@ cli-pitch-ship-heading = 손쉬운 배포
 cli-pitch-ship-description = 모든 것을 하나의 바이너리로 컴파일해 사용자가 따로 런타임이나 라이브러리를 설치할 필요가 없습니다.
 cli-pitch-config-img-alt = 노트와 기어 아이콘
 cli-pitch-config-heading = 견고한 구성
+cli-pitch-config-link = 설정 시작하기
 cli-pitch-manuals-img-alt = 설명서 아이콘
 cli-pitch-manuals-link = 방법 알아보기
 cli-pitch-machines-img-alt = 배관 아이콘
