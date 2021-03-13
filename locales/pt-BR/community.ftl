@@ -12,6 +12,9 @@ community-team-contact =
     A Equipe de Comunidade esta disposta a te conectar com quem pode ajudar!
 community-team-button = email { ENGLISH("community@rust-lang.org") }
 community-where = Onde conversar
+community-learn = Onde aprender
+community-get-in-contact = Entre em contato
+community-read-about = Leia sobre Rust
 community-urlo-header = Fórum de usuários
 community-urlo =
     O Fórum de Usuários de Rust é um lugar para todos conversarem sobre tudo

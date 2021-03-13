@@ -4,6 +4,8 @@ learn-page-title = Aprenda Rust
 learn-begin = Comece com Rust
 learn-book = Afetivamente apelidado "o livro", <cite>A Linguagem de Programação Rust</cite> apresenta uma visão geral da linguagem a partir de princípios fundamentais. Você construirá alguns projetos ao longo do caminho, e no final, terá uma entendimento sólido da linguagem.
 learn-book-button = Leia o Livro!
+translated-book = { "" }
+translated-book-button = { "" }
 learn-rustlings = Alternativamente, <i>Rustlings</i> te guiará através do processo de download e configuração do conjunto de ferramentas de Rust, e te ensinará o básico para ler e escrever a sintaxe de Rust, pela linha de comando. É uma alternativa ao <i>Rust por Exemplos</i> que é executado no seu próprio ambiente de desenvolvimento.
 learn-rustlings-button = Faça o curso <i>Rustlings</i>!
 learn-rbe = Se ler centenas de páginas sobre uma linguagem não for o seu estilo, então o Rust por Exemplo tem a solução. Enquanto o livro fala sobre código usando muitas palavras, o RPE trás muitas linhas de código e limita o texto ao mínimo. Também inclui exercícios!
@@ -69,7 +71,6 @@ learn-install-cargo =
 learn-install-cargo-button = Leia o livro sobre cargo
 learn-install-other = Outras ferramentas
 learn-install-editors = Suporte a Rust está disponível em vários editores:
-
 learn-generating = Criando um novo projeto
 learn-generating-steps =
     <p>Vamos escrever uma pequena aplicação como o nosso novo ambiente de desenvolvimento em Rust. Para começar, usaremos o Cargo para criar um projeto. No seu terminal, execute:</p>

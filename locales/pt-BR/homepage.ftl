@@ -1,6 +1,6 @@
 ## index.hbs
 
-tagline = Uma linguagem capacitando todos { $linebreak } a construir softwares confiáveis e eficientes.
+tagline = Uma linguagem empoderando todos { $linebreak } a construir softwares confiáveis e eficientes.
 get-started = Comece Agora
 homepage-version = Versão { $number }
 
