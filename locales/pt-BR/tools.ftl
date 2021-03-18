@@ -70,6 +70,13 @@ install-notes-rustup-description =
       <a href="https://github.com/rust-lang/rustup.rs/blob/master/README.md">
       <code>rustup</code></a>.
     </p>
+install-notes-uninstall-heading = Desinstalar Rust
+install-notes-uninstall-description =
+    <p>
+      Se a qualquer momento você desejar desinstalar Rust, você pode rodar
+      <code>rustup self uninstall</code>.
+      Porém, vamos sentir sua falta!
+    </p>
 install-notes-path-heading = Configurando a variável de ambiente <code>PATH</code>
 install-notes-path-description =
     <p>
@@ -124,7 +131,7 @@ install-other-methods-link = Aprenda mais
 ## components/tools/rustup.hbs
 
 tools-rustup-unixy = Aparentemente você está rodando macOS, Linux, ou outro sistema similar ao Unix. Para fazer o download do Rustup e instalar Rust, execute o seguinte comando no seu terminal, e siga as instruções que surgirem na tela.
-tools-rustup-windows = Aparentemente você está rodando Windows. Para instalar Rust, faça o download e execute o seguinte link, e depois siga as instruções na tela.
+tools-rustup-windows-2 = Parece que você está rodando Windows. Para começar a usar Rust, baixe o instalador, em seguida rode o programa e siga as instruções na tela. Você pode precisar instalar o <a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/"><i>Visual Studio C++ Build tools</i></a> se solicitado durante o processo de instalação. Se você não está no Windows, veja <a href="https://forge.rust-lang.org/infra/other-installation-methods.html">"Outros Métodos de Instalação"</a>.
 tools-rustup-wsl-heading = Windows Subsystem for Linux
 tools-rustup-wsl = Se você for um usuário do Windows Subsystem for Linux (WSL) execute o seguinte comando no terminal, e siga as instruções na tela para a instalação de Rust.
 tools-rustup-unknown = Rust funciona em Windows, Linux, macOS, FreeBSD e NetBSD. Se você estiver em alguma dessas plataformas e estiver vendo essa mensagem, então reporte um problema com as seguintes informações:

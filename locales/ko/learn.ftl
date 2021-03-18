@@ -1,6 +1,7 @@
 ## learn/index.hbs
 
 learn-page-title = Rust 배우기
+learn-begin = Rust 시작하기
 learn-book-button = 문서 읽기
 translated-book = { "" }
 translated-book-button = { "" }
@@ -18,6 +19,7 @@ learn-domain = 앱 도메인으로 기술 익히기
 learn-domain-wasm-button = WebAssembly 문서
 learn-domain-embedded-button = 임베디드 문서
 learn-master = Rust 마스터하기
+learn-master-text = 언어의 가장 어두운 부분이 궁금한가요? 여기에서 세부적으로 확인할 수 있습니다.
 learn-reference-alt = 책꽂이 아이콘
 learn-nomicon-alt = 양손으로 불을 감싸는 아이콘
 learn-unstable-alt = 반짝이를 뿌리는 손 아이콘
@@ -32,6 +34,7 @@ learn-install-rustup-update-header = 최신 Rust인가요?
 learn-install-rustup-button = 설치 자세히 알아보기
 learn-install-cargo-button = Cargo 문서 읽기
 learn-install-other = 기타 도구
+learn-install-editors = 많은 에디터에서 Rust를 지원합니다.
 learn-generating = 새로운 프로젝트 만들기
 learn-dependencies = 의존성 추가하기
 learn-app-steps =

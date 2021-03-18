@@ -12,3 +12,4 @@ policies-security-link = Divulgação de Vulnerabilidades
 policies-privacy-link = Notificação de privacidade
 policies-reach-out-description = Não encontrou o que estava procurando? Tem alguma pergunta? Entre em contato!
 policies-reach-out-link = Fale com a Equipe Principal
+policies-translation-warning = Essa política pode ser traduzida por membros da comunidade de Rust. Se houver qualquer conflito entre a <a href="{ $english }">versão em Inglês</a> e a tradução, a versão em Inglês prevalecerá.

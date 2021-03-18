@@ -18,6 +18,69 @@ policies-privacy-page-rust-lang-org-desc =
         當你開啟 rust-lang.org 時我們會取得你的 IP 位址，並作為我們伺服器的紀錄的一部份儲存，我們會保留這些紀錄一年
       </dd>
     </dl>
+policies-privacy-page-crates-io-desc--2020-09 =
+    <p>
+      <a href="https://crates.io">Crates.io</a> 由
+      <a href="{ $baseurl }/governance/teams/crates-io">Crates.io 團隊</a> 與
+      <a href="{ $baseurl }/governance/teams/core">Rust 核心團隊</a> 的成員共同管理。
+    </p>
+    
+    <dl>
+      <dt>以 GitHub 登入：</dt>
+      <dd>
+        <p>
+          Crates.io 要求使用者有
+          <a href="https://github.com">GitHub 帳號</a>，以便登入與使用該服務。當你登入使用 GitHub
+          帳號登入 Crates.io 時，我們將取得你的 GitHub 使用者名稱與大頭貼。若你在你的 GitHub
+          公開個人資料中分享顯示名稱與公開電子郵件地址，我們也會取得該資訊。
+        </p>
+      </dd>
+    
+      <dt>電子郵件地址：</dt>
+      <dd>
+        <p>
+          發佈一個 crate 之前，你必須擁有一個通過驗證的電子郵件地址。我們將取得任一與你的
+          GitHub 帳號關聯的公開電子郵件。你亦可選擇不同的地址來關聯你的 Crates.io
+          活動。你的電子郵件地址僅會用在我們聯繫有關你的帳號事宜時。
+        </p>
+      </dd>
+    
+      <dt>訪問紀錄：</dt>
+      <dd>
+        <p>
+          當你訪問 Crates.io 時，我們將取得你的 IP 位址與 user-agent 標頭，作為我們標準伺服器紀錄的一部分，這些紀錄將留存一年。
+        </p>
+      </dd>
+    
+      <dt>上傳至 crate 的資訊：</dt>
+      <dd>
+        <p>
+          所有在 Crates.io 的 crate 皆為公開，包含 crate 擁有者的使用者名稱與 crate 上傳日期。任何人都可觀看與下載
+          crate 的內容。由於 Crates.io 原生的公開性，任何你可能放在上傳到 crate 的 Cargo.toml 
+          檔案內的個人資料都會是公開可存取。舉例來說，若一個電子郵件地址儲存在 Cargo.toml
+          檔案的 `authors` 欄位中，該電子郵件地址也同樣會公開。
+        </p>
+        <p>
+          有鑑於其原生公開性，請留意是否有私人資訊包含在 crate
+          中，這些訊息可能被搜尋引擎用來建立索引，或為其他第三方利用。敏感資訊不應包含在 crate 檔案中。
+        </p>
+      </dd>
+    
+      <dt>網站相關資料之發佈：</dt>
+      <dd>
+        <p>
+          Crates.io 使用 Google 視覺化 API（ Google Visualization API）來建立每個 crate 過去 90
+          天內下載量的圖表。這些圖表可在每個 crate 頁面底部查看。
+        </p>
+      </dd>
+    
+      <dt>錯誤監控：</dt>
+      <dd>
+        <p>
+          Crates.io 使用 Sentry 這個錯誤監控服務，協助 Rust 團隊發現並修復程式碼的效能。當一個錯誤發生，Sentry 會取得關於你如何與網站互動，以及導致產生該錯誤的行為的基本資訊。此外，你的 IP 位置也會揭露給 Sentry 作為該錯誤回報流程的一環，但我們設定當 Sentry 一收到 IP 資訊便即刻刪除之。閱讀 <a href="https://sentry.io/privacy/">Sentry 的隱私權政策</a>
+        </p>
+      </dd>
+    </dl>
 policies-privacy-page-docs-rs-desc--2020-09 =
     <p>
       <a href="https://docs.rs">Docs.rs</a> 由
