@@ -17,7 +17,7 @@ community-get-in-contact = Ponte en contacto
 community-read-about = Leer sobre Rust
 community-urlo-header = Foro de usuarios
 community-urlo =
-    El Foro de Usuarios de Rust es el lugar donde los usarios se comunican sobre
+    El Foro de Usuarios de Rust es el lugar donde los usuarios se comunican sobre
     cualquier tema relacionado con Rust. Pregunta dudas aquí,
     coordina ideas sobre proyectos, ¡lo que quieras!
 community-discourse-button = Visita el foro
