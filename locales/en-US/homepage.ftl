@@ -11,7 +11,8 @@ production-blurb = Hundreds of companies around the world are using Rust in prod
         today for fast, low-resource, cross-platform solutions. Software you know
         and love, like <a href="https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka-stylo/">Firefox</a>,
         <a href="https://blogs.dropbox.com/tech/2016/06/lossless-compression-with-brotli/">Dropbox</a>,
-        and <a href="https://blog.cloudflare.com/cloudflare-workers-as-a-serverless-rust-platform/">Cloudflare</a>,
+        <a href="https://blog.cloudflare.com/cloudflare-workers-as-a-serverless-rust-platform/">Cloudflare</a>,
+        and <a href="https://aws.amazon.com/blogs/opensource/why-aws-loves-rust-and-how-wed-like-to-help/">Amazon Web Service</a>,
         uses Rust. <strong>From startups to large
         corporations, from embedded devices to scalable web services, Rust is a great fit.</strong>
 
