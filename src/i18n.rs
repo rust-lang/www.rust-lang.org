@@ -90,7 +90,7 @@ pub const EXPLICIT_LOCALE_INFO: &[LocaleInfo] = &[
 ];
 
 lazy_static! {
-    static ref SUPPORTED_LOCALES: HashSet<&'static str> =
+    pub static ref SUPPORTED_LOCALES: HashSet<&'static str> =
         EXPLICIT_LOCALE_INFO.iter().map(|x| x.lang).collect();
 }
 pub struct TeamHelper {
