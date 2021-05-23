@@ -87,7 +87,7 @@ learn-generating-steps =
 learn-dependencies = 加入相依套件
 learn-dependencies-steps =
     <p>現在來為我們的應用程式加上相依套件吧。您可以在 Rust 的套件倉儲 <a href="https://crates.io">crates.io</a> 找到各式各樣的函式庫。在 Rust 中，我們稱套件為「crates」。</p>
-    <p>在這個專案中，我們講使用一個叫作 <a href="https://crates.io/crates/ferris-says"><code>ferris-says</code> 的 crate。</a>
+    <p>在這個專案中，我們將使用一個叫作 <a href="https://crates.io/crates/ferris-says"><code>ferris-says</code> 的 crate。</a>
     <p>請在我們的 <code>Cargo.toml</code> 檔案加入以下資訊（我們可以從 crate 頁面上取得）：</p>
     { $cargotoml }
     <p>這樣我們就能執行：</p>
