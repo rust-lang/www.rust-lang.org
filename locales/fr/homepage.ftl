@@ -49,19 +49,19 @@ domains-embedded-alt = une puce embarquée
 
 get-involved = S'impliquer
 get-involved-read-rust = Lire sur Rust
-get-involved-read-rust-blurb = Nous adorons la documentation ! Jetez un œil aux livres disponibles en ligne, ainsi que les articles clefs de blogs et guides utilisateurs.
+get-involved-read-rust-blurb = Nous adorons la documentation ! Jetez un œil aux livres disponibles en ligne, ainsi que les articles clefs de blogs et guides utilisateurs.
 get-involved-read-rust-link = Lire le Book
 get-involved-watch-rust = Regarder sur Rust
 get-involved-watch-rust-blurb = La communauté Rust a une chaîne YouTube dédiée rassemblant une grande variété de présentations et de tutoriels.
 get-involved-watch-rust-link = Regarder les vidéos
 get-involved-contribute = Contribuer du code
-get-involved-contribute-blurb = Rust est un véritable effort communautaire et nous accueillons les contributions : des amateurs aux professionnels, des débutants aux experts. Venez nous aider à rendre l'expérience Rust encore meilleure !
+get-involved-contribute-blurb = Rust est un véritable effort communautaire et nous accueillons les contributions : des amateurs aux professionnels, des débutants aux experts. Venez nous aider à rendre l'expérience Rust encore meilleure !
 get-involved-contribute-link = Lire le guide de contribution
 
 ## components/panels/thanks.hbs
 
 thanks-title = Remerciements
-thanks-blurb = Rust n'existerait pas sans les généreuses contributions en temps, travail et en ressources de la part d'individus et d'entreprises. Nous sommes très reconnaissants de tout ce soutien !
+thanks-blurb = Rust n'existerait pas sans les généreuses contributions en temps, travail et en ressources de la part d'individus et d'entreprises. Nous sommes très reconnaissants de tout ce soutien !
 thanks-individuals-header = Individus
 thanks-individuals-blurb = Rust est un projet communautaire et doit énormément aux nombreuses contributions qu'il reçoit.
 thanks-individuals-link = Voir les contributeurs individuels
