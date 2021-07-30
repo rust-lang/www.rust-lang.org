@@ -136,7 +136,7 @@ learn-read-docs = You’re a Rustacean now! Welcome! We’re so glad to have you
 learn-read-docs-button = learn more!
 
 learn-ferris-who = Who’s this crab, Ferris?
-learn-ferris = <p>Ferris is the unofficial mascot of the Rust Community. Many Rust programmers call themselves “Rustaceans,” a play on the word “<a href="https://en.wikipedia.org/wiki/Crustacean">crustacean</a>.” We refer to Ferris with the pronouns “they,” “them,” etc., rather than with gendered pronouns.</p>
+learn-ferris = <p>Ferris is the unofficial mascot of the Rust Community. Many Rust programmers call themselves “Rustaceans,” a play on the word “<a href="https://en.wikipedia.org/wiki/Crustacean">crustacean</a>.” We refer to Ferris with any pronouns “she,” “he,” “they,” “it,” etc.</p>
                <p>Ferris is a name playing off of the adjective, “ferrous,” meaning of or pertaining to iron. Since Rust often forms on iron, it seemed like a fun origin for our mascot’s name!</p>
                <p>You can find more images of Ferris on <a href="https://rustacean.net/">rustacean.net</a>.
 learn-ferris-alt = a gif of ferris scurrying side to side

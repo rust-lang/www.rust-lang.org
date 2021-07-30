@@ -67,9 +67,9 @@ media-guide-tm-use-explicit-approval-heading = Usos que requieren autorización 
 media-guide-tm-use-explicit-approval-description =
     <ul>
       <li>Distribuir una versión modificada del lenguaje de programación Rust o del gestor de paquetes Cargo que mantengan los nombres Rust o Cargo requiere autorización explícita por escrito del equipo <em>core</em> de Rust. Generalmente dichos usos se permitirán siempre que las modificaciones (1) sean relativamente pequeñas y (2) se comuniquen claramente al usuario final.</li>
-      <li>Vender camisetas, gorras y otro material gráfico o promocional requiere autorización explícita por escrito del equipo <em>core</em> de Rust. Generalmente dichos usos se permitiran siempre que (1) se comunique claramente que dicho material en absoluto forma parte oficial del proyecto Rust y (2) se comunique claramente si los beneficios repercuten en el proyecto Rust.</li>
+      <li>Vender camisetas, gorras y otro material gráfico o promocional requiere autorización explícita por escrito del equipo <em>core</em> de Rust. Generalmente dichos usos se permitirán siempre que (1) se comunique claramente que dicho material en absoluto forma parte oficial del proyecto Rust y (2) se comunique claramente si los beneficios repercuten en el proyecto Rust.</li>
       <li>El uso de las marcas registradas de Rust bajo otra marca registrada requiere autorización explícita del equipo <em>core</em> de Rust, excepto como se describe más arriba.</li>
-      <li>Los términos "RustCamp", "RustCon" o "RustConf" no pueden usarse in autorización explícita.</li>
+      <li>Los términos "RustCamp", "RustCon" o "RustConf" no pueden usarse sin autorización explícita.</li>
     </ul>
 
 ## Helping out
