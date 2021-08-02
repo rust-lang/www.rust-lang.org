@@ -54,7 +54,7 @@ tools-rustup-wsl-heading = Linux용 Windows 하위 시스템 (WSL)
 ## components/tools/editors.hbs
 
 tools-editor-vscode = VS Code
-tools-editor-sublime = Sublime Text 3
+tools-editor-sublime = Sublime Text
 tools-editor-atom = Atom
 tools-editor-idea = IntelliJ IDEA
 tools-editor-eclipse = Eclipse

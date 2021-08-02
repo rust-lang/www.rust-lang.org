@@ -95,7 +95,7 @@ tools-rustup-manual-default-windows = Windows上であれば、<br><a href="http
 ## components/tools/editors.hbs
 
 tools-editor-vscode = VS Code
-tools-editor-sublime = Sublime Text 3
+tools-editor-sublime = Sublime Text
 tools-editor-atom = Atom
 tools-editor-idea = IntelliJ IDEA
 tools-editor-eclipse = Eclipse

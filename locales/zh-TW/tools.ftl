@@ -105,7 +105,7 @@ tools-rustup-manual-default-windows = 如果您的電腦是 Windows 作業系統
 ## components/tools/editors.hbs
 
 tools-editor-vscode = VS Code
-tools-editor-sublime = Sublime Text 3
+tools-editor-sublime = Sublime Text
 tools-editor-atom = Atom
 tools-editor-idea = IntelliJ IDEA
 tools-editor-eclipse = Eclipse
