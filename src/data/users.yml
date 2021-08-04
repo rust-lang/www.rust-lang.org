@@ -700,5 +700,5 @@
 -
   name: Tweede golf
   url: https://tweedegolf.nl
-  logo: tweedegolf.png
+  logo: tweedegolf.svg
   how: "Multiple web and embedded software projects for many clients are built on Rust and are in production"
