@@ -696,3 +696,9 @@
   url: https://1password.com/
   logo: 1password.svg
   how: "We use Rust to power the entire backend (encryption, networking, database, and business logic) of all our client apps."
+
+-
+  name: Ockam
+  url: https://www.ockam.io
+  logo: ockam.png
+  how: "Tools for mutual authentication and end-to-end encrypted messaging between distributed applications, in any environment, anywhere."
