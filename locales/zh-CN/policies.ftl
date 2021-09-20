@@ -12,3 +12,4 @@ policies-security-link = 安全信息公示
 policies-privacy-link = 隐私声明
 policies-reach-out-description = 没有找到您要找的内容？有问题？请联系我们！
 policies-reach-out-link = 致信核心团队
+policies-translation-warning = 本政策可能是 Rust 社区成员所翻译。若翻译版本有任何与<a href="{ $english }">英文版本</a>冲突之处，以英文版本为准。
