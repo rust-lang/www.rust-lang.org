@@ -106,7 +106,7 @@ learn-app-steps =
     <p>Si tout s'est bien passé, vous devriez voir votre application afficher ceci à l'écran :</p>
     { $output }
 learn-read-docs-header = En savoir plus !
-learn-read-docs = Vous êtes maintenant un Rustacé ! Bienvenue ! Nous sommes heureux de vous compter parmi nous. Quand vous serez prêt·e, faites un saut sur notre  page « Apprendre », où vous pourrez trouver beaucoup de livres qui vous aideront a continuer votre aventure en Rust.
+learn-read-docs = Vous êtes maintenant un Rustacé ! Bienvenue ! Nous sommes heureux de vous compter parmi nous. Quand vous serez prêt, faites un saut sur notre page « Apprendre », où vous pourrez trouver beaucoup de livres qui vous aideront a continuer votre aventure en Rust.
 learn-read-docs-button = en savoir plus !
 learn-ferris-who = Qui est ce crabe, Ferris ?
 learn-ferris = <p>Ferris est la mascotte non officielle de la communauté Rust. Beaucoup de programmeurs Rust s'appellent eux-mêmes "Rustacés", un jeu de mot avec  “<a href="https://fr.wikipedia.org/wiki/Crustacé">crustacé</a>.”  <p>Ferris est un nom jouant avec l'adjectif , “ferreux,” étant donné que la rouille (Rust en anglais) se forme souvent sur le fer, cela semblait une origine amusante pour le nom de notre mascotte !</p> <p>Vous pouvez trouver plus d'images de Ferris sur <a href="https://rustacean.net/">rustacean.net</a>.
