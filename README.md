@@ -15,9 +15,9 @@
    `rust-toolchain` file. [`rustup`](https://rustup.rs) will automatically
    download that nightly for you when you run a cargo command.
 
-2. Install `cargo watch` by running `cargo install cargo-watch` in your terminal.
+2. Install `cargo watch` by running `cargo install cargo-watch` command in your terminal.
 
-3. To build the app and run the server, run `cargo watch -x run` in your terminal.
+3. To build the app and run the server, run `cargo watch -x run` command in your terminal.
 
 4. Navigate to http://localhost:7878 in your browser. If you make any updates to
    the styles, or any other project files, `cargo watch` will automatically
