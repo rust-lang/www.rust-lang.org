@@ -9,11 +9,10 @@
 
 ### Running the app locally
 
-1. This is a [Rocket](https://rocket.rs/) app, which means we use the `nightly`
-   channel of Rust. We use a specific nightly version to ensure consistent
-   builds locally and on the server, and the version is defined in the
-   `rust-toolchain` file. [`rustup`](https://rustup.rs) will automatically
-   download that nightly for you when you run a cargo command.
+1. This is a [Rocket](https://rocket.rs/) app. We use a specific Rust version to
+   ensure consistent builds locally and on the server, and the version is defined
+   in the `rust-toolchain` file. [`rustup`](https://rustup.rs) will automatically
+   download that Rust version for you when you run a cargo command.
 
 2. Install `cargo watch` by running `cargo install cargo-watch` in your terminal.
 
