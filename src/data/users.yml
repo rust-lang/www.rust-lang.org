@@ -458,9 +458,9 @@
   logo: coreos.svg
   how: "Tools shipped within the Container Linux distribution as well as internal tooling including documentation transformation and validation."
 -
-  name: 3D Hubs
-  url: https://www.3dhubs.com/
-  logo: 3dhubs.png
+  name: Hubs
+  url: https://www.hubs.com/
+  logo: hubs.png
   how: "We use Rust to do performance critical heavy lifting in our 3D model processing backend."
 -
   name: VersionEye
