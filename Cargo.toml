@@ -6,7 +6,7 @@ edition = "2018"
 
 [dependencies]
 lazy_static = "1.2.0"
-fluent = "0.15"
+fluent = "0.16"
 fluent-bundle = "0.6.0"
 fluent-syntax = "0.11.0"
 fluent-locale = "0.10.1"

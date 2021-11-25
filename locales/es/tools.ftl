@@ -119,7 +119,7 @@ tools-rustup-manual-default-windows = Si usas Windows, <br>descarga y ejecuta <a
 ## components/tools/editors.hbs
 
 tools-editor-vscode = VS Code
-tools-editor-sublime = Sublime Text 3
+tools-editor-sublime = Sublime Text
 tools-editor-atom = Atom
 tools-editor-idea = IntelliJ IDEA
 tools-editor-eclipse = Eclipse

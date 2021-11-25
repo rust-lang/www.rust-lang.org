@@ -128,7 +128,7 @@ tools-rustup-manual-default-windows = Eğer Windows kullanıyorsanız <br><a hre
 ## components/tools/editors.hbs
 
 tools-editor-vscode = { ENGLISH("VS Code") }
-tools-editor-sublime = { ENGLISH("Sublime Text 3") }
+tools-editor-sublime = { ENGLISH("Sublime Text") }
 tools-editor-atom = { ENGLISH("Atom") }
 tools-editor-idea = { ENGLISH("IntelliJ IDEA") }
 tools-editor-eclipse = { ENGLISH("Eclipse") }
