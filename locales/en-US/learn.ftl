@@ -61,6 +61,8 @@ learn-reference-button = Read the reference
 learn-nomicon-alt = Two hands cradling fire
 learn-nomicon = The Rustonomicon is your guidebook to the dark arts of unsafe Rust. It’s also sometimes called “the ’nomicon.”
 learn-nomicon-button = Read the ’nomicon
+translated-nomicon = { "" }
+translated-nomicon-button = { "" }
 
 learn-unstable-alt = A hand sharing sparkles
 learn-unstable = The Unstable Book has documentation for unstable features that you can only use with nightly Rust.
