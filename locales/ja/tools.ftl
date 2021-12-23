@@ -2,7 +2,7 @@
 
 tools-page-title = ツール
 tools-editor-support-heading = 第一級のエディタサポート
-tools-editor-support-description = コマンドラインでコードを書くことが好みでも、リッチなグラフィカルエディタが好みでも、あなたの選ぶエディタにはRustの拡張機能があるでしょう。また、<a href="https://github.com/rust-lang/rls">Rust Language Server</a>を使って自分だけの環境を作ることも可能です。
+tools-editor-support-description = コマンドラインでコードを書くことが好みでも、リッチなグラフィカルエディタが好みでも、あなたの選ぶエディタにはRustの拡張機能があるでしょう。また、<a href="https://github.com/rust-analyzer/rust-analyzer">Rust Analyzer</a>を使って自分だけの環境を作ることも可能です。
 tools-build-heading = ビルドにやすらぎを
 tools-build-description = CargoはRustのビルドツールです。全ての一般的な操作がひとつのコマンドに集約されています。ボイラープレートは不要です。
 tools-build-install-heading = インストール

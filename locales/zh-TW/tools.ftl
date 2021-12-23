@@ -2,7 +2,7 @@
 
 tools-page-title = 工具
 tools-editor-support-heading = 主流編輯器支援
-tools-editor-support-description = 無論您喜歡使用命令列還是視覺化的編輯器，Rust 都有整合方案供您選擇。或者您也可以用 <a href="https://github.com/rust-lang/rls">Rust Language Server</a> 來打造您自己的工具。
+tools-editor-support-description = 無論您喜歡使用命令列還是視覺化的編輯器，Rust 都有整合方案供您選擇。或者您也可以用 <a href="https://github.com/rust-analyzer/rust-analyzer">Rust Analyzer</a> 來打造您自己的工具。
 tools-build-heading = 平穩的建構流程
 tools-build-description = Cargo 是 Rust 的建構工具。它用一道指令整合了所有常用功能，無需額外工作。
 tools-build-install-heading = 安裝
