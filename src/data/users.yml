@@ -635,6 +635,11 @@
   logo: figma.svg
   how: "<a href='https://blog.figma.com/rust-in-production-at-figma-e10a0ec31929'>Our real-time multiplayer syncing server (used to edit all Figma documents) is written in Rust.</a>"
 -
+  name: Field 33
+  url: https://www.field33.com/
+  logo: field33.svg
+  how: "<a href='https://medium.com/field33/open-sourcing-harriet-2d6b30365ebf'>Rust forms the core of our semantic data stack.</a>"
+-
   name: EXSigma
   url: https://www.exsigma.com
   logo: exsigma.svg
