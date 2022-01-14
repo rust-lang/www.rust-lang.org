@@ -11,6 +11,8 @@ learn-rustlings = Alternatively, Rustlings guides you through downloading and se
 learn-rustlings-button = Do the Rustlings course!
 learn-rbe = If reading multiple hundreds of pages about a language isn’t your style, then Rust By Example has you covered. While the book talks about code with a lot of words, RBE shows off a bunch of code, and keeps the talking to a minimum. It also includes exercises!
 learn-rbe-button = Check out Rust by Example!
+translated-rbe = {""}
+translated-rbe-button = {""}
 
 learn-use = Grow with Rust
 
@@ -59,6 +61,8 @@ learn-reference-button = Read the reference
 learn-nomicon-alt = Two hands cradling fire
 learn-nomicon = The Rustonomicon is your guidebook to the dark arts of unsafe Rust. It’s also sometimes called “the ’nomicon.”
 learn-nomicon-button = Read the ’nomicon
+translated-nomicon = { "" }
+translated-nomicon-button = { "" }
 
 learn-unstable-alt = A hand sharing sparkles
 learn-unstable = The Unstable Book has documentation for unstable features that you can only use with nightly Rust.
