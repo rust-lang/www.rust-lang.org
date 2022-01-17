@@ -65,9 +65,9 @@ get-involved-contribute-link = 阅读《贡献指南》
 ## components/panels/thanks.hbs
 
 thanks-title = 感谢
-thanks-blurb = 如果没有个人、公司慷慨无私地奉献出时间、劳动和资源，Rust将不会存在。我们非常感谢您的支持！
+thanks-blurb = 如果没有个人、公司慷慨无私地奉献出时间、劳动和资源，Rust 将不会存在。我们非常感谢您的支持！
 thanks-individuals-header = 个人
-thanks-individuals-blurb = Rust是一个社区项目，非常感谢社区为它所做的贡献。
+thanks-individuals-blurb = Rust 是一个社区项目，非常感谢社区为它所做的贡献。
 thanks-individuals-link = 查看个人贡献者
 thanks-companies-header = 团体赞助者
 thanks-companies-blurb = Rust 项目使用的基础设施来自于一些公司的捐赠。
