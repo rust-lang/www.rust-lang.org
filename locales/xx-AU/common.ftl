@@ -17,7 +17,6 @@ nav-logo-alt = oƃo˥ ʇsnɹ
 # components/footer.hbs
 footer-doc = uoᴉʇɐʇuǝɯnɔop
 footer-ask = ɯnɹoℲ sɹǝs∩ ǝɥʇ uo uoᴉʇsǝnQ ɐ ʞs∀
-footer-status = snʇɐʇS ǝʇᴉsqǝM ʞɔǝɥƆ
 footer-policies = sǝᴉɔᴉlod puɐ sɯɹǝ┴
 footer-coc = ʇɔnpuoƆ ɟo ǝpoƆ
 footer-licenses = sǝsuǝɔᴉ˥

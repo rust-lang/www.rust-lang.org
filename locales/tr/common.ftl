@@ -37,7 +37,6 @@ nav-logo-alt = Rust Logosu
 
 footer-doc = Belgelendirme
 footer-ask = Kullanıcılar Forumunda Bir Soru Sorun
-footer-status = İnternet Sitesinin Durumunu Kontrol Et
 footer-policies = Şartlar ve politikalar
 footer-coc = Davranış Kuralları
 footer-licenses = Lisanslar

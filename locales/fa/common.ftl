@@ -29,7 +29,6 @@ nav-logo-alt = لوگوی Rust
 ## components/footer.hbs
 
 footer-doc = مستندات
-footer-status = وضعیت وب سایت را بررسی کنید
 footer-policies = قوانین و مقررات
 footer-licenses = مجوزها
 footer-security = افشای امنیتی

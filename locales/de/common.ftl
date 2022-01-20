@@ -29,7 +29,6 @@ nav-logo-alt = Rust-Logo
 
 footer-doc = Dokumentation
 footer-ask = Stell deine Frage im Benutzer-Forum
-footer-status = Prüfe den Webseitenstatus
 footer-policies = Bedingungen und Richtlinien
 footer-coc = Verhaltenskodex
 footer-licenses = Lizenzen
