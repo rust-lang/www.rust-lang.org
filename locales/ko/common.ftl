@@ -35,7 +35,6 @@ nav-logo-alt = Rust 로고
 
 footer-doc = 문서
 footer-ask = 사용자 포럼에 질문하기 (영어)
-footer-status = 웹사이트 상태 확인
 footer-policies = 약관 및 정책
 footer-coc = 행동강령
 footer-licenses = 라이선스
