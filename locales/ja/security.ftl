@@ -4,17 +4,6 @@
 policies-security-page-title = セキュリティポリシー
 security-reporting-heading = 報告
 security-reporting-link = { ENGLISH("security@rust-lang.org") }にメールを送る
-security-reporting-description =
-    <p>安全性はRustの中核となる理念の一つであり、そのために、我々はRustがセキュアに実装されていることを保証したいと思っています。発見した問題を責任を持って報告してくださり、ありがとうございます。</p>
-    <p>Rustに関するすべてのセキュリティ関連のバグを見つけた場合、メールにて{ -security-at-rust-lang-org-anchor }へ報告してください。このメーリングリストは小規模のセキュリティチームへメールを転送します。メールは24時間以内に確認され、報告の処理を行うための次のステップに関する返信が48時間以内に送信されます。必要に応じて、<a href="{ -rust-security-team-key-href }">我々の公開鍵</a>で報告の内容を暗号化することもできます。この公開鍵は<a href="{ -rust-pgp-key-mit-keyserver-href }">MITのキーサーバー</a>と<a href="#key">このページの下段</a>にも記載されています。</p>
-    <p>数多くの迷惑メールがこのメールアドレス宛に届いているため、手違いにより報告が見落とされないよう、詳細な内容を件名にご記入お願いします。報告への最初の返信の後、セキュリティチームは、問題の修正と開示に向けた進捗状況を継続的に報告するように努めます。<a href="{ -wikipedia-rfpolicy-href }">RFPolicy</a>の推奨している通りに、少なくとも5日ごと、通常ほぼ24-48時間ごとに進捗状況をお知らせします。</p>
-    <p>もし48時間以内にメールの返信が届かなかった場合、もしくは5日以上セキュリティチームからの進捗状況の報告が届かなかった場合には、順序に従い以下の方法で連絡してください：</p>
-    <ul>
-      <li>現セキュリティ担当者({ -security-coordinator-email-anchor } (<a href="{ -security-coordinator-public-key-href }">公開鍵</a>))に直接連絡する。</li>
-      <li>副担当者({ -backup-security-contact-email-anchor } (<a href="{ -backup-security-contact-public-key-href }">公開鍵</a>))に直接連絡する。</li>
-      <li><a href="{ -internals-rust-lang-org-href }">内部フォーラム</a>に投稿する。</li>
-    </ul>
-    <p>フォーラムはパブリックな場所であることに注意してください。フォーラムでは問題について触れずに、セキュリティチームの誰かと連絡を取りたいことだけを伝えてください。</p>
 security-disclosure-heading = 情報開示方針
 security-disclosure-description =
     <p>Rustプロジェクトには5段階の情報開示プロセスがあります。</p>

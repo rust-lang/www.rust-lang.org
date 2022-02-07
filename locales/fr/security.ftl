@@ -4,17 +4,6 @@
 policies-security-page-title = Politique de sécurité
 security-reporting-heading = Signaler
 security-reporting-link = email { ENGLISH("security@rust-lang.org") }
-security-reporting-description =
-    <p>La sécurité est un des principes fondateurs de Rust ; aussi nous voudrions nous assurer que l’implémentation de Rust est bien sécurisée. Merci de prendre le temps de divulguer de manière responsable tout problème que vous trouveriez.</p>
-    <p>Tout bug de sécurité dans la distribution Rust doit être reporté par email à { -security-at-rust-lang-org-anchor }. Cette liste est envoyée à une petite équipe de sécurité. Votre message sera pris en compte dans les 24 heures, et vous recevrez une réponse plus détaillée dans les 48 heures, indiquant les prochaines étapes dans le traitement de votre rapport. Si vous le souhaitez, vous pouvez chiffrer votre rapport en utilisant <a href="{ -rust-security-team-key-href }">notre clé publique</a>. Cette clé est également <a href="{ -rust-pgp-key-mit-keyserver-href }">sur le serveur de clés du MIT</a> et <a href="#security-pgp-key">reproduite ci-dessous</a>.</p>
-    <p>Cette adresse email reçoit une quantité importante de spam, donc assurez-vous que l'objet du message est descriptif pour éviter que votre rapport soit ignoré. Après la réponse initiale à votre rapport, l'équipe de sécurité vous tiendra au courant de l’avancement vers un correctif et une annonce complète. Comme recommandé par la <a href="{ -wikipedia-rfpolicy-href }">RFPolicy</a>, ces mises à jour seront envoyées au moins tous les cinq jours. En réalité, cela sera plus probablement toutes les 24 à 48 heures.</p>
-    <p>Si vous n'avez pas reçu de réponse à votre email dans les 48 heures, ou n'avez rien reçu de le part de l'équipe de sécurité ces cinq derniers jours, il y a plusieurs étapes que vous pouvez suivre (dans l'ordre):</p>
-    <ul>
-      <li>Contacter directement le coordinateur actuel de l'équipe de sécurité ({ -security-coordinator-email-anchor } (<a href="{ -security-coordinator-public-key-href }">clé publique</a>)).</li>
-      <li>Contacter directement le correspondant suppléant ({ -backup-security-contact-email-anchor } (<a href="{ -backup-security-contact-public-key-href }">clé publique</a>)).</li>
-      <li>Publier sur les <a href="{ -internals-rust-lang-org-href }">forums internes</a></li>
-    </ul>
-    <p>Veuillez noter que les forums de discussion sont des zones publiques. En recourant à ces lieux, veillez à ne pas discuter de votre problème. Expliquez simplement que vous essayez de joindre un membre de l'équipe de sécurité.</p>
 security-disclosure-heading = Politique de divulgation
 security-disclosure-description =
     <p>Le projet Rust dispose d'un processus de divulgation en cinq étapes.</p>

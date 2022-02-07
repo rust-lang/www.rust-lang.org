@@ -4,19 +4,6 @@
 policies-security-page-title = Política de segurança
 security-reporting-heading = Denunciando
 security-reporting-link = email { ENGLISH("security@rust-lang.org") }
-security-reporting-description =
-    <p>Essa página é traduzida pela comunidade, e a tradução é mantida na base do melhor esforço. Se refira ao <a href="https://www.rust-lang.org/policies/security">documento original</a> para saber os termos oficiais que serão garantidos.</p>
-    
-    <p>Segurança é um dos princípios primários do projeto Rust, e por causa disso, gostaríamos de garantir que Rust possui uma implementação segura. Obrigado por dedicar tempo para informar qualquer problema que você encontre.</p>
-    <p>Todos os problemas de segurança na distribuição do Rust deve ser reportado pelo email { -security-at-rust-lang-org-anchor }. Está lista é entregue a uma pequena equipe de segurança. Seu email será reconhecido por alguém dentro de 24 horas, e você receberá uma resposta mais detalhada no seu email dentro de 48 horas indicando os próximos passos sobre como lidar com o seu relato. Caso você queira, você pode encriptar seu relato usando <a href="{ -rust-security-team-key-href }">nossa chave pública</a>. Essa chave também está disponível no <a href="{ -rust-pgp-key-mit-keyserver-href }">servidor de chaves do MIT</a> e <a href="#security-pgp-key">reproduzida abaixo</a>.</p>
-    <p>Esse email recebe uma grande quantidade de spam, então use um titulo descritivo para evitar que seu relatório passe despercebido. Depois da primeira resposta do seu relatório, a Equipe de Segurança se esforçará a te manter informado sobre o progresso realizado para corrigir os problemas e sobre os anúncios completos. Como recomendado pela <a href="{ -wikipedia-rfpolicy-href }">RFPolicy</a>, essas atualizações serão enviadas a cada 5 dias. Na realidade, será algo a cada 24-48 horas.</p>
-    <p>Caso você nãp tenha recebido uma resposta para seu email dentro das 48 horas, ou não tenha recebido atualizações da equipe de segurança por 5 dias, existem alguns passos que você pode seguir (em ordem):</p>
-    <ul>
-      <li>Contate a pessoa em posição de coordenação ({ -security-coordinator-email-anchor } (<a href="{ -security-coordinator-public-key-href }">chave pública</a>)) diretamente.</li>
-      <li>Contate o nosso contato backup ({ -backup-security-contact-email-anchor } (<a href="{ -backup-security-contact-public-key-href }">chave pública</a>)) diretamente.</li>
-      <li>Escreva um post no <a href="{ -internals-rust-lang-org-href }">fórum interno</a></li>
-    </ul>
-    <p>Note por favor que as discussões no fórum são áreas publicas. Quando escalar o problema por esses meios, não discute diretamente seu problema. Apenas diga que você está tentando entrar em contato com alguém da Equipe de Segurança.</p>
 security-disclosure-heading = Política de divulgação de vulnerabilidades
 security-disclosure-description =
     <p>O projeto Rust possui um programa de divulgação em 5 passos.</p>
