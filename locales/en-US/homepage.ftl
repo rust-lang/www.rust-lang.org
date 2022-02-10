@@ -45,7 +45,7 @@ language-values-productivity-blurb = Rust has great documentation, a friendly co
 
 ## components/panels/domains.hbs
 domains-title = Build it in Rust
-domains-blurb = In 2018, the Rust community decided to improve programming experience
+domains-blurb = In 2018, the Rust community decided to improve the programming experience
         for a few distinct domains (see <a
         href="https://blog.rust-lang.org/2018/03/12/roadmap.html">the 2018
         roadmap</a>). For these, you can find many high-quality crates and some
