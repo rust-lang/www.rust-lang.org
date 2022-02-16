@@ -6,15 +6,11 @@
 -wikipedia-rfpolicy-href =
         https://en.wikipedia.org/wiki/RFPolicy
 
-## Security coordinator email addresses and links to their public keys
--security-coordinator-email-anchor =
-        <a href="mailto:steve@steveklabnik.com" lang="en-US">Steve Klabnik</a>
--security-coordinator-public-key-href =
-        https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0xDAE717EFE9424541
--backup-security-contact-email-anchor =
+## Security coordinator email addresses
+-security-coordinator-1-email-anchor =
+        <a href="mailto:cuviper@gmail.com" lang="en-US">Josh Stone</a>
+-security-coordinator-2-email-anchor =
         <a href="mailto:pietro@pietroalbini.org" lang="en-US">Pietro Albini</a>
--backup-security-contact-public-key-href =
-        https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0x0490381A6F58BCDA
 
 -internals-rust-lang-org-href =
         https://internals.rust-lang.org/
