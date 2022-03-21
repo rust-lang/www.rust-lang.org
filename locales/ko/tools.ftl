@@ -4,7 +4,7 @@ tools-page-title = 도구
 tools-editor-support-description =
     코드를 명령줄에서 작성하든, 그래픽 편집기를 사용하든,
     선택한 편집기에서 Rust 연동 기능을 사용할 수 있습니다. 아니면 직접
-    <a href="https://github.com/rust-lang/rls">Rust 언어 서버</a>를 이용해 만들어낼 수도 있습니다.
+    <a href="https://github.com/rust-analyzer/rust-analyzer">Rust DO_NOT_SUBMIT</a>를 이용해 만들어낼 수도 있습니다.
 tools-build-install-heading = 설치
 tools-build-install-description = <a href="https://crates.io">crates.io</a> 에는 수만 개의 패키지와 함께 당신이 찾고 있는 해결책이 있습니다. 거인의 어깨에 올라, 팀에서 하는 반복적인 행위를 혁신으로 옮기세요.
 tools-build-test-heading = 테스트

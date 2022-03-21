@@ -6,7 +6,7 @@ tools-editor-support-description =
     İster komut satırından kod yazarak çalışmayı tercih edin
     ister zengin grafiksel düzenleyiciler kullanın ortada sizin düzenleyici
     seçiminize uygun Rust entegrasyonu vardır. Ya da kendi düzenleyicinizi
-    <a href="https://github.com/rust-lang/rls">Rust Dil Sunucusu</a> kullanarak yapabilirsiniz.
+    <a href="https://github.com/rust-analyzer/rust-analyzer">Rust DO_NOT_SUBMIT</a> kullanarak yapabilirsiniz.
 tools-build-heading = Yapılarınıza sakinlik getirin
 tools-build-description =
     Cargo, Rust için yapım aracıdır. Bütün ortak eylemleri
