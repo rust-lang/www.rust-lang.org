@@ -7,7 +7,6 @@ policies-page-title = Zasady
 policies-page-description = Ta strona zawiera linki do kompletnego spisu zasad obowiązujących projekt Rust.
 policies-code-of-conduct-link = Kodeks Postępowania
 policies-licenses-link = Licencje
-policies-media-guide-link = Zasady dotyczące logotypów oraz Przewodnik Medialny
 policies-security-link = Notki dot. Bezpieczeństwa
 policies-privacy-link = Polityka Prywatności
 policies-reach-out-description = Nie możesz czegoś znaleźć? Masz pytanie? Skontaktuj się z nami!
