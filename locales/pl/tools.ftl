@@ -2,7 +2,7 @@
 
 tools-page-title = Narzędzia
 tools-editor-support-heading = Wzorowe wsparcie dla edytorów
-tools-editor-support-description = Nie ważne czy wolisz pracować z kodem z poziomu wiersza poleceń, czy korzystasz z wyrafinowanych graficznych IDE, istnieje duża szansa że integracja Twojego edytora z Rustem już istnieje. Jeśli jest inaczej możesz stworzyć własną z użyciem <a href="https://github.com/rust-lang/rls">Rust Language Server</a>
+tools-editor-support-description = Nie ważne czy wolisz pracować z kodem z poziomu wiersza poleceń, czy korzystasz z wyrafinowanych graficznych IDE, istnieje duża szansa że integracja Twojego edytora z Rustem już istnieje. Jeśli jest inaczej możesz stworzyć własną z użyciem <a href="https://github.com/rust-analyzer/rust-analyzer">Rust Analyzer</a>
 tools-build-description =
     Cargo jest głównym narzędziem do budowania projektów
     Rust, zbierającym wszystkie niezbędne funkcje pod jedną komendą.

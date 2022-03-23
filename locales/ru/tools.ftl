@@ -2,7 +2,7 @@
 
 tools-page-title = Инструменты
 tools-editor-support-heading = Поддержка первоклассных редакторов
-tools-editor-support-description = Не зависимо от того, предпочитаете ли вы работать с кодом из командной строки или использовать богатые возможности графического редактора, для этого инструмента существует поддержка Rust. Или вы можете создать свой собственный, используя <a href="https://github.com/rust-lang/rls">Rust Language Server</a>.
+tools-editor-support-description = Не зависимо от того, предпочитаете ли вы работать с кодом из командной строки или использовать богатые возможности графического редактора, для этого инструмента существует поддержка Rust. Или вы можете создать свой собственный, используя <a href="https://github.com/rust-analyzer/rust-analyzer">Rust Analyzer</a>.
 tools-build-heading = Принесите спокойствие в ваши сборки
 tools-build-description = Cargo - это инструмент сборки для Rust. Он собирает все общие действия в одну команду. Шаблонность не нужна.
 tools-build-install-heading = Установка
