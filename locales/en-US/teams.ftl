@@ -6,7 +6,7 @@ governance-team-community-survey-name = Survey team
 governance-team-community-survey-description = Running, analysing, and presenting the community survey
 
 governance-team-ides-name = IDEs and editors team
-governance-team-ides-description = Developing IDEs, editors, and other development tools such as Racer and the RLS
+governance-team-ides-description = Developing IDEs, editors, and other development tools such as Racer and rust-analyzer
 
 governance-team-wg-rustfix-name = Rustfix working group
 governance-team-wg-rustfix-description = Developing cargo-fix and serving as a point of contact for other teams

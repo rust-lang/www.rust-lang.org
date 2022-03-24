@@ -1,7 +1,7 @@
 governance-team-crates-io-name = ɯɐǝʇ oᴉ˙sǝʇɐɹƆ
 governance-team-crates-io-description = ˙oᴉ˙sǝʇɐɹɔ ɹoɟ sǝᴉɔᴉlod puɐ 'ʇuǝɯdolǝʌǝp 'suoᴉʇɐɹǝdo ɟo ʇuǝɯǝƃɐuɐW
 governance-team-ides-name = ɯɐǝʇ sɹoʇᴉpǝ puɐ sƎpI
-governance-team-ides-description = S˥ɹ ǝɥʇ puɐ ɹǝɔɐɹ sɐ ɥɔns slooʇ ƃuᴉʇɹoddns puɐ 'sɹoʇᴉpǝ 'sƎpI
+governance-team-ides-description = ɹǝzʎlɐuɐ-ʇsnɹ ǝɥʇ puɐ ɹǝɔɐɹ sɐ ɥɔns slooʇ ƃuᴉʇɹoddns puɐ 'sɹoʇᴉpǝ 'sƎpI
 governance-team-wg-wasm-name = dnoɹƃ ƃuᴉʞɹoʍ (WS∀M) ʎlqɯǝss∀qǝM
 governance-team-wg-wasm-description = ˙ʎlqɯǝss∀qǝM ɐᴉʌ sddɐ puɐ sǝᴉɹɐɹqᴉl Sſ uᴉ ǝpoɔ ʇsnɹ ƃuᴉppǝqɯǝ ɟo ǝɔuǝᴉɹǝdxǝ puǝ-oʇ-puǝ ǝɥʇ uo ƃuᴉsnɔoℲ
 governance-team-wg-localization-name = פM uoᴉʇɐzᴉlɐɔo˥
