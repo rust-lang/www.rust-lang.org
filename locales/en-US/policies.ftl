@@ -7,6 +7,7 @@ policies-page-description = This page links to the comprehensive set of Rust’s
 
 policies-code-of-conduct-link = Code of Conduct
 policies-licenses-link = Licenses
+policies-media-guide-link = Logo Policy and Media Guide
 policies-security-link = Security Disclosures
 policies-privacy-link = Privacy Notice
 
