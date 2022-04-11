@@ -6,7 +6,7 @@ tools-editor-support-description =
     Independente se você prefere trabalhar com código a partir
     da linha de comando, ou usando um editor gráfico, existe uma
     extensão Rust disponível para o editor da sua escolha. Ou você pode criar 
-    a sua própria usando <a href="https://github.com/rust-analyzer/rust-analyzer">Rust Analyzer</a>.
+    a sua própria usando <a href="https://github.com/rust-analyzer/rust-analyzer">rust-analyzer</a>.
 tools-build-heading = Traga tranquilidade para a compilação
 tools-build-description =
     Cargo é uma ferramenta de automação de compilação para Rust.

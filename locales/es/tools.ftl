@@ -2,7 +2,7 @@
 
 tools-page-title = Herramientas
 tools-editor-support-heading = Soporte de editores de primer nivel
-tools-editor-support-description = Tanto si prefieres trabajar con el código desde la línea de comandos, o utilizando editores gráficos, Rust se integra con tu editor preferido. O puedes integrarlo por tu cuenta usando el <a href="https://github.com/rust-analyzer/rust-analyzer">Rust Analyzer</a>.
+tools-editor-support-description = Tanto si prefieres trabajar con el código desde la línea de comandos, o utilizando editores gráficos, Rust se integra con tu editor preferido. O puedes integrarlo por tu cuenta usando el <a href="https://github.com/rust-analyzer/rust-analyzer">rust-analyzer</a>.
 tools-build-heading = Lleva a cabo tus compilaciones con tranquilidad
 tools-build-description = Cargo es la herramienta de construcción para Rust. Empaqueta todas las acciones comunes en un único comando. No necesitas repetir configuración.
 tools-build-install-heading = Instala
