@@ -7,7 +7,7 @@ community-twir-button = Rust'ta Bu Hafta
 community-team-contact = Bize ulaşın! Sorunuzu nereye veya kime soracağınızı bilmiyor musunuz? Aramıza katılmak istiyorsunuz ama nasıl olduğundan emin değil misiniz? Topluluk ekibi sizin gibi yardım edebilecek insanlara ulaşmak için can atıyor!
 community-team-button = { ENGLISH("community@rust-lang.org") } adresine e-posta gönder
 community-where = Nerede konuşmalı
-community-learn = Nereden öğrenilir
+community-learn = Nerede öğrenmeli
 
 community-get-in-contact = İletişime geçerek
 community-read-about = Rust'ı takip ederek
