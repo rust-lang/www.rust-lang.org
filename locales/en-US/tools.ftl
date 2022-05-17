@@ -136,16 +136,10 @@ install-notes-path-description =
 install-notes-windows-heading = Windows considerations
 install-notes-windows-description =
         <p>
-          On Windows, Rust additionally requires the C++ build tools
-          for Visual Studio 2013 or later. The easiest way to acquire the build
-          tools is by installing
-          <a href="https://www.visualstudio.com/downloads/#build-tools-for-visual-studio-2019">
-            Microsoft Visual C++ Build Tools 2019
-          </a>
-          which provides just the Visual C++ build tools. Alternately, you
-          can <a href="https://www.visualstudio.com/downloads/">install</a>
-          Visual Studio 2019, Visual Studio 2017, Visual Studio 2015, or Visual
-          Studio 2013 and during install select the “C++ tools.”
+          On Windows, Rust additionally requires the MSVC build tools
+          for Visual Studio 2013 or later. See
+          <a href="https://doc.rust-lang.org/stable/book/ch01-01-installation.html#installing-rustup-on-windows">
+          Installing <code>rustup</code> on Windows</a>
         </p>
         <p>
           For further information about configuring Rust on Windows see the
