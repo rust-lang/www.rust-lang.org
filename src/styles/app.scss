@@ -475,6 +475,11 @@ blockquote::before {
   min-height: 100px;
 }
 
+.user-name {
+  display: flex;
+  justify-content: center;
+}
+
 .user-container {
   min-height: 300px;
 }
