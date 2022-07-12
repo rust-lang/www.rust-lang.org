@@ -108,6 +108,16 @@ code.code-header {
   margin: 0 0 3px 0;
 }
 
+code.copyable {
+    cursor: pointer;
+    &:hover {
+        background-color: #03333f;
+        .copy-icon {
+            color: #e1e1e1;
+        }
+    }
+}
+
 header h1,
 section h2 {
   z-index: 999999;
