@@ -9,7 +9,7 @@ governance-rfc-blurb = Each major decision in Rust starts as a Request for Comme
           Though sometimes arduous, this community deliberation is Rust’s secret sauce for quality.
 governance-roadmap-blurb = The RFC process is also used to establish a yearly roadmap laying out our aspirations for that year.
           This shared vision is essential for keeping the development process focused.
-governance-roadmap-read = Read the 2021 Roadmap
+governance-roadmap-read = Read the current Roadmap
 
 governance-teams-header = Teams
 governance-wgs-header = Working Groups
