@@ -13,7 +13,7 @@ governance-rfc-blurb =
 governance-roadmap-blurb =
     RFCプロセスは年間のロードマップを作成し、その年の展望を示すためにも用いられます。
     その年の計画を共有することは、開発プロセスに集中し続けるために不可欠なことです。
-governance-roadmap-read = 2021年のロードマップを読む
+governance-roadmap-read = 2024年のロードマップを読む
 governance-teams-header = チーム
 governance-wgs-header = ワーキンググループ
 

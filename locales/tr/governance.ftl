@@ -13,7 +13,7 @@ governance-rfc-blurb =
 governance-roadmap-blurb =
     Yorumlar isteği süreci (RFC) aynı zamanda o yıl için beklentilerimizi ortaya koyan yıllık yol haritası oluşturmak için de kullanılır.
     Bu ortak vizyon, geliştirme sürecini odaklı tutmak için zorunludur.
-governance-roadmap-read = 2021 Yol Haritasını Oku
+governance-roadmap-read = 2024 Yol Haritasını Oku
 governance-teams-header = Ekipler
 governance-wgs-header = Çalışma Grupları
 

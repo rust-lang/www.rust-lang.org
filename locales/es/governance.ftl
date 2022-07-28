@@ -13,7 +13,7 @@ governance-rfc-blurb =
 governance-roadmap-blurb =
     El proceso RFC también se usa para establecer una hoja de ruta anual donde se plasman nuestras aspiraciones para ese año.
     Esta visión compartida es esencial para que el proceso de desarrollo no pierda el foco.
-governance-roadmap-read = Lee la hoja de ruta para 2021
+governance-roadmap-read = Lee la hoja de ruta para 2024
 governance-teams-header = Equipos
 governance-wgs-header = Grupos de trabajo
 
