@@ -36,7 +36,7 @@ install-notes-getting-started-description = Rustをこれから始めようと�
 install-notes-rustup-heading = <code>rustup</code>を使ったツールチェーンの管理
 install-notes-rustup-description =
     <p>
-    Rustは<a href="https://github.com/rust-lang/rustup.rs"><code>rustup</code></a>というツールによってインストール・管理されます。
+    Rustは<a href="https://rust-lang.github.io/rustup/"><code>rustup</code></a>というツールによってインストール・管理されます。
     Rustには６週間ごとの<a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">ラピッドリリースプロセス</a>があり、<a href="https://forge.rust-lang.org/release/platform-support.html">多数のプラットフォーム</a>をサポートしているので、 数多くのビルドがいつても利用できます。
     <code>rustup</code>はこれらのビルドを、Rustがサポートしているすべてのプラットフォームで一貫した方法で管理し、betaやnightly版のリリースチャンネルや、追加のクロスコンパイルターゲットもサポートしています。
     </p>
@@ -44,7 +44,7 @@ install-notes-rustup-description =
     もし<code>rustup</code>で過去にRustをインストールしたならば、いつでも<code>rustup update</code>を実行することでインストールしたものをアップデートできます。
     </p>
     <p>
-    より詳しい情報は<a href="https://github.com/rust-lang/rustup.rs/blob/master/README.md"><code>rustup</code>のドキュメント</a>を参照してください。
+    より詳しい情報は<a href="https://rust-lang.github.io/rustup/"><code>rustup</code>のドキュメント</a>を参照してください。
     </p>
 install-notes-uninstall-heading = Rustをアンインストールする
 install-notes-uninstall-description =
@@ -73,7 +73,7 @@ install-notes-windows-description =
     他には、Visual Studio 2019、Visual Studio 2017、Visual Studio 2015、Visual Studio 2013のいずれかを<a href="https://www.visualstudio.com/downloads/">インストール</a>し、インストール時に「C++ tools」を選択することでもできます。
     </p>
     <p>
-    WindowsでのRustの設定についての詳しい情報は、<a href="https://github.com/rust-lang/rustup.rs/blob/master/README.md#working-with-rust-on-windows">Windows用の<code>rustup</code>ドキュメント</a>を参照してください。
+    WindowsでのRustの設定についての詳しい情報は、<a href="https://rust-lang.github.io/rustup/installation/windows.html">Windows用の<code>rustup</code>ドキュメント</a>を参照してください。
     </p>
 install-other-methods-heading = その他のインストール方法
 install-other-methods-description = 上記の<code>rustup</code>によるインストールが、ほとんどの開発者にとってRustをインストールをする好ましい方法です。しかし、Rustは他の方法でもインストールすることができます。
