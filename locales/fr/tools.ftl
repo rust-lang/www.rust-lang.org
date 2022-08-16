@@ -34,7 +34,7 @@ install-notes-getting-started-description = Si vous commencez avec Rust et que v
 install-notes-rustup-heading = Gestion des chaînes d'outils avec <code>rustup</code>
 install-notes-rustup-description =
     <p>
-      Rust est installé et géré par l'outil <a href="https://github.com/rust-lang/rustup.rs"><code>rustup</code></a>. Rust suit un 
+      Rust est installé et géré par l'outil <a href="https://rust-lang.github.io/rustup/"><code>rustup</code></a>. Rust suit un
       <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
         processus de publication rapide
       </a> avec une nouvelle version toutes les six semaines et il supporte un <a href="https://forge.rust-lang.org/release/platform-support.html">grand nombre de plateformes</a>, donc il y a de nombreuses versions de Rust disponibles en même temps. <code>rustup</code> gère ces différentes versions de manière consistante sur toutes les plateformes supportées par Rust, permettant l'installation de Rust depuis les canaux beta et nightly ainsi que le support de cibles de cross-compilation supplémentaires.
@@ -44,7 +44,7 @@ install-notes-rustup-description =
     </p>
     <p>
       Pour plus d'information, visitez la
-      <a href="https://github.com/rust-lang/rustup.rs/blob/master/README.md">
+      <a href="https://rust-lang.github.io/rustup/">
       documentation de <code>rustup</code></a>.
     </p>
 install-notes-uninstall-heading = Désinstaller Rust
@@ -82,7 +82,7 @@ install-notes-windows-description =
     </p>
     <p>
       Pour plus d'informations sur la configuration de Rust sur Windows, visitez la
-      <a href="https://github.com/rust-lang/rustup.rs/blob/master/README.md#working-with-rust-on-windows">
+      <a href="https://rust-lang.github.io/rustup/installation/windows.html">
       documentation de <code>rustup</code> spécifique à Windows</a>.
     </p>
 install-other-methods-heading = Autres méthodes d'installation

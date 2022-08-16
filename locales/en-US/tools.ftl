@@ -74,7 +74,7 @@ install-notes-rustup-heading = Toolchain management with <code>rustup</code>
 install-notes-rustup-description = 
         <p>
           Rust is installed and managed by the
-          <a href="https://github.com/rust-lang/rustup.rs"><code>rustup</code></a>
+          <a href="https://rust-lang.github.io/rustup/"><code>rustup</code></a>
           tool. Rust has a 6-week
           <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
             rapid release process
@@ -92,7 +92,7 @@ install-notes-rustup-description =
         </p>
         <p>
           For more information see the
-          <a href="https://github.com/rust-lang/rustup.rs/blob/master/README.md">
+          <a href="https://rust-lang.github.io/rustup/">
           <code>rustup</code> documentation</a>.
         </p>
 
@@ -143,7 +143,7 @@ install-notes-windows-description =
         </p>
         <p>
           For further information about configuring Rust on Windows see the
-          <a href="https://github.com/rust-lang/rustup.rs/blob/master/README.md#working-with-rust-on-windows">
+          <a href="https://rust-lang.github.io/rustup/installation/windows.html">
           Windows-specific <code>rustup</code> documentation</a>.
         </p>
 
