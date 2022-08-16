@@ -40,7 +40,7 @@ learn-reference-alt = icona libreria
 learn-reference = La Reference non contiene soltanto le specifiche formali, ma scende anche in maggior profondità rispetto al Libro.
 learn-reference-button = Leggi la Reference
 learn-nomicon-alt = due mani che reggono un fuoco
-learn-nomicon = Il Rustonomicon è il tuo mauale di magia nera sul codice Rust unsafe. Noto anche come "il 'nomicon".
+learn-nomicon = Il Rustonomicon è il tuo manuale di magia nera sul codice Rust unsafe. Noto anche come "il 'nomicon".
 learn-nomicon-button = Leggi il ’nomicon
 translated-nomicon = { "" }
 translated-nomicon-button = { "" }
@@ -90,7 +90,7 @@ learn-generating-steps =
     { $output }
 learn-dependencies = Aggiungere dipendenze
 learn-dependencies-steps =
-    <p>Aggiungiamo una dipendenza alla nostra applicazione. Puoi creare qualunque tipo di libreria su <a href="https://crates.io">crates.io</a>, il resgistro dei pacchetti per Rust. In Rust, ci si riferisce spesso ai pacchetti con "crates."</p>
+    <p>Aggiungiamo una dipendenza alla nostra applicazione. Puoi creare qualunque tipo di libreria su <a href="https://crates.io">crates.io</a>, il registro dei pacchetti per Rust. In Rust, ci si riferisce spesso ai pacchetti con "crates."</p>
     <p>In questo progetto, useremo un crate chiamato <a href="https://crates.io/crates/ferris-says"><code>ferris-says</code></a>.
     <p>Nel nostro file <code>Cargo.toml</code> aggiungiamo questo (ottenuto dalla pagina del crate stesso):</p>
     { $cargotoml }
