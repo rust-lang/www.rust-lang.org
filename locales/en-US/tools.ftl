@@ -74,7 +74,7 @@ install-notes-rustup-heading = Toolchain management with <code>rustup</code>
 install-notes-rustup-description = 
         <p>
           Rust is installed and managed by the
-          <a href="https://github.com/rust-lang/rustup.rs"><code>rustup</code></a>
+          <a href="https://rust-lang.github.io/rustup/"><code>rustup</code></a>
           tool. Rust has a 6-week
           <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
             rapid release process
@@ -92,7 +92,7 @@ install-notes-rustup-description =
         </p>
         <p>
           For more information see the
-          <a href="https://github.com/rust-lang/rustup.rs/blob/master/README.md">
+          <a href="https://rust-lang.github.io/rustup/">
           <code>rustup</code> documentation</a>.
         </p>
 
@@ -136,20 +136,14 @@ install-notes-path-description =
 install-notes-windows-heading = Windows considerations
 install-notes-windows-description =
         <p>
-          On Windows, Rust additionally requires the C++ build tools
-          for Visual Studio 2013 or later. The easiest way to acquire the build
-          tools is by installing
-          <a href="https://www.visualstudio.com/downloads/#build-tools-for-visual-studio-2019">
-            Microsoft Visual C++ Build Tools 2019
-          </a>
-          which provides just the Visual C++ build tools. Alternately, you
-          can <a href="https://www.visualstudio.com/downloads/">install</a>
-          Visual Studio 2019, Visual Studio 2017, Visual Studio 2015, or Visual
-          Studio 2013 and during install select the “C++ tools.”
+          On Windows, Rust additionally requires the MSVC build tools
+          for Visual Studio 2013 or later. See
+          <a href="https://doc.rust-lang.org/stable/book/ch01-01-installation.html#installing-rustup-on-windows">
+          Installing <code>rustup</code> on Windows</a>
         </p>
         <p>
           For further information about configuring Rust on Windows see the
-          <a href="https://github.com/rust-lang/rustup.rs/blob/master/README.md#working-with-rust-on-windows">
+          <a href="https://rust-lang.github.io/rustup/installation/windows.html">
           Windows-specific <code>rustup</code> documentation</a>.
         </p>
 
@@ -177,7 +171,7 @@ tools-rustup-manual-default-windows = If you are running Windows,<br>download an
 tools-editor-vscode = VS Code
 tools-editor-sublime = Sublime Text
 tools-editor-atom = Atom
-tools-editor-idea = IntelliJ IDEA
+tools-editor-idea = IntelliJ Family
 tools-editor-eclipse = Eclipse
 tools-editor-vim = Vim
 tools-editor-emacs = Emacs

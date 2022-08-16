@@ -49,7 +49,7 @@ install-notes-rustup-heading = 用 <code>rustup</code> 管理工具链
 install-notes-rustup-description =
     <p>
        Rust 由工具
-       <a href="https://github.com/rust-lang/rustup.rs"><code>rustup</code></a>
+       <a href="https://rust-lang.github.io/rustup/"><code>rustup</code></a>
        安装和管理。Rust 有着以 6 星期为周期的
        <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
          快速版本迭代机制</a>，支持
@@ -64,7 +64,7 @@ install-notes-rustup-description =
      </p>
      <p>
        更多信息请查阅
-       <a href="https://github.com/rust-lang/rustup.rs/blob/master/README.md">
+       <a href="https://rust-lang.github.io/rustup/">
        <code>rustup</code> 文档</a>。
      </p>
 install-notes-uninstall-heading = 卸载 Rust
@@ -108,7 +108,7 @@ install-notes-windows-description =
     </p>
     <p>
       有关在 Windows 上配置 Rust 的更多信息见
-      <a href="https://github.com/rust-lang/rustup.rs/blob/master/README.md#working-with-rust-on-windows">
+      <a href="https://rust-lang.github.io/rustup/installation/windows.html">
       Windows 专用的 <code>rustup</code> 文档</a>。
     </p>
 install-other-methods-heading = 其它安装方式

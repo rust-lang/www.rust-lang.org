@@ -34,7 +34,7 @@ install-rustup64-button = Scarica <span class="nowrap">rustup-init.exe</span> <s
 install-notes-heading = Note sull'installazione di Rust
 install-notes-getting-started-description = Se stai iniziando con Rust e vorresti una guida passo passo più dettagliata, guarda la nostra pagina <a href="{ $getting-started-href }">getting started</a> .
 install-notes-rustup-heading = Gestione della toolchain con <code>rustup</code>
-install-notes-rustup-description = Rust è installato e gestito da <a href="https://github.com/rust-lang/rustup.rs"><code>rustup</code></a>. Rust ha un rapido <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">ciclo di rilasci</a> di 6 settimane e supporta una <a href="https://forge.rust-lang.org/release/platform-support.html">grande quantità di piattaforme</a>, quindi ci sono sempre molteplici build di Rust disponibili. <code>rustup</code> gestisce queste build in maniera coerente su qualsiasi piattaforma supportata dalle release beta e nightly così come il supporto alla cross-compilation per differenti target.
+install-notes-rustup-description = Rust è installato e gestito da <a href="https://rust-lang.github.io/rustup/"><code>rustup</code></a>. Rust ha un rapido <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">ciclo di rilasci</a> di 6 settimane e supporta una <a href="https://forge.rust-lang.org/release/platform-support.html">grande quantità di piattaforme</a>, quindi ci sono sempre molteplici build di Rust disponibili. <code>rustup</code> gestisce queste build in maniera coerente su qualsiasi piattaforma supportata dalle release beta e nightly così come il supporto alla cross-compilation per differenti target.
 install-notes-uninstall-heading = Disinstalla Rust
 install-notes-uninstall-description =
     <p>
@@ -71,7 +71,7 @@ install-notes-windows-description =
     </p>
     <p>
     Puoi trovare ulteriori informazioni su come configurare Rust in Windows a questo link di
-    <a href="https://github.com/rust-lang/rustup.rs/blob/master/README.md#working-with-rust-on-windows">
+    <a href="https://rust-lang.github.io/rustup/installation/windows.html">
       documentazione specifica per <code>rustup</code> su Windows</a>.
     </p>
 install-other-methods-heading = Altri metodi di installazione

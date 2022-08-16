@@ -35,7 +35,7 @@ install-notes-rustup-heading = Управление инструментами �
 install-notes-rustup-description =
     <p>
       Rust устанавливается и управляется при помощи
-      <a href="https://github.com/rust-lang/rustup.rs"><code>rustup</code></a>. Rust имеет 6-недельный
+      <a href="https://rust-lang.github.io/rustup/"><code>rustup</code></a>. Rust имеет 6-недельный
       <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
         процесс выпуска
       </a> и поддерживает
@@ -47,7 +47,7 @@ install-notes-rustup-description =
     </p>
     <p>
     Для дополнительной информации смотрите
-      <a href="https://github.com/rust-lang/rustup.rs/blob/master/README.md">
+      <a href="https://rust-lang.github.io/rustup/">
       документацию по <code>rustup</code></a>.
     </p>
 install-notes-uninstall-heading = Удалить Rust
@@ -94,7 +94,7 @@ install-notes-windows-description =
     </p>
     <p>
       Для получения дополнительной информации о настройке Rust в Windows, смотрите
-      <a href="https://github.com/rust-lang/rustup.rs/blob/master/README.md#working-with-rust-on-windows">
+      <a href="https://rust-lang.github.io/rustup/installation/windows.html">
       Windows-специфичную документацию <code>rustup</code></a>.
     </p>
 install-other-methods-heading = Другие методы установки
