@@ -624,3 +624,33 @@ blockquote::before {
   /* Tachyons is missing this class */
   max-height: 10rem;
 }
+
+.select {
+  display: inline-block;
+  position: relative;
+}
+
+.select select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: 1.25rem;
+  border: $gray 1px solid;
+  background-color: white;
+  padding: 2px 6px;
+  color: $gray;
+  box-sizing: border-box;
+}
+
+.select:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  width: 0;
+  height: 0;
+  margin-top: -2px;
+  border-top: 5px solid $gray;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
