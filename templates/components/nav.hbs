@@ -19,10 +19,12 @@
   </ul>
 
   <div class=" w-100 w-auto-l flex-none flex justify-center pv4 pv-0-l languages">
-    <label for="language-nav" class="hidden">{{fluent "choose-language"}}</label>
-    <select id="language-nav" data-current-lang="{{lang}}">
-      {{> components/languages-dropdown}}
-    </select>
+    <div class="select">
+      <label for="language-nav" class="hidden">{{fluent "choose-language"}}</label>
+      <select id="language-nav" data-current-lang="{{lang}}">
+        {{> components/languages-dropdown}}
+      </select>
+    </div>
   </div>
 
 </nav>
