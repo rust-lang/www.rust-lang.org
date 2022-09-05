@@ -1,7 +1,14 @@
+{{#*inline "code-block"}}
+<pre><code class="db w-100 h3 flex justify-between items-center copyable">
+  <span class="copy-text">{{code}}</span>
+  <svg class="h-75 pr1 copy-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M384 96L384 0h-112c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48H464c26.51 0 48-21.49 48-48V128h-95.1C398.4 128 384 113.6 384 96zM416 0v96h96L416 0zM192 352V128h-144c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48h192c26.51 0 48-21.49 48-48L288 416h-32C220.7 416 192 387.3 192 352z"/></svg>
+</code></pre>
+{{/inline}}
+
 <div class="row">
   <div id="platform-instructions-unix" class="instructions db">
     <p>{{fluent "tools-rustup-unixy"}}</p>
-    <pre><code class="db w-100 flex justify-between copyable"><span class="copy-text">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</span><span class="copy-icon">ClipboardIcon</span></code></pre>
+    {{> code-block code="curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"}}
   </div>
   <div id="platform-instructions-win" class="instructions dn">
     <p>{{fluent "tools-rustup-windows-2"}}</p>
@@ -17,7 +24,7 @@
   </div>
   <h3 class="mt4">{{fluent "tools-rustup-wsl-heading"}}</h3>
   <p>{{fluent "tools-rustup-wsl"}}</p>
-  <pre><code class="db w-100">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></pre>
+  {{> code-block code="curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"}}
   </div>
   <div id="platform-instructions-unknown" class="instructions dn">
     <!-- unrecognized platform: ask for help -->
@@ -39,7 +46,7 @@
       <p>
         {{fluent "tools-rustup-manual-unixy"}}
       </p>
-      <code class="db w-100">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code>
+      {{> code-block code="curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"}}
     </div>
     <hr>
     <div>
@@ -53,7 +60,7 @@
       <p>
         {{tools-rustup-manual-default}}
       </p>
-      <pre><code class="db w-100">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></pre>
+      {{> code-block code="curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"}}
     </div>
     <hr>
     <div>

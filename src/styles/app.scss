@@ -110,10 +110,15 @@ code.code-header {
 
 code.copyable {
     cursor: pointer;
+
+    .copy-icon {
+      fill: #839496;
+    }
+
     &:hover {
         background-color: #03333f;
         .copy-icon {
-            color: #e1e1e1;
+            fill: #e1e1e1;
         }
     }
 }
