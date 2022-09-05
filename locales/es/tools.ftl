@@ -35,7 +35,7 @@ install-notes-rustup-heading = Gestión del conjunto de herramientas con <code>r
 install-notes-rustup-description =
     <p>
     Rust es instalado y gestionado por la herramienta 
-    <a href="https://github.com/rust-lang/rustup.rs"><code>rustup</code></a>. 
+    <a href="https://rust-lang.github.io/rustup/"><code>rustup</code></a>.
     Rust tiene un
     <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
     proceso rápido de lanzamiento
@@ -51,7 +51,7 @@ install-notes-rustup-description =
     </p>
     <p>
     Para más información visita la documentación de
-    <a href="https://github.com/rust-lang/rustup.rs/blob/master/README.md">
+    <a href="https://rust-lang.github.io/rustup/">
           <code>rustup</code></a>.
     </p>
 install-notes-uninstall-heading = Desinstalar Rust
@@ -96,7 +96,7 @@ install-notes-windows-description =
     </p>
     <p>
       Para más información sobre la configuración de Rust en Windows, consulta la
-      <a href="https://github.com/rust-lang/rustup.rs/blob/master/README.md#working-with-rust-on-windows">
+      <a href="https://rust-lang.github.io/rustup/installation/windows.html">
       documentación específica de Windows para <code>rustup</code></a>.
     </p>
 install-other-methods-heading = Otros métodos de instalación

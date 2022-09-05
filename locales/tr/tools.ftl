@@ -66,7 +66,7 @@ install-notes-getting-started-description =
 install-notes-rustup-heading = <code>Rustup</code> ile araç zincirinin yönetimi
 install-notes-rustup-description =
     <p>
-      Rust, <a href="https://github.com/rust-lang/rustup.rs"><code>rustup</code></a> aracı ile yüklenir ve
+      Rust, <a href="https://rust-lang.github.io/rustup/"><code>rustup</code></a> aracı ile yüklenir ve
       yönetilir. Rust'ın 6 haftalık <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
         hızlı yayımlama süreci
       </a> vardır ve 
@@ -81,7 +81,7 @@ install-notes-rustup-description =
     </p>
     <p>
       Daha fazla bilgi için
-      <a href="https://github.com/rust-lang/rustup.rs/blob/master/README.md">
+      <a href="https://rust-lang.github.io/rustup/">
       <code>rustup</code> belgelendirmesine</a> bakabilirsiniz.
     </p>
 install-notes-path-heading = <code>PATH</code> ortam değişkenini yapılandırma
@@ -102,7 +102,7 @@ install-notes-windows-description =
     </p>
     <p>
       Rust'ı Windows'ta yapılandırmak hakkında daha fazla bilgiye
-      <a href="https://github.com/rust-lang/rustup.rs/blob/master/README.md#working-with-rust-on-windows">
+      <a href="https://rust-lang.github.io/rustup/installation/windows.html">
       Windows'a özgü <code>rustup</code> belgelendirmesi</a>nden ulaşabilirsiniz.
     </p>
 install-other-methods-heading = Diğer kurulum yöntemleri
