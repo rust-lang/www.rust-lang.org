@@ -47,7 +47,7 @@ wasm-js-heading = Plays well with JavaScript
 
 wasm-js-augment-heading = Augment, don’t replace
 wasm-js-augment-description =
-        The dream of WebAssembly is not to kill JavaScript but to work alongside of it, to help super charge processing-heavy or low-level tasks &mdash; tasks that benefit from Rust’s focus on performance.
+        The dream of WebAssembly is not to kill JavaScript but to work alongside it, to help super charge processing-heavy or low-level tasks &mdash; tasks that benefit from Rust’s focus on performance.
 
 wasm-js-toolchains-heading = Works with familiar toolchains
 wasm-js-toolchains-description =
