@@ -121,6 +121,6 @@ tools-editor-sublime = Sublime Text
 tools-editor-atom = Atom
 tools-editor-idea = IntelliJ IDEA
 tools-editor-eclipse = Eclipse
-tools-editor-vim = Vim
+tools-editor-vim = Vim/NeoVim
 tools-editor-emacs = Emacs
 tools-editor-geany = Geany
