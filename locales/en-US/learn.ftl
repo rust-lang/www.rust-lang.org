@@ -14,7 +14,7 @@ learn-rbe-button = Check out Rust by Example!
 translated-rbe = {""}
 translated-rbe-button = {""}
 
-learn-use = Grow with Rust
+learn-use = Documentation
 
 learn-doc-heading = Read the core documentation
 learn-doc = All of this documentation is also available locally using the <code>rustup doc</code> command, which will open up these resources for you in your browser without requiring a network connection!
