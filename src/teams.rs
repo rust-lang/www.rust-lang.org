@@ -234,6 +234,7 @@ mod tests {
                 weight: 0,
             }),
             github: None,
+            discord: vec![],
         }
     }
 

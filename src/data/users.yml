@@ -93,11 +93,6 @@
   logo: calyptech.png
   how: "Used for high performance embedded system components as an alternative to C."
 -
-  name: Cambridge Consultants
-  url: http://www.cambridgeconsultants.com/
-  logo: cambridge-consultants.png
-  how: "<a href='http://blog.cambridgeconsultants.com/wireless-product-development/presentation-mozillas-rust-and-why-we-love-it/'>We are writing and shipping Rust code on projects to our clients</a>."
--
   name: Canonical
   url: http://www.canonical.com
   logo: canonical.svg
