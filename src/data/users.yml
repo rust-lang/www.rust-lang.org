@@ -691,3 +691,9 @@
   url: https://1password.com/
   logo: 1password.svg
   how: "We use Rust to power the entire backend (encryption, networking, database, and business logic) of all our client apps."
+
+- 
+  name: Neon
+  url: https://neon.tech/
+  logo: neon.svg
+  how: "The multi-cloud fully managed Postgres. We separated storage and compute (these parts use Rust) to offer autoscaling, branching, and bottomless storage."
