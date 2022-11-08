@@ -71,7 +71,7 @@ Hello, world!</code></pre>
     {{#fluent "learn-dependencies-steps"}}
     {{#fluentparam "cargotoml"}}
       <pre><code>[dependencies]
-ferris-says = "0.2"</code></pre>
+ferris-says = "0.3.1"</code></pre>
     {{/fluentparam}}
     {{/fluent}}
 
@@ -90,12 +90,11 @@ ferris-says = "0.2"</code></pre>
 use std::io::{stdout, BufWriter};
 
 fn main() {
-    let stdout = stdout();
-    let message = String::from("Hello fellow Rustaceans!");
+    let message = "Hello fellow Rustaceans!";
     let width = message.chars().count();
 
-    let mut writer = BufWriter::new(stdout.lock());
-    say(message.as_bytes(), width, &mut writer).unwrap();
+    let mut writer = BufWriter::new(stdout().lock());
+    say(message, width, &mut writer).unwrap();
 }
     </code></pre>
     {{/fluentparam}}
