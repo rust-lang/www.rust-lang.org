@@ -25,7 +25,7 @@ embedded-pitch-portability-heading = Переносимость
 embedded-pitch-portability-description = Один раз напишите библиотеку или драйвер и используйте его с разными системами начиная от очень маленьких микроконтроллеров, до мощных интегрированных плат.
 embedded-pitch-community-alt = Логотип Shield
 embedded-pitch-community-heading = Движимый сообществом
-embedded-pitch-community-description = В рамках open source проекта Rust, поддержка встраиваемых систем движется, при поддержке коммерческих партнёров, лучшим в своём классе open source сообществом.
+embedded-pitch-community-description = В рамках open source проекта Rust, поддержка встраиваемых систем развивается, при поддержке коммерческих партнёров, лучшим в своём классе open source сообществом.
 embedded-learn-more-link = Узнайте больше
 
 ## Showcase (templates/components/what/showcase.hbs)
