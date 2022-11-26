@@ -11,7 +11,7 @@ zulip = Zulip
 
 ## components/panels/domain.hbs
 
-cli-learn-more = Инструменты сборки
+cli-learn-more = Инструменты командной строки
 wasm-learn-more = Написание web-приложений
 net-learn-more = Работа на сервере
 embedded-learn-more = Начать с Embedded
@@ -48,7 +48,7 @@ footer-policies-all = Все политики
 footer-social = Социальные сети
 footer-get-help = Получить помощь!
 footer-youtube-alt = Twitter
-footer-alt-youtube = Логотип youtube
+footer-alt-youtube = Логотип YouTube
 footer-discord-alt = { discord }
 footer-github-alt = GitHub
 footer-attribution = Поддерживается Rust Team. Увидели опечатку? <a href="https://github.com/rust-lang/www.rust-lang.org/issues/new/choose">Исправьте здесь!</a>
