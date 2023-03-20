@@ -135,3 +135,4 @@ tools-editor-eclipse = { ENGLISH("Eclipse") }
 tools-editor-vim = { ENGLISH("Vim") }
 tools-editor-emacs = { ENGLISH("Emacs") }
 tools-editor-geany = { ENGLISH("Geany") }
+tools-editor-visualstudio = { ENGLISH("Visual Studio") }
