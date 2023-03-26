@@ -99,5 +99,5 @@ thanks-individuals-blurb = Rust is a community project and is very thankful for 
 thanks-individuals-link = See individual contributors
 
 thanks-companies-header = Corporate sponsors
-thanks-companies-blurb = The Rust project receives support from companies through the donation of infrastructure.
-thanks-companies-link = See sponsors
+thanks-companies-blurb = The Rust project receives support from companies through the Rust Foundation.
+thanks-companies-link = See Foundation members

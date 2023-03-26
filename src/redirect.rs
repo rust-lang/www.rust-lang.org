@@ -57,6 +57,7 @@ static EXTERNAL_REDIRECTS: &[(&str, &str)] = &[
         "policies/media-guide",
         "https://foundation.rust-lang.org/policies/logo-policy-and-media-guide/",
     ),
+    ("sponsors", "https://foundation.rust-lang.org/members/"),
 ];
 
 // Translations present on www.rust-lang.org before the 2018 redesign. If an equivalent translation

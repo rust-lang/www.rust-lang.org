@@ -30,7 +30,6 @@ mod i18n;
 mod production;
 mod redirect;
 mod rust_version;
-mod sponsors;
 mod teams;
 
 use production::User;
@@ -242,16 +241,6 @@ fn production_locale(locale: SupportedLocale) -> Template {
     render_production(locale.0)
 }
 
-#[get("/sponsors")]
-fn sponsors() -> Template {
-    render_sponsors(ENGLISH.into())
-}
-
-#[get("/<locale>/sponsors", rank = 10)]
-fn sponsors_locale(locale: SupportedLocale) -> Template {
-    render_sponsors(locale.0)
-}
-
 #[get("/<category>/<subject>", rank = 4)]
 fn subject(category: Category, subject: String) -> Result<Template, Status> {
     render_subject(category, subject, ENGLISH.into())
@@ -399,19 +388,6 @@ fn render_production(lang: String) -> Template {
     Template::render(page, &context)
 }
 
-fn render_sponsors(lang: String) -> Template {
-    let page = "sponsors/index".to_string();
-    let context = Context::new(
-        page.clone(),
-        "sponsors-page-title",
-        false,
-        sponsors::render_data(&lang),
-        lang,
-    );
-
-    Template::render(page, &context)
-}
-
 fn render_governance(lang: String) -> Result<Template, Status> {
     match teams::index_data() {
         Ok(data) => {
@@ -500,7 +476,6 @@ fn main() {
                 governance,
                 team,
                 production,
-                sponsors,
                 subject,
                 files,
                 robots_txt,
@@ -511,7 +486,6 @@ fn main() {
                 governance_locale,
                 team_locale,
                 production_locale,
-                sponsors_locale,
                 subject_locale,
                 components_locale,
                 redirect_bare_en_us,
