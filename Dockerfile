@@ -51,7 +51,7 @@ COPY static /app/static/
 COPY src/styles /app/src/styles/
 
 ENV ROCKET_PORT 80
-ENV ROCKET_ENV prod
+ENV ROCKET_PROFILE release
 
 # Use `tini` (a small PID 1) to properly handle signals.
 CMD ["tini", "--", "www-rust-lang-org"]

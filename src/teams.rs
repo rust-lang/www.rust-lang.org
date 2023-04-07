@@ -36,9 +36,9 @@ struct Data {
 const ENCODING_SET: AsciiSet = NON_ALPHANUMERIC.remove(b'-').remove(b'_');
 
 impl Data {
-    fn load() -> Result<Self, Box<dyn Error>> {
+    async fn load() -> Result<Self, Box<dyn Error>> {
         Ok(Data {
-            teams: crate::cache::get::<Vec<Team>>(get_teams)?,
+            teams: crate::cache::get::<Vec<Team>>(get_teams).await?,
         })
     }
 
@@ -152,16 +152,16 @@ pub fn encode_zulip_stream(
     Ok(())
 }
 
-pub fn index_data() -> Result<IndexData, Box<dyn Error>> {
-    Data::load()?.index_data()
+pub async fn index_data() -> Result<IndexData, Box<dyn Error>> {
+    Data::load().await?.index_data()
 }
 
-pub fn page_data(section: &str, team_name: &str) -> Result<PageData, Box<dyn Error>> {
-    Data::load()?.page_data(section, team_name)
+pub async fn page_data(section: &str, team_name: &str) -> Result<PageData, Box<dyn Error>> {
+    Data::load().await?.page_data(section, team_name)
 }
 
 fn get_teams() -> Result<Box<dyn Any>, Box<dyn Error>> {
-    let resp: Teams = reqwest::blocking::get(&format!("{}/teams.json", BASE_URL))?
+    let resp: Teams = reqwest::blocking::get(format!("{}/teams.json", BASE_URL))?
         .error_for_status()?
         .json()?;
 
@@ -326,7 +326,6 @@ mod tests {
             .unwrap()
             .is::<TeamNotFound>());
         assert!(data
-            .clone()
             .page_data("teams", "bar")
             .err()
             .unwrap()

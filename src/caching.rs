@@ -1,40 +1,24 @@
-use rocket::http::hyper::header::{CacheControl, CacheDirective};
-use rocket::request::Request;
-use rocket::response::{self, Responder};
+use rocket::fs::NamedFile;
+use rocket::http::uncased::Uncased;
+use rocket::http::Header;
+use rocket::response::Responder;
 
-pub struct Cached<R> {
-    inner: R,
-    directives: Vec<CacheDirective>,
+#[derive(Responder)]
+pub struct CachedNamedFile {
+    file: NamedFile,
+    header: Header<'static>,
 }
 
-impl<'r, R> Responder<'r> for Cached<R>
-where
-    R: Responder<'r>,
-{
-    fn respond_to(self, req: &Request) -> response::Result<'r> {
-        let Cached { inner, directives } = self;
-        inner.respond_to(req).map(|mut res| {
-            res.set_header(CacheControl(directives));
-            res
-        })
-    }
-}
-
-pub trait Caching
-where
-    Self: Sized,
-{
-    fn cached(self, directives: Vec<CacheDirective>) -> Cached<Self>;
-}
-
-impl<'r, R> Caching for R
-where
-    R: Responder<'r>,
-{
-    fn cached(self, directives: Vec<CacheDirective>) -> Cached<Self> {
-        Cached {
-            inner: self,
-            directives,
+impl CachedNamedFile {
+    pub fn max_age(file: NamedFile, max_age: u32) -> Self {
+        Self {
+            file,
+            header: Header {
+                name: Uncased {
+                    string: "CacheControl".into(),
+                },
+                value: format!("max-age={max_age}").into(),
+            },
         }
     }
 }
