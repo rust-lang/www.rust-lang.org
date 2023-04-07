@@ -187,9 +187,21 @@ function check_initial_override() {
     }
 }
 
+function bind_copy_on_click() {
+    console.log("Binding copy on click");
+    const copyable = document.querySelectorAll(".copyable");
+    copyable.forEach(function (elem) {
+        elem.addEventListener("click", function () {
+            const content = elem.querySelector(".copy-text");
+            navigator.clipboard.writeText(content.innerText);
+        });
+    });
+}
+
 (function () {
     check_initial_override();
     adjust_for_platform();
     set_up_cycle_button();
     fill_in_bug_report_values();
-}());
+    bind_copy_on_click();
+})();
