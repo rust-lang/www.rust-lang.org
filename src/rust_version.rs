@@ -17,7 +17,7 @@ fn fetch(target: FetchTarget) -> Result<reqwest::blocking::Response, Box<dyn Err
 
     let client = match proxy_env {
         Some(proxy_env) => {
-            let proxy = reqwest::Proxy::https(&proxy_env).unwrap();
+            let proxy = reqwest::Proxy::https(proxy_env).unwrap();
             reqwest::blocking::ClientBuilder::new()
                 .proxy(proxy)
                 .build()
@@ -51,8 +51,8 @@ fn fetch_rust_release_post() -> Result<Box<dyn Any>, Box<dyn Error>> {
     Ok(Box::new(url))
 }
 
-pub fn rust_version() -> Option<String> {
-    match crate::cache::get(fetch_rust_version) {
+pub async fn rust_version() -> Option<String> {
+    match crate::cache::get(fetch_rust_version).await {
         Ok(version) => Some(version),
         Err(err) => {
             eprintln!("error while fetching the rust version: {}", err);
@@ -61,8 +61,8 @@ pub fn rust_version() -> Option<String> {
     }
 }
 
-pub fn rust_release_post() -> Option<String> {
-    match crate::cache::get(fetch_rust_release_post) {
+pub async fn rust_release_post() -> Option<String> {
+    match crate::cache::get(fetch_rust_release_post).await {
         Ok(post) => Some(post),
         Err(err) => {
             eprintln!("error while fetching the rust release post: {}", err);

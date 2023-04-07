@@ -1,1 +1,1 @@
-web: ROCKET_PORT=$PORT ROCKET_ENV=prod ./target/release/www-rust-lang-org
+web: ROCKET_PORT=$PORT ROCKET_PROFILE=release ./target/release/www-rust-lang-org

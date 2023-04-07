@@ -19,6 +19,7 @@ static HEADER_CSP_PONTOON: &str = "default-src 'self' pontoon.rust-lang.org pont
 
 pub(crate) struct InjectHeaders;
 
+#[rocket::async_trait]
 impl Fairing for InjectHeaders {
     fn info(&self) -> Info {
         Info {
@@ -27,7 +28,7 @@ impl Fairing for InjectHeaders {
         }
     }
 
-    fn on_response(&self, _request: &Request, response: &mut Response) {
+    async fn on_response<'r>(&self, _request: &'r Request<'_>, response: &mut Response<'r>) {
         for (key, value) in HEADERS {
             response.set_header(Header::new(*key, *value));
         }

@@ -9,17 +9,11 @@
 
 ### Running the app locally
 
-1. This is a [Rocket](https://rocket.rs/) app, which means we use the `nightly`
-   channel of Rust. We use a specific nightly version to ensure consistent
-   builds locally and on the server, and the version is defined in the
-   `rust-toolchain` file. [`rustup`](https://rustup.rs) will automatically
-   download that nightly for you when you run a cargo command.
+1. Install `cargo watch` by running `cargo install cargo-watch` in your terminal.
 
-2. Install `cargo watch` by running `cargo install cargo-watch` in your terminal.
+2. To build the app and run the server, run `cargo watch -x run` in your terminal.
 
-3. To build the app and run the server, run `cargo watch -x run` in your terminal.
-
-4. Navigate to http://localhost:7878 in your browser. If you make any updates to
+3. Navigate to http://localhost:7878 in your browser. If you make any updates to
    the styles, or any other project files, `cargo watch` will automatically
    restart the server for you, all you have to do is refresh your browser to see
    your changes.
