@@ -138,8 +138,8 @@ install-notes-windows-description =
         <p>
           On Windows, Rust additionally requires the MSVC build tools
           for Visual Studio 2013 or later. See
-          <a href="https://doc.rust-lang.org/book/ch01-01-installation.html#installing-rustup-on-windows">
-          Installing <code>rustup</code> on Windows</a>
+          <a href="https://rust-lang.github.io/rustup/installation/windows-msvc.html">
+          MSVC prerequistes</a>
         </p>
         <p>
           For further information about configuring Rust on Windows see the
