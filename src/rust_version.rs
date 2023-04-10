@@ -1,6 +1,12 @@
-use std::any::Any;
 use std::env;
 use std::error::Error;
+use std::sync::Arc;
+use std::time::Instant;
+
+use rocket::tokio::sync::RwLock;
+use rocket::State;
+
+use crate::cache::Cache;
 
 static MANIFEST_URL: &str = "https://static.rust-lang.org/dist/channel-rust-stable.toml";
 static RELEASES_FEED_URL: &str = "https://blog.rust-lang.org/releases.json";
@@ -10,7 +16,7 @@ enum FetchTarget {
     ReleasesFeed,
 }
 
-fn fetch(target: FetchTarget) -> Result<reqwest::blocking::Response, Box<dyn Error>> {
+async fn fetch(target: FetchTarget) -> Result<reqwest::Response, Box<dyn Error + Send + Sync>> {
     let proxy_env = env::var("http_proxy")
         .or_else(|_| env::var("HTTPS_PROXY"))
         .ok();
@@ -18,12 +24,9 @@ fn fetch(target: FetchTarget) -> Result<reqwest::blocking::Response, Box<dyn Err
     let client = match proxy_env {
         Some(proxy_env) => {
             let proxy = reqwest::Proxy::https(proxy_env).unwrap();
-            reqwest::blocking::ClientBuilder::new()
-                .proxy(proxy)
-                .build()
-                .unwrap()
+            reqwest::ClientBuilder::new().proxy(proxy).build().unwrap()
         }
-        None => reqwest::blocking::Client::new(),
+        None => reqwest::Client::new(),
     };
 
     let url = match target {
@@ -31,42 +34,64 @@ fn fetch(target: FetchTarget) -> Result<reqwest::blocking::Response, Box<dyn Err
         FetchTarget::ReleasesFeed => RELEASES_FEED_URL,
     };
 
-    Ok(client.get(url).send()?)
+    Ok(client.get(url).send().await?)
 }
 
-fn fetch_rust_version() -> Result<Box<dyn Any>, Box<dyn Error>> {
-    let manifest = fetch(FetchTarget::Manifest)?
-        .text()?
-        .parse::<toml::Value>()?;
-    let rust_version = manifest["pkg"]["rust"]["version"].as_str().unwrap();
-    let version: String = rust_version.split(' ').next().unwrap().to_owned();
-    Ok(Box::new(version))
-}
+#[derive(Debug, Clone)]
+pub struct RustVersion(pub String, pub Instant);
 
-fn fetch_rust_release_post() -> Result<Box<dyn Any>, Box<dyn Error>> {
-    let releases = fetch(FetchTarget::ReleasesFeed)?
-        .text()?
-        .parse::<serde_json::Value>()?;
-    let url = releases["releases"][0]["url"].as_str().unwrap().to_string();
-    Ok(Box::new(url))
-}
-
-pub async fn rust_version() -> Option<String> {
-    match crate::cache::get(fetch_rust_version).await {
-        Ok(version) => Some(version),
-        Err(err) => {
-            eprintln!("error while fetching the rust version: {}", err);
-            None
-        }
+impl Default for RustVersion {
+    fn default() -> Self {
+        Self(Default::default(), Instant::now())
     }
 }
 
-pub async fn rust_release_post() -> Option<String> {
-    match crate::cache::get(fetch_rust_release_post).await {
-        Ok(post) => Some(post),
-        Err(err) => {
-            eprintln!("error while fetching the rust release post: {}", err);
-            None
-        }
+#[async_trait]
+impl Cache for RustVersion {
+    fn get_timestamp(&self) -> Instant {
+        self.1
     }
+    async fn fetch() -> Result<Self, Box<dyn Error + Send + Sync>> {
+        let manifest = fetch(FetchTarget::Manifest)
+            .await?
+            .text()
+            .await?
+            .parse::<toml::Value>()?;
+        let rust_version = manifest["pkg"]["rust"]["version"].as_str().unwrap();
+        let version: String = rust_version.split(' ').next().unwrap().to_owned();
+        Ok(RustVersion(version, Instant::now()))
+    }
+}
+
+#[derive(Debug, Clone)]
+pub struct RustReleasePost(pub String, pub Instant);
+
+impl Default for RustReleasePost {
+    fn default() -> Self {
+        Self(Default::default(), Instant::now())
+    }
+}
+
+#[async_trait]
+impl Cache for RustReleasePost {
+    fn get_timestamp(&self) -> Instant {
+        self.1
+    }
+    async fn fetch() -> Result<Self, Box<dyn Error + Send + Sync>> {
+        let releases = fetch(FetchTarget::ReleasesFeed)
+            .await?
+            .text()
+            .await?
+            .parse::<serde_json::Value>()?;
+        let url = releases["releases"][0]["url"].as_str().unwrap().to_string();
+        Ok(RustReleasePost(url, Instant::now()))
+    }
+}
+
+pub async fn rust_version(version_cache: &State<Arc<RwLock<RustVersion>>>) -> String {
+    RustVersion::get(version_cache).await.0
+}
+
+pub async fn rust_release_post(release_post_cache: &State<Arc<RwLock<RustReleasePost>>>) -> String {
+    RustReleasePost::get(release_post_cache).await.0
 }

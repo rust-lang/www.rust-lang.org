@@ -1,10 +1,14 @@
 use handlebars::{Context, Handlebars, Helper, HelperResult, Output, RenderContext, RenderError};
 use percent_encoding::{utf8_percent_encode, AsciiSet, NON_ALPHANUMERIC};
+use rocket::tokio::sync::RwLock;
 use rust_team_data::v1::{Team, TeamKind, Teams, BASE_URL};
-use std::any::Any;
 use std::cmp::Reverse;
 use std::error::Error;
 use std::fmt;
+use std::sync::Arc;
+use std::time::Instant;
+
+use crate::cache::Cache;
 
 #[derive(Default, Serialize)]
 pub struct IndexData {
@@ -36,9 +40,14 @@ struct Data {
 const ENCODING_SET: AsciiSet = NON_ALPHANUMERIC.remove(b'-').remove(b'_');
 
 impl Data {
-    async fn load() -> Result<Self, Box<dyn Error>> {
+    async fn load(
+        teams_cache: &Arc<RwLock<RustTeams>>,
+    ) -> Result<Self, Box<dyn Error + Send + Sync>> {
         Ok(Data {
-            teams: crate::cache::get::<Vec<Team>>(get_teams).await?,
+            teams: RustTeams::get(teams_cache)
+                .await
+                .0
+                .ok_or_else(|| Box::<dyn Error + Send + Sync>::from("failed to load teams"))?,
         })
     }
 
@@ -47,7 +56,7 @@ impl Data {
         Data { teams }
     }
 
-    fn index_data(self) -> Result<IndexData, Box<dyn Error>> {
+    fn index_data(self) -> Result<IndexData, Box<dyn Error + Send + Sync>> {
         let mut data = IndexData::default();
 
         self.teams
@@ -77,7 +86,11 @@ impl Data {
         Ok(data)
     }
 
-    pub fn page_data(self, section: &str, team_name: &str) -> Result<PageData, Box<dyn Error>> {
+    pub fn page_data(
+        self,
+        section: &str,
+        team_name: &str,
+    ) -> Result<PageData, Box<dyn Error + Send + Sync>> {
         // Find the main team first
         let main_team = self
             .teams
@@ -152,25 +165,51 @@ pub fn encode_zulip_stream(
     Ok(())
 }
 
-pub async fn index_data() -> Result<IndexData, Box<dyn Error>> {
-    Data::load().await?.index_data()
+pub async fn index_data(
+    teams_cache: &Arc<RwLock<RustTeams>>,
+) -> Result<IndexData, Box<dyn Error + Send + Sync>> {
+    Data::load(teams_cache).await?.index_data()
 }
 
-pub async fn page_data(section: &str, team_name: &str) -> Result<PageData, Box<dyn Error>> {
-    Data::load().await?.page_data(section, team_name)
+pub async fn page_data(
+    section: &str,
+    team_name: &str,
+    teams_cache: &Arc<RwLock<RustTeams>>,
+) -> Result<PageData, Box<dyn Error + Send + Sync>> {
+    Data::load(teams_cache).await?.page_data(section, team_name)
 }
 
-fn get_teams() -> Result<Box<dyn Any>, Box<dyn Error>> {
-    let resp: Teams = reqwest::blocking::get(format!("{}/teams.json", BASE_URL))?
-        .error_for_status()?
-        .json()?;
+#[derive(Debug, Clone)]
+pub struct RustTeams(pub Option<Vec<Team>>, pub Instant);
 
-    Ok(Box::new(
-        resp.teams
-            .into_iter()
-            .map(|(_key, value)| value)
-            .collect::<Vec<Team>>(),
-    ))
+impl Default for RustTeams {
+    fn default() -> Self {
+        Self(Default::default(), Instant::now())
+    }
+}
+
+#[async_trait]
+impl Cache for RustTeams {
+    fn get_timestamp(&self) -> Instant {
+        self.1
+    }
+    async fn fetch() -> Result<Self, Box<dyn Error + Send + Sync>> {
+        let resp: Teams = reqwest::get(format!("{}/teams.json", BASE_URL))
+            .await?
+            .error_for_status()?
+            .json()
+            .await?;
+
+        Ok(RustTeams(
+            Some(
+                resp.teams
+                    .into_iter()
+                    .map(|(_key, value)| value)
+                    .collect::<Vec<Team>>(),
+            ),
+            Instant::now(),
+        ))
+    }
 }
 
 fn kind_to_str(kind: TeamKind) -> &'static str {
