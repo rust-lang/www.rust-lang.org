@@ -30,14 +30,21 @@ mod redirect;
 mod rust_version;
 mod teams;
 
+use cache::Cache;
+use cache::Cached;
 use production::User;
+use rocket::tokio::sync::RwLock;
+use rust_version::RustReleasePost;
+use rust_version::RustVersion;
 use teams::encode_zulip_stream;
+use teams::RustTeams;
 
 use std::collections::hash_map::DefaultHasher;
 use std::env;
 use std::fs;
 use std::hash::Hasher;
 use std::path::{Path, PathBuf};
+use std::sync::Arc;
 
 use rand::seq::SliceRandom;
 
@@ -182,13 +189,20 @@ fn robots_txt() -> Option<content::RawText<&'static str>> {
 }
 
 #[get("/")]
-async fn index() -> Template {
-    render_index(ENGLISH.into()).await
+async fn index(
+    version_cache: &Cache<RustVersion>,
+    release_post_cache: &Cache<RustReleasePost>,
+) -> Template {
+    render_index(ENGLISH.into(), version_cache, release_post_cache).await
 }
 
 #[get("/<locale>", rank = 3)]
-async fn index_locale(locale: SupportedLocale) -> Template {
-    render_index(locale.0).await
+async fn index_locale(
+    locale: SupportedLocale,
+    version_cache: &Cache<RustVersion>,
+    release_post_cache: &Cache<RustReleasePost>,
+) -> Template {
+    render_index(locale.0, version_cache, release_post_cache).await
 }
 
 #[get("/<category>")]
@@ -202,18 +216,25 @@ fn category_locale(category: Category, locale: SupportedLocale) -> Template {
 }
 
 #[get("/governance")]
-async fn governance() -> Result<Template, Status> {
-    render_governance(ENGLISH.into()).await
+async fn governance(teams_cache: &Cache<RustTeams>) -> Result<Template, Status> {
+    render_governance(ENGLISH.into(), teams_cache).await
 }
 
 #[get("/governance/<section>/<team>", rank = 2)]
-async fn team(section: String, team: String) -> Result<Template, Result<Redirect, Status>> {
-    render_team(section, team, ENGLISH.into()).await
+async fn team(
+    section: String,
+    team: String,
+    teams_cache: &Cache<RustTeams>,
+) -> Result<Template, Result<Redirect, Status>> {
+    render_team(section, team, ENGLISH.into(), teams_cache).await
 }
 
 #[get("/<locale>/governance", rank = 8)]
-async fn governance_locale(locale: SupportedLocale) -> Result<Template, Status> {
-    render_governance(locale.0).await
+async fn governance_locale(
+    locale: SupportedLocale,
+    teams_cache: &Cache<RustTeams>,
+) -> Result<Template, Status> {
+    render_governance(locale.0, teams_cache).await
 }
 
 #[get("/<locale>/governance/<section>/<team>", rank = 12)]
@@ -221,8 +242,9 @@ async fn team_locale(
     section: String,
     team: String,
     locale: SupportedLocale,
+    teams_cache: &Cache<RustTeams>,
 ) -> Result<Template, Result<Redirect, Status>> {
-    render_team(section, team, locale.0).await
+    render_team(section, team, locale.0, teams_cache).await
 }
 
 #[get("/production/users")]
@@ -344,7 +366,11 @@ fn concat_app_js(files: Vec<&str>) -> String {
     String::from(&js_path[1..])
 }
 
-async fn render_index(lang: String) -> Template {
+async fn render_index(
+    lang: String,
+    version_cache: &Cache<RustVersion>,
+    release_post_cache: &Cache<RustReleasePost>,
+) -> Template {
     #[derive(Serialize)]
     struct IndexData {
         rust_version: String,
@@ -352,11 +378,14 @@ async fn render_index(lang: String) -> Template {
     }
 
     let page = "index".to_string();
+    let release_post = rust_version::rust_release_post(release_post_cache).await;
     let data = IndexData {
-        rust_version: rust_version::rust_version().await.unwrap_or_default(),
-        rust_release_post: rust_version::rust_release_post()
-            .await
-            .map_or_else(String::new, |v| format!("https://blog.rust-lang.org/{}", v)),
+        rust_version: rust_version::rust_version(version_cache).await,
+        rust_release_post: if !release_post.is_empty() {
+            format!("https://blog.rust-lang.org/{}", release_post)
+        } else {
+            String::new()
+        },
     };
     let context = Context::new(page.clone(), "", true, data, lang);
     Template::render(page, context)
@@ -383,8 +412,11 @@ fn render_production(lang: String) -> Template {
     Template::render(page, context)
 }
 
-async fn render_governance(lang: String) -> Result<Template, Status> {
-    match teams::index_data().await {
+async fn render_governance(
+    lang: String,
+    teams_cache: &Cache<RustTeams>,
+) -> Result<Template, Status> {
+    match teams::index_data(teams_cache).await {
         Ok(data) => {
             let page = "governance/index".to_string();
             let context = Context::new(page.clone(), "governance-page-title", false, data, lang);
@@ -402,8 +434,9 @@ async fn render_team(
     section: String,
     team: String,
     lang: String,
+    teams_cache: &Cache<RustTeams>,
 ) -> Result<Template, Result<Redirect, Status>> {
-    match teams::page_data(&section, &team).await {
+    match teams::page_data(&section, &team, teams_cache).await {
         Ok(data) => {
             let page = "governance/group".to_string();
             let name = format!("governance-team-{}-name", data.team.name);
@@ -448,7 +481,7 @@ fn render_subject(category: Category, subject: String, lang: String) -> Result<T
 }
 
 #[launch]
-fn rocket() -> _ {
+async fn rocket() -> _ {
     let templating = Template::custom(|engine| {
         engine
             .handlebars
@@ -461,9 +494,16 @@ fn rocket() -> _ {
             .register_helper("encode-zulip-stream", Box::new(encode_zulip_stream));
     });
 
+    let rust_version = RustVersion::fetch().await.unwrap_or_default();
+    let rust_release_post = RustReleasePost::fetch().await.unwrap_or_default();
+    let teams = RustTeams::fetch().await.unwrap_or_default();
+
     rocket::build()
         .attach(templating)
         .attach(headers::InjectHeaders)
+        .manage(Arc::new(RwLock::new(rust_version)))
+        .manage(Arc::new(RwLock::new(rust_release_post)))
+        .manage(Arc::new(RwLock::new(teams)))
         .mount(
             "/",
             routes![
