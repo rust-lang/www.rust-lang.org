@@ -1,14 +1,12 @@
 use handlebars::{Context, Handlebars, Helper, HelperResult, Output, RenderContext, RenderError};
 use percent_encoding::{utf8_percent_encode, AsciiSet, NON_ALPHANUMERIC};
-use rocket::tokio::sync::RwLock;
 use rust_team_data::v1::{Team, TeamKind, Teams, BASE_URL};
 use std::cmp::Reverse;
 use std::error::Error;
 use std::fmt;
-use std::sync::Arc;
 use std::time::Instant;
 
-use crate::cache::Cache;
+use crate::cache::{Cache, Cached};
 
 #[derive(Default, Serialize)]
 pub struct IndexData {
@@ -40,9 +38,7 @@ struct Data {
 const ENCODING_SET: AsciiSet = NON_ALPHANUMERIC.remove(b'-').remove(b'_');
 
 impl Data {
-    async fn load(
-        teams_cache: &Arc<RwLock<RustTeams>>,
-    ) -> Result<Self, Box<dyn Error + Send + Sync>> {
+    async fn load(teams_cache: &Cache<RustTeams>) -> Result<Self, Box<dyn Error + Send + Sync>> {
         Ok(Data {
             teams: RustTeams::get(teams_cache)
                 .await
@@ -166,7 +162,7 @@ pub fn encode_zulip_stream(
 }
 
 pub async fn index_data(
-    teams_cache: &Arc<RwLock<RustTeams>>,
+    teams_cache: &Cache<RustTeams>,
 ) -> Result<IndexData, Box<dyn Error + Send + Sync>> {
     Data::load(teams_cache).await?.index_data()
 }
@@ -174,7 +170,7 @@ pub async fn index_data(
 pub async fn page_data(
     section: &str,
     team_name: &str,
-    teams_cache: &Arc<RwLock<RustTeams>>,
+    teams_cache: &Cache<RustTeams>,
 ) -> Result<PageData, Box<dyn Error + Send + Sync>> {
     Data::load(teams_cache).await?.page_data(section, team_name)
 }
@@ -189,7 +185,7 @@ impl Default for RustTeams {
 }
 
 #[async_trait]
-impl Cache for RustTeams {
+impl Cached for RustTeams {
     fn get_timestamp(&self) -> Instant {
         self.1
     }

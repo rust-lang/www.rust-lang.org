@@ -31,9 +31,9 @@ mod rust_version;
 mod teams;
 
 use cache::Cache;
+use cache::Cached;
 use production::User;
 use rocket::tokio::sync::RwLock;
-use rocket::State;
 use rust_version::RustReleasePost;
 use rust_version::RustVersion;
 use teams::encode_zulip_stream;
@@ -190,8 +190,8 @@ fn robots_txt() -> Option<content::RawText<&'static str>> {
 
 #[get("/")]
 async fn index(
-    version_cache: &State<Arc<RwLock<RustVersion>>>,
-    release_post_cache: &State<Arc<RwLock<RustReleasePost>>>,
+    version_cache: &Cache<RustVersion>,
+    release_post_cache: &Cache<RustReleasePost>,
 ) -> Template {
     render_index(ENGLISH.into(), version_cache, release_post_cache).await
 }
@@ -199,8 +199,8 @@ async fn index(
 #[get("/<locale>", rank = 3)]
 async fn index_locale(
     locale: SupportedLocale,
-    version_cache: &State<Arc<RwLock<RustVersion>>>,
-    release_post_cache: &State<Arc<RwLock<RustReleasePost>>>,
+    version_cache: &Cache<RustVersion>,
+    release_post_cache: &Cache<RustReleasePost>,
 ) -> Template {
     render_index(locale.0, version_cache, release_post_cache).await
 }
@@ -216,7 +216,7 @@ fn category_locale(category: Category, locale: SupportedLocale) -> Template {
 }
 
 #[get("/governance")]
-async fn governance(teams_cache: &State<Arc<RwLock<RustTeams>>>) -> Result<Template, Status> {
+async fn governance(teams_cache: &Cache<RustTeams>) -> Result<Template, Status> {
     render_governance(ENGLISH.into(), teams_cache).await
 }
 
@@ -224,7 +224,7 @@ async fn governance(teams_cache: &State<Arc<RwLock<RustTeams>>>) -> Result<Templ
 async fn team(
     section: String,
     team: String,
-    teams_cache: &State<Arc<RwLock<RustTeams>>>,
+    teams_cache: &Cache<RustTeams>,
 ) -> Result<Template, Result<Redirect, Status>> {
     render_team(section, team, ENGLISH.into(), teams_cache).await
 }
@@ -232,7 +232,7 @@ async fn team(
 #[get("/<locale>/governance", rank = 8)]
 async fn governance_locale(
     locale: SupportedLocale,
-    teams_cache: &State<Arc<RwLock<RustTeams>>>,
+    teams_cache: &Cache<RustTeams>,
 ) -> Result<Template, Status> {
     render_governance(locale.0, teams_cache).await
 }
@@ -242,7 +242,7 @@ async fn team_locale(
     section: String,
     team: String,
     locale: SupportedLocale,
-    teams_cache: &State<Arc<RwLock<RustTeams>>>,
+    teams_cache: &Cache<RustTeams>,
 ) -> Result<Template, Result<Redirect, Status>> {
     render_team(section, team, locale.0, teams_cache).await
 }
@@ -368,8 +368,8 @@ fn concat_app_js(files: Vec<&str>) -> String {
 
 async fn render_index(
     lang: String,
-    version_cache: &State<Arc<RwLock<RustVersion>>>,
-    release_post_cache: &State<Arc<RwLock<RustReleasePost>>>,
+    version_cache: &Cache<RustVersion>,
+    release_post_cache: &Cache<RustReleasePost>,
 ) -> Template {
     #[derive(Serialize)]
     struct IndexData {
@@ -414,7 +414,7 @@ fn render_production(lang: String) -> Template {
 
 async fn render_governance(
     lang: String,
-    teams_cache: &State<Arc<RwLock<RustTeams>>>,
+    teams_cache: &Cache<RustTeams>,
 ) -> Result<Template, Status> {
     match teams::index_data(teams_cache).await {
         Ok(data) => {
@@ -434,7 +434,7 @@ async fn render_team(
     section: String,
     team: String,
     lang: String,
-    teams_cache: &State<Arc<RwLock<RustTeams>>>,
+    teams_cache: &Cache<RustTeams>,
 ) -> Result<Template, Result<Redirect, Status>> {
     match teams::page_data(&section, &team, teams_cache).await {
         Ok(data) => {
