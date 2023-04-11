@@ -1,4 +1,3 @@
-#![feature(proc_macro_hygiene, decl_macro)]
 #![cfg_attr(test, deny(warnings))]
 
 #[macro_use]
@@ -13,7 +12,6 @@ extern crate sass_rs;
 extern crate siphasher;
 extern crate toml;
 
-extern crate rocket_contrib;
 #[macro_use]
 extern crate serde;
 
@@ -39,27 +37,25 @@ use std::collections::hash_map::DefaultHasher;
 use std::env;
 use std::fs;
 use std::hash::Hasher;
-use std::io::Cursor;
 use std::path::{Path, PathBuf};
 
 use rand::seq::SliceRandom;
 
 use rocket::{
-    http::{ContentType, RawStr, Status},
+    fs::NamedFile,
+    http::Status,
     request::{FromParam, Request},
-    response::{NamedFile, Redirect, Response},
+    response::{content, Redirect},
 };
-
-use rocket_contrib::templates::Template;
+use rocket_dyn_templates::Template;
 
 use sass_rs::{compile_file, Options};
 
 use category::Category;
 
-use caching::{Cached, Caching};
+use caching::CachedNamedFile;
 use handlebars_fluent::{loader::Loader, FluentHelper};
 use i18n::{create_loader, LocaleInfo, SupportedLocale, TeamHelper, EXPLICIT_LOCALE_INFO};
-use rocket::http::hyper::header::CacheDirective;
 
 const ZULIP_DOMAIN: &str = "https://rust-lang.zulipchat.com";
 
@@ -104,6 +100,7 @@ impl<T: ::serde::Serialize> Context<T> {
         let title = if title_id.is_empty() {
             "".into()
         } else {
+            let lang = lang.parse().expect("lang should be valid");
             helper.lookup(&lang, title_id, None)
         };
         Self {
@@ -160,79 +157,76 @@ fn components_locale(locale: SupportedLocale, _file: PathBuf) -> Template {
 }
 
 #[get("/logos/<file..>", rank = 1)]
-fn logos(file: PathBuf) -> Option<Cached<NamedFile>> {
+async fn logos(file: PathBuf) -> Option<CachedNamedFile> {
     NamedFile::open(Path::new("static/logos").join(file))
+        .await
         .ok()
-        .map(|file| file.cached(vec![CacheDirective::MaxAge(3600)]))
+        .map(|file| CachedNamedFile::max_age(file, 3600))
 }
 
 #[get("/static/<file..>", rank = 1)]
-fn files(file: PathBuf) -> Option<Cached<NamedFile>> {
+async fn files(file: PathBuf) -> Option<CachedNamedFile> {
     NamedFile::open(Path::new("static/").join(file))
+        .await
         .ok()
-        .map(|file| file.cached(vec![CacheDirective::MaxAge(3600)]))
+        .map(|file| CachedNamedFile::max_age(file, 3600))
 }
 
 #[get("/robots.txt", rank = 1)]
-fn robots_txt() -> Option<Response<'static>> {
+fn robots_txt() -> Option<content::RawText<&'static str>> {
     if *ROBOTS_TXT_DISALLOW_ALL {
-        Some(
-            Response::build()
-                .header(ContentType::Plain)
-                .sized_body(Cursor::new("User-agent: *\nDisallow: /"))
-                .finalize(),
-        )
+        Some(content::RawText("User-agent: *\nDisallow: /"))
     } else {
         None
     }
 }
 
 #[get("/")]
-fn index() -> Template {
-    render_index(ENGLISH.into())
+async fn index() -> Template {
+    render_index(ENGLISH.into()).await
 }
 
 #[get("/<locale>", rank = 3)]
-fn index_locale(locale: SupportedLocale) -> Template {
-    render_index(locale.0)
+async fn index_locale(locale: SupportedLocale) -> Template {
+    render_index(locale.0).await
 }
 
 #[get("/<category>")]
-fn category(category: Category) -> Template {
+fn category_en(category: Category) -> Template {
     render_category(category, ENGLISH.into())
 }
 
-#[get("/<locale>/<category>", rank = 11)]
+#[get("/<locale>/<category>", rank = 9)]
 fn category_locale(category: Category, locale: SupportedLocale) -> Template {
     render_category(category, locale.0)
 }
 
 #[get("/governance")]
-fn governance() -> Result<Template, Status> {
-    render_governance(ENGLISH.into())
+async fn governance() -> Result<Template, Status> {
+    render_governance(ENGLISH.into()).await
 }
 
 #[get("/governance/<section>/<team>", rank = 2)]
-fn team(section: String, team: String) -> Result<Template, Result<Redirect, Status>> {
-    render_team(section, team, ENGLISH.into())
+async fn team(section: String, team: String) -> Result<Template, Result<Redirect, Status>> {
+    render_team(section, team, ENGLISH.into()).await
 }
 
-#[get("/<locale>/governance", rank = 10)]
-fn governance_locale(locale: SupportedLocale) -> Result<Template, Status> {
-    render_governance(locale.0)
+#[get("/<locale>/governance", rank = 8)]
+async fn governance_locale(locale: SupportedLocale) -> Result<Template, Status> {
+    render_governance(locale.0).await
 }
 
 #[get("/<locale>/governance/<section>/<team>", rank = 12)]
-fn team_locale(
+async fn team_locale(
     section: String,
     team: String,
     locale: SupportedLocale,
 ) -> Result<Template, Result<Redirect, Status>> {
-    render_team(section, team, locale.0)
+    render_team(section, team, locale.0).await
 }
 
 #[get("/production/users")]
-fn production() -> Template {
+fn get_production() -> Template {
     render_production(ENGLISH.into())
 }
 
@@ -269,12 +263,12 @@ fn redirect_bare_en_us() -> Redirect {
 
 #[catch(404)]
 fn not_found(req: &Request) -> Result<Template, Redirect> {
-    if let Some(redirect) = crate::redirect::maybe_redirect(req.uri().segments()) {
+    if let Some(redirect) = crate::redirect::maybe_redirect(req.uri().path()) {
         return Err(redirect);
     }
 
-    let lang = if let Some(next) = req.uri().segments().next() {
-        if let Ok(lang) = SupportedLocale::from_param(RawStr::from_str(next)) {
+    let lang = if let Some(next) = req.uri().path().segments().next() {
+        if let Ok(lang) = SupportedLocale::from_param(next) {
             lang.0
         } else {
             ENGLISH.into()
@@ -289,7 +283,7 @@ fn not_found(req: &Request) -> Result<Template, Redirect> {
 fn not_found_locale(lang: String) -> Template {
     let page = "404";
     let context = Context::new("404".into(), "error404-page-title", false, (), lang);
-    Template::render(page, &context)
+    Template::render(page, context)
 }
 
 #[catch(500)]
@@ -350,7 +344,7 @@ fn concat_app_js(files: Vec<&str>) -> String {
     String::from(&js_path[1..])
 }
 
-fn render_index(lang: String) -> Template {
+async fn render_index(lang: String) -> Template {
     #[derive(Serialize)]
     struct IndexData {
         rust_version: String,
@@ -359,12 +353,13 @@ fn render_index(lang: String) -> Template {
 
     let page = "index".to_string();
     let data = IndexData {
-        rust_version: rust_version::rust_version().unwrap_or_else(String::new),
+        rust_version: rust_version::rust_version().await.unwrap_or_default(),
         rust_release_post: rust_version::rust_release_post()
+            .await
             .map_or_else(String::new, |v| format!("https://blog.rust-lang.org/{}", v)),
     };
     let context = Context::new(page.clone(), "", true, data, lang);
-    Template::render(page, &context)
+    Template::render(page, context)
 }
 
 fn render_category(category: Category, lang: String) -> Template {
@@ -372,7 +367,7 @@ fn render_category(category: Category, lang: String) -> Template {
     let title_id = format!("{}-page-title", category.name());
     let context = Context::new(category.name().to_string(), &title_id, false, (), lang);
 
-    Template::render(page, &context)
+    Template::render(page, context)
 }
 
 fn render_production(lang: String) -> Template {
@@ -385,16 +380,16 @@ fn render_production(lang: String) -> Template {
         lang,
     );
 
-    Template::render(page, &context)
+    Template::render(page, context)
 }
 
-fn render_governance(lang: String) -> Result<Template, Status> {
-    match teams::index_data() {
+async fn render_governance(lang: String) -> Result<Template, Status> {
+    match teams::index_data().await {
         Ok(data) => {
             let page = "governance/index".to_string();
             let context = Context::new(page.clone(), "governance-page-title", false, data, lang);
 
-            Ok(Template::render(page, &context))
+            Ok(Template::render(page, context))
         }
         Err(err) => {
             eprintln!("error while loading the governance page: {}", err);
@@ -403,17 +398,17 @@ fn render_governance(lang: String) -> Result<Template, Status> {
     }
 }
 
-fn render_team(
+async fn render_team(
     section: String,
     team: String,
     lang: String,
 ) -> Result<Template, Result<Redirect, Status>> {
-    match teams::page_data(&section, &team) {
+    match teams::page_data(&section, &team).await {
         Ok(data) => {
             let page = "governance/group".to_string();
             let name = format!("governance-team-{}-name", data.team.name);
             let context = Context::new(page.clone(), &name, false, data, lang);
-            Ok(Template::render(page, &context))
+            Ok(Template::render(page, context))
         }
         Err(err) => {
             if err.is::<teams::TeamNotFound>() {
@@ -440,7 +435,7 @@ fn render_subject(category: Category, subject: String, lang: String) -> Result<T
     // To work around the problem we check whether the template exists beforehand.
     let path = Path::new("templates")
         .join(category.name())
-        .join(format!("{}.hbs", subject));
+        .join(format!("{}.html.hbs", subject));
     if !path.is_file() {
         return Err(Status::NotFound);
     }
@@ -449,10 +444,11 @@ fn render_subject(category: Category, subject: String, lang: String) -> Result<T
     let title_id = format!("{}-{}-page-title", category.name(), subject);
     let context = Context::new(subject, &title_id, false, (), lang);
 
-    Ok(Template::render(page, &context))
+    Ok(Template::render(page, context))
 }
 
-fn main() {
+#[launch]
+fn rocket() -> _ {
     let templating = Template::custom(|engine| {
         engine
             .handlebars
@@ -465,17 +461,17 @@ fn main() {
             .register_helper("encode-zulip-stream", Box::new(encode_zulip_stream));
     });
 
-    rocket::ignite()
+    rocket::build()
         .attach(templating)
         .attach(headers::InjectHeaders)
         .mount(
             "/",
             routes![
                 index,
-                category,
+                category_en,
                 governance,
                 team,
-                production,
+                get_production,
                 subject,
                 files,
                 robots_txt,
@@ -491,6 +487,5 @@ fn main() {
                 redirect_bare_en_us,
             ],
         )
-        .register(catchers![not_found, catch_error])
-        .launch();
+        .register("/", catchers![not_found, catch_error])
 }

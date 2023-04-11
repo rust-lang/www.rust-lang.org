@@ -14,10 +14,6 @@ jobs:
           rustup component add rustfmt
           cargo fmt --all -- --check
 
-      - name: Correct Nightly Version
-        # Ensure everything is run and tested with the same nightly version
-        run: ci/check-nightly-version.sh
-
       - name: Test
         run: |
           set -euo pipefail

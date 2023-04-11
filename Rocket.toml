@@ -1,3 +1,7 @@
-[development]
+[debug]
 address = "127.0.0.1"
 port = 7878
+
+[release]
+# MUST be 0.0.0.0 for Heroku to work
+address = "0.0.0.0"

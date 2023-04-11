@@ -78,6 +78,7 @@ pre > code {
   border: 1px solid;
   cursor: pointer;
   box-sizing: border-box;
+  white-space: nowrap;
 
   &:hover,
   &:focus {

@@ -1,5 +1,5 @@
 use crate::i18n::SUPPORTED_LOCALES;
-use rocket::http::uri::Segments;
+use rocket::http::uri::Path;
 use rocket::response::Redirect;
 
 static PAGE_REDIRECTS: &[(&str, &str)] = &[
@@ -67,8 +67,8 @@ static PRE_2018_LOCALES: &[&str] = &[
     "ru-RU", "sv-SE", "vi-VN",
 ];
 
-pub(crate) fn maybe_redirect(segments: Segments<'_>) -> Option<Redirect> {
-    let path = segments.into_path_buf(false).ok()?.to_str()?.to_string();
+pub(crate) fn maybe_redirect(path: Path) -> Option<Redirect> {
+    let path = path.segments().collect::<Vec<_>>().join("/");
 
     if let Some((_, dest)) = STATIC_FILES_REDIRECTS.iter().find(|(src, _)| src == &path) {
         return Some(Redirect::permanent(*dest));
@@ -90,17 +90,15 @@ pub(crate) fn maybe_redirect(segments: Segments<'_>) -> Option<Redirect> {
         } else {
             (Locale::NotSpecified, path.as_str())
         }
-    } else {
-        if PRE_2018_LOCALES.contains(&path.as_str()) {
-            // If the whole path is a pre-2018 locale handle it as a localized index page.
-            if let Some(locale) = convert_locale_from_pre_2018(&path) {
-                (Locale::Present(locale), "")
-            } else {
-                (Locale::SpecifiedButMissing, "")
-            }
+    } else if PRE_2018_LOCALES.contains(&path.as_str()) {
+        // If the whole path is a pre-2018 locale handle it as a localized index page.
+        if let Some(locale) = convert_locale_from_pre_2018(&path) {
+            (Locale::Present(locale), "")
         } else {
-            (Locale::NotSpecified, path.as_str())
+            (Locale::SpecifiedButMissing, "")
         }
+    } else {
+        (Locale::NotSpecified, path.as_str())
     };
 
     if let Some((_, dest)) = EXTERNAL_REDIRECTS.iter().find(|(src, _)| *src == path) {

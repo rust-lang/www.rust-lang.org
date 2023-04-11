@@ -2,40 +2,36 @@ use handlebars::{
     Context, Handlebars, Helper, HelperDef, HelperResult, Output, RenderContext, RenderError,
 };
 
-use rocket::http::RawStr;
 use rocket::request::FromParam;
 use std::collections::HashSet;
 
-use fluent_bundle::{FluentBundle, FluentValue};
-use handlebars_fluent::{loader::SimpleLoader, simple_loader};
+use handlebars_fluent::{
+    fluent_bundle::{concurrent::FluentBundle, FluentResource, FluentValue},
+    loader::SimpleLoader,
+    simple_loader,
+};
 
 simple_loader!(create_loader, "./locales/", "en-US", core: "./locales/core.ftl",
                customizer: add_bundle_functions);
 
-fn add_bundle_functions(bundle: &mut FluentBundle<'static>) {
+fn add_bundle_functions(bundle: &mut FluentBundle<&'static FluentResource>) {
     bundle
         .add_function("EMAIL", |values, _named| {
-            let email = match *values.get(0)?.as_ref()? {
-                FluentValue::String(ref s) => s,
-                _ => return None,
+            let email = match values.get(0) {
+                Some(FluentValue::String(ref s)) => s,
+                _ => return FluentValue::None,
             };
-            Some(FluentValue::String(format!(
-                "<a href='mailto:{0}' lang='en-US'>{0}</a>",
-                email
-            )))
+            FluentValue::String(format!("<a href='mailto:{0}' lang='en-US'>{0}</a>", email).into())
         })
         .expect("could not add function");
 
     bundle
         .add_function("ENGLISH", |values, _named| {
-            let text = match *values.get(0)?.as_ref()? {
-                FluentValue::String(ref s) => s,
-                _ => return None,
+            let text = match values.get(0) {
+                Some(FluentValue::String(ref s)) => s,
+                _ => return FluentValue::None,
             };
-            Some(FluentValue::String(format!(
-                "<span lang='en-US'>{0}</span>",
-                text
-            )))
+            FluentValue::String(format!("<span lang='en-US'>{0}</span>", text).into())
         })
         .expect("could not add function");
 }
@@ -117,60 +113,59 @@ impl HelperDef for TeamHelper {
         h: &Helper<'reg, 'rc>,
         _: &'reg Handlebars,
         context: &'rc Context,
-        rcx: &mut RenderContext<'reg>,
+        rcx: &mut RenderContext<'reg, 'rc>,
         out: &mut dyn Output,
     ) -> HelperResult {
-        let name = if let Some(name) = h.param(0) {
-            name
-        } else {
+        let Some(name) = h.param(0) else {
             return Err(RenderError::new(
                 "{{team-text}} must have at least two parameters",
             ));
         };
-        let name = if let Some(name) = name.path() {
-            name
-        } else {
+        let Some(name) = name.relative_path() else {
             return Err(RenderError::new(
                 "{{team-text}} takes only identifier parameters",
             ));
         };
 
-        let id = if let Some(id) = h.param(1) {
-            id
-        } else {
+        let Some(id) = h.param(1) else {
             return Err(RenderError::new(
                 "{{team-text}} must have at least two parameters",
             ));
         };
-        let id = if let Some(id) = id.path() {
-            id
-        } else {
+        let Some(id) = id.relative_path() else {
             return Err(RenderError::new(
                 "{{team-text}} takes only identifier parameters",
             ));
         };
         let team = rcx
-            .evaluate_in_block_context(name)?
-            .ok_or_else(|| RenderError::new(format!("Cannot find team {}", name)))?;
+            .evaluate(context, name)
+            .map_err(|e| RenderError::from_error(&format!("Cannot find team {}", name), e))?;
         let lang = context
             .data()
             .get("lang")
             .expect("Language not set in context")
             .as_str()
             .expect("Language must be string");
-        let team_name = team["name"].as_str().unwrap();
+        let team_name = team.as_json()["name"].as_str().unwrap();
 
         let fluent_id = format!("governance-team-{}-{}", team_name, id);
 
         // English uses the team data directly, so that it gets autoupdated
         if lang == "en-US" {
-            let english = team["website_data"][id].as_str().unwrap();
-            out.write(&english).map_err(RenderError::with)?;
-        } else if let Some(value) = self.i18n.lookup_no_default_fallback(lang, &fluent_id, None) {
-            out.write(&value).map_err(RenderError::with)?;
+            let english = team.as_json()["website_data"][id].as_str().unwrap();
+            out.write(english)
+                .map_err(|e| RenderError::from_error("failed to render English team data", e))?;
+        } else if let Some(value) = self.i18n.lookup_no_default_fallback(
+            &lang.parse().expect("language must be valid"),
+            &fluent_id,
+            None,
+        ) {
+            out.write(&value)
+                .map_err(|e| RenderError::from_error("failed to render translated team data", e))?;
         } else {
-            let english = team["website_data"][id].as_str().unwrap();
-            out.write(&english).map_err(RenderError::with)?;
+            let english = team.as_json()["website_data"][id].as_str().unwrap();
+            out.write(english)
+                .map_err(|e| RenderError::from_error("failed to render", e))?;
         }
         Ok(())
     }
@@ -181,10 +176,9 @@ pub struct SupportedLocale(pub String);
 impl<'r> FromParam<'r> for SupportedLocale {
     type Error = ();
 
-    fn from_param(param: &'r RawStr) -> Result<Self, Self::Error> {
-        let param = param.percent_decode().map_err(|_| ())?;
-        if SUPPORTED_LOCALES.contains(param.as_ref()) {
-            Ok(SupportedLocale(param.into()))
+    fn from_param(param: &'r str) -> Result<Self, Self::Error> {
+        if SUPPORTED_LOCALES.contains(param) {
+            Ok(SupportedLocale(param.parse().map_err(|_| ())?))
         } else {
             Err(())
         }
