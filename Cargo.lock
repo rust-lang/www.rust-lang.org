@@ -583,9 +583,9 @@ dependencies = [
 
 [[package]]
 name = "handlebars-fluent"
-version = "0.3.1"
+version = "0.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "959f290d51e7112505c9ed1477dd2073dc071253df8b7631604bff19509c33f3"
+checksum = "dbf49bf85c4a60ff66b4627602fbbabe16458ec5bdd8294ed7a26c83173e2485"
 dependencies = [
  "fluent",
  "fluent-bundle 0.11.0",
