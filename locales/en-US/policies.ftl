@@ -12,7 +12,7 @@ policies-security-link = Security Disclosures
 policies-privacy-link = Privacy Notice
 
 policies-reach-out-description = Didn’t find what you were looking for? Have a question? Please reach out!
-policies-reach-out-link = Message the Core Team
+policies-reach-out-link = Message the Leadership Council
 
 policies-translation-warning =
     This policy may be translated by Rust community members. If there is any

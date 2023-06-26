@@ -11,5 +11,5 @@ policies-media-guide-link = Руководство по политике в от
 policies-security-link = Отчёты об уязвимостях
 policies-privacy-link = Уведомление о конфиденциальности
 policies-reach-out-description = Не нашли того, что искали? Есть вопросы? Свяжитесь с нами!
-policies-reach-out-link = Связаться с Core Team
+policies-reach-out-link = Связаться с Rust Leadership Council
 policies-translation-warning = Эта политика может быть переведена участниками сообщества Rust. Если имеются конфликты между переводом и <a href="{ $english }">оригиналом</a>, применяться должны положения из оригинала.
