@@ -18,7 +18,7 @@ embedded-learn-more = 开启嵌入式
 
 ## components/layout.hbs
 
-meta-description = 一门赋予每个人构建可靠且高效软件能力的语言。
+meta-description = 一门帮助每个人构建可靠且高效软件的语言。
 page-title = { $pagename } - Rust 程序设计语言
 index-title = Rust 程序设计语言
 
@@ -27,10 +27,10 @@ index-title = Rust 程序设计语言
 nav-install = 安装
 nav-learn = 学习
 nav-tools = 工具
-nav-governance = 治理
+nav-governance = 团队
 nav-community = 社区
 nav-blog = 博客
-nav-playground = 演练场
+nav-playground = 实验
 choose-language = 语言
 nav-logo-alt = Rust 标志
 
