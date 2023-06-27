@@ -30,7 +30,7 @@ nav-tools = 工具
 nav-governance = 团队
 nav-community = 社区
 nav-blog = 博客
-nav-playground = 在线测试
+nav-playground = 实验
 choose-language = 语言
 nav-logo-alt = Rust 标志
 
