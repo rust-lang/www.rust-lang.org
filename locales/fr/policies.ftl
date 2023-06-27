@@ -11,7 +11,7 @@ policies-media-guide-link = Politique d'utilisation du logo et du contenu
 policies-security-link = Notices de sécurité
 policies-privacy-link = Avis de confidentialité
 policies-reach-out-description = Vous n'avez pas trouvé ce que vous cherchiez ? Vous avez une question ? Contactez-nous !
-policies-reach-out-link = Envoyer un message à l'équipe Rust Core (Rust Core Team)
+policies-reach-out-link = Envoyer un message au Rust Leadership Council
 policies-translation-warning =
     Il est possible que cette politique soit traduite par des membres de la communauté Rust. Dans le cas d’un éventuel
     conflit entre la <a href="{ $english }">version anglaise</a> et la

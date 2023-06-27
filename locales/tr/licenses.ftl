@@ -11,7 +11,7 @@ licenses-mit-link = MIT lisansı
 licenses-license-specific-description =
     <p>Her proje için özel lisanslama bilgisi onun GitHub deposunda bulunabilir.</p>
     <p>Üçüncü parti logolar, üçüncü taraf telif haklarına ve ticari markalarına tabi olabilir ve Rust web sitesinin geri kalanıyla aynı lisans altında kullanılamaz.</p>
-    <p>Eğer Rust projesi veya onunla ilgili projelerin nasıl lisanslandığı hakkında endişeniz veya özel bir sorunuz varsa lütfen Rust Çekirdek Ekibi ile iletişime geçin.</p>
-licenses-license-email-link = Çekirdek Ekibine E-Posta Gönder
+    <p>Eğer Rust projesi veya onunla ilgili projelerin nasıl lisanslandığı hakkında endişeniz veya özel bir sorunuz varsa lütfen Rust Leadership Council ile iletişime geçin.</p>
+licenses-license-email-link = Leadership Council'a E-Posta Gönder
 licenses-attribution-heading = Atfetme
 licenses-attribution-description = İkonlar <a href="http://www.freepik.com" title="Freepik">Freepik</a> tarafından yapılmış olup <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>'dan alınmıştır, <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC-3.0-BY</a> tarafından lisanslanmıştır.

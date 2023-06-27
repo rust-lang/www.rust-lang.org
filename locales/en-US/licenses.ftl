@@ -11,8 +11,8 @@ licenses-mit-link = MIT license
 licenses-license-specific-description =
         <p>Specific licensing info for each project can be found in its GitHub Repository.</p>
         <p>Third-party logos may be subject to third-party copyrights and trademarks, and are not available under the same license as the rest of the Rust website.</p>
-        <p>If you have a specific question or concern about how the Rust project or any of its associated projects are licensed, please contact the Rust Core Team.</p>
-licenses-license-email-link = Email The Core Team
+        <p>If you have a specific question or concern about how the Rust project or any of its associated projects are licensed, please contact the Rust Leadership Council.</p>
+licenses-license-email-link = Email The Leadership Council
 
 licenses-attribution-heading = Attribution
 licenses-attribution-description =
