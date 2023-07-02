@@ -1,8 +1,8 @@
 ## Translations that appear on many pages
 
 rust = Rust
-get-started-exclamation = ¡Comenzar!
-getting-started = Comenzar
+get-started-exclamation = ¡Comienza!
+getting-started = Comienza
 why-rust = ¿Por qué Rust?
 production-use = Uso en producción
 learn-more = Saber más
@@ -14,7 +14,7 @@ zulip = Zulip
 cli-learn-more = Construir herramientas
 wasm-learn-more = Escribir aplicaciones web
 net-learn-more = Trabajar con servidores
-embedded-learn-more = Iniciarse con embebidos
+embedded-learn-more = Iniciarse con integrados
 
 ## components/layout.hbs
 
@@ -46,7 +46,7 @@ footer-media = Política de logos y guía de medios
 footer-security = Divulgaciones de seguridad
 footer-policies-all = Todas las políticas
 footer-social = Redes sociales
-footer-get-help = ¡Consigue ayuda!
+footer-get-help = ¡Pide ayuda!
 footer-youtube-alt = Twitter
 footer-alt-youtube = logo de youtube
 footer-discord-alt = { discord }
