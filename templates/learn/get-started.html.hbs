@@ -71,7 +71,7 @@ Hello, world!</code></pre>
     {{#fluent "learn-dependencies-steps"}}
     {{#fluentparam "cargotoml"}}
       <pre><code>[dependencies]
-ferris-says = "0.2"</code></pre>
+ferris-says = "0.3.1"</code></pre>
     {{/fluentparam}}
     {{/fluent}}
 
@@ -95,21 +95,19 @@ fn main() {
     let width = message.chars().count();
 
     let mut writer = BufWriter::new(stdout.lock());
-    say(message.as_bytes(), width, &mut writer).unwrap();
-}
-    </code></pre>
+    say(&message, width, &mut writer).unwrap();
+}</code></pre>
     {{/fluentparam}}
     {{#fluentparam "output"}}
-    <pre><code class="plaintext">----------------------------
+    <pre><code class="plaintext"> __________________________
 < Hello fellow Rustaceans! >
-----------------------------
-              \
-               \
-                 _~^~^~_
-             \) /  o o  \ (/
-               '_   -   _'
-               / '-----' \
-    </code></pre>
+ --------------------------
+        \
+         \
+            _~^~^~_
+        \) /  o o  \ (/
+          '_   -   _'
+          / '-----' \</code></pre>
     {{/fluentparam}}
     {{/fluent}}
 
