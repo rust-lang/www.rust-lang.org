@@ -2,6 +2,7 @@ use handlebars::{Context, Handlebars, Helper, HelperResult, Output, RenderContex
 use percent_encoding::{utf8_percent_encode, AsciiSet, NON_ALPHANUMERIC};
 use rust_team_data::v1::{Team, TeamKind, Teams, BASE_URL};
 use std::cmp::Reverse;
+use std::collections::HashMap;
 use std::error::Error;
 use std::fmt;
 use std::time::Instant;
@@ -101,24 +102,77 @@ impl Data {
             return Err(TeamNotFound.into());
         }
 
-        // Then find all the subteams and wgs
-        let mut subteams = Vec::new();
+        // Then find all the subteams, working groups and project groups.
+        let mut raw_subteams = Vec::new();
         let mut wgs = Vec::new();
         let mut project_groups = Vec::new();
+
+        let superteams: HashMap<_, _> = self
+            .teams
+            .iter()
+            .filter(|team| matches!(team.kind, TeamKind::Team))
+            .filter_map(|team| Some((team.name.clone(), team.subteam_of.clone()?)))
+            .collect();
+
         self.teams
             .into_iter()
             .filter(|team| team.website_data.is_some())
-            .filter(|team| team.subteam_of.as_ref() == Some(&main_team.name))
+            .filter(|team| {
+                // For teams find not only direct subteams but also transitive ones.
+                if let TeamKind::Team = team.kind {
+                    let mut team = &team.name;
+
+                    // The graph of teams is guaranteed to be acyclic by the CI script of
+                    // the team repository. Therefore this loop has to terminate eventually.
+                    while let Some(superteam) = superteams.get(team) {
+                        if superteam == &main_team.name {
+                            return true;
+                        }
+
+                        team = superteam;
+                    }
+
+                    return false;
+                }
+
+                team.subteam_of.as_ref() == Some(&main_team.name)
+            })
             .for_each(|team| match team.kind {
-                TeamKind::Team => subteams.push(team),
+                TeamKind::Team => raw_subteams.push(team),
                 TeamKind::WorkingGroup => wgs.push(team),
                 TeamKind::ProjectGroup => project_groups.push(team),
                 _ => {}
             });
 
-        subteams.sort_by_key(|team| Reverse(team.website_data.as_ref().unwrap().weight));
+        raw_subteams.sort_by_key(|team| Reverse(team.website_data.as_ref().unwrap().weight));
         wgs.sort_by_key(|team| Reverse(team.website_data.as_ref().unwrap().weight));
         project_groups.sort_by_key(|team| Reverse(team.website_data.as_ref().unwrap().weight));
+
+        // Lay out subteams according to their hierarchy.
+        // Superteams come first and subteams come after, recursively.
+        // The ordering of sibling teams is unaffected, they remain sorted first by weight, then
+        // alphabetically if we assume that the Team API serves the teams alphabetically.
+        let mut subteams = Vec::with_capacity(raw_subteams.len());
+        lay_out_subteams_hierarchically(&mut subteams, None, &main_team.name, &raw_subteams);
+
+        fn lay_out_subteams_hierarchically<'a>(
+            result: &mut Vec<Team>,
+            team: Option<&Team>,
+            main_team: &str,
+            subteams: &[Team],
+        ) {
+            let name = team.map(|team| team.name.as_str()).or(Some(main_team));
+
+            if let Some(team) = team {
+                result.push(team.clone());
+            }
+
+            for subteam in subteams {
+                if subteam.subteam_of.as_deref() == name {
+                    lay_out_subteams_hierarchically(result, Some(subteam), main_team, subteams);
+                }
+            }
+        }
 
         Ok(PageData {
             team: main_team,

@@ -1,9 +1,8 @@
-use quicli::prelude::*;
-use structopt::StructOpt;
+use std::{error::Error, fs::read_to_string};
 
-fn main() -> CliResult {
-    let args = Cli::from_args();
-    read_file(&args.file)?
+fn main() -> Result<(), Box<dyn Error>> {
+    let args = Cli::parse();
+    read_to_string(&args.file)?
         .lines()
         .take(args.num)
         .for_each(|line| println!("{}", line));
