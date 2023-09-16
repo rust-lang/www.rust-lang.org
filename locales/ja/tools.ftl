@@ -97,7 +97,7 @@ tools-rustup-manual-default-windows = Windows上であれば、<br><a href="http
 tools-editor-vscode = VS Code
 tools-editor-sublime = Sublime Text
 tools-editor-atom = Atom
-tools-editor-idea = IntelliJ IDEA
+tools-editor-idea = RustRover
 tools-editor-eclipse = Eclipse
 tools-editor-vim = Vim
 tools-editor-emacs = Emacs
