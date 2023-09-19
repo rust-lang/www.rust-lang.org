@@ -119,7 +119,7 @@ learn-dependencies-steps = <p>Let’s add a dependency to our application. You c
       <p>In this project, we’ll use a crate called <a href="https://crates.io/crates/ferris-says"><code>ferris-says</code></a>.
       <p>In our <code>Cargo.toml</code> file we’ll add this information (that we got from the crate page):</p>
       { $cargotoml }
-      <p>We can also do this by running <code>cargo add ferris-says@0.2</code>.</p>
+      <p>We can also do this by running <code>cargo add ferris-says</code>.</p>
       <p>Now we can run:</p>
       <p><code>cargo build</code></p>
       <p>...and Cargo will install our dependency for us.</p>
