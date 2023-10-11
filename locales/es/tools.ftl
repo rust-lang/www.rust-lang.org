@@ -34,7 +34,7 @@ install-notes-getting-started-description = Si estás empezando con Rust y te gu
 install-notes-rustup-heading = Gestión del conjunto de herramientas con <code>rustup</code>
 install-notes-rustup-description =
     <p>
-    Rust es instalado y gestionado por la herramienta 
+    Rust es instalado y gestionado por la herramienta
     <a href="https://rust-lang.github.io/rustup/"><code>rustup</code></a>.
     Rust tiene un
     <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
@@ -86,7 +86,7 @@ install-notes-path-description =
 install-notes-windows-heading = Consideraciones para Windows
 install-notes-windows-description =
     <p>
-      En Windows, Rust adicionalmente requiere las herramientas de compilación de C++ para Visual Studio 2013 o posterior. La forma más sencilla de adquirir estas herramientas es instalando 
+      En Windows, Rust adicionalmente requiere las herramientas de compilación de C++ para Visual Studio 2013 o posterior. La forma más sencilla de adquirir estas herramientas es instalando
       <a href="https://www.visualstudio.com/downloads/#build-tools-for-visual-studio-2019">
         Microsoft Visual C++ Build Tools 2019
       </a>
@@ -126,3 +126,4 @@ tools-editor-eclipse = Eclipse
 tools-editor-vim = Vim
 tools-editor-emacs = Emacs
 tools-editor-geany = Geany
+tools-editor-zed = Zed

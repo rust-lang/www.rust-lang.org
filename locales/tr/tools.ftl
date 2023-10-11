@@ -13,7 +13,7 @@ tools-build-description =
     bir tek komuta paketler. Şablon gerektirmez.
 tools-build-install-heading = Yükle
 tools-build-install-description =
-    <a href="https://crates.io">Crates.io</a> içindeki binlerce paket ile birlikte çok büyük 
+    <a href="https://crates.io">Crates.io</a> içindeki binlerce paket ile birlikte çok büyük
     ihtimalle aradığınız çözüme sahip. Devlerin omuzlarında durun ve ekibinizi tekerrürden
     yeniliğe taşıyın.
 tools-build-test-heading = Test et
@@ -26,7 +26,7 @@ tools-build-deploy-heading = Yayınla
 tools-build-deploy-description =
     <code class="nowrap">cargo build</code> kodu her platform için
     ekstra bilgi taşımayan ikili kod oluşturur. Kodunuz tek bir komutla Windows'u,
-    Linux'u, macOS'i ve webi hedef alabilir. Hepsi sipariş usulü yapı dosyalarına gerek 
+    Linux'u, macOS'i ve webi hedef alabilir. Hepsi sipariş usulü yapı dosyalarına gerek
     olmadan modern bir arayüzün parçası.
 tools-automation-heading = Otomasyonla gelen hız
 tools-automation-description =
@@ -41,12 +41,12 @@ tools-automation-rustfmt-link = Depoya git
 tools-automation-clippy-heading = Clippy
 tools-automation-clippy-description =
     <i>“Görünüşe bakılırsa bir yineleyici
-    yazıyorsunuz.”</i> <br> Clippy her seviyedeki geliştiriciye deyimsel kod 
+    yazıyorsunuz.”</i> <br> Clippy her seviyedeki geliştiriciye deyimsel kod
     yazmakta ve standartları uygulamakta yardımcı olur.
 tools-automation-clippy-link = Depoya git
 tools-automation-cargo-doc-heading = Cargo Belgeleri
 tools-automation-cargo-doc-description =
-    Cargo'nun belgelendirmecisi işinizi halleder. Bu da 
+    Cargo'nun belgelendirmecisi işinizi halleder. Bu da
     hiçbir UPA'nın belgelendirmesiz ortaya çıkmamasını sağlar.
     <code class="nowrap">cargo doc</code> ile yerel olarak erişebilirsiniz ve
     <a href="https://docs.rs">docs.rs</a> ile herkese açık cratelere çevrimiçi ulaşabilirsiniz.
@@ -60,8 +60,8 @@ install-rustup32-button = <span class="nowrap">rustup-init.exe</span> indir <spa
 install-rustup64-button = <span class="nowrap">rustup-init.exe</span> indir <span class="nowrap">(64-bit)</span>
 install-notes-heading = Rust kurulumu hakkında notlar
 install-notes-getting-started-description =
-    Eğer Rust'a yeni başlıyorsanız ve daha 
-    detaylı bir gidiş yolu arıyorsanız 
+    Eğer Rust'a yeni başlıyorsanız ve daha
+    detaylı bir gidiş yolu arıyorsanız
     <a href="{ $getting-started-href }">başlarken</a> sayfamıza göz atın.
 install-notes-rustup-heading = <code>Rustup</code> ile araç zincirinin yönetimi
 install-notes-rustup-description =
@@ -69,10 +69,10 @@ install-notes-rustup-description =
       Rust, <a href="https://rust-lang.github.io/rustup/"><code>rustup</code></a> aracı ile yüklenir ve
       yönetilir. Rust'ın 6 haftalık <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
         hızlı yayımlama süreci
-      </a> vardır ve 
+      </a> vardır ve
       <a href="https://forge.rust-lang.org/release/platform-support.html">çok sayıda platformu</a> destekler. Bu yüzden her zaman Rust'ın birçok
       yapısı vardır. <code>rustup</code> Rust'ın desteklediği her platformda bu yapıları tutarlı bir şekilde
-      yönetir. Bu durum, Rust'ın beta ve nightly yayın kanallarından yüklenmesine ve farklı hedeflere 
+      yönetir. Bu durum, Rust'ın beta ve nightly yayın kanallarından yüklenmesine ve farklı hedeflere
       derlenmesine katkıda bulunur.
     </p>
     <p>
@@ -135,3 +135,4 @@ tools-editor-eclipse = { ENGLISH("Eclipse") }
 tools-editor-vim = { ENGLISH("Vim") }
 tools-editor-emacs = { ENGLISH("Emacs") }
 tools-editor-geany = { ENGLISH("Geany") }
+tools-editor-zed = { ENGLISH("Zed") }

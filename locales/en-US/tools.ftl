@@ -71,7 +71,7 @@ install-notes-getting-started-description = If you're just getting started with
         <a href="{ $getting-started-href }">getting started</a> page.
 
 install-notes-rustup-heading = Toolchain management with <code>rustup</code>
-install-notes-rustup-description = 
+install-notes-rustup-description =
         <p>
           Rust is installed and managed by the
           <a href="https://rust-lang.github.io/rustup/"><code>rustup</code></a>
@@ -106,7 +106,7 @@ install-notes-uninstall-description =
 
 install-notes-path-heading = Configuring the <code>PATH</code> environment
         variable
-install-notes-path-description = 
+install-notes-path-description =
         <p>
           In the Rust development environment, all tools are installed to the
           <span class="platform-specific not-win di">
@@ -176,3 +176,4 @@ tools-editor-eclipse = Eclipse
 tools-editor-vim = Vim
 tools-editor-emacs = Emacs
 tools-editor-geany = Geany
+tools-editor-zed = Zed

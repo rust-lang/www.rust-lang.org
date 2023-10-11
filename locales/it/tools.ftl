@@ -7,7 +7,7 @@ tools-build-heading = Porta serenità nelle tue build
 tools-build-description = Cargo è lo strumento per compilare in Rust, racchiude tutte le azioni più comuni in un singolo comando. Nessun boilerplate.
 tools-build-install-heading = Installa
 tools-build-install-description =
-    Con decine di migliaia di librerie, c'è una buona probabilità che <a href="https://crates.io">crates.io</a> abbia la soluzione che stai cercando. 
+    Con decine di migliaia di librerie, c'è una buona probabilità che <a href="https://crates.io">crates.io</a> abbia la soluzione che stai cercando.
     Stai sulle spalle dei giganti e porta il tuo team dalla ripetizione portandolo verso l'innovazione.
 tools-build-test-heading = Test
 tools-build-test-description = Fidati del tuo codice grazie agli eccellenti strumenti per testare in Rust. <code class="nowrap">cargo test</code> è la soluzione unificata di Rust per il testing. Puoi scrivere i test accanto al tuo codice o organizzarli in file separati: la soluzione per tutte le esigenze.
@@ -101,3 +101,4 @@ tools-editor-eclipse = Eclipse
 tools-editor-vim = Vim
 tools-editor-emacs = Emacs
 tools-editor-geany = Geany
+tools-editor-zed = Zed

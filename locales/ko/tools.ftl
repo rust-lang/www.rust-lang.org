@@ -31,7 +31,7 @@ install-notes-path-description =
       </span>
       <span class="platform-specific win dn">
         <code>%USERPROFILE%\.cargo\bin</code>
-      </span> 디렉토리에 설치되므로, 이곳이 
+      </span> 디렉토리에 설치되므로, 이곳이
       <code>rustc</code>, <code>cargo</code>, <code>rustup</code> 등을 포함한 Rust 툴체인을 찾을 수 있는 곳입니다.
     </p>
     <p>
@@ -61,3 +61,4 @@ tools-editor-eclipse = Eclipse
 tools-editor-vim = Vim
 tools-editor-emacs = Emacs
 tools-editor-geany = Geany
+tools-editor-zed = Zed

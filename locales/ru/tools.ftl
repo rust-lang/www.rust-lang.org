@@ -60,7 +60,7 @@ install-notes-uninstall-description =
 install-notes-path-heading = Настройка переменной окружения <code>PATH</code>
 install-notes-path-description =
     <p>
-      В среде разработки Rust, все инструменты устанавливаются в директорию 
+      В среде разработки Rust, все инструменты устанавливаются в директорию
       <span class="platform-specific not-win di">
         <code>~/.cargo/bin</code>
       </span>
@@ -124,3 +124,4 @@ tools-editor-eclipse = Eclipse
 tools-editor-vim = Vim
 tools-editor-emacs = Emacs
 tools-editor-geany = Geany
+tools-editor-zed = Zed

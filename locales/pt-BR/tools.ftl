@@ -5,7 +5,7 @@ tools-editor-support-heading = Suporte de primeira classe em editores
 tools-editor-support-description =
     Independente se você prefere trabalhar com código a partir
     da linha de comando, ou usando um editor gráfico, existe uma
-    extensão Rust disponível para o editor da sua escolha. Ou você pode criar 
+    extensão Rust disponível para o editor da sua escolha. Ou você pode criar
     a sua própria usando <a href="https://github.com/rust-analyzer/rust-analyzer">rust-analyzer</a>.
 tools-build-heading = Traga tranquilidade para a compilação
 tools-build-description =
@@ -29,7 +29,7 @@ tools-automation-cargo-doc-heading = Cargo Doc
 tools-automation-cargo-doc-description =
     A ferramenta de documentação do Cargo garante
     que nenhuma API fique sem documentação. Ela está
-    disponível localmente através do comando 
+    disponível localmente através do comando
     <code class="nowrap">cargo doc</code>, e online para <i>crates</i>
     públicas através de <a href="https://docs.rs">docs.rs</a>.
 tools-automation-cargo-doc-link = Vá para o website
@@ -54,15 +54,15 @@ install-notes-rustup-description =
     <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-release-channels.md">
     de lançamentos a cada 6 semanas
      </a> e suporta
-      <a href="https://forge.rust-lang.org/release/platform-support.html">um grande número de plataformas</a>, 
-    o que faz com que sempre existam uma grande quantidade de 
+      <a href="https://forge.rust-lang.org/release/platform-support.html">um grande número de plataformas</a>,
+    o que faz com que sempre existam uma grande quantidade de
     binários.
     <code>rustup</code> gerencia esses binários consistentemente
     em todas as plataformas suportadas por Rust, permitindo a instalação
     do Rust desde a versão beta ou nightly até mesmo suporte adiciona de componentes para cross-compilação.
     </p>
     <p>
-     Se você já instalou <code>rustup</code> no passado, você pode atualizar a instalação 
+     Se você já instalou <code>rustup</code> no passado, você pode atualizar a instalação
     executando <code>rustup update</code>.
     </p>
     <p>
@@ -86,16 +86,16 @@ install-notes-path-description =
       </span>
       <span class="platform-specific win dn">
         <code>%USERPROFILE%\.cargo\bin</code>
-      </span>, onde você encontra todo o conjunto de ferramentas 
+      </span>, onde você encontra todo o conjunto de ferramentas
     de Rust, incluindo <code>rustc</code>, <code>cargo</code>,e <code>rustup</code>.
     </p>
     <p>
     Normalmente é comum para quem desenvolve Rust incluir esse diretório
     na <a href="https://en.wikipedia.org/wiki/PATH_(variable)">
-      variável de ambiente <code>PATH</code></a>. 
+      variável de ambiente <code>PATH</code></a>.
     Durante a instalação do <code>rustup</code>, será feito uma tentativa de configurar a variável <code>PATH</code>.
     Por causa da diferença entre plataformas, terminais, e problemas no
-      <code>rustup</code>, as mudanças feitas na variável <code>PATH</code> 
+      <code>rustup</code>, as mudanças feitas na variável <code>PATH</code>
     podem não ser aplicadas até que o console seja reiniciado, o usuário do sistema entre novamente,
     ou até mesmo nunca.
     </p>
@@ -151,3 +151,4 @@ tools-editor-eclipse = Eclipse
 tools-editor-vim = Vim
 tools-editor-emacs = Emacs
 tools-editor-geany = Geany
+tools-editor-zed = Zed

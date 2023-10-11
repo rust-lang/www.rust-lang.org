@@ -57,7 +57,7 @@ install-notes-uninstall-description =
 install-notes-path-heading = Configuration de la variable d’environnement <code>PATH</code>
 install-notes-path-description =
     <p>
-      Dans l’environnement de développement de Rust, tous les outils sont installés dans le répertoire 
+      Dans l’environnement de développement de Rust, tous les outils sont installés dans le répertoire
       <span class="platform-specific not-win di">
         <code>~/.cargo/bin</code>
       </span>
@@ -75,7 +75,7 @@ install-notes-path-description =
 install-notes-windows-heading = Problématiques Windows
 install-notes-windows-description =
     <p>
-      Sous Windows, Rust requiert l'installation additionnelle des C++ build tools de Visual Studio 2013 ou supérieur. La façon la plus facile d'obtenir les build tools est d'installer <a href="https://www.visualstudio.com/downloads/#build-tools-for-visual-studio-2019">Microsoft Visual C++ Build Tools 2019</a> qui fournit uniquement les build tools de Visual C++. 
+      Sous Windows, Rust requiert l'installation additionnelle des C++ build tools de Visual Studio 2013 ou supérieur. La façon la plus facile d'obtenir les build tools est d'installer <a href="https://www.visualstudio.com/downloads/#build-tools-for-visual-studio-2019">Microsoft Visual C++ Build Tools 2019</a> qui fournit uniquement les build tools de Visual C++.
     Comme alternative, vous pouvez <a href="https://www.visualstudio.com/downloads/"> installer </a>
       Visual Studio 2019, Visual Studio 2017, Visual Studio 2015, ou Visual
       Studio 2013 en sélectionnant les "C++ tools" durant l’installation
@@ -111,3 +111,4 @@ tools-editor-eclipse = Eclipse
 tools-editor-vim = Vim
 tools-editor-emacs = Emacs
 tools-editor-geany = Geany
+tools-editor-zed = Zed
