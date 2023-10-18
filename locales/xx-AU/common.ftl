@@ -1,6 +1,7 @@
 # Translations that appear on most/all pages
 
 rust = ʇsnɹ
+mastodon = Mastodon
 
 # components/nav.hbs
 nav-install = llɐʇsuI

@@ -8,6 +8,7 @@ production-use = 本番環境での利用
 learn-more = もっと読む
 discord = Discord
 zulip = Zulip
+mastodon = Mastodon
 
 ## components/panels/domain.hbs
 
