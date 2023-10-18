@@ -7,6 +7,7 @@ why-rust = Neden Rust?
 production-use = Üretimde kullanım
 learn-more = Daha fazla bilgi edinin
 discord = Discord
+mastodon = Mastodon
 
 ## components/panels/domain.hbs
 
