@@ -23,7 +23,6 @@ community-meetup-header = 近くのミートアップやカンファレンスを
 community-meetup = 世界35カ国以上で、90以上のミートアップや様々なカンファレンスが開催されており、RustaceansはRustユーザグループに定期的に集まります。それらはコミュニティへの導入として優れていて、関心の近い人々と学び交流することができる素晴らしい機会です。ミーティングは堅苦しいものではなく、誰にでも開かれています。
 community-calendar = カレンダーを見る
 community-conference-lineup = 2020年のカンファレンス一覧を確認する
-community-timetill-cta = timetill.rsでカンファレンス一覧を見る
 community-event-run-header = イベントを開催する
 community-event-run =
     <p>

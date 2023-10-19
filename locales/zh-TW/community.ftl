@@ -23,7 +23,6 @@ community-meetup-header = 各地聚會或研討會
 community-meetup = 在全球超過 35 個國家有超過 90 個聚會與數個研討會。Rust 愛好者們(Rustaceans) 會定期在 Rust 使用者群組聚會。這些活動可以幫助您進入社群、學習還有和同好交流，聚會通常是非正式的開放活動。
 community-calendar = 查看行事曆
 community-conference-lineup = 2020 研討會時間表
-community-timetill-cta = 在 timetill.rs 上查看研討會時間表
 community-event-run-header = 自己辦活動！
 community-event-run = 隨著 Rust 的發展，我們樂於幫忙大家推動自己的地區性活動。從學習、實作、駭客、聚會以至研討會，Rust 活動團隊都已準備好為您提供支援。
 community-events-repo = 活動團隊 Repo
