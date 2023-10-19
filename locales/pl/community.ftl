@@ -31,7 +31,6 @@ community-meetup-header = Znajdź lokalne spotkanie lub konferencję
 community-meetup = Na tą chwilę na całym świecie organizowanych jest ponad 90 spotkań oraz kilka większych konferencji, mających miejsce w ponad 35 różnych krajach. Rustianie spotykają się ze sobą regularnie w ramach Grup Użytkowników Rusta. Grupy te są znakomitym sposobem na wdrożenie się w społeczność oraz świetną okazją do nauki oraz spędzania czasu z ludźmi o podobnych zainteresowaniach. Spotkania są zwykle nieformalne i otwarte dla wszystkich.
 community-calendar = Zobacz kalendarz
 community-conference-lineup = Zobacz Listę Konferencji na rok 2020
-community-timetill-cta = Zobacz listę konferencji na timetill.rs
 community-event-run-header = Zorganizuj własne wydarzenie
 community-event-run =
     <p>

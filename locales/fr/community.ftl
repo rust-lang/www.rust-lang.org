@@ -23,7 +23,6 @@ community-meetup-header = Trouver une rencontre locale ou une conférence
 community-meetup = Il y a plus de 90 rencontres et plusieurs conférences de part le monde sur plus de 35 pays. Les Rustacés se rencontrent périodiquement dans les groupes d’utilisateurs Rust. Ce sont d'excellents moyens d'entrer dans la communauté et un excellent moyen d'apprendre et de socialiser avec des gens avec un intérêt commun. Les rencontres sont généralement informelles et ouvertes à tous.
 community-calendar = Voir le calendrier
 community-conference-lineup = Consulter le programme des conférences 2020
-community-timetill-cta = Voir le programme de la conférence sur timetill.rs
 community-event-run-header = Organisez votre propre évènement
 community-event-run =
     <p>

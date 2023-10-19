@@ -36,7 +36,6 @@ community-meetup =
     Rustaceans se encontram periodicamente em Encontros de Grupos Usuários. Essa é uma ótima introdução a comunidade, e um ótimo jeito de aprender e socializar com outras pessoas de interesses similares. Encontros locais geralmente são informais e aberto a todas as pessoas.
 community-calendar = Vejo o Calendário
 community-conference-lineup = Confira as apresentações da conferência de 2020
-community-timetill-cta = Veja a lista de conferências em timetill.rs
 community-event-run-header = Faça seu próprio evento
 community-event-run =
     <p>

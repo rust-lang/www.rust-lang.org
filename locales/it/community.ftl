@@ -23,7 +23,6 @@ community-meetup-header = Cerca una conferenza o un meetup locale
 community-meetup = Ci sono oltre 90 Meetup e numerose conferenze sparse in 35 paesi di tutto il mondo. I "Rustacean" si incontrano periodicamente negli Rust User Group. I Rust User Group sono un modo perfetto per presentarsi alla community ed ancora meglio se si vuole imparare o anche solo socializzare con persone che condividono i propri interessi. Gli incontri sono solitamente eventi informali e aperti a tutti.
 community-calendar = Vai al Calendario
 community-conference-lineup = Guarda dove si terranno le conferenze nel 2020
-community-timetill-cta = Vai alla lista delle conference su timetill.rs
 community-event-run-header = Organizza il tuo evento
 community-event-run =
     <p>
