@@ -5,6 +5,7 @@ get-started-exclamation = شروع کنید!
 why-rust = چرا Rust؟
 learn-more = یادگیری بیشتر
 discord = دیسکورد
+mastodon = Mastodon
 
 ## components/panels/domain.hbs
 

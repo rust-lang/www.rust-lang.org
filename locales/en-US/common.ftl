@@ -10,6 +10,7 @@ production-use = Production use
 learn-more = Learn More
 discord = Discord
 zulip = Zulip
+mastodon = Mastodon
 
 ## components/panels/domain.hbs
 

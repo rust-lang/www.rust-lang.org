@@ -37,7 +37,6 @@ community-meetup-header = Find a local meetup or conference
 community-meetup = There are more than 90 Meetups and several conferences worldwide in over 35 countries. Rustaceans meet periodically in Rust User Groups. They are a great introduction to the community and a great way to learn and socialize with other people with a similar interest. Meetings are usually informal and open to everyone.
 community-calendar = View Calendar
 community-conference-lineup = Check out the 2020 Conference Lineup
-community-timetill-cta = See conference lineup on timetill.rs
 
 community-event-run-header = Run your own event
 community-event-run =

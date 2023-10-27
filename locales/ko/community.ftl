@@ -15,7 +15,6 @@ community-teams-learn = 팀 더 알아보기
 community-events-header = 행사
 community-calendar = 일정표 보기
 community-conference-lineup = 2020 컴퍼런스 라인업 살펴보기
-community-timetill-cta = timetill.rs에서 컨퍼런스 라인업 살펴보기
 community-event-register = 행사 등록하기
 community-rustfest-alt = Rustfest 참가자
 community-rustbridge-header = Rustbridge

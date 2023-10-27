@@ -7,6 +7,7 @@ why-rust = Warum Rust?
 production-use = Im Einsatz
 learn-more = Mehr lesen
 discord = Discord
+mastodon = Mastodon
 
 ## components/layout.hbs
 

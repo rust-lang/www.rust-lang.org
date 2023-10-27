@@ -20,7 +20,6 @@ community-meetup-header = Yerel bir buluşma veya konferans bulun
 community-meetup = Dünya üzerinde 35'ten fazla ülkede çeşitli konferanslar ve 90'ın üzerinde buluşma düzenleniyor. Rustaceanlar, Rust Kullanıcı Grupları'nda belirli aralıklarla buluşuyor. Bu buluşmalar, benzer ilgi alanlarına sahip insanlarla buluşmak için harika bir yöntem olmakla birlikte Rust topluluğuna girmek için de mükemmel bir yöntem. Buluşmalar çoğunlukla samimi bir ortamda gerçekleşmekle birlikte herkese açıktır.
 community-calendar = Takvimi Göster
 community-conference-lineup = 2020 Konferans Programına Göz Atın
-community-timetill-cta = timetill.rs üzerinden konferans programına bakın
 community-event-run-header = Kendi etkinliğinizi düzenleyin
 community-event-run =
     <p>
