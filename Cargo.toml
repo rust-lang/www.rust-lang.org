@@ -13,8 +13,8 @@ fluent-locale = "0.10.1"
 handlebars-fluent = "0.3.1"
 rand = "0.8"
 regex = "1"
-rocket = "=0.5.0-rc.3"
-rocket_dyn_templates = { version = "=0.1.0-rc.3", features = ["handlebars"] }
+rocket = "0.5.0"
+rocket_dyn_templates = { version = "0.1.0", features = ["handlebars"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_yaml = "0.8.17"
 sass-rs = "0.2.1"
