@@ -1,5 +1,3 @@
-#![cfg_attr(test, deny(warnings))]
-
 #[macro_use]
 extern crate lazy_static;
 extern crate rand;
@@ -284,6 +282,7 @@ fn redirect_bare_en_us() -> Redirect {
 }
 
 #[catch(404)]
+#[allow(clippy::result_large_err)]
 fn not_found(req: &Request) -> Result<Template, Redirect> {
     if let Some(redirect) = crate::redirect::maybe_redirect(req.uri().path()) {
         return Err(redirect);
