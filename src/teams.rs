@@ -155,7 +155,7 @@ impl Data {
         let mut subteams = Vec::with_capacity(raw_subteams.len());
         lay_out_subteams_hierarchically(&mut subteams, None, &main_team.name, &raw_subteams);
 
-        fn lay_out_subteams_hierarchically<'a>(
+        fn lay_out_subteams_hierarchically(
             result: &mut Vec<Team>,
             team: Option<&Team>,
             main_team: &str,
