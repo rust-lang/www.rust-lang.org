@@ -32,9 +32,9 @@ wasm-get-started-mdn-link = Scopri di più
 
 ## Plays well with JavaScript (templates/components/what/wasm/js.hbs)
 
-wasm-js-heading = A fianco del JavaScript
+wasm-js-heading = Al fianco di JavaScript
 wasm-js-augment-heading = Aggiungi, non sostituire
-wasm-js-augment-description = Il sogno del WebAssembly non è far fuori il tuo JavaScript ma di lavorarci insieme, dando una super-carica in task impegnativi o di basso livello, che beneficiano di tutte le prestazioni di Rust.
+wasm-js-augment-description = Il sogno del WebAssembly non è far fuori il tuo JavaScript ma di lavorarci insieme, dando una super-carica ai task impegnativi o di basso livello, che beneficiano delle prestazioni di Rust.
 wasm-js-toolchains-heading = Utilizza strumenti familiari
 wasm-js-toolchains-description = Pubblica pacchetti Rust in WebAssembly su repository come npm. Crea bundle con webpack, Parcel e altro ancora. Fai manutenzione con strumenti come <code>npm audit</code> e Greenkeeper.
 wasm-js-interop-heading = Interoperabilità senza interruzioni
