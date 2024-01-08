@@ -299,16 +299,25 @@ mod tests {
             subteam_of: None,
             members: vec![
                 TeamMember {
+                    name: "Jupiter Doe".into(),
+                    github: "jupiterd".into(),
+                    github_id: 123,
+                    is_lead: false,
+                    roles: vec!["convener".to_owned()],
+                },
+                TeamMember {
                     name: "John Doe".into(),
                     github: "johnd".into(),
+                    github_id: 456,
                     is_lead: false,
-                    github_id: 1234,
+                    roles: Vec::new(),
                 },
                 TeamMember {
                     name: "Jane Doe".into(),
                     github: "janed".into(),
+                    github_id: 789,
                     is_lead: true,
-                    github_id: 1234,
+                    roles: Vec::new(),
                 },
             ],
             alumni: Vec::new(),

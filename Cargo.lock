@@ -708,7 +708,6 @@ checksum = "10a35a97730320ffe8e2d410b5d3b69279b98d2c14bdb8b70ea89ecf7888d41e"
 dependencies = [
  "autocfg",
  "hashbrown 0.12.3",
- "serde",
 ]
 
 [[package]]
@@ -1496,9 +1495,9 @@ dependencies = [
 [[package]]
 name = "rust_team_data"
 version = "1.0.0"
-source = "git+https://github.com/rust-lang/team#811f92f4395068e1b826b208fd7f2ba677abd452"
+source = "git+https://github.com/rust-lang/team#3e3704e7655c881533306ef09f077786e47eeda4"
 dependencies = [
- "indexmap 1.9.1",
+ "indexmap 2.1.0",
  "serde",
 ]
 

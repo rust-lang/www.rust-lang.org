@@ -289,3 +289,5 @@ governance-team-wg-triage-description = Triaging repositories under the rust-lan
 
 governance-team-wg-wasm-name = WebAssembly (WASM) working group
 governance-team-wg-wasm-description = Improving on the end-to-end experience of embedding Rust code in JS libraries and apps via WebAssembly
+
+governance-role-spec-editor = Editor
