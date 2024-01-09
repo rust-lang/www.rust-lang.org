@@ -17,7 +17,7 @@ simple_loader!(create_loader, "./locales/", "en-US", core: "./locales/core.ftl",
 fn add_bundle_functions(bundle: &mut FluentBundle<&'static FluentResource>) {
     bundle
         .add_function("EMAIL", |values, _named| {
-            let email = match values.get(0) {
+            let email = match values.first() {
                 Some(FluentValue::String(ref s)) => s,
                 _ => return FluentValue::None,
             };
@@ -27,7 +27,7 @@ fn add_bundle_functions(bundle: &mut FluentBundle<&'static FluentResource>) {
 
     bundle
         .add_function("ENGLISH", |values, _named| {
-            let text = match values.get(0) {
+            let text = match values.first() {
                 Some(FluentValue::String(ref s)) => s,
                 _ => return FluentValue::None,
             };
