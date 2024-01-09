@@ -238,7 +238,6 @@ impl Default for RustTeams {
     }
 }
 
-#[async_trait]
 impl Cached for RustTeams {
     fn get_timestamp(&self) -> Instant {
         self.1

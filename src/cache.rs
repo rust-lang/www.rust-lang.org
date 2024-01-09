@@ -1,4 +1,5 @@
 use std::error::Error;
+use std::future::Future;
 use std::sync::Arc;
 use std::time::Instant;
 
@@ -10,10 +11,9 @@ const CACHE_TTL_SECS: u64 = 120;
 
 pub type Cache<T> = State<Arc<RwLock<T>>>;
 
-#[async_trait]
 pub trait Cached: Send + Sync + Clone + 'static {
     fn get_timestamp(&self) -> Instant;
-    async fn fetch() -> Result<Self, Box<dyn Error + Send + Sync>>;
+    fn fetch() -> impl Future<Output = Result<Self, Box<dyn Error + Send + Sync>>> + Send;
     async fn get(cache: &Cache<Self>) -> Self {
         let cached = cache.read().await.clone();
         let timestamp = cached.get_timestamp();
