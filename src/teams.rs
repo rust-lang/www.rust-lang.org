@@ -334,6 +334,7 @@ mod tests {
                 zulip_stream: None,
                 weight: 0,
             }),
+            roles: Vec::new(),
             github: None,
             discord: vec![],
         }

@@ -62,7 +62,7 @@
                             <div>{{fluent "governance-user-team-leader"}}</div>
                         {{else}}
                             {{#if member.roles}}
-                                <div>{{fluent (concat "governance-role-" (lookup member.roles 0))}}</div>
+                                <div>{{team-text team role (lookup member.roles 0)}}</div>
                             {{/if}}
                         {{/if}}
                     </div>

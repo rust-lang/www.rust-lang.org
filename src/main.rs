@@ -59,7 +59,6 @@ use sass_rs::{compile_file, Options};
 use category::Category;
 
 use caching::CachedNamedFile;
-use handlebars::handlebars_helper;
 use handlebars_fluent::{loader::Loader, FluentHelper};
 use i18n::{create_loader, LocaleInfo, SupportedLocale, TeamHelper, EXPLICIT_LOCALE_INFO};
 
@@ -492,11 +491,6 @@ async fn rocket() -> _ {
         engine
             .handlebars
             .register_helper("encode-zulip-stream", Box::new(encode_zulip_stream));
-
-        handlebars_helper!(concat: |x: String, y: String| x + &y);
-        engine
-            .handlebars
-            .register_helper("concat", Box::new(concat));
     });
 
     let rust_version = RustVersion::fetch().await.unwrap_or_default();
