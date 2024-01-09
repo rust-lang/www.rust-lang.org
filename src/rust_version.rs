@@ -42,7 +42,6 @@ impl Default for RustVersion {
     }
 }
 
-#[async_trait]
 impl Cached for RustVersion {
     fn get_timestamp(&self) -> Instant {
         self.1
@@ -68,7 +67,6 @@ impl Default for RustReleasePost {
     }
 }
 
-#[async_trait]
 impl Cached for RustReleasePost {
     fn get_timestamp(&self) -> Instant {
         self.1
