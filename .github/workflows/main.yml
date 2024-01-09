@@ -8,11 +8,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt
+
       - name: Formatting
-        run: |
-          # Install extra rustup components
-          rustup component add rustfmt
-          cargo fmt --all -- --check
+        run: cargo fmt --all -- --check
 
       - name: Test
         run: |
