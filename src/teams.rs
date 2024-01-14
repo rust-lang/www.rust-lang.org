@@ -59,7 +59,7 @@ impl Data {
         self.teams
             .into_iter()
             .filter(|team| team.website_data.is_some())
-            .filter(|team| team.subteam_of.is_none())
+            .filter(|team| matches!(team.subteam_of.as_deref(), None | Some("launching-pad")))
             .map(|team| IndexTeam {
                 url: format!(
                     "{}/{}",
@@ -98,8 +98,12 @@ impl Data {
             .ok_or(TeamNotFound)?;
 
         // Don't show pages for subteams
-        if main_team.subteam_of.is_some() {
-            return Err(TeamNotFound.into());
+        if let Some(subteam) = &main_team.subteam_of {
+            // Launching-pad does not have a page of its own, but we do want
+            // to show the working groups that are inside it.
+            if subteam != "launching-pad" {
+                return Err(TeamNotFound.into());
+            }
         }
 
         // Then find all the subteams, working groups and project groups.
