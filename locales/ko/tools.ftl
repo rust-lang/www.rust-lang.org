@@ -55,7 +55,7 @@ tools-rustup-wsl-heading = Linux용 Windows 하위 시스템 (WSL)
 
 tools-editor-vscode = VS Code
 tools-editor-sublime = Sublime Text
-tools-editor-idea = RustRover
+tools-editor-rover = RustRover
 tools-editor-eclipse = Eclipse
 tools-editor-vim = Vim
 tools-editor-emacs = Emacs
