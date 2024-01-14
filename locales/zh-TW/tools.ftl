@@ -106,7 +106,6 @@ tools-rustup-manual-default-windows = 如果您的電腦是 Windows 作業系統
 
 tools-editor-vscode = VS Code
 tools-editor-sublime = Sublime Text
-tools-editor-atom = Atom
 tools-editor-idea = RustRover
 tools-editor-eclipse = Eclipse
 tools-editor-vim = Vim
