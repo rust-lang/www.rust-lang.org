@@ -129,7 +129,6 @@ tools-rustup-manual-default-windows = Eğer Windows kullanıyorsanız <br><a hre
 
 tools-editor-vscode = { ENGLISH("VS Code") }
 tools-editor-sublime = { ENGLISH("Sublime Text") }
-tools-editor-atom = { ENGLISH("Atom") }
 tools-editor-idea = { ENGLISH("RustRover") }
 tools-editor-eclipse = { ENGLISH("Eclipse") }
 tools-editor-vim = { ENGLISH("Vim") }

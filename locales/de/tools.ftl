@@ -28,7 +28,6 @@ tools-automation-cargo-doc-link = Zur Webseite
 
 tools-editor-vscode = VS Code
 tools-editor-sublime = Sublime Text
-tools-editor-atom = Atom
 tools-editor-idea = RustRover
 tools-editor-eclipse = Eclipse
 tools-editor-vim = Vim
