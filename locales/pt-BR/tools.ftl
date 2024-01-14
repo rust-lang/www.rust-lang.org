@@ -149,3 +149,4 @@ tools-editor-idea = RustRover
 tools-editor-eclipse = Eclipse
 tools-editor-vim = Vim
 tools-editor-emacs = Emacs
+tools-editor-visual-studio = Visual Studio
