@@ -133,4 +133,4 @@ tools-editor-idea = { ENGLISH("RustRover") }
 tools-editor-eclipse = { ENGLISH("Eclipse") }
 tools-editor-vim = { ENGLISH("Vim") }
 tools-editor-emacs = { ENGLISH("Emacs") }
-tools-editor-geany = { ENGLISH("Geany") }
+tools-editor-visual-studio = { ENGLISH("Visual Studio") }
