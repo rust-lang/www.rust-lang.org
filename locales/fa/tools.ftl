@@ -20,7 +20,7 @@ install-other-methods-link = آموزش بیشتر
 
 tools-editor-vscode = VS Code
 tools-editor-sublime = Sublime Text
-tools-editor-idea = RustRover
+tools-editor-rover = RustRover
 tools-editor-eclipse = Eclipse
 tools-editor-vim = Vim
 tools-editor-emacs = Emacs

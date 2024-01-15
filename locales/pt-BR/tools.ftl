@@ -145,7 +145,7 @@ tools-rustup-manual-default-windows = Se vocÃª estiver rodando Windows, <br> faÃ
 
 tools-editor-vscode = VS Code
 tools-editor-sublime = Sublime Text
-tools-editor-idea = RustRover
+tools-editor-rover = RustRover
 tools-editor-eclipse = Eclipse
 tools-editor-vim = Vim
 tools-editor-emacs = Emacs
