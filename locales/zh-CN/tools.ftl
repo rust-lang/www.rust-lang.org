@@ -4,7 +4,7 @@ tools-page-title = 工具
 tools-editor-support-heading = 主流编辑器支持
 tools-editor-support-description =
     无论您喜欢用命令行还是可视化编辑器，都有适合的 Rust 集成供您选择。
-    您也可以使用 <a href="https://github.com/rust-analyzer/rust-analyzer">Rust DO_NOT_SUBMIT</a>来为自己的编辑器添加 Rust 支持。
+    您也可以使用 <a href="https://github.com/rust-lang/rust-analyzer">rust-analyzer</a> 来为自己的编辑器添加 Rust 支持。
 tools-build-heading = 流畅的构建体验
 tools-build-description = Cargo 是 Rust 的构建工具，它将常用命令集于一身，无需引入其它命令。
 tools-build-install-heading = 安装
@@ -132,9 +132,8 @@ tools-rustup-manual-default-windows = 如果您正在运行 Windows，<br>请下
 
 tools-editor-vscode = VS Code
 tools-editor-sublime = Sublime Text
-tools-editor-atom = Atom
-tools-editor-idea = RustRover
+tools-editor-rover = RustRover
 tools-editor-eclipse = Eclipse
 tools-editor-vim = Vim
 tools-editor-emacs = Emacs
-tools-editor-geany = Geany
+tools-editor-visual-studio = Visual Studio

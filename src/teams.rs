@@ -59,7 +59,7 @@ impl Data {
         self.teams
             .into_iter()
             .filter(|team| team.website_data.is_some())
-            .filter(|team| team.subteam_of.is_none())
+            .filter(|team| matches!(team.subteam_of.as_deref(), None | Some("launching-pad")))
             .map(|team| IndexTeam {
                 url: format!(
                     "{}/{}",
@@ -98,8 +98,12 @@ impl Data {
             .ok_or(TeamNotFound)?;
 
         // Don't show pages for subteams
-        if main_team.subteam_of.is_some() {
-            return Err(TeamNotFound.into());
+        if let Some(subteam) = &main_team.subteam_of {
+            // Launching-pad does not have a page of its own, but we do want
+            // to show the working groups that are inside it.
+            if subteam != "launching-pad" {
+                return Err(TeamNotFound.into());
+            }
         }
 
         // Then find all the subteams, working groups and project groups.
@@ -155,7 +159,7 @@ impl Data {
         let mut subteams = Vec::with_capacity(raw_subteams.len());
         lay_out_subteams_hierarchically(&mut subteams, None, &main_team.name, &raw_subteams);
 
-        fn lay_out_subteams_hierarchically<'a>(
+        fn lay_out_subteams_hierarchically(
             result: &mut Vec<Team>,
             team: Option<&Team>,
             main_team: &str,
@@ -238,7 +242,6 @@ impl Default for RustTeams {
     }
 }
 
-#[async_trait]
 impl Cached for RustTeams {
     fn get_timestamp(&self) -> Instant {
         self.1
@@ -299,16 +302,25 @@ mod tests {
             subteam_of: None,
             members: vec![
                 TeamMember {
+                    name: "Jupiter Doe".into(),
+                    github: "jupiterd".into(),
+                    github_id: 123,
+                    is_lead: false,
+                    roles: vec!["convener".to_owned()],
+                },
+                TeamMember {
                     name: "John Doe".into(),
                     github: "johnd".into(),
+                    github_id: 456,
                     is_lead: false,
-                    github_id: 1234,
+                    roles: Vec::new(),
                 },
                 TeamMember {
                     name: "Jane Doe".into(),
                     github: "janed".into(),
+                    github_id: 789,
                     is_lead: true,
-                    github_id: 1234,
+                    roles: Vec::new(),
                 },
             ],
             alumni: Vec::new(),
@@ -322,6 +334,7 @@ mod tests {
                 zulip_stream: None,
                 weight: 0,
             }),
+            roles: Vec::new(),
             github: None,
             discord: vec![],
         }

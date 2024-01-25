@@ -60,6 +60,10 @@
                         </div>
                         {{#if member.is_lead}}
                             <div>{{fluent "governance-user-team-leader"}}</div>
+                        {{else}}
+                            {{#if member.roles}}
+                                <div>{{team-text team role (lookup member.roles 0)}}</div>
+                            {{/if}}
                         {{/if}}
                     </div>
                 </div>

@@ -44,9 +44,6 @@ governance-team-devtools-description = Contributing to and creating the Rust dev
 governance-team-docs-rs-name = Docs.rs team
 governance-team-docs-rs-description = Docs.rs, the documentation hosting service for crates
 
-governance-team-ides-name = IDEs and editors team
-governance-team-ides-description = Developing IDEs, editors, and other development tools such as Racer and rust-analyzer
-
 governance-team-infra-name = Infrastructure team
 governance-team-infra-description = Managing the infrastructure supporting the Rust project itself, including CI, releases, bots, and metrics
 
@@ -58,6 +55,9 @@ governance-team-lang-advisors-description = Advising on the development of the R
 
 governance-team-lang-docs-name = lang-docs team
 governance-team-lang-docs-description = Developing and writing the docs related to the lang team
+
+governance-team-lang-ops-name = lang-ops team
+governance-team-lang-ops-description = Operations for the lang team: preparing agenda, issue triage, scheduling and documenting meetings
 
 governance-team-leadership-council-name = Leadership council
 governance-team-leadership-council-description = Charged with the success of the Rust Project as whole, consisting of representatives from top-level teams
@@ -94,9 +94,6 @@ governance-team-project-const-generics-description = Working to advance const ge
 
 governance-team-project-dyn-upcasting-name = Dyn Upcasting Initiative
 governance-team-project-dyn-upcasting-description = Allowing Upcasting between trait objects
-
-governance-team-project-edition-2021-name = Edition 2021 Project Group
-governance-team-project-edition-2021-description = Managing the Rust 2021 edition
 
 governance-team-project-error-handling-name = Error Handling Project Group
 governance-team-project-error-handling-description = Identifying error handling best practices and consolidating the ecosystem
@@ -140,14 +137,23 @@ governance-team-rust-analyzer-description = Rust IDE support and error-resilient
 governance-team-rustdoc-name = Rustdoc team
 governance-team-rustdoc-description = Developing and managing the Rustdoc documentation tool
 
+governance-team-rustdoc-contributors-name = Rustdoc team contributors
+governance-team-rustdoc-contributors-description = Contributing to Rustdoc on a regular basis
+
 governance-team-rustfmt-name = Rustfmt team
 governance-team-rustfmt-description = Designing and implementing rustfmt, a formatting tool for Rust code
 
 governance-team-rustup-name = Rustup team
 governance-team-rustup-description = Designing and implementing rustup
 
+governance-team-spec-name = Specification team
+governance-team-spec-description = Creating and maintaining the specification for the Rust language
+
 governance-team-style-name = Style team
 governance-team-style-description = Defining and evolving the default Rust coding style
+
+governance-team-testing-devex-name = Testing DevEx team
+governance-team-testing-devex-description = Working on the associated libraries, tooling, strategy, and integration points that support the developer experience with writing, executing, and analyzing tests
 
 governance-team-triagebot-name = Triagebot team
 governance-team-triagebot-description = Maintaining and improving the rust-lang/triagebot tooling
@@ -160,6 +166,9 @@ governance-team-wg-allocators-description = Paving a path for a standard set of 
 
 governance-team-wg-async-name = Async working group
 governance-team-wg-async-description = Pursuing core language and library support for async-await
+
+governance-team-wg-binary-size-name = Binary size working group
+governance-team-wg-binary-size-description = Improving the binary size of Rust programs and libraries
 
 governance-team-wg-bindgen-name = Bindgen working group
 governance-team-wg-bindgen-description = Developing tools for generating FFI bindings
@@ -200,6 +209,9 @@ governance-team-wg-embedded-hal-description = Develops and maintains crates that
 governance-team-wg-embedded-infra-name = Embedded infrastructure team
 governance-team-wg-embedded-infra-description = Managing infrastructure for wg-embedded
 
+governance-team-wg-embedded-libs-name = Embedded libraries team
+governance-team-wg-embedded-libs-description = Develops and maintains libraries for embedded devices
+
 governance-team-wg-embedded-linux-name = Embedded Linux team
 governance-team-wg-embedded-linux-description = The embedded Linux team develops and maintains the core of the embedded Linux crate ecosystem.
 
@@ -209,8 +221,8 @@ governance-team-wg-embedded-msp430-description = Develops and maintains the core
 governance-team-wg-embedded-resources-name = Embedded resources working group
 governance-team-wg-embedded-resources-description = Managing various resources owned by the embedded working group
 
-governance-team-wg-embedded-riscv-name = Embedded RISCV team
-governance-team-wg-embedded-riscv-description = Develops and maintains the core of the embedded RISCV crate ecosystem
+governance-team-wg-embedded-riscv-name = Embedded RISC-V team
+governance-team-wg-embedded-riscv-description = Develops and maintains the core of the embedded RISC-V crate ecosystem
 
 governance-team-wg-embedded-tools-name = Embedded Tools Team
 governance-team-wg-embedded-tools-description = Develops and maintains core embedded tools
@@ -236,14 +248,14 @@ governance-team-wg-inline-asm-description = A working-group project to extend th
 governance-team-wg-llvm-name = LLVM working group
 governance-team-wg-llvm-description = Working with LLVM upstream to represent Rust in its development
 
+governance-team-wg-macros-name = Macros working group
+governance-team-wg-macros-description = Revival and Improving the Rust Macros
+
 governance-team-wg-mir-opt-name = MIR optimizations working group
 governance-team-wg-mir-opt-description = Writing MIR optimizations and refactoring the MIR to be more optimizable
 
 governance-team-wg-parallel-rustc-name = Parallel rustc working group
 governance-team-wg-parallel-rustc-description = Making parallel compilation the default for rustc
-
-governance-team-wg-parselib-name = Parselib working group
-governance-team-wg-parselib-description = Sharing the parser between rustc and rust-analyzer
 
 governance-team-wg-pgo-name = Profile-guided optimization working group
 governance-team-wg-pgo-description = Implementing profile-guided optimization for rustc
@@ -269,9 +281,6 @@ governance-team-wg-rustc-dev-guide-description = Making the compiler easier to l
 governance-team-wg-rustc-reading-club-name = Rust Code Reading Club working group
 governance-team-wg-rustc-reading-club-description = Helping new and experienced contributors learn more about rustc
 
-governance-team-wg-rustfix-name = Rustfix working group
-governance-team-wg-rustfix-description = Developing cargo-fix and serving as a point of contact for other teams
-
 governance-team-wg-safe-transmute-name = safe-transmute project group
 governance-team-wg-safe-transmute-description = A working-group project to extend the Rust language to support safe transmute between types
 
@@ -289,3 +298,14 @@ governance-team-wg-triage-description = Triaging repositories under the rust-lan
 
 governance-team-wg-wasm-name = WebAssembly (WASM) working group
 governance-team-wg-wasm-description = Improving on the end-to-end experience of embedding Rust code in JS libraries and apps via WebAssembly
+
+governance-role-council-rep-compiler = Compiler team
+governance-role-council-rep-crates-io = Crates.io team
+governance-role-council-rep-devtools = Dev tools team
+governance-role-council-rep-infra = Infrastructure team
+governance-role-council-rep-lang = Language team
+governance-role-council-rep-launching-pad = Launching pad
+governance-role-council-rep-libs = Library team
+governance-role-council-rep-mods = Moderation team
+governance-role-council-rep-release = Release team
+governance-role-spec-editor = Editor

@@ -8,11 +8,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt
+
       - name: Formatting
-        run: |
-          # Install extra rustup components
-          rustup component add rustfmt
-          cargo fmt --all -- --check
+        run: cargo fmt --all -- --check
 
       - name: Test
         run: |
@@ -20,6 +21,7 @@ jobs:
           IFS=$'\n\t'
           # Check if the code is good
           cargo build --all --locked
+          cargo clippy -- --deny warnings
           cargo test --all --locked
 
       - name: Build the Docker image

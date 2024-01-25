@@ -1,5 +1,3 @@
-#![cfg_attr(test, deny(warnings))]
-
 #[macro_use]
 extern crate lazy_static;
 extern crate rand;
@@ -102,7 +100,7 @@ struct Context<T: ::serde::Serialize> {
 }
 
 impl<T: ::serde::Serialize> Context<T> {
-    fn new(page: String, title_id: &str, is_landing: bool, data: T, lang: String) -> Self {
+    fn new(page: &str, title_id: &str, is_landing: bool, data: T, lang: String) -> Self {
         let helper = create_loader();
         let title = if title_id.is_empty() {
             "".into()
@@ -111,7 +109,7 @@ impl<T: ::serde::Serialize> Context<T> {
             helper.lookup(&lang, title_id, None)
         };
         Self {
-            page,
+            page: page.to_owned(),
             title,
             parent: LAYOUT,
             is_landing,
@@ -222,8 +220,8 @@ async fn governance(teams_cache: &Cache<RustTeams>) -> Result<Template, Status> 
 
 #[get("/governance/<section>/<team>", rank = 2)]
 async fn team(
-    section: String,
-    team: String,
+    section: &str,
+    team: &str,
     teams_cache: &Cache<RustTeams>,
 ) -> Result<Template, Result<Redirect, Status>> {
     render_team(section, team, ENGLISH.into(), teams_cache).await
@@ -239,8 +237,8 @@ async fn governance_locale(
 
 #[get("/<locale>/governance/<section>/<team>", rank = 12)]
 async fn team_locale(
-    section: String,
-    team: String,
+    section: &str,
+    team: &str,
     locale: SupportedLocale,
     teams_cache: &Cache<RustTeams>,
 ) -> Result<Template, Result<Redirect, Status>> {
@@ -258,14 +256,14 @@ fn production_locale(locale: SupportedLocale) -> Template {
 }
 
 #[get("/<category>/<subject>", rank = 4)]
-fn subject(category: Category, subject: String) -> Result<Template, Status> {
+fn subject(category: Category, subject: &str) -> Result<Template, Status> {
     render_subject(category, subject, ENGLISH.into())
 }
 
 #[get("/<locale>/<category>/<subject>", rank = 14)]
 fn subject_locale(
     category: Category,
-    subject: String,
+    subject: &str,
     locale: SupportedLocale,
 ) -> Result<Template, Status> {
     render_subject(category, subject, locale.0)
@@ -284,6 +282,7 @@ fn redirect_bare_en_us() -> Redirect {
 }
 
 #[catch(404)]
+#[allow(clippy::result_large_err)]
 fn not_found(req: &Request) -> Result<Template, Redirect> {
     if let Some(redirect) = crate::redirect::maybe_redirect(req.uri().path()) {
         return Err(redirect);
@@ -304,7 +303,7 @@ fn not_found(req: &Request) -> Result<Template, Redirect> {
 
 fn not_found_locale(lang: String) -> Template {
     let page = "404";
-    let context = Context::new("404".into(), "error404-page-title", false, (), lang);
+    let context = Context::new(page, "error404-page-title", false, (), lang);
     Template::render(page, context)
 }
 
@@ -377,7 +376,7 @@ async fn render_index(
         rust_release_post: String,
     }
 
-    let page = "index".to_string();
+    let page = "index";
     let release_post = rust_version::rust_release_post(release_post_cache).await;
     let data = IndexData {
         rust_version: rust_version::rust_version(version_cache).await,
@@ -387,22 +386,22 @@ async fn render_index(
             String::new()
         },
     };
-    let context = Context::new(page.clone(), "", true, data, lang);
+    let context = Context::new(page, "", true, data, lang);
     Template::render(page, context)
 }
 
 fn render_category(category: Category, lang: String) -> Template {
     let page = category.index();
     let title_id = format!("{}-page-title", category.name());
-    let context = Context::new(category.name().to_string(), &title_id, false, (), lang);
+    let context = Context::new(category.name(), &title_id, false, (), lang);
 
     Template::render(page, context)
 }
 
 fn render_production(lang: String) -> Template {
-    let page = "production/users".to_string();
+    let page = "production/users";
     let context = Context::new(
-        page.clone(),
+        page,
         "production-users-page-title",
         false,
         load_users_data(),
@@ -418,8 +417,8 @@ async fn render_governance(
 ) -> Result<Template, Status> {
     match teams::index_data(teams_cache).await {
         Ok(data) => {
-            let page = "governance/index".to_string();
-            let context = Context::new(page.clone(), "governance-page-title", false, data, lang);
+            let page = "governance/index";
+            let context = Context::new(page, "governance-page-title", false, data, lang);
 
             Ok(Template::render(page, context))
         }
@@ -431,21 +430,21 @@ async fn render_governance(
 }
 
 async fn render_team(
-    section: String,
-    team: String,
+    section: &str,
+    team: &str,
     lang: String,
     teams_cache: &Cache<RustTeams>,
 ) -> Result<Template, Result<Redirect, Status>> {
-    match teams::page_data(&section, &team, teams_cache).await {
+    match teams::page_data(section, team, teams_cache).await {
         Ok(data) => {
-            let page = "governance/group".to_string();
+            let page = "governance/group";
             let name = format!("governance-team-{}-name", data.team.name);
-            let context = Context::new(page.clone(), &name, false, data, lang);
+            let context = Context::new(page, &name, false, data, lang);
             Ok(Template::render(page, context))
         }
         Err(err) => {
             if err.is::<teams::TeamNotFound>() {
-                match (section.as_str(), team.as_str()) {
+                match (section, team) {
                     // Old teams URLs
                     ("teams", "language-and-compiler") | ("teams", "operations") => {
                         Err(Ok(Redirect::temporary("/governance")))
@@ -460,7 +459,7 @@ async fn render_team(
     }
 }
 
-fn render_subject(category: Category, subject: String, lang: String) -> Result<Template, Status> {
+fn render_subject(category: Category, subject: &str, lang: String) -> Result<Template, Status> {
     // Rocket's Template::render method is not really designed to accept arbitrary templates: if a
     // template is missing, it just returns a Status::InternalServerError, without a way to
     // distinguish it from a syntax error in the template itself.
@@ -473,7 +472,7 @@ fn render_subject(category: Category, subject: String, lang: String) -> Result<T
         return Err(Status::NotFound);
     }
 
-    let page = format!("{}/{}", category.name(), subject.as_str());
+    let page = format!("{}/{}", category.name(), subject);
     let title_id = format!("{}-{}-page-title", category.name(), subject);
     let context = Context::new(subject, &title_id, false, (), lang);
 
