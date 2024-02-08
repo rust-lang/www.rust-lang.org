@@ -301,6 +301,12 @@ fn not_found(req: &Request) -> Result<Template, Redirect> {
     Ok(not_found_locale(lang))
 }
 
+#[catch(422)]
+#[allow(clippy::result_large_err)]
+fn unprocessable_content(req: &Request) -> Result<Template, Redirect> {
+    not_found(req)
+}
+
 fn not_found_locale(lang: String) -> Template {
     let page = "404";
     let context = Context::new(page, "error404-page-title", false, (), lang);
@@ -526,5 +532,8 @@ async fn rocket() -> _ {
                 redirect_bare_en_us,
             ],
         )
-        .register("/", catchers![not_found, catch_error])
+        .register(
+            "/",
+            catchers![not_found, unprocessable_content, catch_error],
+        )
 }
