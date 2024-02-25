@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="CargoProjects">
+    <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="882fe7f4-36f3-4e8e-9981-5aa7b0b772a7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/www.rust-lang.org.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/locales/hy/404.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/locales/hy/cli.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/locales/hy/code-of-conduct.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/locales/hy/common.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/locales/hy/community.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/locales/hy/embedded.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/locales/hy/governance.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/locales/hy/homepage.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/locales/hy/learn.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/locales/hy/licenses.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/locales/hy/networking.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/locales/hy/policies.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/locales/hy/production.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/locales/hy/security.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/locales/hy/teams.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/locales/hy/tools.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/locales/hy/wasm.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/i18n.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n.rs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="wm16fgah" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2crKO2BZem40CLiCGisOU3f7t0j" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.rust.reset.selective.auto.import": "true",
+    "git-widget-placeholder": "master",
+    "nodejs_package_manager_path": "npm",
+    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager" selected="Cargo.Run www-rust-lang-org">
+    <configuration name="Run www-rust-lang-org" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+      <option name="command" value="run --package www-rust-lang-org --bin www-rust-lang-org" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test www-rust-lang-org" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+      <option name="command" value="test --workspace" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="RustProjectSettings">
+    <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="882fe7f4-36f3-4e8e-9981-5aa7b0b772a7" name="Changes" comment="" />
+      <created>1708864222304</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1708864222304</updated>
+      <workItem from="1708864223658" duration="97000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
