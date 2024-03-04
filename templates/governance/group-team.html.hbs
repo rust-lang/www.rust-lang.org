@@ -36,6 +36,13 @@
                         </a>
                     </div>
                 {{/if}}
+                {{#if team.website_data.matrix_room}}
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                        <a class="button button-secondary" href="https://matrix.to/#/{{team.website_data.matrix_room}}">
+                        {{#fluent "governance-team-matrix-room"}}{{#fluentparam "room"}}{{team.website_data.matrix_room}}{{/fluentparam}}{{/fluent}}
+                        </a>
+                    </div>
+                {{/if}}
             </div>
         </div>
     </div>
