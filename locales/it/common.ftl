@@ -20,8 +20,8 @@ embedded-learn-more = Inizia con l'Embedded
 ## components/layout.hbs
 
 meta-description = Un linguaggio di programmazione che permette a chiunque di realizzare software efficienti e affidabili.
-page-title = { $pagename } - Rust Programming Language
-index-title = Rust Programming Language
+page-title = { $pagename } - The Rust Programming Language
+index-title = The Rust Programming Language
 
 ## components/nav.hbs
 
