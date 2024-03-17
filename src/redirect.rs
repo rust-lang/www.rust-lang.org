@@ -24,6 +24,11 @@ static PAGE_REDIRECTS: &[(&str, &str)] = &[
     ("security.html", "policies/security"),
     ("team.html", "governance"),
     ("user-groups.html", "community"),
+    // Team changes
+    (
+        "governance/teams/release",
+        "governance/teams/infra#team-release",
+    ),
 ];
 
 static STATIC_FILES_REDIRECTS: &[(&str, &str)] = &[

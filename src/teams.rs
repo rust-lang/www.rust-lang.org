@@ -59,7 +59,16 @@ impl Data {
         self.teams
             .into_iter()
             .filter(|team| team.website_data.is_some())
-            .filter(|team| matches!(team.subteam_of.as_deref(), None | Some("launching-pad")))
+            // On the main page, show the leadership-council, all top-level
+            // teams, and everything in the launching pad. We may want to
+            // consider putting launching pad teams in a separate page in the
+            // future?
+            .filter(|team| {
+                matches!(
+                    team.subteam_of.as_deref(),
+                    None | Some("launching-pad") | Some("leadership-council")
+                )
+            })
             .map(|team| IndexTeam {
                 url: format!(
                     "{}/{}",
@@ -99,9 +108,11 @@ impl Data {
 
         // Don't show pages for subteams
         if let Some(subteam) = &main_team.subteam_of {
-            // Launching-pad does not have a page of its own, but we do want
-            // to show the working groups that are inside it.
-            if subteam != "launching-pad" {
+            // Each launching-pad and leadership-council subteam has their own
+            // page. Subteams of those subteams do not get a page of their own
+            // (they are shown in their parent page). We may want to consider
+            // putting launching-pad teams into a separate page in the future.
+            if !matches!(subteam.as_ref(), "launching-pad" | "leadership-council") {
                 return Err(TeamNotFound.into());
             }
         }
@@ -120,6 +131,9 @@ impl Data {
 
         self.teams
             .into_iter()
+            // The leadership-council page should show just the
+            // leadership-council, not everything underneath it.
+            .filter(|_| main_team.name != "leadership-council")
             .filter(|team| team.website_data.is_some())
             .filter(|team| {
                 // For teams find not only direct subteams but also transitive ones.

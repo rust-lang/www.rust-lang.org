@@ -1,7 +1,7 @@
-<a id="{{team-text team name}}" name="{{team.name}}"></a>
+<a id="team-{{team.name}}"></a>
 <div class="w-100 mw-none mw-8-m mw9-l ph3 center f3">
     <header class="pb0 pt5">
-        <a class="linkable-subheading" href="#{{team-text team name}}"><h2>{{team-text team name}}</h2></a>
+        <a class="linkable-subheading" href="#team-{{team.name}}"><h2>{{team-text team name}}</h2></a>
         <div class="highlight"></div>
     </header>
     <div>
@@ -33,6 +33,13 @@
                     <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
                         <a class="button button-secondary" href="{{../data.zulip_domain}}/#narrow/stream/{{encode-zulip-stream team.website_data.zulip_stream}}">
                         {{#fluent "governance-team-zulip"}}{{#fluentparam "stream"}}#{{team.website_data.zulip_stream}}{{/fluentparam}}{{/fluent}}
+                        </a>
+                    </div>
+                {{/if}}
+                {{#if team.website_data.matrix_room}}
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                        <a class="button button-secondary" href="https://matrix.to/#/{{team.website_data.matrix_room}}">
+                        {{#fluent "governance-team-matrix-room"}}{{#fluentparam "room"}}{{team.website_data.matrix_room}}{{/fluentparam}}{{/fluent}}
                         </a>
                     </div>
                 {{/if}}
