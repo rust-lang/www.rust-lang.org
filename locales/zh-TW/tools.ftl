@@ -108,6 +108,6 @@ tools-editor-vscode = VS Code
 tools-editor-sublime = Sublime Text
 tools-editor-rover = RustRover
 tools-editor-eclipse = Eclipse
-tools-editor-vim = Vim
+tools-editor-vim = Vim/Neovim
 tools-editor-emacs = Emacs
 tools-editor-visual-studio = Visual Studio
