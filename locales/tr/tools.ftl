@@ -131,6 +131,6 @@ tools-editor-vscode = { ENGLISH("VS Code") }
 tools-editor-sublime = { ENGLISH("Sublime Text") }
 tools-editor-rover = { ENGLISH("RustRover") }
 tools-editor-eclipse = { ENGLISH("Eclipse") }
-tools-editor-vim = { ENGLISH("Vim") }
+tools-editor-vim = { ENGLISH("Vim/Neovim") }
 tools-editor-emacs = { ENGLISH("Emacs") }
 tools-editor-visual-studio = { ENGLISH("Visual Studio") }
