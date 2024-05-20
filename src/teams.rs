@@ -347,10 +347,12 @@ mod tests {
                 discord: None,
                 zulip_stream: None,
                 weight: 0,
+                matrix_room: None,
             }),
             roles: Vec::new(),
             github: None,
             discord: vec![],
+            top_level: None,
         }
     }
 
