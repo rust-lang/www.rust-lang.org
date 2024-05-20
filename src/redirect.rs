@@ -33,6 +33,8 @@ static PAGE_REDIRECTS: &[(&str, &str)] = &[
         "governance/teams/crates-io",
         "governance/teams/dev-tools#team-crates-io",
     ),
+    // miscellaneous
+    ("governance/teams", "governance#teams"),
 ];
 
 static STATIC_FILES_REDIRECTS: &[(&str, &str)] = &[
