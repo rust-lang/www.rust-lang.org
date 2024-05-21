@@ -558,6 +558,13 @@ blockquote::before {
   width: 80%;
 }
 
+.get-started-hr {
+  background-color: white;
+  height: 1px;
+  border: 0px;
+  margin: 25px 0px;
+}
+
 .hidden {
   border: 0;
   clip: rect(0 0 0 0);
