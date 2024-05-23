@@ -53,16 +53,6 @@ community-events-repo = Check out the events team repo
 community-event-register = Register your event
 community-rustfest-alt = Rustfest participants
 
-community-rustbridge-header = Rustbridge
-community-rustbridge = RustBridge is a workshop focused on getting underrepresented people with a background in another programming language to learn Rust and join the community.
-community-rustbridge-button = Check out the Rustbridge repo
-
-community-rustbridge-rustconf-alt = RustBridge at RustConf
-community-rustbridge-paris-alt = RustBridge Paris
-community-rustbridge-berlin-alt = RustBridge Berlin
-community-rustbridge-rbr-alt = RustBridge at Rust Belt Rust
-
-
 community-irr-header = Increasing Rust’s Reach
 community-irr = Increasing Rust’s Reach is a program that matches Rust team members from all parts of the project with individuals who are underrepresented in Rust’s community and the tech industry for a partnership of three (3) months, from mid-May to mid-August. Each partnership agrees to a commitment of 3–5 hours per week working on a Rust Project.
 community-irr-button = Visit Website
