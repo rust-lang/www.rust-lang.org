@@ -31,7 +31,6 @@ community-event-run =
     <p>
     さらに開催するイベントを登録いただくことで、私たちはコミュニティとしての取り組みを把握することができるようになり、あなたをその地域にいるスピーカーや他のメンバーと繋げることができるでしょう
     </p>
-community-events-repo = イベントチームのリポジトリを確認する
 community-event-register = イベントを登録する
 community-rustfest-alt = Rustfest参加者
 community-irr-header = Increasing Rust’s Reach

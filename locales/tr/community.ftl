@@ -29,7 +29,6 @@ community-event-run =
     <p>
     Etkinliğinizi kaydetmeniz topluluğun emeğini takip etmemizi ve siz konuşmacıları bölgenizdeki diğer üyelerle buluşturmamızı sağlar.
     </p>
-community-events-repo = Etkinlik ekibinin deposuna göz atın
 community-event-register = Etkinliğinizi kaydedin
 community-rustfest-alt = Rustfest katılımcıları
 community-irr-header = Increasing Rust's Reach

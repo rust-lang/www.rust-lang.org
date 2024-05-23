@@ -33,7 +33,6 @@ community-event-run =
        注册您的活动有助于我们持续跟踪社区的影响力，
        并能让我们为您与当地的演讲者和其他成员建立联系。
      </p>
-community-events-repo = 访问活动团队的 GitHub
 community-event-register = 注册活动
 community-rustfest-alt = Rustfest 参会者
 community-irr-header = Rust 星火计划

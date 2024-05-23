@@ -25,7 +25,6 @@ community-calendar = 查看行事曆
 community-conference-lineup = 2020 研討會時間表
 community-event-run-header = 自己辦活動！
 community-event-run = 隨著 Rust 的發展，我們樂於幫忙大家推動自己的地區性活動。從學習、實作、駭客、聚會以至研討會，Rust 活動團隊都已準備好為您提供支援。
-community-events-repo = 活動團隊 Repo
 community-event-register = 登記您的活動
 community-rustfest-alt = Rustfest 參與者
 community-irr-header = Rust 推廣計畫

@@ -43,7 +43,6 @@ community-event-run =
       na rzecz rozwoju społeczności, oraz pozwoli nam połączyć Cię z innymi
       Rustianami w Twojej okolicy.
     </p>
-community-events-repo = Sprawdź repozytorium Zespołu ds. Wydarzeń
 community-event-register = Zajerestruj swoje wydarzenie
 community-rustfest-alt = Uczestnicy Rustfest
 community-irr-header = Zwiększanie Zasięgu Rusta

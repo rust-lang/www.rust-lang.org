@@ -33,7 +33,6 @@ community-event-run =
       Регистрация вашего мероприятия помогает нам отслеживать наши усилия в сообществе
       и позволяет нам связать вас со спикерами или другими участниками в вашем регионе.
     </p>
-community-events-repo = Посмотрите репозиторий Events Team
 community-event-register = Зарегистрировать событие
 community-rustfest-alt = Участники Rustfest
 community-irr-header = Увеличение доступности Rust

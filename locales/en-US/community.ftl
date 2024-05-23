@@ -49,7 +49,6 @@ community-event-run =
             Registering your event helps us to keep track of our community efforts and
             allows us to connect you to speakers or other members in your area.
           </p>
-community-events-repo = Check out the events team repo
 community-event-register = Register your event
 community-rustfest-alt = Rustfest participants
 
