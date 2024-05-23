@@ -35,7 +35,6 @@ community-events-header = Eventos
 community-meetup-header = Encuentra un meetup o una conferencia local
 community-meetup = Hay más de 90 Meetups y numerosas conferencias repartidas en más de 35 países. Los Rustáceos se reúnen periódicamente en los Grupos de Usuarios de Rust. Esos grupos son un modo perfecto de introducirte en la comunidad y una gran forma de socializar con otras personas con intereses similares. Las reuniones son generalmente informales y abiertas a todo el mundo.
 community-calendar = Ver el calendario
-community-conference-lineup = Consultar el programa de conferencias de 2020
 community-event-run-header = Organizar tu propio evento
 community-event-run =
     <p>
