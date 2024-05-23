@@ -1,5 +1,5 @@
 use handlebars::{
-    Context, Handlebars, Helper, HelperDef, HelperResult, Output, RenderContext, RenderError,
+    Context, Handlebars, Helper, HelperDef, HelperResult, Output, RenderContext, RenderErrorReason,
 };
 
 use rocket::request::FromParam;
@@ -149,32 +149,38 @@ impl TeamHelperParam {
 impl HelperDef for TeamHelper {
     fn call<'reg: 'rc, 'rc>(
         &self,
-        h: &Helper<'reg, 'rc>,
+        h: &Helper<'rc>,
         _: &'reg Handlebars,
         context: &'rc Context,
         rcx: &mut RenderContext<'reg, 'rc>,
         out: &mut dyn Output,
     ) -> HelperResult {
         let Some(name) = h.param(0) else {
-            return Err(RenderError::new(
+            return Err(RenderErrorReason::ParamNotFoundForIndex(
                 "{{team-text}} must have at least two parameters",
-            ));
+                0,
+            )
+            .into());
         };
         let Some(name) = name.relative_path() else {
-            return Err(RenderError::new(
+            return Err(RenderErrorReason::InvalidParamType(
                 "{{team-text}} takes only identifier parameters",
-            ));
+            )
+            .into());
         };
 
         let Some(id) = h.param(1) else {
-            return Err(RenderError::new(
+            return Err(RenderErrorReason::ParamNotFoundForIndex(
                 "{{team-text}} must have at least two parameters",
-            ));
+                1,
+            )
+            .into());
         };
         let Some(id) = id.relative_path() else {
-            return Err(RenderError::new(
+            return Err(RenderErrorReason::InvalidParamType(
                 "{{team-text}} takes only identifier parameters",
-            ));
+            )
+            .into());
         };
 
         let param = match id.as_str() {
@@ -182,22 +188,25 @@ impl HelperDef for TeamHelper {
             "description" => TeamHelperParam::Description,
             "role" => {
                 let Some(role_id) = h.param(2) else {
-                    return Err(RenderError::new(
+                    return Err(RenderErrorReason::ParamNotFoundForIndex(
                         "{{team-text}} requires a third parameter for the role id",
-                    ));
+                        2,
+                    )
+                    .into());
                 };
                 TeamHelperParam::Role(role_id.value().as_str().unwrap().to_owned())
             }
             unrecognized => {
-                return Err(RenderError::new(format!(
+                return Err(RenderErrorReason::Other(format!(
                     "unrecognized {{{{team-text}}}} param {unrecognized:?}",
-                )));
+                ))
+                .into());
             }
         };
 
         let team = rcx
             .evaluate(context, name)
-            .map_err(|e| RenderError::from_error(&format!("Cannot find team {}", name), e))?;
+            .map_err(|e| RenderErrorReason::NestedError(Box::new(e)))?;
         let lang = context
             .data()
             .get("lang")
@@ -210,18 +219,18 @@ impl HelperDef for TeamHelper {
         if lang == "en-US" {
             let english = param.english(team.as_json());
             out.write(english)
-                .map_err(|e| RenderError::from_error("failed to render English team data", e))?;
+                .map_err(|e| RenderErrorReason::NestedError(Box::new(e)))?;
         } else if let Some(value) = self.i18n.lookup_no_default_fallback(
             &lang.parse().expect("language must be valid"),
             &param.fluent_id(team_name),
             None,
         ) {
             out.write(&value)
-                .map_err(|e| RenderError::from_error("failed to render translated team data", e))?;
+                .map_err(|e| RenderErrorReason::NestedError(Box::new(e)))?;
         } else {
             let english = param.english(team.as_json());
             out.write(english)
-                .map_err(|e| RenderError::from_error("failed to render", e))?;
+                .map_err(|e| RenderErrorReason::NestedError(Box::new(e)))?;
         }
         Ok(())
     }
