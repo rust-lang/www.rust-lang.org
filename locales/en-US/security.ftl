@@ -39,4 +39,17 @@ security-receiving-description =
         <p>The best way to receive all the security announcements is to subscribe to the <a href="{ -rust-security-announcements-mailing-list-href }">Rust security announcements mailing list</a> (alternatively by sending an email to { -rustlang-security-announcements-subscribe-anchor }). The mailing list is very low traffic, and it receives the public notifications the moment the embargo is lifted.</p>
         <p>We will announce vulnerabilities 72 hours before the embargo is lifted to { -distros-openwall-email-anchor }, so that Linux distributions can update their packages.</p>
 
+security-crates-heading = Ecosystem security help for crate authors
+security-crates-description =
+        <p>Security is a value important to the Rust ecosystem as a whole, not just to the Rust language. If you are a crate author and you have received a high impact/severity security bug report for your crate, the Rust Foundation and the Rust Project are available to help manage the situation. The Rust Project or the Rust Foundation may also be the ones reaching out to you, if they have been informed of a security issue.</p>
+        <p>As part of its <a href="{ -foundation-security-initiative-href }">Security Initiative</a>, the Rust Foundation:</p>
+        <ul>
+          <li>Employs security engineers who can help assessing the problem, developing mitigations, and estimating impact.</li>
+          <li>Has a network of member organizations that can help with testing resources and also employ security experts who can help with assessing and fixing issues.</li>
+          <li>Employs communications staff who can manage publishing notifications and fielding inquiries.</li>
+          <li>Has contacts with government agencies tasked with cybersecurity protections who may have information on exploitation or impact of a security problem.</li>
+        </ul>
+        <p>The Rust Project can coordinate actions among other parts of the ecosystem that may need to be updated to address a fix.</p>
+        <p>Please reach out to { -contact-at-rustfoundation-org-anchor } if either the Rust Project or the Rust Foundation can help you by providing security support in the areas listed above or in another way! These are just a few examples of the kind of help available to crate authors facing security challenges.</p>
+
 security-pgp-key-heading = Plaintext PGP key
