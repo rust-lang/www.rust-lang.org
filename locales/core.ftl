@@ -24,3 +24,8 @@
         <a href="mailto:rustlang-security-announcements+subscribe@googlegroups.com">rustlang-security-announcements+subscribe@googlegroups.com</a>
 -distros-openwall-email-anchor =
         <a href="https://oss-security.openwall.org/wiki/mailing-lists/distros" lang="en-US">distros@openwall</a>
+
+## Security initiative links
+-foundation-security-initiative-href =
+        https://foundation.rust-lang.org/tags/security%20initiative/
+-contact-at-rustfoundation-org-anchor = { EMAIL("contact@rustfoundation.org") }
