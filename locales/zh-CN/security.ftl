@@ -4,6 +4,23 @@
 policies-security-page-title = 安全政策
 security-reporting-heading = 报告漏洞
 security-reporting-link = 给 { ENGLISH("security@rust-lang.org") } 发邮件
+security-reporting-description--2022-01 =
+        <p>安全是 Rust 的核心原则之一，为此，我们希望确保 Rust 有一个安全的实施。感谢您花时间负责任地披露您发现的任何问题。</p>
+        <p>Rust 发行版中的所有安全漏洞都应通过电子邮件报告给 { -security-at-rust-lang-org-anchor }。 此列表已交付给一个小型安全团队。您的电子邮件将在 24 小时内得到确认，您将在 48 小时内收到更详细的电子邮件回复，指示处理报告的下一步行动。 如果您愿意，您可以加密您的报告通过使用 <a href="{ -rust-security-team-key-href }">我们的公钥</a>。 这个密钥也在 <a href="{ -rust-pgp-key-mit-keyserver-href }">MIT 的密钥服务器上</a> 或者 <a href="#security-pgp-key">在下面复制</a>.</p>
+        <p>此电子邮件地址收到大量垃圾邮件，因此请务必使用描述性主题行，以避免错过您的报告。 在对您的报告进行初步答复后，安全团队将努力让您了解修复和全面公告的进展情况。 根据 <a href="{ -wikipedia-rfpolicy-href }">RFPolicy</a> 的建议, 这些更新将至少每五天发送一次。事实上，这更有可能是每 24-48 小时发生一次。</p>
+        <p>如果您在 48 小时内没有收到电子邮件回复，或者在过去五天内没有收到安全团队的消息，您可以采取以下步骤（按顺序）：</p>
+        <ul>
+          <li>
+            直接联系两位安全协调员：
+            <ul>
+                <li>{ -security-coordinator-1-email-anchor }</li>
+                <li>{ -security-coordinator-2-email-anchor }</li>
+            </ul>
+          </li>
+          <li>在 <a href="{ -internals-rust-lang-org-href }">内部论坛</a> 上发帖</li>
+        </ul>
+        <p>请注意，论坛是公共区域。在这些场所升级时，请不要讨论您的问题。只需说您正试图联系安全团队的人员即可。</p>
+
 security-disclosure-heading = 信息披露政策
 security-disclosure-description =
     <p>Rust 项目有 5 步披露流程：</p>
