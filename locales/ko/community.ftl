@@ -14,7 +14,6 @@ community-chat = Rust 개발, 일반적인 잡담은 여러 채팅 플랫폼에�
 community-teams-learn = 팀 더 알아보기
 community-events-header = 행사
 community-calendar = 일정표 보기
-community-event-register = 행사 등록하기
 community-rustfest-alt = Rustfest 참가자
 community-irr-button = 웹 사이트 방문하기
 community-standards-header = 커뮤니티 표준

@@ -42,7 +42,6 @@ community-event-run =
       na rzecz rozwoju społeczności, oraz pozwoli nam połączyć Cię z innymi
       Rustianami w Twojej okolicy.
     </p>
-community-event-register = Zajerestruj swoje wydarzenie
 community-rustfest-alt = Uczestnicy Rustfest
 community-irr-header = Zwiększanie Zasięgu Rusta
 community-irr = Zwiększanie Zasięgu Rusta to program, który paruje członków rozmaitych zespołów projektu Rust z osobami, które są niedostatecznie reprezentowane w ramach społeczności Rusta i szerzej w ramach przemysłu informatycznego. W ramach programu zawiązywana jest tymczasowa współpraca między osobami na czas trzech (3) miesięcy, od maja do sierpnia. Oczekiwany czas poświęcony na współpracę to od 3 do 5 godzin tygodniowo spędzone na pracy nad projektami w Ruście.

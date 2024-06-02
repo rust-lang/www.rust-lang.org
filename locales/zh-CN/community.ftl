@@ -32,7 +32,6 @@ community-event-run =
        注册您的活动有助于我们持续跟踪社区的影响力，
        并能让我们为您与当地的演讲者和其他成员建立联系。
      </p>
-community-event-register = 注册活动
 community-rustfest-alt = Rustfest 参会者
 community-irr-header = Rust 星火计划
 community-irr = 「Rust 星火计划」是一项合作计划。在该计划中，来自 Rust 不同项目的团队成员将会联合 Rust 社区中通常不太活跃的个人和技术企业，从 5 月中旬持续到 8 月中旬，进行为期三个月的合作。每个参与者都必须承诺在合作项目上每周投入 3-5 小时。

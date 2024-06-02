@@ -28,7 +28,6 @@ community-event-run =
     <p>
     Etkinliğinizi kaydetmeniz topluluğun emeğini takip etmemizi ve siz konuşmacıları bölgenizdeki diğer üyelerle buluşturmamızı sağlar.
     </p>
-community-event-register = Etkinliğinizi kaydedin
 community-rustfest-alt = Rustfest katılımcıları
 community-irr-header = Increasing Rust's Reach
 community-irr = Increasing Rust's Reach, mayıs ayının ortasından ağustos ayının ortasına kadar üç (3) aylık bir ortaklık için Rust toplumunda ve teknoloji endüstrisinde yeterince temsil edilmeyen bireylerle projenin tüm bölümlerinden Rust ekibi üyelerini eşleştiren bir programdır. Her bir ortaklık, bir Rust projesinde çalışmak üzere haftada 3-5 saatlik bir taahhüt vermeyi kabul eder.

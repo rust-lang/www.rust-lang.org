@@ -24,7 +24,6 @@ community-meetup = 在全球超過 35 個國家有超過 90 個聚會與數個�
 community-calendar = 查看行事曆
 community-event-run-header = 自己辦活動！
 community-event-run = 隨著 Rust 的發展，我們樂於幫忙大家推動自己的地區性活動。從學習、實作、駭客、聚會以至研討會，Rust 活動團隊都已準備好為您提供支援。
-community-event-register = 登記您的活動
 community-rustfest-alt = Rustfest 參與者
 community-irr-header = Rust 推廣計畫
 community-irr = 「Rust 推廣計畫」媒合來自 Rust 專案中所有項目的團隊成員，以及 Rust 社群中未被關注的個人、技術企業，進行為期三個月，從五月中到八月中的合作計畫。每個合作夥伴皆承諾在一個 Rust 專案投入每週三到五小時的時間。

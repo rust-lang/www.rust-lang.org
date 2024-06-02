@@ -45,7 +45,6 @@ community-event-run =
       Registrar tu evento nos ayuda a identificar los esfuerzos de nuestra comunidad y
       nos permite ponerte en contacto con expertos u otros miembros en tu zona.
     </p>
-community-event-register = Registra tu evento
 community-rustfest-alt = Participantes de Rustfest
 community-irr-header = Increasing Rust's Reach
 community-irr = Increasing Rust's Reach (Aumentando el alcance de Rust) es un programa que une a miembros de todas las áreas del equipo de Rust con individuos que están poco representados en la comunidad Rust y la industria tecnológica, para una colaboración de tres (3) meses, desde mediados de Mayo hasta mediados de Agosto. Cada miembro asociado se compromete a trabajar en un proyecto de Rust de 3 a 5 horas por semana.

@@ -12,7 +12,6 @@ community-meetup-header = Finde ein Treffen order eine Konferenz in deiner Nähe
 community-meetup = Es gibt mehr als 90 Treffen und einige Konferenzen in über 35 Ländern. Rust User Groups sind regelmäßige Treffen und ein guter Weg, andere Rust-Interessierte kennen zu lernen. Typischerweise sind diese Treffen informell und für alle offen.
 community-calendar = Kalender ansehen
 community-event-run-header = Stelle dein eigenes Event auf die Beine
-community-event-register = Trage dein Event ein
 community-rustfest-alt = Rustfest Teilnehmer
 community-irr-header = Rusts Reichweite vergrößern
 community-irr-button = Besuche die Webseite

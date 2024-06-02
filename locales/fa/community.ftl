@@ -13,7 +13,6 @@ community-teams-learn = در مورد تیم ها بیشتر بدانید
 community-events-header = رویداد‌ها
 community-calendar = مشاهده تقویم
 community-event-run-header = رویداد خود را برگزار کنید
-community-event-register = رویداد خود را ثبت کنید
 community-rustfest-alt = شرکت کنندگان Rustfest
 community-irr-button = از وب سایت بازدید کنید
 community-standards-header = استانداردهای جامعه
