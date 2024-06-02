@@ -20,9 +20,6 @@ governance-team-community-events-description = Supporting and organizing communi
 governance-team-community-localization-name = Localization team
 governance-team-community-localization-description = Working on localization of compiler, documentation and websites
 
-governance-team-community-rustbridge-name = RustBridge team
-governance-team-community-rustbridge-description = Helping to bring underrepresented groups into Rust
-
 governance-team-community-survey-name = Survey team
 governance-team-community-survey-description = Running, analysing, and presenting the community survey
 

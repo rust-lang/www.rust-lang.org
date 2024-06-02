@@ -22,7 +22,6 @@ community-events-header = イベント
 community-meetup-header = 近くのミートアップやカンファレンスを探す
 community-meetup = 世界35カ国以上で、90以上のミートアップや様々なカンファレンスが開催されており、RustaceansはRustユーザグループに定期的に集まります。それらはコミュニティへの導入として優れていて、関心の近い人々と学び交流することができる素晴らしい機会です。ミーティングは堅苦しいものではなく、誰にでも開かれています。
 community-calendar = カレンダーを見る
-community-conference-lineup = 2020年のカンファレンス一覧を確認する
 community-event-run-header = イベントを開催する
 community-event-run =
     <p>
@@ -31,16 +30,7 @@ community-event-run =
     <p>
     さらに開催するイベントを登録いただくことで、私たちはコミュニティとしての取り組みを把握することができるようになり、あなたをその地域にいるスピーカーや他のメンバーと繋げることができるでしょう
     </p>
-community-events-repo = イベントチームのリポジトリを確認する
-community-event-register = イベントを登録する
 community-rustfest-alt = Rustfest参加者
-community-rustbridge-header = Rustbridge
-community-rustbridge = RustBridgeは、他の言語をバックグラウンドとして持つRustに馴染みのない人々を対象とした、Rustを学びコミュニティに参加して頂くためのワークショップです。
-community-rustbridge-button = Rustbridgeのリポジトリを確認する
-community-rustbridge-rustconf-alt = RustBridge at RustConf
-community-rustbridge-paris-alt = RustBridge Paris
-community-rustbridge-berlin-alt = RustBridge Berlin
-community-rustbridge-rbr-alt = RustBridge at Rust Belt Rust
 community-irr-header = Increasing Rust’s Reach
 community-irr = Increasing Rust’s Reachは5月中旬から8月中旬までの3ヶ月間のパートナーシップで、Rustプロジェクトのあらゆるチームメンバーと、Rustコミュニティやテクノロジー業界であまり知られていない個人を繋ぐことを目的としたプログラムです。それぞれのパートナーシップは、Rustプロジェクトに週に3～5時間取り組むことに合意しています。
 community-irr-button = ウェブサイトにアクセスする
