@@ -223,7 +223,7 @@ async fn team(
     section: &str,
     team: &str,
     teams_cache: &Cache<RustTeams>,
-) -> Result<Template, Result<Redirect, Status>> {
+) -> Result<Template, Status> {
     render_team(section, team, ENGLISH.into(), teams_cache).await
 }
 
@@ -241,7 +241,7 @@ async fn team_locale(
     team: &str,
     locale: SupportedLocale,
     teams_cache: &Cache<RustTeams>,
-) -> Result<Template, Result<Redirect, Status>> {
+) -> Result<Template, Status> {
     render_team(section, team, locale.0, teams_cache).await
 }
 
@@ -440,7 +440,7 @@ async fn render_team(
     team: &str,
     lang: String,
     teams_cache: &Cache<RustTeams>,
-) -> Result<Template, Result<Redirect, Status>> {
+) -> Result<Template, Status> {
     match teams::page_data(section, team, teams_cache).await {
         Ok(data) => {
             let page = "governance/group";
@@ -450,16 +450,10 @@ async fn render_team(
         }
         Err(err) => {
             if err.is::<teams::TeamNotFound>() {
-                match (section, team) {
-                    // Old teams URLs
-                    ("teams", "language-and-compiler") | ("teams", "operations") => {
-                        Err(Ok(Redirect::temporary("/governance")))
-                    }
-                    _ => Err(Err(Status::NotFound)),
-                }
+                Err(Status::NotFound)
             } else {
                 eprintln!("error while loading the team page: {}", err);
-                Err(Err(Status::InternalServerError))
+                Err(Status::InternalServerError)
             }
         }
     }
