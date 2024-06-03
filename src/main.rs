@@ -151,16 +151,6 @@ fn baseurl(lang: &str) -> String {
     }
 }
 
-#[get("/components/<_file..>", rank = 1)]
-fn components(_file: PathBuf) -> Template {
-    not_found_locale(ENGLISH.into())
-}
-
-#[get("/<locale>/components/<_file..>", rank = 11)]
-fn components_locale(locale: SupportedLocale, _file: PathBuf) -> Template {
-    not_found_locale(locale.0)
-}
-
 #[get("/logos/<file..>", rank = 1)]
 async fn logos(file: PathBuf) -> Option<CachedNamedFile> {
     NamedFile::open(Path::new("static/logos").join(file))
@@ -521,14 +511,12 @@ async fn rocket() -> _ {
                 files,
                 robots_txt,
                 logos,
-                components,
                 index_locale,
                 category_locale,
                 governance_locale,
                 team_locale,
                 production_locale,
                 subject_locale,
-                components_locale,
                 redirect_bare_en_us,
             ],
         )
