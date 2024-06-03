@@ -35,7 +35,6 @@ community-events-header = Eventos
 community-meetup-header = Encuentra un meetup o una conferencia local
 community-meetup = Hay más de 90 Meetups y numerosas conferencias repartidas en más de 35 países. Los Rustáceos se reúnen periódicamente en los Grupos de Usuarios de Rust. Esos grupos son un modo perfecto de introducirte en la comunidad y una gran forma de socializar con otras personas con intereses similares. Las reuniones son generalmente informales y abiertas a todo el mundo.
 community-calendar = Ver el calendario
-community-conference-lineup = Consultar el programa de conferencias de 2020
 community-event-run-header = Organizar tu propio evento
 community-event-run =
     <p>
@@ -46,16 +45,7 @@ community-event-run =
       Registrar tu evento nos ayuda a identificar los esfuerzos de nuestra comunidad y
       nos permite ponerte en contacto con expertos u otros miembros en tu zona.
     </p>
-community-events-repo = Consultar el repositorio del equipo de Eventos
-community-event-register = Registra tu evento
 community-rustfest-alt = Participantes de Rustfest
-community-rustbridge-header = Rustbridge
-community-rustbridge = RustBridge es un taller que pone el foco en atraer a grupos de gente poco representados con experiencia en otros lenguajes de programación para que aprendan Rust y se unan a su comunidad.
-community-rustbridge-button = Consulta el repositorio de RustBridge
-community-rustbridge-rustconf-alt = RustBridge en la Rustconf
-community-rustbridge-paris-alt = RustBridge París
-community-rustbridge-berlin-alt = RustBridge Berlín
-community-rustbridge-rbr-alt = RustBridge en Rust Belt Rust
 community-irr-header = Increasing Rust's Reach
 community-irr = Increasing Rust's Reach (Aumentando el alcance de Rust) es un programa que une a miembros de todas las áreas del equipo de Rust con individuos que están poco representados en la comunidad Rust y la industria tecnológica, para una colaboración de tres (3) meses, desde mediados de Mayo hasta mediados de Agosto. Cada miembro asociado se compromete a trabajar en un proyecto de Rust de 3 a 5 horas por semana.
 community-irr-button = Visita la web

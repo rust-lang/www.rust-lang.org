@@ -15,7 +15,7 @@
     </header>
     <p>{{fluent "learn-play"}}</p>
     <a href="https://play.rust-lang.org/" class="button button-secondary">{{fluent "learn-play-button"}}</a>
-    <hr />
+    <hr class="get-started-hr" />
 
     <h3>{{fluent "learn-install-rustup-header"}}</h3>
     <p>{{fluent "learn-install-rustup"}}</p>
@@ -25,12 +25,12 @@
     <p>{{#fluent "learn-install-rustup-update"}}{{#fluentparam "update-command"}}<code>rustup update</code>{{/fluentparam}}{{/fluent}}</p>
     <br />
     <a href="{{baseurl}}/tools/install" class="button button-secondary">{{fluent "learn-install-rustup-button"}}</a>
-    <hr />
+    <hr class="get-started-hr" />
 
     <h3>{{fluent "learn-install-cargo-header"}}</h3>
     {{fluent "learn-install-cargo"}}
     <a href="https://doc.rust-lang.org/cargo/index.html" class="button button-secondary">{{fluent "learn-install-cargo-button"}}</a>
-    <hr />
+    <hr class="get-started-hr" />
 
     <h3>{{fluent "learn-install-other"}}</h3>
     <p>{{fluent "learn-install-editors"}}</p>
@@ -137,6 +137,5 @@ fn main() {
            src="/static/images/ferris.gif" />
   </div>
 </section>
-{{> components/tools/install-script }}
 {{/inline}}
 {{~> (lookup this "parent")~}}

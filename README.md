@@ -5,6 +5,11 @@
 
 * [**View Staging (master)**](http://www-staging.rust-lang.org)
 
+> [!NOTE]
+> There are currently no reviewers for the translations available.
+> If you have a suggestion to improve the translations, you may still open an issue for future reference.
+> However, it likely won't be acted upon for the time being.
+
 ## Development
 
 ### Running the app locally

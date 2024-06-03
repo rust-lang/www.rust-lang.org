@@ -83,7 +83,7 @@ learn-generating-steps =
     { $tree }
     <p><code>Cargo.toml</code> to plik manifestowy projektu Rust. Jest to miejsce, w którym trzymane są metadane dotyczące naszego projektu oraz jego zależności w postaci rozmaitych bibliotek kodu.</p>
     <p><code>src/main.rs</code> to plik, w którym będziemy pisać nasz program.</p>
-    <hr/>
+    <hr class="get-started-hr" />
     <p><code>cargo new</code> tworzy dla nas domyślny projekt "Hello, world!". Możemy uruchomić tak powstałą aplikację, wchodząc w katalog projektu i uruchamiając następujące polecenie:</p>
     <p><code>cargo run</code></p>
     <p>Na ekranie powinniśmy zobaczyć:</p>

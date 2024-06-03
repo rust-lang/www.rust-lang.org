@@ -22,7 +22,6 @@ community-events-header = Eventi
 community-meetup-header = Cerca una conferenza o un meetup locale
 community-meetup = Ci sono oltre 90 Meetup e numerose conferenze sparse in 35 paesi di tutto il mondo. I "Rustacean" si incontrano periodicamente negli Rust User Group. I Rust User Group sono un modo perfetto per presentarsi alla community ed ancora meglio se si vuole imparare o anche solo socializzare con persone che condividono i propri interessi. Gli incontri sono solitamente eventi informali e aperti a tutti.
 community-calendar = Vai al Calendario
-community-conference-lineup = Guarda dove si terranno le conferenze nel 2020
 community-event-run-header = Organizza il tuo evento
 community-event-run =
     <p>
@@ -32,16 +31,7 @@ community-event-run =
     <p>
     Registrando il tuo evento ci aiuterai a tenere traccia delle iniziative dell'intera community, permettendoci di metterti in contatto con speaker o altri membri nella tua zona.
     </p>
-community-events-repo = Guarda il repository degli eventi del team
-community-event-register = Registra il tuo evento
 community-rustfest-alt = Partecipanti al RustFest
-community-rustbridge-header = Rustbridge
-community-rustbridge = Il RustBridge è un workshop che ha come scopo quello di avvicinare a Rust persone con esperienza in altri linguaggi ma appartenenti a gruppi sociali sottorappresentati e di avvicinarle alla community.
-community-rustbridge-button = Vai al repo Rustbridge
-community-rustbridge-rustconf-alt = RustBridge al RustConf
-community-rustbridge-paris-alt = Parigi RustBridge
-community-rustbridge-berlin-alt = Berlino RustBridge
-community-rustbridge-rbr-alt = RustBridge al Rust Belt Rust
 community-irr-header = Increasing Rust's Reach
 community-irr = "Increasing Rust's Reach" è un programma volto a far incontrare componenti del team Rust impegnati in varie parti del progetto, con membri sottorappresentati nella community di Rust e aziende del settore, per una partnership di tre (3) mesi, da metà maggio a metà agosto. L'accordo di partnership è rappresentato da circa 3-5 ore settimanali allocate su un progetto Rust.
 community-irr-button = Visita il sito

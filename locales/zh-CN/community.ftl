@@ -22,7 +22,6 @@ community-events-header = 活动
 community-meetup-header = 参与线下聚会或会议
 community-meetup = 我们有超过 90 个聚会和几个世界级的会议，遍布 35 个国家。Rust 爱好者会在 Rust 用户论坛定期举办聚会。它们是您进入 Rust 社区的最佳入口，也是一个和相同爱好者进行学习和交流的绝佳途径。聚会对每个人来说都会带来丰富和开放的信息。
 community-calendar = 查看日程
-community-conference-lineup = 查看 2020 会议阵容
 community-event-run-header = 举办您的活动
 community-event-run =
     <p>
@@ -33,16 +32,7 @@ community-event-run =
        注册您的活动有助于我们持续跟踪社区的影响力，
        并能让我们为您与当地的演讲者和其他成员建立联系。
      </p>
-community-events-repo = 访问活动团队的 GitHub
-community-event-register = 注册活动
 community-rustfest-alt = Rustfest 参会者
-community-rustbridge-header = Rustbridge
-community-rustbridge = RustBridge 是一个专注于让具有不同编程语言背景的人学习 Rust 并加入社区的研讨会。
-community-rustbridge-button = 访问 Rustbridge 的 GitHub
-community-rustbridge-rustconf-alt = RustBridge 在 RustConf 大会
-community-rustbridge-paris-alt = RustBridge 巴黎
-community-rustbridge-berlin-alt = RustBridge 柏林
-community-rustbridge-rbr-alt = RustBridge 在 Rust Belt Rust 大会
 community-irr-header = Rust 星火计划
 community-irr = 「Rust 星火计划」是一项合作计划。在该计划中，来自 Rust 不同项目的团队成员将会联合 Rust 社区中通常不太活跃的个人和技术企业，从 5 月中旬持续到 8 月中旬，进行为期三个月的合作。每个参与者都必须承诺在合作项目上每周投入 3-5 小时。
 community-irr-button = 访问网站

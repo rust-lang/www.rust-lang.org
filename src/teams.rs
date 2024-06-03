@@ -1,4 +1,6 @@
-use handlebars::{Context, Handlebars, Helper, HelperResult, Output, RenderContext, RenderError};
+use handlebars::{
+    Context, Handlebars, Helper, HelperResult, Output, RenderContext, RenderErrorReason,
+};
 use percent_encoding::{utf8_percent_encode, AsciiSet, NON_ALPHANUMERIC};
 use rust_team_data::v1::{Team, TeamKind, Teams, BASE_URL};
 use std::cmp::Reverse;
@@ -212,16 +214,21 @@ pub fn encode_zulip_stream(
     let zulip_stream = if let Some(p) = h.param(0) {
         p.value()
     } else {
-        return Err(RenderError::new(
+        return Err(RenderErrorReason::ParamNotFoundForIndex(
             "{{encode-zulip-stream takes 1 parameter}}",
-        ));
+            0,
+        )
+        .into());
     };
     let zulip_stream = if let Some(s) = zulip_stream.as_str() {
         s
     } else {
-        return Err(RenderError::new(
-            "{{encode-zulip-stream takes a string parameter}}",
-        ));
+        return Err(RenderErrorReason::ParamTypeMismatchForName(
+            "encode-zulip-stream",
+            "0".into(),
+            "string".into(),
+        )
+        .into());
     };
 
     // https://github.com/zulip/zulip/blob/159641bab8c248f5b72a4e736462fb0b48e7fa24/static/js/hash_util.js#L20-L25
@@ -347,10 +354,12 @@ mod tests {
                 discord: None,
                 zulip_stream: None,
                 weight: 0,
+                matrix_room: None,
             }),
             roles: Vec::new(),
             github: None,
             discord: vec![],
+            top_level: None,
         }
     }
 
