@@ -50,10 +50,6 @@ static STATIC_FILES_REDIRECTS: &[(&str, &str)] = &[
         "/static/pdfs/Rust-npm-Whitepaper.pdf",
     ),
     (
-        "pdfs/Rust-Chucklefish-Whitepaper.pdf",
-        "/static/pdfs/Rust-Chucklefish-Whitepaper.pdf",
-    ),
-    (
         "pdfs/Rust-Tilde-Whitepaper.pdf",
         "/static/pdfs/Rust-Tilde-Whitepaper.pdf",
     ),
