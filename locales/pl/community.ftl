@@ -30,7 +30,6 @@ community-events-header = Wydarzenia
 community-meetup-header = Znajdź lokalne spotkanie lub konferencję
 community-meetup = Na tą chwilę na całym świecie organizowanych jest ponad 90 spotkań oraz kilka większych konferencji, mających miejsce w ponad 35 różnych krajach. Rustianie spotykają się ze sobą regularnie w ramach Grup Użytkowników Rusta. Grupy te są znakomitym sposobem na wdrożenie się w społeczność oraz świetną okazją do nauki oraz spędzania czasu z ludźmi o podobnych zainteresowaniach. Spotkania są zwykle nieformalne i otwarte dla wszystkich.
 community-calendar = Zobacz kalendarz
-community-conference-lineup = Zobacz Listę Konferencji na rok 2020
 community-event-run-header = Zorganizuj własne wydarzenie
 community-event-run =
     <p>
@@ -43,16 +42,7 @@ community-event-run =
       na rzecz rozwoju społeczności, oraz pozwoli nam połączyć Cię z innymi
       Rustianami w Twojej okolicy.
     </p>
-community-events-repo = Sprawdź repozytorium Zespołu ds. Wydarzeń
-community-event-register = Zajerestruj swoje wydarzenie
 community-rustfest-alt = Uczestnicy Rustfest
-community-rustbridge-header = Rustbridge
-community-rustbridge = RustBridge to warsztaty mające na celu pomoc osobom z niedostatecznie reprezentowanych grup, nauczenie ich Rusta oraz ułatwienie im dołączenia do społeczności.
-community-rustbridge-button = Sprawdź repozytorium Rustbridge
-community-rustbridge-rustconf-alt = RustBridge na RustConf
-community-rustbridge-paris-alt = RustBridge Paryż
-community-rustbridge-berlin-alt = RustBridge Berlin
-community-rustbridge-rbr-alt = RustBridge na Rust Belt Rust
 community-irr-header = Zwiększanie Zasięgu Rusta
 community-irr = Zwiększanie Zasięgu Rusta to program, który paruje członków rozmaitych zespołów projektu Rust z osobami, które są niedostatecznie reprezentowane w ramach społeczności Rusta i szerzej w ramach przemysłu informatycznego. W ramach programu zawiązywana jest tymczasowa współpraca między osobami na czas trzech (3) miesięcy, od maja do sierpnia. Oczekiwany czas poświęcony na współpracę to od 3 do 5 godzin tygodniowo spędzone na pracy nad projektami w Ruście.
 community-irr-button = Odwiedź Witrynę
