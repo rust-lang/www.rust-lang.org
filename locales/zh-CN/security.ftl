@@ -19,7 +19,7 @@ security-reporting-description--2022-01 =
           </li>
           <li>在 <a href="{ -internals-rust-lang-org-href }">内部论坛</a> 上发帖</li>
         </ul>
-        <p>请注意，论坛是公共区域。在这些场所升级时，请不要讨论您的问题。只需说您正试图联系安全团队的人员即可。</p>
+        <p>请注意，论坛是公共区域。在这些场所升级讨论时，请不要讨论您的具体问题。只需说您正试图联系安全团队的某个人即可。</p>
 
 security-disclosure-heading = 信息披露政策
 security-disclosure-description =
