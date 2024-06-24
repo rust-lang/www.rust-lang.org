@@ -984,9 +984,9 @@ dependencies = [
 
 [[package]]
 name = "lazy_static"
-version = "1.4.0"
+version = "1.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
+checksum = "bbd2bcb4c963f2ddae06a2efc7e9f3591312473c50c6685e1f298068316e66fe"
 
 [[package]]
 name = "libc"
@@ -1701,7 +1701,7 @@ dependencies = [
 [[package]]
 name = "rust_team_data"
 version = "1.0.0"
-source = "git+https://github.com/rust-lang/team#44a233a11b6470ea3d5357e57461f59f949e3e61"
+source = "git+https://github.com/rust-lang/team#2b32334cb8a211c3111f6e3c3509d5e677522fc2"
 dependencies = [
  "indexmap",
  "serde",
