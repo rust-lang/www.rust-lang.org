@@ -660,11 +660,6 @@
   logo: kodebox.png
   how: "We created CodeChain, a programmable open source blockchain technology optimal for developing and customizing multi-asset management systems."
 -
-  name: TenX
-  url: https://www.tenx.tech
-  logo: tenx.png
-  how: "Building a secure and scalable distributed payments system in Rust."
--
   name: Star Lab
   url: https://starlab.io/
   logo: starlab.svg
