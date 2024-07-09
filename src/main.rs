@@ -1,6 +1,5 @@
 #[macro_use]
 extern crate lazy_static;
-extern crate rand;
 extern crate reqwest;
 extern crate serde_json;
 #[macro_use]
@@ -23,14 +22,12 @@ mod caching;
 mod category;
 mod headers;
 mod i18n;
-mod production;
 mod redirect;
 mod rust_version;
 mod teams;
 
 use cache::Cache;
 use cache::Cached;
-use production::User;
 use rocket::tokio::sync::RwLock;
 use rust_version::RustReleasePost;
 use rust_version::RustVersion;
@@ -43,8 +40,6 @@ use std::fs;
 use std::hash::Hasher;
 use std::path::{Path, PathBuf};
 use std::sync::Arc;
-
-use rand::seq::SliceRandom;
 
 use rocket::{
     fs::NamedFile,
@@ -235,16 +230,6 @@ async fn team_locale(
     render_team(section, team, locale.0, teams_cache).await
 }
 
-#[get("/production/users")]
-fn get_production() -> Template {
-    render_production(ENGLISH.into())
-}
-
-#[get("/<locale>/production/users", rank = 10)]
-fn production_locale(locale: SupportedLocale) -> Template {
-    render_production(locale.0)
-}
-
 #[get("/<category>/<subject>", rank = 4)]
 fn subject(category: Category, subject: &str) -> Result<Template, Status> {
     render_subject(category, subject, ENGLISH.into())
@@ -257,13 +242,6 @@ fn subject_locale(
     locale: SupportedLocale,
 ) -> Result<Template, Status> {
     render_subject(category, subject, locale.0)
-}
-
-fn load_users_data() -> Vec<Vec<User>> {
-    let mut rng = rand::thread_rng();
-    let mut users = production::get_info().expect("couldn't get production users data");
-    users.shuffle(&mut rng);
-    users.chunks(3).map(|s| s.to_owned()).collect()
 }
 
 #[get("/en-US", rank = 1)]
@@ -394,19 +372,6 @@ fn render_category(category: Category, lang: String) -> Template {
     Template::render(page, context)
 }
 
-fn render_production(lang: String) -> Template {
-    let page = "production/users";
-    let context = Context::new(
-        page,
-        "production-users-page-title",
-        false,
-        load_users_data(),
-        lang,
-    );
-
-    Template::render(page, context)
-}
-
 async fn render_governance(
     lang: String,
     teams_cache: &Cache<RustTeams>,
@@ -500,7 +465,6 @@ async fn rocket() -> _ {
                 category_en,
                 governance,
                 team,
-                get_production,
                 subject,
                 files,
                 robots_txt,
@@ -509,7 +473,6 @@ async fn rocket() -> _ {
                 category_locale,
                 governance_locale,
                 team_locale,
-                production_locale,
                 subject_locale,
                 redirect_bare_en_us,
             ],
