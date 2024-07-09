@@ -14,8 +14,6 @@ production-yelp = Yelp ha sviluppato il proprio framework A/B testing real time 
 production-yelp-alt = logo yelp
 production-share = La tua azienda usa Rust? Condividi la tua esperienza con noi!
 production-share-button = Mettiti in contatto con il Leadership Council
-production-users = Vuoi saperne di più da chi usa Rust in produzione?
-production-users-button = Guarda la pagina degli utenti
 production-domain = Scopri come le aziende usano questi strumenti in specifici ambiti di sviluppo!
 production-support = Supporta Rust
 production-sponsor = Sei interessato a sponsorizzare dello sviluppo su Rust? O una conferenza su Rust? Saremmo felicissimi di entrare in contatto!
@@ -23,7 +21,3 @@ production-contact-core = Manda un messaggio al Leadership Council
 production-license-header = Licenza
 production-license = Rust è rilasciato con doppia licenza, Apache License Version 2.0 e MIT license, che lo rendono perfetto per qualsiasi tipo di progetto.
 production-license-link = Policy: Licenza
-
-## templates/production/users.hbs
-
-production-users-page-title = Utenti in produzione

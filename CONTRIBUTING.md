@@ -52,8 +52,6 @@ So stay vigilant and update it if you notice something missing.
 <!-- team -->
 - https://www-staging.rust-lang.org/governance/teams/leadership-council
 - https://www-staging.rust-lang.org/governance/wgs/wg-async
-<!-- get_production -->
-- https://www-staging.rust-lang.org/production/users
 <!-- subject -->
 - https://www-staging.rust-lang.org/learn/get-started
 - https://www-staging.rust-lang.org/policies/code-of-conduct
@@ -84,8 +82,6 @@ So stay vigilant and update it if you notice something missing.
 <!-- team_locale -->
 - https://www-staging.rust-lang.org/es/governance/teams/leadership-council
 - https://www-staging.rust-lang.org/es/governance/wgs/wg-async
-<!-- production_locale -->
-- https://www-staging.rust-lang.org/es/production/users
 <!-- subject_locale -->
 - https://www-staging.rust-lang.org/es/learn/get-started
 - https://www-staging.rust-lang.org/es/policies/code-of-conduct
