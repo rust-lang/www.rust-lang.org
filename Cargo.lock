@@ -652,6 +652,20 @@ dependencies = [
 ]
 
 [[package]]
+name = "handlebars"
+version = "6.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5226a0e122dc74917f3a701484482bed3ee86d016c7356836abbaa033133a157"
+dependencies = [
+ "log",
+ "pest",
+ "pest_derive",
+ "serde",
+ "serde_json",
+ "thiserror",
+]
+
+[[package]]
 name = "handlebars-fluent"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -661,7 +675,7 @@ dependencies = [
  "fluent-bundle 0.11.0",
  "fluent-langneg 0.12.1",
  "fluent-syntax 0.11.1",
- "handlebars",
+ "handlebars 5.1.2",
  "lazy_static",
  "serde_json",
  "unic-langid 0.8.0",
@@ -1664,7 +1678,7 @@ version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5bbab919c9e67df3f7ac6624a32ef897df4cd61c0969f4d66f3ced0534660d7a"
 dependencies = [
- "handlebars",
+ "handlebars 5.1.2",
  "normpath",
  "notify",
  "rocket",
@@ -1701,7 +1715,7 @@ dependencies = [
 [[package]]
 name = "rust_team_data"
 version = "1.0.0"
-source = "git+https://github.com/rust-lang/team#b95a65de5ee24f2d8cfe1c61d5042c10d9b3821b"
+source = "git+https://github.com/rust-lang/team#1b3d7560a4517d989480e84e33d273a4276766fb"
 dependencies = [
  "indexmap",
  "serde",
@@ -2250,9 +2264,9 @@ dependencies = [
 
 [[package]]
 name = "toml"
-version = "0.8.14"
+version = "0.8.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6f49eb2ab21d2f26bd6db7bf383edc527a7ebaee412d17af4d40fdccd442f335"
+checksum = "ac2caab0bf757388c6c0ae23b3293fdb463fee59434529014f85e3263b995c28"
 dependencies = [
  "serde",
  "serde_spanned",
@@ -2271,9 +2285,9 @@ dependencies = [
 
 [[package]]
 name = "toml_edit"
-version = "0.22.14"
+version = "0.22.16"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f21c7aaf97f1bd9ca9d4f9e73b0a6c74bd5afef56f2bc931943a6e1c37e04e38"
+checksum = "278f3d518e152219c994ce877758516bca5e118eaed6996192a774fb9fbf0788"
 dependencies = [
  "indexmap",
  "serde",
@@ -2875,7 +2889,7 @@ dependencies = [
  "fluent-bundle 0.15.3",
  "fluent-locale",
  "fluent-syntax 0.11.1",
- "handlebars",
+ "handlebars 6.0.0",
  "handlebars-fluent",
  "lazy_static",
  "percent-encoding",
