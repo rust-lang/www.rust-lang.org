@@ -417,15 +417,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "fluent-locale"
-version = "0.10.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "50f626739113990f6ee64eff9b9e92621688dfd8a5d1b6eab94741bb5eddbc96"
-dependencies = [
- "unic-langid 0.6.1",
-]
-
-[[package]]
 name = "fluent-syntax"
 version = "0.9.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1967,12 +1958,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "siphasher"
-version = "1.0.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "56199f7ddabf13fe5074ce809e7d3f42b42ae711800501b5b16ea82ad029c39d"
-
-[[package]]
 name = "slab"
 version = "0.4.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2437,15 +2422,6 @@ dependencies = [
 
 [[package]]
 name = "unic-langid"
-version = "0.6.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7f209d65ab52de48d87c1845576d2d44f2b36553b8daa4c7f7a7383781f5750c"
-dependencies = [
- "unic-langid-impl 0.6.2",
-]
-
-[[package]]
-name = "unic-langid"
 version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "24d81136159f779c35b10655f45210c71cd5ca5a45aadfe9840a61c7071735ed"
@@ -2461,15 +2437,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "23dd9d1e72a73b25e07123a80776aae3e7b0ec461ef94f9151eed6ec88005a44"
 dependencies = [
  "unic-langid-impl 0.9.5",
-]
-
-[[package]]
-name = "unic-langid-impl"
-version = "0.6.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f7b22a3f781a9cb3588f751337fa7989472923973d546020d91da8e5d1cd5544"
-dependencies = [
- "tinystr 0.3.4",
 ]
 
 [[package]]
@@ -2879,13 +2846,8 @@ dependencies = [
 name = "www-rust-lang-org"
 version = "0.1.0"
 dependencies = [
- "fluent",
- "fluent-bundle 0.15.3",
- "fluent-locale",
- "fluent-syntax 0.11.1",
  "handlebars-fluent",
  "percent-encoding",
- "regex",
  "reqwest",
  "rocket",
  "rocket_dyn_templates",
@@ -2893,7 +2855,6 @@ dependencies = [
  "sass-rs",
  "serde",
  "serde_json",
- "siphasher",
  "toml",
 ]
 

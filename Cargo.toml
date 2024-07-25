@@ -5,12 +5,7 @@ authors = ["The Rust Project Developers"]
 edition = "2018"
 
 [dependencies]
-fluent = "0.16"
-fluent-bundle = "0.15.0"
-fluent-syntax = "0.11.0"
-fluent-locale = "0.10.1"
 handlebars-fluent = "0.4.0"
-regex = "1"
 rocket = "0.5.1"
 rocket_dyn_templates = { version = "0.2.0", features = ["handlebars"] }
 serde = { version = "1.0", features = ["derive"] }
@@ -19,5 +14,4 @@ reqwest = { version = "0.12.5", features = ["json"] }
 toml = "0.8"
 serde_json = "1.0"
 rust_team_data = { git = "https://github.com/rust-lang/team" }
-siphasher = "1.0.1"
 percent-encoding = "2.1.0"
