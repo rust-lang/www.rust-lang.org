@@ -3,7 +3,7 @@ use rocket_dyn_templates::handlebars::{
 };
 
 use rocket::request::FromParam;
-use std::collections::HashSet;
+use std::{collections::HashSet, sync::LazyLock};
 
 use handlebars_fluent::{
     fluent_bundle::{concurrent::FluentBundle, FluentResource, FluentValue},
@@ -85,10 +85,9 @@ pub const EXPLICIT_LOCALE_INFO: &[LocaleInfo] = &[
     },
 ];
 
-lazy_static! {
-    pub static ref SUPPORTED_LOCALES: HashSet<&'static str> =
-        EXPLICIT_LOCALE_INFO.iter().map(|x| x.lang).collect();
-}
+pub static SUPPORTED_LOCALES: LazyLock<HashSet<&'static str>> =
+    LazyLock::new(|| EXPLICIT_LOCALE_INFO.iter().map(|x| x.lang).collect());
+
 pub struct TeamHelper {
     i18n: SimpleLoader,
 }

@@ -1,5 +1,3 @@
-#[macro_use]
-extern crate lazy_static;
 extern crate reqwest;
 extern crate serde_json;
 #[macro_use]
@@ -38,6 +36,7 @@ use std::fs;
 use std::hash::Hasher;
 use std::path::{Path, PathBuf};
 use std::sync::Arc;
+use std::sync::LazyLock;
 
 use rocket::{
     fs::NamedFile,
@@ -57,25 +56,24 @@ use i18n::{create_loader, LocaleInfo, SupportedLocale, TeamHelper, EXPLICIT_LOCA
 
 const ZULIP_DOMAIN: &str = "https://rust-lang.zulipchat.com";
 
-lazy_static! {
-    static ref ASSETS: AssetFiles = {
-        let app_css_file = compile_sass("app");
-        let fonts_css_file = compile_sass("fonts");
-        let vendor_css_file = concat_vendor_css(vec!["tachyons"]);
-        let app_js_file = concat_app_js(vec!["tools-install"]);
+static ASSETS: LazyLock<AssetFiles> = LazyLock::new(|| {
+    let app_css_file = compile_sass("app");
+    let fonts_css_file = compile_sass("fonts");
+    let vendor_css_file = concat_vendor_css(vec!["tachyons"]);
+    let app_js_file = concat_app_js(vec!["tools-install"]);
 
-        AssetFiles {
-            css: CSSFiles {
-                app: app_css_file,
-                fonts: fonts_css_file,
-                vendor: vendor_css_file,
-            },
-            js: JSFiles { app: app_js_file },
-        }
-    };
-    static ref PONTOON_ENABLED: bool = env::var("RUST_WWW_PONTOON").is_ok();
-    static ref ROBOTS_TXT_DISALLOW_ALL: bool = env::var("ROBOTS_TXT_DISALLOW_ALL").is_ok();
-}
+    AssetFiles {
+        css: CSSFiles {
+            app: app_css_file,
+            fonts: fonts_css_file,
+            vendor: vendor_css_file,
+        },
+        js: JSFiles { app: app_js_file },
+    }
+});
+static PONTOON_ENABLED: LazyLock<bool> = LazyLock::new(|| env::var("RUST_WWW_PONTOON").is_ok());
+static ROBOTS_TXT_DISALLOW_ALL: LazyLock<bool> =
+    LazyLock::new(|| env::var("ROBOTS_TXT_DISALLOW_ALL").is_ok());
 
 #[derive(Serialize)]
 struct Context<T: ::serde::Serialize> {

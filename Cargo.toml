@@ -5,7 +5,6 @@ authors = ["The Rust Project Developers"]
 edition = "2018"
 
 [dependencies]
-lazy_static = "1.5.0"
 fluent = "0.16"
 fluent-bundle = "0.15.0"
 fluent-syntax = "0.11.0"
