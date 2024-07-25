@@ -2883,7 +2883,6 @@ dependencies = [
  "fluent-bundle 0.15.3",
  "fluent-locale",
  "fluent-syntax 0.11.1",
- "handlebars",
  "handlebars-fluent",
  "lazy_static",
  "percent-encoding",

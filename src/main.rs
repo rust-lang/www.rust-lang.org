@@ -15,8 +15,6 @@ extern crate serde;
 extern crate fluent_bundle;
 extern crate regex;
 
-extern crate handlebars;
-
 mod cache;
 mod caching;
 mod category;
