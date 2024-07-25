@@ -1,18 +1,3 @@
-extern crate reqwest;
-extern crate serde_json;
-#[macro_use]
-extern crate rocket;
-extern crate rust_team_data;
-extern crate sass_rs;
-extern crate siphasher;
-extern crate toml;
-
-#[macro_use]
-extern crate serde;
-
-extern crate fluent_bundle;
-extern crate regex;
-
 mod cache;
 mod caching;
 mod category;
@@ -24,9 +9,12 @@ mod teams;
 
 use cache::Cache;
 use cache::Cached;
+use rocket::catch;
+use rocket::get;
 use rocket::tokio::sync::RwLock;
 use rust_version::RustReleasePost;
 use rust_version::RustVersion;
+use serde::Serialize;
 use teams::encode_zulip_stream;
 use teams::RustTeams;
 
@@ -76,7 +64,7 @@ static ROBOTS_TXT_DISALLOW_ALL: LazyLock<bool> =
     LazyLock::new(|| env::var("ROBOTS_TXT_DISALLOW_ALL").is_ok());
 
 #[derive(Serialize)]
-struct Context<T: ::serde::Serialize> {
+struct Context<T: Serialize> {
     page: String,
     title: String,
     parent: &'static str,
@@ -90,7 +78,7 @@ struct Context<T: ::serde::Serialize> {
     is_translation: bool,
 }
 
-impl<T: ::serde::Serialize> Context<T> {
+impl<T: Serialize> Context<T> {
     fn new(page: &str, title_id: &str, is_landing: bool, data: T, lang: String) -> Self {
         let helper = create_loader();
         let title = if title_id.is_empty() {
@@ -430,7 +418,7 @@ fn render_subject(category: Category, subject: &str, lang: String) -> Result<Tem
     Ok(Template::render(page, context))
 }
 
-#[launch]
+#[rocket::launch]
 async fn rocket() -> _ {
     let templating = Template::custom(|engine| {
         engine
@@ -456,7 +444,7 @@ async fn rocket() -> _ {
         .manage(Arc::new(RwLock::new(teams)))
         .mount(
             "/",
-            routes![
+            rocket::routes![
                 index,
                 category_en,
                 governance,
@@ -475,6 +463,6 @@ async fn rocket() -> _ {
         )
         .register(
             "/",
-            catchers![not_found, unprocessable_content, catch_error],
+            rocket::catchers![not_found, unprocessable_content, catch_error],
         )
 }

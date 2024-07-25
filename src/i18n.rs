@@ -3,6 +3,7 @@ use rocket_dyn_templates::handlebars::{
 };
 
 use rocket::request::FromParam;
+use serde::Serialize;
 use std::{collections::HashSet, sync::LazyLock};
 
 use handlebars_fluent::{

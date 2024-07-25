@@ -3,6 +3,7 @@ use rocket_dyn_templates::handlebars::{
     Context, Handlebars, Helper, HelperResult, Output, RenderContext, RenderErrorReason,
 };
 use rust_team_data::v1::{Team, TeamKind, Teams, BASE_URL};
+use serde::Serialize;
 use std::cmp::Reverse;
 use std::collections::HashMap;
 use std::error::Error;
