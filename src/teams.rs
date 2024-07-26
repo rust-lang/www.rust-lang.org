@@ -1,8 +1,9 @@
-use handlebars::{
+use percent_encoding::{utf8_percent_encode, AsciiSet, NON_ALPHANUMERIC};
+use rocket_dyn_templates::handlebars::{
     Context, Handlebars, Helper, HelperResult, Output, RenderContext, RenderErrorReason,
 };
-use percent_encoding::{utf8_percent_encode, AsciiSet, NON_ALPHANUMERIC};
 use rust_team_data::v1::{Team, TeamKind, Teams, BASE_URL};
+use serde::Serialize;
 use std::cmp::Reverse;
 use std::collections::HashMap;
 use std::error::Error;

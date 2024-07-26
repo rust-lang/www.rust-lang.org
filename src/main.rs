@@ -1,22 +1,3 @@
-#[macro_use]
-extern crate lazy_static;
-extern crate reqwest;
-extern crate serde_json;
-#[macro_use]
-extern crate rocket;
-extern crate rust_team_data;
-extern crate sass_rs;
-extern crate siphasher;
-extern crate toml;
-
-#[macro_use]
-extern crate serde;
-
-extern crate fluent_bundle;
-extern crate regex;
-
-extern crate handlebars;
-
 mod cache;
 mod caching;
 mod category;
@@ -28,9 +9,12 @@ mod teams;
 
 use cache::Cache;
 use cache::Cached;
+use rocket::catch;
+use rocket::get;
 use rocket::tokio::sync::RwLock;
 use rust_version::RustReleasePost;
 use rust_version::RustVersion;
+use serde::Serialize;
 use teams::encode_zulip_stream;
 use teams::RustTeams;
 
@@ -40,6 +24,7 @@ use std::fs;
 use std::hash::Hasher;
 use std::path::{Path, PathBuf};
 use std::sync::Arc;
+use std::sync::LazyLock;
 
 use rocket::{
     fs::NamedFile,
@@ -59,28 +44,27 @@ use i18n::{create_loader, LocaleInfo, SupportedLocale, TeamHelper, EXPLICIT_LOCA
 
 const ZULIP_DOMAIN: &str = "https://rust-lang.zulipchat.com";
 
-lazy_static! {
-    static ref ASSETS: AssetFiles = {
-        let app_css_file = compile_sass("app");
-        let fonts_css_file = compile_sass("fonts");
-        let vendor_css_file = concat_vendor_css(vec!["tachyons"]);
-        let app_js_file = concat_app_js(vec!["tools-install"]);
+static ASSETS: LazyLock<AssetFiles> = LazyLock::new(|| {
+    let app_css_file = compile_sass("app");
+    let fonts_css_file = compile_sass("fonts");
+    let vendor_css_file = concat_vendor_css(vec!["tachyons"]);
+    let app_js_file = concat_app_js(vec!["tools-install"]);
 
-        AssetFiles {
-            css: CSSFiles {
-                app: app_css_file,
-                fonts: fonts_css_file,
-                vendor: vendor_css_file,
-            },
-            js: JSFiles { app: app_js_file },
-        }
-    };
-    static ref PONTOON_ENABLED: bool = env::var("RUST_WWW_PONTOON").is_ok();
-    static ref ROBOTS_TXT_DISALLOW_ALL: bool = env::var("ROBOTS_TXT_DISALLOW_ALL").is_ok();
-}
+    AssetFiles {
+        css: CSSFiles {
+            app: app_css_file,
+            fonts: fonts_css_file,
+            vendor: vendor_css_file,
+        },
+        js: JSFiles { app: app_js_file },
+    }
+});
+static PONTOON_ENABLED: LazyLock<bool> = LazyLock::new(|| env::var("RUST_WWW_PONTOON").is_ok());
+static ROBOTS_TXT_DISALLOW_ALL: LazyLock<bool> =
+    LazyLock::new(|| env::var("ROBOTS_TXT_DISALLOW_ALL").is_ok());
 
 #[derive(Serialize)]
-struct Context<T: ::serde::Serialize> {
+struct Context<T: Serialize> {
     page: String,
     title: String,
     parent: &'static str,
@@ -94,7 +78,7 @@ struct Context<T: ::serde::Serialize> {
     is_translation: bool,
 }
 
-impl<T: ::serde::Serialize> Context<T> {
+impl<T: Serialize> Context<T> {
     fn new(page: &str, title_id: &str, is_landing: bool, data: T, lang: String) -> Self {
         let helper = create_loader();
         let title = if title_id.is_empty() {
@@ -434,7 +418,7 @@ fn render_subject(category: Category, subject: &str, lang: String) -> Result<Tem
     Ok(Template::render(page, context))
 }
 
-#[launch]
+#[rocket::launch]
 async fn rocket() -> _ {
     let templating = Template::custom(|engine| {
         engine
@@ -460,7 +444,7 @@ async fn rocket() -> _ {
         .manage(Arc::new(RwLock::new(teams)))
         .mount(
             "/",
-            routes![
+            rocket::routes![
                 index,
                 category_en,
                 governance,
@@ -479,6 +463,6 @@ async fn rocket() -> _ {
         )
         .register(
             "/",
-            catchers![not_found, unprocessable_content, catch_error],
+            rocket::catchers![not_found, unprocessable_content, catch_error],
         )
 }
