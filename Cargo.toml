@@ -15,3 +15,6 @@ toml = "0.8"
 serde_json = "1.0"
 rust_team_data = { git = "https://github.com/rust-lang/team" }
 percent-encoding = "2.1.0"
+
+[dev-dependencies]
+time = { version = "0.3.36", features = ["parsing"] }

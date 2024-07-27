@@ -233,6 +233,11 @@ fn redirect_bare_en_us() -> Redirect {
     Redirect::permanent("/")
 }
 
+#[get("/.well-known/security.txt")]
+fn well_known_security() -> &'static str {
+    include_str!("../static/text/well_known_security.txt")
+}
+
 #[catch(404)]
 #[allow(clippy::result_large_err)]
 fn not_found(req: &Request) -> Result<Template, Redirect> {
@@ -459,6 +464,7 @@ async fn rocket() -> _ {
                 team_locale,
                 subject_locale,
                 redirect_bare_en_us,
+                well_known_security,
             ],
         )
         .register(
