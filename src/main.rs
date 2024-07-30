@@ -1,39 +1,20 @@
-#[macro_use]
-extern crate lazy_static;
-extern crate rand;
-extern crate reqwest;
-extern crate serde_json;
-#[macro_use]
-extern crate rocket;
-extern crate rust_team_data;
-extern crate sass_rs;
-extern crate siphasher;
-extern crate toml;
-
-#[macro_use]
-extern crate serde;
-
-extern crate fluent_bundle;
-extern crate regex;
-
-extern crate handlebars;
-
 mod cache;
 mod caching;
 mod category;
 mod headers;
 mod i18n;
-mod production;
 mod redirect;
 mod rust_version;
 mod teams;
 
 use cache::Cache;
 use cache::Cached;
-use production::User;
+use rocket::catch;
+use rocket::get;
 use rocket::tokio::sync::RwLock;
 use rust_version::RustReleasePost;
 use rust_version::RustVersion;
+use serde::Serialize;
 use teams::encode_zulip_stream;
 use teams::RustTeams;
 
@@ -43,8 +24,7 @@ use std::fs;
 use std::hash::Hasher;
 use std::path::{Path, PathBuf};
 use std::sync::Arc;
-
-use rand::seq::SliceRandom;
+use std::sync::LazyLock;
 
 use rocket::{
     fs::NamedFile,
@@ -64,28 +44,27 @@ use i18n::{create_loader, LocaleInfo, SupportedLocale, TeamHelper, EXPLICIT_LOCA
 
 const ZULIP_DOMAIN: &str = "https://rust-lang.zulipchat.com";
 
-lazy_static! {
-    static ref ASSETS: AssetFiles = {
-        let app_css_file = compile_sass("app");
-        let fonts_css_file = compile_sass("fonts");
-        let vendor_css_file = concat_vendor_css(vec!["tachyons"]);
-        let app_js_file = concat_app_js(vec!["tools-install"]);
+static ASSETS: LazyLock<AssetFiles> = LazyLock::new(|| {
+    let app_css_file = compile_sass("app");
+    let fonts_css_file = compile_sass("fonts");
+    let vendor_css_file = concat_vendor_css(vec!["tachyons"]);
+    let app_js_file = concat_app_js(vec!["tools-install"]);
 
-        AssetFiles {
-            css: CSSFiles {
-                app: app_css_file,
-                fonts: fonts_css_file,
-                vendor: vendor_css_file,
-            },
-            js: JSFiles { app: app_js_file },
-        }
-    };
-    static ref PONTOON_ENABLED: bool = env::var("RUST_WWW_PONTOON").is_ok();
-    static ref ROBOTS_TXT_DISALLOW_ALL: bool = env::var("ROBOTS_TXT_DISALLOW_ALL").is_ok();
-}
+    AssetFiles {
+        css: CSSFiles {
+            app: app_css_file,
+            fonts: fonts_css_file,
+            vendor: vendor_css_file,
+        },
+        js: JSFiles { app: app_js_file },
+    }
+});
+static PONTOON_ENABLED: LazyLock<bool> = LazyLock::new(|| env::var("RUST_WWW_PONTOON").is_ok());
+static ROBOTS_TXT_DISALLOW_ALL: LazyLock<bool> =
+    LazyLock::new(|| env::var("ROBOTS_TXT_DISALLOW_ALL").is_ok());
 
 #[derive(Serialize)]
-struct Context<T: ::serde::Serialize> {
+struct Context<T: Serialize> {
     page: String,
     title: String,
     parent: &'static str,
@@ -99,7 +78,7 @@ struct Context<T: ::serde::Serialize> {
     is_translation: bool,
 }
 
-impl<T: ::serde::Serialize> Context<T> {
+impl<T: Serialize> Context<T> {
     fn new(page: &str, title_id: &str, is_landing: bool, data: T, lang: String) -> Self {
         let helper = create_loader();
         let title = if title_id.is_empty() {
@@ -235,16 +214,6 @@ async fn team_locale(
     render_team(section, team, locale.0, teams_cache).await
 }
 
-#[get("/production/users")]
-fn get_production() -> Template {
-    render_production(ENGLISH.into())
-}
-
-#[get("/<locale>/production/users", rank = 10)]
-fn production_locale(locale: SupportedLocale) -> Template {
-    render_production(locale.0)
-}
-
 #[get("/<category>/<subject>", rank = 4)]
 fn subject(category: Category, subject: &str) -> Result<Template, Status> {
     render_subject(category, subject, ENGLISH.into())
@@ -259,16 +228,14 @@ fn subject_locale(
     render_subject(category, subject, locale.0)
 }
 
-fn load_users_data() -> Vec<Vec<User>> {
-    let mut rng = rand::thread_rng();
-    let mut users = production::get_info().expect("couldn't get production users data");
-    users.shuffle(&mut rng);
-    users.chunks(3).map(|s| s.to_owned()).collect()
-}
-
 #[get("/en-US", rank = 1)]
 fn redirect_bare_en_us() -> Redirect {
     Redirect::permanent("/")
+}
+
+#[get("/.well-known/security.txt")]
+fn well_known_security() -> &'static str {
+    include_str!("../static/text/well_known_security.txt")
 }
 
 #[catch(404)]
@@ -394,19 +361,6 @@ fn render_category(category: Category, lang: String) -> Template {
     Template::render(page, context)
 }
 
-fn render_production(lang: String) -> Template {
-    let page = "production/users";
-    let context = Context::new(
-        page,
-        "production-users-page-title",
-        false,
-        load_users_data(),
-        lang,
-    );
-
-    Template::render(page, context)
-}
-
 async fn render_governance(
     lang: String,
     teams_cache: &Cache<RustTeams>,
@@ -469,7 +423,7 @@ fn render_subject(category: Category, subject: &str, lang: String) -> Result<Tem
     Ok(Template::render(page, context))
 }
 
-#[launch]
+#[rocket::launch]
 async fn rocket() -> _ {
     let templating = Template::custom(|engine| {
         engine
@@ -495,12 +449,11 @@ async fn rocket() -> _ {
         .manage(Arc::new(RwLock::new(teams)))
         .mount(
             "/",
-            routes![
+            rocket::routes![
                 index,
                 category_en,
                 governance,
                 team,
-                get_production,
                 subject,
                 files,
                 robots_txt,
@@ -509,13 +462,13 @@ async fn rocket() -> _ {
                 category_locale,
                 governance_locale,
                 team_locale,
-                production_locale,
                 subject_locale,
                 redirect_bare_en_us,
+                well_known_security,
             ],
         )
         .register(
             "/",
-            catchers![not_found, unprocessable_content, catch_error],
+            rocket::catchers![not_found, unprocessable_content, catch_error],
         )
 }

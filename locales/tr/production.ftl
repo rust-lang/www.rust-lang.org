@@ -14,8 +14,6 @@ production-yelp = Yelp, gerçek zamanlı A/B testi için Rust'ta bir çatı geli
 production-yelp-alt = yelp logosu
 production-share = Şirketiniz Rust kullanıyor mu? Tecrübenizi bizimle paylaşmayı göz önünde bulundurun!
 production-share-button = Leadership Council'a ulaşın
-production-users = Üretimde Rust'ı kullananlar hakkında daha fazla bilgi almak mı istiyorsunuz?
-production-users-button = Kullanıcılar sayfasına göz atın
 production-domain = Şirketlerin özel geliştirme alanlarında araçları nasıl kullandığına bakın!
 production-support = Rust'ı Desteklemek
 production-sponsor = Rust'taki çalışmayı desteklemek için meraklı mısınız? Bir Rust konferansı mı? Sizden haber almaktan mutluluk duyarız.
@@ -23,7 +21,3 @@ production-contact-core = Leadership Council'a Mesaj At
 production-license-header = Lisans
 production-license = Rust, her türlü projeye uygun olması için Apache Lisansı Sürüm 2.0 ve MIT lisansı ile çifte olarak lisanslanmıştır.
 production-license-link = Politikalar: Lisans
-
-## templates/production/users.hbs
-
-production-users-page-title = Üretimde Rust Kullananlar
