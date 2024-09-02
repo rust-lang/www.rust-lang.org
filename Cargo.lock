@@ -1703,7 +1703,7 @@ dependencies = [
 [[package]]
 name = "rust_team_data"
 version = "1.0.0"
-source = "git+https://github.com/rust-lang/team#430fff897a1e2ea40c2513449a51948b47e41c9d"
+source = "git+https://github.com/rust-lang/team#14811578f7eff9cfa34de908dcb9b12bcd757b9a"
 dependencies = [
  "indexmap",
  "serde",
