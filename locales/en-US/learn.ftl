@@ -108,7 +108,7 @@ learn-generating-steps = <p>Let’s write a small application with our new Rust 
     { $tree }
     <p><code>Cargo.toml</code> is the manifest file for Rust. It’s where you keep metadata for your project, as well as dependencies.</p>
     <p><code>src/main.rs</code> is where we’ll write our application code.</p>
-    <hr class="get-started-hr" />
+    <hr class="white-hr" />
     <p>The <code>cargo new</code> step generated a "Hello, world!" project for us! We can run this program by moving into the new directory that we made and running this in our terminal:</p>
     <p><code>cargo run</code></p>
     <p>You should see this in your terminal:</p>

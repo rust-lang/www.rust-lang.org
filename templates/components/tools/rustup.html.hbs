@@ -33,15 +33,22 @@
       </div>
     </div>
     <br/>
-    <a href="https://github.com/rust-lang/www.rust-lang.org/issues/new?title=Unrecognized%20platform&body=navigator.platform%3A%20_please%20fill%20out_%0Anavigator.appVersion%3A%20_please%20fill%20out_%0A%0AThe%20website%20did%20not%20recognize%20the%20platform%20I%27m%20on%2C%20so%20I%20am%20unable%20to%20install%20rustup." class="button button-secondary">{{fluent "tools-rustup-report"}}</a>
-    <hr/>
+    <!-- This href is overwritten with a better template in static/scripts/tools-install.js -->
+    <a
+      href="https://github.com/rust-lang/www.rust-lang.org/issues/new"
+      id="report-unknown-platform-link"
+      class="button button-secondary"
+    >
+      {{fluent "tools-rustup-report"}}
+    </a>
+    <hr class="white-hr" />
     <div>
       <p>
         {{fluent "tools-rustup-manual-unixy"}}
       </p>
       <code class="db w-100">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code>
     </div>
-    <hr>
+    <hr class="white-hr" />
     <div>
       <p>
         {{fluent "tools-rustup-manual-windows"}}
@@ -55,7 +62,7 @@
       </p>
       <pre><code class="db w-100">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></pre>
     </div>
-    <hr>
+    <hr class="white-hr" />
     <div>
       <p>
         {{fluent "tools-rustup-manual-default-windows"}}
