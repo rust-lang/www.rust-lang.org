@@ -34,7 +34,6 @@ install-other-methods-link = Dowiedz się więcej
 ## components/tools/rustup.hbs
 
 tools-rustup-wsl-heading = Windows Subsystem for Linux
-tools-rustup-report = Zgłoś problem
 
 ## components/tools/editors.hbs
 
