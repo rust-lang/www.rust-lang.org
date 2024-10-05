@@ -19,46 +19,10 @@
   <p>{{fluent "tools-rustup-wsl"}}</p>
   <pre><code class="db w-100">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></pre>
   </div>
-  <div id="platform-instructions-unknown" class="instructions dn">
-    <!-- unrecognized platform: ask for help -->
-    <p>
-      {{fluent "tools-rustup-unknown"}}
-    </p>
-    <div class="install-details code">
-      <div>navigator.platform:
-        <span id="nav-plat">MacIntel</span>
-      </div>
-      <div>navigator.appVersion:
-        <span id="nav-app">5.0 (Macintosh)</span>
-      </div>
-    </div>
-    <br/>
-    <!-- This href is overwritten with a better template in static/scripts/tools-install.js -->
-    <a
-      href="https://github.com/rust-lang/www.rust-lang.org/issues/new"
-      id="report-unknown-platform-link"
-      class="button button-secondary"
-    >
-      {{fluent "tools-rustup-report"}}
-    </a>
-    <hr class="white-hr" />
-    <div>
-      <p>
-        {{fluent "tools-rustup-manual-unixy"}}
-      </p>
-      <code class="db w-100">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code>
-    </div>
-    <hr class="white-hr" />
-    <div>
-      <p>
-        {{fluent "tools-rustup-manual-windows"}}
-      </p>
-    </div>
-  </div>
   <div id="platform-instructions-default" class="instructions dn">
     <div>
       <p>
-        {{tools-rustup-manual-default}}
+        {{fluent "tools-rustup-manual-default"}}
       </p>
       <pre><code class="db w-100">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></pre>
     </div>

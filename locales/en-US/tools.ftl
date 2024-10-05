@@ -159,10 +159,6 @@ tools-rustup-unixy = It looks like you’re running macOS, Linux, or another Uni
 tools-rustup-windows-2 = It looks like you’re running Windows. To start using Rust, download the installer, then run the program and follow the onscreen instructions. You may need to install the <a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">Visual Studio C++ Build tools</a> when prompted to do so. If you are not on Windows see <a href="https://forge.rust-lang.org/infra/other-installation-methods.html">"Other Installation Methods"</a>.
 tools-rustup-wsl-heading = Windows Subsystem for Linux
 tools-rustup-wsl = If you’re a Windows Subsystem for Linux user run the following in your terminal, then follow the on-screen instructions to install Rust.
-tools-rustup-unknown = Rust runs on Windows, Linux, macOS, FreeBSD and NetBSD. If you are on one of these platforms and are seeing this then please report an issue with the following values:
-tools-rustup-report = Report an Issue
-tools-rustup-manual-unixy = To install Rust, if you are running Unix, <br>run the following in your terminal, then follow the on-screen instructions.
-tools-rustup-manual-windows = If you are running Windows,<br>download and run <a href="https://win.rustup.rs">rustup‑init.exe</a> then follow the on-screen instructions.
 tools-rustup-manual-default = To install Rust, if you are running a Unix such as WSL, Linux or macOS,<br> run the following in your terminal, then follow the on-screen instructions.
 tools-rustup-manual-default-windows = If you are running Windows,<br>download and run <a href="https://win.rustup.rs">rustup‑init.exe</a> then follow the on-screen instructions.
 
