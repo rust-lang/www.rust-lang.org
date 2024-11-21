@@ -109,6 +109,10 @@ code.code-header {
   margin: 0 0 3px 0;
 }
 
+code.copyable {
+  user-select: all;
+}
+
 header h1,
 section h2 {
   z-index: 999999;
