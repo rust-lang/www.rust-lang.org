@@ -19,7 +19,7 @@ embedded-learn-more = 开启嵌入式
 
 ## components/layout.hbs
 
-meta-description = 一门帮助每个人构建可靠且高效软件的语言。
+meta-description = 让每个人都能打造可靠且高效软件的语言。
 page-title = { $pagename } - Rust 程序设计语言
 index-title = Rust 程序设计语言
 
