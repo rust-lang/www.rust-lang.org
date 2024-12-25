@@ -134,10 +134,6 @@ tools-rustup-unixy = Aparentemente você está rodando macOS, Linux, ou outro si
 tools-rustup-windows-2 = Parece que você está rodando Windows. Para começar a usar Rust, baixe o instalador, em seguida rode o programa e siga as instruções na tela. Você pode precisar instalar o <a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/"><i>Visual Studio C++ Build tools</i></a> se solicitado durante o processo de instalação. Se você não está no Windows, veja <a href="https://forge.rust-lang.org/infra/other-installation-methods.html">"Outros Métodos de Instalação"</a>.
 tools-rustup-wsl-heading = Windows Subsystem for Linux
 tools-rustup-wsl = Se você for um usuário do Windows Subsystem for Linux (WSL) execute o seguinte comando no terminal, e siga as instruções na tela para a instalação de Rust.
-tools-rustup-unknown = Rust funciona em Windows, Linux, macOS, FreeBSD e NetBSD. Se você estiver em alguma dessas plataformas e estiver vendo essa mensagem, então reporte um problema com as seguintes informações:
-tools-rustup-report = Reporte um problema
-tools-rustup-manual-unixy = Para instalar Rust, se você estiver rodando Unix, <br> execute o seguinte no seu terminal, e siga as instruções que surgirem na tela.
-tools-rustup-manual-windows = Se você estiver rodando Windows, <br>baixe e execute <a href="https://win.rustup.rs">rustup‑init.exe</a>, e então siga as instruções que surgirem na tela.
 tools-rustup-manual-default = Para instalar Rust, se você estiver rodando algum Unix como o WSL, Linux ou macOS, <br> execute o seguinte comando no seu terminal, e siga as instruções que surgirem na tela.
 tools-rustup-manual-default-windows = Se você estiver rodando Windows, <br> faça o download e execute <a href="https://win.rustup.rs">rustup‑init.exe</a>, e então siga as instruções que aparecem na tela.
 
@@ -145,9 +141,9 @@ tools-rustup-manual-default-windows = Se você estiver rodando Windows, <br> fa�
 
 tools-editor-vscode = VS Code
 tools-editor-sublime = Sublime Text
-tools-editor-atom = Atom
-tools-editor-idea = RustRover
+tools-editor-rover = RustRover
 tools-editor-eclipse = Eclipse
-tools-editor-vim = Vim
+tools-editor-helix = Helix
+tools-editor-vim = Vim/Neovim
 tools-editor-emacs = Emacs
-tools-editor-geany = Geany
+tools-editor-visual-studio = Visual Studio

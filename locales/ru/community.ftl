@@ -22,7 +22,6 @@ community-events-header = Мероприятия
 community-meetup-header = Найти встречу или конференцию
 community-meetup = Более чем в 35 странах проводится более 90 митапов и несколько конференций. Rustaceans периодически встречаются в Rust User Group. Они являются отличным местом для входа в сообщество и отличным способом учиться и общаться с другими людьми со схожими интересами. Встречи обычно неформальные и открыты для всех.
 community-calendar = Посмотреть календарь
-community-conference-lineup = Программа конференций на 2020 год
 community-event-run-header = Запустите своё мероприятие
 community-event-run =
     <p>
@@ -33,16 +32,7 @@ community-event-run =
       Регистрация вашего мероприятия помогает нам отслеживать наши усилия в сообществе
       и позволяет нам связать вас со спикерами или другими участниками в вашем регионе.
     </p>
-community-events-repo = Посмотрите репозиторий Events Team
-community-event-register = Зарегистрировать событие
 community-rustfest-alt = Участники Rustfest
-community-rustbridge-header = Rustbridge
-community-rustbridge = RustBridge - это семинар для изучения Rust и входа в сообщество, ориентированный на недопредставленных людей со знаниями в других языках программирования.
-community-rustbridge-button = Посмотрите репозиторий Rustbridge
-community-rustbridge-rustconf-alt = RustBridge на RustConf
-community-rustbridge-paris-alt = RustBridge Paris
-community-rustbridge-berlin-alt = RustBridge Berlin
-community-rustbridge-rbr-alt = RustBridge на Rust Belt Rust
 community-irr-header = Увеличение доступности Rust
 community-irr = Увеличение доступности Rust - это программа, в которой участники всех команд в течении трёх (3) месяцев, с середины мая, по середину августа, работают в партнёрстве с лицами, недопредставленными в Rust сообществе и технической индустрии. Каждый партнёр соглашается уделять 3-5 часов в неделю для работы над Rust.
 community-irr-button = Посетить сайт

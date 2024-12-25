@@ -22,7 +22,6 @@ community-events-header = Événements
 community-meetup-header = Trouver une rencontre locale ou une conférence
 community-meetup = Il y a plus de 90 rencontres et plusieurs conférences de part le monde sur plus de 35 pays. Les Rustacés se rencontrent périodiquement dans les groupes d’utilisateurs Rust. Ce sont d'excellents moyens d'entrer dans la communauté et un excellent moyen d'apprendre et de socialiser avec des gens avec un intérêt commun. Les rencontres sont généralement informelles et ouvertes à tous.
 community-calendar = Voir le calendrier
-community-conference-lineup = Consulter le programme des conférences 2020
 community-event-run-header = Organisez votre propre évènement
 community-event-run =
     <p>
@@ -32,16 +31,7 @@ community-event-run =
     <p>
       Enregistrer votre évènement nous aide à garder la trace des efforts de notre communauté et nous permet de vous mettre en contact avec des présentateurs et d'autres membres autour de vous.
     </p>
-community-events-repo = Consulter le dépôt de l’équipe événement
-community-event-register = Enregistrez votre événement
 community-rustfest-alt = Participants à la Rustfest
-community-rustbridge-header = Rustbridge
-community-rustbridge = RustBridge est un atelier de travail visant à permettre aux personnes sous-représentées, avec une expérience dans d'autres langages de programmation, d'apprendre le Rust et de rejoindre la communauté.
-community-rustbridge-button = Consulter le dépôt de Rustbridge
-community-rustbridge-rustconf-alt = RustBridge à la RustConf
-community-rustbridge-paris-alt = RustBridge Paris
-community-rustbridge-berlin-alt = RustBridge Berlin
-community-rustbridge-rbr-alt = RustBridge à la Rust Belt
 community-irr-header = Faire Connaître Rust
 community-irr = Increasing Rust’s Reach (Étendre la portée de Rust) est un programme qui associe les membres des équipes Rust de toutes les parties du projet avec des individus qui sont sous-représentés dans la communauté Rust et l'industrie des technologies pour un partenariat de trois (3) mois, de mi-Mai à mi-Août. Chaque partenariat s'engage pour 3 à 5 heures par semaine sur un projet Rust.
 community-irr-button = Visiter le site Web

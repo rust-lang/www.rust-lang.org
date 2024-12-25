@@ -14,8 +14,6 @@ production-yelp = Yelp 使用 Rust 开发了一个实时 A/B 测试的框架。�
 production-yelp-alt = yelp 标志
 production-share = 您的公司在使用 Rust 吗？可以考虑把您的经验分享给我们！
 production-share-button = 联系 Leadership Council
-production-users = 想了解更多在生产环境使用 Rust 的用户吗？
-production-users-button = 查看用户列表
 production-domain = 了解公司如何在专门的开发领域中使用工具！
 production-support = 支持 Rust
 production-sponsor = 有兴趣赞助 Rust 的工作吗？ Rust 会议？ 我们很乐意听取您的意见。
@@ -23,7 +21,3 @@ production-contact-core = 联系 Leadership Council
 production-license-header = 许可证
 production-license = Rust 通过 Apache 2.0 许可证和 MIT 许可证进行双重许可，适用于各种类型的项目。
 production-license-link = 政策：许可证
-
-## templates/production/users.hbs
-
-production-users-page-title = 生产环境用户

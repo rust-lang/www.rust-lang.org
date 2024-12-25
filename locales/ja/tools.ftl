@@ -85,10 +85,6 @@ tools-rustup-unixy = あなたはmacOSかLinuxまたはその他のUnix系OSを�
 tools-rustup-windows-2 = あなたはWindowsを使用しているようです。Rustを使い始めるには、インストーラをダウンロードして実行し、画面に表示される指示に従ってください。場合によっては、<a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">Visual Studio C++ Build tools</a>をインストールする必要があります。もしWindowsユーザでない場合には、<a href="https://forge.rust-lang.org/infra/other-installation-methods.html">「その他のインストール方法」</a>を参照してください。
 tools-rustup-wsl-heading = Windows Subsystem for Linux
 tools-rustup-wsl = あなたがWindows Subsystem for Linuxのユーザーであるなら、下記をターミナル上で実行し、スクリーン上の説明に従ってRustをインストールしてください。
-tools-rustup-unknown = RustはWindows、Linux、macOS、FreeBSD、そしてNetBSD上で動作します。これらのプラットフォームのいずれかでこれが表示されている場合は、以下の値と一緒に問題を報告してください。
-tools-rustup-report = 問題を報告する
-tools-rustup-manual-unixy = Unix上でRustをインストールするときは、<br>以下をターミナルで実行し、画面の指示に従ってください。
-tools-rustup-manual-windows = Windows上では、<br><a href="https://win.rustup.rs">rustup-init.exe</a>をダウンロード・実行し、画面の指示に従ってください。
 tools-rustup-manual-default = WSL、Linux、あるいはmacOSのようなUnix系統のOS上でRustをインストールするときは、<br>以下をターミナルで実行し、画面の指示に従ってください。
 tools-rustup-manual-default-windows = Windows上であれば、<br><a href="https://win.rustup.rs">rustup-init.exe</a>をダウンロード・実行し、画面の指示に従ってください。
 
@@ -96,9 +92,9 @@ tools-rustup-manual-default-windows = Windows上であれば、<br><a href="http
 
 tools-editor-vscode = VS Code
 tools-editor-sublime = Sublime Text
-tools-editor-atom = Atom
-tools-editor-idea = RustRover
+tools-editor-rover = RustRover
 tools-editor-eclipse = Eclipse
-tools-editor-vim = Vim
+tools-editor-helix = Helix
+tools-editor-vim = Vim/Neovim
 tools-editor-emacs = Emacs
-tools-editor-geany = Geany
+tools-editor-visual-studio = Visual Studio

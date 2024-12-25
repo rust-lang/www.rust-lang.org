@@ -1,7 +1,7 @@
-<a id="{{team-text team name}}" name="{{team.name}}"></a>
+<a id="team-{{team.name}}"></a>
 <div class="w-100 mw-none mw-8-m mw9-l ph3 center f3">
     <header class="pb0 pt5">
-        <a class="linkable-subheading" href="#{{team-text team name}}"><h2>{{team-text team name}}</h2></a>
+        <a class="linkable-subheading" href="#team-{{team.name}}"><h2>{{team-text team name}}</h2></a>
         <div class="highlight"></div>
     </header>
     <div>
@@ -36,6 +36,13 @@
                         </a>
                     </div>
                 {{/if}}
+                {{#if team.website_data.matrix_room}}
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                        <a class="button button-secondary" href="https://matrix.to/#/{{team.website_data.matrix_room}}">
+                        {{#fluent "governance-team-matrix-room"}}{{#fluentparam "room"}}{{team.website_data.matrix_room}}{{/fluentparam}}{{/fluent}}
+                        </a>
+                    </div>
+                {{/if}}
             </div>
         </div>
     </div>
@@ -60,6 +67,10 @@
                         </div>
                         {{#if member.is_lead}}
                             <div>{{fluent "governance-user-team-leader"}}</div>
+                        {{else}}
+                            {{#if member.roles}}
+                                <div>{{team-text team role (lookup member.roles 0)}}</div>
+                            {{/if}}
                         {{/if}}
                     </div>
                 </div>
@@ -74,13 +85,16 @@
                 {{#each team.alumni as |member|}}
                 <div class="w-100 w-33-l mb3 flex flex-row items-center">
                     <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/{{member.github}}">
-                        <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/{{member.github}}">
+                        <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/{{member.github}}" alt="{{member.name}}">
                     </a>
                     <div>
                         {{member.name}}
                         <div class="f4">
                             GitHub: <a href="https://github.com/{{member.github}}">{{member.github}}</a>
                         </div>
+                        {{#if member.roles}}
+                            <div class="f4">{{team-text team role (lookup member.roles 0)}}</div>
+                        {{/if}}
                     </div>
                 </div>
                 {{/each}}

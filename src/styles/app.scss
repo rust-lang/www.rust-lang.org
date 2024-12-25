@@ -109,6 +109,10 @@ code.code-header {
   margin: 0 0 3px 0;
 }
 
+code.copyable {
+  user-select: all;
+}
+
 header h1,
 section h2 {
   z-index: 999999;
@@ -458,33 +462,6 @@ blockquote::before {
   }
 }
 
-#users .row .columns {
-  position: relative;
-  height: 200px;
-}
-
-#users img {
-  max-height: 200px;
-  max-width: 100px;
-  width: auto;
-  height: auto;
-  margin: auto;
-  display: block;
-}
-
-.user-logo {
-  min-height: 100px;
-}
-
-.user-name {
-  display: flex;
-  justify-content: center;
-}
-
-.user-container {
-  min-height: 300px;
-}
-
 #share-your-experience h3,
 #production-domains h3 {
   padding-bottom: 20px;
@@ -556,6 +533,13 @@ blockquote::before {
 
 #ferris-error {
   width: 80%;
+}
+
+.white-hr {
+  background-color: white;
+  height: 1px;
+  border: 0px;
+  margin: 25px 0px;
 }
 
 .hidden {

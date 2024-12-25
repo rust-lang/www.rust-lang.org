@@ -35,7 +35,6 @@ community-meetup =
     Existem mais de 90 encontros locais e conferências diversas em mais de 35 países.
     Rustaceans se encontram periodicamente em Encontros de Grupos Usuários. Essa é uma ótima introdução a comunidade, e um ótimo jeito de aprender e socializar com outras pessoas de interesses similares. Encontros locais geralmente são informais e aberto a todas as pessoas.
 community-calendar = Vejo o Calendário
-community-conference-lineup = Confira as apresentações da conferência de 2020
 community-event-run-header = Faça seu próprio evento
 community-event-run =
     <p>
@@ -44,16 +43,7 @@ community-event-run =
     <p>
     Registrar seu evento nos ajuda a rastrear os esforços da nossa comunidade e nos permite lhe conectar com palestrantes ou outros membros da sua região.
     </p>
-community-events-repo = Confira o repositório da Equipe de Eventos
-community-event-register = Registre o seu evento
 community-rustfest-alt = Participantes do Rustfest
-community-rustbridge-header = Rustbridge
-community-rustbridge = RustBridge é uma oficina focada em ajudar pessoas pouco representadas na área de tecnologia com experiência em outras linguagens a aprender Rust e se juntar a comunidade.
-community-rustbridge-button = Confira o repositório do Rustbridge
-community-rustbridge-rustconf-alt = RustBridge na RustConf
-community-rustbridge-paris-alt = RustBridge Paris
-community-rustbridge-berlin-alt = RustBridge Berlim
-community-rustbridge-rbr-alt = RustBridge na Rust Belt Rust
 community-irr-header = Increasing Rust’s Reach
 community-irr = Increasing Rust’s Reach é um programa onde membros de todas as partes do projeto são apresentados a membros poucos representados na comunidade Rust e na indústria de tecnologia, para uma parceria de três (3) meses, do meio de Maio até o meio de Agosto. Cada parceria se compromete a trabalhar de 3-5 horas por semana em um projeto Rust.
 community-irr-button = Visite o website

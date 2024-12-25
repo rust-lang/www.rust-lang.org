@@ -1,9 +1,10 @@
-use handlebars::{
-    Context, Handlebars, Helper, HelperDef, HelperResult, Output, RenderContext, RenderError,
+use rocket_dyn_templates::handlebars::{
+    Context, Handlebars, Helper, HelperDef, HelperResult, Output, RenderContext, RenderErrorReason,
 };
 
 use rocket::request::FromParam;
-use std::collections::HashSet;
+use serde::Serialize;
+use std::{collections::HashSet, sync::LazyLock};
 
 use handlebars_fluent::{
     fluent_bundle::{concurrent::FluentBundle, FluentResource, FluentValue},
@@ -17,7 +18,7 @@ simple_loader!(create_loader, "./locales/", "en-US", core: "./locales/core.ftl",
 fn add_bundle_functions(bundle: &mut FluentBundle<&'static FluentResource>) {
     bundle
         .add_function("EMAIL", |values, _named| {
-            let email = match values.get(0) {
+            let email = match values.first() {
                 Some(FluentValue::String(ref s)) => s,
                 _ => return FluentValue::None,
             };
@@ -27,7 +28,7 @@ fn add_bundle_functions(bundle: &mut FluentBundle<&'static FluentResource>) {
 
     bundle
         .add_function("ENGLISH", |values, _named| {
-            let text = match values.get(0) {
+            let text = match values.first() {
                 Some(FluentValue::String(ref s)) => s,
                 _ => return FluentValue::None,
             };
@@ -85,10 +86,9 @@ pub const EXPLICIT_LOCALE_INFO: &[LocaleInfo] = &[
     },
 ];
 
-lazy_static! {
-    pub static ref SUPPORTED_LOCALES: HashSet<&'static str> =
-        EXPLICIT_LOCALE_INFO.iter().map(|x| x.lang).collect();
-}
+pub static SUPPORTED_LOCALES: LazyLock<HashSet<&'static str>> =
+    LazyLock::new(|| EXPLICIT_LOCALE_INFO.iter().map(|x| x.lang).collect());
+
 pub struct TeamHelper {
     i18n: SimpleLoader,
 }
@@ -107,39 +107,106 @@ impl Default for TeamHelper {
     }
 }
 
+enum TeamHelperParam {
+    /// `{{team-text team name}}`
+    Name,
+
+    /// `{{team-text team description}}`
+    Description,
+
+    /// `{{team-text team role (lookup member.roles 0)}}`
+    Role(String),
+}
+
+impl TeamHelperParam {
+    fn fluent_id(&self, team_name: &str) -> String {
+        match self {
+            TeamHelperParam::Name => format!("governance-team-{team_name}-name"),
+            TeamHelperParam::Description => format!("governance-team-{team_name}-description"),
+            TeamHelperParam::Role(role_id) => format!("governance-role-{role_id}"),
+        }
+    }
+
+    fn english<'a>(&'a self, team: &'a serde_json::Value) -> &'a str {
+        match self {
+            TeamHelperParam::Name => team["website_data"]["name"].as_str().unwrap(),
+            TeamHelperParam::Description => team["website_data"]["description"].as_str().unwrap(),
+            TeamHelperParam::Role(role_id) => {
+                for role in team["roles"].as_array().unwrap() {
+                    if role["id"] == *role_id {
+                        return role["description"].as_str().unwrap();
+                    }
+                }
+                // This should never happen. The `validate_member_roles` test in
+                // the team repo enforces that `.members.*.roles.*` lines up
+                // with exactly one `.roles.*.id`.
+                role_id
+            }
+        }
+    }
+}
+
 impl HelperDef for TeamHelper {
     fn call<'reg: 'rc, 'rc>(
         &self,
-        h: &Helper<'reg, 'rc>,
+        h: &Helper<'rc>,
         _: &'reg Handlebars,
         context: &'rc Context,
         rcx: &mut RenderContext<'reg, 'rc>,
         out: &mut dyn Output,
     ) -> HelperResult {
         let Some(name) = h.param(0) else {
-            return Err(RenderError::new(
+            return Err(RenderErrorReason::ParamNotFoundForIndex(
                 "{{team-text}} must have at least two parameters",
-            ));
+                0,
+            )
+            .into());
         };
         let Some(name) = name.relative_path() else {
-            return Err(RenderError::new(
+            return Err(RenderErrorReason::InvalidParamType(
                 "{{team-text}} takes only identifier parameters",
-            ));
+            )
+            .into());
         };
 
         let Some(id) = h.param(1) else {
-            return Err(RenderError::new(
+            return Err(RenderErrorReason::ParamNotFoundForIndex(
                 "{{team-text}} must have at least two parameters",
-            ));
+                1,
+            )
+            .into());
         };
         let Some(id) = id.relative_path() else {
-            return Err(RenderError::new(
+            return Err(RenderErrorReason::InvalidParamType(
                 "{{team-text}} takes only identifier parameters",
-            ));
+            )
+            .into());
         };
+
+        let param = match id.as_str() {
+            "name" => TeamHelperParam::Name,
+            "description" => TeamHelperParam::Description,
+            "role" => {
+                let Some(role_id) = h.param(2) else {
+                    return Err(RenderErrorReason::ParamNotFoundForIndex(
+                        "{{team-text}} requires a third parameter for the role id",
+                        2,
+                    )
+                    .into());
+                };
+                TeamHelperParam::Role(role_id.value().as_str().unwrap().to_owned())
+            }
+            unrecognized => {
+                return Err(RenderErrorReason::Other(format!(
+                    "unrecognized {{{{team-text}}}} param {unrecognized:?}",
+                ))
+                .into());
+            }
+        };
+
         let team = rcx
             .evaluate(context, name)
-            .map_err(|e| RenderError::from_error(&format!("Cannot find team {}", name), e))?;
+            .map_err(|e| RenderErrorReason::NestedError(Box::new(e)))?;
         let lang = context
             .data()
             .get("lang")
@@ -148,24 +215,22 @@ impl HelperDef for TeamHelper {
             .expect("Language must be string");
         let team_name = team.as_json()["name"].as_str().unwrap();
 
-        let fluent_id = format!("governance-team-{}-{}", team_name, id);
-
         // English uses the team data directly, so that it gets autoupdated
         if lang == "en-US" {
-            let english = team.as_json()["website_data"][id].as_str().unwrap();
+            let english = param.english(team.as_json());
             out.write(english)
-                .map_err(|e| RenderError::from_error("failed to render English team data", e))?;
+                .map_err(|e| RenderErrorReason::NestedError(Box::new(e)))?;
         } else if let Some(value) = self.i18n.lookup_no_default_fallback(
             &lang.parse().expect("language must be valid"),
-            &fluent_id,
+            &param.fluent_id(team_name),
             None,
         ) {
             out.write(&value)
-                .map_err(|e| RenderError::from_error("failed to render translated team data", e))?;
+                .map_err(|e| RenderErrorReason::NestedError(Box::new(e)))?;
         } else {
-            let english = team.as_json()["website_data"][id].as_str().unwrap();
+            let english = param.english(team.as_json());
             out.write(english)
-                .map_err(|e| RenderError::from_error("failed to render", e))?;
+                .map_err(|e| RenderErrorReason::NestedError(Box::new(e)))?;
         }
         Ok(())
     }

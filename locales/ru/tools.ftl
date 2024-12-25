@@ -107,10 +107,6 @@ tools-rustup-unixy = Кажется у вас запущена macOS, Linux ил
 tools-rustup-windows-2 = Похоже, вы работаете под управлением Windows. Чтобы начать использовать Rust, загрузите установщик, затем запустите программу и следуйте инструкциям на экране. Возможно, Вам потребуется установить<a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">Visual Studio C++ Build tools</a> при появлении соответствующего запроса. Если вы не работаете в Windows, смотрите <a href="https://forge.rust-lang.org/infra/other-installation-methods.html">"другие методы установки"</a>.
 tools-rustup-wsl-heading = Windows Subsystem for Linux
 tools-rustup-wsl = Если вы используете Windows Subsystem for Linux, для установки Rust запустите следующее в вашем терминале и затем следуйте инструкциям на экране.
-tools-rustup-unknown = Rust запускается на Windows, Linux, macOS, FreeBSD и NetBSD. Если вы используете одну из этих платформ и видите это, то пожалуйста, сообщите о проблеме и следующих значениях:
-tools-rustup-report = Сообщить о проблеме
-tools-rustup-manual-unixy = Если вы используете Unix, то для установки Rust<br>запустите в терминале следующую команду и следуйте инструкциям на экране.
-tools-rustup-manual-windows = Если у вас запущен Windows,<br>скачайте и запустите <a href="https://win.rustup.rs">rustup‑init.exe</a> и затем следуйте инструкциям на экране.
 tools-rustup-manual-default = Если вы используете Unix, такой как WSL, Linux или macOS, то для установки Rust<br>запустите следующую команду в вашем терминале и следуйте инструкциям на экране.
 tools-rustup-manual-default-windows = Если у вас запущен Windows,<br>скачайте и запустите <a href="https://win.rustup.rs">rustup‑init.exe</a>, а затем следуйте инструкциям на экране.
 
@@ -118,9 +114,9 @@ tools-rustup-manual-default-windows = Если у вас запущен Windows,
 
 tools-editor-vscode = VS Code
 tools-editor-sublime = Sublime Text
-tools-editor-atom = Atom
-tools-editor-idea = RustRover
+tools-editor-rover = RustRover
 tools-editor-eclipse = Eclipse
-tools-editor-vim = Vim
+tools-editor-helix = Helix
+tools-editor-vim = Vim/Neovim
 tools-editor-emacs = Emacs
-tools-editor-geany = Geany
+tools-editor-visual-studio = Visual Studio

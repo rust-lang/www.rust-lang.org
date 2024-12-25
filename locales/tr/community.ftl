@@ -19,7 +19,6 @@ community-events-header = Etkinlikler
 community-meetup-header = Yerel bir buluşma veya konferans bulun
 community-meetup = Dünya üzerinde 35'ten fazla ülkede çeşitli konferanslar ve 90'ın üzerinde buluşma düzenleniyor. Rustaceanlar, Rust Kullanıcı Grupları'nda belirli aralıklarla buluşuyor. Bu buluşmalar, benzer ilgi alanlarına sahip insanlarla buluşmak için harika bir yöntem olmakla birlikte Rust topluluğuna girmek için de mükemmel bir yöntem. Buluşmalar çoğunlukla samimi bir ortamda gerçekleşmekle birlikte herkese açıktır.
 community-calendar = Takvimi Göster
-community-conference-lineup = 2020 Konferans Programına Göz Atın
 community-event-run-header = Kendi etkinliğinizi düzenleyin
 community-event-run =
     <p>
@@ -29,16 +28,7 @@ community-event-run =
     <p>
     Etkinliğinizi kaydetmeniz topluluğun emeğini takip etmemizi ve siz konuşmacıları bölgenizdeki diğer üyelerle buluşturmamızı sağlar.
     </p>
-community-events-repo = Etkinlik ekibinin deposuna göz atın
-community-event-register = Etkinliğinizi kaydedin
 community-rustfest-alt = Rustfest katılımcıları
-community-rustbridge-header = Rustbridge
-community-rustbridge = RustBridge, Rust öğrenmek ve topluluğa katılmak için başka bir dille uğraşmış tanınmayan insanları Rust'a katmak için odaklanmış bir atölyedir.
-community-rustbridge-button = { ENGLISH("Rustbridge") } deposuna göz atın
-community-rustbridge-rustconf-alt = RustConf'ta RustBridge
-community-rustbridge-paris-alt = RustBridge Paris
-community-rustbridge-berlin-alt = RustBridge Berlin
-community-rustbridge-rbr-alt = Rust Belt Rust'ta RustBridge
 community-irr-header = Increasing Rust's Reach
 community-irr = Increasing Rust's Reach, mayıs ayının ortasından ağustos ayının ortasına kadar üç (3) aylık bir ortaklık için Rust toplumunda ve teknoloji endüstrisinde yeterince temsil edilmeyen bireylerle projenin tüm bölümlerinden Rust ekibi üyelerini eşleştiren bir programdır. Her bir ortaklık, bir Rust projesinde çalışmak üzere haftada 3-5 saatlik bir taahhüt vermeyi kabul eder.
 community-irr-button = İnternet Sitesini Ziyaret Edin

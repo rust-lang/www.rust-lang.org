@@ -34,15 +34,14 @@ install-other-methods-link = Dowiedz się więcej
 ## components/tools/rustup.hbs
 
 tools-rustup-wsl-heading = Windows Subsystem for Linux
-tools-rustup-report = Zgłoś problem
 
 ## components/tools/editors.hbs
 
 tools-editor-vscode = VS Code
 tools-editor-sublime = Sublime Text
-tools-editor-atom = Atom
-tools-editor-idea = RustRover
+tools-editor-rover = RustRover
 tools-editor-eclipse = Eclipse
-tools-editor-vim = Vim
+tools-editor-helix = Helix
+tools-editor-vim = Vim/Neovim
 tools-editor-emacs = Emacs
-tools-editor-geany = Geany
+tools-editor-visual-studio = Visual Studio

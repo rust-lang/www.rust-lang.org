@@ -1,6 +1,9 @@
-use handlebars::{Context, Handlebars, Helper, HelperResult, Output, RenderContext, RenderError};
 use percent_encoding::{utf8_percent_encode, AsciiSet, NON_ALPHANUMERIC};
+use rocket_dyn_templates::handlebars::{
+    Context, Handlebars, Helper, HelperResult, Output, RenderContext, RenderErrorReason,
+};
 use rust_team_data::v1::{Team, TeamKind, Teams, BASE_URL};
+use serde::Serialize;
 use std::cmp::Reverse;
 use std::collections::HashMap;
 use std::error::Error;
@@ -59,7 +62,16 @@ impl Data {
         self.teams
             .into_iter()
             .filter(|team| team.website_data.is_some())
-            .filter(|team| team.subteam_of.is_none())
+            // On the main page, show the leadership-council, all top-level
+            // teams, and everything in the launching pad. We may want to
+            // consider putting launching pad teams in a separate page in the
+            // future?
+            .filter(|team| {
+                matches!(
+                    team.subteam_of.as_deref(),
+                    None | Some("launching-pad") | Some("leadership-council")
+                )
+            })
             .map(|team| IndexTeam {
                 url: format!(
                     "{}/{}",
@@ -98,8 +110,14 @@ impl Data {
             .ok_or(TeamNotFound)?;
 
         // Don't show pages for subteams
-        if main_team.subteam_of.is_some() {
-            return Err(TeamNotFound.into());
+        if let Some(subteam) = &main_team.subteam_of {
+            // Each launching-pad and leadership-council subteam has their own
+            // page. Subteams of those subteams do not get a page of their own
+            // (they are shown in their parent page). We may want to consider
+            // putting launching-pad teams into a separate page in the future.
+            if !matches!(subteam.as_ref(), "launching-pad" | "leadership-council") {
+                return Err(TeamNotFound.into());
+            }
         }
 
         // Then find all the subteams, working groups and project groups.
@@ -116,6 +134,9 @@ impl Data {
 
         self.teams
             .into_iter()
+            // The leadership-council page should show just the
+            // leadership-council, not everything underneath it.
+            .filter(|_| main_team.name != "leadership-council")
             .filter(|team| team.website_data.is_some())
             .filter(|team| {
                 // For teams find not only direct subteams but also transitive ones.
@@ -194,16 +215,21 @@ pub fn encode_zulip_stream(
     let zulip_stream = if let Some(p) = h.param(0) {
         p.value()
     } else {
-        return Err(RenderError::new(
+        return Err(RenderErrorReason::ParamNotFoundForIndex(
             "{{encode-zulip-stream takes 1 parameter}}",
-        ));
+            0,
+        )
+        .into());
     };
     let zulip_stream = if let Some(s) = zulip_stream.as_str() {
         s
     } else {
-        return Err(RenderError::new(
-            "{{encode-zulip-stream takes a string parameter}}",
-        ));
+        return Err(RenderErrorReason::ParamTypeMismatchForName(
+            "encode-zulip-stream",
+            "0".into(),
+            "string".into(),
+        )
+        .into());
     };
 
     // https://github.com/zulip/zulip/blob/159641bab8c248f5b72a4e736462fb0b48e7fa24/static/js/hash_util.js#L20-L25
@@ -238,7 +264,6 @@ impl Default for RustTeams {
     }
 }
 
-#[async_trait]
 impl Cached for RustTeams {
     fn get_timestamp(&self) -> Instant {
         self.1
@@ -299,16 +324,25 @@ mod tests {
             subteam_of: None,
             members: vec![
                 TeamMember {
+                    name: "Jupiter Doe".into(),
+                    github: "jupiterd".into(),
+                    github_id: 123,
+                    is_lead: false,
+                    roles: vec!["convener".to_owned()],
+                },
+                TeamMember {
                     name: "John Doe".into(),
                     github: "johnd".into(),
+                    github_id: 456,
                     is_lead: false,
-                    github_id: 1234,
+                    roles: Vec::new(),
                 },
                 TeamMember {
                     name: "Jane Doe".into(),
                     github: "janed".into(),
+                    github_id: 789,
                     is_lead: true,
-                    github_id: 1234,
+                    roles: Vec::new(),
                 },
             ],
             alumni: Vec::new(),
@@ -321,9 +355,12 @@ mod tests {
                 discord: None,
                 zulip_stream: None,
                 weight: 0,
+                matrix_room: None,
             }),
+            roles: Vec::new(),
             github: None,
             discord: vec![],
+            top_level: None,
         }
     }
 

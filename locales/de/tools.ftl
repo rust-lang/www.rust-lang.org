@@ -28,9 +28,9 @@ tools-automation-cargo-doc-link = Zur Webseite
 
 tools-editor-vscode = VS Code
 tools-editor-sublime = Sublime Text
-tools-editor-atom = Atom
-tools-editor-idea = RustRover
+tools-editor-rover = RustRover
 tools-editor-eclipse = Eclipse
-tools-editor-vim = Vim
+tools-editor-helix = Helix
+tools-editor-vim = Vim/Neovim
 tools-editor-emacs = Emacs
-tools-editor-geany = Geany
+tools-editor-visual-studio = Visual Studio

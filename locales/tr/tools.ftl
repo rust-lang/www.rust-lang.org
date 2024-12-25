@@ -118,10 +118,6 @@ tools-rustup-unixy = Görünüşe bakılırsa macOS, Linux veya Unix tabanlı bi
 tools-rustup-windows = Görünüşe bakılırsa Windows kullanıyorsunuz. Rust'ı yüklemek için şunu indirin ve çalıştırın. Ardından ekrandaki talimatları izleyin.
 tools-rustup-wsl-heading = Windows için Linux Altsistemi
 tools-rustup-wsl = Eğer Windows için Linux Altsistemi kullanıcısıysanız Rust'ı yüklemek için uçbiriminizde şunları çalıştırın ve ardından ekrandaki talimatları izleyin.
-tools-rustup-unknown = Rust, Windows'ta, Linux'ta, macOS'ta, FreeBSD'de ve NetBSD'de çalışır. Eğer bu platformlardan birisini kullanıyorsanız ve bunu görüyorsanız lütfen aşağıdaki değerlerle birlikte sorunu bildirin.
-tools-rustup-report = Bir sorun bildirin
-tools-rustup-manual-unixy = Eğer Unix kullanıyorsanız Rust'ı yüklemek için <br>uçbiriminizde şunları çalıştırın. Ardından ekrandaki talimatları izleyin.
-tools-rustup-manual-windows = Eğer Windows kullanıyorsanız <br><a href="https://win.rustup.rs">{ ENGLISH("rustup-init.exe") }</a>'yi indirin ve çalıştırın. Ardından ekrandaki talimatları izleyin.
 tools-rustup-manual-default = Eğer WSL, Linux veya macOS gibi bir Unix işletim sistemi kullanıyorsanız Rust'ı yüklemek için <br> uçbiriminizde şunları çalıştırın. Ardından ekrandaki talimatları izleyin.
 tools-rustup-manual-default-windows = Eğer Windows kullanıyorsanız <br><a href="https://win.rustup.rs">{ ENGLISH("rustup-init.exe") }</a>'yi indirin ve çalıştırın. Ardından ekrandaki talimatları izleyin.
 
@@ -129,9 +125,9 @@ tools-rustup-manual-default-windows = Eğer Windows kullanıyorsanız <br><a hre
 
 tools-editor-vscode = { ENGLISH("VS Code") }
 tools-editor-sublime = { ENGLISH("Sublime Text") }
-tools-editor-atom = { ENGLISH("Atom") }
-tools-editor-idea = { ENGLISH("RustRover") }
+tools-editor-rover = { ENGLISH("RustRover") }
 tools-editor-eclipse = { ENGLISH("Eclipse") }
-tools-editor-vim = { ENGLISH("Vim") }
+tools-editor-helix = { ENGLISH("Helix") }
+tools-editor-vim = { ENGLISH("Vim/Neovim") }
 tools-editor-emacs = { ENGLISH("Emacs") }
-tools-editor-geany = { ENGLISH("Geany") }
+tools-editor-visual-studio = { ENGLISH("Visual Studio") }

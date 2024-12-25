@@ -92,22 +92,20 @@ install-other-methods-link = En apprendre plus
 ## components/tools/rustup.hbs
 
 tools-rustup-unixy = Il semblerait que vous utilisez macOS, Linux ou un autre OS de type UNIX. Pour télécharger Rustup et installer Rust, exécutez la commande suivante dans votre terminal, puis suivez les instructions à l'écran.
+tools-rustup-windows-2 = Il semblerait que vous utilisez Windows. Pour commencer à utiliser Rust, téléchargez l'installeur, puis exécutez-le et suivez les instructions à l'écran. Vous pourriez avoir besoin d'installer les <a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">outils Visual Studio C++ Build</a> lorsque cela vous sera demandé. Si vous n'utilisez pas Windows, consultez les <a href="https://forge.rust-lang.org/infra/other-installation-methods.html">"autres méthodes d'installation"</a>.
 tools-rustup-wsl-heading = Sous-système Windows pour Linux
 tools-rustup-wsl = Si vous êtes un utilisateur du sous-système Windows pour Linux, exécutez la commande suivante dans votre terminal, puis suivez les instructions à l'écran.
-tools-rustup-unknown = Rust fonctionne sur Windows, Linux, macOS, FreeBSD et NetBSD. Si vous êtes sur une de ces plateformes et voyez ceci, veuillez rapporter une erreur avec les valeur suivantes :
-tools-rustup-report = Rapporter une erreur
-tools-rustup-manual-unixy = Pour installer Rust, si vous utilisez Unix, <br> exécutez la commande suivante dans votre terminal, puis suivez les instructions à l'écran.
-tools-rustup-manual-windows = Si vous êtes sous Windows,<br> téléchargez et exécutez <a href="https://win.rustup.rs">rustup‑init.exe</a>, puis suivez les instructions à l'écran.
 tools-rustup-manual-default = Pour installer Rust, si vous utilisez un Unix comme le WSL, Linux ou macOS,<br> exécutez la commande suivante dans votre terminal, puis suivez les instructions à l'écran.
 tools-rustup-manual-default-windows = Si vous utilisez Windows,<br> téléchargez et exécutez <a href="https://win.rustup.rs">rustup‑init.exe</a>, puis suivez les instructions à l'écran.
+
 
 ## components/tools/editors.hbs
 
 tools-editor-vscode = VS Code
 tools-editor-sublime = Sublime Text
-tools-editor-atom = Atom
-tools-editor-idea = RustRover
+tools-editor-rover = RustRover
 tools-editor-eclipse = Eclipse
-tools-editor-vim = Vim
+tools-editor-helix = Helix
+tools-editor-vim = Vim/Neovim
 tools-editor-emacs = Emacs
-tools-editor-geany = Geany
+tools-editor-visual-studio = Visual Studio

@@ -9,9 +9,12 @@ static PAGE_REDIRECTS: &[(&str, &str)] = &[
     ("community.html", "community"),
     ("conduct.html", "policies/code-of-conduct"),
     ("contribute-bugs.html", "community"),
-    ("contribute-community.html", "governance/teams/community"),
+    ("contribute-community.html", "community"),
     ("contribute-compiler.html", "governance/teams/compiler"),
-    ("contribute-docs.html", "governance/teams/documentation"),
+    (
+        "contribute-docs.html",
+        "governance/teams/dev-tools#team-rustdoc",
+    ),
     ("contribute-libs.html", "governance/teams/library"),
     ("contribute-tools.html", "governance/teams/dev-tools"),
     ("contribute.html", "community"),
@@ -24,6 +27,20 @@ static PAGE_REDIRECTS: &[(&str, &str)] = &[
     ("security.html", "policies/security"),
     ("team.html", "governance"),
     ("user-groups.html", "community"),
+    // Team changes
+    (
+        "governance/teams/release",
+        "governance/teams/infra#team-release",
+    ),
+    (
+        "governance/teams/crates-io",
+        "governance/teams/dev-tools#team-crates-io",
+    ),
+    ("governance/teams/language-and-compiler", "governance#teams"),
+    ("governance/teams/operations", "governance#teams"),
+    // miscellaneous
+    ("governance/teams", "governance#teams"),
+    ("governance/wgs", "governance#working-groups"),
 ];
 
 static STATIC_FILES_REDIRECTS: &[(&str, &str)] = &[
@@ -31,10 +48,6 @@ static STATIC_FILES_REDIRECTS: &[(&str, &str)] = &[
     (
         "pdfs/Rust-npm-Whitepaper.pdf",
         "/static/pdfs/Rust-npm-Whitepaper.pdf",
-    ),
-    (
-        "pdfs/Rust-Chucklefish-Whitepaper.pdf",
-        "/static/pdfs/Rust-Chucklefish-Whitepaper.pdf",
     ),
     (
         "pdfs/Rust-Tilde-Whitepaper.pdf",

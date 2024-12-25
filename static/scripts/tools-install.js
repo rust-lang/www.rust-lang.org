@@ -64,20 +64,16 @@ function adjust_for_platform() {
 
     var unix_div = document.getElementById("platform-instructions-unix");
     var win_div = document.getElementById("platform-instructions-win");
-    var unknown_div = document.getElementById("platform-instructions-unknown");
     var default_div = document.getElementById("platform-instructions-default");
 
     vis(unix_div, "dn");
     vis(win_div, "dn");
-    vis(unknown_div, "dn");
     vis(default_div, "dn");
 
     if (platform == "unix") {
         vis(unix_div, "db");
     } else if (platform == "win") {
         vis(win_div, "db");
-    } else if (platform == "unknown") {
-        vis(unknown_div, "db");
     } else {
         vis(default_div, "db");
     }
@@ -154,13 +150,6 @@ function set_up_cycle_button() {
     };
 }
 
-function fill_in_bug_report_values() {
-    var nav_plat = document.getElementById("nav-plat");
-    var nav_app = document.getElementById("nav-app");
-    nav_plat.textContent = navigator.platform;
-    nav_app.textContent = navigator.appVersion;
-}
-
 var override_map = new Map ([
     ["unix", "unix"],
     ["win", "win"],
@@ -192,5 +181,4 @@ function check_initial_override() {
     check_initial_override();
     adjust_for_platform();
     set_up_cycle_button();
-    fill_in_bug_report_values();
 }());

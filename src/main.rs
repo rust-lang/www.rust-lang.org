@@ -1,39 +1,20 @@
-#[macro_use]
-extern crate lazy_static;
-extern crate rand;
-extern crate reqwest;
-extern crate serde_json;
-#[macro_use]
-extern crate rocket;
-extern crate rust_team_data;
-extern crate sass_rs;
-extern crate siphasher;
-extern crate toml;
-
-#[macro_use]
-extern crate serde;
-
-extern crate fluent_bundle;
-extern crate regex;
-
-extern crate handlebars;
-
 mod cache;
 mod caching;
 mod category;
 mod headers;
 mod i18n;
-mod production;
 mod redirect;
 mod rust_version;
 mod teams;
 
 use cache::Cache;
 use cache::Cached;
-use production::User;
+use rocket::catch;
+use rocket::get;
 use rocket::tokio::sync::RwLock;
 use rust_version::RustReleasePost;
 use rust_version::RustVersion;
+use serde::Serialize;
 use teams::encode_zulip_stream;
 use teams::RustTeams;
 
@@ -43,8 +24,7 @@ use std::fs;
 use std::hash::Hasher;
 use std::path::{Path, PathBuf};
 use std::sync::Arc;
-
-use rand::seq::SliceRandom;
+use std::sync::LazyLock;
 
 use rocket::{
     fs::NamedFile,
@@ -64,28 +44,27 @@ use i18n::{create_loader, LocaleInfo, SupportedLocale, TeamHelper, EXPLICIT_LOCA
 
 const ZULIP_DOMAIN: &str = "https://rust-lang.zulipchat.com";
 
-lazy_static! {
-    static ref ASSETS: AssetFiles = {
-        let app_css_file = compile_sass("app");
-        let fonts_css_file = compile_sass("fonts");
-        let vendor_css_file = concat_vendor_css(vec!["tachyons"]);
-        let app_js_file = concat_app_js(vec!["tools-install"]);
+static ASSETS: LazyLock<AssetFiles> = LazyLock::new(|| {
+    let app_css_file = compile_sass("app");
+    let fonts_css_file = compile_sass("fonts");
+    let vendor_css_file = concat_vendor_css(vec!["tachyons"]);
+    let app_js_file = concat_app_js(vec!["tools-install"]);
 
-        AssetFiles {
-            css: CSSFiles {
-                app: app_css_file,
-                fonts: fonts_css_file,
-                vendor: vendor_css_file,
-            },
-            js: JSFiles { app: app_js_file },
-        }
-    };
-    static ref PONTOON_ENABLED: bool = env::var("RUST_WWW_PONTOON").is_ok();
-    static ref ROBOTS_TXT_DISALLOW_ALL: bool = env::var("ROBOTS_TXT_DISALLOW_ALL").is_ok();
-}
+    AssetFiles {
+        css: CSSFiles {
+            app: app_css_file,
+            fonts: fonts_css_file,
+            vendor: vendor_css_file,
+        },
+        js: JSFiles { app: app_js_file },
+    }
+});
+static PONTOON_ENABLED: LazyLock<bool> = LazyLock::new(|| env::var("RUST_WWW_PONTOON").is_ok());
+static ROBOTS_TXT_DISALLOW_ALL: LazyLock<bool> =
+    LazyLock::new(|| env::var("ROBOTS_TXT_DISALLOW_ALL").is_ok());
 
 #[derive(Serialize)]
-struct Context<T: ::serde::Serialize> {
+struct Context<T: Serialize> {
     page: String,
     title: String,
     parent: &'static str,
@@ -99,8 +78,8 @@ struct Context<T: ::serde::Serialize> {
     is_translation: bool,
 }
 
-impl<T: ::serde::Serialize> Context<T> {
-    fn new(page: String, title_id: &str, is_landing: bool, data: T, lang: String) -> Self {
+impl<T: Serialize> Context<T> {
+    fn new(page: &str, title_id: &str, is_landing: bool, data: T, lang: String) -> Self {
         let helper = create_loader();
         let title = if title_id.is_empty() {
             "".into()
@@ -109,7 +88,7 @@ impl<T: ::serde::Serialize> Context<T> {
             helper.lookup(&lang, title_id, None)
         };
         Self {
-            page,
+            page: page.to_owned(),
             title,
             parent: LAYOUT,
             is_landing,
@@ -149,16 +128,6 @@ fn baseurl(lang: &str) -> String {
     } else {
         format!("/{}", lang)
     }
-}
-
-#[get("/components/<_file..>", rank = 1)]
-fn components(_file: PathBuf) -> Template {
-    not_found_locale(ENGLISH.into())
-}
-
-#[get("/<locale>/components/<_file..>", rank = 11)]
-fn components_locale(locale: SupportedLocale, _file: PathBuf) -> Template {
-    not_found_locale(locale.0)
 }
 
 #[get("/logos/<file..>", rank = 1)]
@@ -220,10 +189,10 @@ async fn governance(teams_cache: &Cache<RustTeams>) -> Result<Template, Status> 
 
 #[get("/governance/<section>/<team>", rank = 2)]
 async fn team(
-    section: String,
-    team: String,
+    section: &str,
+    team: &str,
     teams_cache: &Cache<RustTeams>,
-) -> Result<Template, Result<Redirect, Status>> {
+) -> Result<Template, Status> {
     render_team(section, team, ENGLISH.into(), teams_cache).await
 }
 
@@ -237,48 +206,36 @@ async fn governance_locale(
 
 #[get("/<locale>/governance/<section>/<team>", rank = 12)]
 async fn team_locale(
-    section: String,
-    team: String,
+    section: &str,
+    team: &str,
     locale: SupportedLocale,
     teams_cache: &Cache<RustTeams>,
-) -> Result<Template, Result<Redirect, Status>> {
+) -> Result<Template, Status> {
     render_team(section, team, locale.0, teams_cache).await
 }
 
-#[get("/production/users")]
-fn get_production() -> Template {
-    render_production(ENGLISH.into())
-}
-
-#[get("/<locale>/production/users", rank = 10)]
-fn production_locale(locale: SupportedLocale) -> Template {
-    render_production(locale.0)
-}
-
 #[get("/<category>/<subject>", rank = 4)]
-fn subject(category: Category, subject: String) -> Result<Template, Status> {
+fn subject(category: Category, subject: &str) -> Result<Template, Status> {
     render_subject(category, subject, ENGLISH.into())
 }
 
 #[get("/<locale>/<category>/<subject>", rank = 14)]
 fn subject_locale(
     category: Category,
-    subject: String,
+    subject: &str,
     locale: SupportedLocale,
 ) -> Result<Template, Status> {
     render_subject(category, subject, locale.0)
 }
 
-fn load_users_data() -> Vec<Vec<User>> {
-    let mut rng = rand::thread_rng();
-    let mut users = production::get_info().expect("couldn't get production users data");
-    users.shuffle(&mut rng);
-    users.chunks(3).map(|s| s.to_owned()).collect()
-}
-
 #[get("/en-US", rank = 1)]
 fn redirect_bare_en_us() -> Redirect {
     Redirect::permanent("/")
+}
+
+#[get("/.well-known/security.txt")]
+fn well_known_security() -> &'static str {
+    include_str!("../static/text/well_known_security.txt")
 }
 
 #[catch(404)]
@@ -301,9 +258,15 @@ fn not_found(req: &Request) -> Result<Template, Redirect> {
     Ok(not_found_locale(lang))
 }
 
+#[catch(422)]
+#[allow(clippy::result_large_err)]
+fn unprocessable_content(req: &Request) -> Result<Template, Redirect> {
+    not_found(req)
+}
+
 fn not_found_locale(lang: String) -> Template {
     let page = "404";
-    let context = Context::new("404".into(), "error404-page-title", false, (), lang);
+    let context = Context::new(page, "error404-page-title", false, (), lang);
     Template::render(page, context)
 }
 
@@ -376,7 +339,7 @@ async fn render_index(
         rust_release_post: String,
     }
 
-    let page = "index".to_string();
+    let page = "index";
     let release_post = rust_version::rust_release_post(release_post_cache).await;
     let data = IndexData {
         rust_version: rust_version::rust_version(version_cache).await,
@@ -386,27 +349,14 @@ async fn render_index(
             String::new()
         },
     };
-    let context = Context::new(page.clone(), "", true, data, lang);
+    let context = Context::new(page, "", true, data, lang);
     Template::render(page, context)
 }
 
 fn render_category(category: Category, lang: String) -> Template {
     let page = category.index();
     let title_id = format!("{}-page-title", category.name());
-    let context = Context::new(category.name().to_string(), &title_id, false, (), lang);
-
-    Template::render(page, context)
-}
-
-fn render_production(lang: String) -> Template {
-    let page = "production/users".to_string();
-    let context = Context::new(
-        page.clone(),
-        "production-users-page-title",
-        false,
-        load_users_data(),
-        lang,
-    );
+    let context = Context::new(category.name(), &title_id, false, (), lang);
 
     Template::render(page, context)
 }
@@ -417,8 +367,8 @@ async fn render_governance(
 ) -> Result<Template, Status> {
     match teams::index_data(teams_cache).await {
         Ok(data) => {
-            let page = "governance/index".to_string();
-            let context = Context::new(page.clone(), "governance-page-title", false, data, lang);
+            let page = "governance/index";
+            let context = Context::new(page, "governance-page-title", false, data, lang);
 
             Ok(Template::render(page, context))
         }
@@ -430,36 +380,30 @@ async fn render_governance(
 }
 
 async fn render_team(
-    section: String,
-    team: String,
+    section: &str,
+    team: &str,
     lang: String,
     teams_cache: &Cache<RustTeams>,
-) -> Result<Template, Result<Redirect, Status>> {
-    match teams::page_data(&section, &team, teams_cache).await {
+) -> Result<Template, Status> {
+    match teams::page_data(section, team, teams_cache).await {
         Ok(data) => {
-            let page = "governance/group".to_string();
+            let page = "governance/group";
             let name = format!("governance-team-{}-name", data.team.name);
-            let context = Context::new(page.clone(), &name, false, data, lang);
+            let context = Context::new(page, &name, false, data, lang);
             Ok(Template::render(page, context))
         }
         Err(err) => {
             if err.is::<teams::TeamNotFound>() {
-                match (section.as_str(), team.as_str()) {
-                    // Old teams URLs
-                    ("teams", "language-and-compiler") | ("teams", "operations") => {
-                        Err(Ok(Redirect::temporary("/governance")))
-                    }
-                    _ => Err(Err(Status::NotFound)),
-                }
+                Err(Status::NotFound)
             } else {
                 eprintln!("error while loading the team page: {}", err);
-                Err(Err(Status::InternalServerError))
+                Err(Status::InternalServerError)
             }
         }
     }
 }
 
-fn render_subject(category: Category, subject: String, lang: String) -> Result<Template, Status> {
+fn render_subject(category: Category, subject: &str, lang: String) -> Result<Template, Status> {
     // Rocket's Template::render method is not really designed to accept arbitrary templates: if a
     // template is missing, it just returns a Status::InternalServerError, without a way to
     // distinguish it from a syntax error in the template itself.
@@ -472,14 +416,14 @@ fn render_subject(category: Category, subject: String, lang: String) -> Result<T
         return Err(Status::NotFound);
     }
 
-    let page = format!("{}/{}", category.name(), subject.as_str());
+    let page = format!("{}/{}", category.name(), subject);
     let title_id = format!("{}-{}-page-title", category.name(), subject);
     let context = Context::new(subject, &title_id, false, (), lang);
 
     Ok(Template::render(page, context))
 }
 
-#[launch]
+#[rocket::launch]
 async fn rocket() -> _ {
     let templating = Template::custom(|engine| {
         engine
@@ -505,26 +449,26 @@ async fn rocket() -> _ {
         .manage(Arc::new(RwLock::new(teams)))
         .mount(
             "/",
-            routes![
+            rocket::routes![
                 index,
                 category_en,
                 governance,
                 team,
-                get_production,
                 subject,
                 files,
                 robots_txt,
                 logos,
-                components,
                 index_locale,
                 category_locale,
                 governance_locale,
                 team_locale,
-                production_locale,
                 subject_locale,
-                components_locale,
                 redirect_bare_en_us,
+                well_known_security,
             ],
         )
-        .register("/", catchers![not_found, catch_error])
+        .register(
+            "/",
+            rocket::catchers![not_found, unprocessable_content, catch_error],
+        )
 }

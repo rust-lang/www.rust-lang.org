@@ -14,8 +14,6 @@ production-yelp = YelpはリアルタイムA/Bテストのためのフレーム�
 production-yelp-alt = yelp ロゴ
 production-share = あなたの会社はRustを使っていますか？ あなたの体験をぜひ共有してください！
 production-share-button = リーダーシップカウンシルに連絡する
-production-users = Rustをプロダクションで使っている人々についてもっと知りたいですか？
-production-users-button = ユーザページを見る
 production-domain = 企業が特定の開発ドメインにおいてどのようにツールを使っているかご覧ください！
 production-support = Rustを支援する
 production-sponsor = Rustの開発、もしくはRustカンファレンスのスポンサードに興味がありますか？ あなたからの連絡をお待ちしております。
@@ -23,7 +21,3 @@ production-contact-core = リーダーシップカウンシルへメッセージ
 production-license-header = ライセンス
 production-license = Rustは、Apacheライセンスバージョン2.0およびMITライセンスでデュアルライセンスされており、あらゆる種類のプロジェクトにぴったりです。
 production-license-link = ポリシー：ライセンス
-
-## templates/production/users.hbs
-
-production-users-page-title = プロダクションユーザ
