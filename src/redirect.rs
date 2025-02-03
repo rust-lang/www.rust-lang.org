@@ -38,6 +38,10 @@ static PAGE_REDIRECTS: &[(&str, &str)] = &[
     ),
     ("governance/teams/language-and-compiler", "governance#teams"),
     ("governance/teams/operations", "governance#teams"),
+    (
+        "governance/wgs/wg-async",
+        "governance/teams/lang#team-wg-async",
+    ),
     // miscellaneous
     ("governance/teams", "governance#teams"),
     ("governance/wgs", "governance#working-groups"),
