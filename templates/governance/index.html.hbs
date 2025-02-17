@@ -37,20 +37,5 @@
     </div>
 </section>
 
-<section id="working-groups" class="green">
-    <div class="w-100 mw-none ph3 mw-8-m mw9-l center f3">
-        <header>
-            <h2>{{fluent "governance-wgs-header"}}</h2>
-            <div class="highlight"></div>
-        </header>
-        <div class="flex flex-column flex-row-l flex-wrap-l justify-start tc">
-
-            {{#each data.wgs as |team| ~}}
-                {{> governance/index-team}}
-            {{/each~}}
-        </div>
-    </div>
-</section>
-
 {{/inline}}
 {{~> (lookup this "parent")~}}
