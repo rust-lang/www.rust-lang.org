@@ -15,7 +15,6 @@ use crate::cache::{Cache, Cached};
 #[derive(Default, Serialize)]
 pub struct IndexData {
     teams: Vec<IndexTeam>,
-    wgs: Vec<IndexTeam>,
 }
 
 #[derive(Serialize)]
@@ -63,13 +62,11 @@ impl Data {
             .into_iter()
             .filter(|team| team.website_data.is_some())
             // On the main page, show the leadership-council, all top-level
-            // teams, and everything in the launching pad. We may want to
-            // consider putting launching pad teams in a separate page in the
-            // future?
+            // teams.
             .filter(|team| {
                 matches!(
                     team.subteam_of.as_deref(),
-                    None | Some("launching-pad") | Some("leadership-council")
+                    None | Some("leadership-council")
                 )
             })
             .map(|team| IndexTeam {
@@ -80,16 +77,13 @@ impl Data {
                 ),
                 team,
             })
-            .for_each(|team| match team.team.kind {
-                TeamKind::Team => data.teams.push(team),
-                TeamKind::WorkingGroup => data.wgs.push(team),
-                _ => {}
+            .for_each(|team| {
+                if team.team.kind == TeamKind::Team {
+                    data.teams.push(team)
+                }
             });
 
         data.teams.sort_by_key(|index_team| {
-            Reverse(index_team.team.website_data.as_ref().unwrap().weight)
-        });
-        data.wgs.sort_by_key(|index_team| {
             Reverse(index_team.team.website_data.as_ref().unwrap().weight)
         });
         Ok(data)
@@ -374,9 +368,6 @@ mod tests {
         assert_eq!(res.teams.len(), 1);
         assert_eq!(res.teams[0].url, "teams/bar");
         assert_eq!(res.teams[0].team.name, "bar");
-        assert_eq!(res.wgs.len(), 1);
-        assert_eq!(res.wgs[0].url, "wgs/foo");
-        assert_eq!(res.wgs[0].team.name, "foo");
     }
 
     #[test]

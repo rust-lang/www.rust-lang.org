@@ -56,6 +56,9 @@ governance-team-lang-docs-description = Developing and writing the docs related 
 governance-team-lang-ops-name = lang-ops team
 governance-team-lang-ops-description = Operations for the lang team: preparing agenda, issue triage, scheduling and documenting meetings
 
+governance-team-launching-pad-name = Launching pad
+governance-team-launching-pad-description = An interim home for teams
+
 governance-team-leadership-council-name = Leadership council
 governance-team-leadership-council-description = Charged with the success of the Rust Project as whole, consisting of representatives from top-level teams
 
