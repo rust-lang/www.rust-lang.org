@@ -61,14 +61,9 @@ impl Data {
         self.teams
             .into_iter()
             .filter(|team| team.website_data.is_some())
-            // On the main page, show the leadership-council, all top-level
+            // On the main page, show the leadership-council and all top-level
             // teams.
-            .filter(|team| {
-                matches!(
-                    team.subteam_of.as_deref(),
-                    None | Some("leadership-council")
-                )
-            })
+            .filter(|team| team.kind == TeamKind::Team && team.subteam_of.is_none())
             .map(|team| IndexTeam {
                 url: format!(
                     "{}/{}",
@@ -77,11 +72,7 @@ impl Data {
                 ),
                 team,
             })
-            .for_each(|team| {
-                if team.team.kind == TeamKind::Team {
-                    data.teams.push(team)
-                }
-            });
+            .for_each(|team| data.teams.push(team));
 
         data.teams.sort_by_key(|index_team| {
             Reverse(index_team.team.website_data.as_ref().unwrap().weight)
@@ -105,11 +96,14 @@ impl Data {
 
         // Don't show pages for subteams
         if let Some(subteam) = &main_team.subteam_of {
-            // Each launching-pad and leadership-council subteam has their own
-            // page. Subteams of those subteams do not get a page of their own
-            // (they are shown in their parent page). We may want to consider
-            // putting launching-pad teams into a separate page in the future.
-            if !matches!(subteam.as_ref(), "launching-pad" | "leadership-council") {
+            // In the past we gave working groups their own dedicated pages linked
+            // from the front page. We have now moved those working groups under
+            // launching-pad, and the groups are listed as subteams of the launching
+            // pad. To avoid breaking external links to things like
+            // https://www.rust-lang.org/governance/wgs/wg-secure-code,
+            // we still generate dedicated pages for these launching-pad teams,
+            // but they are not linked from the main site.
+            if !matches!(subteam.as_ref(), "launching-pad") {
                 return Err(TeamNotFound.into());
             }
         }
@@ -122,35 +116,27 @@ impl Data {
         let superteams: HashMap<_, _> = self
             .teams
             .iter()
-            .filter(|team| matches!(team.kind, TeamKind::Team))
             .filter_map(|team| Some((team.name.clone(), team.subteam_of.clone()?)))
             .collect();
 
         self.teams
             .into_iter()
-            // The leadership-council page should show just the
-            // leadership-council, not everything underneath it.
-            .filter(|_| main_team.name != "leadership-council")
             .filter(|team| team.website_data.is_some())
             .filter(|team| {
                 // For teams find not only direct subteams but also transitive ones.
-                if let TeamKind::Team = team.kind {
-                    let mut team = &team.name;
+                let mut team = &team.name;
 
-                    // The graph of teams is guaranteed to be acyclic by the CI script of
-                    // the team repository. Therefore this loop has to terminate eventually.
-                    while let Some(superteam) = superteams.get(team) {
-                        if superteam == &main_team.name {
-                            return true;
-                        }
-
-                        team = superteam;
+                // The graph of teams is guaranteed to be acyclic by the CI script of
+                // the team repository. Therefore this loop has to terminate eventually.
+                while let Some(superteam) = superteams.get(team) {
+                    if superteam == &main_team.name {
+                        return true;
                     }
 
-                    return false;
+                    team = superteam;
                 }
 
-                team.subteam_of.as_ref() == Some(&main_team.name)
+                false
             })
             .for_each(|team| match team.kind {
                 TeamKind::Team => raw_subteams.push(team),
