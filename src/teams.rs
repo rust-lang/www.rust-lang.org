@@ -116,35 +116,27 @@ impl Data {
         let superteams: HashMap<_, _> = self
             .teams
             .iter()
-            .filter(|team| matches!(team.kind, TeamKind::Team))
             .filter_map(|team| Some((team.name.clone(), team.subteam_of.clone()?)))
             .collect();
 
         self.teams
             .into_iter()
-            // The leadership-council page should show just the
-            // leadership-council, not everything underneath it.
-            .filter(|_| main_team.name != "leadership-council")
             .filter(|team| team.website_data.is_some())
             .filter(|team| {
                 // For teams find not only direct subteams but also transitive ones.
-                if let TeamKind::Team = team.kind {
-                    let mut team = &team.name;
+                let mut team = &team.name;
 
-                    // The graph of teams is guaranteed to be acyclic by the CI script of
-                    // the team repository. Therefore this loop has to terminate eventually.
-                    while let Some(superteam) = superteams.get(team) {
-                        if superteam == &main_team.name {
-                            return true;
-                        }
-
-                        team = superteam;
+                // The graph of teams is guaranteed to be acyclic by the CI script of
+                // the team repository. Therefore this loop has to terminate eventually.
+                while let Some(superteam) = superteams.get(team) {
+                    if superteam == &main_team.name {
+                        return true;
                     }
 
-                    return false;
+                    team = superteam;
                 }
 
-                team.subteam_of.as_ref() == Some(&main_team.name)
+                false
             })
             .for_each(|team| match team.kind {
                 TeamKind::Team => raw_subteams.push(team),
