@@ -61,14 +61,9 @@ impl Data {
         self.teams
             .into_iter()
             .filter(|team| team.website_data.is_some())
-            // On the main page, show the leadership-council, all top-level
+            // On the main page, show the leadership-council and all top-level
             // teams.
-            .filter(|team| {
-                matches!(
-                    team.subteam_of.as_deref(),
-                    None | Some("leadership-council")
-                )
-            })
+            .filter(|team| team.kind == TeamKind::Team && team.subteam_of.is_none())
             .map(|team| IndexTeam {
                 url: format!(
                     "{}/{}",
@@ -77,11 +72,7 @@ impl Data {
                 ),
                 team,
             })
-            .for_each(|team| {
-                if team.team.kind == TeamKind::Team {
-                    data.teams.push(team)
-                }
-            });
+            .for_each(|team| data.teams.push(team));
 
         data.teams.sort_by_key(|index_team| {
             Reverse(index_team.team.website_data.as_ref().unwrap().weight)
@@ -105,11 +96,14 @@ impl Data {
 
         // Don't show pages for subteams
         if let Some(subteam) = &main_team.subteam_of {
-            // Each launching-pad and leadership-council subteam has their own
-            // page. Subteams of those subteams do not get a page of their own
-            // (they are shown in their parent page). We may want to consider
-            // putting launching-pad teams into a separate page in the future.
-            if !matches!(subteam.as_ref(), "launching-pad" | "leadership-council") {
+            // In the past we gave working groups their own dedicated pages linked
+            // from the front page. We have now moved those working groups under
+            // launching-pad, and the groups are listed as subteams of the launching
+            // pad. To avoid breaking external links to things like
+            // https://www.rust-lang.org/governance/wgs/wg-secure-code,
+            // we still generate dedicated pages for these launching-pad teams,
+            // but they are not linked from the main site.
+            if !matches!(subteam.as_ref(), "launching-pad") {
                 return Err(TeamNotFound.into());
             }
         }
