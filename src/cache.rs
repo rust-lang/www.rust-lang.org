@@ -3,9 +3,9 @@ use std::future::Future;
 use std::sync::Arc;
 use std::time::Instant;
 
+use rocket::State;
 use rocket::tokio::sync::RwLock;
 use rocket::tokio::task;
-use rocket::State;
 
 const CACHE_TTL_SECS: u64 = 120;
 
