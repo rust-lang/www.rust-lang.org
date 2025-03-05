@@ -19,7 +19,7 @@ fn add_bundle_functions(bundle: &mut FluentBundle<&'static FluentResource>) {
     bundle
         .add_function("EMAIL", |values, _named| {
             let email = match values.first() {
-                Some(FluentValue::String(ref s)) => s,
+                Some(FluentValue::String(s)) => s,
                 _ => return FluentValue::None,
             };
             FluentValue::String(format!("<a href='mailto:{0}' lang='en-US'>{0}</a>", email).into())
@@ -29,7 +29,7 @@ fn add_bundle_functions(bundle: &mut FluentBundle<&'static FluentResource>) {
     bundle
         .add_function("ENGLISH", |values, _named| {
             let text = match values.first() {
-                Some(FluentValue::String(ref s)) => s,
+                Some(FluentValue::String(s)) => s,
                 _ => return FluentValue::None,
             };
             FluentValue::String(format!("<span lang='en-US'>{0}</span>", text).into())
