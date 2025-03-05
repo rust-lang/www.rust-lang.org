@@ -7,7 +7,7 @@ use serde::Serialize;
 use std::{collections::HashSet, sync::LazyLock};
 
 use handlebars_fluent::{
-    fluent_bundle::{concurrent::FluentBundle, FluentResource, FluentValue},
+    fluent_bundle::{FluentResource, FluentValue, concurrent::FluentBundle},
     loader::SimpleLoader,
     simple_loader,
 };

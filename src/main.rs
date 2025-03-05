@@ -15,8 +15,8 @@ use rocket::tokio::sync::RwLock;
 use rust_version::RustReleasePost;
 use rust_version::RustVersion;
 use serde::Serialize;
-use teams::encode_zulip_stream;
 use teams::RustTeams;
+use teams::encode_zulip_stream;
 
 use std::collections::hash_map::DefaultHasher;
 use std::env;
@@ -30,17 +30,17 @@ use rocket::{
     fs::NamedFile,
     http::Status,
     request::{FromParam, Request},
-    response::{content, Redirect},
+    response::{Redirect, content},
 };
 use rocket_dyn_templates::Template;
 
-use sass_rs::{compile_file, Options};
+use sass_rs::{Options, compile_file};
 
 use category::Category;
 
 use caching::CachedNamedFile;
-use handlebars_fluent::{loader::Loader, FluentHelper};
-use i18n::{create_loader, LocaleInfo, SupportedLocale, TeamHelper, EXPLICIT_LOCALE_INFO};
+use handlebars_fluent::{FluentHelper, loader::Loader};
+use i18n::{EXPLICIT_LOCALE_INFO, LocaleInfo, SupportedLocale, TeamHelper, create_loader};
 
 const ZULIP_DOMAIN: &str = "https://rust-lang.zulipchat.com";
 

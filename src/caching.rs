@@ -1,5 +1,5 @@
 use rocket::fs::NamedFile;
-use rocket::http::{hyper, Header};
+use rocket::http::{Header, hyper};
 use rocket::response::Responder;
 
 #[derive(Responder)]

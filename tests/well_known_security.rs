@@ -1,4 +1,4 @@
-use time::{format_description::well_known::Rfc3339, OffsetDateTime};
+use time::{OffsetDateTime, format_description::well_known::Rfc3339};
 
 static TEXT: &str = include_str!("../static/text/well_known_security.txt");
 
