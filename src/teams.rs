@@ -1,8 +1,8 @@
-use percent_encoding::{utf8_percent_encode, AsciiSet, NON_ALPHANUMERIC};
+use percent_encoding::{AsciiSet, NON_ALPHANUMERIC, utf8_percent_encode};
 use rocket_dyn_templates::handlebars::{
     Context, Handlebars, Helper, HelperResult, Output, RenderContext, RenderErrorReason,
 };
-use rust_team_data::v1::{Team, TeamKind, Teams, BASE_URL};
+use rust_team_data::v1::{BASE_URL, Team, TeamKind, Teams};
 use serde::Serialize;
 use std::cmp::Reverse;
 use std::collections::HashMap;
@@ -416,23 +416,26 @@ mod tests {
         bar.kind = TeamKind::WorkingGroup;
         let data = Data::dummy(vec![foo, bar]);
 
-        assert!(data
-            .clone()
-            .page_data("teams", "unknown")
-            .err()
-            .unwrap()
-            .is::<TeamNotFound>());
-        assert!(data
-            .clone()
-            .page_data("wgs", "foo")
-            .err()
-            .unwrap()
-            .is::<TeamNotFound>());
-        assert!(data
-            .page_data("teams", "bar")
-            .err()
-            .unwrap()
-            .is::<TeamNotFound>());
+        assert!(
+            data.clone()
+                .page_data("teams", "unknown")
+                .err()
+                .unwrap()
+                .is::<TeamNotFound>()
+        );
+        assert!(
+            data.clone()
+                .page_data("wgs", "foo")
+                .err()
+                .unwrap()
+                .is::<TeamNotFound>()
+        );
+        assert!(
+            data.page_data("teams", "bar")
+                .err()
+                .unwrap()
+                .is::<TeamNotFound>()
+        );
     }
 
     #[test]
@@ -441,10 +444,11 @@ mod tests {
         foo.subteam_of = Some("bar".into());
         let data = Data::dummy(vec![foo, dummy_team("bar")]);
 
-        assert!(data
-            .page_data("teams", "foo")
-            .err()
-            .unwrap()
-            .is::<TeamNotFound>());
+        assert!(
+            data.page_data("teams", "foo")
+                .err()
+                .unwrap()
+                .is::<TeamNotFound>()
+        );
     }
 }
