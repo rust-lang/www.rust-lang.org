@@ -6,11 +6,6 @@ homepage-version = 버전 { $number }
 ## components/panels/production.hbs
 
 production-title = Rust를 사용하는 제품
-production-testimonial-npm = 제가 Rust에게 보내는 최고의 찬사는 지루하다는 것입니다. 이것은 엄청난 칭찬이죠.
-production-testimonial-npm-attribution = Chris Dickinson, npm Inc.의 엔지니어
-production-testimonial-npm-alt = npm 로고
-production-testimonial-yelp-attribution = Antonio Verardi, 인프라 엔지니어
-production-testimonial-yelp-alt = Yelp 로고
 
 ## components/panels/language-values.hbs
 
