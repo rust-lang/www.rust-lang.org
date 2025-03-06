@@ -12,12 +12,6 @@ production-blurb =
     <a href="https://blogs.dropbox.com/tech/2016/06/lossless-compression-with-brotli/">Dropbox</a>
     和 <a href="https://blog.cloudflare.com/cloudflare-workers-as-a-serverless-rust-platform/">Cloudflare</a>
     都在使用 Rust。<strong>从初创公司到大型企业，从嵌入式设备到可扩展的 Web 服务，Rust 都完全合适。</strong>
-production-testimonial-npm = 对 Rust 最大的赞美，就是它让我太无聊了。这太令人惊叹了！
-production-testimonial-npm-attribution = Chris Dickinson，来自 npm 公司的工程师
-production-testimonial-npm-alt = npm 标志
-production-testimonial-yelp = 文档、工具和社区都相当棒，足以帮助您顺利完成 Rust 项目！
-production-testimonial-yelp-attribution = Antonio Verardi，基础设施工程师
-production-testimonial-yelp-alt = Yelp 标志
 
 ## components/panels/language-values.hbs
 

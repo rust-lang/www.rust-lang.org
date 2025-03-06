@@ -5,11 +5,6 @@ homepage-version = نسخه { $number }
 
 ## components/panels/production.hbs
 
-production-testimonial-npm-attribution = کریس دیکنسون، مهندس در شرکت npm
-production-testimonial-npm-alt = لوگوی npm
-production-testimonial-yelp = تمامی مستندات، ابزارها و جامعه عالی هستند - شما تمامی ابزارها، برای دست‌یافتن به نوشتن کدهای Rust را دارید.
-production-testimonial-yelp-attribution = آنتونیو وردی ، مهندس زیرساخت
-production-testimonial-yelp-alt = لوگوی Yelp
 
 ## components/panels/language-values.hbs
 

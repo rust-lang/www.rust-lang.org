@@ -11,12 +11,6 @@ production-blurb =
     現今全世界上百家公司企業為了尋求快速、節約資源而且能跨平台的解決辦法，都已在正式環境中使用 Rust。許多耳熟能詳且受歡迎的軟體，諸如 <a href="https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka-stylo/">Firefox</a>、<a href="https://blogs.dropbox.com/tech/2016/06/lossless-compression-with-brotli/">Dropbox</a>
     以及 <a href="https://blog.cloudflare.com/cloudflare-workers-as-a-serverless-rust-platform/">Cloudflare</a>
     都在使用 Rust。<strong>從新創公司到大型企業；從嵌入式裝置到可擴展的網路服務，Rust 完全適合。</strong>
-production-testimonial-npm = 我對 Rust 最大的讚賞是它太無聊了，但這其實是令人讚嘆的表揚。
-production-testimonial-npm-attribution = Chris Dickinson, 來自 npm, Inc 的工程師
-production-testimonial-npm-alt = npm 標誌
-production-testimonial-yelp = 所有的技術文件、工具到社群都十分齊全，足以協助您成功編寫 Rust 程式專案。
-production-testimonial-yelp-attribution = Antonio Verardi, 系統架構師
-production-testimonial-yelp-alt = Yelp 標誌
 
 ## components/panels/language-values.hbs
 

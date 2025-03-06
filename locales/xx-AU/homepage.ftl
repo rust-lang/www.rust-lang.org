@@ -13,12 +13,6 @@ production-blurb = <strong>˙ʇᴉɟ ʇɐǝɹƃ ɐ sᴉ ʇsnɹ 'sǝɔᴉʌɹǝs 
         ʍouʞ noʎ ǝɹɐʍʇɟoS ˙suoᴉʇnlos ɯɹoɟʇɐld-ssoɹɔ 'ǝɔɹnosǝɹ-ʍol 'ʇsɐɟ ɹoɟ ʎɐpoʇ
         uoᴉʇɔnpoɹd uᴉ ʇsnɹ ƃuᴉsn ǝɹɐ plɹoʍ ǝɥʇ punoɹɐ sǝᴉuɐdɯoɔ ɟo spǝɹpunH
 production-learn-more = ǝɹoW uɹɐǝ˥
-production-testimonial-npm = ˙ʇuǝɯᴉldɯoɔ ƃuᴉzɐɯɐ uɐ sᴉ sᴉɥʇ puɐ 'ƃuᴉɹoq s,ʇᴉ ʇɐɥʇ sᴉ ʇsnɹ oʇ ʇuǝɯᴉldɯoɔ ʇsǝƃƃᴉq ʎW
-production-testimonial-npm-attribution = ɔuI 'ɯdu ʇɐ ɹǝǝuᴉƃuƎ 'uosuᴉʞɔᴉp sᴉɹɥƆ
-production-testimonial-npm-alt = oƃo˥ ɯdu
-production-testimonial-yelp = ˙ǝpoɔ ʇsnɹ ƃuᴉʇᴉɹʍ uᴉ pǝǝɔɔns oʇ slooʇ ǝɥʇ llɐ ǝʌɐɥ noʎ - ʇɐǝɹƃ sᴉ ʎʇᴉunɯɯoɔ ǝɥʇ 'ƃuᴉlooʇ ǝɥʇ 'uoᴉʇɐʇuǝɯnɔop ǝɥʇ ll∀
-production-testimonial-yelp-attribution = ɹǝǝuᴉƃuƎ ǝɹnʇɔnɹʇsɐɹɟuI 'ᴉpɹɐɹǝΛ oᴉuoʇu∀
-production-testimonial-yelp-alt = oƃo˥ dlǝ⅄
 language-values-why-rust = ¿ʇsnɹ ʎɥM
 language-values-performance = ǝɔuɐɯɹoɟɹǝԀ
 language-values-performance-blurb = ˙sǝƃɐnƃuɐl ɹǝɥʇo ɥʇᴉʍ ǝʇɐɹƃǝʇuᴉ ʎlᴉsɐǝ puɐ 'sǝɔᴉʌǝp pǝppǝqɯǝ
