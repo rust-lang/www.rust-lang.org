@@ -22,6 +22,3 @@ jobs:
           cargo build --all --locked
           cargo clippy -- --deny warnings
           cargo test --all --locked
-
-      - name: Build the Docker image
-        run: docker build -t website .
