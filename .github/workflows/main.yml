@@ -18,7 +18,6 @@ jobs:
       - name: Test
         run: |
           set -euo pipefail
-          IFS=$'\n\t'
           # Check if the code is good
           cargo build --all --locked
           cargo clippy -- --deny warnings
