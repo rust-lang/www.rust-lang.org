@@ -8,12 +8,6 @@ homepage-version = Version { $number }
 
 production-title = Rust en production
 production-blurb = Des centaines d'entreprises, dans le monde entier, utilisent aujourd'hui Rust en production, pour des solutions rapides, multiplateformes et économes en ressources. Des logiciels connus et appréciés, comme <a href="https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka-stylo/">Firefox</a>, <a href="https://blogs.dropbox.com/tech/2016/06/lossless-compression-with-brotli/">Dropbox</a>, et <a href="https://blog.cloudflare.com/cloudflare-workers-as-a-serverless-rust-platform/">Cloudflare</a>, utilisent Rust. <strong> De la startup à la multinationale, du système embarqué au service web à haute disponibilité, Rust est une excellente solution.</strong>
-production-testimonial-npm = Mon meilleur compliment envers Rust est qu'il est ennuyeux, et c'est un fantastique compliment.
-production-testimonial-npm-attribution = Chris Dickinson, Ingénieur chez npm, Inc
-production-testimonial-npm-alt = logo npm
-production-testimonial-yelp = La documentation, l’outillage et la communauté sont tous géniaux — vous avez tous les outils pour réussir à écrire du code en Rust.
-production-testimonial-yelp-attribution = Antonio Verardi, Ingénieur Infrastructure
-production-testimonial-yelp-alt = logo Yelp
 
 ## components/panels/language-values.hbs
 

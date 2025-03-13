@@ -15,12 +15,6 @@ production-blurb =
     czy <a href="https://blog.cloudflare.com/cloudflare-workers-as-a-serverless-rust-platform/">Cloudflare</a>,
     korzystają z Rusta. <strong>Od startupów po wielkie
     korporacje, od systemów wbudowanych po serwisy webowe, Rust pasuje wszędzie.</strong>
-production-testimonial-npm = Moim największym komplementem dla Rusta to to, że jest nudny. A to wspaniały komplement.
-production-testimonial-npm-attribution = Chris Dickinson, Inżynier w npm, Inc
-production-testimonial-npm-alt = Logo npm
-production-testimonial-yelp = Dokumentacja, narzędzia i społeczność są wspaniałe - masz wszelkie dostępne środki, aby osiągnąć sukces w pisaniu kodu w Rust.
-production-testimonial-yelp-attribution = Antonio Verardi, Inżynier Infrastruktury
-production-testimonial-yelp-alt = Logo Yelp
 
 ## components/panels/language-values.hbs
 

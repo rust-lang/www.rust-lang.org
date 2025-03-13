@@ -8,12 +8,6 @@ homepage-version = バージョン { $number }
 
 production-title = Rustの活用事例
 production-blurb = 既に、世界中の数百という企業がRustを採用し、高速で低リソースのクロスプラットフォームソリューションを実現しています。皆さんがご存じで愛用しているソフトウェア、例えば<a href="https://hacks.mozilla.org/2017/08/inside-a-super-fast-css-engine-quantum-css-aka-stylo/">Firefox</a>、<a href="https://blogs.dropbox.com/tech/2016/06/lossless-compression-with-brotli/">Dropbox</a>や<a href="https://blog.cloudflare.com/cloudflare-workers-as-a-serverless-rust-platform/">Cloudflare</a>も、Rustを採用しています。<strong>スタートアップから大企業、組込み機器からスケーラブルなWebサービスに至るまで、Rustはぴったりです。</strong>
-production-testimonial-npm = 私のRustに対する最大の賛辞は退屈だということで、これはすばらしい褒め言葉なんです。
-production-testimonial-npm-attribution = Chris Dickinson, Engineer at npm, Inc
-production-testimonial-npm-alt = npmロゴ
-production-testimonial-yelp = ドキュメンテーション、ツール群、コミュニティそのすべてが秀逸です。Rustコードを書く上で必要な道具はすべて揃っています。
-production-testimonial-yelp-attribution = Antonio Verardi, Infrastructure Engineer
-production-testimonial-yelp-alt = Yelpロゴ
 
 ## components/panels/language-values.hbs
 

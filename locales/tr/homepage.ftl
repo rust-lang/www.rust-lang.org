@@ -13,12 +13,6 @@ production-blurb =
     ve <a href="https://blog.cloudflare.com/cloudflare-workers-as-a-serverless-rust-platform/">Cloudflare</a>
     gibi bildiğiniz ve sevdiğiniz yazılımlar Rust kullanıyor. <strong> Girişimlerden tutun büyük şirketlere,
     gömülü cihazlardan tutun ölçeklenebilir web servislerine, hepsi için Rust, çok uygundur.</strong>
-production-testimonial-npm = Rust için en büyük iltifatım Rust'ın çok sıkıcı olduğu yönündeydi ve bu, mükemmel bir iltifat.
-production-testimonial-npm-attribution = Chris Dickinson, npm, Inc'te mühendis
-production-testimonial-npm-alt = npm Logosu
-production-testimonial-yelp = Bütün belgelendirme, araçlar ve topluluk harika. Rust kodu yazmakta başarıya ulaşmanız için bütün araçlara sahipsiniz.
-production-testimonial-yelp-attribution = Antonio Verardi, Altyapı Mühendisi
-production-testimonial-yelp-alt = Yelp Logosu
 
 ## components/panels/language-values.hbs
 
