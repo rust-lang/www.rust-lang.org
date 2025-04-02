@@ -119,6 +119,16 @@ impl Data {
             .filter_map(|team| Some((team.name.clone(), team.subteam_of.clone()?)))
             .collect();
 
+        // Phased out T-compiler Working Groups
+        let phased_out_compiler_wgs = [
+            "wg-meta".to_string(),
+            "wg-nll".to_string(),
+            "wg-polymorphization".to_string(),
+            "wg-prioritization".to_string(),
+            "wg-self-profile".to_string(),
+            "wg-traits".to_string(),
+        ];
+
         self.teams
             .into_iter()
             .filter(|team| team.website_data.is_some())
@@ -140,7 +150,11 @@ impl Data {
             })
             .for_each(|team| match team.kind {
                 TeamKind::Team => raw_subteams.push(team),
-                TeamKind::WorkingGroup => wgs.push(team),
+                TeamKind::WorkingGroup => {
+                    if !phased_out_compiler_wgs.contains(&team.name) {
+                        wgs.push(team)
+                    }
+                }
                 TeamKind::ProjectGroup => project_groups.push(team),
                 _ => {}
             });
