@@ -11,6 +11,7 @@ learn-more = Learn More
 discord = Discord
 zulip = Zulip
 mastodon = Mastodon
+bluesky = Bluesky
 
 ## components/panels/domain.hbs
 
