@@ -22,6 +22,46 @@ security-reporting-description--2022-01 =
         </ul>
         <p>Please note that the discussion forums are public areas. When escalating in these venues, please do not discuss your issue. Simply say that you’re trying to get a hold of someone from the security team.</p>
 
+security-scope-heading = Scope
+security-scope--2025-04 =
+        <p>The Rust Security Response WG handles vulnerability reports for everything maintained and published by the Rust Project:</p>
+        <ul>
+            <li>
+                The following GitHub organizations, and all repositories and CI pipelines hosted in them:
+                <ul>
+                    <li><a href="https://github.com/rust-lang"><code>rust-lang</code></a></li>
+                    <li><a href="https://github.com/rust-lang-ci"><code>rust-lang-ci</code></a></li>
+                    <li><a href="https://github.com/rust-lang-nursery"><code>rust-lang-nursery</code></a></li>
+                    <li><a href="https://github.com/rust-analyzer"><code>rust-analyzer</code></a></li>
+                </ul>
+            </li>
+            <li>
+                The following domain names, all their subdomains, and all applications hosted within:
+                <ul>
+                    <li><a href="http://rust-lang.org">rust-lang.org</a> (see exceptions below)</li>
+                    <li><a href="http://rustup.rs">rustup.rs</a></li>
+                    <li><a href="http://crates.io">crates.io</a> (see exceptions below)</li>
+                    <li><a href="http://docs.rs">docs.rs</a></li>
+                    <li><a href="http://rfcbot.rs">rfcbot.rs</a></li>
+                </ul>
+            </li>
+            <li>All crates owned by <a href="https://crates.io/users/rust-lang-owner">@rust-lang-owner</a> on <a href="http://crates.io">crates.io</a>.</li>
+            <li>All extensions in the Visual Studio Marketplace published by <a href="https://marketplace.visualstudio.com/publishers/rust-lang"><code>rust-lang</code></a>.</li>
+            <li>All extensions in the Open VSX registry published by <a href="https://open-vsx.org/namespace/rust-lang"><code>rust-lang</code></a>.</li>
+        </ul>
+        <p>The following things are <strong>outside our scope</strong>:</p>
+        <ul>
+            <li>The <a href="http://internals.rust-lang.org">internals.rust-lang.org</a> and <a href="http://users.rust-lang.org">users.rust-lang.org</a> domains. Please follow <a href="https://github.com/discourse/discourse/blob/main/docs/SECURITY.md">Discourse's Security Policy</a> for it.</li>
+            <li>Third-party packages published on <a href="http://crates.io">crates.io</a>. Please follow <a href="https://crates.io/security">crates.io's Security Policy</a> for them.</li>
+        </ul>
+        <p>When reporting vulnerabilities, keep in mind that:</p>
+        <ul>
+            <li>Unless otherwise noted, all components of the Rust toolchain (rustc, Cargo, rust-analyzer, or any other tool shipped through rustup) assume that the user's source code and dependencies are fully trusted, reviewed and contain no malicious code. We do not consider attacks caused by compiling or analyzing malicious projects or dependencies a security vulnerability.</li>
+            <li>Soundness issues in the Rust compiler or language are not automatically classified as a security vulnerability, but will be analyzed on a case-by-case basis if reported.</li>
+            <li>The <code>regex</code> crate <a href="https://docs.rs/regex/latest/regex/#untrusted-input">provides guarantees about untrusted patterns</a>. We consider denial of service with untrusted patterns a security vulnerability only if the time spent inside of the <code>regex</code> crate is not linear, and none of the <a href="https://docs.rs/regex/latest/regex/struct.RegexBuilder.html">limit methods in <code>RegexBuilder</code></a> are able to prevent the attack.</li>
+        </ul>
+        <p>If you have doubts on whether something falls within our scope, <a href="mailto:security@rust-lang.org">please reach out</a> and we will provide guidance.</p>
+
 security-disclosure-heading = Disclosure policy
 security-disclosure-description =
         <p>The Rust project has a 5 step disclosure process.</p>
