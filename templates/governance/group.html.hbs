@@ -26,6 +26,13 @@
         {{/each}}
     </section>
 {{/if}}
+{{#if data.other_teams}}
+    <section class="green">
+        {{#each data.other_teams as |team|}}
+            {{> governance/group-team}}
+        {{/each}}
+    </section>
+{{/if}}
 
 {{/inline}}
 {{~> (lookup this "parent")~}}
