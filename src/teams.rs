@@ -31,6 +31,8 @@ pub struct PageData {
     subteams: Vec<Team>,
     wgs: Vec<Team>,
     project_groups: Vec<Team>,
+    // Marker teams and other kinds of groups that have a website entry
+    other_teams: Vec<Team>,
 }
 
 #[derive(Clone)]
@@ -112,6 +114,7 @@ impl Data {
         let mut raw_subteams = Vec::new();
         let mut wgs = Vec::new();
         let mut project_groups = Vec::new();
+        let mut other_teams = Vec::new();
 
         let superteams: HashMap<_, _> = self
             .teams
@@ -142,12 +145,13 @@ impl Data {
                 TeamKind::Team => raw_subteams.push(team),
                 TeamKind::WorkingGroup => wgs.push(team),
                 TeamKind::ProjectGroup => project_groups.push(team),
-                _ => {}
+                TeamKind::MarkerTeam | TeamKind::Unknown => other_teams.push(team),
             });
 
         raw_subteams.sort_by_key(|team| Reverse(team.website_data.as_ref().unwrap().weight));
         wgs.sort_by_key(|team| Reverse(team.website_data.as_ref().unwrap().weight));
         project_groups.sort_by_key(|team| Reverse(team.website_data.as_ref().unwrap().weight));
+        other_teams.sort_by_key(|team| Reverse(team.website_data.as_ref().unwrap().weight));
 
         // Lay out subteams according to their hierarchy.
         // Superteams come first and subteams come after, recursively.
@@ -181,6 +185,7 @@ impl Data {
             subteams,
             wgs,
             project_groups,
+            other_teams,
         })
     }
 }
