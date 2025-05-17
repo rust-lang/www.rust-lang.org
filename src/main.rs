@@ -12,7 +12,6 @@ use cache::Cached;
 use rocket::catch;
 use rocket::get;
 use rocket::tokio::sync::RwLock;
-use rust_version::RustReleasePost;
 use rust_version::RustVersion;
 use serde::Serialize;
 use teams::RustTeams;
@@ -156,20 +155,13 @@ fn robots_txt() -> Option<content::RawText<&'static str>> {
 }
 
 #[get("/")]
-async fn index(
-    version_cache: &Cache<RustVersion>,
-    release_post_cache: &Cache<RustReleasePost>,
-) -> Template {
-    render_index(ENGLISH.into(), version_cache, release_post_cache).await
+async fn index(version_cache: &Cache<RustVersion>) -> Template {
+    render_index(ENGLISH.into(), version_cache).await
 }
 
 #[get("/<locale>", rank = 3)]
-async fn index_locale(
-    locale: SupportedLocale,
-    version_cache: &Cache<RustVersion>,
-    release_post_cache: &Cache<RustReleasePost>,
-) -> Template {
-    render_index(locale.0, version_cache, release_post_cache).await
+async fn index_locale(locale: SupportedLocale, version_cache: &Cache<RustVersion>) -> Template {
+    render_index(locale.0, version_cache).await
 }
 
 #[get("/<category>")]
@@ -328,26 +320,15 @@ fn concat_app_js(files: Vec<&str>) -> String {
     String::from(&js_path[1..])
 }
 
-async fn render_index(
-    lang: String,
-    version_cache: &Cache<RustVersion>,
-    release_post_cache: &Cache<RustReleasePost>,
-) -> Template {
+async fn render_index(lang: String, version_cache: &Cache<RustVersion>) -> Template {
     #[derive(Serialize)]
     struct IndexData {
         rust_version: String,
-        rust_release_post: String,
     }
 
     let page = "index";
-    let release_post = rust_version::rust_release_post(release_post_cache).await;
     let data = IndexData {
         rust_version: rust_version::rust_version(version_cache).await,
-        rust_release_post: if !release_post.is_empty() {
-            format!("https://blog.rust-lang.org/{}", release_post)
-        } else {
-            String::new()
-        },
     };
     let context = Context::new(page, "", true, data, lang);
     Template::render(page, context)
@@ -438,14 +419,12 @@ async fn rocket() -> _ {
     });
 
     let rust_version = RustVersion::fetch().await.unwrap_or_default();
-    let rust_release_post = RustReleasePost::fetch().await.unwrap_or_default();
     let teams = RustTeams::fetch().await.unwrap_or_default();
 
     rocket::build()
         .attach(templating)
         .attach(headers::InjectHeaders)
         .manage(Arc::new(RwLock::new(rust_version)))
-        .manage(Arc::new(RwLock::new(rust_release_post)))
         .manage(Arc::new(RwLock::new(teams)))
         .mount(
             "/",
