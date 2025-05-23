@@ -2,7 +2,6 @@
 
 tagline = Язык, позволяющий каждому { $linebreak } создавать надёжное и эффективное программное обеспечение
 get-started = Начало
-homepage-version = Версия { $number }
 
 ## components/panels/production.hbs
 

@@ -2,7 +2,6 @@
 
 tagline = 効率的で信頼できるソフトウェアを { $linebreak } 誰もがつくれる言語
 get-started = はじめる
-homepage-version = バージョン { $number }
 
 ## components/panels/production.hbs
 

@@ -2,7 +2,6 @@
 
 tagline = Güvenilir ve verimli bir yazılım { $linebreak } oluşturmak için herkesi teşvik eden bir dil.
 get-started = Başlayın
-homepage-version = Sürüm { $number }
 
 ## components/panels/production.hbs
 

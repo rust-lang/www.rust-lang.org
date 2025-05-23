@@ -2,7 +2,6 @@
 
 tagline = Un linguaggio che permette a chiunque { $linebreak } di sviluppare software affidabile ed efficiente.
 get-started = Inizia
-homepage-version = Versione { $number }
 
 ## components/panels/production.hbs
 

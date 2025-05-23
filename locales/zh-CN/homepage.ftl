@@ -2,7 +2,6 @@
 
 tagline = 一门赋予每个人{ $linebreak }构建可靠且高效软件能力的语言。
 get-started = 马上开始
-homepage-version = 版本 { $number }
 
 ## components/panels/production.hbs
 

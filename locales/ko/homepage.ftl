@@ -1,7 +1,6 @@
 ## index.hbs
 
 get-started = 시작하기
-homepage-version = 버전 { $number }
 
 ## components/panels/production.hbs
 

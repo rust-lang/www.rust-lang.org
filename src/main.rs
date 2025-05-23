@@ -4,7 +4,6 @@ mod category;
 mod headers;
 mod i18n;
 mod redirect;
-mod rust_version;
 mod teams;
 
 use cache::Cache;
@@ -12,7 +11,6 @@ use cache::Cached;
 use rocket::catch;
 use rocket::get;
 use rocket::tokio::sync::RwLock;
-use rust_version::RustVersion;
 use serde::Serialize;
 use teams::RustTeams;
 use teams::encode_zulip_stream;
@@ -155,13 +153,13 @@ fn robots_txt() -> Option<content::RawText<&'static str>> {
 }
 
 #[get("/")]
-async fn index(version_cache: &Cache<RustVersion>) -> Template {
-    render_index(ENGLISH.into(), version_cache).await
+async fn index() -> Template {
+    render_index(ENGLISH.into()).await
 }
 
 #[get("/<locale>", rank = 3)]
-async fn index_locale(locale: SupportedLocale, version_cache: &Cache<RustVersion>) -> Template {
-    render_index(locale.0, version_cache).await
+async fn index_locale(locale: SupportedLocale) -> Template {
+    render_index(locale.0).await
 }
 
 #[get("/<category>")]
@@ -320,17 +318,9 @@ fn concat_app_js(files: Vec<&str>) -> String {
     String::from(&js_path[1..])
 }
 
-async fn render_index(lang: String, version_cache: &Cache<RustVersion>) -> Template {
-    #[derive(Serialize)]
-    struct IndexData {
-        rust_version: String,
-    }
-
+async fn render_index(lang: String) -> Template {
     let page = "index";
-    let data = IndexData {
-        rust_version: rust_version::rust_version(version_cache).await,
-    };
-    let context = Context::new(page, "", true, data, lang);
+    let context = Context::new(page, "", true, (), lang);
     Template::render(page, context)
 }
 
@@ -418,13 +408,11 @@ async fn rocket() -> _ {
             .register_helper("encode-zulip-stream", Box::new(encode_zulip_stream));
     });
 
-    let rust_version = RustVersion::fetch().await.unwrap_or_default();
     let teams = RustTeams::fetch().await.unwrap_or_default();
 
     rocket::build()
         .attach(templating)
         .attach(headers::InjectHeaders)
-        .manage(Arc::new(RwLock::new(rust_version)))
         .manage(Arc::new(RwLock::new(teams)))
         .mount(
             "/",

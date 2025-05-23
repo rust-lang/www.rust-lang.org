@@ -2,7 +2,6 @@
 ## index.hbs
 tagline =  A language empowering everyone { $linebreak } to build reliable and efficient software.
 get-started = Get Started
-homepage-version = Version { $number }
 
 
 ## components/panels/production.hbs
