@@ -18,7 +18,6 @@ governance-members = 成員與聯絡方式
 
 governance-team-email = 寄信至 { $teamname }
 governance-team-repository = { $teamname } repository
-governance-team-discord = Discord 上的 { $channel }
 governance-team-zulip = 於 Zulip
 governance-user-github = GitHub: { $link }
 governance-user-team-leader = 團隊領袖

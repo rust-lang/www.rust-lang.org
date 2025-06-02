@@ -6,7 +6,6 @@ getting-started = Erste Schritte
 why-rust = Warum Rust?
 production-use = Im Einsatz
 learn-more = Mehr lesen
-discord = Discord
 mastodon = Mastodon
 
 ## components/layout.hbs
@@ -40,7 +39,6 @@ footer-social = Soziales
 footer-get-help = Hilfe bekommen!
 footer-youtube-alt = Twitter
 footer-alt-youtube = Youtube-Logo
-footer-discord-alt = { discord }
 footer-github-alt = GitHub
 footer-attribution =
     Gepflegt vom Rust-Team. Fehler gefunden?

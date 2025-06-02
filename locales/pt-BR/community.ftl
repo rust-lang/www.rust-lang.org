@@ -27,7 +27,7 @@ community-irlo =
     de Rust &ndash; desde o trabalho no compilador até o design da linguagem
     e a biblioteca padrão.
 community-chat-header = Plataformas de comunicação
-community-chat = As conversas sobre desenvolvimento de Rust e outros assuntos gerais acontecem em diversas plataformas de comunicação. Confira os diversos canais no servidor sobre Rust no Discord, ou confira na página de Equipes onde cada uma das equipes se encontram.
+community-chat = As conversas sobre desenvolvimento de Rust e outros assuntos gerais acontecem em diversas plataformas de comunicação. Confira os diversos canais no servidor sobre Rust no Zulip, ou confira na página de Equipes onde cada uma das equipes se encontram.
 community-teams-learn = Conheça mais sobre as equipes
 community-events-header = Eventos
 community-meetup-header = Descubra um encontro local ou conferências

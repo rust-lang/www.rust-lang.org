@@ -21,7 +21,6 @@ governance-members = Üyeler & İrtibatlar
 
 governance-team-email = { $teamname }ne E-Posta Gönder
 governance-team-repository = { $teamname } deposu
-governance-team-discord = Discord'da { $channel } kanalı
 governance-user-github = GitHub: { $link }
 governance-user-team-leader = Ekip lideri
 governance-members-header = Üyeler

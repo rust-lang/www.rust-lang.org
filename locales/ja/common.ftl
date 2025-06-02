@@ -6,7 +6,6 @@ getting-started = はじめに
 why-rust = なぜRustか？
 production-use = 本番環境での利用
 learn-more = もっと読む
-discord = Discord
 zulip = Zulip
 mastodon = Mastodon
 
@@ -50,7 +49,6 @@ footer-social = ソーシャルメディア
 footer-get-help = ヘルプ
 footer-youtube-alt = Twitter
 footer-alt-youtube = youtubeのロゴ
-footer-discord-alt = { discord }
 footer-github-alt = GitHub
 footer-attribution = Rustチームによって管理されています。誤字を見つけましたか？<a href="https://github.com/rust-lang/www.rust-lang.org/issues/new/choose">修正を送ってください！</a>
 footer-old-site = <a href="https://prev.rust-lang.org">以前のウェブサイト</a>をお探しですか？

@@ -28,7 +28,7 @@ community-irlo = The Rust Internals Forum is a place for discussion about the
             as well as the design of the language and the standard library.
 
 community-chat-header = Chat platforms
-community-chat = Development of Rust, and general chatter happens on several chat platforms. Check out general channels and more on the Rust Discord server, or check out the teams page to find where specific teams meet.
+community-chat = Development of Rust, and general chatter happens on several chat platforms. Check out general channels and more on the Rust Zulip server, or check out the teams page to find where specific teams meet.
 
 community-teams-learn = Learn more about teams
 

@@ -21,7 +21,6 @@ governance-members = メンバー&連絡先
 
 governance-team-email = { $teamname } にメールを送る
 governance-team-repository = { $teamname } リポジトリ
-governance-team-discord = Discord { $channel }
 governance-team-zulip = Zulip { $stream }
 governance-user-github = GitHub: { $link }
 governance-user-team-leader = チームリーダー

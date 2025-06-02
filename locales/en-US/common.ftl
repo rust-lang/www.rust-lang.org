@@ -8,7 +8,6 @@ getting-started = Getting started
 why-rust = Why Rust?
 production-use = Production use
 learn-more = Learn More
-discord = Discord
 zulip = Zulip
 mastodon = Mastodon
 bluesky = Bluesky
@@ -56,7 +55,6 @@ footer-get-help = Get help!
 
 footer-youtube-alt = Twitter
 footer-alt-youtube = youtube logo
-footer-discord-alt = { discord }
 footer-github-alt = GitHub
 
 footer-attribution = Maintained by the Rust Team. See a bug?

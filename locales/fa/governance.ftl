@@ -15,7 +15,6 @@ governance-members = اعضا و مخاطبین
 ## governance/group-team.hbs
 
 governance-team-email = ایمیل کنید به { $teamname }
-governance-team-discord = { $channel } در دیسکورد
 governance-user-github = گیت هاب: { $link }
 governance-user-team-leader = رهبر تیم
 governance-members-header = اعضا

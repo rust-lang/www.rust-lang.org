@@ -6,7 +6,6 @@ getting-started = Comienza
 why-rust = ¿Por qué Rust?
 production-use = Uso en producción
 learn-more = Saber más
-discord = Discord
 zulip = Zulip
 mastodon = Mastodon
 
@@ -50,7 +49,6 @@ footer-social = Redes sociales
 footer-get-help = ¡Pide ayuda!
 footer-youtube-alt = Twitter
 footer-alt-youtube = logo de youtube
-footer-discord-alt = { discord }
 footer-github-alt = GitHub
 footer-attribution =
     Mantenida por el equipo de Rust. ¿Hay algún error?

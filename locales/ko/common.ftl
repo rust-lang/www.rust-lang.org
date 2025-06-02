@@ -6,7 +6,6 @@ getting-started = 시작하기
 why-rust = 왜 Rust일까요?
 production-use = 실사용
 learn-more = 더 알아보기
-discord = Discord
 zulip = Zulip
 mastodon = Mastodon
 
@@ -45,7 +44,6 @@ footer-policies-all = 모든 정책
 footer-get-help = 도움 받기
 footer-youtube-alt = Twitter
 footer-alt-youtube = YouTube 로고
-footer-discord-alt = { discord }
 footer-github-alt = GitHub
 footer-old-site = <a href="https://prev.rust-lang.org">이전 웹사이트</a>
 

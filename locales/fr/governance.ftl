@@ -18,7 +18,6 @@ governance-members = Membres et contacts
 
 governance-team-email = Envoyer un email à { $teamname }
 governance-team-repository = dépôt de { $teamname }
-governance-team-discord = { $channel } sur Discord
 governance-team-zulip = { $stream } dans Zulip
 governance-user-github = GitHub: { $link }
 governance-user-team-leader = Chef d'équipe
