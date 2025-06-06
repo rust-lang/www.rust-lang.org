@@ -92,7 +92,6 @@ tools-rustup-manual-default-windows = Se stai usando Windows,<br>scarica ed eseg
 tools-editor-vscode = VS Code
 tools-editor-sublime = Sublime Text
 tools-editor-rover = RustRover
-tools-editor-eclipse = Eclipse
 tools-editor-helix = Helix
 tools-editor-vim = Vim/Neovim
 tools-editor-emacs = Emacs

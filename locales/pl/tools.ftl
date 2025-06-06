@@ -40,7 +40,6 @@ tools-rustup-wsl-heading = Windows Subsystem for Linux
 tools-editor-vscode = VS Code
 tools-editor-sublime = Sublime Text
 tools-editor-rover = RustRover
-tools-editor-eclipse = Eclipse
 tools-editor-helix = Helix
 tools-editor-vim = Vim/Neovim
 tools-editor-emacs = Emacs
