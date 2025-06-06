@@ -131,3 +131,4 @@ tools-editor-helix = { ENGLISH("Helix") }
 tools-editor-vim = { ENGLISH("Vim/Neovim") }
 tools-editor-emacs = { ENGLISH("Emacs") }
 tools-editor-visual-studio = { ENGLISH("Visual Studio") }
+tools-editor-zed = { ENGLISH("Zed") }

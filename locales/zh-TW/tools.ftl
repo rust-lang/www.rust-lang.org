@@ -108,3 +108,4 @@ tools-editor-helix = Helix
 tools-editor-vim = Vim/Neovim
 tools-editor-emacs = Emacs
 tools-editor-visual-studio = Visual Studio
+tools-editor-zed = Zed
