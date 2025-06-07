@@ -406,6 +406,21 @@ fn render_subject(category: Category, subject: &str, lang: String) -> Result<Tem
 
 #[rocket::launch]
 async fn rocket() -> _ {
+    fs::remove_dir_all("public").ok();
+    fs::create_dir_all("public").unwrap();
+
+    // index
+    async fn index(version_cache: &Cache<RustVersion>) -> Template {
+        render_index(ENGLISH.into(), version_cache).await
+    }
+
+    // /logos/<file..>
+    fs::create_dir_all("public/logos").unwrap();
+    for file in fs::read_dir("static/logos").unwrap().map(Result::unwrap) {
+        let name = file.file_name().into_string().unwrap();
+        fs::copy(file.path(), format!("public/logos/{name}")).unwrap();
+    }
+
     let templating = Template::custom(|engine| {
         engine
             .handlebars
