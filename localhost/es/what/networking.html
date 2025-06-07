@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>
+            Redes - Rust, el lenguaje de programación
+        </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="Un lenguaje que empodera a todos para construir software fiable y eficiente.">
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@rustlang">
+    <meta name="twitter:creator" content="@rustlang">
+    <meta name="twitter:title" content="Redes">
+    <meta name="twitter:description" content="Un lenguaje que empodera a todos para construir software fiable y eficiente.">
+    <meta name="twitter:image" content="https://www.rust-lang.org/static/images/rust-social.jpg">
+
+    <!-- Facebook OpenGraph -->
+    <meta property="og:title" content="Redes" />
+    <meta property="og:description" content="Un lenguaje que empodera a todos para construir software fiable y eficiente.">
+    <meta property="og:image" content="https://www.rust-lang.org/static/images/rust-social-wide.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="../../static/styles/a11y-dark.css"/>
+    <link rel="stylesheet" href="../../static/styles/vendor_10880690442070639967.css"/>
+    <link rel="stylesheet" href="../../static/styles/fonts_8049871103083011125.css"/>
+    <link rel="stylesheet" href="../../static/styles/app_1609526410131002304.css"/>
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../../static/images/apple-touch-icon.png%3Fv=ngJW8jGAmR">
+    <link rel="icon" sizes="16x16" type="image/png" href="../../static/images/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../../static/images/favicon-32x32.png">
+    <link rel="icon" type="image/svg+xml" href="../../static/images/favicon.svg">
+    <link rel="manifest" href="../../static/images/site.webmanifest%3Fv=ngJW8jGAmR">
+    <link rel="mask-icon" href="../../static/images/safari-pinned-tab.svg%3Fv=ngJW8jGAmR" color="#000000">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="/static/images/browserconfig.xml?v=ngJW8jGAmR">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- Custom Highlight pack with: Rust, Markdown, TOML, Bash, JSON, YAML,
+         and plaintext. -->
+    <script src="../../static/scripts/highlight.pack.js" defer></script>
+    <script src="../../static/scripts/init.js" defer></script>
+  </head>
+  <body>
+    <nav class="flex flex-row justify-center justify-end-l items-center flex-wrap ph2 pl3-ns pr3-ns pb3">
+      <div class="brand flex-auto w-100 w-auto-l self-start tc tl-l">
+        <a href="../index.html" class="brand">
+          <img class="v-mid ml0-l" alt="Logo de Rust" src="../../static/images/rust-logo-blk.svg">
+        <span class="dib ml1 ml0-l">Rust</span>
+    </a>
+      </div>
+    
+      <ul class="nav list w-100 w-auto-l flex flex-none flex-row flex-wrap justify-center justify-end-l items-center pv2 ph0 ph4-ns">
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../tools/install.html">Instala</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../learn.html">Aprende</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="https://play.rust-lang.org/">Playground</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../tools.html">Herramientas</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../governance.html">Gobernanza</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../community.html">Comunidad</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="https://blog.rust-lang.org/">Blog</a></li>
+      </ul>
+    
+      <div class=" w-100 w-auto-l flex-none flex justify-center pv4 pv-0-l languages">
+        <div class="select">
+          <label for="language-nav" class="hidden">Idioma</label>
+          <select id="language-nav" data-current-lang="es">
+            <option title="English (en-US)" value="en-US">English (en-US)</option>
+<option title="Español (es)" value="es">Español (es)</option>
+<option title="Français (fr)" value="fr">Français (fr)</option>
+<option title="Italiano (it)" value="it">Italiano (it)</option>
+<option title="日本語 (ja)" value="ja">日本語 (ja)</option>
+<option title="Português (pt-BR)" value="pt-BR">Português (pt-BR)</option>
+<option title="Русский (ru)" value="ru">Русский (ru)</option>
+<option title="Türkçe (tr)" value="tr">Türkçe (tr)</option>
+<option title="简体中文 (zh-CN)" value="zh-CN">简体中文 (zh-CN)</option>
+<option title="正體中文 (zh-TW)" value="zh-TW">正體中文 (zh-TW)</option>
+      </select>
+        </div>
+      </div>
+    
+    </nav>
+    <main>
+<header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <h1>Redes</h1>
+  </div>
+</header>
+
+<section id="wasm-why" class="purple">
+    <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <header>
+            <h2>¿Por qué Rust?</h2>
+            <div class="highlight"></div>
+        </header>
+        <div class="flex-l">
+            <div class="w-33-l ph5 ph0-l">
+                <div class="domain-icon">
+                    <img src="../../static/images/feather.svg" alt="Una pluma" />
+                    <h3>Bajo coste</h3>
+                </div>
+                <p>
+                    Controla el uso de recursos y mantén el consumo de memoria y CPU al mínimo.
+Recibe ayuda del compilador para tener certeza de que todo está correcto.
+Y con un ecosistema que es productivo y agradable de usar.
+                </p>
+            </div>
+            <div class="w-33-l ml5-l ph5 ph0-l mt5 mt0-l">
+                <div class="domain-icon">
+                    <img src="../../static/images/secure-shield.svg" alt="Un escudo" />
+                    <h3>Seguro y fiable</h3>
+                </div>
+                <p>
+                    El potente sistema de tipos de Rust previene toda clase de errores.
+Controla con exactitud cuándo y dónde se comparte y se modifica el estado.
+Recibe ayuda para encontrar puntos de fallo <em>antes</em> de la puesta en producción.
+                </p>
+            </div>
+            <div class="w-33-l ml5-l ph5 ph0-l mt5 mt0-l">
+                <div class="domain-icon">
+                    <img src="../../static/images/gears-network.svg" alt="Engranajes conectados" />
+                    <h3>Concurrente a escala</h3>
+                </div>
+                <p>
+                    Usa cualquier mezcla de estrategias de concurrencia que funcione para tí.
+Rust te garantiza que no compartes accidentalmente estado entre hilos o tareas.
+Eso te permite exprimir la escalabilidad al máximo, sin temor.
+                </p>
+            </div>
+        </div>
+    </div>
+</section><section id="networking-get-started" class="red">
+    <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <header>
+            <h2>¡Comienza!</h2>
+            <div class="highlight"></div>
+        </header>
+
+        <div>
+            <p>Rust posee un ecosistema en expansión de bibliotecas para la web fáciles de usar. Aquí tienes dos ejemplos:
+            </p>
+        </div>
+
+        <div class="flex-l">
+            <article class="flex flex-column w-50-l mr4-l">
+                <h3>POST de un JSON</h3>
+                <pre class="mt0 flex flex-grow-1"><code>// This will POST a body of
+//     `{"lang": "rust", "body": "json"}`
+#[derive(Serialize)]
+struct Body<'a> {
+    lang: &'a str,
+    body: &'a str,
+}
+
+let client = reqwest::Client::new();
+let res = client.post("http://httpbin.org/post")
+    .json(&Body {
+        lang: "rust",
+        body: "json",
+    })
+    .send()?;
+</code></pre>
+
+                <a href="https://docs.rs/reqwest/" class="button button-secondary">Saber más sobre reqwest</a>
+            </article>
+
+            <article class="flex flex-column  w-50-l ml4-l mt5 mt0-l">
+                <h3>Recibir un POST con JSON</h3>
+                <pre class="mt0 flex flex-grow-1"><code>#[derive(Deserialize)]
+struct Task { name: String, completed: bool }
+
+#[post("/", data = "&lt;task&gt;")]
+fn new(task: Json&lt;Task&gt;) -> Flash&lt;Redirect&gt; {
+    if task.name.is_empty() {
+        Flash::error(Redirect::to("/"),
+            "Cannot be empty.")
+    } else {
+        Flash::success(Redirect::to("/"),
+            "Task added.")
+    }
+}
+</code></pre>
+
+                <a href="https://rocket.rs/" class="button button-secondary">Saber más sobre Rocket</a>
+            </article>
+        </div>
+    </div>
+</section>
+<section id="production" class="white">
+    <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <header>
+            <h2>Uso en producción</h2>
+            <div class="highlight"></div>
+        </header>
+        <div class="testimonials">
+            <div class="testimonial flex flex-row">
+                <div class="w-30-l tc pa5">
+                    <img src="../../static/images/firefox.png" alt="firefox" />
+                </div>
+                <div class="w-70-l">
+                    <blockquote>Migrar nuestra infraestructura de conexión Push a Rust ha resultado en una base de código más fácil
+de mantener con énfasis en la corrección y un rendimiento fantástico. Actualmente
+estamos respondiendo hasta 20 millones de conexiones websocket simultáneas en horas punta con nuestros servidores Rust.</blockquote>
+                    <p class="attribution">
+                        &ndash; Benjamin Bangert, Staff Engineer, Mozilla
+                    </p>
+                </div>
+            </div>
+            <div class="testimonial flex flex-row">
+                <div class="w-70-l">
+                    <blockquote>Rust es un componente fundamental en la estrategia tecnológica del proyecto Linkerd. Su sistema de tipos nos permite construir unidades modulares, comprobables y componibles sin sacrificar el rendimiento. No obstante, lo más sorprendente es como el sistema de verificación de <em>lifetime/borrow</em> nos evita un gran número de fugas de memoria. Después de 2 años, no me puedo imaginar usar cualquier otro lenguaje para esta tarea.</blockquote>
+                    <p class="attribution">
+                        &ndash; Oliver Gould, CTO, <a href="https://buoyant.io/">Buoyant</a>
+                    </p>
+                </div>
+                <div class="w-30-l tc pa3">
+                    <img src="../../static/images/buoyant.svg" alt="buoyant" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </main>
+    <footer>
+      <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <div class="flex flex-column flex-row-l pv0-l">
+          <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l" id="get-help">
+            <h4>¡Pide ayuda!</h4>
+            <ul>
+              <li><a href="../learn.html">Documentación</a></li>
+              <li><a href="http://forge.rust-lang.org">Rust Forge (documentación para contribuidores)</a></li>
+              <li><a href="https://users.rust-lang.org">Preguntar en el foro de usuarios</a></li>
+            </ul>
+            <div class="languages">
+              <div class="select">
+                <label for="language-footer" class="hidden">Idioma</label>
+                <select id="language-footer">
+                  <option title="English (en-US)" value="en-US">English (en-US)</option>
+<option title="Español (es)" value="es">Español (es)</option>
+<option title="Français (fr)" value="fr">Français (fr)</option>
+<option title="Italiano (it)" value="it">Italiano (it)</option>
+<option title="日本語 (ja)" value="ja">日本語 (ja)</option>
+<option title="Português (pt-BR)" value="pt-BR">Português (pt-BR)</option>
+<option title="Русский (ru)" value="ru">Русский (ru)</option>
+<option title="Türkçe (tr)" value="tr">Türkçe (tr)</option>
+<option title="简体中文 (zh-CN)" value="zh-CN">简体中文 (zh-CN)</option>
+<option title="正體中文 (zh-TW)" value="zh-TW">正體中文 (zh-TW)</option>
+            </select>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l">
+            <h4>Términos y políticas</h4>
+            <ul>
+              <li><a href="../policies/code-of-conduct.html">Código de conducta</a></li>
+              <li><a href="../policies/licenses.html">Licencias</a></li>
+              <li><a href="https://foundation.rust-lang.org/policies/logo-policy-and-media-guide/">Política de logos y guía de medios</a></li>
+              <li><a href="../policies/security.html">Divulgaciones de seguridad</a></li>
+              <li><a href="https://foundation.rust-lang.org/policies/privacy-policy/">Aviso de privacidad</a></li>
+              <li><a href="../policies.html">Todas las políticas</a></li>
+            </ul>
+          </div>
+          <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l">
+            <h4>Redes sociales</h4>
+            <div class="flex flex-row flex-wrap items-center">
+              <a rel="me" href="https://social.rust-lang.org/@rust" target="_blank"><img src="../../static/images/mastodon.svg" alt="Mastodon" title="Mastodon" /></a>
+              <a rel="me" href="https://bsky.app/profile/rust-lang.org" target="_blank"><img src="../../static/images/bluesky.svg" alt="Bluesky" title="Bluesky" /></a>
+              <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank"><img class="pv2" src="../../static/images/youtube.svg" alt="logo de youtube" title="YouTube"/></a>
+              <a href="https://discord.gg/rust-lang" target="_blank"><img src="../../static/images/discord.svg" alt="discord logo" title="Discord"/></a>
+              <a href="https://github.com/rust-lang" target="_blank"><img src="../../static/images/github.svg" alt="github logo" title="GitHub"/></a>
+            </div>
+          </div>
+    
+        </div>
+        <div class="attribution">
+          <p>
+            Mantenida por el equipo de Rust. ¿Hay algún error?
+<a href="https://github.com/rust-lang/www.rust-lang.org/issues/new/choose">¡Arréglalo aquí!</a>
+          </p>
+          <p>¿Buscas la <a href="https://prev.rust-lang.org">web antigua</a>?</p>
+        </div>
+      </div>
+    </footer>
+    <script src="../../static/scripts/languages.js"></script>
+  </body>
+</html>

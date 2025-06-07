@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>
+            Dispositivos integrados - Rust, el lenguaje de programación
+        </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="Un lenguaje que empodera a todos para construir software fiable y eficiente.">
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@rustlang">
+    <meta name="twitter:creator" content="@rustlang">
+    <meta name="twitter:title" content="Dispositivos integrados">
+    <meta name="twitter:description" content="Un lenguaje que empodera a todos para construir software fiable y eficiente.">
+    <meta name="twitter:image" content="https://www.rust-lang.org/static/images/rust-social.jpg">
+
+    <!-- Facebook OpenGraph -->
+    <meta property="og:title" content="Dispositivos integrados" />
+    <meta property="og:description" content="Un lenguaje que empodera a todos para construir software fiable y eficiente.">
+    <meta property="og:image" content="https://www.rust-lang.org/static/images/rust-social-wide.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="../../static/styles/a11y-dark.css"/>
+    <link rel="stylesheet" href="../../static/styles/vendor_10880690442070639967.css"/>
+    <link rel="stylesheet" href="../../static/styles/fonts_8049871103083011125.css"/>
+    <link rel="stylesheet" href="../../static/styles/app_1609526410131002304.css"/>
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../../static/images/apple-touch-icon.png%3Fv=ngJW8jGAmR">
+    <link rel="icon" sizes="16x16" type="image/png" href="../../static/images/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../../static/images/favicon-32x32.png">
+    <link rel="icon" type="image/svg+xml" href="../../static/images/favicon.svg">
+    <link rel="manifest" href="../../static/images/site.webmanifest%3Fv=ngJW8jGAmR">
+    <link rel="mask-icon" href="../../static/images/safari-pinned-tab.svg%3Fv=ngJW8jGAmR" color="#000000">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="/static/images/browserconfig.xml?v=ngJW8jGAmR">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- Custom Highlight pack with: Rust, Markdown, TOML, Bash, JSON, YAML,
+         and plaintext. -->
+    <script src="../../static/scripts/highlight.pack.js" defer></script>
+    <script src="../../static/scripts/init.js" defer></script>
+  </head>
+  <body>
+    <nav class="flex flex-row justify-center justify-end-l items-center flex-wrap ph2 pl3-ns pr3-ns pb3">
+      <div class="brand flex-auto w-100 w-auto-l self-start tc tl-l">
+        <a href="../index.html" class="brand">
+          <img class="v-mid ml0-l" alt="Logo de Rust" src="../../static/images/rust-logo-blk.svg">
+        <span class="dib ml1 ml0-l">Rust</span>
+    </a>
+      </div>
+    
+      <ul class="nav list w-100 w-auto-l flex flex-none flex-row flex-wrap justify-center justify-end-l items-center pv2 ph0 ph4-ns">
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../tools/install.html">Instala</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../learn.html">Aprende</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="https://play.rust-lang.org/">Playground</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../tools.html">Herramientas</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../governance.html">Gobernanza</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../community.html">Comunidad</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="https://blog.rust-lang.org/">Blog</a></li>
+      </ul>
+    
+      <div class=" w-100 w-auto-l flex-none flex justify-center pv4 pv-0-l languages">
+        <div class="select">
+          <label for="language-nav" class="hidden">Idioma</label>
+          <select id="language-nav" data-current-lang="es">
+            <option title="English (en-US)" value="en-US">English (en-US)</option>
+<option title="Español (es)" value="es">Español (es)</option>
+<option title="Français (fr)" value="fr">Français (fr)</option>
+<option title="Italiano (it)" value="it">Italiano (it)</option>
+<option title="日本語 (ja)" value="ja">日本語 (ja)</option>
+<option title="Português (pt-BR)" value="pt-BR">Português (pt-BR)</option>
+<option title="Русский (ru)" value="ru">Русский (ru)</option>
+<option title="Türkçe (tr)" value="tr">Türkçe (tr)</option>
+<option title="简体中文 (zh-CN)" value="zh-CN">简体中文 (zh-CN)</option>
+<option title="正體中文 (zh-TW)" value="zh-TW">正體中文 (zh-TW)</option>
+      </select>
+        </div>
+      </div>
+    
+    </nav>
+    <main>
+<header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <h1>Dispositivos integrados</h1>
+  </div>
+</header>
+
+<section id="embedded-why-rust" class="green">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>
+        ¿Por qué Rust?
+      </h2>
+      <div class="highlight"></div>
+    </header>
+    
+    <div class="flex-none flex-l flex-row">
+      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l" id="powerful-static-analysis">
+        <div class="v-top tc-l">
+          <img src="../../static/images/microscope.svg" alt="Un microscopio"
+            class="mw3 mw4-ns"/>
+        </div>
+        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+          <h3 class="tc-l">
+            Poderoso análisis estático
+          </h3>
+          <p class="flex-grow-1">
+            Aplica la configuración de pins y periféricos al compilar. Garantiza que los recursos no son usados accidentalmente por otras partes de tu aplicación.
+          </p>
+          <a href="https://docs.rust-embedded.org/book/static-guarantees/" class="button button-secondary">Saber más</a>
+        </div>
+      </div>
+
+      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l" id="flexible-memory-management">
+        <div class="v-top tc-l">
+          <img src="../../static/images/ram-memory.svg" alt="Un módulo de RAM"
+            class="mw3 mw4-ns"/>
+        </div>
+        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+          <h3 class="tc-l">
+            Uso de memoria flexible
+          </h3>
+          <p class="flex-grow-1">
+            La gestión dinámica de memoria es opcional. Usa un gestor de memoria global y estructuras de datos dinámicas. O prescinde del <em>heap</em> y asigna espacio para todo estáticamente.
+          </p>
+          <a href="https://docs.rust-embedded.org/book/collections/" class="button button-secondary">Saber más</a>
+        </div>
+      </div>
+
+
+      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l" id="flexible-memory-management">
+        <div class="v-top tc-l">
+          <img src="../../static/images/gears.svg" alt="Engranajes"
+            class="mw3 mw4-ns"/>
+        </div>
+        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+          <h3 class="v-top tc-l">
+            Concurrencia sin miedo
+          </h3>
+
+          <p class="flex-grow-1">
+            Rust previene compartir estado accidentalmente entre hilos. Usa concurrencia con el enfoque que desees y siempre tendrás las fuertes garantías de Rust.
+          </p>
+          <a href="https://docs.rust-embedded.org/book/concurrency/" class="button button-secondary">Saber más</a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="flex-none flex-l flex-row mt5-l">
+      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l" id="interoperability">
+        <div class="v-top tc-l">
+          <img src="../../static/images/handshake.svg" alt="Apretón de manos"
+            class="mw3 mw4-ns"/>
+        </div>
+        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+          <h3 class="tc-l">
+            Interoperabilidad
+          </h3>
+          <p class="flex-grow-1">
+            Integra Rust en tu código C ya existente o aprovecha uno de los SDKs disponibles para escribir una aplicación en Rust.
+          </p>
+          <a href="https://docs.rust-embedded.org/book/interoperability/" class="button button-secondary">Saber más</a>
+        </div>
+      </div>
+      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l" id="portability">
+        <div class="v-top tc-l">
+          <img src="../../static/images/luggage.svg" alt="Carrito de equipaje"
+            class="mw3 mw4-ns"/>
+        </div>
+        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+          <h3 class="tc-l">Portabilidad</h3>
+
+          <p class="flex-grow-1">
+            Escribe una librería o driver una sola vez y úsala en múltiples sistemas, desde pequeños microcontroladores hasta potentes placas integradas.
+          </p>
+          <a href="https://docs.rust-embedded.org/book/portability/" class="button button-secondary">Saber más</a>
+        </div>
+      </div>
+      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l" id="community-driven">
+        <div class="v-top tc-l">
+          <img src="../../static/images/cli-rustc-approved.svg" alt="Logo de un escudo" class="mw3 mw4-ns"/>
+        </div>
+        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+          <h3 class="tc-l">Impulsado por la comunidad</h3>
+
+          <p class="flex-grow-1">
+            Como parte del proyecto <em>open source</em> Rust, el soporte para sistemas integrados está respaldado por una comunidad <em>open source</em> ejemplar, con apoyo de socios comerciales.
+          </p>
+          <a href="https://github.com/rust-embedded/wg" class="button button-secondary">Saber más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="embedded-showcase-gallery" class="purple">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>Casos</h2>
+      <div class="highlight"></div>
+    </header>
+      <div class="flex flex-column flex-row-l">
+        <div class="mw-50-l mh3-l">
+          <div>
+          "Descubrir Rust, de Mozilla, fue muy emocionante. Rust es un nuevo lenguaje de programación, con el eslógan 'seguro, rápido, concurrente &ndash; escoge tres'. Además tiene un futuro asegurado, con una comunidad de usuarios muy entregada y poderosa."
+
+          <p>&ndash; <em>Jonathan Pallant, consultor senior en Cambridge Consultants</em>
+
+          <p><a href="https://github.com/rust-embedded/awesome-embedded-rust" class="button button-secondary">Ver más</a>
+          </div>
+        </div>
+        <div class="mw-50-l mh3-l center">
+          <div>
+          <iframe src="https://player.vimeo.com/video/224912526?title=0&byline=0&portrait=0" width="500" height="281"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          <p><a href="https://vimeo.com/224912526">Securing the future, with Rust</a> de <a href="https://vimeo.com/cambridgeconsultants">Cambridge Consultants</a> en <a href="https://vimeo.com">Vimeo</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="embedded-get-started" class="red">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>¡Comienza!</h2>
+      <div class="highlight"></div>
+    </header>
+    <div class="flex flex-column flex-row-l">
+      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l" id="discovery-book">
+        <div class="v-top tc-l">
+          <img src="../../static/images/chip1.svg" alt="Paquete DIP-6"
+            class="mw3 mw4-ns"/>
+        </div>
+        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+          <h3 class="tc-l">El libro Discovery</h3>
+          <p class="flex-grow-1">
+            Aprende desarrollo integrado desde cero, ¡usando Rust!
+          </p>
+          <a href="https://docs.rust-embedded.org/discovery/" class="button button-secondary">Leer</a>
+        </div>
+      </div>
+      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l" id="discovery-book">
+        <div class="v-top tc-l">
+          <img src="../../static/images/chip2.svg" alt="Paquete QFP-20"
+            class="mw3 mw4-ns"/>
+        </div>
+        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+          <h3 class="tc-l">El libro de Embedded Rust</h3>
+          <p class="flex-grow-1">
+            ¿Ya tienes experiencia con desarrollo integrado? Iníciate en Rust y empieza a sacarle partido.
+          </p>
+          <a href="https://docs.rust-embedded.org/book/" class="button button-secondary">Leer</a>
+        </div>
+      </div>
+      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l" id="embedonomicon">
+        <div class="v-top tc-l">
+          <img src="../../static/images/chip3.svg" alt="Paquete BGA"
+            class="mw3 mw4-ns"/>
+        </div>
+        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+          <h3 class="tc-l">El Embedonomicon</h3>
+          <p class="flex-grow-1">
+            Descubre los detalles de las librerías fundacionales en dispositivos integrados.
+          </p>
+          <a href="https://docs.rust-embedded.org/embedonomicon/" class="button button-secondary">Leer</a>
+        </div>
+      </div>
+    </div>
+    <div class="tc pl4-l mt4">
+      <p>
+        <a href="https://docs.rust-embedded.org/" class="button button-secondary">
+          Más documentación
+        </a>
+    </div>
+  </div>
+</section>
+<section id="production" class="white">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center">
+    <header>
+      <h2>Uso en producción</h2>
+      <div class="highlight"></div>
+    </header>
+    <!-- Testimonials section -->
+    <!-- Here we want to show *who* is using Rust and *what* they are building -->
+    <div class="testimonials">
+
+      <div class="testimonial flex-none flex-l">
+        <div class="w-100 w-30-l tc">
+          <a href="https://www.sensirion.com/">
+            <img alt="Logo de Sensirion" src="../../static/images/user-logos/sensirion.png"/>
+          </a>
+        </div>
+        <div class="w-100 w-70-l" id="sensiron-testimonial">
+          <blockquote class="lh-title-ns">
+            En Sensirion hemos empezado a usar Rust recientemente para crear una demostración integrada de nuestro <a href="https://sensirion-automotive.com/products#PM2_5#PM2_5">Particulate Matter Sensor</a>. Gracias a la facilidad para compilar en múltiples plataformas y las muchas <em>crates</em> de gran calidad disponibles en crates.io, <b>rápidamente acabamos con un prototipo rápido y robusto.</b>
+          </blockquote>
+          <p class="attribution">&ndash; Raphael Nestler, ingeniero de software, Sensirion</p>
+        </div>
+      </div>
+
+      <div class="testimonial flex-none flex-l">
+        <div class="w-100 w-70-l" id="greig-testimonial">
+          <blockquote class="lh-title-ns">
+            En Airborne Engineering usamos Rust recientemente para escribir un gestor de arranque por Ethernet, <a href="https://github.com/airborneengineering/blethrs">blethrs</a>, para nuestro sistema interno de adquisición de datos. <b>Rust es un lenguaje prometedor, y estamos entusiasmados con usarlo en nuestros futuros proyectos, integrados o no.</b>
+          </blockquote>
+          <p class="attribution">&ndash; Dr. Adam Greig, ingeniero de instrumentación, Airborne Engineering Ltd.</p>
+        </div>
+        <div class="w-100 w-30-l tc">
+          <a href="http://ael.co.uk">
+            <img alt="Logo de Airborne Engineering Ltd" src="../../static/images/user-logos/ael_logo.png"/>
+          </a>
+        </div>
+      </div>
+
+      <div class="testimonial flex-none flex-l">
+        <div class="w-100 w-30-l tc">
+          <a href="https://49nord.de/">
+            <img alt="Logo de 49nord" src="../../static/images/user-logos/49nord.svg"/>
+          </a>
+        </div>
+        <div class="w-100 w-70-l" id="brinkmann-testimonial">
+          <blockquote class="lh-title-ns">
+            [Rust] nos permite desplegar software más correcto y más rápidamente de lo que imaginábamos. Gracias a Rust podemos dar la seguridad de memoria por sentada, mientras que otros beneficios de un lenguaje con abstracciones de coste cero y con un sistema de tipos sofisticado nos ayudan a desarrollar software mantenible. <b>Rust hace felices a nuestros clientes, así como a nuestros ingenieros.</b>
+          </blockquote>
+          <p class="attribution">&ndash; Marc Brinkmann, CEO, 49nord</p>
+        </div>
+      </div>
+
+      <div class="testimonial flex-none flex-l">
+        <div class="w-100 w-70-l" id="arbuzov-testimonial">
+          <blockquote class="lh-title-ns">
+            <b>Creemos que es genial poder usar un lenguaje agradable y moderno en el área de embebido</b> donde habitualmente no hay alternativa a C o C++
+          </blockquote>
+          <p class="attribution">&ndash; Aleksei Arbuzov, ingeniero de software senior, Terminal Technologies</p>
+        </div>
+        <div class="w-100 w-30-l tc">
+          <a href="http://www.termt.eu/">
+            <img alt="Logo de Terminal Technologies" src="../../static/images/user-logos/terminal-technologies.png"/>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    </main>
+    <footer>
+      <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <div class="flex flex-column flex-row-l pv0-l">
+          <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l" id="get-help">
+            <h4>¡Pide ayuda!</h4>
+            <ul>
+              <li><a href="../learn.html">Documentación</a></li>
+              <li><a href="http://forge.rust-lang.org">Rust Forge (documentación para contribuidores)</a></li>
+              <li><a href="https://users.rust-lang.org">Preguntar en el foro de usuarios</a></li>
+            </ul>
+            <div class="languages">
+              <div class="select">
+                <label for="language-footer" class="hidden">Idioma</label>
+                <select id="language-footer">
+                  <option title="English (en-US)" value="en-US">English (en-US)</option>
+<option title="Español (es)" value="es">Español (es)</option>
+<option title="Français (fr)" value="fr">Français (fr)</option>
+<option title="Italiano (it)" value="it">Italiano (it)</option>
+<option title="日本語 (ja)" value="ja">日本語 (ja)</option>
+<option title="Português (pt-BR)" value="pt-BR">Português (pt-BR)</option>
+<option title="Русский (ru)" value="ru">Русский (ru)</option>
+<option title="Türkçe (tr)" value="tr">Türkçe (tr)</option>
+<option title="简体中文 (zh-CN)" value="zh-CN">简体中文 (zh-CN)</option>
+<option title="正體中文 (zh-TW)" value="zh-TW">正體中文 (zh-TW)</option>
+            </select>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l">
+            <h4>Términos y políticas</h4>
+            <ul>
+              <li><a href="../policies/code-of-conduct.html">Código de conducta</a></li>
+              <li><a href="../policies/licenses.html">Licencias</a></li>
+              <li><a href="https://foundation.rust-lang.org/policies/logo-policy-and-media-guide/">Política de logos y guía de medios</a></li>
+              <li><a href="../policies/security.html">Divulgaciones de seguridad</a></li>
+              <li><a href="https://foundation.rust-lang.org/policies/privacy-policy/">Aviso de privacidad</a></li>
+              <li><a href="../policies.html">Todas las políticas</a></li>
+            </ul>
+          </div>
+          <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l">
+            <h4>Redes sociales</h4>
+            <div class="flex flex-row flex-wrap items-center">
+              <a rel="me" href="https://social.rust-lang.org/@rust" target="_blank"><img src="../../static/images/mastodon.svg" alt="Mastodon" title="Mastodon" /></a>
+              <a rel="me" href="https://bsky.app/profile/rust-lang.org" target="_blank"><img src="../../static/images/bluesky.svg" alt="Bluesky" title="Bluesky" /></a>
+              <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank"><img class="pv2" src="../../static/images/youtube.svg" alt="logo de youtube" title="YouTube"/></a>
+              <a href="https://discord.gg/rust-lang" target="_blank"><img src="../../static/images/discord.svg" alt="discord logo" title="Discord"/></a>
+              <a href="https://github.com/rust-lang" target="_blank"><img src="../../static/images/github.svg" alt="github logo" title="GitHub"/></a>
+            </div>
+          </div>
+    
+        </div>
+        <div class="attribution">
+          <p>
+            Mantenida por el equipo de Rust. ¿Hay algún error?
+<a href="https://github.com/rust-lang/www.rust-lang.org/issues/new/choose">¡Arréglalo aquí!</a>
+          </p>
+          <p>¿Buscas la <a href="https://prev.rust-lang.org">web antigua</a>?</p>
+        </div>
+      </div>
+    </footer>
+    <script src="../../static/scripts/languages.js"></script>
+  </body>
+</html>

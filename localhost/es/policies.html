@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>
+            Políticas - Rust, el lenguaje de programación
+        </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="Un lenguaje que empodera a todos para construir software fiable y eficiente.">
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@rustlang">
+    <meta name="twitter:creator" content="@rustlang">
+    <meta name="twitter:title" content="Políticas">
+    <meta name="twitter:description" content="Un lenguaje que empodera a todos para construir software fiable y eficiente.">
+    <meta name="twitter:image" content="https://www.rust-lang.org/static/images/rust-social.jpg">
+
+    <!-- Facebook OpenGraph -->
+    <meta property="og:title" content="Políticas" />
+    <meta property="og:description" content="Un lenguaje que empodera a todos para construir software fiable y eficiente.">
+    <meta property="og:image" content="https://www.rust-lang.org/static/images/rust-social-wide.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="../static/styles/a11y-dark.css"/>
+    <link rel="stylesheet" href="../static/styles/vendor_10880690442070639967.css"/>
+    <link rel="stylesheet" href="../static/styles/fonts_8049871103083011125.css"/>
+    <link rel="stylesheet" href="../static/styles/app_1609526410131002304.css"/>
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/images/apple-touch-icon.png%3Fv=ngJW8jGAmR">
+    <link rel="icon" sizes="16x16" type="image/png" href="../static/images/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../static/images/favicon-32x32.png">
+    <link rel="icon" type="image/svg+xml" href="../static/images/favicon.svg">
+    <link rel="manifest" href="../static/images/site.webmanifest%3Fv=ngJW8jGAmR">
+    <link rel="mask-icon" href="../static/images/safari-pinned-tab.svg%3Fv=ngJW8jGAmR" color="#000000">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="/static/images/browserconfig.xml?v=ngJW8jGAmR">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- Custom Highlight pack with: Rust, Markdown, TOML, Bash, JSON, YAML,
+         and plaintext. -->
+    <script src="../static/scripts/highlight.pack.js" defer></script>
+    <script src="../static/scripts/init.js" defer></script>
+  </head>
+  <body>
+    <nav class="flex flex-row justify-center justify-end-l items-center flex-wrap ph2 pl3-ns pr3-ns pb3">
+      <div class="brand flex-auto w-100 w-auto-l self-start tc tl-l">
+        <a href="index.html" class="brand">
+          <img class="v-mid ml0-l" alt="Logo de Rust" src="../static/images/rust-logo-blk.svg">
+        <span class="dib ml1 ml0-l">Rust</span>
+    </a>
+      </div>
+    
+      <ul class="nav list w-100 w-auto-l flex flex-none flex-row flex-wrap justify-center justify-end-l items-center pv2 ph0 ph4-ns">
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="tools/install.html">Instala</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="learn.html">Aprende</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="https://play.rust-lang.org/">Playground</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="tools.html">Herramientas</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="governance.html">Gobernanza</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="community.html">Comunidad</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="https://blog.rust-lang.org/">Blog</a></li>
+      </ul>
+    
+      <div class=" w-100 w-auto-l flex-none flex justify-center pv4 pv-0-l languages">
+        <div class="select">
+          <label for="language-nav" class="hidden">Idioma</label>
+          <select id="language-nav" data-current-lang="es">
+            <option title="English (en-US)" value="en-US">English (en-US)</option>
+<option title="Español (es)" value="es">Español (es)</option>
+<option title="Français (fr)" value="fr">Français (fr)</option>
+<option title="Italiano (it)" value="it">Italiano (it)</option>
+<option title="日本語 (ja)" value="ja">日本語 (ja)</option>
+<option title="Português (pt-BR)" value="pt-BR">Português (pt-BR)</option>
+<option title="Русский (ru)" value="ru">Русский (ru)</option>
+<option title="Türkçe (tr)" value="tr">Türkçe (tr)</option>
+<option title="简体中文 (zh-CN)" value="zh-CN">简体中文 (zh-CN)</option>
+<option title="正體中文 (zh-TW)" value="zh-TW">正體中文 (zh-TW)</option>
+      </select>
+        </div>
+      </div>
+    
+    </nav>
+    <main>
+<header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <h1>Políticas</h1>
+  </div>
+</header>
+
+<section id="policies-index" class="purple">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <p>Esta página contiene una lista exhaustiva de las políticas y normativas de Rust.</p>
+    <ul>
+      <li><a href="policies/code-of-conduct.html">Código de conducta</a></li>
+      <li><a href="policies/licenses.html">Licencias</a></li>
+      <li><a href="https://foundation.rust-lang.org/policies/logo-policy-and-media-guide/">Política de logos y guía de medios</a></li>
+      <li><a href="policies/security.html">Divulgaciones de seguridad</a></li>
+      <li><a href="https://foundation.rust-lang.org/policies/privacy-policy/">Aviso de privacidad</a></li>
+    </ul>
+    <p>¿No encuentras lo que buscas? ¿Tienes una pregunta? ¡Contáctanos!</p>
+    <p><a href="mailto:council@rust-lang.org" class="button button-secondary">Contacta al Rust Leadership Council</a></p>
+  </div>
+</section>
+
+    </main>
+    <footer>
+      <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <div class="flex flex-column flex-row-l pv0-l">
+          <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l" id="get-help">
+            <h4>¡Pide ayuda!</h4>
+            <ul>
+              <li><a href="learn.html">Documentación</a></li>
+              <li><a href="http://forge.rust-lang.org">Rust Forge (documentación para contribuidores)</a></li>
+              <li><a href="https://users.rust-lang.org">Preguntar en el foro de usuarios</a></li>
+            </ul>
+            <div class="languages">
+              <div class="select">
+                <label for="language-footer" class="hidden">Idioma</label>
+                <select id="language-footer">
+                  <option title="English (en-US)" value="en-US">English (en-US)</option>
+<option title="Español (es)" value="es">Español (es)</option>
+<option title="Français (fr)" value="fr">Français (fr)</option>
+<option title="Italiano (it)" value="it">Italiano (it)</option>
+<option title="日本語 (ja)" value="ja">日本語 (ja)</option>
+<option title="Português (pt-BR)" value="pt-BR">Português (pt-BR)</option>
+<option title="Русский (ru)" value="ru">Русский (ru)</option>
+<option title="Türkçe (tr)" value="tr">Türkçe (tr)</option>
+<option title="简体中文 (zh-CN)" value="zh-CN">简体中文 (zh-CN)</option>
+<option title="正體中文 (zh-TW)" value="zh-TW">正體中文 (zh-TW)</option>
+            </select>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l">
+            <h4>Términos y políticas</h4>
+            <ul>
+              <li><a href="policies/code-of-conduct.html">Código de conducta</a></li>
+              <li><a href="policies/licenses.html">Licencias</a></li>
+              <li><a href="https://foundation.rust-lang.org/policies/logo-policy-and-media-guide/">Política de logos y guía de medios</a></li>
+              <li><a href="policies/security.html">Divulgaciones de seguridad</a></li>
+              <li><a href="https://foundation.rust-lang.org/policies/privacy-policy/">Aviso de privacidad</a></li>
+              <li><a href="policies.html">Todas las políticas</a></li>
+            </ul>
+          </div>
+          <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l">
+            <h4>Redes sociales</h4>
+            <div class="flex flex-row flex-wrap items-center">
+              <a rel="me" href="https://social.rust-lang.org/@rust" target="_blank"><img src="../static/images/mastodon.svg" alt="Mastodon" title="Mastodon" /></a>
+              <a rel="me" href="https://bsky.app/profile/rust-lang.org" target="_blank"><img src="../static/images/bluesky.svg" alt="Bluesky" title="Bluesky" /></a>
+              <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank"><img class="pv2" src="../static/images/youtube.svg" alt="logo de youtube" title="YouTube"/></a>
+              <a href="https://discord.gg/rust-lang" target="_blank"><img src="../static/images/discord.svg" alt="discord logo" title="Discord"/></a>
+              <a href="https://github.com/rust-lang" target="_blank"><img src="../static/images/github.svg" alt="github logo" title="GitHub"/></a>
+            </div>
+          </div>
+    
+        </div>
+        <div class="attribution">
+          <p>
+            Mantenida por el equipo de Rust. ¿Hay algún error?
+<a href="https://github.com/rust-lang/www.rust-lang.org/issues/new/choose">¡Arréglalo aquí!</a>
+          </p>
+          <p>¿Buscas la <a href="https://prev.rust-lang.org">web antigua</a>?</p>
+        </div>
+      </div>
+    </footer>
+    <script src="../static/scripts/languages.js"></script>
+  </body>
+</html>

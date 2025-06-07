@@ -1,0 +1,2247 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>
+            Equipo del lenguaje - Rust, el lenguaje de programación
+        </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="Un lenguaje que empodera a todos para construir software fiable y eficiente.">
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@rustlang">
+    <meta name="twitter:creator" content="@rustlang">
+    <meta name="twitter:title" content="Equipo del lenguaje">
+    <meta name="twitter:description" content="Un lenguaje que empodera a todos para construir software fiable y eficiente.">
+    <meta name="twitter:image" content="https://www.rust-lang.org/static/images/rust-social.jpg">
+
+    <!-- Facebook OpenGraph -->
+    <meta property="og:title" content="Equipo del lenguaje" />
+    <meta property="og:description" content="Un lenguaje que empodera a todos para construir software fiable y eficiente.">
+    <meta property="og:image" content="https://www.rust-lang.org/static/images/rust-social-wide.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="../../../static/styles/a11y-dark.css"/>
+    <link rel="stylesheet" href="../../../static/styles/vendor_10880690442070639967.css"/>
+    <link rel="stylesheet" href="../../../static/styles/fonts_8049871103083011125.css"/>
+    <link rel="stylesheet" href="../../../static/styles/app_1609526410131002304.css"/>
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../static/images/apple-touch-icon.png%3Fv=ngJW8jGAmR">
+    <link rel="icon" sizes="16x16" type="image/png" href="../../../static/images/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../../../static/images/favicon-32x32.png">
+    <link rel="icon" type="image/svg+xml" href="../../../static/images/favicon.svg">
+    <link rel="manifest" href="../../../static/images/site.webmanifest%3Fv=ngJW8jGAmR">
+    <link rel="mask-icon" href="../../../static/images/safari-pinned-tab.svg%3Fv=ngJW8jGAmR" color="#000000">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="/static/images/browserconfig.xml?v=ngJW8jGAmR">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- Custom Highlight pack with: Rust, Markdown, TOML, Bash, JSON, YAML,
+         and plaintext. -->
+    <script src="../../../static/scripts/highlight.pack.js" defer></script>
+    <script src="../../../static/scripts/init.js" defer></script>
+  </head>
+  <body>
+    <nav class="flex flex-row justify-center justify-end-l items-center flex-wrap ph2 pl3-ns pr3-ns pb3">
+      <div class="brand flex-auto w-100 w-auto-l self-start tc tl-l">
+        <a href="../../index.html" class="brand">
+          <img class="v-mid ml0-l" alt="Logo de Rust" src="../../../static/images/rust-logo-blk.svg">
+        <span class="dib ml1 ml0-l">Rust</span>
+    </a>
+      </div>
+    
+      <ul class="nav list w-100 w-auto-l flex flex-none flex-row flex-wrap justify-center justify-end-l items-center pv2 ph0 ph4-ns">
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../../tools/install.html">Instala</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../../learn.html">Aprende</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="https://play.rust-lang.org/">Playground</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../../tools.html">Herramientas</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../../governance.html">Gobernanza</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../../community.html">Comunidad</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="https://blog.rust-lang.org/">Blog</a></li>
+      </ul>
+    
+      <div class=" w-100 w-auto-l flex-none flex justify-center pv4 pv-0-l languages">
+        <div class="select">
+          <label for="language-nav" class="hidden">Idioma</label>
+          <select id="language-nav" data-current-lang="es">
+            <option title="English (en-US)" value="en-US">English (en-US)</option>
+<option title="Español (es)" value="es">Español (es)</option>
+<option title="Français (fr)" value="fr">Français (fr)</option>
+<option title="Italiano (it)" value="it">Italiano (it)</option>
+<option title="日本語 (ja)" value="ja">日本語 (ja)</option>
+<option title="Português (pt-BR)" value="pt-BR">Português (pt-BR)</option>
+<option title="Русский (ru)" value="ru">Русский (ru)</option>
+<option title="Türkçe (tr)" value="tr">Türkçe (tr)</option>
+<option title="简体中文 (zh-CN)" value="zh-CN">简体中文 (zh-CN)</option>
+<option title="正體中文 (zh-TW)" value="zh-TW">正體中文 (zh-TW)</option>
+      </select>
+        </div>
+      </div>
+    
+    </nav>
+    <main>
+    <section class="white">
+        <a id="team-lang"></a>
+        <div class="w-100 mw-none mw-8-m mw9-l ph3 center f3">
+            <header class="pb0 pt5">
+                <a class="linkable-subheading" href="#team-lang"><h2>Equipo del lenguaje</h2></a>
+                <div class="highlight"></div>
+            </header>
+            <div>
+                <div class="mv4 flex flex-column flex-row-l justify-between">
+                    <p class="ma0 f2">Diseñar nuevos aspectos del lenguaje</p>
+                    <div class="flex flex-column ml5-l mt4 mt0-l">
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                <a class="button button-secondary" href="http://github.com/rust-lang/lang-team">
+                                Repositorio del Equipo del lenguaje
+                                </a>
+                            </div>
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                <a class="button button-secondary" href="https://rust-lang.zulipchat.com/#narrow/stream/t-lang#narrow/stream/t-lang">
+                                #t-lang en Zulip
+                                </a>
+                            </div>
+            </div>
+                </div>
+            </div>
+        <header class="pb4 pt0">
+                    <h2 class="f2">Miembros</h2>
+                </header>
+                <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                            <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/nikomatsakis">
+                                <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/nikomatsakis" alt="Niko Matsakis">
+                            </a>
+                            <div class="flex flex-column w-100">
+                                <h3 class=" ma0 mb2">Niko Matsakis</h3>
+                                <div>
+GitHub:                                 <a href="https://github.com/nikomatsakis">nikomatsakis</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                        </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                            <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/tmandry">
+                                <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/tmandry" alt="Tyler Mandry">
+                            </a>
+                            <div class="flex flex-column w-100">
+                                <h3 class=" ma0 mb2">Tyler Mandry</h3>
+                                <div>
+GitHub:                                 <a href="https://github.com/tmandry">tmandry</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                        </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                            <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/joshtriplett">
+                                <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/joshtriplett" alt="Josh Triplett">
+                            </a>
+                            <div class="flex flex-column w-100">
+                                <h3 class="fw4 ma0 mb2">Josh Triplett</h3>
+                                <div>
+GitHub:                                 <a href="https://github.com/joshtriplett">joshtriplett</a>
+                        </div>
+                    </div>
+                        </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                            <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/scottmcm">
+                                <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/scottmcm" alt="Scott McMurray">
+                            </a>
+                            <div class="flex flex-column w-100">
+                                <h3 class="fw4 ma0 mb2">Scott McMurray</h3>
+                                <div>
+GitHub:                                 <a href="https://github.com/scottmcm">scottmcm</a>
+                        </div>
+                    </div>
+                        </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                            <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/traviscross">
+                                <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/traviscross" alt="TC">
+                            </a>
+                            <div class="flex flex-column w-100">
+                                <h3 class="fw4 ma0 mb2">TC</h3>
+                                <div>
+GitHub:                                 <a href="https://github.com/traviscross">traviscross</a>
+                        </div>
+                    </div>
+                        </div>
+        </div>
+            <header class="pb3 pt3">
+                        <h2 class="f2">Antiguos miembros</h2>
+                    </header>
+                    <p>¡También queremos agradecer a todos los antiguos miembros sus inestimables contribuciones!</p>
+                    <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                            <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/aturon">
+                                <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/aturon" alt="Aaron Turon">
+                            </a>
+                            <div>
+                                Aaron Turon
+                                <div class="f4">
+                                    GitHub: <a href="https://github.com/aturon">aturon</a>
+                                </div>
+                    </div>
+                        </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                            <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/Centril">
+                                <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/Centril" alt="Mazdak Farrokhzad">
+                            </a>
+                            <div>
+                                Mazdak Farrokhzad
+                                <div class="f4">
+                                    GitHub: <a href="https://github.com/Centril">Centril</a>
+                                </div>
+                    </div>
+                        </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                            <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/cramertj">
+                                <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/cramertj" alt="Taylor Cramer">
+                            </a>
+                            <div>
+                                Taylor Cramer
+                                <div class="f4">
+                                    GitHub: <a href="https://github.com/cramertj">cramertj</a>
+                                </div>
+                    </div>
+                        </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                            <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/eddyb">
+                                <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/eddyb" alt="Eduard-Mihai Burtescu">
+                            </a>
+                            <div>
+                                Eduard-Mihai Burtescu
+                                <div class="f4">
+                                    GitHub: <a href="https://github.com/eddyb">eddyb</a>
+                                </div>
+                    </div>
+                        </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                            <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/huonw">
+                                <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/huonw" alt="Huon Wilson">
+                            </a>
+                            <div>
+                                Huon Wilson
+                                <div class="f4">
+                                    GitHub: <a href="https://github.com/huonw">huonw</a>
+                                </div>
+                    </div>
+                        </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                            <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/nrc">
+                                <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/nrc" alt="Nick Cameron">
+                            </a>
+                            <div>
+                                Nick Cameron
+                                <div class="f4">
+                                    GitHub: <a href="https://github.com/nrc">nrc</a>
+                                </div>
+                    </div>
+                        </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                            <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/pnkfelix">
+                                <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/pnkfelix" alt="Felix Klock">
+                            </a>
+                            <div>
+                                Felix Klock
+                                <div class="f4">
+                                    GitHub: <a href="https://github.com/pnkfelix">pnkfelix</a>
+                                </div>
+                    </div>
+                        </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                            <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/withoutboats">
+                                <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/withoutboats" alt="Without Boats">
+                            </a>
+                            <div>
+                                Without Boats
+                                <div class="f4">
+                                    GitHub: <a href="https://github.com/withoutboats">withoutboats</a>
+                                </div>
+                    </div>
+                        </div>
+            </div>
+</div>
+    </section>
+    <section class="purple">
+            <a id="team-lang-advisors"></a>
+            <div class="w-100 mw-none mw-8-m mw9-l ph3 center f3">
+                <header class="pb0 pt5">
+                    <a class="linkable-subheading" href="#team-lang-advisors"><h2>Language Advisors team</h2></a>
+                    <div class="highlight"></div>
+                </header>
+                <div>
+                    <div class="mv4 flex flex-column flex-row-l justify-between">
+                        <p class="ma0 f2">Advising on the development of the Rust language</p>
+                        <div class="flex flex-column ml5-l mt4 mt0-l">
+            </div>
+                    </div>
+                </div>
+        <header class="pb4 pt0">
+                        <h2 class="f2">Miembros</h2>
+                    </header>
+                    <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/alexcrichton">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/alexcrichton" alt="Alex Crichton">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Alex Crichton</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/alexcrichton">alexcrichton</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/Amanieu">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/Amanieu" alt="Amanieu d&#x27;Antras">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Amanieu d&#x27;Antras</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/Amanieu">Amanieu</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/cramertj">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/cramertj" alt="Taylor Cramer">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Taylor Cramer</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/cramertj">cramertj</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/jackh726">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/jackh726" alt="Jack Huey">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Jack Huey</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/jackh726">jackh726</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/JakobDegen">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/JakobDegen" alt="Jakob Degen">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Jakob Degen</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/JakobDegen">JakobDegen</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/Mark-Simulacrum">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/Mark-Simulacrum" alt="Mark Rousskov">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Mark Rousskov</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/Mark-Simulacrum">Mark-Simulacrum</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/Nadrieril">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/Nadrieril" alt="Nadrieril">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Nadrieril</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/Nadrieril">Nadrieril</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/RalfJung">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/RalfJung" alt="Ralf Jung">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Ralf Jung</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/RalfJung">RalfJung</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/wesleywiser">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/wesleywiser" alt="Wesley Wiser">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Wesley Wiser</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/wesleywiser">wesleywiser</a>
+                        </div>
+                    </div>
+                            </div>
+        </div>
+</div>
+            <a id="team-lang-docs"></a>
+            <div class="w-100 mw-none mw-8-m mw9-l ph3 center f3">
+                <header class="pb0 pt5">
+                    <a class="linkable-subheading" href="#team-lang-docs"><h2>lang-docs team</h2></a>
+                    <div class="highlight"></div>
+                </header>
+                <div>
+                    <div class="mv4 flex flex-column flex-row-l justify-between">
+                        <p class="ma0 f2">Developing and writing the docs related to the lang team</p>
+                        <div class="flex flex-column ml5-l mt4 mt0-l">
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://rust-lang.zulipchat.com/#narrow/stream/t-lang.2Fdoc#narrow/stream/t-lang.2Fdoc">
+                                    #t-lang/doc en Zulip
+                                    </a>
+                                </div>
+            </div>
+                    </div>
+                </div>
+        <header class="pb4 pt0">
+                        <h2 class="f2">Miembros</h2>
+                    </header>
+                    <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/ehuss">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/ehuss" alt="Eric Huss">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class=" ma0 mb2">Eric Huss</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/ehuss">ehuss</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/JohnTitor">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/JohnTitor" alt="Yuki Okushi">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class=" ma0 mb2">Yuki Okushi</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/JohnTitor">JohnTitor</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/Gankra">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/Gankra" alt="Aria Beingessner">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Aria Beingessner</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/Gankra">Gankra</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/Havvy">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/Havvy" alt="Ryan Scheel">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Ryan Scheel</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/Havvy">Havvy</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/matthewjasper">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/matthewjasper" alt="Matthew Jasper">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Matthew Jasper</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/matthewjasper">matthewjasper</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/traviscross">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/traviscross" alt="TC">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">TC</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/traviscross">traviscross</a>
+                        </div>
+                    </div>
+                            </div>
+        </div>
+            <header class="pb3 pt3">
+                            <h2 class="f2">Antiguos miembros</h2>
+                        </header>
+                        <p>¡También queremos agradecer a todos los antiguos miembros sus inestimables contribuciones!</p>
+                        <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/Centril">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/Centril" alt="Mazdak Farrokhzad">
+                                </a>
+                                <div>
+                                    Mazdak Farrokhzad
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/Centril">Centril</a>
+                                    </div>
+                    </div>
+                            </div>
+            </div>
+</div>
+            <a id="team-book"></a>
+            <div class="w-100 mw-none mw-8-m mw9-l ph3 center f3">
+                <header class="pb0 pt5">
+                    <a class="linkable-subheading" href="#team-book"><h2>Book team</h2></a>
+                    <div class="highlight"></div>
+                </header>
+                <div>
+                    <div class="mv4 flex flex-column flex-row-l justify-between">
+                        <p class="ma0 f2">Maintains The Rust Programming Language book</p>
+                        <div class="flex flex-column ml5-l mt4 mt0-l">
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://github.com/rust-lang/book">
+                                    Repositorio del Book team
+                                    </a>
+                                </div>
+            </div>
+                    </div>
+                </div>
+        <header class="pb4 pt0">
+                        <h2 class="f2">Miembros</h2>
+                    </header>
+                    <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/carols10cents">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/carols10cents" alt="Carol Nichols">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class=" ma0 mb2">Carol Nichols</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/carols10cents">carols10cents</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/chriskrycho">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/chriskrycho" alt="Chris Krycho">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class=" ma0 mb2">Chris Krycho</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/chriskrycho">chriskrycho</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                            </div>
+        </div>
+</div>
+            <a id="team-rust-by-example"></a>
+            <div class="w-100 mw-none mw-8-m mw9-l ph3 center f3">
+                <header class="pb0 pt5">
+                    <a class="linkable-subheading" href="#team-rust-by-example"><h2>Equipo de <em>Rust by Example</em></h2></a>
+                    <div class="highlight"></div>
+                </header>
+                <div>
+                    <div class="mv4 flex flex-column flex-row-l justify-between">
+                        <p class="ma0 f2">mantenimiento y actualización de <em>Rust by Example</em></p>
+                        <div class="flex flex-column ml5-l mt4 mt0-l">
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://github.com/rust-lang/rust-by-example">
+                                    Repositorio del Equipo de <em>Rust by Example</em>
+                                    </a>
+                                </div>
+            </div>
+                    </div>
+                </div>
+        <header class="pb4 pt0">
+                        <h2 class="f2">Miembros</h2>
+                    </header>
+                    <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/marioidival">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/marioidival" alt="Mário Idival">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class=" ma0 mb2">Mário Idival</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/marioidival">marioidival</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                            </div>
+        </div>
+            <header class="pb3 pt3">
+                            <h2 class="f2">Antiguos miembros</h2>
+                        </header>
+                        <p>¡También queremos agradecer a todos los antiguos miembros sus inestimables contribuciones!</p>
+                        <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/steveklabnik">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/steveklabnik" alt="Steve Klabnik">
+                                </a>
+                                <div>
+                                    Steve Klabnik
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/steveklabnik">steveklabnik</a>
+                                    </div>
+                    </div>
+                            </div>
+            </div>
+</div>
+            <a id="team-rustlings"></a>
+            <div class="w-100 mw-none mw-8-m mw9-l ph3 center f3">
+                <header class="pb0 pt5">
+                    <a class="linkable-subheading" href="#team-rustlings"><h2>Rustlings team</h2></a>
+                    <div class="highlight"></div>
+                </header>
+                <div>
+                    <div class="mv4 flex flex-column flex-row-l justify-between">
+                        <p class="ma0 f2">Maintaining and updating the Rustlings course</p>
+                        <div class="flex flex-column ml5-l mt4 mt0-l">
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://github.com/rust-lang/rustlings/">
+                                    Repositorio del Rustlings team
+                                    </a>
+                                </div>
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://rust-lang.zulipchat.com/#narrow/stream/t-lang.2Frustlings#narrow/stream/t-lang.2Frustlings">
+                                    #t-lang/rustlings en Zulip
+                                    </a>
+                                </div>
+            </div>
+                    </div>
+                </div>
+        <header class="pb4 pt0">
+                        <h2 class="f2">Miembros</h2>
+                    </header>
+                    <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/manyinsects">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/manyinsects" alt="Liv">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class=" ma0 mb2">Liv</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/manyinsects">manyinsects</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/mo8it">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/mo8it" alt="Mo">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class=" ma0 mb2">Mo</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/mo8it">mo8it</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                            </div>
+        </div>
+</div>
+            <a id="team-lang-ops"></a>
+            <div class="w-100 mw-none mw-8-m mw9-l ph3 center f3">
+                <header class="pb0 pt5">
+                    <a class="linkable-subheading" href="#team-lang-ops"><h2>lang-ops team</h2></a>
+                    <div class="highlight"></div>
+                </header>
+                <div>
+                    <div class="mv4 flex flex-column flex-row-l justify-between">
+                        <p class="ma0 f2">Operations for the lang team: preparing agenda, issue triage, scheduling and documenting meetings</p>
+                        <div class="flex flex-column ml5-l mt4 mt0-l">
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://rust-lang.zulipchat.com/#narrow/stream/t-lang.2Fops#narrow/stream/t-lang.2Fops">
+                                    #t-lang/ops en Zulip
+                                    </a>
+                                </div>
+            </div>
+                    </div>
+                </div>
+        <header class="pb4 pt0">
+                        <h2 class="f2">Miembros</h2>
+                    </header>
+                    <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/traviscross">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/traviscross" alt="TC">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class=" ma0 mb2">TC</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/traviscross">traviscross</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                            </div>
+        </div>
+</div>
+            <a id="team-opsem"></a>
+            <div class="w-100 mw-none mw-8-m mw9-l ph3 center f3">
+                <header class="pb0 pt5">
+                    <a class="linkable-subheading" href="#team-opsem"><h2>Operational Semantics team</h2></a>
+                    <div class="highlight"></div>
+                </header>
+                <div>
+                    <div class="mv4 flex flex-column flex-row-l justify-between">
+                        <p class="ma0 f2">Working on deciding and specifying the semantics of Rust around unsafe code</p>
+                        <div class="flex flex-column ml5-l mt4 mt0-l">
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://github.com/rust-lang/opsem-team">
+                                    Repositorio del Operational Semantics team
+                                    </a>
+                                </div>
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://rust-lang.zulipchat.com/#narrow/stream/t-opsem#narrow/stream/t-opsem">
+                                    #t-opsem en Zulip
+                                    </a>
+                                </div>
+            </div>
+                    </div>
+                </div>
+        <header class="pb4 pt0">
+                        <h2 class="f2">Miembros</h2>
+                    </header>
+                    <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/JakobDegen">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/JakobDegen" alt="Jakob Degen">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class=" ma0 mb2">Jakob Degen</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/JakobDegen">JakobDegen</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/RalfJung">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/RalfJung" alt="Ralf Jung">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class=" ma0 mb2">Ralf Jung</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/RalfJung">RalfJung</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/CAD97">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/CAD97" alt="Christopher Durham">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Christopher Durham</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/CAD97">CAD97</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/digama0">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/digama0" alt="Mario Carneiro">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Mario Carneiro</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/digama0">digama0</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/saethlin">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/saethlin" alt="Ben Kimock">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Ben Kimock</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/saethlin">saethlin</a>
+                        </div>
+                    </div>
+                            </div>
+        </div>
+</div>
+            <a id="team-spec"></a>
+            <div class="w-100 mw-none mw-8-m mw9-l ph3 center f3">
+                <header class="pb0 pt5">
+                    <a class="linkable-subheading" href="#team-spec"><h2>Specification team</h2></a>
+                    <div class="highlight"></div>
+                </header>
+                <div>
+                    <div class="mv4 flex flex-column flex-row-l justify-between">
+                        <p class="ma0 f2">Creating and maintaining the specification for the Rust language</p>
+                        <div class="flex flex-column ml5-l mt4 mt0-l">
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://github.com/rust-lang/spec">
+                                    Repositorio del Specification team
+                                    </a>
+                                </div>
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://rust-lang.zulipchat.com/#narrow/stream/t-spec#narrow/stream/t-spec">
+                                    #t-spec en Zulip
+                                    </a>
+                                </div>
+            </div>
+                    </div>
+                </div>
+        <header class="pb4 pt0">
+                        <h2 class="f2">Miembros</h2>
+                    </header>
+                    <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/JoelMarcey">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/JoelMarcey" alt="Joel Marcey">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class=" ma0 mb2">Joel Marcey</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/JoelMarcey">JoelMarcey</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/ehuss">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/ehuss" alt="Eric Huss">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Eric Huss</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/ehuss">ehuss</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/joshtriplett">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/joshtriplett" alt="Josh Triplett">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Josh Triplett</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/joshtriplett">joshtriplett</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/nikomatsakis">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/nikomatsakis" alt="Niko Matsakis">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Niko Matsakis</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/nikomatsakis">nikomatsakis</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/traviscross">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/traviscross" alt="TC">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">TC</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/traviscross">traviscross</a>
+                        </div>
+                    </div>
+                            </div>
+        </div>
+            <header class="pb3 pt3">
+                            <h2 class="f2">Antiguos miembros</h2>
+                        </header>
+                        <p>¡También queremos agradecer a todos los antiguos miembros sus inestimables contribuciones!</p>
+                        <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/m-ou-se">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/m-ou-se" alt="Mara Bos">
+                                </a>
+                                <div>
+                                    Mara Bos
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/m-ou-se">m-ou-se</a>
+                                    </div>
+                    </div>
+                            </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/pnkfelix">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/pnkfelix" alt="Felix Klock">
+                                </a>
+                                <div>
+                                    Felix Klock
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/pnkfelix">pnkfelix</a>
+                                    </div>
+                    </div>
+                            </div>
+            </div>
+</div>
+            <a id="team-spec-contributors"></a>
+            <div class="w-100 mw-none mw-8-m mw9-l ph3 center f3">
+                <header class="pb0 pt5">
+                    <a class="linkable-subheading" href="#team-spec-contributors"><h2>Specification team contributors</h2></a>
+                    <div class="highlight"></div>
+                </header>
+                <div>
+                    <div class="mv4 flex flex-column flex-row-l justify-between">
+                        <p class="ma0 f2">Regular contributors to the Rust specification</p>
+                        <div class="flex flex-column ml5-l mt4 mt0-l">
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://github.com/rust-lang/spec">
+                                    Repositorio del Specification team contributors
+                                    </a>
+                                </div>
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://rust-lang.zulipchat.com/#narrow/stream/t-spec#narrow/stream/t-spec">
+                                    #t-spec en Zulip
+                                    </a>
+                                </div>
+            </div>
+                    </div>
+                </div>
+</div>
+            <a id="team-style"></a>
+            <div class="w-100 mw-none mw-8-m mw9-l ph3 center f3">
+                <header class="pb0 pt5">
+                    <a class="linkable-subheading" href="#team-style"><h2>Style team</h2></a>
+                    <div class="highlight"></div>
+                </header>
+                <div>
+                    <div class="mv4 flex flex-column flex-row-l justify-between">
+                        <p class="ma0 f2">Defining and evolving the default Rust coding style</p>
+                        <div class="flex flex-column ml5-l mt4 mt0-l">
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://github.com/rust-lang/style-team">
+                                    Repositorio del Style team
+                                    </a>
+                                </div>
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://rust-lang.zulipchat.com/#narrow/stream/t-style#narrow/stream/t-style">
+                                    #t-style en Zulip
+                                    </a>
+                                </div>
+            </div>
+                    </div>
+                </div>
+        <header class="pb4 pt0">
+                        <h2 class="f2">Miembros</h2>
+                    </header>
+                    <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/calebcartwright">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/calebcartwright" alt="Caleb Cartwright">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class=" ma0 mb2">Caleb Cartwright</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/calebcartwright">calebcartwright</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/joshtriplett">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/joshtriplett" alt="Josh Triplett">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Josh Triplett</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/joshtriplett">joshtriplett</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/traviscross">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/traviscross" alt="TC">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">TC</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/traviscross">traviscross</a>
+                        </div>
+                    </div>
+                            </div>
+        </div>
+            <header class="pb3 pt3">
+                            <h2 class="f2">Antiguos miembros</h2>
+                        </header>
+                        <p>¡También queremos agradecer a todos los antiguos miembros sus inestimables contribuciones!</p>
+                        <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/brson">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/brson" alt="Brian Anderson">
+                                </a>
+                                <div>
+                                    Brian Anderson
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/brson">brson</a>
+                                    </div>
+                    </div>
+                            </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/compiler-errors">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/compiler-errors" alt="Michael Goulet">
+                                </a>
+                                <div>
+                                    Michael Goulet
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/compiler-errors">compiler-errors</a>
+                                    </div>
+                    </div>
+                            </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/japaric">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/japaric" alt="Jorge Aparicio">
+                                </a>
+                                <div>
+                                    Jorge Aparicio
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/japaric">japaric</a>
+                                    </div>
+                    </div>
+                            </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/nrc">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/nrc" alt="Nick Cameron">
+                                </a>
+                                <div>
+                                    Nick Cameron
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/nrc">nrc</a>
+                                    </div>
+                    </div>
+                            </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/solson">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/solson" alt="Scott Olson">
+                                </a>
+                                <div>
+                                    Scott Olson
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/solson">solson</a>
+                                    </div>
+                    </div>
+                            </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/steveklabnik">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/steveklabnik" alt="Steve Klabnik">
+                                </a>
+                                <div>
+                                    Steve Klabnik
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/steveklabnik">steveklabnik</a>
+                                    </div>
+                    </div>
+                            </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/yaahc">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/yaahc" alt="Jane Lusby">
+                                </a>
+                                <div>
+                                    Jane Lusby
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/yaahc">yaahc</a>
+                                    </div>
+                    </div>
+                            </div>
+            </div>
+</div>
+    </section>
+    <section class="green">
+            <a id="team-project-async-crashdump-debugging"></a>
+            <div class="w-100 mw-none mw-8-m mw9-l ph3 center f3">
+                <header class="pb0 pt5">
+                    <a class="linkable-subheading" href="#team-project-async-crashdump-debugging"><h2>Async Crashdump Debugging Initiative</h2></a>
+                    <div class="highlight"></div>
+                </header>
+                <div>
+                    <div class="mv4 flex flex-column flex-row-l justify-between">
+                        <p class="ma0 f2">Simplify crashdump debugging of async programs</p>
+                        <div class="flex flex-column ml5-l mt4 mt0-l">
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://github.com/rust-lang/async-crashdump-debugging-initiative">
+                                    Repositorio del Async Crashdump Debugging Initiative
+                                    </a>
+                                </div>
+            </div>
+                    </div>
+                </div>
+        <header class="pb4 pt0">
+                        <h2 class="f2">Miembros</h2>
+                    </header>
+                    <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/michaelwoerister">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/michaelwoerister" alt="Michael Woerister">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class=" ma0 mb2">Michael Woerister</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/michaelwoerister">michaelwoerister</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                            </div>
+        </div>
+</div>
+            <a id="team-project-const-generics"></a>
+            <div class="w-100 mw-none mw-8-m mw9-l ph3 center f3">
+                <header class="pb0 pt5">
+                    <a class="linkable-subheading" href="#team-project-const-generics"><h2>Const Generics Project Group</h2></a>
+                    <div class="highlight"></div>
+                </header>
+                <div>
+                    <div class="mv4 flex flex-column flex-row-l justify-between">
+                        <p class="ma0 f2">Working to advance const generics support in the Rust language</p>
+                        <div class="flex flex-column ml5-l mt4 mt0-l">
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://github.com/rust-lang/project-const-generics">
+                                    Repositorio del Const Generics Project Group
+                                    </a>
+                                </div>
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://rust-lang.zulipchat.com/#narrow/stream/project-const-generics#narrow/stream/project-const-generics">
+                                    #project-const-generics en Zulip
+                                    </a>
+                                </div>
+            </div>
+                    </div>
+                </div>
+        <header class="pb4 pt0">
+                        <h2 class="f2">Miembros</h2>
+                    </header>
+                    <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/BoxyUwU">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/BoxyUwU" alt="Boxy">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class=" ma0 mb2">Boxy</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/BoxyUwU">BoxyUwU</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/lcnr">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/lcnr" alt="lcnr">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class=" ma0 mb2">lcnr</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/lcnr">lcnr</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/camelid">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/camelid" alt="Noah Lev">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Noah Lev</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/camelid">camelid</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/compiler-errors">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/compiler-errors" alt="Michael Goulet">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Michael Goulet</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/compiler-errors">compiler-errors</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/davidtwco">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/davidtwco" alt="David Wood">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">David Wood</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/davidtwco">davidtwco</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/nikomatsakis">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/nikomatsakis" alt="Niko Matsakis">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Niko Matsakis</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/nikomatsakis">nikomatsakis</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/oli-obk">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/oli-obk" alt="Oliver Scherer">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Oliver Scherer</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/oli-obk">oli-obk</a>
+                        </div>
+                    </div>
+                            </div>
+        </div>
+            <header class="pb3 pt3">
+                            <h2 class="f2">Antiguos miembros</h2>
+                        </header>
+                        <p>¡También queremos agradecer a todos los antiguos miembros sus inestimables contribuciones!</p>
+                        <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/varkor">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/varkor" alt="varkor">
+                                </a>
+                                <div>
+                                    varkor
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/varkor">varkor</a>
+                                    </div>
+                    </div>
+                            </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/withoutboats">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/withoutboats" alt="Without Boats">
+                                </a>
+                                <div>
+                                    Without Boats
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/withoutboats">withoutboats</a>
+                                    </div>
+                    </div>
+                            </div>
+            </div>
+</div>
+            <a id="team-project-dyn-upcasting"></a>
+            <div class="w-100 mw-none mw-8-m mw9-l ph3 center f3">
+                <header class="pb0 pt5">
+                    <a class="linkable-subheading" href="#team-project-dyn-upcasting"><h2>Dyn Upcasting Initiative</h2></a>
+                    <div class="highlight"></div>
+                </header>
+                <div>
+                    <div class="mv4 flex flex-column flex-row-l justify-between">
+                        <p class="ma0 f2">Allowing Upcasting between trait objects</p>
+                        <div class="flex flex-column ml5-l mt4 mt0-l">
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://github.com/rust-lang/dyn-upcasting-coercion-initiative">
+                                    Repositorio del Dyn Upcasting Initiative
+                                    </a>
+                                </div>
+            </div>
+                    </div>
+                </div>
+        <header class="pb4 pt0">
+                        <h2 class="f2">Miembros</h2>
+                    </header>
+                    <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/crlf0710">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/crlf0710" alt="Charles Lew">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class=" ma0 mb2">Charles Lew</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/crlf0710">crlf0710</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/nikomatsakis">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/nikomatsakis" alt="Niko Matsakis">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Niko Matsakis</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/nikomatsakis">nikomatsakis</a>
+                        </div>
+                    </div>
+                            </div>
+        </div>
+</div>
+            <a id="team-project-generic-associated-types"></a>
+            <div class="w-100 mw-none mw-8-m mw9-l ph3 center f3">
+                <header class="pb0 pt5">
+                    <a class="linkable-subheading" href="#team-project-generic-associated-types"><h2>Generic Associated Types Initiative</h2></a>
+                    <div class="highlight"></div>
+                </header>
+                <div>
+                    <div class="mv4 flex flex-column flex-row-l justify-between">
+                        <p class="ma0 f2">Extending Rust with Generic Associated Types</p>
+                        <div class="flex flex-column ml5-l mt4 mt0-l">
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://github.com/rust-lang/generic-associated-types-initiative">
+                                    Repositorio del Generic Associated Types Initiative
+                                    </a>
+                                </div>
+            </div>
+                    </div>
+                </div>
+        <header class="pb4 pt0">
+                        <h2 class="f2">Miembros</h2>
+                    </header>
+                    <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/jackh726">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/jackh726" alt="Jack Huey">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class=" ma0 mb2">Jack Huey</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/jackh726">jackh726</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/nikomatsakis">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/nikomatsakis" alt="Niko Matsakis">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Niko Matsakis</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/nikomatsakis">nikomatsakis</a>
+                        </div>
+                    </div>
+                            </div>
+        </div>
+</div>
+            <a id="team-project-impl-trait"></a>
+            <div class="w-100 mw-none mw-8-m mw9-l ph3 center f3">
+                <header class="pb0 pt5">
+                    <a class="linkable-subheading" href="#team-project-impl-trait"><h2>Impl Trait Initiative</h2></a>
+                    <div class="highlight"></div>
+                </header>
+                <div>
+                    <div class="mv4 flex flex-column flex-row-l justify-between">
+                        <p class="ma0 f2">Extending Rust with Impl Trait</p>
+                        <div class="flex flex-column ml5-l mt4 mt0-l">
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://github.com/rust-lang/impl-trait-initiative">
+                                    Repositorio del Impl Trait Initiative
+                                    </a>
+                                </div>
+            </div>
+                    </div>
+                </div>
+        <header class="pb4 pt0">
+                        <h2 class="f2">Miembros</h2>
+                    </header>
+                    <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/nikomatsakis">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/nikomatsakis" alt="Niko Matsakis">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class=" ma0 mb2">Niko Matsakis</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/nikomatsakis">nikomatsakis</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/oli-obk">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/oli-obk" alt="Oliver Scherer">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Oliver Scherer</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/oli-obk">oli-obk</a>
+                        </div>
+                    </div>
+                            </div>
+        </div>
+</div>
+            <a id="team-project-keyword-generics"></a>
+            <div class="w-100 mw-none mw-8-m mw9-l ph3 center f3">
+                <header class="pb0 pt5">
+                    <a class="linkable-subheading" href="#team-project-keyword-generics"><h2>Keyword Generics Initiative</h2></a>
+                    <div class="highlight"></div>
+                </header>
+                <div>
+                    <div class="mv4 flex flex-column flex-row-l justify-between">
+                        <p class="ma0 f2">Extending the type system to support keyword generics</p>
+                        <div class="flex flex-column ml5-l mt4 mt0-l">
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://github.com/rust-lang/keyword-generics-initiative">
+                                    Repositorio del Keyword Generics Initiative
+                                    </a>
+                                </div>
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://rust-lang.zulipchat.com/#narrow/stream/t-lang.2Fkeyword-generics#narrow/stream/t-lang.2Fkeyword-generics">
+                                    #t-lang/keyword-generics en Zulip
+                                    </a>
+                                </div>
+            </div>
+                    </div>
+                </div>
+        <header class="pb4 pt0">
+                        <h2 class="f2">Miembros</h2>
+                    </header>
+                    <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/oli-obk">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/oli-obk" alt="Oliver Scherer">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class=" ma0 mb2">Oliver Scherer</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/oli-obk">oli-obk</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/yoshuawuyts">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/yoshuawuyts" alt="Yoshua Wuyts">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class=" ma0 mb2">Yoshua Wuyts</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/yoshuawuyts">yoshuawuyts</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/lcnr">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/lcnr" alt="lcnr">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">lcnr</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/lcnr">lcnr</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/nikomatsakis">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/nikomatsakis" alt="Niko Matsakis">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Niko Matsakis</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/nikomatsakis">nikomatsakis</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/traviscross">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/traviscross" alt="TC">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">TC</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/traviscross">traviscross</a>
+                        </div>
+                    </div>
+                            </div>
+        </div>
+</div>
+            <a id="team-project-negative-impls"></a>
+            <div class="w-100 mw-none mw-8-m mw9-l ph3 center f3">
+                <header class="pb0 pt5">
+                    <a class="linkable-subheading" href="#team-project-negative-impls"><h2>Negative Impls Initiative</h2></a>
+                    <div class="highlight"></div>
+                </header>
+                <div>
+                    <div class="mv4 flex flex-column flex-row-l justify-between">
+                        <p class="ma0 f2">Extending negative impls and integrating them into coherence</p>
+                        <div class="flex flex-column ml5-l mt4 mt0-l">
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://github.com/rust-lang/negative-impls-initiative">
+                                    Repositorio del Negative Impls Initiative
+                                    </a>
+                                </div>
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://rust-lang.zulipchat.com/#narrow/stream/wg-traits#narrow/stream/wg-traits">
+                                    #wg-traits en Zulip
+                                    </a>
+                                </div>
+            </div>
+                    </div>
+                </div>
+        <header class="pb4 pt0">
+                        <h2 class="f2">Miembros</h2>
+                    </header>
+                    <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/nikomatsakis">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/nikomatsakis" alt="Niko Matsakis">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class=" ma0 mb2">Niko Matsakis</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/nikomatsakis">nikomatsakis</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                            </div>
+        </div>
+            <header class="pb3 pt3">
+                            <h2 class="f2">Antiguos miembros</h2>
+                        </header>
+                        <p>¡También queremos agradecer a todos los antiguos miembros sus inestimables contribuciones!</p>
+                        <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/pnkfelix">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/pnkfelix" alt="Felix Klock">
+                                </a>
+                                <div>
+                                    Felix Klock
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/pnkfelix">pnkfelix</a>
+                                    </div>
+                    </div>
+                            </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/spastorino">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/spastorino" alt="Santiago Pastorino">
+                                </a>
+                                <div>
+                                    Santiago Pastorino
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/spastorino">spastorino</a>
+                                    </div>
+                    </div>
+                            </div>
+            </div>
+</div>
+    </section>
+    <section class="green">
+            <a id="team-wg-async"></a>
+            <div class="w-100 mw-none mw-8-m mw9-l ph3 center f3">
+                <header class="pb0 pt5">
+                    <a class="linkable-subheading" href="#team-wg-async"><h2>Async working group</h2></a>
+                    <div class="highlight"></div>
+                </header>
+                <div>
+                    <div class="mv4 flex flex-column flex-row-l justify-between">
+                        <p class="ma0 f2">Pursuing core language and library support for async-await</p>
+                        <div class="flex flex-column ml5-l mt4 mt0-l">
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://github.com/rust-lang/wg-async">
+                                    Repositorio del Async working group
+                                    </a>
+                                </div>
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://rust-lang.zulipchat.com/#narrow/stream/wg-async#narrow/stream/wg-async">
+                                    #wg-async en Zulip
+                                    </a>
+                                </div>
+            </div>
+                    </div>
+                </div>
+        <header class="pb4 pt0">
+                        <h2 class="f2">Miembros</h2>
+                    </header>
+                    <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/nikomatsakis">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/nikomatsakis" alt="Niko Matsakis">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class=" ma0 mb2">Niko Matsakis</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/nikomatsakis">nikomatsakis</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/tmandry">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/tmandry" alt="Tyler Mandry">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class=" ma0 mb2">Tyler Mandry</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/tmandry">tmandry</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/compiler-errors">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/compiler-errors" alt="Michael Goulet">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Michael Goulet</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/compiler-errors">compiler-errors</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/eholk">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/eholk" alt="Eric Holk">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Eric Holk</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/eholk">eholk</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/estebank">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/estebank" alt="Esteban Kuber">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Esteban Kuber</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/estebank">estebank</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/guswynn">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/guswynn" alt="Gus Wynn">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Gus Wynn</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/guswynn">guswynn</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/nrc">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/nrc" alt="Nick Cameron">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Nick Cameron</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/nrc">nrc</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/taiki-e">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/taiki-e" alt="Taiki Endo">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Taiki Endo</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/taiki-e">taiki-e</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/traviscross">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/traviscross" alt="TC">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">TC</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/traviscross">traviscross</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/vincenzopalazzo">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/vincenzopalazzo" alt="Vincenzo Palazzo">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Vincenzo Palazzo</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/vincenzopalazzo">vincenzopalazzo</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/yoshuawuyts">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/yoshuawuyts" alt="Yoshua Wuyts">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Yoshua Wuyts</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/yoshuawuyts">yoshuawuyts</a>
+                        </div>
+                    </div>
+                            </div>
+        </div>
+            <header class="pb3 pt3">
+                            <h2 class="f2">Antiguos miembros</h2>
+                        </header>
+                        <p>¡También queremos agradecer a todos los antiguos miembros sus inestimables contribuciones!</p>
+                        <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/Aaron1011">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/Aaron1011" alt="Aaron Hill">
+                                </a>
+                                <div>
+                                    Aaron Hill
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/Aaron1011">Aaron1011</a>
+                                    </div>
+                    </div>
+                            </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/betamos">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/betamos" alt="Didrik Nordström">
+                                </a>
+                                <div>
+                                    Didrik Nordström
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/betamos">betamos</a>
+                                    </div>
+                    </div>
+                            </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/bIgBV">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/bIgBV" alt="Bhargav Voleti">
+                                </a>
+                                <div>
+                                    Bhargav Voleti
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/bIgBV">bIgBV</a>
+                                    </div>
+                    </div>
+                            </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/cramertj">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/cramertj" alt="Taylor Cramer">
+                                </a>
+                                <div>
+                                    Taylor Cramer
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/cramertj">cramertj</a>
+                                    </div>
+                    </div>
+                            </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/csmoe">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/csmoe" alt="csmoe">
+                                </a>
+                                <div>
+                                    csmoe
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/csmoe">csmoe</a>
+                                    </div>
+                    </div>
+                            </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/doc-jones">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/doc-jones" alt="Doc Jones">
+                                </a>
+                                <div>
+                                    Doc Jones
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/doc-jones">doc-jones</a>
+                                    </div>
+                    </div>
+                            </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/eminence">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/eminence" alt="Andrew Chin">
+                                </a>
+                                <div>
+                                    Andrew Chin
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/eminence">eminence</a>
+                                    </div>
+                    </div>
+                            </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/emmanuelantony2000">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/emmanuelantony2000" alt="Emmanuel Antony">
+                                </a>
+                                <div>
+                                    Emmanuel Antony
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/emmanuelantony2000">emmanuelantony2000</a>
+                                    </div>
+                    </div>
+                            </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/gilescope">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/gilescope" alt="Squirrel">
+                                </a>
+                                <div>
+                                    Squirrel
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/gilescope">gilescope</a>
+                                    </div>
+                    </div>
+                            </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/lbernick">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/lbernick" alt="Lee Bernick">
+                                </a>
+                                <div>
+                                    Lee Bernick
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/lbernick">lbernick</a>
+                                    </div>
+                    </div>
+                            </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/LucioFranco">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/LucioFranco" alt="Lucio Franco">
+                                </a>
+                                <div>
+                                    Lucio Franco
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/LucioFranco">LucioFranco</a>
+                                    </div>
+                    </div>
+                            </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/MajorBreakfast">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/MajorBreakfast" alt="Josef Brandl">
+                                </a>
+                                <div>
+                                    Josef Brandl
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/MajorBreakfast">MajorBreakfast</a>
+                                    </div>
+                    </div>
+                            </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/michaelwoerister">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/michaelwoerister" alt="Michael Woerister">
+                                </a>
+                                <div>
+                                    Michael Woerister
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/michaelwoerister">michaelwoerister</a>
+                                    </div>
+                    </div>
+                            </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/nellshamrell">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/nellshamrell" alt="Nell Shamrell-Harrington">
+                                </a>
+                                <div>
+                                    Nell Shamrell-Harrington
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/nellshamrell">nellshamrell</a>
+                                    </div>
+                    </div>
+                            </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/pnkfelix">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/pnkfelix" alt="Felix Klock">
+                                </a>
+                                <div>
+                                    Felix Klock
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/pnkfelix">pnkfelix</a>
+                                    </div>
+                    </div>
+                            </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/rylev">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/rylev" alt="Ryan Levick">
+                                </a>
+                                <div>
+                                    Ryan Levick
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/rylev">rylev</a>
+                                    </div>
+                    </div>
+                            </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/spastorino">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/spastorino" alt="Santiago Pastorino">
+                                </a>
+                                <div>
+                                    Santiago Pastorino
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/spastorino">spastorino</a>
+                                    </div>
+                    </div>
+                            </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/withoutboats">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/withoutboats" alt="Without Boats">
+                                </a>
+                                <div>
+                                    Without Boats
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/withoutboats">withoutboats</a>
+                                    </div>
+                    </div>
+                            </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/zeenix">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/zeenix" alt="Zeeshan Ali">
+                                </a>
+                                <div>
+                                    Zeeshan Ali
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/zeenix">zeenix</a>
+                                    </div>
+                    </div>
+                            </div>
+            </div>
+</div>
+            <a id="team-wg-ffi-unwind"></a>
+            <div class="w-100 mw-none mw-8-m mw9-l ph3 center f3">
+                <header class="pb0 pt5">
+                    <a class="linkable-subheading" href="#team-wg-ffi-unwind"><h2>Grupo de trabajo de <em>ffi-unwind</em></h2></a>
+                    <div class="highlight"></div>
+                </header>
+                <div>
+                    <div class="mv4 flex flex-column flex-row-l justify-between">
+                        <p class="ma0 f2">Un grupo de trabajo para hacer que Rust soporte que el <em>unwinding</em> cruce a través de FFI</p>
+                        <div class="flex flex-column ml5-l mt4 mt0-l">
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://github.com/rust-lang/project-ffi-unwind">
+                                    Repositorio del Grupo de trabajo de <em>ffi-unwind</em>
+                                    </a>
+                                </div>
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://rust-lang.zulipchat.com/#narrow/stream/project-ffi-unwind#narrow/stream/project-ffi-unwind">
+                                    #project-ffi-unwind en Zulip
+                                    </a>
+                                </div>
+            </div>
+                    </div>
+                </div>
+        <header class="pb4 pt0">
+                        <h2 class="f2">Miembros</h2>
+                    </header>
+                    <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/acfoltzer">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/acfoltzer" alt="Adam C. Foltzer">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class=" ma0 mb2">Adam C. Foltzer</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/acfoltzer">acfoltzer</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/BatmanAoD">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/BatmanAoD" alt="Kyle J Strand">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class=" ma0 mb2">Kyle J Strand</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/BatmanAoD">BatmanAoD</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/nikomatsakis">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/nikomatsakis" alt="Niko Matsakis">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class=" ma0 mb2">Niko Matsakis</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/nikomatsakis">nikomatsakis</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/Amanieu">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/Amanieu" alt="Amanieu d&#x27;Antras">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Amanieu d&#x27;Antras</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/Amanieu">Amanieu</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/bjorn3">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/bjorn3" alt="bjorn3">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">bjorn3</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/bjorn3">bjorn3</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/CAD97">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/CAD97" alt="Christopher Durham">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Christopher Durham</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/CAD97">CAD97</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/chorman0773">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/chorman0773" alt="Connor Horman">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Connor Horman</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/chorman0773">chorman0773</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/cratelyn">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/cratelyn" alt="Katelyn Martin">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Katelyn Martin</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/cratelyn">cratelyn</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/gnzlbg">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/gnzlbg" alt="gnzlbg">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">gnzlbg</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/gnzlbg">gnzlbg</a>
+                        </div>
+                    </div>
+                            </div>
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/nbdd0121">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/nbdd0121" alt="Gary Guo">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class="fw4 ma0 mb2">Gary Guo</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/nbdd0121">nbdd0121</a>
+                        </div>
+                    </div>
+                            </div>
+        </div>
+            <header class="pb3 pt3">
+                            <h2 class="f2">Antiguos miembros</h2>
+                        </header>
+                        <p>¡También queremos agradecer a todos los antiguos miembros sus inestimables contribuciones!</p>
+                        <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/joshtriplett">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/joshtriplett" alt="Josh Triplett">
+                                </a>
+                                <div>
+                                    Josh Triplett
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/joshtriplett">joshtriplett</a>
+                                    </div>
+                    </div>
+                            </div>
+            </div>
+</div>
+            <a id="team-wg-inline-asm"></a>
+            <div class="w-100 mw-none mw-8-m mw9-l ph3 center f3">
+                <header class="pb0 pt5">
+                    <a class="linkable-subheading" href="#team-wg-inline-asm"><h2>inline-asm project group</h2></a>
+                    <div class="highlight"></div>
+                </header>
+                <div>
+                    <div class="mv4 flex flex-column flex-row-l justify-between">
+                        <p class="ma0 f2">A working-group project to extend the Rust language to support inline assembly</p>
+                        <div class="flex flex-column ml5-l mt4 mt0-l">
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://github.com/rust-lang/project-inline-asm">
+                                    Repositorio del inline-asm project group
+                                    </a>
+                                </div>
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://rust-lang.zulipchat.com/#narrow/stream/project-inline-asm#narrow/stream/project-inline-asm">
+                                    #project-inline-asm en Zulip
+                                    </a>
+                                </div>
+            </div>
+                    </div>
+                </div>
+        <header class="pb4 pt0">
+                        <h2 class="f2">Miembros</h2>
+                    </header>
+                    <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/Amanieu">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/Amanieu" alt="Amanieu d&#x27;Antras">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class=" ma0 mb2">Amanieu d&#x27;Antras</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/Amanieu">Amanieu</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                            </div>
+        </div>
+            <header class="pb3 pt3">
+                            <h2 class="f2">Antiguos miembros</h2>
+                        </header>
+                        <p>¡También queremos agradecer a todos los antiguos miembros sus inestimables contribuciones!</p>
+                        <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/joshtriplett">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/joshtriplett" alt="Josh Triplett">
+                                </a>
+                                <div>
+                                    Josh Triplett
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/joshtriplett">joshtriplett</a>
+                                    </div>
+                    </div>
+                            </div>
+            </div>
+</div>
+            <a id="team-wg-safe-transmute"></a>
+            <div class="w-100 mw-none mw-8-m mw9-l ph3 center f3">
+                <header class="pb0 pt5">
+                    <a class="linkable-subheading" href="#team-wg-safe-transmute"><h2>Grupo de trabajo de <em>safe transmute</em></h2></a>
+                    <div class="highlight"></div>
+                </header>
+                <div>
+                    <div class="mv4 flex flex-column flex-row-l justify-between">
+                        <p class="ma0 f2">Un grupo de trabajo para extender Rust con soporte para <em>transmute</em> entre tipos seguro</p>
+                        <div class="flex flex-column ml5-l mt4 mt0-l">
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://github.com/rust-lang/project-safe-transmute">
+                                    Repositorio del Grupo de trabajo de <em>safe transmute</em>
+                                    </a>
+                                </div>
+                    <div class="pt4 pt3-l flex flex-column flex-row-l items-center-l">
+                                    <a class="button button-secondary" href="https://rust-lang.zulipchat.com/#narrow/stream/project-safe-transmute#narrow/stream/project-safe-transmute">
+                                    #project-safe-transmute en Zulip
+                                    </a>
+                                </div>
+            </div>
+                    </div>
+                </div>
+        <header class="pb4 pt0">
+                        <h2 class="f2">Miembros</h2>
+                    </header>
+                    <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="flex flex-row w-100 w-50-l mb4 p3">
+                                <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/jswrenn">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/jswrenn" alt="Jack Wrenn">
+                                </a>
+                                <div class="flex flex-column w-100">
+                                    <h3 class=" ma0 mb2">Jack Wrenn</h3>
+                                    <div>
+GitHub:                                 <a href="https://github.com/jswrenn">jswrenn</a>
+                        </div>
+                            <div>Líder del equipo</div>
+                    </div>
+                            </div>
+        </div>
+            <header class="pb3 pt3">
+                            <h2 class="f2">Antiguos miembros</h2>
+                        </header>
+                        <p>¡También queremos agradecer a todos los antiguos miembros sus inestimables contribuciones!</p>
+                        <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/joshtriplett">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/joshtriplett" alt="Josh Triplett">
+                                </a>
+                                <div>
+                                    Josh Triplett
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/joshtriplett">joshtriplett</a>
+                                    </div>
+                    </div>
+                            </div>
+                <div class="w-100 w-33-l mb3 flex flex-row items-center">
+                                <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/rylev">
+                                    <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/rylev" alt="Ryan Levick">
+                                </a>
+                                <div>
+                                    Ryan Levick
+                                    <div class="f4">
+                                        GitHub: <a href="https://github.com/rylev">rylev</a>
+                                    </div>
+                    </div>
+                            </div>
+            </div>
+</div>
+    </section>
+
+    </main>
+    <footer>
+      <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <div class="flex flex-column flex-row-l pv0-l">
+          <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l" id="get-help">
+            <h4>¡Pide ayuda!</h4>
+            <ul>
+              <li><a href="../../learn.html">Documentación</a></li>
+              <li><a href="http://forge.rust-lang.org">Rust Forge (documentación para contribuidores)</a></li>
+              <li><a href="https://users.rust-lang.org">Preguntar en el foro de usuarios</a></li>
+            </ul>
+            <div class="languages">
+              <div class="select">
+                <label for="language-footer" class="hidden">Idioma</label>
+                <select id="language-footer">
+                  <option title="English (en-US)" value="en-US">English (en-US)</option>
+<option title="Español (es)" value="es">Español (es)</option>
+<option title="Français (fr)" value="fr">Français (fr)</option>
+<option title="Italiano (it)" value="it">Italiano (it)</option>
+<option title="日本語 (ja)" value="ja">日本語 (ja)</option>
+<option title="Português (pt-BR)" value="pt-BR">Português (pt-BR)</option>
+<option title="Русский (ru)" value="ru">Русский (ru)</option>
+<option title="Türkçe (tr)" value="tr">Türkçe (tr)</option>
+<option title="简体中文 (zh-CN)" value="zh-CN">简体中文 (zh-CN)</option>
+<option title="正體中文 (zh-TW)" value="zh-TW">正體中文 (zh-TW)</option>
+            </select>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l">
+            <h4>Términos y políticas</h4>
+            <ul>
+              <li><a href="../../policies/code-of-conduct.html">Código de conducta</a></li>
+              <li><a href="../../policies/licenses.html">Licencias</a></li>
+              <li><a href="https://foundation.rust-lang.org/policies/logo-policy-and-media-guide/">Política de logos y guía de medios</a></li>
+              <li><a href="../../policies/security.html">Divulgaciones de seguridad</a></li>
+              <li><a href="https://foundation.rust-lang.org/policies/privacy-policy/">Aviso de privacidad</a></li>
+              <li><a href="../../policies.html">Todas las políticas</a></li>
+            </ul>
+          </div>
+          <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l">
+            <h4>Redes sociales</h4>
+            <div class="flex flex-row flex-wrap items-center">
+              <a rel="me" href="https://social.rust-lang.org/@rust" target="_blank"><img src="../../../static/images/mastodon.svg" alt="Mastodon" title="Mastodon" /></a>
+              <a rel="me" href="https://bsky.app/profile/rust-lang.org" target="_blank"><img src="../../../static/images/bluesky.svg" alt="Bluesky" title="Bluesky" /></a>
+              <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank"><img class="pv2" src="../../../static/images/youtube.svg" alt="logo de youtube" title="YouTube"/></a>
+              <a href="https://discord.gg/rust-lang" target="_blank"><img src="../../../static/images/discord.svg" alt="discord logo" title="Discord"/></a>
+              <a href="https://github.com/rust-lang" target="_blank"><img src="../../../static/images/github.svg" alt="github logo" title="GitHub"/></a>
+            </div>
+          </div>
+    
+        </div>
+        <div class="attribution">
+          <p>
+            Mantenida por el equipo de Rust. ¿Hay algún error?
+<a href="https://github.com/rust-lang/www.rust-lang.org/issues/new/choose">¡Arréglalo aquí!</a>
+          </p>
+          <p>¿Buscas la <a href="https://prev.rust-lang.org">web antigua</a>?</p>
+        </div>
+      </div>
+    </footer>
+    <script src="../../../static/scripts/languages.js"></script>
+  </body>
+</html>

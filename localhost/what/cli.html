@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>
+            Command-line apps - Rust Programming Language
+        </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="A language empowering everyone to build reliable and efficient software.">
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@rustlang">
+    <meta name="twitter:creator" content="@rustlang">
+    <meta name="twitter:title" content="Command-line apps">
+    <meta name="twitter:description" content="A language empowering everyone to build reliable and efficient software.">
+    <meta name="twitter:image" content="https://www.rust-lang.org/static/images/rust-social.jpg">
+
+    <!-- Facebook OpenGraph -->
+    <meta property="og:title" content="Command-line apps" />
+    <meta property="og:description" content="A language empowering everyone to build reliable and efficient software.">
+    <meta property="og:image" content="https://www.rust-lang.org/static/images/rust-social-wide.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="../static/styles/a11y-dark.css"/>
+    <link rel="stylesheet" href="../static/styles/vendor_10880690442070639967.css"/>
+    <link rel="stylesheet" href="../static/styles/fonts_8049871103083011125.css"/>
+    <link rel="stylesheet" href="../static/styles/app_1609526410131002304.css"/>
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/images/apple-touch-icon.png%3Fv=ngJW8jGAmR">
+    <link rel="icon" sizes="16x16" type="image/png" href="../static/images/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../static/images/favicon-32x32.png">
+    <link rel="icon" type="image/svg+xml" href="../static/images/favicon.svg">
+    <link rel="manifest" href="../static/images/site.webmanifest%3Fv=ngJW8jGAmR">
+    <link rel="mask-icon" href="../static/images/safari-pinned-tab.svg%3Fv=ngJW8jGAmR" color="#000000">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="/static/images/browserconfig.xml?v=ngJW8jGAmR">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- Custom Highlight pack with: Rust, Markdown, TOML, Bash, JSON, YAML,
+         and plaintext. -->
+    <script src="../static/scripts/highlight.pack.js" defer></script>
+    <script src="../static/scripts/init.js" defer></script>
+  </head>
+  <body>
+    <nav class="flex flex-row justify-center justify-end-l items-center flex-wrap ph2 pl3-ns pr3-ns pb3">
+      <div class="brand flex-auto w-100 w-auto-l self-start tc tl-l">
+        <a href="../index.html" class="brand">
+          <img class="v-mid ml0-l" alt="Rust Logo" src="../static/images/rust-logo-blk.svg">
+        <span class="dib ml1 ml0-l">Rust</span>
+    </a>
+      </div>
+    
+      <ul class="nav list w-100 w-auto-l flex flex-none flex-row flex-wrap justify-center justify-end-l items-center pv2 ph0 ph4-ns">
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../tools/install.html">Install</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../learn.html">Learn</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="https://play.rust-lang.org/">Playground</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../tools.html">Tools</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../governance.html">Governance</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../community.html">Community</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="https://blog.rust-lang.org/">Blog</a></li>
+      </ul>
+    
+      <div class=" w-100 w-auto-l flex-none flex justify-center pv4 pv-0-l languages">
+        <div class="select">
+          <label for="language-nav" class="hidden">Language</label>
+          <select id="language-nav" data-current-lang="en-US">
+            <option title="English (en-US)" value="en-US">English (en-US)</option>
+<option title="Español (es)" value="es">Español (es)</option>
+<option title="Français (fr)" value="fr">Français (fr)</option>
+<option title="Italiano (it)" value="it">Italiano (it)</option>
+<option title="日本語 (ja)" value="ja">日本語 (ja)</option>
+<option title="Português (pt-BR)" value="pt-BR">Português (pt-BR)</option>
+<option title="Русский (ru)" value="ru">Русский (ru)</option>
+<option title="Türkçe (tr)" value="tr">Türkçe (tr)</option>
+<option title="简体中文 (zh-CN)" value="zh-CN">简体中文 (zh-CN)</option>
+<option title="正體中文 (zh-TW)" value="zh-TW">正體中文 (zh-TW)</option>
+      </select>
+        </div>
+      </div>
+    
+    </nav>
+    <main>
+<header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <h1>Command-line apps</h1>
+  </div>
+</header>
+
+<section class="purple">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>
+        Why Rust?
+      </h2>
+      <div class="highlight"></div>
+    </header>
+
+    <div class="flex flex-column flex-row-l">
+      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l">
+        <div class="v-top tc-l">
+          <img src="../static/images/cli-rustc-approved.svg" alt="Shield with a checkmark" class="mw3 mw4-ns"/>
+        </div>
+        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+          <h3 class="tc-l">
+            Solid and quick
+          </h3>
+          <p class="flex-grow-1">
+            Even if you’re just writing a short one-off
+script, you can be confident it’s fast, easily testable, and gives
+helpful output.
+          </p>
+          <a href="../learn.html" class="button button-secondary">
+            Rust’s guarantees
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l">
+        <div class="v-top tc-l">
+          <img src="../static/images/cli-packaging.svg" alt="box with a checkmark"
+               class="mw3 mw4-ns"/>
+        </div>
+        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+          <h3 class="tc-l">
+            Easy distribution
+          </h3>
+          <p class="flex-grow-1">
+            Compile everything down to a single binary&mdash;no
+need for your users to have a runtime or libraries installed.
+          </p>
+          <a href="https://rust-cli.github.io/book/tutorial/packaging.html" class="button button-secondary">
+            How to ship Rust code
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l">
+        <div class="v-top tc-l">
+          <img src="../static/images/cli-configs.svg" alt="A note and a gear"
+               class="mw3 mw4-ns"/>
+        </div>
+        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+          <h3 class="tc-l">
+            Robust configuration
+          </h3>
+
+          <p class="flex-grow-1">
+            Handle configuration files across platforms with
+ease.  Rust will deal with namespaces and formats for you.
+          </p>
+          <a href="https://rust-cli.github.io/book/in-depth/config-files.html" class="button button-secondary">
+              Start configuring
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="flex-none flex-l flex-row mt5-l">
+      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l">
+        <div class="v-top tc-l">
+          <img src="../static/images/cli-man.svg" alt="Help manual"
+               class="mw3 mw4-ns"/>
+        </div>
+        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+          <h3 class="tc-l">
+            Manuals? done.
+          </h3>
+          <p class="flex-grow-1">
+            Generate manual pages for your app
+automatically.  Just package the generated files and you’re done.
+          </p>
+          <a href="https://rust-cli.github.io/book/in-depth/docs.html" class="button button-secondary">
+            Learn how
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l">
+        <div class="v-top tc-l">
+          <img src="../static/images/cli-pipe.svg" alt="Pipes"
+               class="mw3 mw4-ns"/>
+        </div>
+        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+          <h3 class="tc-l">
+            Data in, data out
+          </h3>
+          <p class="flex-grow-1">
+            In addition to talking to humans, Rust has
+great tools to help you talk to machines.
+          </p>
+          <a href="https://rust-cli.github.io/book/in-depth/machine-communication.html" class="button button-secondary">
+            Communicate with machines
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l">
+        <div class="v-top tc-l">
+          <img src="../static/images/cli-logging.svg"
+               alt="3 wood logs stacked on top of each other"
+               class="mw3 mw4-ns"/>
+        </div>
+        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+          <h3 class="tc-l">
+            Flexible logging
+          </h3>
+
+          <p class="flex-grow-1">
+            It’s easy to add logging, and even easier to
+configure it to different targets and with different styles.
+          </p>
+          <a href="https://rust-cli.github.io/book/in-depth/human-communication.html" class="button button-secondary">
+            Log, trace, comprehend
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="cli-pitch" class="green">
+    <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <header>
+            <h2>A maintainable code base</h2>
+            <div class="highlight highlight-yellow"></div>
+        </header>
+        <div class="flex flex-column flex-row-l">
+            <article class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l">
+                <header class="domain-icon">
+                    <img src="../static/images/cli-app-structure-2.svg" alt="cli app structure" class="mw3 mw4-ns" />
+                    <h3 class="tc-l">Catch errors <em>now</em></h3>
+                </header>
+                <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+                    <p class="flex-grow-1">
+                        What if the config file is missing or corrupt? What if the content of
+that one environment variable is empty? These cases are easy to forget
+about! But thanks to its approach to error handling and its library
+design, Rust will point out these “what if” situations before you even
+run your program.
+                    </p>
+                    <a href="https://doc.rust-lang.org/book/ch09-00-error-handling.html" class="button button-secondary">
+                        Rust’s error handling
+                    </a>
+                </div>
+            </article>
+            <article class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l">
+                <header class="domain-icon">
+                    <img src="../static/images/cli-is-no-rocket-science.svg" alt="cli is no rocket science" class="mw3 mw4-ns" />
+                    <h3 class="tc-l">Easily extend later</h3>
+                </header>
+                <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+                    <p class="box-content">
+                        Rust allows you to be flexible in the way you organize your code. Start
+with just a single file and, when you need more features, refactor your
+application with the confidence that you aren’t breaking anything.
+                    </p>
+                    <a href="https://doc.rust-lang.org/book/ch12-03-improving-error-handling-and-modularity.html" class="button button-secondary">
+                        Refactoring Rust
+                    </a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+<section id="cli-use-it" class="red">
+    <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <header>
+            <h2>Get started!</h2>
+            <div class="highlight"></div>
+        </header>
+
+        <div>
+            <p>Writing a command-line app is a great way to learn Rust.</p>
+        </div>
+
+        <div class="flex-l">
+            <article class="flex flex-column w-50-l mr4-l">
+                <h3>Define your inputs</h3>
+                <pre class="mt0 flex flex-grow-1"><code>use clap::Parser;
+
+/// Read some lines of a file
+#[derive(Debug, Parser)]
+struct Cli {
+    /// Input file to read
+    file: String,
+    /// Number of lines to read
+    #[structopt(short = 'n')]
+    num: usize,
+}</code></pre>
+            </article>
+
+            <article class="flex flex-column w-50-l ml4-l mt5 mt0-l">
+                <h3>Write your tool</h3>
+                <pre class="mt0 flex flex-grow-1"><code>use std::{error::Error, fs::read_to_string};
+
+fn main() -> Result<(), Box<dyn Error>> {
+    let args = Cli::parse();
+    read_to_string(&args.file)?
+        .lines()
+        .take(args.num)
+        .for_each(|line| println!("{}", line));
+    Ok(())
+}</code></pre>
+            </article>
+        </div>
+
+        <a href="https://rust-cli.github.io/book/index.html" class="button button-secondary">Learn more with the CLI book</a>
+    </div>
+</section>
+<section id="production" class="white">
+    <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <header>
+            <h2>Production use</h2>
+            <div class="highlight"></div>
+        </header>
+        <div class="testimonials">
+          <div class="testimonial flex-none flex-l">
+                <div class="w-100 w-30-l tc">
+                  <img src="../static/images/sentry-logo-black.svg" alt="sentry logo"/>
+                </div>
+                <div class="w-100 w-70-l" id="sentry-testimonial">
+                    <blockquote class="lh-title-ns">
+                        One of the reasons we liked Rust was the crates.io ecosystem. [...]
+There is a lot of really good already existing infrastructure for
+building very nice command-line interfaces.
+                    </blockquote>
+                    <p class="attribution">
+                        &ndash; Armin Ronacher,
+                        <a href="https://www.youtube.com/watch?v=2Xu6EdEBa5E">
+                            Rust at Sentry &ndash; PolyConf 2017
+                        </a>
+                    </p>
+                </div>
+            </div>
+             <hr/>
+            <div class="testimonial flex-none flex-l">
+                <div class="w-100 w-70-l" id="habitat-testimonial">
+                    <blockquote  class="lh-title-ns">
+                        I have zero regrets with living in this code base. […] This was sort of
+an added bonus for me: Using Rust to make CLI or console based tools. It
+is very good at compiling for different target systems.
+                    </blockquote>
+                    <p class="attribution">
+                        &ndash; Fletcher Nichol,
+                        <a href="https://www.youtube.com/watch?v=zAXbPnfTJg4">
+                            Taking Rust to Production &ndash; RustFest Kyiv
+                        </a>
+                    </p>
+                </div>
+                <div class="w-100 w-30-l tc">
+                  <img src="../static/images/habitat.svg" alt="Habitat logo"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </main>
+    <footer>
+      <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <div class="flex flex-column flex-row-l pv0-l">
+          <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l" id="get-help">
+            <h4>Get help!</h4>
+            <ul>
+              <li><a href="../learn.html">Documentation</a></li>
+              <li><a href="http://forge.rust-lang.org">Rust Forge (Contributor Documentation)</a></li>
+              <li><a href="https://users.rust-lang.org">Ask a Question on the Users Forum</a></li>
+            </ul>
+            <div class="languages">
+              <div class="select">
+                <label for="language-footer" class="hidden">Language</label>
+                <select id="language-footer">
+                  <option title="English (en-US)" value="en-US">English (en-US)</option>
+<option title="Español (es)" value="es">Español (es)</option>
+<option title="Français (fr)" value="fr">Français (fr)</option>
+<option title="Italiano (it)" value="it">Italiano (it)</option>
+<option title="日本語 (ja)" value="ja">日本語 (ja)</option>
+<option title="Português (pt-BR)" value="pt-BR">Português (pt-BR)</option>
+<option title="Русский (ru)" value="ru">Русский (ru)</option>
+<option title="Türkçe (tr)" value="tr">Türkçe (tr)</option>
+<option title="简体中文 (zh-CN)" value="zh-CN">简体中文 (zh-CN)</option>
+<option title="正體中文 (zh-TW)" value="zh-TW">正體中文 (zh-TW)</option>
+            </select>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l">
+            <h4>Terms and policies</h4>
+            <ul>
+              <li><a href="../policies/code-of-conduct.html">Code of Conduct</a></li>
+              <li><a href="../policies/licenses.html">Licenses</a></li>
+              <li><a href="https://foundation.rust-lang.org/policies/logo-policy-and-media-guide/">Logo Policy and Media Guide</a></li>
+              <li><a href="../policies/security.html">Security Disclosures</a></li>
+              <li><a href="https://foundation.rust-lang.org/policies/privacy-policy/">Privacy Notice</a></li>
+              <li><a href="../policies.html">All Policies</a></li>
+            </ul>
+          </div>
+          <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l">
+            <h4>Social</h4>
+            <div class="flex flex-row flex-wrap items-center">
+              <a rel="me" href="https://social.rust-lang.org/@rust" target="_blank"><img src="../static/images/mastodon.svg" alt="Mastodon" title="Mastodon" /></a>
+              <a rel="me" href="https://bsky.app/profile/rust-lang.org" target="_blank"><img src="../static/images/bluesky.svg" alt="Bluesky" title="Bluesky" /></a>
+              <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank"><img class="pv2" src="../static/images/youtube.svg" alt="youtube logo" title="YouTube"/></a>
+              <a href="https://discord.gg/rust-lang" target="_blank"><img src="../static/images/discord.svg" alt="discord logo" title="Discord"/></a>
+              <a href="https://github.com/rust-lang" target="_blank"><img src="../static/images/github.svg" alt="github logo" title="GitHub"/></a>
+            </div>
+          </div>
+    
+        </div>
+        <div class="attribution">
+          <p>
+            Maintained by the Rust Team. See a bug?
+<a href="https://github.com/rust-lang/www.rust-lang.org/issues/new/choose">File an issue!</a>
+          </p>
+          <p>Looking for the <a href="https://prev.rust-lang.org">previous website</a>?</p>
+        </div>
+      </div>
+    </footer>
+    <script src="../static/scripts/languages.js"></script>
+  </body>
+</html>

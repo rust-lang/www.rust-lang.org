@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>
+            Comunidad - Rust, el lenguaje de programación
+        </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="Un lenguaje que empodera a todos para construir software fiable y eficiente.">
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@rustlang">
+    <meta name="twitter:creator" content="@rustlang">
+    <meta name="twitter:title" content="Comunidad">
+    <meta name="twitter:description" content="Un lenguaje que empodera a todos para construir software fiable y eficiente.">
+    <meta name="twitter:image" content="https://www.rust-lang.org/static/images/rust-social.jpg">
+
+    <!-- Facebook OpenGraph -->
+    <meta property="og:title" content="Comunidad" />
+    <meta property="og:description" content="Un lenguaje que empodera a todos para construir software fiable y eficiente.">
+    <meta property="og:image" content="https://www.rust-lang.org/static/images/rust-social-wide.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="../static/styles/a11y-dark.css"/>
+    <link rel="stylesheet" href="../static/styles/vendor_10880690442070639967.css"/>
+    <link rel="stylesheet" href="../static/styles/fonts_8049871103083011125.css"/>
+    <link rel="stylesheet" href="../static/styles/app_1609526410131002304.css"/>
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/images/apple-touch-icon.png%3Fv=ngJW8jGAmR">
+    <link rel="icon" sizes="16x16" type="image/png" href="../static/images/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../static/images/favicon-32x32.png">
+    <link rel="icon" type="image/svg+xml" href="../static/images/favicon.svg">
+    <link rel="manifest" href="../static/images/site.webmanifest%3Fv=ngJW8jGAmR">
+    <link rel="mask-icon" href="../static/images/safari-pinned-tab.svg%3Fv=ngJW8jGAmR" color="#000000">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="/static/images/browserconfig.xml?v=ngJW8jGAmR">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- Custom Highlight pack with: Rust, Markdown, TOML, Bash, JSON, YAML,
+         and plaintext. -->
+    <script src="../static/scripts/highlight.pack.js" defer></script>
+    <script src="../static/scripts/init.js" defer></script>
+  </head>
+  <body>
+    <nav class="flex flex-row justify-center justify-end-l items-center flex-wrap ph2 pl3-ns pr3-ns pb3">
+      <div class="brand flex-auto w-100 w-auto-l self-start tc tl-l">
+        <a href="index.html" class="brand">
+          <img class="v-mid ml0-l" alt="Logo de Rust" src="../static/images/rust-logo-blk.svg">
+        <span class="dib ml1 ml0-l">Rust</span>
+    </a>
+      </div>
+    
+      <ul class="nav list w-100 w-auto-l flex flex-none flex-row flex-wrap justify-center justify-end-l items-center pv2 ph0 ph4-ns">
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="tools/install.html">Instala</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="learn.html">Aprende</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="https://play.rust-lang.org/">Playground</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="tools.html">Herramientas</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="governance.html">Gobernanza</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="community.html">Comunidad</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="https://blog.rust-lang.org/">Blog</a></li>
+      </ul>
+    
+      <div class=" w-100 w-auto-l flex-none flex justify-center pv4 pv-0-l languages">
+        <div class="select">
+          <label for="language-nav" class="hidden">Idioma</label>
+          <select id="language-nav" data-current-lang="es">
+            <option title="English (en-US)" value="en-US">English (en-US)</option>
+<option title="Español (es)" value="es">Español (es)</option>
+<option title="Français (fr)" value="fr">Français (fr)</option>
+<option title="Italiano (it)" value="it">Italiano (it)</option>
+<option title="日本語 (ja)" value="ja">日本語 (ja)</option>
+<option title="Português (pt-BR)" value="pt-BR">Português (pt-BR)</option>
+<option title="Русский (ru)" value="ru">Русский (ru)</option>
+<option title="Türkçe (tr)" value="tr">Türkçe (tr)</option>
+<option title="简体中文 (zh-CN)" value="zh-CN">简体中文 (zh-CN)</option>
+<option title="正體中文 (zh-TW)" value="zh-TW">正體中文 (zh-TW)</option>
+      </select>
+        </div>
+      </div>
+    
+    </nav>
+    <main>
+<header class="mt3 mt2-ns tc tl-ns">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <h1>Comunidad</h1>
+  </div>
+</header>
+
+<section id="contribute-talk" class="white">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>Dónde comunicarse</h2>
+      <div class="highlight"></div>
+    </header>
+    <div class="flex flex-column flex-row-l">
+      <div class="w-33-l mh3-l pt0 flex flex-column justify-start" id="users-forum">
+        <div>
+          <h3 class="mt0 mb4">Foro de usuarios</h3>
+          <p>
+            El foro de usuarios de Rust es el lugar donde los usuarios se comunican sobre
+cualquier tema relacionado con Rust. Pregunta dudas aquí,
+coordina ideas sobre proyectos, ¡lo que quieras!
+          </p>
+        </div>
+
+        <span class="dn-l">
+          <a href="https://users.rust-lang.org" class="button button-secondary">Visita el foro</a>
+        </span>
+      </div>
+
+      <div class="w-33-l mh3-l pt4 pt0-l flex flex-column justify-start" id="internals-forum">
+        <div>
+          <h3 class="mt0 mb4">Foro de "Internals"</h3>
+          <p>
+            El foro de <em>Internals</em> de Rust es el lugar para el debate sobre el desarrollo
+de Rust &ndash; incluido también el trabajo sobre el compilador además
+del diseño del lenguaje y la librería estándar.
+          </p>
+        </div>
+
+        <span class="dn-l">
+          <a href="https://internals.rust-lang.org" class="button button-secondary">Visita el foro</a>
+        </span>
+      </div>
+
+      <div class="w-33-l mh3-l pt4 pt0-l flex flex-column justify-start" id="chat-platforms">
+        <div>
+          <h3 class="mt0 mb4">Plataformas de chat</h3>
+          <p>
+            Las charlas sobre el desarrollo de Rust y otros asuntos tienen lugar en diversos <em>chat</em>s.
+Echa un vistazo a los canales generales en el servidor de Discord de Rust, o a las páginas de los equipos si quieres averiguar dónde se comunican los miembros de un equipo específico.
+          </p>
+        </div>
+
+        <ul class="list pa0 ma0 dn-l">
+          <li class="mb3">
+            <a href="https://discord.gg/rust-lang" class="button button-secondary">Discord</a>
+          </li>
+          <li class="mb3">
+            <a href="https://rust-lang.zulipchat.com" class="button button-secondary">Zulip</a>
+          </li>
+          <li class="mb3">
+            <a href="governance.html" class="button button-secondary">Saber más sobre los equipos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="dn db-l">
+      <div class="flex flex-column flex-row-l">
+        <div class="w-33-l mh3-l pt0 flex flex-column justify-start" id="users-forum">
+          <a href="https://users.rust-lang.org" class="button button-secondary">Visita el foro</a>
+        </div>
+
+        <div class="w-33-l mh3-l pt4 pt0-l flex flex-column justify-start" id="internals-forum">
+          <a href="https://internals.rust-lang.org" class="button button-secondary">Visita el foro</a>
+        </div>
+
+      <div class="w-33-l mh3-l pt4 pt0-l flex flex-column justify-start" id="chat-platforms">
+        <ul class="list pa0 ma0">
+          <li class="mb3">
+            <a href="https://discord.gg/rust-lang" class="button button-secondary">Discord</a>
+          </li>
+          <li class="mb3">
+            <a href="https://rust-lang.zulipchat.com" class="button button-secondary">Zulip</a>
+          </li>
+          <li class="mb3">
+            <a href="governance.html" class="button button-secondary">Saber más sobre los equipos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3 f2-s">
+    <header>
+        <h2>Dónde aprender</h2>
+        <div class="highlight"></div>
+    </header>
+    <div class="flex flex-column flex-row-l">
+      <div class="w-50-l mh2-l min-h-100-l pt0 flex flex-column justify-start">
+        <div>
+          <h2>Leer sobre Rust</h2>
+          <p>
+            El lenguaje de programación Rust tiene muchas virtudes, pero su mejor
+características es la comunidad de gente que se une para que trabajar con Rust
+sea una experiencia excelente.
+          </p>
+          <p>
+            ¡Mantente al día con la comunidad de Rust!
+          </p>
+        </div>
+        <span class="dn-l">
+          <a href="https://this-week-in-rust.org/" class="button button-secondary mb3">Esta semana en Rust ( <span lang='en-US'>This Week in Rust</span>)</a>
+        </span>
+      </div>
+      <div class="w-50-l mh2-l min-h-100-l pt0 flex flex-column justify-start">
+        <div>
+          <h2>Ponte en contacto</h2>
+          <p>
+            ¡Nos gustaría escucharte! ¿No estás seguro de dónde o a quién hacer preguntas? ¿Quieres participar pero no estás seguro de cómo?
+¡El equipo de comunidad está deseando ponerte en contacto con alguien que te pueda ayudar!
+          </p>
+        </div>
+        <span class="dn-l">
+          <a href="mailto:community@rust-lang.org" class="button button-secondary mb3">Contacta <span lang='en-US'>community@rust-lang.org</span></a>
+        </span>
+      </div>
+    </div>
+    <div class="dn db-l">
+      <div class="flex flex-column flex-row-l">
+        <div class="w-50-l mh2-l pt0 flex flex-column justify-start">
+          <a href="https://this-week-in-rust.org/" class="button button-secondary mb3">Esta semana en Rust ( <span lang='en-US'>This Week in Rust</span>)</a>
+        </div>
+
+        <div class="w-50-l mh2-l pt4 pt0-l flex flex-column justify-start">
+          <a href="mailto:community@rust-lang.org" class="button button-secondary mb3">Contacta <span lang='en-US'>community@rust-lang.org</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="community-events" class="green">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>Eventos</h2>
+      <div class="highlight"></div>
+    </header>
+    <div class="flex flex-column flex-row-l">
+      <div class="mw-50-l mh3-l pt0 flex flex-column justify-between" id="meetups-usergroups">
+        <div>
+          <h3 class="mt0 mb4">Encuentra un meetup o una conferencia local</h3>
+          <p>
+            Hay más de 90 Meetups y numerosas conferencias repartidas en más de 35 países. Los Rustáceos se reúnen periódicamente en los Grupos de Usuarios de Rust. Esos grupos son un modo perfecto de introducirte en la comunidad y una gran forma de socializar con otras personas con intereses similares. Las reuniones son generalmente informales y abiertas a todo el mundo.
+          </p>
+        </div>
+        <ul class="list ma0 pa0">
+          <li class="mb3">
+            <a href="https://calendar.google.com/calendar/embed?showTitle=0&showPrint=0&showTabs=0&showCalendars=0&mode=AGENDA&height=400&wkst=1&bgcolor=%23FFFFFF&src=apd9vmbc22egenmtu5l6c5jbfc%40group.calendar.google.com&color=%23691426&ctz=Europe%2FMadrid"
+              class="button button-secondary">Ver el calendario</a>
+          </li>
+        </ul>
+      </div>
+      <div class="mw-50-l mh3-l pt4 pt0-l flex flex-column justify-between" id="conferences">
+        <div>
+          <h3 class="mt0 mb4">Organizar tu propio evento</h3>
+          <p>
+  A medida que Rust crece, nos complace ayudar a la gente a comenzar con sus propios eventos locales.
+  Desde hacer chapuzas y aprender, hasta meetups o conferencias, el equipo de Eventos de Rust está listo para ayudarte.
+</p>
+<p>
+  Registrar tu evento nos ayuda a identificar los esfuerzos de nuestra comunidad y
+  nos permite ponerte en contacto con expertos u otros miembros en tu zona.
+</p>
+        </div>
+        <ul class="list ma0 pa0">
+        <li class="mb3">
+          <a href="mailto:community@rust-lang.org" class="button button-secondary">Contacta <span lang='en-US'>community@rust-lang.org</span></a>
+        </li>
+        </ul>
+      </div>
+    </div>
+    <img src="../static/images/rustfest.jpg" alt="Participantes de Rustfest">
+  </div>
+</section>
+
+<section id="conduct" class="purple">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>Normas de la comunidad</h2>
+      <div class="highlight"></div>
+    </header>
+    <div class="f3 f2-l">
+      <p>
+Estamos comprometidos a proporcionar un entorno seguro, positivo y acogedor
+para todos, independientemente de su género, orientación sexual,
+discapacidad, etnia, raza, religión, nacionalidad u otra característica similar.
+Nuestro <a href="policies/code-of-conduct.html">código de conducta</a> establece los estándares
+de comportamiento en todos los foros oficiales de Rust.
+<br/><br/>
+Si sientes que has sido objeto de acoso o algún participante de la comunidad te ha hecho sentir incómod@,
+por favor contacta a con el <a href="mailto:rust-mods@rust-lang.org">equipo de moderación de Rust</a> inmediatamente. Tanto si eres un contribuidor habitual o un recién llegado, nos preocupamos por hacer de la comunidad un entorno seguro para ti.      </p>
+    </div>
+
+    <div class="flex flex-column flex-row-l justify-between">
+      <a href="mailto:rust-mods@rust-lang.org" class="button button-secondary mw-33-l mh3-l w-100 mb3">Contacta con el equipo de moderación</a>
+      <a href="policies/code-of-conduct.html" class="button button-secondary mw-33-l mh3-l w-100 mb3">lee el código de conducta</a>
+      <a href="policies/code-of-conduct.html#moderation" class="button button-secondary mw-33-l mh3-l w-100 mb3">lee las pautas de moderación</a>
+    </div>
+  </div>
+</section>
+
+    </main>
+    <footer>
+      <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <div class="flex flex-column flex-row-l pv0-l">
+          <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l" id="get-help">
+            <h4>¡Pide ayuda!</h4>
+            <ul>
+              <li><a href="learn.html">Documentación</a></li>
+              <li><a href="http://forge.rust-lang.org">Rust Forge (documentación para contribuidores)</a></li>
+              <li><a href="https://users.rust-lang.org">Preguntar en el foro de usuarios</a></li>
+            </ul>
+            <div class="languages">
+              <div class="select">
+                <label for="language-footer" class="hidden">Idioma</label>
+                <select id="language-footer">
+                  <option title="English (en-US)" value="en-US">English (en-US)</option>
+<option title="Español (es)" value="es">Español (es)</option>
+<option title="Français (fr)" value="fr">Français (fr)</option>
+<option title="Italiano (it)" value="it">Italiano (it)</option>
+<option title="日本語 (ja)" value="ja">日本語 (ja)</option>
+<option title="Português (pt-BR)" value="pt-BR">Português (pt-BR)</option>
+<option title="Русский (ru)" value="ru">Русский (ru)</option>
+<option title="Türkçe (tr)" value="tr">Türkçe (tr)</option>
+<option title="简体中文 (zh-CN)" value="zh-CN">简体中文 (zh-CN)</option>
+<option title="正體中文 (zh-TW)" value="zh-TW">正體中文 (zh-TW)</option>
+            </select>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l">
+            <h4>Términos y políticas</h4>
+            <ul>
+              <li><a href="policies/code-of-conduct.html">Código de conducta</a></li>
+              <li><a href="policies/licenses.html">Licencias</a></li>
+              <li><a href="https://foundation.rust-lang.org/policies/logo-policy-and-media-guide/">Política de logos y guía de medios</a></li>
+              <li><a href="policies/security.html">Divulgaciones de seguridad</a></li>
+              <li><a href="https://foundation.rust-lang.org/policies/privacy-policy/">Aviso de privacidad</a></li>
+              <li><a href="policies.html">Todas las políticas</a></li>
+            </ul>
+          </div>
+          <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l">
+            <h4>Redes sociales</h4>
+            <div class="flex flex-row flex-wrap items-center">
+              <a rel="me" href="https://social.rust-lang.org/@rust" target="_blank"><img src="../static/images/mastodon.svg" alt="Mastodon" title="Mastodon" /></a>
+              <a rel="me" href="https://bsky.app/profile/rust-lang.org" target="_blank"><img src="../static/images/bluesky.svg" alt="Bluesky" title="Bluesky" /></a>
+              <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank"><img class="pv2" src="../static/images/youtube.svg" alt="logo de youtube" title="YouTube"/></a>
+              <a href="https://discord.gg/rust-lang" target="_blank"><img src="../static/images/discord.svg" alt="discord logo" title="Discord"/></a>
+              <a href="https://github.com/rust-lang" target="_blank"><img src="../static/images/github.svg" alt="github logo" title="GitHub"/></a>
+            </div>
+          </div>
+    
+        </div>
+        <div class="attribution">
+          <p>
+            Mantenida por el equipo de Rust. ¿Hay algún error?
+<a href="https://github.com/rust-lang/www.rust-lang.org/issues/new/choose">¡Arréglalo aquí!</a>
+          </p>
+          <p>¿Buscas la <a href="https://prev.rust-lang.org">web antigua</a>?</p>
+        </div>
+      </div>
+    </footer>
+    <script src="../static/scripts/languages.js"></script>
+  </body>
+</html>

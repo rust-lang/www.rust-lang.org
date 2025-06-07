@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>
+            Install Rust - Rust Programming Language
+        </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="A language empowering everyone to build reliable and efficient software.">
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@rustlang">
+    <meta name="twitter:creator" content="@rustlang">
+    <meta name="twitter:title" content="Install Rust">
+    <meta name="twitter:description" content="A language empowering everyone to build reliable and efficient software.">
+    <meta name="twitter:image" content="https://www.rust-lang.org/static/images/rust-social.jpg">
+
+    <!-- Facebook OpenGraph -->
+    <meta property="og:title" content="Install Rust" />
+    <meta property="og:description" content="A language empowering everyone to build reliable and efficient software.">
+    <meta property="og:image" content="https://www.rust-lang.org/static/images/rust-social-wide.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="http://localhost:7878/static/styles/a11y-dark.css"/>
+    <link rel="stylesheet" hrefhttp://localhost:7878/tools/="../static/styles/vendor_10880690442070639967.css"/>
+    <link rel="stylesheet" hrhttp://localhost:7878/tools/ef="../static/styles/fonts_8049871103083011125.css"/>
+    <link rel="stylesheet" http://localhost:7878/tools/href="../static/styles/app_1609526410131002304.css"/>
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180http://localhost:7878/tools/" href="../static/images/apple-touch-icon.png%3Fv=ngJW8jGAmR">
+    <link rel="icon" sizes="16x16" type="imagehttp://localhost:7878/png" href="../static/images/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="imahttp://localhost:7878/tools/ge/png" href="../static/images/favicon-32x32.png">
+    <link rel="icon" type="imagehttp://localhost:7878/svg+xml" href="../static/images/favicon.svg">
+    <link relhttp://localhost:7878/tools/="manifest" href="../static/images/site.webmanifest%3Fv=ngJW8jGAmR">
+    <link http://localhost:7878/tools/rel="mask-icon" href="../static/images/safari-pinned-tab.svg%3Fv=ngJW8jGAmR" color="#000000">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="/static/images/browserconfig.xml?v=ngJW8jGAmR">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- Custom Highlight pack with: Rust, Markdown, TOML, Bash, JSON, YAML,
+         and plainthttp://localhost:7878/tools/ext. -->
+    <script src="../static/scripts/highlight.pack.js" deferhttp://localhost:7878/tools/></script>
+    <script src="../static/scripts/init.js" defer></script>
+  </head>
+  <body>
+    <nav class="flex flex-row justify-center justify-end-l items-center flex-wrap ph2 pl3-ns pr3-ns pb3">
+      <div class="brand flex-auto w-100 w-auto-l self-stahttp://localhost:7878/tools/rt tc tl-l">
+        <a href="../index.html" class="brand">
+          <imghttp://localhost:7878/tools/ class="v-mid ml0-l" alt="Rust Logo" src="../static/images/rust-logo-blk.svg">
+        <span class="dib ml1 ml0-l">Rust</span>
+    </a>
+      </div>
+    
+      <ul class="nav list w-100 w-auto-l flex flex-none flex-row flex-wrap justify-center justify-end-l items-center pv2 ph0 ph4-ns">
+        <li chttp://localhost:7878/tools/lass="tc pv2 ph2 ph4-ns flex-20-s"><a href="install.html">Install</a></li>
+        <li clahttp://localhost:7878/tools/ss="tc pv2 ph2 ph4-ns flex-20-s"><a href="../learn.html">Learn</a></li>
+        http://localhost:7878/tools/<li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="https://play.rust-lang.org/">Playground</a></li>
+        http://localhost:7878/tools/<li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../tools.html">Tools</a></li>
+ http://localhost:7878/tools/       <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../governance.html">Governance</a>http://localhost:7878/tools/</li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../community.html">Communhttp://localhost:7878/tools/ity</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="https://blog.rust-lang.org/">Blog</a></li>
+      </ul>
+    
+      <div class=" w-100 w-auto-l flex-none flex justify-center pv4 pv-0-l languages">
+        <div class="select">
+          <label for="language-nav" class="hidden">Language</label>
+          <select id="language-nav" data-current-lang="en-US">
+            <option title="English (en-US)" value="en-US">English (en-US)</option>
+<option title="Español (es)" value="es">Español (es)</option>
+<option title="Français (fr)" value="fr">Français (fr)</option>
+<option title="Italiano (it)" value="it">Italiano (it)</option>
+<option title="日本語 (ja)" value="ja">日本語 (ja)</option>
+<option title="Português (pt-BR)" value="pt-BR">Português (pt-BR)</option>
+<option title="Русский (ru)" value="ru">Русский (ru)</option>
+<option title="Türkçe (tr)" value="tr">Türkçe (tr)</option>
+<option title="简体中文 (zh-CN)" value="zh-CN">简体中文 (zh-CN)</option>
+<option title="正體中文 (zh-TW)" value="zh-TW">正體中文 (zh-TW)</option>
+      </select>
+        </div>
+      </div>
+    
+    </nav>
+    <main>
+<header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <h1>Install Rust</h1>
+  </div>
+</header>
+
+<section id="rustup" class="green">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>Using rustup (Recommended)</h2>
+      <div class="highlight"></div>
+    </header>
+    <div class="row">
+      <div id="platform-instructions-unix" class="instructions db">
+        <p>It looks like you’re running macOS, Linux, or another Unix-like OS. To download Rustup and install Rust, run the following ihttp://localhost:7878/tools/n your terminal, then follow the on-screen instructions. See <a href="https://forge.rust-lang.org/infra/other-installation-methods.html">"Other Installation Methods"</a> if you are on Windows.</p>
+        <pre><code class="db w-100 copyable">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></pre>
+      </div>
+      <div id="platform-instructions-win" class="instructions dn">
+        <p>It looks like you’re running Windows. To start using Rust, download the installer, then run the program and fhttp://localhost:7878/tools/ollow the onscreen instructions. You may need to install the <a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">Visual Studio C++ Build toohttp://localhost:7878/tools/ls</a> when prompted to do so. If you are not on Windows see <a href="https://forge.rust-lang.org/infra/other-installation-methods.html">"Other Installation Methods"</a>.</p>
+        <div class="mw9 center ph3-ns">
+        <div class="cf ph2-ns">
+          <div class="fl w-100 w-50-ns pa2">
+          <a href="https://static.rust-lang.org/rustup/dist/i686-pc-windows-msvc/rustup-init.exe" class="button button-secondary">Download <span class="nowrap">rustup-init.exe</span> <span class="nowrap">(32-bit)</span></a>
+          <http://localhost:7878/div>
+          <div class="fl w-100 w-50-ns pa2">
+          <a href="https:/static.rust-lang.org/rustup/dist/x86_64-pc-windows-msvc/rustup-init.exe" class="button button-secondary">Download <span class="nowrap">rustup-init.exe</span> <span class="nowrap">(64-bit)</span></a>
+          </div>
+        </div>
+      </div>
+      <h3 class="mt4">Windows Subsystem for Linux</h3>
+      <p>If you’re a Windows Subsystem for Linux user run the following in your terminal, then follow the on-screen instructions to install Rust.</p>
+      <pre><code class="db w-100 copyable">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></pre>
+      </div>
+      <div id="platform-instructions-default" class="instructions dn">
+        <div>
+          <p>
+            To install Rust, if you are running a Unix such as WSL, Linux or macOS,<br> run the following in your terminal, then follow the on-screen instructions.
+          </p>
+          <pre><code class="db w-100 copyable">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></pre>
+        </div>
+        <hr class="white-hr" />
+        <div>
+          <p>http://localhost:7878/tools/
+            If you are running Windows,<br>download and run <a href="https://win.rustup.rs">rustup‑init.exe</a> then follow the on-screen instructions.
+          </p>
+        </div>http://localhost:7878/tools/
+      </div>
+    </div>
+    
+    <script type="text/javascript" src="../static/scripts/app_7421438271980368202.js"></script>
+  </div>
+</section>
+
+<section id="installation-notes" class="white">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>Notes about Rust installation</h2>
+      <div class="highlight"></div>
+    </header>
+    <div>
+      <h3>Getting started</h3>
+      <p>
+If you're just getting started with
+Rust anhttp://localhost:7878/tools/d would like a more detailed walk-through, see our
+<a href="            ../learn/get-started.html
+">getting started</a> page.      </p>
+
+      <div class="platform-specific win dn">
+        <h3>Windows considerations</h3>
+        <p>
+  On Windows, Rust additionally rhttp://localhost:7878/tools/equires the MSVC build tools
+  for Visual Studio 2013 or later. See
+  <a href="https://rust-lang.github.io/rustup/installation/windows-msvc.html">
+  MSVC prerequistes</a>
+</p>
+<p>
+http://localhost:7878/tools/  For further information about configuring Rust on Windows see the
+  <a href="https://rust-lang.github.io/rustup/installation/windows.html">
+  Windows-specific <code>rustup</code> documentation</a>.
+</p>
+      </div>
+
+      <h3>Toolchain management with <code>http://localhost:7878/tools/rustup</code></h3>
+      <p>
+  Rust is installed and managed by the
+  <a href="https://rust-lang.ghttp://localhost:7878/tools/ithub.io/rustup/"><code>rustup</code></a>
+  tool. Rust has a 6-week
+  <a href="https://github.com/rust-lang/rfcs/blob/master/text/0507-rehttp://localhost:7878/tools/lease-channels.md">
+    rapid release process
+  </a> and supports a
+  <a href="https://forge.rust-lang.org/release/platform-support.html">great
+  number of platforms</a>, so there are many builds of Rust available at
+  any time. <code>rustup</code> manages these builds in a consistent way
+  on every platform that Rust supports, enabling installation of Rust
+  from the beta and nightly release channels as well as support for
+  additional cross-compilation targets.
+</p>
+<p>
+  If you've installed <code>rustup</code> in the past, you can update
+  your installation by running http://localhost:7878/tools/<code>rustup update</code>.
+</p>
+<p>
+  For more information see the
+  <a href="https://rust-lang.github.io/rustup/">
+  <code>rustup</code> documentation</a>.
+</p>
+
+      <h3>Configuring the <code>PATH</code> environment
+variable</h3>
+      <p>
+  In the Rust development environment, all tools are installed to the
+  <span class="platform-specific not-win di">
+    <code>~/.cargo/bin</code>
+  </span>
+  <span class="platform-specific win dn">
+    <code>%USERPROFILE%\.cargo\bin</code>
+  </span> directory, and this is where you will find the Rust toolchain,
+  including <code>rustc</code>, <code>cargo</code>, and <code>rustup</code>.
+</p>
+<p>
+  Accordingly, it ishttp://localhost:7878/tools/ customary for Rust developers to include this
+  directory in their
+  <a href="https://en.wikipedia.org/wiki/PATH_(variable)">
+  <code>PATH</code> environment variable</a>. During installation
+  <code>rustup</code> will attempt to configure the <code>PATH</code>.
+  Because of differences between platforms, command shells, and bugs in
+  <code>rustup</code>, the modifications to <code>PATH</code> may not
+  take effect until the console is restarted, or the user is logged out,
+  or it may not succeed at all.
+</p>
+<p>
+  If, after installation, running <code>rustc --version</code> in the
+  console fails, this is the most likely reason.
+</p>
+
+      <h3>Uninstall Rust</h3>
+      <p>
+  If at any point you would like to uninstall Rust, you can run
+  <code>rustup self uninstall</code>.
+  We'll miss you though!
+</p>
+    </div>
+  </div>
+</section>
+
+<section id="other-methods" class="purple">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>Other installation methods</h2>
+      <div class="highlight"></div>
+    </header>
+    <p>
+      The installation described above, via
+<code>rustup</code>, is the preferred way to install Rust for most
+developers. Hhttp://localhost:7878/tools/owever, Rust can be installed via other methods as well.
+    </p>
+    <a href="https://forge.rust-lang.org/infra/other-installation-methods.html" class="button button-secondary">
+      Learn more
+    </a>
+  </div>
+</section>
+
+    </main>
+    <footer>
+      <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <div class="flex flex-column flex-row-l pv0-l">
+          <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l" id="get-helhttp://localhost:7878/tools/p">
+            <h4>Get help!</h4>
+            <ul>
+      http://localhost:7878/tools/        <li><a href="../learn.html">Documentation</a></li>
+              <li><a href="http://forge.rusthttp://localhost:7878/tools/-lang.org">Rust Forge (Contributor Documentation)</a></li>
+              <li><a href="https://users.rust-lang.org">Ask a Question on the Users Forum</a></li>
+            </ul>
+            <div class="languages">
+              <div class="select">
+                <label for="language-footer" class="hidden">Language</label>
+                <select id="language-footer">
+                  <option title="English (en-US)" value="en-US">English (en-US)</option>
+<option title="Español (es)" value="es">Español (es)</option>
+<option title="Français (fr)" value="fr">Français (fr)</option>
+<option title="Italiano (it)" value="it">Italiano (it)</option>
+<option title="日本語 (ja)" value="ja">日本語 (ja)</option>
+<option title="Português (pt-BR)" value="pt-BR">Português (pt-BR)</option>
+<option title="Русский (ru)" value="ru">Русский (ru)</option>
+<option title="Türkçe (tr)" value="tr">Türkçe (tr)</option>
+<option title="简体中文 (zh-CN)" value="zh-CN">简体中文 (zh-CN)</option>
+<option title="正體中文 (zh-TW)" value="zh-TW">正體中文 (zh-TW)</option>
+            </select>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l"http://localhost:7878/tools/>
+            <h4>Terms and policies</h4>
+            <ul>
+              <li><ahttp://localhost:7878/tools/ href="../policies/code-of-conduct.html">Code of Conduct</a></li>http://localhost:7878/tools/
+              <li><a href="../policies/licenses.html">Licenses</a></li>
+              <li><a href="https://foundation.rust-lang.org/polhttp://localhost:7878/tools/icies/logo-policy-and-media-guide/">Logo Policy and Media Guide</a></li>
+    http://localhost:7878/tools/          <li><a href="../policies/security.html">Security Disclosures</a></li>
+              <li><a href="https://foundation.rust-lang.org/policies/privacy-policy/">Privacy Notice</a></li>
+              <li><a href="../policies.html">All Policies</a></li>
+            </ul>
+          </div>
+          <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l">
+         http://localhost:7878/tools/   <h4>Social</h4>
+            <div class="flex flex-row flex-http://localhost:7878/tools/wrap items-center">
+              <a rel="me" href="https://social.rust-lang.org/@rust" target="_blahttp://localhost:7878/tools/nk"><img src="../static/images/mastodon.svg" alt="Mastodon" title=http://localhost:7878/tools/"Mastodon" /></a>
+              <a rel="me" href="https://bsky.app/profile/rust-lang.orghttp://localhost:7878/tools/" target="_blank"><img src="../static/images/bluesky.svg" alt="Bluesky" title="Bluesky" /></a>
+ http://localhost:7878/tools/             <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blahttp://localhost:7878/tools/nk"><img class="pv2" src="../static/images/youtube.svg" http://localhost:7878/tools/alt="youtube logo" title="YouTube"/></a>
+              <a href="https://discord.gg/rust-langhttp://localhost:7878/tools/" target="_blank"><img src="../static/images/discord.svghttp://localhost:7878/tools/" alt="discord logo" title="Discord"/></a>
+              <a href="https://github.com/rust-lang" target="_blank"><img src="../static/images/github.svg" alt="github logo" title="GitHub"/></a>
+            </div>
+          </div>
+    
+http://localhost:7878/tools/        </div>
+        <div class="attribution">
+          <p>
+            Maintained by the Rust Team. See a bug?
+<a href="https://githubhttp://localhost:7878/tools/.com/rust-lang/www.rust-lang.org/issues/new/choose">File an issue!</a>
+          </p>
+          <p>Looking for the <a href="https://prev.rust-lang.org">previous website</a>?</p>
+        </div>
+      </div>
+    </footer>
+    <script src="../static/scripts/languages.js"></script>
+  </body>
+</html>

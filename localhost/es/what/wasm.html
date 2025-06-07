@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>
+            WebAssembly - Rust, el lenguaje de programación
+        </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="Un lenguaje que empodera a todos para construir software fiable y eficiente.">
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@rustlang">
+    <meta name="twitter:creator" content="@rustlang">
+    <meta name="twitter:title" content="WebAssembly">
+    <meta name="twitter:description" content="Un lenguaje que empodera a todos para construir software fiable y eficiente.">
+    <meta name="twitter:image" content="https://www.rust-lang.org/static/images/rust-social.jpg">
+
+    <!-- Facebook OpenGraph -->
+    <meta property="og:title" content="WebAssembly" />
+    <meta property="og:description" content="Un lenguaje que empodera a todos para construir software fiable y eficiente.">
+    <meta property="og:image" content="https://www.rust-lang.org/static/images/rust-social-wide.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="../../static/styles/a11y-dark.css"/>
+    <link rel="stylesheet" href="../../static/styles/vendor_10880690442070639967.css"/>
+    <link rel="stylesheet" href="../../static/styles/fonts_8049871103083011125.css"/>
+    <link rel="stylesheet" href="../../static/styles/app_1609526410131002304.css"/>
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../../static/images/apple-touch-icon.png%3Fv=ngJW8jGAmR">
+    <link rel="icon" sizes="16x16" type="image/png" href="../../static/images/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../../static/images/favicon-32x32.png">
+    <link rel="icon" type="image/svg+xml" href="../../static/images/favicon.svg">
+    <link rel="manifest" href="../../static/images/site.webmanifest%3Fv=ngJW8jGAmR">
+    <link rel="mask-icon" href="../../static/images/safari-pinned-tab.svg%3Fv=ngJW8jGAmR" color="#000000">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="/static/images/browserconfig.xml?v=ngJW8jGAmR">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- Custom Highlight pack with: Rust, Markdown, TOML, Bash, JSON, YAML,
+         and plaintext. -->
+    <script src="../../static/scripts/highlight.pack.js" defer></script>
+    <script src="../../static/scripts/init.js" defer></script>
+  </head>
+  <body>
+    <nav class="flex flex-row justify-center justify-end-l items-center flex-wrap ph2 pl3-ns pr3-ns pb3">
+      <div class="brand flex-auto w-100 w-auto-l self-start tc tl-l">
+        <a href="../index.html" class="brand">
+          <img class="v-mid ml0-l" alt="Logo de Rust" src="../../static/images/rust-logo-blk.svg">
+        <span class="dib ml1 ml0-l">Rust</span>
+    </a>
+      </div>
+    
+      <ul class="nav list w-100 w-auto-l flex flex-none flex-row flex-wrap justify-center justify-end-l items-center pv2 ph0 ph4-ns">
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../tools/install.html">Instala</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../learn.html">Aprende</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="https://play.rust-lang.org/">Playground</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../tools.html">Herramientas</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../governance.html">Gobernanza</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../community.html">Comunidad</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="https://blog.rust-lang.org/">Blog</a></li>
+      </ul>
+    
+      <div class=" w-100 w-auto-l flex-none flex justify-center pv4 pv-0-l languages">
+        <div class="select">
+          <label for="language-nav" class="hidden">Idioma</label>
+          <select id="language-nav" data-current-lang="es">
+            <option title="English (en-US)" value="en-US">English (en-US)</option>
+<option title="Español (es)" value="es">Español (es)</option>
+<option title="Français (fr)" value="fr">Français (fr)</option>
+<option title="Italiano (it)" value="it">Italiano (it)</option>
+<option title="日本語 (ja)" value="ja">日本語 (ja)</option>
+<option title="Português (pt-BR)" value="pt-BR">Português (pt-BR)</option>
+<option title="Русский (ru)" value="ru">Русский (ru)</option>
+<option title="Türkçe (tr)" value="tr">Türkçe (tr)</option>
+<option title="简体中文 (zh-CN)" value="zh-CN">简体中文 (zh-CN)</option>
+<option title="正體中文 (zh-TW)" value="zh-TW">正體中文 (zh-TW)</option>
+      </select>
+        </div>
+      </div>
+    
+    </nav>
+    <main>
+<header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <h1>Web&shy;Assembly</h1>
+  </div>
+</header>
+
+<section id="wasm-why" class="purple">
+    <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <header>
+            <h2>¿Por qué Rust?</h2>
+            <div class="highlight"></div>
+        </header>
+        <div class="flex flex-column flex-row-l pv4 pv0-l">
+            <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l">
+                <div class="v-top tc-l">
+                    <img src="../../static/images/gears.svg" alt="Engranajes" 
+                         class="mw3 mw4-ns" />
+                </div>
+                <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l pl4-l">
+                    <h3 class="tc-l">Rendimiento predecible</h3>
+                    <p class="flex-grow-1">
+                        Sin pausas impredecibles del colector de basura. Sin caídas en el rendimiento del compilador JIT. Sólo control de bajo nivel combinado con ergonomía de alto nivel.
+                    </p>
+                </div>
+            </div>
+            <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l">
+                <div class="v-top tc-l">
+                    <img src="../../static/images/microscope.svg" alt="Un microscopio"
+                         class="mw3 mw4-ns" />
+                </div>
+                <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l pl4-l">
+                    <h3 class="tc-l">Código generado reducido</h3>
+                    <p class="flex-grow-1">
+                        Reducir el código generado significa páginas que cargan más rápido. El <code>.wasm</code> generado por Rust no incluye relleno, como un colector de basura. El código muerto se elimina mediante <em>tree shaking</em> y optimizaciones avanzadas.
+                    </p>
+                </div>
+            </div>
+            <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l">
+                <div class="v-top tc-l">
+                    <img src="../../static/images/luggage.svg" alt="Equipaje"
+                         class="mw3 mw4-ns"/>
+                </div>
+                <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l pl4-l">
+                    <h3 class="tc-l">Comodidades modernas</h3>
+                    <p class="flex-grow-1">
+                        Un activo ecosistema de librerías para ayudarte a no empezar de cero. Abstracciones expresivas de coste cero. Y una comunidad que te ayuda a aprender.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="wasm-get-started" class="white">
+    <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <header>
+            <h2>¡Comienza!</h2>
+            <div class="highlight"></div>
+        </header>
+        <div class="flex flex-column flex-row-l pv4 pv0-l">
+            <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l">
+                <div class="v-top tc-l">
+                    <img src="../../static/images/webassembly-logo.svg" alt="Logo de WebAssembly" class="mw3 mw-100-ns w5-m h4-l" />
+                </div>
+                <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l pl4-l w-100">
+                    <p class="flex-grow-1">
+                        Aprende más sobre WebAssembly, una máquina virtual rápida, segura y abierta, y lee su especificación.
+                    </p>
+                    <a href="https://webassembly.org/" class="button button-secondary">Saber más</a>
+                </div>
+            </div>
+            <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l">
+                <div class="v-top tc-l">
+                    <img src="../../static/images/wasm-ferris.png" alt="Ferris y Wasm" class="mw3 mw-100-ns w5-m h4-l" />
+                </div>
+                <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l pl4-l w-100">
+                    <p class="flex-grow-1">
+                        ¡Aprende cómo construir, depurar, optimizar y desplegar aplicaciones WebAssembly usando Rust!
+                    </p>
+                    <a href="https://rustwasm.github.io/docs/book" class="button button-secondary">Leer el libro</a>
+                </div>
+            </div>
+            <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l">
+                <div class="v-top tc-l">
+                    <img src="../../static/images/mdn-logo.svg" alt="Logo de MDN" class="mw3 mw-100-ns w5-m h4-l" />
+                </div>
+                <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l pl4-l w-100">
+                    <p class="flex-grow-1">
+                        Aprende más sobre WebAssembly en Mozilla Developer Network
+                    </p>
+                    <a href="https://developer.mozilla.org/en-US/docs/WebAssembly" class="button button-secondary">Echar un vistazo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="wasm-plays-well-with-javascript" class="red">
+    <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <header>
+            <h2>Funciona bien junto a JavaScript</h2>
+            <div class="highlight"></div>
+        </header>
+        <div class="flex flex-column flex-row-l pv4 pv0-l">
+            <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l pl4-l">
+                <h3 class="tc-l">Amplía, no reemplaza</h3>
+                <p class="flex-grow-1">
+                    El sueño de WebAssembly no es eliminar a JavaScript, sino funcionar conjuntamente, potenciando tareas de bajo nivel o de fuerte procesamiento &mdash; tareas que se benefician del enfoque de Rust en el rendimiento.
+                </p>
+            </div>
+            <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l pl4-l">
+                <h3 class="tc-l">Funciona con las herramientas conocidas</h3>
+                <p class="flex-grow-1">
+                    Publica paquetes de WebAssembly hechos en Rust en registros como npm. Empaqueta y sírvelos con webpack, Parcel u otros. Mantenlos usando <code>npm audit</code> o Greenkeeper.
+                </p>
+            </div>
+            <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l pl4-l">
+                <h3 class="tc-l">Interoperación sin trabas</h3>
+                <p class="flex-grow-1">
+                    Genera código automáticamente que una APIs en Rust, WebAssembly y JavaScript. Aprovecha bibliotecas como <a href="https://rustwasm.github.io/wasm-bindgen/web-sys/index.html"><code>web-sys</code></a> que te permiten acceder a toda la plataforma web.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="production" class="white">
+    <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <header>
+            <h2>Uso en producción</h2>
+            <div class="highlight"></div>
+        </header>
+        <div class="testimonials">
+            <div class="testimonial flex flex-row">
+                <div class="w-30-l tc pa5 dn db-l">
+                  <img src="../../static/images/user-logos/cloudflare.svg" alt="Logo de Cloudflare" />
+                </div>
+                <div class="w-70-l">
+                    <blockquote>
+                       Podemos compilar Rust a WASM e invocarlo desde funciones <em>serverless</em> engarzadas en la estructura misma de Internet. Es tremendo, estoy deseando seguir por este camino.
+                    </blockquote>
+                    <p class="attribution">
+                        &ndash; Steven Pack, <a href="https://blog.cloudflare.com/cloudflare-workers-as-a-serverless-rust-platform/">Serverless Rust with Cloudflare Workers</a>
+                    </p>
+                </div>
+            </div>
+            <div class="testimonial flex flex-row">
+                <div class="w-70-l">
+                    <blockquote>
+                        La implementación [de la biblioteca de <code>source-map</code>] en JavaScript había crecido en código complicado por razones de rendimiento, y la reemplazamos por Rust idiomático. Rust no te hace elegir entre expresar claramente tu propósito y el rendimiento en tiempo de ejecución.
+                    </blockquote>
+                    <p class="attribution">
+                        &ndash; Nick Fitzgerald, <a href="https://hacks.mozilla.org/2018/01/oxidizing-source-maps-with-rust-and-webassembly/">Oxidizing Source Maps with Rust and WebAssembly</a>
+                    </p>
+                </div>
+                <div class="w-20-l tc pa3 dn db-l">
+                    <a href="https://hacks.mozilla.org/2018/01/oxidizing-source-maps-with-rust-and-webassembly/" class="db">
+                        <img src="../../static/images/firefox.png" alt="Firefox" />
+                    </a>
+                </div>
+            </div>
+            <div class="testimonial flex flex-row">
+                <div class="w-30-l tc pa5 dn db-l">
+                  <img src="../../static/images/dropbox.svg" alt="Dropbox" />
+                </div>
+                <div class="w-70-l">
+                    <blockquote>
+                        Estas propiedades de [Rust] facilitan embeber el codec de DivANS en una página web con WASM, como hemos visto.
+                    </blockquote>
+                    <p class="attribution">
+                        &ndash; Daniel Reiter Horn y Jongmin Baek, <a href="https://blogs.dropbox.com/tech/2018/06/building-better-compression-together-with-divans/">Building Better Compression Together with DivANS</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </main>
+    <footer>
+      <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <div class="flex flex-column flex-row-l pv0-l">
+          <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l" id="get-help">
+            <h4>¡Pide ayuda!</h4>
+            <ul>
+              <li><a href="../learn.html">Documentación</a></li>
+              <li><a href="http://forge.rust-lang.org">Rust Forge (documentación para contribuidores)</a></li>
+              <li><a href="https://users.rust-lang.org">Preguntar en el foro de usuarios</a></li>
+            </ul>
+            <div class="languages">
+              <div class="select">
+                <label for="language-footer" class="hidden">Idioma</label>
+                <select id="language-footer">
+                  <option title="English (en-US)" value="en-US">English (en-US)</option>
+<option title="Español (es)" value="es">Español (es)</option>
+<option title="Français (fr)" value="fr">Français (fr)</option>
+<option title="Italiano (it)" value="it">Italiano (it)</option>
+<option title="日本語 (ja)" value="ja">日本語 (ja)</option>
+<option title="Português (pt-BR)" value="pt-BR">Português (pt-BR)</option>
+<option title="Русский (ru)" value="ru">Русский (ru)</option>
+<option title="Türkçe (tr)" value="tr">Türkçe (tr)</option>
+<option title="简体中文 (zh-CN)" value="zh-CN">简体中文 (zh-CN)</option>
+<option title="正體中文 (zh-TW)" value="zh-TW">正體中文 (zh-TW)</option>
+            </select>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l">
+            <h4>Términos y políticas</h4>
+            <ul>
+              <li><a href="../policies/code-of-conduct.html">Código de conducta</a></li>
+              <li><a href="../policies/licenses.html">Licencias</a></li>
+              <li><a href="https://foundation.rust-lang.org/policies/logo-policy-and-media-guide/">Política de logos y guía de medios</a></li>
+              <li><a href="../policies/security.html">Divulgaciones de seguridad</a></li>
+              <li><a href="https://foundation.rust-lang.org/policies/privacy-policy/">Aviso de privacidad</a></li>
+              <li><a href="../policies.html">Todas las políticas</a></li>
+            </ul>
+          </div>
+          <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l">
+            <h4>Redes sociales</h4>
+            <div class="flex flex-row flex-wrap items-center">
+              <a rel="me" href="https://social.rust-lang.org/@rust" target="_blank"><img src="../../static/images/mastodon.svg" alt="Mastodon" title="Mastodon" /></a>
+              <a rel="me" href="https://bsky.app/profile/rust-lang.org" target="_blank"><img src="../../static/images/bluesky.svg" alt="Bluesky" title="Bluesky" /></a>
+              <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank"><img class="pv2" src="../../static/images/youtube.svg" alt="logo de youtube" title="YouTube"/></a>
+              <a href="https://discord.gg/rust-lang" target="_blank"><img src="../../static/images/discord.svg" alt="discord logo" title="Discord"/></a>
+              <a href="https://github.com/rust-lang" target="_blank"><img src="../../static/images/github.svg" alt="github logo" title="GitHub"/></a>
+            </div>
+          </div>
+    
+        </div>
+        <div class="attribution">
+          <p>
+            Mantenida por el equipo de Rust. ¿Hay algún error?
+<a href="https://github.com/rust-lang/www.rust-lang.org/issues/new/choose">¡Arréglalo aquí!</a>
+          </p>
+          <p>¿Buscas la <a href="https://prev.rust-lang.org">web antigua</a>?</p>
+        </div>
+      </div>
+    </footer>
+    <script src="../../static/scripts/languages.js"></script>
+  </body>
+</html>

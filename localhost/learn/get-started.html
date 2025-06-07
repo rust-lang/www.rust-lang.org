@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>
+            Getting started - Rust Programming Language
+        </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="description" content="A language empowering everyone to build reliable and efficient software.">
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@rustlang">
+    <meta name="twitter:creator" content="@rustlang">
+    <meta name="twitter:title" content="Getting started">
+    <meta name="twitter:description" content="A language empowering everyone to build reliable and efficient software.">
+    <meta name="twitter:image" content="https://www.rust-lang.org/static/images/rust-social.jpg">
+
+    <!-- Facebook OpenGraph -->
+    <meta property="og:title" content="Getting started" />
+    <meta property="og:description" content="A language empowering everyone to build reliable and efficient software.">
+    <meta property="og:image" content="https://www.rust-lang.org/static/images/rust-social-wide.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- styles -->
+    <link rel="stylesheet" href="http://localhost:7878/static/styles/a11y-dark.css"/>
+    <link rel="stylesheet" hrefhttp://localhost:7878/learn/="../static/styles/vendor_10880690442070639967.css"/>
+    <link rel="stylesheet" hrhttp://localhost:7878/learn/ef="../static/styles/fonts_8049871103083011125.css"/>
+    <link rel="stylesheet" http://localhost:7878/learn/href="../static/styles/app_1609526410131002304.css"/>
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180http://localhost:7878/learn/" href="../static/images/apple-touch-icon.png%3Fv=ngJW8jGAmR">
+    <link rel="icon" sizes="16x16" type="imagehttp://localhost:7878/png" href="../static/images/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="imahttp://localhost:7878/learn/ge/png" href="../static/images/favicon-32x32.png">
+    <link rel="icon" type="imagehttp://localhost:7878/svg+xml" href="../static/images/favicon.svg">
+    <link relhttp://localhost:7878/learn/="manifest" href="../static/images/site.webmanifest%3Fv=ngJW8jGAmR">
+    <link http://localhost:7878/learn/rel="mask-icon" href="../static/images/safari-pinned-tab.svg%3Fv=ngJW8jGAmR" color="#000000">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="/static/images/browserconfig.xml?v=ngJW8jGAmR">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- Custom Highlight pack with: Rust, Markdown, TOML, Bash, JSON, YAML,
+         and plainthttp://localhost:7878/learn/ext. -->
+    <script src="../static/scripts/highlight.pack.js" deferhttp://localhost:7878/learn/></script>
+    <script src="../static/scripts/init.js" defer></script>
+  </head>
+  <body>
+    <nav class="flex flex-row justify-center justify-end-l items-center flex-wrap ph2 pl3-ns pr3-ns pb3">
+      <div class="brand flex-auto w-100 w-auto-l self-stahttp://localhost:7878/learn/rt tc tl-l">
+        <a href="../index.html" class="brand">
+          <imghttp://localhost:7878/learn/ class="v-mid ml0-l" alt="Rust Logo" src="../static/images/rust-logo-blk.svg">
+        <span class="dib ml1 ml0-l">Rust</span>
+    </a>
+      </div>
+    
+      <ul class="nav list w-100 w-auto-l flex flex-none flex-row flex-wrap justify-center justify-end-l items-center pv2 ph0 ph4-ns">
+        <li chttp://localhost:7878/learn/lass="tc pv2 ph2 ph4-ns flex-20-s"><a href="../tools/install.html">Install</a></li>
+      http://localhost:7878/learn/  <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../learn.html">Learn</a></li>http://localhost:7878/learn/
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="https://play.rust-lang.org/">Playground</a></li>http://localhost:7878/learn/
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../tools.html">Tools</http://localhost:7878/learn/a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../governance.html">Goverhttp://localhost:7878/learn/nance</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="../community.htmhttp://localhost:7878/learn/l">Community</a></li>
+        <li class="tc pv2 ph2 ph4-ns flex-20-s"><a href="https://blog.rust-lang.org/">Blog</a></li>
+      </ul>
+    
+      <div class=" w-100 w-auto-l flex-none flex justify-center pv4 pv-0-l languages">
+        <div class="select">
+          <label for="language-nav" class="hidden">Language</label>
+          <select id="language-nav" data-current-lang="en-US">
+            <option title="English (en-US)" value="en-US">English (en-US)</option>
+<option title="Español (es)" value="es">Español (es)</option>
+<option title="Français (fr)" value="fr">Français (fr)</option>
+<option title="Italiano (it)" value="it">Italiano (it)</option>
+<option title="日本語 (ja)" value="ja">日本語 (ja)</option>
+<option title="Português (pt-BR)" value="pt-BR">Português (pt-BR)</option>
+<option title="Русский (ru)" value="ru">Русский (ru)</option>
+<option title="Türkçe (tr)" value="tr">Türkçe (tr)</option>
+<option title="简体中文 (zh-CN)" value="zh-CN">简体中文 (zh-CN)</option>
+<option title="正體中文 (zh-TW)" value="zh-TW">正體中文 (zh-TW)</option>
+      </select>
+        </div>
+      </div>
+    
+    </nav>
+    <main>
+<header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <h1>Getting started</h1>
+    <h2 class="subtitle">Quickly set up a Rust development environment and write a small app!</h2>
+  </div>
+</header>
+
+<section id="installing-rust" class="purple">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>Installing Rust</h2>
+      <div class="highlight highlight"></div>
+    </header>
+    <p>You can try Rust online in the http://localhost:7878/learn/Rust Playground without installing anything on your computer.</p>
+    <a href="https://play.rust-lang.org/" class="button button-secondary">Try Rust without installing</a>
+    <hr class="white-hr" />
+
+    <h3>Rustup: the Rust installer and version management tool</h3>
+    <p>The primary way that folks install Rust is through a tool called Rustup, which is a Rust installer and version management tool.</p>
+    <div class="row">
+      <div id="platform-instructions-unix" class="instructions db">
+        <p>It looks like you’re running macOS, Linux, or another Unix-like OS. To download Rustup and install Rust, run the fohttp://localhost:7878/learn/llowing in your terminal, then follow the on-screen instructions. See <a href="https://forge.rust-lang.org/infra/other-installation-methods.html">"Other Installation Methods"</a> if you are on Windows.</p>
+        <pre><code class="db w-100 copyable">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></pre>
+      </div>
+      <div id="platform-instructions-win" class="instructions dn">
+        <p>It looks like you’re running Windows. To start using Rust, download the installer, then run the proghttp://localhost:7878/learn/ram and follow the onscreen instructions. You may need to install the <a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">Visual Studio C++ http://localhost:7878/learn/Build tools</a> when prompted to do so. If you are not on Windows see <a href="https://forge.rust-lang.org/infra/other-installation-methods.html">"Other Installation Methods"</a>.</p>
+        <div class="mw9 center ph3-ns">
+        <div clashttp://localhost:7878/learn/s="cf ph2-ns">
+          <div class="fl w-100 w-50-ns pa2">
+          <a href="https://static.rust-lang.org/rustup/dist/i686-pc-windows-msvc/rustup-init.exe" class="button button-secondary">Download <span class="nowrap">rustup-init.exe</span> <span class="nowrap">(32-bit)</span></a>
+  http://localhost:7878/learn/        </div>
+          <div class="fl w-100 w-50-ns pa2">
+          <a href="https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-msvc/rustup-init.exe" class="button button-secondary">Download <span class="nowrap">rustup-init.exe</span> <span class="nowrap">(64-bit)</span></a>
+          </div>
+        </div>
+      </div>
+      <h3 class="mt4">Windows Subsystem for Linux</h3>
+      <p>If you’re a Windows Subsystem for Linux user run the following in your terminal, then follow the on-screen instructions to install Rust.</p>
+      <pre><code class="db w-100 copyable">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></pre>
+      </div>
+      <div id="platform-instructions-default" class="instructions dn">
+        <div>
+          <p>
+            To install Rust, if you are running a Unix such as WSL, Linux or macOS,<br> run the following in your terminal, then follow the on-screen instructions.
+          </p>
+          <pre><code class="db w-100 copyable">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></pre>
+        </div>
+        <hr class="white-hr" />
+        <div>
+    http://localhost:7878/learn/      <p>
+            If you are running Windows,<br>download and run <a href="https://win.rustup.rs">rustup‑init.exe</a> then follow the on-screen instructions.
+          </p>
+     http://localhost:7878/learn/   </div>
+      </div>
+    </div>
+    
+    <script type="text/javascript" src="../static/scripts/app_7421438271980368202.js"></script>
+    <br />
+    <h3>Is Rust up to date?</h3>
+    <p>Rust updates very frequently. If you have installed Rustup some time ago, chances are your Rust version is out of date. Get the latest vehttp://localhost:7878/learn/rsion of Rust by running <code>rustup update</code>.</p>
+    <br />
+    <a href="../tools/install.html" class="button button-secondary">Learn more about installation</a>
+    <hr class="white-hr" />
+
+    <h3>Cargo: the Rust build tool and package manager</h3>
+    <p>When you install Rustup you’ll also get the latest stable version of the Rust build tool and package manager, also known as Cargo. Cargo does lots of things:</p>
+<ul>
+  <li>build your project with <code>cargo build</code></li>
+  <li>run your project with <code>cargo run</code></li>
+  <li>test your project with <code>cargo test</code></li>
+  <li>build documentatiohttp://localhost:7878/learn/n for your project with <code>cargo doc</code></li>
+  <li>publish a library to <a href="https://crates.io">crates.io</a> with <code>cargo publish</code></li>
+</ul>
+<p>To test that you have Rust and Cargo installed, you can run this in your terminal of choice:</p>
+<p><code>cargo --version</code></p>
+    <a href="https://doc.rust-lang.org/cargo/index.html" class="button button-secondary">Read the cargo book</a>
+    <hr class="white-hr" />
+
+    <h3>Other tools</h3>
+    <p>Rust support is available in many editors:</p>
+    <div class="flex-nonehttp://localhost:7878/learn/ flex-m flex-l flex-wrap">
+      <div class="w-25-l w-50-m w-100 pa3">
+        <a href="https://code.visualstudio.com/docs/languages/rust"
+           class="button button-secondaryhttp://localhost:7878/learn/">VS Code</a>
+      </div>
+      <div class="w-25-l w-50-m w-100 pa3">
+        <a href="https://github.com/rust-lang/rust.vim"
+           class="button button-secondary">Vhttp://localhost:7878/learn/im/Neovim</a>
+      </div>
+      <div class="w-25-l w-50-m w-100 pa3">
+        <a href="https://jetbrains.com/rust"
+           class="button button-secondary">http://localhost:7878/learn/RustRover</a>
+      </div>
+      <div class="w-25-l w-50-m w-100 pa3">
+        <a href="https://rust-analyzer.github.io/manual.html#helix#helix"
+           class="button button-shttp://localhost:7878/learn/econdary">Helix</a>
+      </div>
+      <div class="w-25-l w-50-m w-100 pa3">
+        <a href="https://github.com/rust-lang/rust-mode"
+           class="button button-shttp://localhost:7878/learn/econdary">Emacs</a>
+      </div>
+      <div class="w-25-l w-50-m w-100 pa3">
+        <a href="https://github.com/rust-lang/rust-enhanced"
+           class="button button-secondarhttp://localhost:7878/learn/y">Sublime Text</a>
+      </div>
+      <div class="w-25-l w-50-m w-100 pa3">
+        <a href="https://rust-analyzer.github.io/manual.html#visual-studio-2022#visual-studio-2022"
+           class="butthttp://localhost:7878/learn/on button-secondary">Visual Studio</a>
+      </div>
+      <div class="w-25-l w-50-m w-100 pa3">
+        <a href="https://projects.eclipse.org/projects/tools.corrosion"
+           class="button button-secondary">Eclipse</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="generating-new-project" class="red">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>Generating a new project</h2>
+      <div class="highlight"></div>
+    </header>
+<p>Let’s write a small application with our new Rust development environment. To start, we’ll use Cargo to make a new project for us. In your terminal of choice run:</p>
+<p><code>cargo new hello-rust</code></p>
+<p>This will generate a new directory called <code>hello-rust</code> with the following files:</p>
+    <pre><code class="plaintext">hello-rust
+|- Cargo.toml
+|- src
+  |- main.rs</code></pre>
+
+<p><code>Cargo.toml</code> is the manifest file for Rust. It’s where you keep metadata for your project, as well as dependencies.</p>
+<p><code>src/main.rs</code> is where we’ll write our application code.</p>
+<hr class="white-hr" />
+<p>The <code>cargo new</code> step generated a "Hello, world!" project for us! We can run this program by moving into the new directory that we made and running this in our terminal:</p>
+<p><code>cargo run</code></p>
+<p>You should see this in your terminal:</p>
+    <pre><code class="console">$ cargo run
+   Compiling hello-rust v0.1.0 (/Users/ag_dubs/rust/hello-rust)
+    Finished dev [unoptimized + debuginfo] target(s) in 1.34s
+     Running `target/debug/hello-rust`
+Hello, world!</code></pre>
+  </div>
+</section>
+
+<section id="installing-dependencies" class="white">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>Adding dependencies</h2>
+      <div class="highlight"></dihttp://localhost:7878/learn/v>
+    </header>
+<p>Let’s add a dependency to our application. You can find all sorts of libraries on <a href="https://crates.io">crates.io</a>, the package registry for Rust. http://localhost:7878/learn/In Rust, we often refer to packages as “crates.”</p>
+<p>In this project, we’ll use a crate called <a href="https://crates.io/crates/ferris-says"><code>ferris-says</code></a>.
+<p>In our <code>Cargo.toml</code> file we’ll add this information (that we got from the crate page):</p>
+      <pre><code>[dependencies]
+ferris-says = "0.3.1"</code></pre>
+
+<p>We can also do this by running <code>cargo add ferris-says</code>.</p>
+<p>Now we can run:</p>
+<p><code>cargo build</code></p>
+<p>...and Cargo will install our dependency for us.</p>
+<p>You’ll see that running this command created a new file for us, <code>Cargo.lock</code>. This file is a log of the exact versions of the dependencies we are using locally.</p>
+<p>To use this dependency, we can open <code>main.rs</code>, remove everything that’s in there (it’s just another example), and add this line to it:</p>
+<pre><code>use ferris_says::say;</code></pre>
+<p>This line means that we can now use the <code>say</code> function that the <code>ferris-says</code> crate exports for us.</p>
+  </div>
+</section>
+
+<section id="a-small-rust-app" class="green">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>A small Rust application</h2>
+      <div class="highlight"></div>
+    </header>
+<p>Now let’s write a small application with our new dependency. In our <code>main.rs</code>, add the following code:</p>
+<pre><code>use ferris_says::say; // from the previous step
+use std::io::{stdout, BufWriter};
+
+fn main() {
+    let stdout = stdout();
+    let message = String::from("Hello fellow Rustaceans!");
+    let width = message.chars().count();
+
+    let mut writer = BufWriter::new(stdout.lock());
+    say(&message, width, &mut writer).unwrap();
+}</code></pre>
+
+<p>Once we save that, we can run our application by typing:</p>
+<p><code>cargo run</code></p>
+<p>Assuming everything went well, you should see your application print this to the screen:</p>
+    <pre><code class="plaintext"> __________________________
+< Hello fellow Rustaceans! >
+ --------------------------
+        \
+         \
+            _~^~^~_
+        \) /  o o  \ (/
+          '_   -   _'
+          / '-----' \</code></pre>
+
+  </div>
+</section>
+
+<section id="read-the-docs" class="purple">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>Learn more!</h2>
+      <div class="highlight"></div>
+    </header>
+    <p>You’re a Rustacean now! Welcome! We’re so glad to have you. When you’re ready, hop over to our Learhttp://localhost:7878/learn/n page, where you can find lots of books that will help you to continue on your Rust adventure.</p>
+    <a href="../learn.html" class="button button-secondary">learn more!</a>
+  </div>
+</section>
+
+<section id="ferris" class="white">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <header>
+      <h2>Who’s this crab, Ferris?</h2>
+      <div class="highlight"></div>
+    </header>
+<p>Ferris is the unofficihttp://localhost:7878/learn/al mascot of the Rust Community. Many Rust programmers call themselves “Rustaceans,” a play on the word “<a href="https://en.wikipedia.org/wiki/Crustacean">crustacean</a>.” We refer to Ferris with any pronouns “she,” “he,” “they,” “it,” etc.</p>
+<p>Ferris is a name playing off of the adjective, “ferrous,” meaning of or pertaining to iron. Since Rust often fohttp://localhost:7878/learn/rms on iron, it seemed like a fun origin for our mascot’s name!</p>
+<p>You can find more images of Ferris on <a href="https://rustacean.nethttp://localhost:7878/">rustacean.net</a>.
+
+      <img alt="a gif of ferris scurrying side to side" width="540" height="180"
+           src="../static/images/ferris.gif" />
+  </div>
+</section>
+    </main>
+    <footer>
+      <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <div class="flex flex-column flex-row-l pv0-l">
+          <div class="flex flex-column mw8 w-100 measure-wide-http://localhost:7878/learn/l pv2 pv5-m pv2-ns ph4-m ph4-l" id="get-help">
+           http://localhost:7878/learn/ <h4>Get help!</h4>
+            <ul>
+              <li><a href="../learn.html">Documentation</a></li>
+ http://localhost:7878/learn/             <li><a href="http://forge.rust-lang.org">Rust Forge (Contributor Documentation)</a></li>
+              <li><a href="https://users.rust-lang.org">Ask a Question on the Users Forum</a></li>
+            </ul>
+            <div class="languages">
+              <div class="select">
+                <label for="language-footer" class="hidden">Language</label>
+                <select id="language-footer">
+                  <option title="English (en-US)" value="en-US">English (en-US)</option>
+<option title="Español (es)" value="es">Español (es)</option>
+<option title="Français (fr)" value="fr">Français (fr)</option>
+<option title="Italiano (it)" value="it">Italiano (it)</option>
+<option title="日本語 (ja)" value="ja">日本語 (ja)</option>
+<option title="Português (pt-BR)" value="pt-BR">Português (pt-BR)</option>
+<option title="Русский (ru)" value="ru">Русский (ru)</option>
+<option title="Türkçe (tr)" value="tr">Türkçe (tr)</option>
+<option title="简体中文 (zh-CN)" value="zh-CN">简体中文 (zh-CN)</option>
+<option title="正體中文 (zh-TW)" value="zh-TW">正體中文 (zh-TW)</option>
+            </select>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-column mw8 w-100 mhttp://localhost:7878/learn/easure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l">
+            <h4>Terms and policieshttp://localhost:7878/learn/</h4>
+            <ul>
+              <li><a href="../policies/codhttp://localhost:7878/learn/e-of-conduct.html">Code of Conduct</a></li>
+              <li><a href="../policies/licenses.html">Licenses</a></li>
+              <li><a href="https://foundation.rust-lang.org/policies/logo-policy-and-media-guide/http://localhost:7878/learn/">Logo Policy and Media Guide</a></li>
+              <li><a href="../policies/security.html">Security Disclosuhttp://localhost:7878/learn/res</a></li>
+              <li><a href="https://foundation.rust-lang.org/policies/privacy-policy/">Privacy Notice</a></li>
+              <li><a href="../policies.html">All Policies</a></li>
+            </ul>
+          </div>
+          <div class="flex flex-column mw8 w-100 measure-widehttp://localhost:7878/learn/-l pv2 pv5-m pv2-ns ph4-m ph4-l">
+            <h4>Social</h4>
+http://localhost:7878/learn/            <div class="flex flex-row flex-wrap items-center">
+              <a rel="me" href="https://social.rust-lang.org/@rust" target="_blank"><img src="../statichttp://localhost:7878/images/mastodon.svg" alt="Mastodon" title="Mastodon" /></a>
+              <a rel="me" href="https://bsky.app/profile/rust-lang.org" target="_blank"><img src="../static/images/bluesky.http://localhost:7878/learn/svg" alt="Bluesky" title="Bluesky" /></a>
+              <a href="https://www.youtube.com/chahttp://localhost:7878/learn/nnel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank"><img clashttp://localhost:7878/learn/s="pv2" src="../static/images/youtube.svg" alt="youtube logo" title="YouTube"/></a>
+              <a href="https://discord.gg/rust-lang" target="_blhttp://localhost:7878/learn/ank"><img src="../static/images/discord.svg" alt="discord logo" title="Discord"/></a>
+              <a href="https://github.com/rust-lang" target="_blank"><img src="../static/images/github.svg" alt="github logo" title="GitHub"/></ahttp://localhost:7878/learn/>
+            </div>
+          </div>
+    
+        </div>
+        <div class="attribution">
+          <p>
+            Maintained by the Ruhttp://localhost:7878/learn/st Team. See a bug?
+<a href="https://github.com/rust-lang/www.rust-lang.org/issues/new/choose">File an issue!</a>http://localhost:7878/learn/
+          </p>
+          <p>Looking for the <a href="https://prev.rust-lang.org">previous website</a>?</p>
+        </div>
+      </div>
+    </footer>
+    <script src="../static/scripts/languages.js"></script>
+  </body>
+</html>
