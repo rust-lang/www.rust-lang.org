@@ -33,6 +33,6 @@ coc-moderation-description =
     </ol>
     <p>在 Rust 社区，我们努力多付出一些，互相照顾。不要只关注在技术上无懈可击，尽量做好您自己。特别是，避免陷入攻击性或敏感性问题的纠缠。尤其是当他们偏离主题时，这通常会导致不必要的斗争，伤害情感，损害信任。更糟糕的是，它会把人们推离社区。</p>
     <p>如果有人对您所说或做过的事情提出异议，不要急于自卫。停止做他们抱怨的事情并道歉。即使您觉得自己被误解或受到不公平的指控，也很有可能会有更好的沟通方式 - 请记住，让您的同伴 Rustaceans 感到舒服是您的责任。每个人都希望好好相处，我们来这里最初和最根本的目的是想谈论很酷的技术。您会发现，只要您赢得他们的信任，人们就会渴望表现出善意和宽恕。</p>
-    <p>上述强制执行政策适用于所有 Rust 官方场所; 包括Discord频道（https://discord.gg/rust-lang）；rust-lang，rust-lang-nursery和rust-lang-deprecated在GitHub的仓库；rust-lang.org（users.rust-lang.org，internals.rust-lang.org）的所有论坛。对于采用Rust行为准则的其他项目，请联系这些项目的维护人员以便执行。如果您希望将此行为准则用于您自己的项目，请考虑明确提及您的审查政策或使用您自己的审查政策制作副本，以避免混淆。</p>
+    <p>上述强制执行政策适用于所有 Rust 官方场所; 包括Zulip频道（https://rust-lang.zulipchat.com/）；rust-lang，rust-lang-nursery和rust-lang-deprecated在GitHub的仓库；rust-lang.org（users.rust-lang.org，internals.rust-lang.org）的所有论坛。对于采用Rust行为准则的其他项目，请联系这些项目的维护人员以便执行。如果您希望将此行为准则用于您自己的项目，请考虑明确提及您的审查政策或使用您自己的审查政策制作副本，以避免混淆。</p>
     <p><i>改编自《<a href="http://blog.izs.me/post/30036893703/policy-on-trolling">Node.js 关于恶意破坏的政策</a>》以及《<a href ="https://www.contributor-covenant.org/version/1/3/0/">贡献者公约 v1.3.0 </a>》。</i></p>
 coc-moderation-description-team-anchor-text = Rust 审查团队

@@ -6,7 +6,6 @@ governance-team-miri-name = Miri
 governance-team-wg-debugging-name = 디버깅 작업 그룹
 governance-team-compiler-name = 컴파일러 팀
 governance-team-core-name = 코어 팀
-governance-team-mods-discord-name = 디스코드 중재자
 governance-team-wg-llvm-name = LLVM 작업 그룹
 governance-team-wg-grammar-name = 문법 작업 그룹
 governance-team-lang-name = 언어 팀
