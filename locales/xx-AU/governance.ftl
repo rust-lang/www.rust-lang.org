@@ -10,7 +10,6 @@ governance-wgs-header = sdnoɹפ ƃuᴉʞɹoM
 governance-members = sʇɔɐʇuoƆ ⅋ sɹǝqɯǝW
 governance-team-email = {$teamname}⁨ ǝɥʇ lᴉɐɯƎ
 governance-team-repository = ʎɹoʇᴉsodǝɹ {$teamname}⁨
-governance-team-discord = pɹoɔsᴉp uo ⁩{$channel}
 governance-user-github = ⁩{$link} :qnHʇᴉפ
 governance-user-team-leader = ɹǝpɐǝl ɯɐǝ┴
 governance-members-header = sɹǝqɯǝW

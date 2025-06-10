@@ -6,7 +6,6 @@ getting-started = Başlarken
 why-rust = Neden Rust?
 production-use = Üretimde kullanım
 learn-more = Daha fazla bilgi edinin
-discord = Discord
 mastodon = Mastodon
 
 ## components/panels/domain.hbs
@@ -48,7 +47,6 @@ footer-social = Sosyal
 footer-get-help = Yardım alın!
 footer-youtube-alt = Twitter
 footer-alt-youtube = youtube logosu
-footer-discord-alt = { discord }
 footer-github-alt = GitHub
 footer-attribution =
     Rust Ekibi tarafından geliştirilmektedir. Yazım hatasına mı rastladınız?

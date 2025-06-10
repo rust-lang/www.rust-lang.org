@@ -77,9 +77,6 @@ governance-team-miri-description = Designing and implementing the Miri interpret
 governance-team-mods-name = Moderation team
 governance-team-mods-description = Helping uphold the code of conduct and community standards
 
-governance-team-mods-discord-name = Discord moderators
-governance-team-mods-discord-description = Moderating the Discord server
-
 governance-team-mods-discourse-name = Discourse moderators
 governance-team-mods-discourse-description = Moderating users.rust-lang.org and internals.rust-lang.org
 

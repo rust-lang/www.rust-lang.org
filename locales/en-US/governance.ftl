@@ -17,7 +17,6 @@ governance-members = Members & Contacts
 ## governance/group-team.hbs
 governance-team-email = Email the { $teamname }
 governance-team-repository = { $teamname } repository
-governance-team-discord = { $channel } on Discord
 governance-team-zulip = { $stream } on Zulip
 governance-team-matrix-room = { $room } on Matrix
 governance-user-github = GitHub: { $link }

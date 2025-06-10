@@ -6,7 +6,6 @@ getting-started = 入门
 why-rust = 为什么选择 Rust?
 production-use = 产品应用
 learn-more = 了解更多
-discord = Discord
 zulip = Zulip
 mastodon = Mastodon
 
@@ -50,7 +49,6 @@ footer-social = 社交
 footer-get-help = 获得帮助！
 footer-youtube-alt = Twitter
 footer-alt-youtube = youtube 标志
-footer-discord-alt = { discord }
 footer-github-alt = GitHub
 footer-attribution =
     由 Rust 团队维护。发现了错别字？

@@ -4,7 +4,6 @@ rust = Rust
 get-started-exclamation = شروع کنید!
 why-rust = چرا Rust؟
 learn-more = یادگیری بیشتر
-discord = دیسکورد
 mastodon = Mastodon
 
 ## components/panels/domain.hbs
@@ -38,7 +37,6 @@ footer-social = اجتماعی
 footer-get-help = کمک بگیر!
 footer-youtube-alt = توییتر
 footer-alt-youtube = لوگوی Youtube
-footer-discord-alt = { discord }
 footer-github-alt = گیت هاب
 footer-old-site = به دنبال <a href="https://prev.rust-lang.org">وب سایت قبلی</a> هستید؟
 
