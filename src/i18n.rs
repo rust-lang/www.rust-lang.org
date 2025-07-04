@@ -22,7 +22,7 @@ fn add_bundle_functions(bundle: &mut FluentBundle<&'static FluentResource>) {
                 Some(FluentValue::String(s)) => s,
                 _ => return FluentValue::None,
             };
-            FluentValue::String(format!("<a href='mailto:{0}' lang='en-US'>{0}</a>", email).into())
+            FluentValue::String(format!("<a href='mailto:{email}' lang='en-US'>{email}</a>").into())
         })
         .expect("could not add function");
 
@@ -32,7 +32,7 @@ fn add_bundle_functions(bundle: &mut FluentBundle<&'static FluentResource>) {
                 Some(FluentValue::String(s)) => s,
                 _ => return FluentValue::None,
             };
-            FluentValue::String(format!("<span lang='en-US'>{0}</span>", text).into())
+            FluentValue::String(format!("<span lang='en-US'>{text}</span>").into())
         })
         .expect("could not add function");
 }

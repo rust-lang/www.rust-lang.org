@@ -254,7 +254,7 @@ impl Cached for RustTeams {
         self.1
     }
     async fn fetch() -> Result<Self, Box<dyn Error + Send + Sync>> {
-        let resp: Teams = reqwest::get(format!("{}/teams.json", BASE_URL))
+        let resp: Teams = reqwest::get(format!("{BASE_URL}/teams.json"))
             .await?
             .error_for_status()?
             .json()
@@ -332,8 +332,8 @@ mod tests {
             ],
             alumni: Vec::new(),
             website_data: Some(TeamWebsite {
-                name: format!("Team {}", name),
-                description: format!("Description of {}", name),
+                name: format!("Team {name}"),
+                description: format!("Description of {name}"),
                 page: name.into(),
                 email: None,
                 repo: None,

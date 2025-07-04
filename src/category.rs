@@ -31,7 +31,7 @@ impl<'r> FromParam<'r> for Category {
         if is_category(&url) {
             Ok(Category { name: url })
         } else {
-            Err(format!("No category called <{}>", url))
+            Err(format!("No category called <{url}>"))
         }
     }
 }
