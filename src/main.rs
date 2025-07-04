@@ -125,7 +125,7 @@ fn baseurl(lang: &str) -> String {
     if lang == "en-US" {
         String::new()
     } else {
-        format!("/{}", lang)
+        format!("/{lang}")
     }
 }
 
@@ -274,13 +274,13 @@ fn hash_css(css: &str) -> String {
 }
 
 fn compile_sass(filename: &str) -> String {
-    let scss_file = format!("./src/styles/{}.scss", filename);
+    let scss_file = format!("./src/styles/{filename}.scss");
 
     let css = compile_file(&scss_file, Options::default())
         .unwrap_or_else(|_| panic!("couldn't compile sass: {}", &scss_file));
 
     let css_sha = format!("{}_{}", filename, hash_css(&css));
-    let css_file = format!("./static/styles/{}.css", css_sha);
+    let css_file = format!("./static/styles/{css_sha}.css");
 
     fs::write(&css_file, css.into_bytes())
         .unwrap_or_else(|_| panic!("couldn't write css file: {}", &css_file));
@@ -291,7 +291,7 @@ fn compile_sass(filename: &str) -> String {
 fn concat_vendor_css(files: Vec<&str>) -> String {
     let mut concatted = String::new();
     for filestem in files {
-        let vendor_path = format!("./static/styles/{}.css", filestem);
+        let vendor_path = format!("./static/styles/{filestem}.css");
         let contents = fs::read_to_string(vendor_path).expect("couldn't read vendor css");
         concatted.push_str(&contents);
     }
@@ -307,7 +307,7 @@ fn concat_vendor_css(files: Vec<&str>) -> String {
 fn concat_app_js(files: Vec<&str>) -> String {
     let mut concatted = String::new();
     for filestem in files {
-        let vendor_path = format!("./static/scripts/{}.js", filestem);
+        let vendor_path = format!("./static/scripts/{filestem}.js");
         let contents = fs::read_to_string(vendor_path).expect("couldn't read app js");
         concatted.push_str(&contents);
     }
@@ -354,7 +354,7 @@ async fn render_governance(
             Ok(Template::render(page, context))
         }
         Err(err) => {
-            eprintln!("error while loading the governance page: {}", err);
+            eprintln!("error while loading the governance page: {err}");
             Err(Status::InternalServerError)
         }
     }
@@ -377,7 +377,7 @@ async fn render_team(
             if err.is::<teams::TeamNotFound>() {
                 Err(Status::NotFound)
             } else {
-                eprintln!("error while loading the team page: {}", err);
+                eprintln!("error while loading the team page: {err}");
                 Err(Status::InternalServerError)
             }
         }
@@ -392,7 +392,7 @@ fn render_subject(category: Category, subject: &str, lang: String) -> Result<Tem
     // To work around the problem we check whether the template exists beforehand.
     let path = Path::new("templates")
         .join(category.name())
-        .join(format!("{}.html.hbs", subject));
+        .join(format!("{subject}.html.hbs"));
     if !path.is_file() {
         return Err(Status::NotFound);
     }

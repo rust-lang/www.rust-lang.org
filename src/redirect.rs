@@ -121,10 +121,10 @@ pub(crate) fn maybe_redirect(path: Path) -> Option<Redirect> {
     if let Some((_, dest)) = EXTERNAL_REDIRECTS.iter().find(|(src, _)| *src == path) {
         Some(Redirect::permanent(*dest))
     } else if let Some((_, dest)) = PAGE_REDIRECTS.iter().find(|(src, _)| *src == path) {
-        let dest = format!("/{}", dest);
+        let dest = format!("/{dest}");
         match locale {
             Locale::Present("en-US") | Locale::NotSpecified => Some(Redirect::permanent(dest)),
-            Locale::Present(locale) => Some(Redirect::permanent(format!("/{}{}", locale, dest))),
+            Locale::Present(locale) => Some(Redirect::permanent(format!("/{locale}{dest}"))),
             Locale::SpecifiedButMissing => Some(Redirect::temporary(dest)),
         }
     } else {
