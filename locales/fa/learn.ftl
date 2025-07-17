@@ -15,7 +15,6 @@ learn-doc-cargo-button = کتاب Cargo
 learn-doc-rustdoc-button = کتاب rustdoc
 learn-doc-rustc-button = کتاب rustc
 learn-domain-cli-button = کتاب خط فرمان
-learn-domain-wasm-button = کتاب وب اسمبلی
 learn-master = مسلط شدن به Rust
 learn-reference-button = ارجاع را مطالعه کنید
 

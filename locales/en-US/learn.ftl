@@ -43,9 +43,6 @@ learn-domain = Build your skills in an application domain
 learn-domain-cli-button = Command Line Book
 learn-domain-cli = Learn how to build effective command line applications in Rust.
 
-learn-domain-wasm-button = WebAssembly Book
-learn-domain-wasm = Use Rust to build browser-native libraries through WebAssembly.
-
 learn-domain-embedded-button = Embedded Book
 learn-domain-embedded = Become proficient with Rust for Microcontrollers and other embedded systems.
 
