@@ -6,6 +6,7 @@ mod i18n;
 mod redirect;
 mod rust_version;
 mod teams;
+mod render;
 
 use cache::Cache;
 use cache::Cached;
@@ -20,11 +21,14 @@ use teams::encode_zulip_stream;
 use std::collections::hash_map::DefaultHasher;
 use std::env;
 use std::fs;
+use std::fs::File;
 use std::hash::Hasher;
+use std::io::BufWriter;
 use std::path::{Path, PathBuf};
 use std::sync::Arc;
 use std::sync::LazyLock;
-
+use anyhow::Context as _;
+use handlebars::{DirectorySourceOptions, Handlebars};
 use rocket::{
     fs::NamedFile,
     http::Status,
@@ -38,7 +42,7 @@ use sass_rs::{Options, compile_file};
 use category::Category;
 
 use caching::CachedNamedFile;
-use handlebars_fluent::{FluentHelper, loader::Loader};
+use handlebars_fluent::{FluentHelper, loader::Loader, simple_loader};
 use i18n::{EXPLICIT_LOCALE_INFO, LocaleInfo, SupportedLocale, TeamHelper, create_loader};
 
 const ZULIP_DOMAIN: &str = "https://rust-lang.zulipchat.com";
@@ -404,50 +408,59 @@ fn render_subject(category: Category, subject: &str, lang: String) -> Result<Tem
     Ok(Template::render(page, context))
 }
 
-#[rocket::launch]
-async fn rocket() -> _ {
-    let templating = Template::custom(|engine| {
-        engine
-            .handlebars
-            .register_helper("fluent", Box::new(FluentHelper::new(create_loader())));
-        engine
-            .handlebars
-            .register_helper("team-text", Box::new(TeamHelper::new()));
-        engine
-            .handlebars
-            .register_helper("encode-zulip-stream", Box::new(encode_zulip_stream));
-    });
+// #[rocket::launch]
+// async fn rocket() -> _ {
+//     let templating = Template::custom(|engine| {
+//         engine
+//             .handlebars
+//             .register_helper("fluent", Box::new(FluentHelper::new(create_loader())));
+//         engine
+//             .handlebars
+//             .register_helper("team-text", Box::new(TeamHelper::new()));
+//         engine
+//             .handlebars
+//             .register_helper("encode-zulip-stream", Box::new(encode_zulip_stream));
+//     });
+//
+//     let rust_version = RustVersion::fetch().await.unwrap_or_default();
+//     let teams = RustTeams::fetch().await.unwrap_or_default();
+//
+//     rocket::build()
+//         .attach(templating)
+//         .attach(headers::InjectHeaders)
+//         .manage(Arc::new(RwLock::new(rust_version)))
+//         .manage(Arc::new(RwLock::new(teams)))
+//         .mount(
+//             "/",
+//             rocket::routes![
+//                 index,
+//                 category_en,
+//                 governance,
+//                 team,
+//                 subject,
+//                 files,
+//                 robots_txt,
+//                 logos,
+//                 index_locale,
+//                 category_locale,
+//                 governance_locale,
+//                 team_locale,
+//                 subject_locale,
+//                 redirect_bare_en_us,
+//                 well_known_security,
+//             ],
+//         )
+//         .register(
+//             "/",
+//             rocket::catchers![not_found, unprocessable_content, catch_error],
+//         )
+// }
 
-    let rust_version = RustVersion::fetch().await.unwrap_or_default();
-    let teams = RustTeams::fetch().await.unwrap_or_default();
+#[tokio::main]
+async fn main() -> anyhow::Result<()> {
+    let rust_version = RustVersion::fetch().await?;
+    let teams = RustTeams::fetch().await?;
+    render::render(rust_version, teams)?;
 
-    rocket::build()
-        .attach(templating)
-        .attach(headers::InjectHeaders)
-        .manage(Arc::new(RwLock::new(rust_version)))
-        .manage(Arc::new(RwLock::new(teams)))
-        .mount(
-            "/",
-            rocket::routes![
-                index,
-                category_en,
-                governance,
-                team,
-                subject,
-                files,
-                robots_txt,
-                logos,
-                index_locale,
-                category_locale,
-                governance_locale,
-                team_locale,
-                subject_locale,
-                redirect_bare_en_us,
-                well_known_security,
-            ],
-        )
-        .register(
-            "/",
-            rocket::catchers![not_found, unprocessable_content, catch_error],
-        )
+    Ok(())
 }

@@ -13,7 +13,7 @@ pub type Cache<T> = State<Arc<RwLock<T>>>;
 
 pub trait Cached: Send + Sync + Clone + 'static {
     fn get_timestamp(&self) -> Instant;
-    fn fetch() -> impl Future<Output = Result<Self, Box<dyn Error + Send + Sync>>> + Send;
+    fn fetch() -> impl Future<Output = anyhow::Result<Self>> + Send;
     async fn get(cache: &Cache<Self>) -> Self {
         let cached = cache.read().await.clone();
         let timestamp = cached.get_timestamp();

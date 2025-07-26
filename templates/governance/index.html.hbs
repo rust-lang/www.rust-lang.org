@@ -31,7 +31,7 @@
         </header>
         <div class="flex flex-column flex-row-l flex-wrap-l justify-start tc">
             {{#each data.teams as |team| ~}}
-                {{> governance/index-team}}
+                {{> governance/index-team team=team baseurl=baseurl}}
             {{/each~}}
         </div>
     </div>

@@ -10,7 +10,7 @@ enum FetchTarget {
     Manifest,
 }
 
-async fn fetch(target: FetchTarget) -> Result<reqwest::Response, Box<dyn Error + Send + Sync>> {
+async fn fetch(target: FetchTarget) -> anyhow::Result<reqwest::Response> {
     let proxy_env = env::var("http_proxy")
         .or_else(|_| env::var("HTTPS_PROXY"))
         .ok();
@@ -43,7 +43,7 @@ impl Cached for RustVersion {
     fn get_timestamp(&self) -> Instant {
         self.1
     }
-    async fn fetch() -> Result<Self, Box<dyn Error + Send + Sync>> {
+    async fn fetch() -> anyhow::Result<Self> {
         let manifest = fetch(FetchTarget::Manifest)
             .await?
             .text()
