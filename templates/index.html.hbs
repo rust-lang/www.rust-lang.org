@@ -2,10 +2,14 @@
 <header class="mt3 mb6 w-100 mw-none ph3 mw8-m mw9-l center">
   <div class="flex flex-column flex-row-l">
     <div class="w-70-l mw8-l">
-      <h1>{{fluent "rust"}}</h1>
+      {{#if data.uwu}}
+        <img src="/static/images/rust-uwu.png" height="200" alt="Rust uwu image" />
+      {{else}}
+        <h1>{{fluent "rust"}}</h1>
+      {{/if}}
       <h2 class="mt4 mb0 f2 f1-ns">
         {{fluent "tagline" linebreak="<br class='dn db-ns'>"}}
-      </h2>
+      </h2>{{!--  --}}
     </div>
     <div class="w-30-l flex-column pl0-l pr0-l pl3 pr3">
       <a class="button button-download ph4 mt0 w-100" href="{{baseurl}}/learn/get-started">

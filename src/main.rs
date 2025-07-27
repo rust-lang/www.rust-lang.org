@@ -154,9 +154,34 @@ fn robots_txt() -> Option<content::RawText<&'static str>> {
     }
 }
 
-#[get("/")]
-async fn index(version_cache: &Cache<RustVersion>) -> Template {
-    render_index(ENGLISH.into(), version_cache).await
+#[get("/?<uwu>")]
+async fn index(
+    uwu: Option<bool>,
+    version_cache: &Cache<RustVersion>,
+) -> Template {
+    let is_uwu = uwu.unwrap_or(false);
+    render_index_with_uwu(ENGLISH.into(), version_cache, is_uwu).await
+}
+
+async fn render_index_with_uwu(
+    lang: String,
+    version_cache: &Cache<RustVersion>,
+    is_uwu: bool,
+) -> Template {
+    #[derive(Serialize)]
+    struct IndexData {
+        rust_version: String,
+        uwu: bool,
+    }
+
+    let data = IndexData {
+        rust_version: rust_version::rust_version(version_cache).await,
+        uwu: is_uwu,
+    };
+
+    let page = "index";
+    let context = Context::new(page, "", true, data, lang);
+    Template::render(page, context)
 }
 
 #[get("/<locale>", rank = 3)]
