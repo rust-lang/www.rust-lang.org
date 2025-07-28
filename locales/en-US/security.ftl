@@ -67,9 +67,9 @@ security-disclosure-description--2025-07 =
         <p>The Rust project has a 5 step disclosure process.</p>
         <ol>
           <li>The security report is received and is assigned a primary handler. This person will coordinate the fix and release process.</li>
-          <li>The problem is confirmed and a list of all affected versions is determined.</li>
+          <li>The problem is confirmed, the affected versions are identified, and relevant domain experts from relevant Rust teams are involved.</li>
           <li>Code is audited to find any potential similar problems.</li>
-          <li>Fixes are prepared for all supported release branches. These fixes are not committed to the public repository but rather held locally pending the announcement.</li>
+          <li>Fixes are prepared for all supported release branches. These fixes are not committed to the public repository but rather held in private repositories pending the announcement. These fixes are reviewed privately using the same review process of public changes.</li>
           <li>On the embargo date, the <a href="{ -rustlang-security-announcements-google-groups-forum-href }"> Rust security mailing list</a> is sent a copy of the announcement. The changes are pushed to the public repository and the release process is started. Within 6 hours of the mailing list being notified, a copy of the advisory will be published on the Rust blog.</li>
         </ol>
         <p>This process can take some time, especially when coordination is required with maintainers of other projects. Every effort will be made to handle the bug in as timely a manner as possible, however it’s important that we follow the release process above to ensure that the disclosure is handled in a consistent manner.</p>
