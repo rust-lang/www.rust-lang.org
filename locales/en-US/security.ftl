@@ -69,8 +69,8 @@ security-disclosure-description--2025-07 =
           <li>The security report is received and is assigned a primary handler. This person will coordinate the fix and release process.</li>
           <li>The problem is confirmed, the affected versions are identified, and relevant domain experts from relevant Rust teams are involved.</li>
           <li>Code is audited to find any potential similar problems.</li>
-          <li>Fixes are prepared for all supported release branches. These fixes are not committed to the public repository but rather held in private repositories pending the announcement. These fixes are reviewed privately using the same review process of public changes.</li>
-          <li>On the embargo date, a copy of the announcement is sent to the <a href="{ -rustlang-security-announcements-google-groups-forum-href }"> Rust security mailing list</a> and posted on the Rust blog. The changes are pushed to the public repository and the release process is started.</li>
+          <li>Fixes are prepared for all supported release branches, and a CVE number is reserved. These fixes are not committed to the public repository but rather held in private repositories pending the announcement. These fixes are reviewed privately using the same review process of public changes.</li>
+          <li>On the embargo date, a copy of the announcement is sent to the <a href="{ -rustlang-security-announcements-google-groups-forum-href }"> Rust security mailing list</a> and posted on the Rust blog. The changes are pushed to the public repository and the release process is started. Within an hour, full details are published in the CVE database</li>
         </ol>
         <p>This process can take some time, especially when coordination is required with maintainers of other projects. Every effort will be made to handle the bug in as timely a manner as possible, however it’s important that we follow the release process above to ensure that the disclosure is handled in a consistent manner.</p>
 
