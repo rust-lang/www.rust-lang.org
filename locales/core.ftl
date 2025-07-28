@@ -20,6 +20,8 @@
         https://groups.google.com/forum/#!forum/rustlang-security-announcements
 -rust-security-announcements-mailing-list-href =
         https://groups.google.com/group/rustlang-security-announcements/subscribe
+-rust-security-supported-channels-href =
+        https://doc.rust-lang.org/book/appendix-07-nightly-rust.html
 -rustlang-security-announcements-subscribe-anchor =
         <a href="mailto:rustlang-security-announcements+subscribe@googlegroups.com">rustlang-security-announcements+subscribe@googlegroups.com</a>
 -distros-openwall-email-anchor =
