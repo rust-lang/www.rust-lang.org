@@ -253,7 +253,7 @@ impl Cached for RustTeams {
     fn get_timestamp(&self) -> Instant {
         self.1
     }
-    async fn fetch() -> Result<Self, Box<dyn Error + Send + Sync>> {
+    async fn fetch() -> anyhow::Result<Self> {
         let resp: Teams = reqwest::get(format!("{BASE_URL}/teams.json"))
             .await?
             .error_for_status()?
@@ -272,7 +272,7 @@ impl Cached for RustTeams {
     }
 }
 
-fn kind_to_str(kind: TeamKind) -> &'static str {
+pub(crate) fn kind_to_str(kind: TeamKind) -> &'static str {
     match kind {
         TeamKind::Team => "teams",
         TeamKind::WorkingGroup => "wgs",
