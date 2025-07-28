@@ -78,6 +78,6 @@ security-receiving-heading = Receiving security updates
 security-receiving-description--2025-07 =
         <p>The best way to receive all the security announcements is to subscribe to the <a href="{ -rust-security-announcements-mailing-list-href }">Rust security announcements mailing list</a> (alternatively by sending an email to { -rustlang-security-announcements-subscribe-anchor }). The mailing list is very low traffic, and it receives the public notifications the moment the embargo is lifted.</p>
         <p>The Rust project only provides support and security updates for the most recent stable release and the latest releases in our <a href="{ -rust-security-supported-channels-href }">beta and nightly channels</a>. As Rust releases must be built in the public, we will begin the release process as soon as the embargo lifts, and a release blog post will be published once updated binaries are available for download.</p>
-        <p>We will announce vulnerabilities 72 hours before the embargo is lifted to { -distros-openwall-email-anchor }, so that Linux distributions can update their packages.</p>
+        <p>When a vulnerability affects software distributions, we will announce vulnerabilities 72 hours before the embargo is lifted to { -distros-openwall-email-anchor }, so that distributions can update their packages when the embargo lifts.</p>
 
 security-pgp-key-heading = Plaintext PGP key
