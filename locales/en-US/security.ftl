@@ -5,9 +5,9 @@ policies-security-page-title = Security policy
 
 security-reporting-heading = Reporting
 security-reporting-link = email { ENGLISH("security@rust-lang.org") }
-security-reporting-description--2022-01 =
+security-reporting-description--2025-07 =
         <p>Safety is one of the core principles of Rust, and to that end, we would like to ensure that Rust has a secure implementation. Thank you for taking the time to responsibly disclose any issues you find.</p>
-        <p>All security bugs in the Rust distribution should be reported by email to { -security-at-rust-lang-org-anchor }. This list is delivered to a small security team. Your email will be acknowledged within 24 hours, and you’ll receive a more detailed response to your email within 48 hours indicating the next steps in handling your report. If you would like, you can encrypt your report using <a href="{ -rust-security-team-key-href }">our public key</a>. This key is also <a href="{ -rust-pgp-key-mit-keyserver-href }">On MIT’s keyserver</a> and <a href="#security-pgp-key">reproduced below</a>.</p>
+        <p>All security bugs in the Rust distribution should be reported by email to { -security-at-rust-lang-org-anchor }. This list is delivered to a small security team. Your email will be acknowledged within 24 hours, and you’ll receive a more detailed response to your email within 48 hours indicating the next steps in handling your report.</p>
         <p>This email address receives a large amount of spam, so be sure to use a descriptive subject line to avoid having your report be missed. After the initial reply to your report, the security team will endeavor to keep you informed of the progress being made towards a fix and full announcement. As recommended by <a href="{ -wikipedia-rfpolicy-href }">RFPolicy</a>, these updates will be sent at least every five days. In reality, this is more likely to be every 24-48 hours.</p>
         <p>If you have not received a reply to your email within 48 hours, or have not heard from the security team for the past five days, there are a few steps you can take (in order):</p>
         <ul>
@@ -63,20 +63,19 @@ security-scope--2025-04 =
         <p>If you have doubts on whether something falls within our scope, <a href="mailto:security@rust-lang.org">please reach out</a> and we will provide guidance.</p>
 
 security-disclosure-heading = Disclosure policy
-security-disclosure-description =
+security-disclosure-description--2025-07 =
         <p>The Rust project has a 5 step disclosure process.</p>
         <ol>
           <li>The security report is received and is assigned a primary handler. This person will coordinate the fix and release process.</li>
-          <li>The problem is confirmed and a list of all affected versions is determined.</li>
+          <li>The problem is confirmed, the affected versions are identified, and relevant domain experts from relevant Rust teams are involved.</li>
           <li>Code is audited to find any potential similar problems.</li>
-          <li>Fixes are prepared for all releases which are still under maintenance. These fixes are not committed to the public repository but rather held locally pending the announcement.</li>
-          <li>On the embargo date, the <a href="{ -rustlang-security-announcements-google-groups-forum-href }"> Rust security mailing list</a> is sent a copy of the announcement. The changes are pushed to the public repository and new builds are deployed to rust-lang.org.  Within 6 hours of the mailing list being notified, a copy of the advisory will be published on the Rust blog.</li>
+          <li>Fixes are prepared for all supported release branches, and a CVE number is reserved. These fixes are not committed to the public repository but rather held in private repositories pending the announcement. These fixes are reviewed privately using the same review process of public changes.</li>
+          <li>On the embargo date, a copy of the announcement is sent to the <a href="{ -rustlang-security-announcements-google-groups-forum-href }"> Rust security mailing list</a> and posted on the Rust blog. The changes are pushed to the public repository and the release process is started. Within an hour, full details are published in the CVE database</li>
         </ol>
         <p>This process can take some time, especially when coordination is required with maintainers of other projects. Every effort will be made to handle the bug in as timely a manner as possible, however it’s important that we follow the release process above to ensure that the disclosure is handled in a consistent manner.</p>
 
 security-receiving-heading = Receiving security updates
-security-receiving-description =
-        <p>The best way to receive all the security announcements is to subscribe to the <a href="{ -rust-security-announcements-mailing-list-href }">Rust security announcements mailing list</a> (alternatively by sending an email to { -rustlang-security-announcements-subscribe-anchor }). The mailing list is very low traffic, and it receives the public notifications the moment the embargo is lifted.</p>
-        <p>We will announce vulnerabilities 72 hours before the embargo is lifted to { -distros-openwall-email-anchor }, so that Linux distributions can update their packages.</p>
-
-security-pgp-key-heading = Plaintext PGP key
+security-receiving-description--2025-07 =
+        <p>The best way to receive all the security announcements is to subscribe to the <a href="{ -rust-security-announcements-mailing-list-href }">Rust security announcements mailing list</a> (alternatively by sending an email to { -rustlang-security-announcements-subscribe-anchor }). The mailing list is very low traffic, and it receives the public notifications the moment the embargo is lifted. Announcements on the mailing list are signed with the <a href="{{ -rust-security-team-key-href }}">Rust's security key</a>.</p>
+        <p>The Rust project only provides support and security updates for the most recent stable release and the latest releases in our <a href="{ -rust-security-supported-channels-href }">beta and nightly channels</a>. As Rust releases must be built in the public, we will begin the release process as soon as the embargo lifts, and a release blog post will be published once updated binaries are available for download.</p>
+        <p>When a vulnerability affects software distributions, we will announce vulnerabilities 72 hours before the embargo is lifted to { -distros-openwall-email-anchor }, so that distributions can update their packages when the embargo lifts.</p>
