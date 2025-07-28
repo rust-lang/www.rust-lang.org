@@ -1,8 +1,6 @@
 -security-at-rust-lang-org-anchor = { EMAIL("security@rust-lang.org") }
 -rust-security-team-key-href =
         /static/keys/rust-security-team-key.gpg.ascii
--rust-pgp-key-mit-keyserver-href =
-        https://pgp.mit.edu/pks/lookup?op=vindex&amp;search=0xEFB9860AE7520DAC"
 -wikipedia-rfpolicy-href =
         https://en.wikipedia.org/wiki/RFPolicy
 
