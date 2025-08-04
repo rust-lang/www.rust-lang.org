@@ -18,7 +18,6 @@ learn-doc-rustdoc-button = rustdoc 문서
 learn-doc-rustc-button = rustc 문서
 learn-doc-error-button = 컴파일러 오류 색인
 learn-domain = 앱 도메인으로 기술 익히기
-learn-domain-wasm-button = WebAssembly 문서
 learn-domain-embedded-button = 임베디드 문서
 learn-master = Rust 마스터하기
 learn-master-text = 언어의 가장 어두운 부분이 궁금한가요? 여기에서 세부적으로 확인할 수 있습니다.
