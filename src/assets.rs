@@ -1,4 +1,4 @@
-use crate::render::fs::ensure_directory;
+use crate::fs::ensure_directory;
 use anyhow::Context;
 use rocket::serde::Serialize;
 use sass_rs::{Options, compile_file};
