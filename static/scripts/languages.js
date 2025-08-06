@@ -21,3 +21,4 @@ function langChange() {
 
 nav_dropdown.onchange = langChange;
 footer_dropdown.onchange = langChange;
+// TODO: language redirect
