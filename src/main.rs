@@ -1,8 +1,10 @@
+#![allow(unused)]
+
 use crate::assets::compile_assets;
 use crate::i18n::{TeamHelper, create_loader};
 use crate::redirect::create_redirects;
 use crate::render::{RenderCtx, render_directory, render_governance, render_index};
-use crate::rust_version::RustVersion;
+use crate::rust_version::fetch_rust_version;
 use crate::teams::{encode_zulip_stream, load_rust_teams};
 use anyhow::Context;
 use handlebars::{DirectorySourceOptions, Handlebars};
@@ -24,11 +26,24 @@ const ZULIP_DOMAIN: &str = "https://rust-lang.zulipchat.com";
 static LAYOUT: &str = "components/layout";
 static ENGLISH: &str = "en-US";
 
-fn baseurl(lang: &str) -> String {
-    if lang == "en-US" {
-        String::new()
-    } else {
-        format!("/{lang}")
+/// Relative base url from the root of the website
+/// `url` can be e.g. `` or `/foo-bar`.
+struct BaseUrl {
+    url: String,
+}
+
+impl BaseUrl {
+    fn new(url: &str) -> Self {
+        let url = url.strip_suffix('/').unwrap_or(url).to_string();
+        Self { url }
+    }
+
+    fn resolve(&self, lang: &str) -> String {
+        if lang == ENGLISH {
+            self.url.clone()
+        } else {
+            format!("{}/{lang}", self.url)
+        }
     }
 }
 
@@ -52,6 +67,9 @@ fn setup_handlebars() -> anyhow::Result<Handlebars<'static>> {
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
+    let base_url = std::env::var("BASE_URL").unwrap_or_else(|_| "".to_string());
+    let base_url = BaseUrl::new(&base_url);
+
     let rust_version = fetch_rust_version().await?;
     let teams = load_rust_teams().await?;
 
@@ -61,7 +79,7 @@ async fn main() -> anyhow::Result<()> {
     std::fs::create_dir_all(&output_dir)?;
 
     let root_dir = Path::new(".");
-    let assets = compile_assets(root_dir, &output_dir, "/")?;
+    let assets = compile_assets(root_dir, &output_dir, &base_url.resolve(ENGLISH))?;
     let handlebars = setup_handlebars()?;
 
     let ctx = RenderCtx {
@@ -72,6 +90,7 @@ async fn main() -> anyhow::Result<()> {
         teams,
         handlebars,
         output_dir,
+        base_url,
     };
     ctx.copy_asset_dir("static", "static")?;
     ctx.copy_asset_file(

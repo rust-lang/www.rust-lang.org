@@ -3,7 +3,7 @@ use crate::fs::{copy_dir_all, ensure_directory};
 use crate::i18n::{EXPLICIT_LOCALE_INFO, LocaleInfo, SUPPORTED_LOCALES};
 use crate::rust_version::RustVersion;
 use crate::teams::{PageData, RustTeams};
-use crate::{ENGLISH, LAYOUT, PONTOON_ENABLED, baseurl};
+use crate::{BaseUrl, ENGLISH, LAYOUT, PONTOON_ENABLED};
 use anyhow::Context;
 use handlebars::Handlebars;
 use handlebars_fluent::{Loader, SimpleLoader};
@@ -72,6 +72,7 @@ pub struct RenderCtx<'a> {
     pub rust_version: RustVersion,
     pub teams: RustTeams,
     pub assets: AssetFiles,
+    pub base_url: BaseUrl,
 }
 
 impl<'a> RenderCtx<'a> {
@@ -95,8 +96,8 @@ impl<'a> RenderCtx<'a> {
                 parent: LAYOUT,
                 is_landing: false,
                 data,
-                baseurl: baseurl(&lang),
-                is_translation: lang != "en-US",
+                baseurl: self.base_url.resolve(lang),
+                is_translation: lang != ENGLISH,
                 lang: lang.to_string(),
                 pontoon_enabled: PONTOON_ENABLED,
                 assets: &self.assets,

@@ -5,6 +5,7 @@ use handlebars::{
 use serde::Serialize;
 use std::{collections::HashSet, sync::LazyLock};
 
+use crate::ENGLISH;
 use handlebars_fluent::{
     fluent_bundle::{FluentResource, FluentValue, concurrent::FluentBundle},
     loader::SimpleLoader,
@@ -215,7 +216,7 @@ impl HelperDef for TeamHelper {
         let team_name = team.as_json()["name"].as_str().unwrap();
 
         // English uses the team data directly, so that it gets autoupdated
-        if lang == "en-US" {
+        if lang == ENGLISH {
             let english = param.english(team.as_json());
             out.write(english)
                 .map_err(|e| RenderErrorReason::NestedError(Box::new(e)))?;
