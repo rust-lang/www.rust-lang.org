@@ -2,7 +2,6 @@ use handlebars::{
     Context, Handlebars, Helper, HelperDef, HelperResult, Output, RenderContext, RenderErrorReason,
 };
 
-use rocket::request::FromParam;
 use serde::Serialize;
 use std::{collections::HashSet, sync::LazyLock};
 
@@ -233,19 +232,5 @@ impl HelperDef for TeamHelper {
                 .map_err(|e| RenderErrorReason::NestedError(Box::new(e)))?;
         }
         Ok(())
-    }
-}
-
-pub struct SupportedLocale(pub String);
-
-impl<'r> FromParam<'r> for SupportedLocale {
-    type Error = ();
-
-    fn from_param(param: &'r str) -> Result<Self, Self::Error> {
-        if SUPPORTED_LOCALES.contains(param) {
-            Ok(SupportedLocale(param.parse().map_err(|_| ())?))
-        } else {
-            Err(())
-        }
     }
 }

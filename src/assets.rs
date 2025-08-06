@@ -1,7 +1,7 @@
 use crate::fs::ensure_directory;
 use anyhow::Context;
-use rocket::serde::Serialize;
 use sass_rs::{Options, compile_file};
+use serde::Serialize;
 use std::fs;
 use std::hash::{DefaultHasher, Hasher};
 use std::path::Path;
