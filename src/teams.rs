@@ -1,7 +1,7 @@
-use percent_encoding::{AsciiSet, NON_ALPHANUMERIC, utf8_percent_encode};
-use rocket_dyn_templates::handlebars::{
+use handlebars::{
     Context, Handlebars, Helper, HelperResult, Output, RenderContext, RenderErrorReason,
 };
+use percent_encoding::{AsciiSet, NON_ALPHANUMERIC, utf8_percent_encode};
 use rust_team_data::v1::{BASE_URL, Team, TeamKind, Teams};
 use serde::Serialize;
 use std::cmp::Reverse;
@@ -66,6 +66,8 @@ impl RustTeams {
             // teams.
             .filter(|team| team.kind == TeamKind::Team && team.subteam_of.is_none())
             .map(|team| IndexTeam {
+                section: kind_to_str(team.kind),
+                page_name: team.website_data.clone().unwrap().page,
                 url: format!(
                     "{}/{}",
                     kind_to_str(team.kind),
@@ -81,13 +83,15 @@ impl RustTeams {
         IndexData { teams }
     }
 
-    pub fn page_data(&self, section: &str, team_name: &str) -> anyhow::Result<PageData> {
+    pub fn page_data(&self, section: &str, team_page_name: &str) -> anyhow::Result<PageData> {
         let teams = self.0.clone();
 
         // Find the main team first
         let main_team = teams
             .iter()
-            .filter(|team| team.website_data.as_ref().map(|ws| ws.page.as_str()) == Some(team_name))
+            .filter(|team| {
+                team.website_data.as_ref().map(|ws| ws.page.as_str()) == Some(team_page_name)
+            })
             .find(|team| kind_to_str(team.kind) == section)
             .cloned()
             .ok_or(TeamNotFound)?;
@@ -187,19 +191,21 @@ impl RustTeams {
 
 #[derive(Serialize)]
 pub struct IndexData {
-    teams: Vec<IndexTeam>,
+    pub teams: Vec<IndexTeam>,
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug)]
 pub struct IndexTeam {
     #[serde(flatten)]
-    team: Team,
-    url: String,
+    pub team: Team,
+    pub url: String,
+    pub section: &'static str,
+    pub page_name: String,
 }
 
 #[derive(Serialize)]
 pub struct PageData {
-    pub team: Team,
+    team: Team,
     zulip_domain: &'static str,
     subteams: Vec<Team>,
     wgs: Vec<Team>,
