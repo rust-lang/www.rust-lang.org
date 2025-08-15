@@ -52,6 +52,11 @@
         <link rel="alternate" href="https://www.rust-lang.org/" hreflang="x-default">
     {{/if}}
 
+    <script type="text/javascript">
+      {{!-- Pass the (untranslated) base URL path to languages.js --}}
+      window.RUST_BASE_URL = "{{baseurl_assets}}";
+    </script>
+
     <!-- Custom Highlight pack with: Rust, Markdown, TOML, Bash, JSON, YAML,
          and plaintext. -->
     <script src="{{baseurl_assets}}/static/scripts/highlight.pack.js" defer></script>

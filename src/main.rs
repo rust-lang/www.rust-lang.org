@@ -68,7 +68,13 @@ fn setup_handlebars() -> anyhow::Result<Handlebars<'static>> {
 }
 
 fn main() -> anyhow::Result<()> {
+    // It is possible to set a base URL for the web.
+    // This should set to the path under which the web is hosted.
+    // For example, if the web is hosted at https://foo.bar/rust-web/, then BASE_URL should be set
+    // to "/rust-web".
+    // This is mainly useful to host the website e.g. on GitHub pages without a custom CNAME.
     let base_url = std::env::var("BASE_URL").unwrap_or_else(|_| "".to_string());
+    assert!(base_url.is_empty() || base_url.starts_with("/"));
     let base_url = BaseUrl::new(&base_url);
 
     let rust_version = fetch_rust_version()?;
