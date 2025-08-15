@@ -3,7 +3,7 @@ use crate::fs::{copy_dir_all, ensure_directory};
 use crate::i18n::{EXPLICIT_LOCALE_INFO, LocaleInfo, SUPPORTED_LOCALES};
 use crate::rust_version::RustVersion;
 use crate::teams::{PageData, RustTeams};
-use crate::{BaseUrl, ENGLISH, LAYOUT, PONTOON_ENABLED};
+use crate::{BaseUrl, ENGLISH, LAYOUT};
 use anyhow::Context;
 use handlebars::Handlebars;
 use handlebars_fluent::{Loader, SimpleLoader};
@@ -22,7 +22,6 @@ pub struct TemplateCtx<'a, T: Serialize> {
     data: &'a T,
     lang: String,
     baseurl: String,
-    pontoon_enabled: bool,
     assets: &'a AssetFiles,
     locales: &'static [LocaleInfo],
     is_translation: bool,
@@ -99,7 +98,6 @@ impl<'a> RenderCtx<'a> {
                 baseurl: self.base_url.resolve(lang),
                 is_translation: lang != ENGLISH,
                 lang: lang.to_string(),
-                pontoon_enabled: PONTOON_ENABLED,
                 assets: &self.assets,
                 locales: EXPLICIT_LOCALE_INFO,
             },

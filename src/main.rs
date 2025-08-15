@@ -19,8 +19,6 @@ mod render;
 mod rust_version;
 mod teams;
 
-static PONTOON_ENABLED: bool = false;
-
 const ZULIP_DOMAIN: &str = "https://rust-lang.zulipchat.com";
 
 static LAYOUT: &str = "components/layout";
