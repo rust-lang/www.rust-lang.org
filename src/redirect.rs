@@ -48,11 +48,11 @@ pub static STATIC_FILES_REDIRECTS: &[(&str, &str)] = &[
     // Pre-2018 whitepaper locations
     (
         "pdfs/Rust-npm-Whitepaper.pdf",
-        "/static/pdfs/Rust-npm-Whitepaper.pdf",
+        "static/pdfs/Rust-npm-Whitepaper.pdf",
     ),
     (
         "pdfs/Rust-Tilde-Whitepaper.pdf",
-        "/static/pdfs/Rust-Tilde-Whitepaper.pdf",
+        "static/pdfs/Rust-Tilde-Whitepaper.pdf",
     ),
 ];
 
@@ -83,9 +83,11 @@ static PRE_2018_LOCALES: &[&str] = &[
 
 pub fn create_redirects(ctx: &RenderCtx) -> anyhow::Result<()> {
     // Static file redirects, no need to support languages
-    // for (src, dst) in STATIC_FILES_REDIRECTS {
-    //     render_redirect(ctx, src, dst)?;
-    // }
+    // We cannot really make non-HTML redirects easily, so we just duplicate the file contents
+    // under both paths.
+    for (src, dst) in STATIC_FILES_REDIRECTS {
+        ctx.copy_asset_file(dst, src)?;
+    }
 
     // if let Some((_, dest)) = STATIC_FILES_REDIRECTS.iter().find(|(src, _)| src == &path) {
     //     return Some(Redirect::permanent(*dest));
