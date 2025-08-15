@@ -214,13 +214,19 @@ pub struct PageData {
     other_teams: Vec<Team>,
 }
 
-pub async fn load_rust_teams() -> anyhow::Result<RustTeams> {
+pub fn load_rust_teams() -> anyhow::Result<RustTeams> {
     println!("Downloading Team API data");
-    let resp: Teams = reqwest::get(format!("{BASE_URL}/teams.json"))
-        .await?
-        .error_for_status()?
-        .json()
-        .await?;
+
+    let mut response = ureq::get(format!("{BASE_URL}/teams.json")).call()?;
+    if !response.status().is_success() {
+        return Err(anyhow::anyhow!(
+            "Failed to download team API (HTTP status {}): {}",
+            response.status(),
+            response.body_mut().read_to_string()?
+        ));
+    }
+
+    let resp: Teams = response.body_mut().read_json()?;
 
     Ok(RustTeams(resp.teams.into_values().collect()))
 }

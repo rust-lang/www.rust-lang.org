@@ -65,13 +65,12 @@ fn setup_handlebars() -> anyhow::Result<Handlebars<'static>> {
     Ok(handlebars)
 }
 
-#[tokio::main]
-async fn main() -> anyhow::Result<()> {
+fn main() -> anyhow::Result<()> {
     let base_url = std::env::var("BASE_URL").unwrap_or_else(|_| "".to_string());
     let base_url = BaseUrl::new(&base_url);
 
-    let rust_version = fetch_rust_version().await?;
-    let teams = load_rust_teams().await?;
+    let rust_version = fetch_rust_version()?;
+    let teams = load_rust_teams()?;
 
     // Prepare build directory
     let output_dir = PathBuf::from("html");
