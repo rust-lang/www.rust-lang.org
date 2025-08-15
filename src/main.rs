@@ -36,7 +36,11 @@ impl BaseUrl {
         Self { url }
     }
 
-    fn resolve(&self, lang: &str) -> String {
+    fn get(&self) -> &str {
+        &self.url
+    }
+
+    fn resolve_translated(&self, lang: &str) -> String {
         if lang == ENGLISH {
             self.url.clone()
         } else {
@@ -76,7 +80,7 @@ fn main() -> anyhow::Result<()> {
     std::fs::create_dir_all(&output_dir)?;
 
     let root_dir = Path::new(".");
-    let assets = compile_assets(root_dir, &output_dir, &base_url.resolve(ENGLISH))?;
+    let assets = compile_assets(root_dir, &output_dir, &base_url.get())?;
     let handlebars = setup_handlebars()?;
 
     let ctx = RenderCtx {

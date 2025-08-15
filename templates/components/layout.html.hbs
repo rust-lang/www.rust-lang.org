@@ -28,20 +28,20 @@
     <meta property="og:locale" content="en_US" />
 
     <!-- styles -->
-    <link rel="stylesheet" href="{{baseurl}}/static/styles/a11y-dark.css"/>
+    <link rel="stylesheet" href="{{baseurl_assets}}/static/styles/a11y-dark.css"/>
     <link rel="stylesheet" href="{{assets.css.vendor}}"/>
     <link rel="stylesheet" href="{{assets.css.fonts}}"/>
     <link rel="stylesheet" href="{{assets.css.app}}"/>
 
     <!-- favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{baseurl}}/static/images/apple-touch-icon.png?v=ngJW8jGAmR">
-    <link rel="icon" sizes="16x16" type="image/png" href="{{baseurl}}/static/images/favicon-16x16.png">
-    <link rel="icon" sizes="32x32" type="image/png" href="{{baseurl}}/static/images/favicon-32x32.png">
-    <link rel="icon" type="image/svg+xml" href="{{baseurl}}/static/images/favicon.svg">
-    <link rel="manifest" href="{{baseurl}}/static/images/site.webmanifest?v=ngJW8jGAmR">
-    <link rel="mask-icon" href="{{baseurl}}/static/images/safari-pinned-tab.svg?v=ngJW8jGAmR" color="#000000">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{baseurl_assets}}/static/images/apple-touch-icon.png?v=ngJW8jGAmR">
+    <link rel="icon" sizes="16x16" type="image/png" href="{{baseurl_assets}}/static/images/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="{{baseurl_assets}}/static/images/favicon-32x32.png">
+    <link rel="icon" type="image/svg+xml" href="{{baseurl_assets}}/static/images/favicon.svg">
+    <link rel="manifest" href="{{baseurl_assets}}/static/images/site.webmanifest?v=ngJW8jGAmR">
+    <link rel="mask-icon" href="{{baseurl_assets}}/static/images/safari-pinned-tab.svg?v=ngJW8jGAmR" color="#000000">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-config" content="{{baseurl}}/static/images/browserconfig.xml?v=ngJW8jGAmR">
+    <meta name="msapplication-config" content="{{baseurl_assets}}/static/images/browserconfig.xml?v=ngJW8jGAmR">
     <meta name="theme-color" content="#ffffff">
 
     {{#if is_landing}}
@@ -54,8 +54,8 @@
 
     <!-- Custom Highlight pack with: Rust, Markdown, TOML, Bash, JSON, YAML,
          and plaintext. -->
-    <script src="{{baseurl}}/static/scripts/highlight.pack.js" defer></script>
-    <script src="{{baseurl}}/static/scripts/init.js" defer></script>
+    <script src="{{baseurl_assets}}/static/scripts/highlight.pack.js" defer></script>
+    <script src="{{baseurl_assets}}/static/scripts/init.js" defer></script>
   </head>
   <body>
     {{> components/nav}}
@@ -63,6 +63,6 @@
         {{~> page}}
     </main>
     {{> components/footer}}
-    <script src="{{baseurl}}/static/scripts/languages.js"></script>
+    <script src="{{baseurl_assets}}/static/scripts/languages.js"></script>
   </body>
 </html>

@@ -21,7 +21,12 @@ pub struct TemplateCtx<'a, T: Serialize> {
     is_landing: bool,
     data: &'a T,
     lang: String,
+    /// Base URL for the current page, e.g. /foo/bar
+    /// This includes translations, so it can be also /foo/bar/es
     baseurl: String,
+    /// Base URL for the current page, e.g. /foo/bar
+    /// This **does not** include translations, and is used for the <...>/static links.
+    baseurl_assets: String,
     assets: &'a AssetFiles,
     locales: &'static [LocaleInfo],
     is_translation: bool,
@@ -95,7 +100,8 @@ impl<'a> RenderCtx<'a> {
                 parent: LAYOUT,
                 is_landing: false,
                 data,
-                baseurl: self.base_url.resolve(lang),
+                baseurl: self.base_url.resolve_translated(lang),
+                baseurl_assets: self.base_url.get().to_string(),
                 is_translation: lang != ENGLISH,
                 lang: lang.to_string(),
                 assets: &self.assets,
