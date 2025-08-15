@@ -1,72 +1,73 @@
-use percent_encoding::{AsciiSet, NON_ALPHANUMERIC, utf8_percent_encode};
-use rocket_dyn_templates::handlebars::{
+use handlebars::{
     Context, Handlebars, Helper, HelperResult, Output, RenderContext, RenderErrorReason,
 };
+use percent_encoding::{AsciiSet, NON_ALPHANUMERIC, utf8_percent_encode};
 use rust_team_data::v1::{BASE_URL, Team, TeamKind, Teams};
 use serde::Serialize;
 use std::cmp::Reverse;
 use std::collections::HashMap;
 use std::error::Error;
 use std::fmt;
-use std::time::Instant;
-
-use crate::cache::{Cache, Cached};
-
-#[derive(Default, Serialize)]
-pub struct IndexData {
-    teams: Vec<IndexTeam>,
-}
-
-#[derive(Serialize)]
-struct IndexTeam {
-    #[serde(flatten)]
-    team: Team,
-    url: String,
-}
-
-#[derive(Serialize)]
-pub struct PageData {
-    pub team: Team,
-    zulip_domain: &'static str,
-    subteams: Vec<Team>,
-    wgs: Vec<Team>,
-    project_groups: Vec<Team>,
-    // Marker teams and other kinds of groups that have a website entry
-    other_teams: Vec<Team>,
-}
-
-#[derive(Clone)]
-struct Data {
-    teams: Vec<Team>,
-}
 
 const ENCODING_SET: AsciiSet = NON_ALPHANUMERIC.remove(b'-').remove(b'_');
 
-impl Data {
-    async fn load(teams_cache: &Cache<RustTeams>) -> Result<Self, Box<dyn Error + Send + Sync>> {
-        Ok(Data {
-            teams: RustTeams::get(teams_cache)
-                .await
-                .0
-                .ok_or_else(|| Box::<dyn Error + Send + Sync>::from("failed to load teams"))?,
-        })
-    }
+pub fn encode_zulip_stream(
+    h: &Helper,
+    _: &Handlebars,
+    _: &Context,
+    _: &mut RenderContext,
+    out: &mut dyn Output,
+) -> HelperResult {
+    let zulip_stream = if let Some(p) = h.param(0) {
+        p.value()
+    } else {
+        return Err(RenderErrorReason::ParamNotFoundForIndex(
+            "{{encode-zulip-stream takes 1 parameter}}",
+            0,
+        )
+        .into());
+    };
+    let zulip_stream = if let Some(s) = zulip_stream.as_str() {
+        s
+    } else {
+        return Err(RenderErrorReason::ParamTypeMismatchForName(
+            "encode-zulip-stream",
+            "0".into(),
+            "string".into(),
+        )
+        .into());
+    };
 
+    // https://github.com/zulip/zulip/blob/159641bab8c248f5b72a4e736462fb0b48e7fa24/static/js/hash_util.js#L20-L25
+    let stream_encoded = utf8_percent_encode(zulip_stream, &ENCODING_SET)
+        .to_string()
+        .replace('%', ".");
+
+    out.write(&stream_encoded)?;
+    Ok(())
+}
+
+#[derive(Debug, Clone)]
+pub struct RustTeams(pub Vec<Team>);
+
+impl RustTeams {
     #[cfg(test)]
     fn dummy(teams: Vec<Team>) -> Self {
-        Data { teams }
+        RustTeams(teams)
     }
 
-    fn index_data(self) -> Result<IndexData, Box<dyn Error + Send + Sync>> {
-        let mut data = IndexData::default();
-
-        self.teams
+    pub fn index_data(&self) -> IndexData {
+        let mut teams = self
+            .0
+            .clone()
             .into_iter()
             .filter(|team| team.website_data.is_some())
             // On the main page, show the leadership-council and all top-level
             // teams.
             .filter(|team| team.kind == TeamKind::Team && team.subteam_of.is_none())
             .map(|team| IndexTeam {
+                section: kind_to_str(team.kind),
+                page_name: team.website_data.clone().unwrap().page,
                 url: format!(
                     "{}/{}",
                     kind_to_str(team.kind),
@@ -74,24 +75,23 @@ impl Data {
                 ),
                 team,
             })
-            .for_each(|team| data.teams.push(team));
+            .collect::<Vec<IndexTeam>>();
 
-        data.teams.sort_by_key(|index_team| {
+        teams.sort_by_key(|index_team| {
             Reverse(index_team.team.website_data.as_ref().unwrap().weight)
         });
-        Ok(data)
+        IndexData { teams }
     }
 
-    pub fn page_data(
-        self,
-        section: &str,
-        team_name: &str,
-    ) -> Result<PageData, Box<dyn Error + Send + Sync>> {
+    pub fn page_data(&self, section: &str, team_page_name: &str) -> anyhow::Result<PageData> {
+        let teams = self.0.clone();
+
         // Find the main team first
-        let main_team = self
-            .teams
+        let main_team = teams
             .iter()
-            .filter(|team| team.website_data.as_ref().map(|ws| ws.page.as_str()) == Some(team_name))
+            .filter(|team| {
+                team.website_data.as_ref().map(|ws| ws.page.as_str()) == Some(team_page_name)
+            })
             .find(|team| kind_to_str(team.kind) == section)
             .cloned()
             .ok_or(TeamNotFound)?;
@@ -116,13 +116,12 @@ impl Data {
         let mut project_groups = Vec::new();
         let mut other_teams = Vec::new();
 
-        let superteams: HashMap<_, _> = self
-            .teams
+        let superteams: HashMap<_, _> = teams
             .iter()
             .filter_map(|team| Some((team.name.clone(), team.subteam_of.clone()?)))
             .collect();
 
-        self.teams
+        teams
             .into_iter()
             .filter(|team| team.website_data.is_some())
             .filter(|team| {
@@ -190,89 +189,49 @@ impl Data {
     }
 }
 
-pub fn encode_zulip_stream(
-    h: &Helper,
-    _: &Handlebars,
-    _: &Context,
-    _: &mut RenderContext,
-    out: &mut dyn Output,
-) -> HelperResult {
-    let zulip_stream = if let Some(p) = h.param(0) {
-        p.value()
-    } else {
-        return Err(RenderErrorReason::ParamNotFoundForIndex(
-            "{{encode-zulip-stream takes 1 parameter}}",
-            0,
-        )
-        .into());
-    };
-    let zulip_stream = if let Some(s) = zulip_stream.as_str() {
-        s
-    } else {
-        return Err(RenderErrorReason::ParamTypeMismatchForName(
-            "encode-zulip-stream",
-            "0".into(),
-            "string".into(),
-        )
-        .into());
-    };
-
-    // https://github.com/zulip/zulip/blob/159641bab8c248f5b72a4e736462fb0b48e7fa24/static/js/hash_util.js#L20-L25
-    let stream_encoded = utf8_percent_encode(zulip_stream, &ENCODING_SET)
-        .to_string()
-        .replace('%', ".");
-
-    out.write(&stream_encoded)?;
-    Ok(())
+#[derive(Serialize)]
+pub struct IndexData {
+    pub teams: Vec<IndexTeam>,
 }
 
-pub async fn index_data(
-    teams_cache: &Cache<RustTeams>,
-) -> Result<IndexData, Box<dyn Error + Send + Sync>> {
-    Data::load(teams_cache).await?.index_data()
+#[derive(Serialize, Debug)]
+pub struct IndexTeam {
+    #[serde(flatten)]
+    pub team: Team,
+    pub url: String,
+    pub section: &'static str,
+    pub page_name: String,
 }
 
-pub async fn page_data(
-    section: &str,
-    team_name: &str,
-    teams_cache: &Cache<RustTeams>,
-) -> Result<PageData, Box<dyn Error + Send + Sync>> {
-    Data::load(teams_cache).await?.page_data(section, team_name)
+#[derive(Serialize)]
+pub struct PageData {
+    team: Team,
+    zulip_domain: &'static str,
+    subteams: Vec<Team>,
+    wgs: Vec<Team>,
+    project_groups: Vec<Team>,
+    // Marker teams and other kinds of groups that have a website entry
+    other_teams: Vec<Team>,
 }
 
-#[derive(Debug, Clone)]
-pub struct RustTeams(pub Option<Vec<Team>>, pub Instant);
+pub fn load_rust_teams() -> anyhow::Result<RustTeams> {
+    println!("Downloading Team API data");
 
-impl Default for RustTeams {
-    fn default() -> Self {
-        Self(Default::default(), Instant::now())
+    let mut response = ureq::get(format!("{BASE_URL}/teams.json")).call()?;
+    if !response.status().is_success() {
+        return Err(anyhow::anyhow!(
+            "Failed to download team API (HTTP status {}): {}",
+            response.status(),
+            response.body_mut().read_to_string()?
+        ));
     }
+
+    let resp: Teams = response.body_mut().read_json()?;
+
+    Ok(RustTeams(resp.teams.into_values().collect()))
 }
 
-impl Cached for RustTeams {
-    fn get_timestamp(&self) -> Instant {
-        self.1
-    }
-    async fn fetch() -> Result<Self, Box<dyn Error + Send + Sync>> {
-        let resp: Teams = reqwest::get(format!("{BASE_URL}/teams.json"))
-            .await?
-            .error_for_status()?
-            .json()
-            .await?;
-
-        Ok(RustTeams(
-            Some(
-                resp.teams
-                    .into_iter()
-                    .map(|(_key, value)| value)
-                    .collect::<Vec<Team>>(),
-            ),
-            Instant::now(),
-        ))
-    }
-}
-
-fn kind_to_str(kind: TeamKind) -> &'static str {
+pub(crate) fn kind_to_str(kind: TeamKind) -> &'static str {
     match kind {
         TeamKind::Team => "teams",
         TeamKind::WorkingGroup => "wgs",
@@ -299,7 +258,7 @@ impl fmt::Display for TeamNotFound {
 
 #[cfg(test)]
 mod tests {
-    use super::{Data, TeamNotFound};
+    use super::{RustTeams, TeamNotFound};
     use rust_team_data::v1::{Team, TeamKind, TeamMember, TeamWebsite};
 
     fn dummy_team(name: &str) -> Team {
@@ -353,9 +312,9 @@ mod tests {
     fn test_index_data() {
         let mut foo = dummy_team("foo");
         foo.kind = TeamKind::WorkingGroup;
-        let data = Data::dummy(vec![foo, dummy_team("bar")]);
+        let data = RustTeams::dummy(vec![foo, dummy_team("bar")]);
 
-        let res = data.index_data().unwrap();
+        let res = data.index_data();
         assert_eq!(res.teams.len(), 1);
         assert_eq!(res.teams[0].url, "teams/bar");
         assert_eq!(res.teams[0].team.name, "bar");
@@ -365,9 +324,9 @@ mod tests {
     fn test_index_subteams_are_hidden() {
         let mut foo = dummy_team("foo");
         foo.subteam_of = Some(String::new());
-        let data = Data::dummy(vec![foo]);
+        let data = RustTeams::dummy(vec![foo]);
 
-        assert_eq!(data.index_data().unwrap().teams.len(), 0);
+        assert_eq!(data.index_data().teams.len(), 0);
     }
 
     #[test]
@@ -390,7 +349,7 @@ mod tests {
         other_wg.subteam_of = Some("other".into());
         other_wg.kind = TeamKind::WorkingGroup;
 
-        let data = Data::dummy(vec![
+        let data = RustTeams::dummy(vec![
             main,
             subteam,
             subteam2,
@@ -419,7 +378,7 @@ mod tests {
         let foo = dummy_team("foo");
         let mut bar = dummy_team("bar");
         bar.kind = TeamKind::WorkingGroup;
-        let data = Data::dummy(vec![foo, bar]);
+        let data = RustTeams::dummy(vec![foo, bar]);
 
         assert!(
             data.clone()
@@ -447,7 +406,7 @@ mod tests {
     fn test_subteams_cant_be_loaded() {
         let mut foo = dummy_team("foo");
         foo.subteam_of = Some("bar".into());
-        let data = Data::dummy(vec![foo, dummy_team("bar")]);
+        let data = RustTeams::dummy(vec![foo, dummy_team("bar")]);
 
         assert!(
             data.page_data("teams", "foo")

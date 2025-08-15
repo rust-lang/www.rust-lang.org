@@ -12,11 +12,25 @@ function langChange() {
     } else {
         lang = `/${lang}`;
     }
+
+    // Base URL of the web, without a leading slash.
+    // For example "" or "/foo/bar".
+    let base_url = window.RUST_BASE_URL;
+
+    // If we have a path like /foo/bar/<lang>/<page>/<subpage>, we want to extract only
+    // /<page>/<subpage>
     let path = window.location.pathname;
-    if (current_lang != "en-US") {
-        path = `/${window.location.pathname.split('/').slice(2).join('/')}`;
+    // Remove /foo/bar
+    if (path.startsWith(base_url)) {
+        path = path.slice(base_url.length);
     }
-    window.location = `${lang}${path}`;
+    // Remove /<lang>
+    if (current_lang != "en-US") {
+        path = path.slice(current_lang.length + 1); // +1 for leading /
+    }
+
+    // Now reconstruct back /foo/bar
+    window.location = `${base_url}${lang}${path}`;
 }
 
 nav_dropdown.onchange = langChange;
