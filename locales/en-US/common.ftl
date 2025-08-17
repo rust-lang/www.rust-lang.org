@@ -9,6 +9,7 @@ why-rust = Why Rust?
 production-use = Production use
 learn-more = Learn More
 zulip = Zulip
+discord = Discord
 mastodon = Mastodon
 bluesky = Bluesky
 
