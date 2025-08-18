@@ -190,7 +190,7 @@ pub fn render_governance(render_ctx: &RenderCtx) -> anyhow::Result<()> {
                 render_ctx
                     .page(
                         "governance/group",
-                        &format!("governance-team-{}-title", team.team.name),
+                        &format!("governance-team-{}-name", team.team.name),
                         &data,
                         lang,
                     )
