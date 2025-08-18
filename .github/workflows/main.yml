@@ -36,7 +36,7 @@ jobs:
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
-          path: html
+          path: build
 
   deploy:
     needs: [ build ]

@@ -81,7 +81,7 @@ fn main() -> anyhow::Result<()> {
     let teams = load_rust_teams()?;
 
     // Prepare build directory
-    let output_dir = PathBuf::from("html");
+    let output_dir = PathBuf::from("build");
     let _ = std::fs::remove_dir_all(&output_dir);
     std::fs::create_dir_all(&output_dir)?;
 
