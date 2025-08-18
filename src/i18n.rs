@@ -1,11 +1,11 @@
-use rocket_dyn_templates::handlebars::{
+use handlebars::{
     Context, Handlebars, Helper, HelperDef, HelperResult, Output, RenderContext, RenderErrorReason,
 };
 
-use rocket::request::FromParam;
 use serde::Serialize;
 use std::{collections::HashSet, sync::LazyLock};
 
+use crate::ENGLISH;
 use handlebars_fluent::{
     fluent_bundle::{FluentResource, FluentValue, concurrent::FluentBundle},
     loader::SimpleLoader,
@@ -216,7 +216,7 @@ impl HelperDef for TeamHelper {
         let team_name = team.as_json()["name"].as_str().unwrap();
 
         // English uses the team data directly, so that it gets autoupdated
-        if lang == "en-US" {
+        if lang == ENGLISH {
             let english = param.english(team.as_json());
             out.write(english)
                 .map_err(|e| RenderErrorReason::NestedError(Box::new(e)))?;
@@ -233,19 +233,5 @@ impl HelperDef for TeamHelper {
                 .map_err(|e| RenderErrorReason::NestedError(Box::new(e)))?;
         }
         Ok(())
-    }
-}
-
-pub struct SupportedLocale(pub String);
-
-impl<'r> FromParam<'r> for SupportedLocale {
-    type Error = ();
-
-    fn from_param(param: &'r str) -> Result<Self, Self::Error> {
-        if SUPPORTED_LOCALES.contains(param) {
-            Ok(SupportedLocale(param.parse().map_err(|_| ())?))
-        } else {
-            Err(())
-        }
     }
 }
