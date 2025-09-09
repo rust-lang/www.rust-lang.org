@@ -259,7 +259,7 @@ pub fn render_redirect(render_ctx: &RenderCtx, from: &str, to: &str) -> anyhow::
     }
 
     let url = if !to.starts_with("http") {
-        format!("/{to}")
+        format!("{}/{to}", render_ctx.base_url.get())
     } else {
         to.to_string()
     };
