@@ -1,5 +1,9 @@
 name: CI
-on: [ push, pull_request ]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
 env:
   RUST_BACKTRACE: 1
 jobs:
@@ -40,7 +44,7 @@ jobs:
 
   deploy:
     needs: [ build ]
-    if: github.ref == 'refs/heads/master'
+    if: github.action == 'push' && github.ref == 'refs/heads/master'
     environment:
       name: github-pages
     permissions:
