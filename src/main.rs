@@ -84,7 +84,7 @@ fn main() -> anyhow::Result<()> {
     std::fs::create_dir_all(&output_dir)?;
 
     let root_dir = Path::new(".");
-    let assets = compile_assets(root_dir, &output_dir, &base_url.get())?;
+    let assets = compile_assets(root_dir, &output_dir, base_url.get())?;
     let handlebars = setup_handlebars()?;
 
     let ctx = RenderCtx {
