@@ -1,4 +1,3 @@
-use crate::BaseUrl;
 use crate::fs::ensure_directory;
 use anyhow::Context;
 use sass_rs::{Options, compile_file};

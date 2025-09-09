@@ -1,5 +1,3 @@
-#![allow(unused)]
-
 use crate::assets::compile_assets;
 use crate::i18n::{TeamHelper, create_loader};
 use crate::redirect::create_redirects;
