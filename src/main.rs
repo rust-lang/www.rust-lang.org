@@ -7,6 +7,7 @@ use crate::teams::{encode_zulip_stream, load_rust_teams};
 use anyhow::Context;
 use handlebars::{DirectorySourceOptions, Handlebars};
 use handlebars_fluent::FluentHelper;
+use std::ffi::OsStr;
 use std::path::{Path, PathBuf};
 
 mod assets;
@@ -94,7 +95,7 @@ fn main() -> anyhow::Result<()> {
         rust_version,
         teams,
         handlebars,
-        output_dir,
+        output_dir: output_dir.clone(),
         base_url,
     };
     ctx.copy_asset_dir("static", "static")?;
@@ -113,5 +114,42 @@ fn main() -> anyhow::Result<()> {
     ctx.page("404", "", &(), ENGLISH).render("404.html")?;
     create_redirects(&ctx)?;
 
+    sanity_check_index_pages(&output_dir)?;
+
+    Ok(())
+}
+
+/// Make sure that there are no instances where we would have both `<page>.html` and
+/// a `<page>` directory.
+fn sanity_check_index_pages(directory: &Path) -> anyhow::Result<()> {
+    // Find all .html files
+    let mut html_files = vec![];
+    gather_html_files(directory, &mut html_files)?;
+
+    for file in html_files {
+        let basename = file.file_stem().unwrap();
+        let dir = file.parent().unwrap().join(basename);
+        if dir.is_dir() {
+            return Err(anyhow::anyhow!(
+                "Both the `{file}` file and the `{dir}` directory exist, move `{file}` to `{dir_index}` instead",
+                file = file.display(),
+                dir = dir.display(),
+                dir_index = dir.join("index.html").display()
+            ));
+        }
+    }
+
+    Ok(())
+}
+
+fn gather_html_files(path: &Path, files: &mut Vec<PathBuf>) -> anyhow::Result<()> {
+    if path.is_file() && path.extension() == Some(OsStr::new("html")) {
+        files.push(path.to_path_buf());
+    } else if path.is_dir() {
+        for entry in path.read_dir()? {
+            let entry = entry?;
+            gather_html_files(&entry.path(), files)?;
+        }
+    }
     Ok(())
 }
