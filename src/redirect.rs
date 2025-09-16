@@ -17,7 +17,6 @@ pub static PAGE_REDIRECTS: &[(&str, &str)] = &[
     ("documentation.html", "learn"),
     ("downloads.html", "tools/install"),
     ("friends.html", "production"),
-    ("index.html", ""),
     ("install.html", "tools/install"),
     ("legal.html", "policies"),
     ("security.html", "policies/security"),

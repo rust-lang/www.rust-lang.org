@@ -50,6 +50,14 @@ impl<'a, T: Serialize> PageCtx<'a, T> {
 
         let out_path = self.output_dir.join(path);
         ensure_directory(&out_path)?;
+
+        if out_path.is_file() {
+            return Err(anyhow::anyhow!(
+                "Trying to render file {}, which already exists",
+                out_path.display()
+            ));
+        }
+
         let mut output_file = BufWriter::new(
             File::create(&out_path)
                 .with_context(|| anyhow::anyhow!("Cannot create file at {}", path.display()))?,
