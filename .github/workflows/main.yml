@@ -1,5 +1,9 @@
 name: CI
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
 env:
   RUST_BACKTRACE: 1
 jobs:
@@ -12,8 +16,7 @@ jobs:
         with:
           components: rustfmt
 
-      - name: Formatting
-        run: cargo fmt --all -- --check
+      - uses: Swatinem/rust-cache@v2
 
       - name: Test
         run: |
@@ -22,3 +25,33 @@ jobs:
           cargo build --all --locked
           cargo clippy -- --deny warnings
           cargo test --all --locked
+
+      - name: Formatting
+        run: cargo fmt --all -- --check
+
+      - name: Build website
+        run: cargo run
+        env:
+          BASE_URL: "/www.rust-lang.org"
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+
+  deploy:
+    needs: [ build ]
+    if: github.action == 'push' && github.ref == 'refs/heads/master'
+    environment:
+      name: github-pages
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
