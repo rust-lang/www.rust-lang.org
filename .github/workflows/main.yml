@@ -4,6 +4,11 @@ on:
     branches:
       - master
   pull_request:
+  # Allow rebuilding/redeploying the web manually
+  workflow_dispatch:
+  schedule:
+    # Rebuild the web periodically at 22:00 UTC to update team API contents and Rust version
+    - cron: '0 22 * * *'
 env:
   RUST_BACKTRACE: 1
 jobs:
@@ -44,7 +49,7 @@ jobs:
 
   deploy:
     needs: [ build ]
-    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
     environment:
       name: github-pages
     permissions:
