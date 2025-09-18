@@ -261,6 +261,12 @@ pub fn render_directory(render_ctx: &RenderCtx, category: &str) -> anyhow::Resul
 }
 
 pub fn render_redirect(render_ctx: &RenderCtx, from: &str, to: &str) -> anyhow::Result<()> {
+    if from == format!("{to}.html") || format!("{from}.html") == to {
+        return Err(anyhow::anyhow!(
+            "Trying to setup redirect from {from} to {to}, which would alias"
+        ));
+    }
+
     #[derive(Serialize)]
     struct Data {
         url: String,

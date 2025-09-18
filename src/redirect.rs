@@ -2,7 +2,6 @@ use crate::render::{RenderCtx, render_redirect};
 
 pub static PAGE_REDIRECTS: &[(&str, &str)] = &[
     // Pre-2018 website pages
-    ("community.html", "community"),
     ("conduct.html", "policies/code-of-conduct"),
     ("contribute-bugs.html", "community"),
     ("contribute-community.html", "community"),
