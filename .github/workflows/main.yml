@@ -37,7 +37,7 @@ jobs:
       - name: Build website
         run: cargo run
         env:
-          BASE_URL: "/www.rust-lang.org"
+          BASE_URL: "/"
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
