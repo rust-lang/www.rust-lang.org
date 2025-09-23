@@ -39,6 +39,9 @@ jobs:
         env:
           BASE_URL: "/"
 
+      - name: Disable Jekyll
+        run: touch build/.nojekyll
+
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
