@@ -1,3 +1,4 @@
+use crate::utils::fetch;
 use handlebars::{
     Context, Handlebars, Helper, HelperResult, Output, RenderContext, RenderErrorReason,
 };
@@ -48,17 +49,23 @@ pub fn encode_zulip_stream(
 }
 
 #[derive(Debug, Clone)]
-pub struct RustTeams(pub Vec<Team>);
+pub struct RustTeams {
+    pub teams: Vec<Team>,
+    pub archived_teams: Vec<Team>,
+}
 
 impl RustTeams {
     #[cfg(test)]
     fn dummy(teams: Vec<Team>) -> Self {
-        RustTeams(teams)
+        RustTeams {
+            teams,
+            archived_teams: vec![],
+        }
     }
 
     pub fn index_data(&self) -> IndexData {
         let mut teams = self
-            .0
+            .teams
             .clone()
             .into_iter()
             .filter(|team| team.website_data.is_some())
@@ -84,7 +91,7 @@ impl RustTeams {
     }
 
     pub fn page_data(&self, section: &str, team_page_name: &str) -> anyhow::Result<PageData> {
-        let teams = self.0.clone();
+        let teams = self.teams.clone();
 
         // Find the main team first
         let main_team = teams
@@ -187,6 +194,16 @@ impl RustTeams {
             other_teams,
         })
     }
+
+    pub fn archived_teams(&self) -> ArchivedTeams {
+        let mut teams: Vec<Team> = self.archived_teams.clone();
+        teams.sort_by_key(|t| {
+            let weight = t.website_data.as_ref().map(|d| d.weight).unwrap_or(0);
+            (Reverse(weight), t.name.clone())
+        });
+
+        ArchivedTeams { teams }
+    }
 }
 
 #[derive(Serialize)]
@@ -214,21 +231,32 @@ pub struct PageData {
     other_teams: Vec<Team>,
 }
 
+#[derive(Serialize)]
+pub struct ArchivedTeams {
+    teams: Vec<Team>,
+}
+
 pub fn load_rust_teams() -> anyhow::Result<RustTeams> {
     println!("Downloading Team API data");
 
-    let mut response = ureq::get(format!("{BASE_URL}/teams.json")).call()?;
-    if !response.status().is_success() {
-        return Err(anyhow::anyhow!(
-            "Failed to download team API (HTTP status {}): {}",
-            response.status(),
-            response.body_mut().read_to_string()?
-        ));
-    }
+    // Parallelize the download to make website build faster
+    let (teams, archived_teams) = std::thread::scope(|scope| {
+        let teams = scope.spawn(|| -> anyhow::Result<Teams> {
+            let response = fetch(&format!("{BASE_URL}/teams.json"))?;
+            Ok(serde_json::from_str(&response)?)
+        });
+        let archived_teams = scope.spawn(|| -> anyhow::Result<Teams> {
+            let response = fetch(&format!("{BASE_URL}/archived-teams.json"))?;
+            Ok(serde_json::from_str(&response)?)
+        });
+        (teams.join().unwrap(), archived_teams.join().unwrap())
+    });
+    let (teams, archived_teams) = (teams?, archived_teams?);
 
-    let resp: Teams = response.body_mut().read_json()?;
-
-    Ok(RustTeams(resp.teams.into_values().collect()))
+    Ok(RustTeams {
+        teams: teams.teams.into_values().collect(),
+        archived_teams: archived_teams.teams.into_values().collect(),
+    })
 }
 
 pub(crate) fn kind_to_str(kind: TeamKind) -> &'static str {

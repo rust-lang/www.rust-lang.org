@@ -1,0 +1,36 @@
+<a id="team-{{team.name}}"></a>
+<div class="w-100 mw-none mw-8-m mw9-l ph3 center f3">
+  <header class="pb0 pt5">
+    <a class="linkable-subheading" href="#team-{{team.name}}">
+      <h2>{{team-text team name}}</h2>
+    </a>
+    <div class="highlight"></div>
+  </header>
+  <div>
+    <div class="mv4 flex flex-column flex-row-l justify-between">
+      <p class="ma0 f2">{{team-text team description}}</p>
+    </div>
+  </div>
+  {{#if team.alumni}}
+    <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
+      {{#each team.alumni as |member|}}
+        <div class="w-100 w-33-l mb3 flex flex-row items-center">
+          <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/{{member.github}}">
+            <img class="w-100 h-100 bg-white br2"
+                 src="https://avatars.githubusercontent.com/{{member.github}}"
+                 alt="{{member.name}}">
+          </a>
+          <div>
+            {{member.name}}
+            <div class="f4">
+              GitHub: <a href="https://github.com/{{member.github}}">{{member.github}}</a>
+            </div>
+            {{#if member.roles}}
+              <div class="f4">{{team-text ../team role (lookup member.roles 0)}}</div>
+            {{/if}}
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  {{/if}}
+</div>

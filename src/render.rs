@@ -207,6 +207,18 @@ pub fn render_governance(render_ctx: &RenderCtx) -> anyhow::Result<()> {
         )?;
     }
 
+    let archived_teams_data = render_ctx.teams.archived_teams();
+    for_all_langs("governance/archived-teams.html", |dst_path, lang| {
+        render_ctx
+            .page(
+                "governance/archived-teams",
+                "governance-archived-teams-title",
+                &archived_teams_data,
+                lang,
+            )
+            .render(dst_path)
+    })?;
+
     Ok(())
 }
 
