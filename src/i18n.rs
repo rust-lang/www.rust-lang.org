@@ -129,8 +129,12 @@ impl TeamHelperParam {
 
     fn english<'a>(&'a self, team: &'a serde_json::Value) -> &'a str {
         match self {
-            TeamHelperParam::Name => team["website_data"]["name"].as_str().unwrap(),
-            TeamHelperParam::Description => team["website_data"]["description"].as_str().unwrap(),
+            TeamHelperParam::Name => team["website_data"]["name"]
+                .as_str()
+                .unwrap_or(team["name"].as_str().unwrap()),
+            TeamHelperParam::Description => team["website_data"]["description"]
+                .as_str()
+                .unwrap_or_default(),
             TeamHelperParam::Role(role_id) => {
                 for role in team["roles"].as_array().unwrap() {
                     if role["id"] == *role_id {
