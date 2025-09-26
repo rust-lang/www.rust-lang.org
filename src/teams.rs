@@ -196,12 +196,7 @@ impl RustTeams {
     }
 
     pub fn archived_teams(&self) -> ArchivedTeams {
-        let mut teams: Vec<Team> = self
-            .archived_teams
-            .iter()
-            .filter(|t| t.website_data.is_some())
-            .cloned()
-            .collect();
+        let mut teams: Vec<Team> = self.archived_teams.clone();
         teams.sort_by_key(|t| t.name.clone());
 
         ArchivedTeams { teams }
