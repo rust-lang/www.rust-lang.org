@@ -194,6 +194,18 @@ impl RustTeams {
             other_teams,
         })
     }
+
+    pub fn archived_teams(&self) -> ArchivedTeams {
+        let mut teams: Vec<Team> = self
+            .archived_teams
+            .iter()
+            .filter(|t| t.website_data.is_some())
+            .cloned()
+            .collect();
+        teams.sort_by_key(|t| t.name.clone());
+
+        ArchivedTeams { teams }
+    }
 }
 
 #[derive(Serialize)]
@@ -219,6 +231,11 @@ pub struct PageData {
     project_groups: Vec<Team>,
     // Marker teams and other kinds of groups that have a website entry
     other_teams: Vec<Team>,
+}
+
+#[derive(Serialize)]
+pub struct ArchivedTeams {
+    teams: Vec<Team>,
 }
 
 pub fn load_rust_teams() -> anyhow::Result<RustTeams> {

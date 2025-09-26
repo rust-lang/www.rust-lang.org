@@ -1,0 +1,15 @@
+{{#*inline "page"}}
+  <section class="green" style="padding-bottom: 10px;">
+    <div class="w-100 mw-none mw-8-m mw9-l center f2">
+      <p>{{fluent "governance-archived-teams-intro"}} {{fluent "governance-archived-alumni-thanks"}}</p>
+    </div>
+  </section>
+
+  {{#each data.teams as |team|}}
+    <section class="green" style="padding-bottom: 15px;">
+      {{> governance/archived-team team=team}}
+    </section>
+  {{/each}}
+
+{{/inline}}
+{{~> (lookup this "parent")~}}

@@ -11,6 +11,12 @@ governance-rfc-blurb = Each major decision in Rust starts as a Request for Comme
 governance-teams-header = Teams
 governance-wgs-header = Working Groups
 
+governance-archived-teams-header = Archived teams
+governance-archived-teams-link = Show archived teams
+governance-archived-teams-title = Archived teams
+governance-archived-alumni-thanks = We want to thank all past members for their invaluable contributions!
+governance-archived-teams-intro = This page contains archived teams (in alphabetical order) that are no longer active.
+
 ## governance/index-team.hbs
 governance-members = Members & Contacts
 
