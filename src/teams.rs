@@ -197,7 +197,10 @@ impl RustTeams {
 
     pub fn archived_teams(&self) -> ArchivedTeams {
         let mut teams: Vec<Team> = self.archived_teams.clone();
-        teams.sort_by_key(|t| t.name.clone());
+        teams.sort_by_key(|t| {
+            let weight = t.website_data.as_ref().map(|d| d.weight).unwrap_or(0);
+            (Reverse(weight), t.name.clone())
+        });
 
         ArchivedTeams { teams }
     }
