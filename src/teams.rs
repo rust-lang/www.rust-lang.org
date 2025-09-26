@@ -49,17 +49,23 @@ pub fn encode_zulip_stream(
 }
 
 #[derive(Debug, Clone)]
-pub struct RustTeams(pub Vec<Team>);
+pub struct RustTeams {
+    pub teams: Vec<Team>,
+    pub archived_teams: Vec<Team>,
+}
 
 impl RustTeams {
     #[cfg(test)]
     fn dummy(teams: Vec<Team>) -> Self {
-        RustTeams(teams)
+        RustTeams {
+            teams,
+            archived_teams: vec![],
+        }
     }
 
     pub fn index_data(&self) -> IndexData {
         let mut teams = self
-            .0
+            .teams
             .clone()
             .into_iter()
             .filter(|team| team.website_data.is_some())
@@ -85,7 +91,7 @@ impl RustTeams {
     }
 
     pub fn page_data(&self, section: &str, team_page_name: &str) -> anyhow::Result<PageData> {
-        let teams = self.0.clone();
+        let teams = self.teams.clone();
 
         // Find the main team first
         let main_team = teams
@@ -218,10 +224,24 @@ pub struct PageData {
 pub fn load_rust_teams() -> anyhow::Result<RustTeams> {
     println!("Downloading Team API data");
 
-    let response = fetch(&format!("{BASE_URL}/teams.json"))?;
-    let response: Teams = serde_json::from_str(&response)?;
+    // Parallelize the download to make website build faster
+    let (teams, archived_teams) = std::thread::scope(|scope| {
+        let teams = scope.spawn(|| -> anyhow::Result<Teams> {
+            let response = fetch(&format!("{BASE_URL}/teams.json"))?;
+            Ok(serde_json::from_str(&response)?)
+        });
+        let archived_teams = scope.spawn(|| -> anyhow::Result<Teams> {
+            let response = fetch(&format!("{BASE_URL}/archived-teams.json"))?;
+            Ok(serde_json::from_str(&response)?)
+        });
+        (teams.join().unwrap(), archived_teams.join().unwrap())
+    });
+    let (teams, archived_teams) = (teams?, archived_teams?);
 
-    Ok(RustTeams(response.teams.into_values().collect()))
+    Ok(RustTeams {
+        teams: teams.teams.into_values().collect(),
+        archived_teams: archived_teams.teams.into_values().collect(),
+    })
 }
 
 pub(crate) fn kind_to_str(kind: TeamKind) -> &'static str {
