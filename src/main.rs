@@ -17,6 +17,7 @@ mod redirect;
 mod render;
 mod rust_version;
 mod teams;
+mod utils;
 
 const ZULIP_DOMAIN: &str = "https://rust-lang.zulipchat.com";
 
