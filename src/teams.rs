@@ -1,3 +1,4 @@
+use crate::utils::fetch;
 use handlebars::{
     Context, Handlebars, Helper, HelperResult, Output, RenderContext, RenderErrorReason,
 };
@@ -217,18 +218,10 @@ pub struct PageData {
 pub fn load_rust_teams() -> anyhow::Result<RustTeams> {
     println!("Downloading Team API data");
 
-    let mut response = ureq::get(format!("{BASE_URL}/teams.json")).call()?;
-    if !response.status().is_success() {
-        return Err(anyhow::anyhow!(
-            "Failed to download team API (HTTP status {}): {}",
-            response.status(),
-            response.body_mut().read_to_string()?
-        ));
-    }
+    let response = fetch(&format!("{BASE_URL}/teams.json"))?;
+    let response: Teams = serde_json::from_str(&response)?;
 
-    let resp: Teams = response.body_mut().read_json()?;
-
-    Ok(RustTeams(resp.teams.into_values().collect()))
+    Ok(RustTeams(response.teams.into_values().collect()))
 }
 
 pub(crate) fn kind_to_str(kind: TeamKind) -> &'static str {
