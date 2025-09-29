@@ -62,7 +62,9 @@ install-using-rustup-heading = Using rustup (Recommended)
 
 install-rustup32-button = Download <span class="nowrap">rustup-init.exe</span> <span class="nowrap">(32-bit)</span>
 
-install-rustup64-button = Download <span class="nowrap">rustup-init.exe</span> <span class="nowrap">(64-bit)</span>
+install-rustup64-button = Download <span class="nowrap">rustup-init.exe</span> <span class="nowrap">(x64)</span>
+
+install-rustup-arm64-button = Download <span class="nowrap">rustup-init.exe</span> <span class="nowrap">(ARM64)</span>
 
 install-notes-heading = Notes about Rust installation
 

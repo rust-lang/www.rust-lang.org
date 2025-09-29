@@ -30,7 +30,8 @@ tools-automation-cargo-doc-link = サイトに行く
 tools-install-page-title = Rust をインストール
 install-using-rustup-heading = rustup を使う（おすすめ）
 install-rustup32-button = <span class="nowrap">rustup-init.exe</span><span class="nowrap">(32-bit)</span>をダウンロードする
-install-rustup64-button = <span class="nowrap">rustup-init.exe</span><span class="nowrap">(64-bit)</span>をダウンロードする
+install-rustup64-button = <span class="nowrap">rustup-init.exe</span><span class="nowrap">(x64)</span>をダウンロードする
+install-rustup-arm64-button = <span class="nowrap">rustup-init.exe</span><span class="nowrap">(ARM64)</span>をダウンロードする
 install-notes-heading = Rust のインストールについての注意
 install-notes-getting-started-description = Rustをこれから始めようとしていて、詳細を見渡したいのなら、<a href="{ $getting-started-href }">はじめる</a>のページを見てください。
 install-notes-rustup-heading = <code>rustup</code>を使ったツールチェーンの管理

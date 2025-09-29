@@ -19,7 +19,8 @@ tools-automation-clippy-link = 저장소로 이동
 
 tools-install-page-title = 러스트 설치
 install-rustup32-button = <span class="nowrap">rustup-init.exe</span> <span class="nowrap">(32-bit)</span> 다운로드
-install-rustup64-button = <span class="nowrap">rustup-init.exe</span> <span class="nowrap">(64-bit)</span> 다운로드
+install-rustup64-button = <span class="nowrap">rustup-init.exe</span> <span class="nowrap">(x64)</span> 다운로드
+install-rustup-arm64-button = <span class="nowrap">rustup-init.exe</span> <span class="nowrap">(ARM64)</span> 다운로드
 install-notes-heading = Rust 설치에 대한 참고사항
 install-notes-getting-started-description = Rust를 처음 시작하시고 좀 더 자세한 안내를 원하신다면, <a href="{ $getting-started-href }">getting started</a> 페이지를 봐 주세요.
 install-notes-rustup-heading = <code>rustup</code>으로 툴체인 관리
