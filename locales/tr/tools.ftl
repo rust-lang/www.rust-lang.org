@@ -57,7 +57,8 @@ tools-automation-cargo-doc-link = Siteye git
 tools-install-page-title = Rust'ı Yükle
 install-using-rustup-heading = Rustup kullanmak (Önerilen)
 install-rustup32-button = <span class="nowrap">rustup-init.exe</span> indir <span class="nowrap">(32-bit)</span>
-install-rustup64-button = <span class="nowrap">rustup-init.exe</span> indir <span class="nowrap">(64-bit)</span>
+install-rustup64-button = <span class="nowrap">rustup-init.exe</span> indir <span class="nowrap">(x64)</span>
+install-rustup-arm64-button = <span class="nowrap">rustup-init.exe</span> indir <span class="nowrap">(ARM64)</span>
 install-notes-heading = Rust kurulumu hakkında notlar
 install-notes-getting-started-description =
     Eğer Rust'a yeni başlıyorsanız ve daha

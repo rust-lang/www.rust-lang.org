@@ -23,7 +23,8 @@ tools-automation-cargo-doc-link = Idź do witryny
 tools-install-page-title = Zainstaluj Rusta
 install-using-rustup-heading = Korzystając z rustup (Zalecane)
 install-rustup32-button = Pobierz <span class="nowrap">rustup-init.exe</span> <span class="nowrap">(32-bit)</span>
-install-rustup64-button = Pobierz <span class="nowrap">rustup-init.exe</span> <span class="nowrap">(64-bit)</span>
+install-rustup64-button = Pobierz <span class="nowrap">rustup-init.exe</span> <span class="nowrap">(x64)</span>
+install-rustup-arm64-button = Pobierz <span class="nowrap">rustup-init.exe</span> <span class="nowrap">(ARM64)</span>
 install-notes-heading = Szczegóły dotyczące instalacji Rusta
 install-notes-uninstall-heading = Odinstaluj Rusta
 install-notes-path-heading = Konfiguracja zmiennej środowiskowej <code>PATH</code>

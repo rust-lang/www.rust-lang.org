@@ -28,7 +28,8 @@ tools-automation-cargo-doc-link = Aller sur le site
 tools-install-page-title = Installer Rust
 install-using-rustup-heading = Utiliser rustup (recommandé)
 install-rustup32-button = Télécharger <span class="nowrap">rustup-init.exe</span> <span class="nowrap">(32-bit)</span>
-install-rustup64-button = Télécharger <span class="nowrap"> rustup-init.exe</span> <span class="nowrap">(64-bit)</span>
+install-rustup64-button = Télécharger <span class="nowrap"> rustup-init.exe</span> <span class="nowrap">(x64)</span>
+install-rustup-arm64-button = Télécharger <span class="nowrap"> rustup-init.exe</span> <span class="nowrap">(ARM64)</span>
 install-notes-heading = Notes à propos de l'installation de Rust
 install-notes-getting-started-description = Si vous commencez avec Rust et que vous souhaitez une visite guidée, visitez la page <a href="{ $getting-started-href }">commencer</a>.
 install-notes-rustup-heading = Gestion des chaînes d'outils avec <code>rustup</code>
