@@ -2,7 +2,7 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
   # Allow rebuilding/redeploying the web manually
   workflow_dispatch:
@@ -52,7 +52,7 @@ jobs:
 
   deploy:
     needs: [ build ]
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     environment:
       name: github-pages
     permissions:
