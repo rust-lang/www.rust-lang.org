@@ -32,6 +32,6 @@ Please read our [`CONTRIBUTING.md`](CONTRIBUTING.md) before submitting a PR!
 
 ### Deployment
 
-www.rust-lang.org is currently hosted on GitHub Pages. The `master` branch is
+www.rust-lang.org is currently hosted on GitHub Pages. The `main` branch is
 automatically deployed to [www.rust-lang.org](https://www.rust-lang.org) after
 each push.
