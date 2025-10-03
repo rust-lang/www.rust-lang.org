@@ -16,7 +16,7 @@ governance-archived-teams-description = Some past teams are no longer active. We
 governance-archived-teams-link = Show archived teams
 governance-archived-teams-title = Archived teams
 governance-archived-alumni-thanks = We want to thank all past members for their invaluable contributions!
-governance-archived-teams-intro = This page contains archived teams (in alphabetical order) that are no longer active.
+governance-archived-teams-intro = This page contains archived teams that are no longer active.
 
 ## governance/index-team.hbs
 governance-members = Members & Contacts
