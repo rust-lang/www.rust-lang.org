@@ -100,6 +100,11 @@ fn main() -> anyhow::Result<()> {
         base_url,
     };
     ctx.copy_asset_dir("static", "static")?;
+
+    // This provides the logos at original /logos URLs, which were available
+    // before the move to a static website.
+    ctx.copy_asset_dir("static/logos", "logos")?;
+
     ctx.copy_asset_file(
         "static/text/well_known_security.txt",
         ".well-known/security.txt",
