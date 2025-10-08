@@ -7,7 +7,9 @@ on:
   # Allow rebuilding/redeploying the web manually
   workflow_dispatch:
   schedule:
-    # Rebuild the web periodically at 22:00 UTC to update team API contents and Rust version
+    # Rebuild the web periodically at 22:00 UTC to update team API contents and Rust version.
+    # Time must be kept in sync with the `autoupdate` parameter in
+    # `templates/components/footer.html.hbs`.
     - cron: '0 22 * * *'
 env:
   RUST_BACKTRACE: 1
