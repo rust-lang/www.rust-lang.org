@@ -60,6 +60,8 @@ footer-github-alt = GitHub
 footer-attribution = Maintained by the Rust Team. See a bug?
         <a href="https://github.com/rust-lang/www.rust-lang.org/issues/new/choose">File an issue!</a>
 
+footer-autoupdate = Web site built every day at { $autoupdate }
+
 footer-old-site = Looking for the <a href="https://prev.rust-lang.org">previous website</a>?
 
 ## what/index.hbs
