@@ -219,6 +219,18 @@ pub fn render_governance(render_ctx: &RenderCtx) -> anyhow::Result<()> {
             .render(dst_path)
     })?;
 
+    let all_team_members_data = render_ctx.teams.all_team_members();
+    for_all_langs("governance/all-team-members.html", |dst_path, lang| {
+        render_ctx
+            .page(
+                "governance/all-team-members",
+                "governance-all-team-members-title",
+                &all_team_members_data,
+                lang,
+            )
+            .render(dst_path)
+    })?;
+
     Ok(())
 }
 

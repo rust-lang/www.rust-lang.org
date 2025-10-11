@@ -1,0 +1,47 @@
+{{#*inline "member"}}
+  <div class="w-100 w-25-l mb3 flex flex-row items-center">
+    <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/{{member.github}}">
+      <img class="w-100 h-100 bg-white br2"
+           src="https://avatars.githubusercontent.com/{{member.github}}"
+           alt="{{member.name}}">
+    </a>
+    <div>
+      {{member.name}}
+      <div class="f4">
+        GitHub: <a href="https://github.com/{{member.github}}">{{member.github}}</a>
+      </div>
+    </div>
+  </div>
+{{/inline}}
+
+{{#*inline "page"}}
+  <section class="green" style="padding-bottom: 10px;">
+    <div class="w-100 mw-none mw-8-m mw9-l center f2">
+      <p>{{fluent "governance-all-team-members-intro"}}</p>
+    </div>
+  </section>
+
+  <section class="green" style="padding-bottom: 15px;">
+    <div class="w-100 mw-none mw-8-m mw9-l flex flex-column flex-row-l flex-wrap-l center">
+      {{#each data.active as |member|}}
+        {{> member member=member }}
+      {{/each}}
+    </div>
+  </section>
+
+  <section class="red" style="padding-bottom: 10px;">
+    <div class="w-100 mw-none mw-8-m mw9-l center f2">
+      <p>{{fluent "governance-all-team-members-alumni-intro"}}</p>
+    </div>
+  </section>
+
+  <section class="red" style="padding-bottom: 15px;">
+    <div class="w-100 mw-none mw-8-m mw9-l flex flex-column flex-row-l flex-wrap-l center">
+      {{#each data.alumni as |member|}}
+        {{> member member=member }}
+      {{/each}}
+    </div>
+  </section>
+
+{{/inline}}
+{{~> (lookup this "parent")~}}
