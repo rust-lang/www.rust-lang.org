@@ -11,6 +11,8 @@ governance-rfc-blurb = Each major decision in Rust starts as a Request for Comme
 governance-teams-header = Teams
 governance-wgs-header = Working Groups
 
+governance-rust-project-link = Show all Rust team members
+
 governance-archived-teams-header = Archived teams
 governance-archived-teams-description = Some past teams are no longer active. We call these "archived teams".
 governance-archived-teams-link = Show archived teams
@@ -31,3 +33,8 @@ governance-user-team-leader = Team leader
 governance-members-header = Members
 governance-alumni-header = Alumni
 governance-alumni-thanks = We also want to thank all past members for their invaluable contributions!
+
+## governance/all-team-members.mbs
+governance-all-team-members-title = All Rust team members
+governance-all-team-members-intro = This section lists the members of currently active Rust teams.
+governance-all-team-members-alumni-intro = This section lists our team alumni.
