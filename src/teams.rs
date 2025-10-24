@@ -71,7 +71,7 @@ impl RustTeams {
             .filter(|team| team.website_data.is_some())
             // On the main page, show the leadership-council and all top-level
             // teams.
-            .filter(|team| is_toplevel_team(team))
+            .filter(is_toplevel_team)
             .map(|team| IndexTeam {
                 section: kind_to_str(team.kind),
                 page_name: team.website_data.clone().unwrap().page,
@@ -310,9 +310,7 @@ impl RustTeams {
             let Some(parent) = &team.subteam_of else {
                 return None;
             };
-            let Some(parent) = self.teams.iter().find(|t| t.name == *parent) else {
-                return None;
-            };
+            let parent = self.teams.iter().find(|t| t.name == *parent)?;
             team = parent;
         }
 
@@ -404,7 +402,7 @@ impl PersonTeam {
             });
         Self {
             team: team.clone(),
-            toplevel_url: toplevel_url,
+            toplevel_url,
             webpage_name,
         }
     }
