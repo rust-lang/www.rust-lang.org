@@ -3,10 +3,16 @@
     <li>
       {{#if team.toplevel_url }}
         <a href="{{../baseurl}}/governance/{{team.toplevel_url}}{{ team-anchor team.team }}">
-          {{ team.webpage_name }}
-        </a>
+          {{ team.webpage_name }}</a>
       {{else}}
         {{ team.webpage_name }}
+      {{/if}}
+      {{#if team.roles }}
+        ({{~#each team.roles as |role index|~}}
+        {{#if (eq index 0)~}}
+          <b>{{role}}</b>{{~else~}}, <b>{{role}}</b>
+        {{~/if}}
+        {{~/each~}})
       {{/if}}
     </li>
   {{/each}}
@@ -14,9 +20,9 @@
 
 {{#*inline "page"}}
   <section class="green" style="padding-bottom: 10px;">
-    <div class="w-100 mw-none mw-8-m mw9-l center f2">
-      <div class="w-100 w-50-l mb3 flex flex-row items-center">
-        <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/{{data.github}}">
+    <div class="w-100 mw-none mw-8-m mw9-l center f1">
+      <div class="w-100 w-50-l mb3 flex flex-row items-start">
+        <a class="mr4 w5 h5 flex-shrink-0" href="https://github.com/{{data.github}}">
           <img class="w-100 h-100 bg-white br2"
                src="https://avatars.githubusercontent.com/{{data.github}}"
                alt="{{data.name}}">

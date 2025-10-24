@@ -263,7 +263,7 @@ impl RustTeams {
                 TeamMode::Member | TeamMode::Alumni => ctx.get_toplevel_team_url(team),
                 TeamMode::MemberOfArchivedTeam => Some("archived-teams.html".to_string()),
             };
-            teams.push(PersonTeam::new(team, url));
+            teams.push(PersonTeam::new(team, member, url));
         }
 
         for team in &self.archived_teams {
@@ -378,32 +378,41 @@ pub struct PersonTeam {
     team: Team,
     toplevel_url: Option<String>,
     webpage_name: String,
+    roles: Vec<String>,
 }
 
 impl PersonTeam {
-    fn new(team: &Team, toplevel_url: Option<String>) -> Self {
+    fn new(team: &Team, member: &TeamMember, toplevel_url: Option<String>) -> Self {
+        // Turn inside-rust-reviewers into Inside Rust Reviewers
+        let normalize_name = |name: &str| {
+            name.split("-")
+                .map(|p| {
+                    p.chars()
+                        .take(1)
+                        .flat_map(|c| c.to_uppercase())
+                        .chain(p.chars().skip(1))
+                        .collect::<String>()
+                })
+                .collect::<Vec<String>>()
+                .join(" ")
+        };
+
         let webpage_name = team
             .website_data
             .as_ref()
             .map(|w| w.name.clone())
-            .unwrap_or_else(|| {
-                // Turn inside-rust-reviewers into Inside Rust Reviewers
-                team.name
-                    .split("-")
-                    .map(|p| {
-                        p.chars()
-                            .take(1)
-                            .flat_map(|c| c.to_uppercase())
-                            .chain(p.chars().skip(1))
-                            .collect::<String>()
-                    })
-                    .collect::<Vec<String>>()
-                    .join(" ")
-            });
+            .unwrap_or_else(|| normalize_name(&team.name));
+
+        let mut roles = vec![];
+        if member.is_lead {
+            roles.push("Lead".to_string());
+        }
+        roles.extend(member.roles.iter().map(|r| normalize_name(r)));
         Self {
             team: team.clone(),
             toplevel_url,
             webpage_name,
+            roles,
         }
     }
 }
