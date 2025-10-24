@@ -3,7 +3,7 @@ use handlebars::{
     Context, Handlebars, Helper, HelperResult, Output, RenderContext, RenderErrorReason,
 };
 use percent_encoding::{AsciiSet, NON_ALPHANUMERIC, utf8_percent_encode};
-use rust_team_data::v1::{BASE_URL, Team, TeamKind, Teams};
+use rust_team_data::v1::{BASE_URL, Team, TeamKind, TeamMember, Teams};
 use serde::Serialize;
 use std::cmp::Reverse;
 use std::collections::HashMap;
@@ -204,6 +204,36 @@ impl RustTeams {
 
         ArchivedTeams { teams }
     }
+
+    pub fn all_team_members(&self) -> AllTeamMembers {
+        let mut alumni = HashMap::new();
+        let mut active = HashMap::new();
+        for team in &self.archived_teams {
+            alumni.extend(team.members.iter().map(|m| (m.github_id, m)));
+            alumni.extend(team.alumni.iter().map(|m| (m.github_id, m)));
+        }
+        for team in &self.teams {
+            if team.name != "alumni" {
+                alumni.extend(team.alumni.iter().map(|m| (m.github_id, m)));
+                active.extend(team.members.iter().map(|m| (m.github_id, m)));
+            }
+        }
+
+        alumni.retain(|id, _| !active.contains_key(id));
+
+        let alumni = {
+            let mut alumni = alumni.into_values().cloned().collect::<Vec<TeamMember>>();
+            alumni.sort_by_key(|m| m.name.clone());
+            alumni
+        };
+        let active = {
+            let mut active = active.into_values().cloned().collect::<Vec<TeamMember>>();
+            active.sort_by_key(|m| m.name.clone());
+            active
+        };
+
+        AllTeamMembers { active, alumni }
+    }
 }
 
 #[derive(Serialize)]
@@ -234,6 +264,12 @@ pub struct PageData {
 #[derive(Serialize)]
 pub struct ArchivedTeams {
     teams: Vec<Team>,
+}
+
+#[derive(Serialize)]
+pub struct AllTeamMembers {
+    active: Vec<TeamMember>,
+    alumni: Vec<TeamMember>,
 }
 
 pub fn load_rust_teams() -> anyhow::Result<RustTeams> {
