@@ -1,4 +1,5 @@
 use crate::assets::compile_assets;
+use crate::helpers::TeamAnchorHelper;
 use crate::i18n::{TeamHelper, create_loader};
 use crate::redirect::create_redirects;
 use crate::render::{RenderCtx, render_directory, render_governance, render_index};
@@ -12,6 +13,7 @@ use std::path::{Path, PathBuf};
 
 mod assets;
 mod fs;
+mod helpers;
 mod i18n;
 mod redirect;
 mod render;
@@ -63,6 +65,7 @@ fn setup_handlebars() -> anyhow::Result<Handlebars<'static>> {
     let helper = FluentHelper::new(loader);
     handlebars.register_helper("fluent", Box::new(helper));
     handlebars.register_helper("team-text", Box::new(TeamHelper::new()));
+    handlebars.register_helper("team-anchor", Box::new(TeamAnchorHelper));
     handlebars.register_helper("encode-zulip-stream", Box::new(encode_zulip_stream));
     Ok(handlebars)
 }
