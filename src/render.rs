@@ -7,6 +7,8 @@ use crate::{BaseUrl, ENGLISH, LAYOUT};
 use anyhow::Context;
 use handlebars::Handlebars;
 use handlebars_fluent::{Loader, SimpleLoader};
+use rayon::iter::IntoParallelRefIterator;
+use rayon::iter::ParallelIterator;
 use serde::Serialize;
 use std::ffi::OsStr;
 use std::fs::File;
@@ -238,25 +240,28 @@ pub fn render_governance(render_ctx: &RenderCtx) -> anyhow::Result<()> {
 
     // A specific page for each team member
     let all_person_data = render_ctx.teams.all_person_data();
-    for person in all_person_data {
-        // Use <username>/index.html for a nicer URL (/people/foo vs /people/foo.html).
-        for_all_langs(
-            &format!(
-                "governance/people/{}/index.html",
-                person.github.to_lowercase()
-            ),
-            |dst_path, lang| {
-                render_ctx
-                    .page(
-                        "governance/person",
-                        "governance-person-title",
-                        &person,
-                        lang,
-                    )
-                    .render(dst_path)
-            },
-        )?;
-    }
+    all_person_data
+        .par_iter()
+        .map(|person| {
+            // Use <username>/index.html for a nicer URL (/people/foo vs /people/foo.html).
+            for_all_langs(
+                &format!(
+                    "governance/people/{}/index.html",
+                    person.github.to_lowercase()
+                ),
+                |dst_path, lang| {
+                    render_ctx
+                        .page(
+                            "governance/person",
+                            "governance-person-title",
+                            &person,
+                            lang,
+                        )
+                        .render(dst_path)
+                },
+            )
+        })
+        .collect::<anyhow::Result<Vec<_>>>()?;
 
     Ok(())
 }
