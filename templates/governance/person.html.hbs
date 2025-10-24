@@ -1,0 +1,62 @@
+{{#*inline "teams"}}
+  {{#each teams as |team|}}
+    <li>
+      {{#if team.toplevel_url }}
+        <a href="{{../baseurl}}/governance/{{team.toplevel_url}}{{ team-anchor team.team }}">
+          {{ team.webpage_name }}
+        </a>
+      {{else}}
+        {{ team.webpage_name }}
+      {{/if}}
+    </li>
+  {{/each}}
+{{/inline}}
+
+{{#*inline "page"}}
+  <section class="green" style="padding-bottom: 10px;">
+    <div class="w-100 mw-none mw-8-m mw9-l center f2">
+      <div class="w-100 w-50-l mb3 flex flex-row items-center">
+        <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/{{data.github}}">
+          <img class="w-100 h-100 bg-white br2"
+               src="https://avatars.githubusercontent.com/{{data.github}}"
+               alt="{{data.name}}">
+        </a>
+        <div>
+          {{data.name}}
+          <div class="f4">
+            GitHub: <a href="https://github.com/{{data.github}}">{{data.github}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {{# if data.active_teams }}
+    <section class="purple" style="padding-bottom: 10px;">
+      <div class="w-100 mw-none mw-8-m mw9-l center">
+        <header>
+          <h2>{{ fluent "governance-person-team-member" }}</h2>
+          <div class="highlight"></div>
+        </header>
+        <ul>
+          {{> teams teams=data.active_teams }}
+        </ul>
+      </div>
+    </section>
+  {{/if}}
+
+  {{# if data.alumni_teams }}
+    <section class="red" style="padding-bottom: 10px;">
+      <div class="w-100 mw-none mw-8-m mw9-l center">
+        <header>
+          <h2>{{ fluent "governance-person-team-alumni" }}</h2>
+          <div class="highlight"></div>
+        </header>
+        <ul>
+          {{> teams teams=data.alumni_teams }}
+        </ul>
+      </div>
+    </section>
+  {{/if}}
+{{/inline}}
+{{~> (lookup this "parent")~}}

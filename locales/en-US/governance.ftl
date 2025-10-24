@@ -34,7 +34,12 @@ governance-members-header = Members
 governance-alumni-header = Alumni
 governance-alumni-thanks = We also want to thank all past members for their invaluable contributions!
 
-## governance/all-team-members.mbs
+## governance/all-team-members.hbs
 governance-all-team-members-title = All Rust team members
 governance-all-team-members-intro = This section lists the members of currently active Rust teams.
 governance-all-team-members-alumni-intro = This section lists our team alumni.
+
+## govenance/person.hbs
+governance-person-title = Rust Project team member
+governance-person-team-member = Team member
+governance-person-team-alumni = Alumni
