@@ -23,8 +23,8 @@ impl HelperDef for TeamAnchorHelper {
             )
             .into());
         };
-        let team: Team = serde_json::from_value(team.value().clone())
-            .map_err(|e| RenderErrorReason::SerdeError(e))?;
+        let team: Team =
+            serde_json::from_value(team.value().clone()).map_err(RenderErrorReason::SerdeError)?;
 
         out.write(&format!("#team-{}", team.name))
             .map_err(|e| RenderErrorReason::NestedError(Box::new(e)))?;
