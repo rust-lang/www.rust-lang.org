@@ -180,11 +180,14 @@ pub fn render_index(render_ctx: &RenderCtx) -> anyhow::Result<()> {
 pub fn render_governance(render_ctx: &RenderCtx) -> anyhow::Result<()> {
     let data = render_ctx.teams.index_data();
 
+    // Index page
     for_all_langs("governance/index.html", |dst_path, lang| {
         render_ctx
             .page("governance/index", "governance-page-title", &data, lang)
             .render(dst_path)
     })?;
+
+    // Individual teams
     for team in data.teams {
         let data: PageData = render_ctx
             .teams
@@ -207,6 +210,7 @@ pub fn render_governance(render_ctx: &RenderCtx) -> anyhow::Result<()> {
         )?;
     }
 
+    // Archived teams
     let archived_teams_data = render_ctx.teams.archived_teams();
     for_all_langs("governance/archived-teams.html", |dst_path, lang| {
         render_ctx
@@ -219,6 +223,7 @@ pub fn render_governance(render_ctx: &RenderCtx) -> anyhow::Result<()> {
             .render(dst_path)
     })?;
 
+    // Page with all team members
     let all_team_members_data = render_ctx.teams.all_team_members();
     for_all_langs("governance/all-team-members.html", |dst_path, lang| {
         render_ctx
@@ -230,6 +235,28 @@ pub fn render_governance(render_ctx: &RenderCtx) -> anyhow::Result<()> {
             )
             .render(dst_path)
     })?;
+
+    // A specific page for each team member
+    let all_person_data = render_ctx.teams.all_person_data();
+    for person in all_person_data {
+        // Use <username>/index.html for a nicer URL (/people/foo vs /people/foo.html).
+        for_all_langs(
+            &format!(
+                "governance/people/{}/index.html",
+                person.github.to_lowercase()
+            ),
+            |dst_path, lang| {
+                render_ctx
+                    .page(
+                        "governance/person",
+                        "governance-person-title",
+                        &person,
+                        lang,
+                    )
+                    .render(dst_path)
+            },
+        )?;
+    }
 
     Ok(())
 }
