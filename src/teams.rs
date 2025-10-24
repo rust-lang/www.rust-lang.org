@@ -278,7 +278,7 @@ impl RustTeams {
             }
         }
         for team in &self.teams {
-            if team.name == "all" || team.name == "alumni" || team.name == "leads" {
+            if team.kind == TeamKind::MarkerTeam && team.website_data.is_none() {
                 continue;
             }
 
