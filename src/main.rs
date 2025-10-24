@@ -1,5 +1,5 @@
 use crate::assets::compile_assets;
-use crate::helpers::TeamAnchorHelper;
+use crate::helpers::{PersonLinkHelper, TeamAnchorHelper};
 use crate::i18n::{TeamHelper, create_loader};
 use crate::redirect::create_redirects;
 use crate::render::{RenderCtx, render_directory, render_governance, render_index};
@@ -66,6 +66,7 @@ fn setup_handlebars() -> anyhow::Result<Handlebars<'static>> {
     handlebars.register_helper("fluent", Box::new(helper));
     handlebars.register_helper("team-text", Box::new(TeamHelper::new()));
     handlebars.register_helper("team-anchor", Box::new(TeamAnchorHelper));
+    handlebars.register_helper("person-link", Box::new(PersonLinkHelper));
     handlebars.register_helper("encode-zulip-stream", Box::new(encode_zulip_stream));
     Ok(handlebars)
 }

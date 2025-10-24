@@ -6,7 +6,7 @@
            alt="{{member.name}}">
     </a>
     <div>
-      {{member.name}}
+      <a href="{{baseurl}}{{person-link member.github}}">{{member.name}}</a>
       <div class="f4">
         GitHub: <a href="https://github.com/{{member.github}}">{{member.github}}</a>
       </div>
@@ -24,7 +24,7 @@
   <section class="green" style="padding-bottom: 15px;">
     <div class="w-100 mw-none mw-8-m mw9-l flex flex-column flex-row-l flex-wrap-l center">
       {{#each data.active as |member|}}
-        {{> member member=member }}
+        {{> member member=member baseurl=../baseurl }}
       {{/each}}
     </div>
   </section>
@@ -38,7 +38,7 @@
   <section class="red" style="padding-bottom: 15px;">
     <div class="w-100 mw-none mw-8-m mw9-l flex flex-column flex-row-l flex-wrap-l center">
       {{#each data.alumni as |member|}}
-        {{> member member=member }}
+        {{> member member=member baseurl=../baseurl }}
       {{/each}}
     </div>
   </section>
