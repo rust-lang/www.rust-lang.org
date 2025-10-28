@@ -360,14 +360,12 @@ mod tests {
                 page: name.into(),
                 email: None,
                 repo: None,
-                discord: None,
                 zulip_stream: None,
                 weight: 0,
                 matrix_room: None,
             }),
             roles: Vec::new(),
             github: None,
-            discord: vec![],
             top_level: None,
         }
     }
