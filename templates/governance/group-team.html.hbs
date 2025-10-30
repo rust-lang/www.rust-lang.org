@@ -53,7 +53,7 @@
     <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
         {{#each team.members as |member|}}
         <div class="flex flex-row w-100 w-50-l mb4 p3">
-            <a class="mr4 w4 h4 flex-shrink-0" href="https://github.com/{{member.github}}">
+            <a class="mr4 w4 h4 flex-shrink-0" href="{{../baseurl}}/governance/people/{{member.github}}">
                 <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/{{member.github}}"
                     alt="{{member.name}}">
             </a>
@@ -87,7 +87,7 @@
     <div class="flex flex-column flex-row-l flex-wrap-l justify-start">
         {{#each team.alumni as |member|}}
         <div class="w-100 w-33-l mb3 flex flex-row items-center">
-            <a class="mr4 w3 h3 flex-shrink-0" href="https://github.com/{{member.github}}">
+            <a class="mr4 w3 h3 flex-shrink-0" href="{{../baseurl}}/governance/people/{{member.github}}">
                 <img class="w-100 h-100 bg-white br2" src="https://avatars.githubusercontent.com/{{member.github}}"
                     alt="{{member.name}}">
             </a>
