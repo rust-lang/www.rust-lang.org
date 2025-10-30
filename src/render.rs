@@ -245,10 +245,7 @@ pub fn render_governance(render_ctx: &RenderCtx) -> anyhow::Result<()> {
         .map(|person| {
             // Use <username>/index.html for a nicer URL (/people/foo vs /people/foo.html).
             for_all_langs(
-                &format!(
-                    "governance/people/{}/index.html",
-                    person.github.to_lowercase()
-                ),
+                &format!("governance/people/{}/index.html", person.github),
                 |dst_path, lang| {
                     render_ctx
                         .page(

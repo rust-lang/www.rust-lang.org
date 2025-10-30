@@ -59,7 +59,7 @@
             </a>
             <div class="flex flex-column w-100">
                 <h3 class="{{#unless member.is_lead}}fw4{{/unless}} ma0 mb2">
-                  <a href="{{../baseurl}}{{person-link member.github}}">{{member.name}}</a>
+                  <a href="{{../baseurl}}/governance/people/{{member.github}}">{{member.name}}</a>
                 </h3>
                 <div>
                     {{#fluent "governance-user-github"}}
@@ -92,7 +92,7 @@
                     alt="{{member.name}}">
             </a>
             <div>
-              <a href="{{../baseurl}}{{person-link member.github}}">{{member.name}}</a>
+              <a href="{{../baseurl}}/governance/people/{{member.github}}">{{member.name}}</a>
                 <div class="f4">
                     GitHub: <a href="https://github.com/{{member.github}}">{{member.github}}</a>
                 </div>

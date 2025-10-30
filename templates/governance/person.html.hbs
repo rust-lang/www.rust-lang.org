@@ -2,7 +2,7 @@
   {{#each teams as |team|}}
     <li>
       {{#if team.toplevel_url }}
-        <a href="{{../baseurl}}/governance/{{team.toplevel_url}}{{ team-anchor team.team }}">
+        <a href="{{../baseurl}}/governance/{{team.toplevel_url}}#team-{{team.team.name}}">
           {{ team.webpage_name }}</a>
       {{else}}
         {{ team.webpage_name }}
