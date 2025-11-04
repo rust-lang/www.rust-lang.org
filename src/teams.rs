@@ -209,7 +209,7 @@ impl RustTeams {
             alumni.extend(team.alumni.iter().map(|m| (m.github_id, m)));
         }
         for team in &self.teams {
-            if team.name != "alumni" {
+            if is_active_team(team) {
                 alumni.extend(team.alumni.iter().map(|m| (m.github_id, m)));
                 active.extend(team.members.iter().map(|m| (m.github_id, m)));
             }
@@ -278,15 +278,13 @@ impl RustTeams {
             }
         }
         for team in &self.teams {
-            if team.kind == TeamKind::MarkerTeam && team.website_data.is_none() {
-                continue;
-            }
-
-            for member in &team.members {
-                add_team(&mut people, self, member, team, TeamMode::Member);
-            }
-            for member in &team.alumni {
-                add_team(&mut people, self, member, team, TeamMode::Alumni);
+            if is_active_team(team) {
+                for member in &team.members {
+                    add_team(&mut people, self, member, team, TeamMode::Member);
+                }
+                for member in &team.alumni {
+                    add_team(&mut people, self, member, team, TeamMode::Alumni);
+                }
             }
         }
 
@@ -320,6 +318,12 @@ impl RustTeams {
             None
         }
     }
+}
+
+/// Is this a team for which we should display its members on the "All Project Members" page,
+/// and whose members should receive a separate person page?
+fn is_active_team(team: &Team) -> bool {
+    team.name != "alumni"
 }
 
 /// Get a relative URL of a team that should be appended to
