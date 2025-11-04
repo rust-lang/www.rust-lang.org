@@ -189,7 +189,7 @@ impl RustTeams {
                     b.is_lead.cmp(&a.is_lead)
                 } else if a.roles.len() != b.roles.len() {
                     // Then by role count (more roles before less roles)
-                    b.roles.cmp(&a.roles)
+                    b.roles.len().cmp(&a.roles.len())
                 } else {
                     // Then by the role contents
                     // If there is no role, will return equal, and thus use the original GitHub username
