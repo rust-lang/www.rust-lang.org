@@ -90,7 +90,7 @@ impl RustTeams {
         let teams = self.teams.clone();
 
         // Find the main team first
-        let main_team = teams
+        let mut main_team = teams
             .iter()
             .filter(|team| {
                 team.website_data.as_ref().map(|ws| ws.page.as_str()) == Some(team_page_name)
@@ -180,6 +180,41 @@ impl RustTeams {
                 }
             }
         }
+
+        fn sort_members(members: &mut [TeamMember]) {
+            members.sort_by_key(|member| member.github.to_lowercase());
+            members.sort_by(|a, b| {
+                // First, sort by lead status (lead before non-lead)
+                if a.is_lead != b.is_lead {
+                    b.is_lead.cmp(&a.is_lead)
+                } else if a.roles.len() != b.roles.len() {
+                    // Then by role count (more roles before less roles)
+                    b.roles.len().cmp(&a.roles.len())
+                } else {
+                    // Then by the role contents
+                    // If there is no role, will return equal, and thus use the original GitHub username
+                    // ordering
+                    a.roles.cmp(&b.roles)
+                }
+            });
+        }
+
+        fn sort_team_members(team: &mut Team) {
+            sort_members(&mut team.members);
+            sort_members(&mut team.alumni);
+        }
+
+        fn sort_teams(teams: &mut [Team]) {
+            for team in teams {
+                sort_team_members(team);
+            }
+        }
+
+        sort_team_members(&mut main_team);
+        sort_teams(&mut subteams);
+        sort_teams(&mut wgs);
+        sort_teams(&mut project_groups);
+        sort_teams(&mut other_teams);
 
         Ok(PageData {
             team: main_team,
