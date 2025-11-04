@@ -71,15 +71,11 @@ impl RustTeams {
             .filter(|team| team.website_data.is_some())
             // On the main page, show the leadership-council and all top-level
             // teams.
-            .filter(|team| team.kind == TeamKind::Team && team.subteam_of.is_none())
+            .filter(is_toplevel_team)
             .map(|team| IndexTeam {
                 section: kind_to_str(team.kind),
                 page_name: team.website_data.clone().unwrap().page,
-                url: format!(
-                    "{}/{}",
-                    kind_to_str(team.kind),
-                    team.website_data.as_ref().unwrap().page
-                ),
+                url: get_team_relative_url(&team),
                 team,
             })
             .collect::<Vec<IndexTeam>>();
@@ -234,6 +230,111 @@ impl RustTeams {
 
         AllTeamMembers { active, alumni }
     }
+
+    pub fn all_person_data(&self) -> Vec<PersonData> {
+        let mut people: HashMap<String, PersonData> = HashMap::new();
+
+        enum TeamMode {
+            Member,
+            Alumni,
+            MemberOfArchivedTeam,
+        }
+
+        fn add_team(
+            people: &mut HashMap<String, PersonData>,
+            ctx: &RustTeams,
+            member: &TeamMember,
+            team: &Team,
+            mode: TeamMode,
+        ) {
+            let person = people
+                .entry(member.github.clone())
+                .or_insert_with(move || PersonData {
+                    name: member.name.clone(),
+                    github: member.github.clone(),
+                    active_teams: vec![],
+                    alumni_teams: vec![],
+                });
+            let teams = match mode {
+                TeamMode::Member => &mut person.active_teams,
+                TeamMode::Alumni | TeamMode::MemberOfArchivedTeam => &mut person.alumni_teams,
+            };
+            let url = match mode {
+                TeamMode::Member | TeamMode::Alumni => ctx.get_toplevel_team_url(team),
+                TeamMode::MemberOfArchivedTeam => Some("archived-teams.html".to_string()),
+            };
+            teams.push(PersonTeam::new(team, member, url));
+        }
+
+        for team in &self.archived_teams {
+            for member in team.members.iter().chain(&team.alumni) {
+                add_team(
+                    &mut people,
+                    self,
+                    member,
+                    team,
+                    TeamMode::MemberOfArchivedTeam,
+                );
+            }
+        }
+        for team in &self.teams {
+            if team.kind == TeamKind::MarkerTeam && team.website_data.is_none() {
+                continue;
+            }
+
+            for member in &team.members {
+                add_team(&mut people, self, member, team, TeamMode::Member);
+            }
+            for member in &team.alumni {
+                add_team(&mut people, self, member, team, TeamMode::Alumni);
+            }
+        }
+
+        let mut people: Vec<PersonData> = people.into_values().collect();
+        people.sort_by(|a, b| a.github.cmp(&b.github));
+
+        for person in &mut people {
+            person
+                .active_teams
+                .sort_by(|a, b| a.webpage_name.cmp(&b.webpage_name));
+            person
+                .alumni_teams
+                .sort_by(|a, b| a.webpage_name.cmp(&b.webpage_name));
+        }
+
+        people
+    }
+
+    fn get_toplevel_team_url<'a>(&'a self, mut team: &'a Team) -> Option<String> {
+        while !is_toplevel_team(team) {
+            let Some(parent) = &team.subteam_of else {
+                return None;
+            };
+            let parent = self.teams.iter().find(|t| t.name == *parent)?;
+            team = parent;
+        }
+
+        if team.website_data.is_some() {
+            Some(get_team_relative_url(team))
+        } else {
+            None
+        }
+    }
+}
+
+/// Get a relative URL of a team that should be appended to
+/// Should only be used for top-level teams.
+fn get_team_relative_url(team: &Team) -> String {
+    assert!(is_toplevel_team(team));
+    format!(
+        "{}/{}",
+        kind_to_str(team.kind),
+        team.website_data.as_ref().unwrap().page
+    )
+}
+
+fn is_toplevel_team(team: &Team) -> bool {
+    team.kind == TeamKind::Team && team.subteam_of.is_none()
 }
 
 #[derive(Serialize)]
@@ -270,6 +371,58 @@ pub struct ArchivedTeams {
 pub struct AllTeamMembers {
     active: Vec<TeamMember>,
     alumni: Vec<TeamMember>,
+}
+
+#[derive(Serialize)]
+pub struct PersonTeam {
+    team: Team,
+    toplevel_url: Option<String>,
+    webpage_name: String,
+    roles: Vec<String>,
+}
+
+impl PersonTeam {
+    fn new(team: &Team, member: &TeamMember, toplevel_url: Option<String>) -> Self {
+        // Turn inside-rust-reviewers into Inside Rust Reviewers
+        let normalize_name = |name: &str| {
+            name.split("-")
+                .map(|p| {
+                    p.chars()
+                        .take(1)
+                        .flat_map(|c| c.to_uppercase())
+                        .chain(p.chars().skip(1))
+                        .collect::<String>()
+                })
+                .collect::<Vec<String>>()
+                .join(" ")
+        };
+
+        let webpage_name = team
+            .website_data
+            .as_ref()
+            .map(|w| w.name.clone())
+            .unwrap_or_else(|| normalize_name(&team.name));
+
+        let mut roles = vec![];
+        if member.is_lead {
+            roles.push("Lead".to_string());
+        }
+        roles.extend(member.roles.iter().map(|r| normalize_name(r)));
+        Self {
+            team: team.clone(),
+            toplevel_url,
+            webpage_name,
+            roles,
+        }
+    }
+}
+
+#[derive(Serialize)]
+pub struct PersonData {
+    name: String,
+    pub github: String,
+    active_teams: Vec<PersonTeam>,
+    alumni_teams: Vec<PersonTeam>,
 }
 
 pub fn load_rust_teams() -> anyhow::Result<RustTeams> {
