@@ -55,6 +55,8 @@ footer-attribution =
     <a href="https://github.com/rust-lang/www.rust-lang.org/issues/new/choose">在这里提交修复！</a>
 footer-old-site = 想要查看<a href="https://prev.rust-lang.org">旧版网站</a>？
 
+footer-autoupdate = 网站将在每天 { $autoupdate } 自动构建
+
 ## what/index.hbs
 
 what-header = 使用场景
