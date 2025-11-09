@@ -69,7 +69,7 @@ security-disclosure-description--2025-07 =
           <li>确认问题并确定所有受影响的版本，并邀请相关 Rust 团队的领域专家参与。</li>
           <li>审核代码以发现任何潜在的类似问题。</li>
           <li>为所有受支持的发布分支准备修复程序，并保留 CVE 编号。这些修复程序不会提交到公共仓库，而是保存在私有仓库中，等待公告发布。这些修复程序会使用与公共更改相同的审查流程进行私下审查。</li>
-          <li>在封禁日期，公告的副本会发送到 <a href="{ -rustlang-security-announcements-google-groups-forum-href }">Rust 安全邮件列表</a> 并发布在 Rust 博客上。这些更改会推送到公共仓库，并启动发布流程。在一小时内，CVE 数据库中会发布完整的详细信息。</li>
+          <li>过封锁期后，公告的副本会发送到 <a href="{ -rustlang-security-announcements-google-groups-forum-href }">Rust 安全邮件列表</a> 并发布在 Rust 博客上。这些更改会推送到公共仓库，并启动发布流程。在一小时内，CVE 数据库中会发布完整的详细信息。</li>
         </ol>
     <p>此过程可能需要一些时间，尤其是在需要与其他项目的维护人员进行协调时。我们将尽一切努力及时处理错误。但是，我们必须遵循上述发布流程，确保能够以一致的方式处理披露。</p>
 security-receiving-heading = 接收安全更新
