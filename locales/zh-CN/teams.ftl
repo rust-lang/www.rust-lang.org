@@ -119,7 +119,7 @@ governance-team-wg-rls-2-description = 尝试为 IDE 定制新的编译器体系
 governance-team-wg-polonius-name = Polonius 工作组
 governance-team-wg-polonius-description = 实现全新借用检查器这个实验性工作
 
-governance-team-launching-pad-name = 启动平台
+governance-team-launching-pad-name = Launching pad
 governance-team-launching-pad-description = 团队的临时家园
 
 governance-team-leadership-council-name = 领导议会
