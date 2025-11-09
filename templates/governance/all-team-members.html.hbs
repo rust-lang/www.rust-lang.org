@@ -17,7 +17,8 @@
 {{#*inline "page"}}
   <section class="green" style="padding-bottom: 10px;">
     <div class="w-100 mw-none mw-8-m mw9-l center f2">
-      <p>{{fluent "governance-all-team-members-intro"}}</p>
+      <p>{{#fluent "governance-all-team-members-intro"}}{{#fluentparam
+      "count"}}{{len data.active}}{{/fluentparam}}{{/fluent}}</p>
     </div>
   </section>
 
@@ -31,7 +32,8 @@
 
   <section class="red" style="padding-bottom: 10px;">
     <div class="w-100 mw-none mw-8-m mw9-l center f2">
-      <p>{{fluent "governance-all-team-members-alumni-intro"}}</p>
+      <p>{{#fluent "governance-all-team-members-alumni-intro"}}{{#fluentparam
+      "count"}}{{len data.alumni}}{{/fluentparam}}{{/fluent}}</p>
     </div>
   </section>
 

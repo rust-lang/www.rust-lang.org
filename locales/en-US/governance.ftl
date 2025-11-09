@@ -36,8 +36,8 @@ governance-alumni-thanks = We also want to thank all past members for their inva
 
 ## governance/all-team-members.hbs
 governance-all-team-members-title = All Rust team members
-governance-all-team-members-intro = This section lists the members of currently active Rust teams.
-governance-all-team-members-alumni-intro = This section lists our team alumni.
+governance-all-team-members-intro = This section lists the { $count } members of currently active Rust teams.
+governance-all-team-members-alumni-intro = This section lists our { $count } team alumni.
 
 ## govenance/person.hbs
 governance-person-title = Rust Project team member
