@@ -122,5 +122,5 @@ governance-team-wg-polonius-description = 实现全新借用检查器这个实�
 governance-team-launching-pad-name = 启动平台
 governance-team-launching-pad-description = 团队的临时家园
 
-governance-team-leadership-council-name = 领导委员会
+governance-team-leadership-council-name = 领导议会
 governance-team-leadership-council-description = 负责整个 Rust 项目的成功，由顶级团队的代表组成
