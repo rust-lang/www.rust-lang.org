@@ -55,7 +55,7 @@ security-scope--2025-04 =
         </ul>
         <p>报告漏洞时，请记住：</p>
         <ul>
-            <li>除非另有说明，Rust 工具链的所有组件（rustc、Cargo、rust-analyzer 或通过 rustup 提供的任何其他工具）假定用户的源代码和依赖项是完全可信的、经过审查且不包含恶意代码。我们不认为因编译或分析恶意项目或依赖项而导致的攻击是安全漏洞。</li>
+            <li>除非另有说明，Rust 工具链的所有组件（rustc、Cargo、rust-analyzer 或通过 rustup 提供的任何其他工具）假定用户的源代码和依赖项是完全可信的、经过审查且不包含恶意代码。因编译或分析恶意项目或依赖项而导致的攻击不属于我们考虑范围内的安全漏洞。</li>
             <li>Rust 编译器或语言中的健全性问题不会自动归类为安全漏洞，但如果报告，将根据具体情况进行分析。</li>
             <li><code>regex</code> crate <a href="https://docs.rs/regex/latest/regex/#untrusted-input">对不受信任的模式提供保证</a>。我们仅在 <code>regex</code> crate 内的时间不是线性时，且 <a href="https://docs.rs/regex/latest/regex/struct.RegexBuilder.html"><code>RegexBuilder</code> 中的限制方法</a>均无法防止攻击时，才将使用不受信任模式导致的拒绝服务视为安全漏洞。</li>
         </ul>
