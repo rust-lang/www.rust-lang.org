@@ -118,3 +118,9 @@ governance-team-wg-rls-2-name = RLS 2.0 工作组
 governance-team-wg-rls-2-description = 尝试为 IDE 定制新的编译器体系架构。
 governance-team-wg-polonius-name = Polonius 工作组
 governance-team-wg-polonius-description = 实现全新借用检查器这个实验性工作
+
+governance-team-launching-pad-name = Launching pad
+governance-team-launching-pad-description = 团队的临时家园
+
+governance-team-leadership-council-name = 领导议会
+governance-team-leadership-council-description = 负责整个 Rust 项目的成功，由顶级团队的代表组成
