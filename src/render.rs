@@ -227,7 +227,7 @@ pub fn render_governance(render_ctx: &RenderCtx) -> anyhow::Result<()> {
 
     // Page with all team members
     let all_team_members_data = render_ctx.teams.all_team_members();
-    for_all_langs("governance/all-team-members.html", |dst_path, lang| {
+    for_all_langs("governance/people/index.html", |dst_path, lang| {
         render_ctx
             .page(
                 "governance/all-team-members",
