@@ -2,34 +2,34 @@
 
 {{#with data.team as |team|}}
     <section class="white">
-        {{> governance/group-team team=team zulip_domain=data.zulip_domain baseurl=../baseurl}}
+        {{> governance/group-team team=team zulip_domain=../data.zulip_domain baseurl=../baseurl}}
     </section>
 {{/with}}
 {{#if data.subteams}}
     <section class="purple">
         {{#each data.subteams as |team|}}
-            {{> governance/group-team team=team zulip_domain=data.zulip_domain baseurl=../baseurl}}
+            {{> governance/group-team team=team zulip_domain=../data.zulip_domain baseurl=../baseurl}}
         {{/each}}
     </section>
 {{/if}}
 {{#if data.project_groups}}
     <section class="green">
         {{#each data.project_groups as |team|}}
-            {{> governance/group-team team=team zulip_domain=data.zulip_domain baseurl=../baseurl}}
+            {{> governance/group-team team=team zulip_domain=../data.zulip_domain baseurl=../baseurl}}
         {{/each}}
     </section>
 {{/if}}
 {{#if data.wgs}}
     <section class="green">
         {{#each data.wgs as |team|}}
-            {{> governance/group-team team=team zulip_domain=data.zulip_domain baseurl=../baseurl}}
+            {{> governance/group-team team=team zulip_domain=../data.zulip_domain baseurl=../baseurl}}
         {{/each}}
     </section>
 {{/if}}
 {{#if data.other_teams}}
     <section class="green">
         {{#each data.other_teams as |team|}}
-            {{> governance/group-team team=team zulip_domain=data.zulip_domain baseurl=../baseurl}}
+            {{> governance/group-team team=team zulip_domain=../data.zulip_domain baseurl=../baseurl}}
         {{/each}}
     </section>
 {{/if}}
