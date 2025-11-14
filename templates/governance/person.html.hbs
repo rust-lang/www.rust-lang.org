@@ -20,9 +20,9 @@
 
 {{#*inline "page"}}
   <section class="green" style="padding-bottom: 10px;">
-    <div class="w-100 mw-none mw-8-m mw9-l center f1">
+    <div class="w-100 mw-none mw-8-m mw9-l center f1 ph3">
       <div class="w-100 w-50-l mb3 flex flex-row items-start">
-        <a class="mr4 w5 h5 flex-shrink-0" href="https://github.com/{{data.github}}">
+        <a class="mr4 w4 h4 w5-l h5-l flex-shrink-0" href="https://github.com/{{data.github}}">
           <img class="w-100 h-100 bg-white br2"
                src="https://avatars.githubusercontent.com/{{data.github}}"
                alt="{{data.name}}">
@@ -39,7 +39,7 @@
 
   {{# if data.active_teams }}
     <section class="purple" style="padding-bottom: 10px;">
-      <div class="w-100 mw-none mw-8-m mw9-l center">
+      <div class="w-100 mw-none mw-8-m mw9-l center ph3">
         <header>
           <h2>{{ fluent "governance-person-team-member" }}</h2>
           <div class="highlight"></div>
@@ -53,7 +53,7 @@
 
   {{# if data.alumni_teams }}
     <section class="red" style="padding-bottom: 10px;">
-      <div class="w-100 mw-none mw-8-m mw9-l center">
+      <div class="w-100 mw-none mw-8-m mw9-l center ph3">
         <header>
           <h2>{{ fluent "governance-person-team-alumni" }}</h2>
           <div class="highlight"></div>
