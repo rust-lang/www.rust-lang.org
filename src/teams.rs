@@ -346,6 +346,27 @@ impl RustTeamData {
         people
     }
 
+    pub fn funding_data(&self, all_team_members: &AllTeamMembers) -> FundingData {
+        let people_with_sponsors = all_team_members
+            .active
+            .iter()
+            .filter_map(|member| {
+                let person = self.people.get(&member.github)?;
+                if person.github_sponsors {
+                    Some(FundablePerson {
+                        name: member.name.clone(),
+                        github: member.github.to_string(),
+                    })
+                } else {
+                    None
+                }
+            })
+            .collect();
+        FundingData {
+            people: people_with_sponsors,
+        }
+    }
+
     fn get_toplevel_team_url<'a>(&'a self, mut team: &'a Team) -> Option<String> {
         while !is_toplevel_team(team) {
             let Some(parent) = &team.subteam_of else {
@@ -474,6 +495,17 @@ pub struct PersonData {
     github_sponsors: bool,
     active_teams: Vec<PersonTeam>,
     alumni_teams: Vec<PersonTeam>,
+}
+
+#[derive(Serialize)]
+pub struct FundablePerson {
+    name: String,
+    github: String,
+}
+
+#[derive(Serialize)]
+pub struct FundingData {
+    people: Vec<FundablePerson>,
 }
 
 pub fn load_rust_teams() -> anyhow::Result<RustTeamData> {

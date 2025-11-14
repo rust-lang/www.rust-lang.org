@@ -1,0 +1,31 @@
+{{#*inline "member"}}
+  <div class="w-100 w-25-l mb3 flex flex-row items-center">
+    <a class="mr4 w4 h4 flex-shrink-0" href="{{baseurl}}/governance/people/{{member.github}}">
+      <img class="w-100 h-100 bg-white br2"
+           src="https://avatars.githubusercontent.com/{{member.github}}"
+           alt="{{member.name}}">
+    </a>
+    <div class="flex flex-column">
+      <a href="{{baseurl}}/governance/people/{{member.github}}">{{member.name}}</a>
+      <a href="https://github.com/sponsors/{{member.github}}" class="button button-secondary mt2">Sponsor</a>
+    </div>
+  </div>
+{{/inline}}
+
+{{#*inline "page"}}
+  <section class="green" style="padding-bottom: 10px;">
+    <div class="w-100 mw-none mw-8-m mw9-l center f2 ph3">
+      <p>{{fluent "funding-intro"}}</p>
+    </div>
+  </section>
+
+  <section class="green" style="padding-bottom: 15px;">
+    <div class="w-100 mw-none mw-8-m mw9-l flex flex-column flex-row-l flex-wrap-l center ph3">
+      {{#each data.people as |member|}}
+        {{> member member=member baseurl=../baseurl }}
+      {{/each}}
+    </div>
+  </section>
+
+{{/inline}}
+{{~> (lookup this "parent")~}}
