@@ -1,5 +1,5 @@
 {{#*inline "member"}}
-  <div class="w-100 w-25-l mb3 flex flex-row items-center">
+  <div class="person w-100 w-25-l mb3 flex flex-row items-center">
     <a class="mr4 w4 h4 flex-shrink-0" href="{{baseurl}}/governance/people/{{member.github}}">
       <img class="w-100 h-100 bg-white br2"
            src="https://avatars.githubusercontent.com/{{member.github}}"
@@ -20,12 +20,40 @@
   </section>
 
   <section class="green" style="padding-bottom: 15px;">
-    <div class="w-100 mw-none mw-8-m mw9-l flex flex-column flex-row-l flex-wrap-l center ph3">
+    <div id="people" class="w-100 mw-none mw-8-m mw9-l flex flex-column flex-row-l flex-wrap-l center ph3">
       {{#each data.people as |member|}}
         {{> member member=member baseurl=../baseurl }}
       {{/each}}
     </div>
   </section>
 
+{{/inline}}
+
+{{#*inline "script"}}
+<script type="text/javascript">
+  // From https://stackoverflow.com/a/2450976/1107768
+  function shuffle(array) {
+    let currentIndex = array.length;
+
+    // While there remain elements to shuffle...
+    while (currentIndex !== 0) {
+      // Pick a remaining element...
+      let randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    // Shuffle people to reduce ordering bias
+    const wrapper = document.querySelector("#people");
+    const children = Array(...wrapper.children);
+    shuffle(children);
+    wrapper.replaceChildren(...children);
+  });
+</script>
 {{/inline}}
 {{~> (lookup this "parent")~}}
