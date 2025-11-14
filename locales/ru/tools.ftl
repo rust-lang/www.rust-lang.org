@@ -105,7 +105,7 @@ install-other-methods-link = Узнайте больше
 ## components/tools/rustup.hbs
 
 tools-rustup-unixy = Кажется у вас запущена macOS, Linux или другая Unix-подобная ОС. Для загрузки Rustup и установки Rust, запустите следующее в вашем терминале и следуйте инструкциям на экране.
-tools-rustup-windows-2 = Похоже, вы работаете под управлением Windows. Чтобы начать использовать Rust, загрузите установщик, затем запустите программу и следуйте инструкциям на экране. Возможно, Вам потребуется установить<a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">Visual Studio C++ Build tools</a> при появлении соответствующего запроса. Если вы не работаете в Windows, смотрите <a href="https://forge.rust-lang.org/infra/other-installation-methods.html">"другие методы установки"</a>.
+tools-rustup-windows-2 = Похоже, вы работаете под управлением Windows. Чтобы начать использовать Rust, загрузите установщик, затем запустите программу и следуйте инструкциям на экране. Возможно, Вам потребуется установить<a href="https://rust-lang.github.io/rustup/installation/windows-msvc.html">Visual Studio C++ Build tools</a> при появлении соответствующего запроса. Если вы не работаете в Windows, смотрите <a href="https://forge.rust-lang.org/infra/other-installation-methods.html">"другие методы установки"</a>.
 tools-rustup-wsl-heading = Windows Subsystem for Linux
 tools-rustup-wsl = Если вы используете Windows Subsystem for Linux, для установки Rust запустите следующее в вашем терминале и затем следуйте инструкциям на экране.
 tools-rustup-manual-default = Если вы используете Unix, такой как WSL, Linux или macOS, то для установки Rust<br>запустите следующую команду в вашем терминале и следуйте инструкциям на экране.

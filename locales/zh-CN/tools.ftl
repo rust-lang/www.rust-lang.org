@@ -119,7 +119,7 @@ install-other-methods-link = 了解更多
 ## components/tools/rustup.hbs
 
 tools-rustup-unixy = 您似乎正在运行 macOS、Linux 或其它类 Unix 系统。要下载 Rustup 并安装 Rust，请在终端中运行以下命令，然后遵循屏幕上的指示。如果您在 Windows 上，请参见 <a href="https://forge.rust-lang.org/infra/other-installation-methods.html">“其他安装方式”</a>。
-tools-rustup-windows-2 = 您似乎正在运行 Windows。要使用 Rust，请下载安装器，然后运行该程序并遵循屏幕上的指示。当看到相应提示时，您可能需要安装 <a href="https://visualstudio.microsoft.com/zh-hans/visual-cpp-build-tools/">Microsoft C++ 生成工具</a>。如果您不在 Windows 上，参看 <a href="https://forge.rust-lang.org/infra/other-installation-methods.html">“其他安装方式”</a>。
+tools-rustup-windows-2 = 您似乎正在运行 Windows。要使用 Rust，请下载安装器，然后运行该程序并遵循屏幕上的指示。当看到相应提示时，您可能需要安装 <a href="https://rust-lang.github.io/rustup/installation/windows-msvc.html">Microsoft C++ 生成工具</a>。如果您不在 Windows 上，参看 <a href="https://forge.rust-lang.org/infra/other-installation-methods.html">“其他安装方式”</a>。
 tools-rustup-wsl-heading = Windows 的 Linux 子系统（WSL）
 tools-rustup-wsl = 如果您是 Windows 的 Linux 子系统（WSL）用户，要安装 Rust，请在终端中运行以下命令，然后遵循屏幕上的指示。
 tools-rustup-manual-default = 如果您正在运行 WSL、Linux 或 macOS 等类-Unix 系统，要安装 Rust，<br>请在终端中运行以下命令，然后遵循屏幕上的指示。
