@@ -158,7 +158,7 @@ install-other-methods-link = Learn more
 ## components/tools/rustup.hbs
 
 tools-rustup-unixy = It looks like you’re running macOS, Linux, or another Unix-like OS. To download Rustup and install Rust, run the following in your terminal, then follow the on-screen instructions. See <a href="https://forge.rust-lang.org/infra/other-installation-methods.html">"Other Installation Methods"</a> if you are on Windows.
-tools-rustup-windows-2 = It looks like you’re running Windows. To start using Rust, download the installer, then run the program and follow the onscreen instructions. You may need to install the <a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">Visual Studio C++ Build tools</a> when prompted to do so. If you are not on Windows see <a href="https://forge.rust-lang.org/infra/other-installation-methods.html">"Other Installation Methods"</a>.
+tools-rustup-windows-2 = It looks like you’re running Windows. To start using Rust, download the installer, then run the program and follow the onscreen instructions. You may need to install the <a href="https://rust-lang.github.io/rustup/installation/windows-msvc.html">Visual Studio C++ Build tools</a> when prompted to do so. If you are not on Windows see <a href="https://forge.rust-lang.org/infra/other-installation-methods.html">"Other Installation Methods"</a>.
 tools-rustup-wsl-heading = Windows Subsystem for Linux
 tools-rustup-wsl = If you’re a Windows Subsystem for Linux user run the following in your terminal, then follow the on-screen instructions to install Rust.
 tools-rustup-manual-default = To install Rust, if you are running a Unix such as WSL, Linux or macOS,<br> run the following in your terminal, then follow the on-screen instructions.

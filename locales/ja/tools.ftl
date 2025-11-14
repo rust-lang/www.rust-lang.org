@@ -83,7 +83,7 @@ install-other-methods-link = もっと知る
 ## components/tools/rustup.hbs
 
 tools-rustup-unixy = あなたはmacOSかLinuxまたはその他のUnix系OSを使用しているようです。RustupをダウンロードしてRustをインストールするには、ターミナルで以下のコマンドを実行してください。それから画面に表示される指示に従ってください。Windowsユーザである場合には、<a href="https://forge.rust-lang.org/infra/other-installation-methods.html">「その他のインストール方法」</a>を参照してください。
-tools-rustup-windows-2 = あなたはWindowsを使用しているようです。Rustを使い始めるには、インストーラをダウンロードして実行し、画面に表示される指示に従ってください。場合によっては、<a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">Visual Studio C++ Build tools</a>をインストールする必要があります。もしWindowsユーザでない場合には、<a href="https://forge.rust-lang.org/infra/other-installation-methods.html">「その他のインストール方法」</a>を参照してください。
+tools-rustup-windows-2 = あなたはWindowsを使用しているようです。Rustを使い始めるには、インストーラをダウンロードして実行し、画面に表示される指示に従ってください。場合によっては、<a href="https://rust-lang.github.io/rustup/installation/windows-msvc.html">Visual Studio C++ Build tools</a>をインストールする必要があります。もしWindowsユーザでない場合には、<a href="https://forge.rust-lang.org/infra/other-installation-methods.html">「その他のインストール方法」</a>を参照してください。
 tools-rustup-wsl-heading = Windows Subsystem for Linux
 tools-rustup-wsl = あなたがWindows Subsystem for Linuxのユーザーであるなら、下記をターミナル上で実行し、スクリーン上の説明に従ってRustをインストールしてください。
 tools-rustup-manual-default = WSL、Linux、あるいはmacOSのようなUnix系統のOS上でRustをインストールするときは、<br>以下をターミナルで実行し、画面の指示に従ってください。
