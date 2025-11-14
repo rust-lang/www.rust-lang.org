@@ -3,7 +3,7 @@ use handlebars::{
     Context, Handlebars, Helper, HelperResult, Output, RenderContext, RenderErrorReason,
 };
 use percent_encoding::{AsciiSet, NON_ALPHANUMERIC, utf8_percent_encode};
-use rust_team_data::v1::{BASE_URL, Team, TeamKind, TeamMember, Teams};
+use rust_team_data::v1::{BASE_URL, People, Person, Team, TeamKind, TeamMember, Teams};
 use serde::Serialize;
 use std::cmp::Reverse;
 use std::collections::HashMap;
@@ -49,17 +49,20 @@ pub fn encode_zulip_stream(
 }
 
 #[derive(Debug, Clone)]
-pub struct RustTeams {
+pub struct RustTeamData {
     pub teams: Vec<Team>,
     pub archived_teams: Vec<Team>,
+    // GitHub username => person data
+    pub people: HashMap<String, Person>,
 }
 
-impl RustTeams {
+impl RustTeamData {
     #[cfg(test)]
     fn dummy(teams: Vec<Team>) -> Self {
-        RustTeams {
+        RustTeamData {
             teams,
             archived_teams: vec![],
+            people: HashMap::new(),
         }
     }
 
@@ -277,16 +280,21 @@ impl RustTeams {
 
         fn add_team(
             people: &mut HashMap<String, PersonData>,
-            ctx: &RustTeams,
+            ctx: &RustTeamData,
             member: &TeamMember,
             team: &Team,
             mode: TeamMode,
         ) {
+            let person_team_data = ctx
+                .people
+                .get(&member.github)
+                .unwrap_or_else(|| panic!("Person {} not found in people.json", member.github));
             let person = people
                 .entry(member.github.clone())
                 .or_insert_with(move || PersonData {
                     name: member.name.clone(),
                     github: member.github.clone(),
+                    github_sponsors: person_team_data.github_sponsors,
                     active_teams: vec![],
                     alumni_teams: vec![],
                 });
@@ -463,15 +471,16 @@ impl PersonTeam {
 pub struct PersonData {
     name: String,
     pub github: String,
+    github_sponsors: bool,
     active_teams: Vec<PersonTeam>,
     alumni_teams: Vec<PersonTeam>,
 }
 
-pub fn load_rust_teams() -> anyhow::Result<RustTeams> {
+pub fn load_rust_teams() -> anyhow::Result<RustTeamData> {
     println!("Downloading Team API data");
 
     // Parallelize the download to make website build faster
-    let (teams, archived_teams) = std::thread::scope(|scope| {
+    let (teams, archived_teams, people) = std::thread::scope(|scope| {
         let teams = scope.spawn(|| -> anyhow::Result<Teams> {
             let response = fetch(&format!("{BASE_URL}/teams.json"))?;
             Ok(serde_json::from_str(&response)?)
@@ -480,13 +489,22 @@ pub fn load_rust_teams() -> anyhow::Result<RustTeams> {
             let response = fetch(&format!("{BASE_URL}/archived-teams.json"))?;
             Ok(serde_json::from_str(&response)?)
         });
-        (teams.join().unwrap(), archived_teams.join().unwrap())
+        let people = scope.spawn(|| -> anyhow::Result<People> {
+            let response = fetch(&format!("{BASE_URL}/people.json"))?;
+            Ok(serde_json::from_str(&response)?)
+        });
+        (
+            teams.join().unwrap(),
+            archived_teams.join().unwrap(),
+            people.join().unwrap(),
+        )
     });
-    let (teams, archived_teams) = (teams?, archived_teams?);
+    let (teams, archived_teams, people) = (teams?, archived_teams?, people?);
 
-    Ok(RustTeams {
+    Ok(RustTeamData {
         teams: teams.teams.into_values().collect(),
         archived_teams: archived_teams.teams.into_values().collect(),
+        people: people.people.into_iter().collect(),
     })
 }
 
@@ -517,7 +535,7 @@ impl fmt::Display for TeamNotFound {
 
 #[cfg(test)]
 mod tests {
-    use super::{RustTeams, TeamNotFound};
+    use super::{RustTeamData, TeamNotFound};
     use rust_team_data::v1::{Team, TeamKind, TeamMember, TeamWebsite};
 
     fn dummy_team(name: &str) -> Team {
@@ -569,7 +587,7 @@ mod tests {
     fn test_index_data() {
         let mut foo = dummy_team("foo");
         foo.kind = TeamKind::WorkingGroup;
-        let data = RustTeams::dummy(vec![foo, dummy_team("bar")]);
+        let data = RustTeamData::dummy(vec![foo, dummy_team("bar")]);
 
         let res = data.index_data();
         assert_eq!(res.teams.len(), 1);
@@ -581,7 +599,7 @@ mod tests {
     fn test_index_subteams_are_hidden() {
         let mut foo = dummy_team("foo");
         foo.subteam_of = Some(String::new());
-        let data = RustTeams::dummy(vec![foo]);
+        let data = RustTeamData::dummy(vec![foo]);
 
         assert_eq!(data.index_data().teams.len(), 0);
     }
@@ -606,7 +624,7 @@ mod tests {
         other_wg.subteam_of = Some("other".into());
         other_wg.kind = TeamKind::WorkingGroup;
 
-        let data = RustTeams::dummy(vec![
+        let data = RustTeamData::dummy(vec![
             main,
             subteam,
             subteam2,
@@ -635,7 +653,7 @@ mod tests {
         let foo = dummy_team("foo");
         let mut bar = dummy_team("bar");
         bar.kind = TeamKind::WorkingGroup;
-        let data = RustTeams::dummy(vec![foo, bar]);
+        let data = RustTeamData::dummy(vec![foo, bar]);
 
         assert!(
             data.clone()
@@ -663,7 +681,7 @@ mod tests {
     fn test_subteams_cant_be_loaded() {
         let mut foo = dummy_team("foo");
         foo.subteam_of = Some("bar".into());
-        let data = RustTeams::dummy(vec![foo, dummy_team("bar")]);
+        let data = RustTeamData::dummy(vec![foo, dummy_team("bar")]);
 
         assert!(
             data.page_data("teams", "foo")

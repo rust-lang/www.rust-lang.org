@@ -20,7 +20,7 @@
 
 {{#*inline "page"}}
   <section class="green" style="padding-bottom: 10px;">
-    <div class="w-100 mw-none mw-8-m mw9-l center f1 ph3">
+    <div class="w-100 mw-none mw-8-m mw9-l center f1 ph3 flex flex-column flex-row-l items-end-l justify-between">
       <div class="w-100 w-50-l mb3 flex flex-row items-start">
         <a class="mr4 w4 h4 w5-l h5-l flex-shrink-0" href="https://github.com/{{data.github}}">
           <img class="w-100 h-100 bg-white br2"
@@ -33,6 +33,11 @@
             GitHub: <a href="https://github.com/{{data.github}}">{{data.github}}</a>
           </div>
         </div>
+      </div>
+      <div class="f3">
+        {{# if data.github_sponsors }}
+          <a href="https://github.com/sponsors/{{data.github}}" class="button button-secondary mw6">Sponsor {{ data.name }} on GitHub</a>
+        {{/if}}
       </div>
     </div>
   </section>
