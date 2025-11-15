@@ -2,7 +2,7 @@ use crate::assets::AssetFiles;
 use crate::fs::{copy_dir_all, ensure_directory};
 use crate::i18n::{EXPLICIT_LOCALE_INFO, LocaleInfo, SUPPORTED_LOCALES};
 use crate::rust_version::RustVersion;
-use crate::teams::{PageData, RustTeamData};
+use crate::teams::{AllTeamMembers, PageData, RustTeamData};
 use crate::{BaseUrl, ENGLISH, LAYOUT};
 use anyhow::Context;
 use handlebars::Handlebars;
@@ -179,7 +179,10 @@ pub fn render_index(render_ctx: &RenderCtx) -> anyhow::Result<()> {
     })
 }
 
-pub fn render_governance(render_ctx: &RenderCtx) -> anyhow::Result<()> {
+pub fn render_governance(
+    render_ctx: &RenderCtx,
+    all_team_members: &AllTeamMembers,
+) -> anyhow::Result<()> {
     let data = render_ctx.teams.index_data();
 
     // Index page
@@ -226,13 +229,12 @@ pub fn render_governance(render_ctx: &RenderCtx) -> anyhow::Result<()> {
     })?;
 
     // Page with all team members
-    let all_team_members_data = render_ctx.teams.all_team_members();
     for_all_langs("governance/people/index.html", |dst_path, lang| {
         render_ctx
             .page(
                 "governance/all-team-members",
                 "governance-all-team-members-title",
-                &all_team_members_data,
+                all_team_members,
                 lang,
             )
             .render(dst_path)
@@ -259,6 +261,22 @@ pub fn render_governance(render_ctx: &RenderCtx) -> anyhow::Result<()> {
             )
         })
         .collect::<anyhow::Result<Vec<_>>>()?;
+
+    Ok(())
+}
+
+pub fn render_funding(
+    render_ctx: &RenderCtx,
+    all_team_members: &AllTeamMembers,
+) -> anyhow::Result<()> {
+    let data = render_ctx.teams.funding_data(all_team_members);
+
+    // Index page
+    for_all_langs("funding/index.html", |dst_path, lang| {
+        render_ctx
+            .page("funding", "funding-page-title", &data, lang)
+            .render(dst_path)
+    })?;
 
     Ok(())
 }

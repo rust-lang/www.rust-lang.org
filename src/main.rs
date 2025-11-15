@@ -1,7 +1,7 @@
 use crate::assets::compile_assets;
 use crate::i18n::{TeamHelper, create_loader};
 use crate::redirect::create_redirects;
-use crate::render::{RenderCtx, render_directory, render_governance, render_index};
+use crate::render::{RenderCtx, render_directory, render_funding, render_governance, render_index};
 use crate::rust_version::fetch_rust_version;
 use crate::teams::{encode_zulip_stream, load_rust_teams};
 use anyhow::Context;
@@ -110,8 +110,11 @@ fn main() -> anyhow::Result<()> {
         ".well-known/security.txt",
     )?;
 
+    let all_team_members = ctx.teams.all_team_members();
+
     render_index(&ctx)?;
-    render_governance(&ctx)?;
+    render_governance(&ctx, &all_team_members)?;
+    render_funding(&ctx, &all_team_members)?;
     render_directory(&ctx, "community")?;
     render_directory(&ctx, "learn")?;
     render_directory(&ctx, "policies")?;
