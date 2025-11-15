@@ -2,7 +2,7 @@ use crate::assets::AssetFiles;
 use crate::fs::{copy_dir_all, ensure_directory};
 use crate::i18n::{EXPLICIT_LOCALE_INFO, LocaleInfo, SUPPORTED_LOCALES};
 use crate::rust_version::RustVersion;
-use crate::teams::{PageData, RustTeams};
+use crate::teams::{PageData, RustTeamData};
 use crate::{BaseUrl, ENGLISH, LAYOUT};
 use anyhow::Context;
 use handlebars::Handlebars;
@@ -84,7 +84,7 @@ pub struct RenderCtx<'a> {
     pub fluent_loader: SimpleLoader,
     pub output_dir: PathBuf,
     pub rust_version: RustVersion,
-    pub teams: RustTeams,
+    pub teams: RustTeamData,
     pub assets: AssetFiles,
     pub base_url: BaseUrl,
 }
