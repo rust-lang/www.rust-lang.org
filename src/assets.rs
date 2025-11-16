@@ -106,6 +106,7 @@ pub struct CSSFiles {
 #[derive(Serialize, Debug)]
 pub struct JSFiles {
     tools_install: String,
+    funding_shuffle: String,
 }
 
 #[derive(Serialize, Debug)]
@@ -125,6 +126,7 @@ pub fn compile_assets(
     let fonts_css_file = compile_sass(root_dir, out_dir, "fonts", base_url)?;
     let vendor_css_file = concat_vendor_css(root_dir, out_dir, vec!["tachyons"])?;
     let tools_install_js = build_js_file(root_dir, out_dir, "tools-install")?;
+    let funding_shuffle_js = build_js_file(root_dir, out_dir, "funding-shuffle")?;
 
     Ok(AssetFiles {
         css: CSSFiles {
@@ -134,6 +136,7 @@ pub fn compile_assets(
         },
         js: JSFiles {
             tools_install: format!("{base_url}/{tools_install_js}"),
+            funding_shuffle: format!("{base_url}/{funding_shuffle_js}"),
         },
     })
 }
