@@ -56,36 +56,44 @@ fn concat_files(
     files: &[&str],
     directory: &str,
     extension: &str,
+    prefix: &str,
 ) -> anyhow::Result<String> {
     let mut concatted = String::new();
     for filestem in files {
-        let vendor_path = root_dir
+        let file_path = root_dir
             .join("static")
             .join(directory)
             .join(format!("{filestem}.{extension}"));
-        let contents = fs::read_to_string(vendor_path)
-            .with_context(|| anyhow::anyhow!("couldn't read vendor {extension}"))?;
+        let contents = fs::read_to_string(file_path)
+            .with_context(|| anyhow::anyhow!("couldn't read {prefix} {extension}"))?;
         concatted.push_str(&contents);
     }
 
-    let file_sha = format!("vendor_{}", hash_string(&concatted));
+    let file_sha = format!("{prefix}_{}", hash_string(&concatted));
     let out_file_path = out_dir
         .join("static")
         .join(directory)
         .join(format!("{file_sha}.{extension}"));
 
     write_file(Path::new(&out_file_path), concatted.as_bytes())
-        .with_context(|| anyhow::anyhow!("couldn't write vendor {extension}"))?;
+        .with_context(|| anyhow::anyhow!("couldn't write {prefix} {extension}"))?;
 
     relative_url(&out_file_path, out_dir)
 }
 
 fn concat_vendor_css(root_dir: &Path, out_dir: &Path, files: Vec<&str>) -> anyhow::Result<String> {
-    concat_files(root_dir, out_dir, &files, "styles", "css")
+    concat_files(root_dir, out_dir, &files, "styles", "css", "vendor")
 }
 
-fn concat_app_js(root_dir: &Path, out_dir: &Path, files: Vec<&str>) -> anyhow::Result<String> {
-    concat_files(root_dir, out_dir, &files, "scripts", "js")
+fn build_js_file(root_dir: &Path, out_dir: &Path, file: &str) -> anyhow::Result<String> {
+    concat_files(
+        root_dir,
+        out_dir,
+        &[file],
+        "scripts",
+        "js",
+        Path::new(file).file_stem().unwrap().to_str().unwrap(),
+    )
 }
 
 #[derive(Serialize, Debug)]
@@ -97,7 +105,8 @@ pub struct CSSFiles {
 
 #[derive(Serialize, Debug)]
 pub struct JSFiles {
-    app: String,
+    tools_install: String,
+    funding_shuffle: String,
 }
 
 #[derive(Serialize, Debug)]
@@ -116,7 +125,8 @@ pub fn compile_assets(
     let app_css_file = compile_sass(root_dir, out_dir, "app", base_url)?;
     let fonts_css_file = compile_sass(root_dir, out_dir, "fonts", base_url)?;
     let vendor_css_file = concat_vendor_css(root_dir, out_dir, vec!["tachyons"])?;
-    let app_js_file = concat_app_js(root_dir, out_dir, vec!["tools-install"])?;
+    let tools_install_js = build_js_file(root_dir, out_dir, "tools-install")?;
+    let funding_shuffle_js = build_js_file(root_dir, out_dir, "funding-shuffle")?;
 
     Ok(AssetFiles {
         css: CSSFiles {
@@ -125,7 +135,8 @@ pub fn compile_assets(
             vendor: format!("{base_url}/{vendor_css_file}"),
         },
         js: JSFiles {
-            app: format!("{base_url}/{app_js_file}"),
+            tools_install: format!("{base_url}/{tools_install_js}"),
+            funding_shuffle: format!("{base_url}/{funding_shuffle_js}"),
         },
     })
 }
