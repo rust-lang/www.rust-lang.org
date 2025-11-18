@@ -15,17 +15,15 @@
 {{/inline}}
 
 {{#*inline "page"}}
-  <section class="green" style="padding-bottom: 10px;">
+  <section class="green ph3 pb4">
     <div class="w-100 mw-none mw-8-m mw9-l center f2">
       <p>{{#fluent "governance-all-team-members-intro"}}{{#fluentparam
       "count"}}{{len data.active}}{{/fluentparam}}{{/fluent}}</p>
     </div>
-    <div class="w-100 mw-none mw9-l center">
+    <div class="w-100 mw-none mw9-l mb5 center">
       <a href="{{baseurl}}/funding" class="button button-secondary mw6">Sponsor Rust contributors</a>
     </div>
-  </section>
 
-  <section class="green" style="padding-bottom: 15px;">
     <div class="w-100 mw-none mw-8-m mw9-l flex flex-column flex-row-l flex-wrap-l center">
       {{#each data.active as |member|}}
         {{> member member=member baseurl=../baseurl }}
@@ -33,14 +31,12 @@
     </div>
   </section>
 
-  <section class="red" style="padding-bottom: 10px;">
+  <section class="red ph3 pb4">
     <div class="w-100 mw-none mw-8-m mw9-l center f2">
       <p>{{#fluent "governance-all-team-members-alumni-intro"}}{{#fluentparam
       "count"}}{{len data.alumni}}{{/fluentparam}}{{/fluent}}</p>
     </div>
-  </section>
 
-  <section class="red" style="padding-bottom: 15px;">
     <div class="w-100 mw-none mw-8-m mw9-l flex flex-column flex-row-l flex-wrap-l center">
       {{#each data.alumni as |member|}}
         {{> member member=member baseurl=../baseurl }}
