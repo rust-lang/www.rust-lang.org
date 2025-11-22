@@ -26,7 +26,7 @@ wasm-get-started-mdn-link = 알아보기
 wasm-js-augment-heading = 대체하지 않고 강화합니다
 wasm-js-augment-description = WebAssembly는 JavaScript의 대체가 아니라 협력을 목표로 하며, 무거운 작업이나 저수준의 작업을 돕습니다. Rust는 성능에 집중하기에 이런 작업에 이점이 있습니다.
 wasm-js-toolchains-heading = 친숙한 툴체인과 함께 작동합니다
-wasm-js-interop-description = Rust, WebAssembly, JavaScript API 간의 바인딩 코드가 자동으로 생성됩니다. 미리 패키지된 바인딩을 웹 플랫폼 전체에 제공하는 <a href="https://rustwasm.github.io/wasm-bindgen/web-sys/index.html"><code>web-sys</code></a>와 같은 라이브러리의 혜택을 누리세요.
+wasm-js-interop-description = Rust, WebAssembly, JavaScript API 간의 바인딩 코드가 자동으로 생성됩니다. 미리 패키지된 바인딩을 웹 플랫폼 전체에 제공하는 <a href="https://docs.rs/web-sys/latest/web_sys/"><code>web-sys</code></a>와 같은 라이브러리의 혜택을 누리세요.
 
 ## Production use (templates/components/what/wasm/production.hbs)
 

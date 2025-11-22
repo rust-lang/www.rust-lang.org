@@ -38,7 +38,7 @@ wasm-js-augment-description = WebAssembly'nin hayali, JavaScript'i öldürmek de
 wasm-js-toolchains-heading = Bilinen alet zincirleriyle çalışır
 wasm-js-toolchains-description = Rust WebAssembly paketlerini npm gibi paket kayıtlarında paylaşın. Paketleyin ve webpack, Parcel vb. kullanarak dağıtın. <code>npm audit</code> ve Greenkeeper gibi araçlarla devamlılığını sağlayın.
 wasm-js-interop-heading = Kesintisiz birlikte çalışma
-wasm-js-interop-description = Rust, WebAssembly ve JavaScript UPA'ları arasında otomatik olarak kodları bağlayın. <a href="https://rustwasm.github.io/wasm-bindgen/web-sys/index.html"><code>web-sys</code> gibi bütün web platformu için önceden paketlenmiş bağlantıları sağlayan kütüphanelerin avantajından yararlanın.
+wasm-js-interop-description = Rust, WebAssembly ve JavaScript UPA'ları arasında otomatik olarak kodları bağlayın. <a href="https://docs.rs/web-sys/latest/web_sys/"><code>web-sys</code> gibi bütün web platformu için önceden paketlenmiş bağlantıları sağlayan kütüphanelerin avantajından yararlanın.
 
 ## Production use (templates/components/what/wasm/production.hbs)
 

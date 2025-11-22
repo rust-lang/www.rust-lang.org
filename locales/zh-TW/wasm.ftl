@@ -38,7 +38,7 @@ wasm-js-augment-description = WebAssembly 的夢想不是為了扼殺 JavaScript
 wasm-js-toolchains-heading = 使用熟悉的工具鏈來開發
 wasm-js-toolchains-description = 您可以發佈 Rust 的 WebAssembly 套件到 npm 這類的套件管理工具。使用 Webpack、Parcel 或其他工具來打包和發佈套件。並使用 <code>npm audit</code> 或 Greenkeeper 等工具來進行維護。
 wasm-js-interop-heading = 無縫的互操作性
-wasm-js-interop-description = 自動化生成 Rust、WebAssembly 和 JavaScript 之間的 API 的綁定程式碼。充分利用 <a href="https://rustwasm.github.io/wasm-bindgen/web-sys/index.html"><code>web-sys</code></a> 之類的函式庫為整個 Web 平台提供事先打包好的绑定。
+wasm-js-interop-description = 自動化生成 Rust、WebAssembly 和 JavaScript 之間的 API 的綁定程式碼。充分利用 <a href="https://docs.rs/web-sys/latest/web_sys/"><code>web-sys</code></a> 之類的函式庫為整個 Web 平台提供事先打包好的绑定。
 
 ## Production use (templates/components/what/wasm/production.hbs)
 

@@ -38,7 +38,7 @@ wasm-js-augment-description = Le rêve de WebAssembly n'est pas d'éliminer Java
 wasm-js-toolchains-heading = Fonctionne avec les outils habituels
 wasm-js-toolchains-description = Publiez des paquets WebAssembly en Rust dans des dépôts comme npm. Regroupez-les et distribuez-les avec webpack, Parcel et bien d’autres. Maintenez-les avec des outils comme <code>npm audit</code> et Greenkeeper.
 wasm-js-interop-heading = Interopérabilité sans accroc
-wasm-js-interop-description = Générez automatiquement du code de liaison entre Rust, WebAssembly et l'API JavaScript. Tirez avantage de bibliothèques comme <a href="https://rustwasm.github.io/wasm-bindgen/web-sys/index.html"><code>web-sys</code></a> qui fournissent des associations prédéfinies avec l'intégralité de la plateforme web.
+wasm-js-interop-description = Générez automatiquement du code de liaison entre Rust, WebAssembly et l'API JavaScript. Tirez avantage de bibliothèques comme <a href="https://docs.rs/web-sys/latest/web_sys/"><code>web-sys</code></a> qui fournissent des associations prédéfinies avec l'intégralité de la plateforme web.
 
 ## Production use (templates/components/what/wasm/production.hbs)
 
