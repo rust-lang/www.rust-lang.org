@@ -55,7 +55,7 @@ wasm-js-toolchains-description =
 
 wasm-js-interop-heading = Seamless interop
 wasm-js-interop-description =
-        Automatically generate binding code between Rust, WebAssembly, and JavaScript APIs. Take advantage of libraries like <a href="https://rustwasm.github.io/wasm-bindgen/web-sys/index.html"><code>web-sys</code></a> that provide pre-packaged bindings for the entire web platform.
+        Automatically generate binding code between Rust, WebAssembly, and JavaScript APIs. Take advantage of libraries like <a href="https://docs.rs/web-sys/latest/web_sys/"><code>web-sys</code></a> that provide pre-packaged bindings for the entire web platform.
 
 
 ## Production use (templates/components/what/wasm/production.hbs)

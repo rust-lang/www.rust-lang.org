@@ -38,7 +38,7 @@ wasm-js-augment-description = WebAssemblyの目的はJavaScriptを終わらせ�
 wasm-js-toolchains-heading = 一般的なツールチェーンとの連携
 wasm-js-toolchains-description = RustのWebAssemblyパッケージはnpmのようなパッケージレジストリに公開できます。webpackやParcelなどをバンドルしてリリースすることもできます。管理には<code>npm audit</code>やGreenkeeperのようなツールが使えます。
 wasm-js-interop-heading = シームレスな相互運用
-wasm-js-interop-description = RustとWebAssembly、JavaScript API間をバインドするコードは自動生成できます。<a href="https://rustwasm.github.io/wasm-bindgen/web-sys/index.html"><code>web-sys</code></a>のようなライブラリを使えば、各ウェブプラットフォームへのバインディングをパッケージ済みの状態で提供することもできます。
+wasm-js-interop-description = RustとWebAssembly、JavaScript API間をバインドするコードは自動生成できます。<a href="https://docs.rs/web-sys/latest/web_sys/"><code>web-sys</code></a>のようなライブラリを使えば、各ウェブプラットフォームへのバインディングをパッケージ済みの状態で提供することもできます。
 
 ## Production use (templates/components/what/wasm/production.hbs)
 
