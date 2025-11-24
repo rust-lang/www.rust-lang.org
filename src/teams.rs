@@ -505,7 +505,7 @@ pub struct FundablePerson {
 
 #[derive(Serialize)]
 pub struct FundingData {
-    people: Vec<FundablePerson>,
+    pub people: Vec<FundablePerson>,
 }
 
 pub fn load_rust_teams() -> anyhow::Result<RustTeamData> {

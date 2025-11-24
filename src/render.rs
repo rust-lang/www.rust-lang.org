@@ -7,6 +7,7 @@ use crate::{BaseUrl, ENGLISH, LAYOUT};
 use anyhow::Context;
 use handlebars::Handlebars;
 use handlebars_fluent::{Loader, SimpleLoader};
+use rand::seq::SliceRandom;
 use rayon::iter::IntoParallelRefIterator;
 use rayon::iter::ParallelIterator;
 use serde::Serialize;
@@ -269,7 +270,14 @@ pub fn render_funding(
     render_ctx: &RenderCtx,
     all_team_members: &AllTeamMembers,
 ) -> anyhow::Result<()> {
-    let data = render_ctx.teams.funding_data(all_team_members);
+    let mut data = render_ctx.teams.funding_data(all_team_members);
+
+    // To reduce unnecessary ordering bias, we shuffle the list of fundable people.
+    // While we also shuffle on the client (frontend), this does not work for people
+    // with JavaScript enabled. And since the website is rebuilt regularly every day,
+    // this ensures that even the baseline version of the page without client-side
+    // shuffling will not always be the same.
+    data.people.shuffle(&mut rand::rng());
 
     // Index page
     for_all_langs("funding/index.html", |dst_path, lang| {
