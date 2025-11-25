@@ -274,7 +274,7 @@ pub fn render_funding(
 
     // To reduce unnecessary ordering bias, we shuffle the list of fundable people.
     // While we also shuffle on the client (frontend), this does not work for people
-    // with JavaScript enabled. And since the website is rebuilt regularly every day,
+    // with JavaScript disabled. And since the website is rebuilt regularly every day,
     // this ensures that even the baseline version of the page without client-side
     // shuffling will not always be the same.
     data.people.shuffle(&mut rand::rng());
