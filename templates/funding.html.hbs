@@ -13,19 +13,30 @@
 {{/inline}}
 
 {{#*inline "page"}}
-  <section class="green" style="padding-bottom: 10px;">
-    <div class="w-100 mw-none mw-8-m mw9-l center f2 ph3">
+  <header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
+    <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+      <h1>{{fluent "funding-page-title"}}</h1>
+    </div>
+  </header>
+
+  <section class="purple pb1">
+    <div class="w-100 mw-none mw-8-m mw9-l center f1 ph3" style="font-size: 1.2em;">
       <p>{{fluent "funding-intro"}}</p>
+    </div>
+    <div class="w-100 mw-none mw-8-m mw9-l center f1 ph3" style="font-size: 1.2em;">
+      <p>{{fluent "funding-intro-individuals"}}</p>
     </div>
   </section>
 
-  <section class="green" style="padding-bottom: 15px;">
-    <div id="people" class="w-100 mw-none mw-8-m mw9-l flex flex-column flex-row-l flex-wrap-l center ph3">
-      {{#each data.people as |member|}}
-        {{> member member=member baseurl=../baseurl }}
-      {{/each}}
+  <section class="green pb4">
+    <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+      <div id="people" class="flex flex-column flex-row-l flex-wrap-l">
+        {{#each data.people as |member|}}
+          {{> member member=member baseurl=../baseurl }}
+        {{/each}}
+      </div>
+      <script type="text/javascript" src="{{assets.js.funding_shuffle}}"></script>
     </div>
-    <script type="text/javascript" src="{{assets.js.funding_shuffle}}"></script>
   </section>
 {{/inline}}
 
