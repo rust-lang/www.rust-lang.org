@@ -50,7 +50,7 @@ footer-get-help = ヘルプ
 footer-youtube-alt = Twitter
 footer-alt-youtube = youtubeのロゴ
 footer-github-alt = GitHub
-footer-attribution = Rustチームによって管理されています。誤字を見つけましたか？<a href="https://github.com/rust-lang/www.rust-lang.org/issues/new/choose">修正を送ってください！</a>
+footer-attribution = Rustチームによって管理されています。誤字を見つけましたか？<a target="_blank" href="https://github.com/rust-lang/www.rust-lang.org/issues/new/choose">修正を送ってください！</a>
 footer-old-site = <a href="https://prev.rust-lang.org">以前のウェブサイト</a>をお探しですか？
 
 ## what/index.hbs
