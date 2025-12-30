@@ -52,7 +52,7 @@ footer-alt-youtube = logo youtube
 footer-github-alt = Github
 footer-attribution =
     Strona utrzymywana przez Zespół Rusta. Widzisz błąd?
-    <a href="https://github.com/rust-lang/www.rust-lang.org/issues/new/choose">Zgłoś go!</a>
+    <a target="_blank" href="https://github.com/rust-lang/www.rust-lang.org/issues/new/choose">Zgłoś go!</a>
 footer-old-site = Szukasz <a href="https://prev.rust-lang.org">poprzedniej wersji strony</a>?
 
 ## what/index.hbs

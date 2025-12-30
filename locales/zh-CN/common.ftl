@@ -52,7 +52,7 @@ footer-alt-youtube = youtube 标志
 footer-github-alt = GitHub
 footer-attribution =
     由 Rust 团队维护。发现了错别字？
-    <a href="https://github.com/rust-lang/www.rust-lang.org/issues/new/choose">在这里提交修复！</a>
+    <a target="_blank" href="https://github.com/rust-lang/www.rust-lang.org/issues/new/choose">在这里提交修复！</a>
 footer-old-site = 想要查看<a href="https://prev.rust-lang.org">旧版网站</a>？
 
 footer-autoupdate = 网站将在每天 { $autoupdate } 构建
