@@ -39,6 +39,10 @@ pub static PAGE_REDIRECTS: &[(&str, &str)] = &[
     // miscellaneous
     ("governance/wgs", "governance#working-groups"),
     ("governance/all-team-members.html", "governance/people"),
+    (
+        "governance/archived-teams.html",
+        "governance/teams#archived-teams",
+    ),
     ("governance/all-teams.html", "governance/teams"),
 ];
 
