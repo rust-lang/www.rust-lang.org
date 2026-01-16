@@ -239,6 +239,19 @@ impl RustTeamData {
         ArchivedTeams { teams }
     }
 
+    pub fn all_teams(&self) -> AllTeams {
+        let active_teams = self
+            .teams
+            .iter()
+            .filter(|team| team.kind != TeamKind::MarkerTeam)
+            .cloned()
+            .collect::<Vec<Team>>();
+        AllTeams {
+            active: active_teams,
+            archived: self.archived_teams.clone(),
+        }
+    }
+
     pub fn all_team_members(&self) -> AllTeamMembers {
         let mut alumni = HashMap::new();
         let mut active = HashMap::new();
@@ -252,7 +265,6 @@ impl RustTeamData {
                 active.extend(team.members.iter().map(|m| (m.github_id, m)));
             }
         }
-
         alumni.retain(|id, _| !active.contains_key(id));
 
         let alumni = {
@@ -442,6 +454,12 @@ pub struct ArchivedTeams {
 pub struct AllTeamMembers {
     active: Vec<TeamMember>,
     alumni: Vec<TeamMember>,
+}
+
+#[derive(Serialize)]
+pub struct AllTeams {
+    active: Vec<Team>,
+    archived: Vec<Team>,
 }
 
 #[derive(Serialize)]

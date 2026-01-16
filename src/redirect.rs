@@ -37,9 +37,9 @@ pub static PAGE_REDIRECTS: &[(&str, &str)] = &[
         "governance/teams/lang#team-wg-async",
     ),
     // miscellaneous
-    ("governance/teams", "governance#teams"),
     ("governance/wgs", "governance#working-groups"),
     ("governance/all-team-members.html", "governance/people"),
+    ("governance/all-teams.html", "governance/teams"),
 ];
 
 pub static STATIC_FILES_REDIRECTS: &[(&str, &str)] = &[
