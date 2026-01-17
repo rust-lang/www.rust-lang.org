@@ -42,6 +42,7 @@ governance-all-team-members-alumni-intro = This section lists our { $count } tea
 
 ## governance/all-teams.hbs
 governance-all-teams-title = All Rust Teams
+governance-active-teams-title = Active Rust Teams
 governance-all-teams-intro = This section lists the { $count } teams currently active in the Rust project.
 governance-all-teams-archived-title = Archived Rust Teams
 governance-all-teams-archived-intro = This section lists { $count } archived teams that are no longer active. We want to thank all past members for their invaluable contributions!
