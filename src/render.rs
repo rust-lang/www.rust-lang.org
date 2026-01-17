@@ -218,19 +218,6 @@ pub fn render_governance(
         )?;
     }
 
-    // Archived teams
-    // let archived_teams_data = render_ctx.teams.archived_teams();
-    // for_all_langs("governance/archived-teams.html", |dst_path, lang| {
-    //     render_ctx
-    //         .page(
-    //             "governance/archived-teams",
-    //             "governance-archived-teams-title",
-    //             &archived_teams_data,
-    //             lang,
-    //         )
-    //         .render(dst_path)
-    // })?;
-
     // Page with all team members
     for_all_langs("governance/people/index.html", |dst_path, lang| {
         render_ctx
