@@ -43,7 +43,6 @@ pub static PAGE_REDIRECTS: &[(&str, &str)] = &[
         "governance/archived-teams.html",
         "governance/teams#archived-teams",
     ),
-    ("governance/all-teams.html", "governance/teams"),
 ];
 
 pub static STATIC_FILES_REDIRECTS: &[(&str, &str)] = &[
