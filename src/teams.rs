@@ -255,6 +255,7 @@ impl RustTeamData {
                 active.extend(team.members.iter().map(|m| (m.github_id, m)));
             }
         }
+
         alumni.retain(|id, _| !active.contains_key(id));
 
         let alumni = {
