@@ -230,15 +230,27 @@ impl RustTeamData {
     }
 
     pub fn all_teams(&self) -> AllTeams {
-        let active_teams = self
+        let mut active_teams = self
             .teams
             .iter()
             .filter(|team| team.kind != TeamKind::MarkerTeam)
             .cloned()
             .collect::<Vec<Team>>();
+
+        active_teams.sort_by_key(|t| {
+            let weight = t.website_data.as_ref().map(|d| d.weight).unwrap_or(0);
+            (Reverse(weight), t.name.clone())
+        });
+
+        let mut archived_teams = self.archived_teams.clone();
+        archived_teams.sort_by_key(|t| {
+            let weight = t.website_data.as_ref().map(|d| d.weight).unwrap_or(0);
+            (Reverse(weight), t.name.clone())
+        });
+
         AllTeams {
             active: active_teams,
-            archived: self.archived_teams.clone(),
+            archived: archived_teams,
         }
     }
 
