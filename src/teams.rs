@@ -251,6 +251,7 @@ impl RustTeamData {
         AllTeams {
             active: active_teams,
             archived: archived_teams,
+            zulip_domain: crate::ZULIP_DOMAIN,
         }
     }
 
@@ -456,6 +457,7 @@ pub struct AllTeamMembers {
 
 #[derive(Serialize)]
 pub struct AllTeams {
+    zulip_domain: &'static str,
     active: Vec<Team>,
     archived: Vec<Team>,
 }

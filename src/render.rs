@@ -230,6 +230,7 @@ pub fn render_governance(
             .render(dst_path)
     })?;
 
+    // Render the "All Teams" page
     for_all_langs("governance/teams/index.html", |dst_path, lang| {
         render_ctx
             .page(
