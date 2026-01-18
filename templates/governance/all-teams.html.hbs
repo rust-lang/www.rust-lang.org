@@ -24,14 +24,8 @@
   <div class="w-100 mw-none mw-8-m mw9-l center f2">
     <h2>{{fluent "governance-all-teams-archived-title"}}</h2>
     <p>
-      {{#fluent "governance-all-teams-archived-intro"
-
-
-      }}{{#fluentparam
-      "count"
-
-
-      }}{{len data.archived}}{{/fluentparam}}{{/fluent}}
+      {{#fluent "governance-all-teams-archived-intro" }}{{#fluentparam "count"}}
+      {{len data.archived}}{{/fluentparam}}{{/fluent}}
     </p>
   </div>
   <div>
