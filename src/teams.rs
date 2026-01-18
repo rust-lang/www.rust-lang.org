@@ -229,14 +229,30 @@ impl RustTeamData {
         })
     }
 
-    pub fn archived_teams(&self) -> ArchivedTeams {
-        let mut teams: Vec<Team> = self.archived_teams.clone();
-        teams.sort_by_key(|t| {
+    pub fn all_teams(&self) -> AllTeams {
+        let mut active_teams = self
+            .teams
+            .iter()
+            .filter(|team| team.kind != TeamKind::MarkerTeam)
+            .cloned()
+            .collect::<Vec<Team>>();
+
+        active_teams.sort_by_key(|t| {
             let weight = t.website_data.as_ref().map(|d| d.weight).unwrap_or(0);
             (Reverse(weight), t.name.clone())
         });
 
-        ArchivedTeams { teams }
+        let mut archived_teams = self.archived_teams.clone();
+        archived_teams.sort_by_key(|t| {
+            let weight = t.website_data.as_ref().map(|d| d.weight).unwrap_or(0);
+            (Reverse(weight), t.name.clone())
+        });
+
+        AllTeams {
+            active: active_teams,
+            archived: archived_teams,
+            zulip_domain: crate::ZULIP_DOMAIN,
+        }
     }
 
     pub fn all_team_members(&self) -> AllTeamMembers {
@@ -434,14 +450,16 @@ pub struct PageData {
 }
 
 #[derive(Serialize)]
-pub struct ArchivedTeams {
-    teams: Vec<Team>,
-}
-
-#[derive(Serialize)]
 pub struct AllTeamMembers {
     active: Vec<TeamMember>,
     alumni: Vec<TeamMember>,
+}
+
+#[derive(Serialize)]
+pub struct AllTeams {
+    zulip_domain: &'static str,
+    active: Vec<Team>,
+    archived: Vec<Team>,
 }
 
 #[derive(Serialize)]

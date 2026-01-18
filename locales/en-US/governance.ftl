@@ -12,6 +12,7 @@ governance-teams-header = Teams
 governance-wgs-header = Working Groups
 
 governance-rust-project-link = Show all Rust team members
+governance-rust-project-teams-link = Show all Rust teams
 
 governance-archived-teams-header = Archived teams
 governance-archived-teams-description = Some past teams are no longer active. We call these "archived teams".
@@ -38,6 +39,13 @@ governance-alumni-thanks = We also want to thank all past members for their inva
 governance-all-team-members-title = All Rust team members
 governance-all-team-members-intro = This section lists the { $count } members of currently active Rust teams.
 governance-all-team-members-alumni-intro = This section lists our { $count } team alumni.
+
+## governance/all-teams.hbs
+governance-all-teams-title = All Rust Teams
+governance-active-teams-title = Active Rust Teams
+governance-all-teams-intro = This section lists the { $count } teams currently active in the Rust project.
+governance-all-teams-archived-title = Archived Rust Teams
+governance-all-teams-archived-intro = This section lists the { $count } archived teams that are no longer active. We want to thank all past members for their invaluable contributions!
 
 ## govenance/person.hbs
 governance-person-title = Rust Project team member

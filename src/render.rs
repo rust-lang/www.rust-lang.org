@@ -2,7 +2,7 @@ use crate::assets::AssetFiles;
 use crate::fs::{copy_dir_all, ensure_directory};
 use crate::i18n::{EXPLICIT_LOCALE_INFO, LocaleInfo, SUPPORTED_LOCALES};
 use crate::rust_version::RustVersion;
-use crate::teams::{AllTeamMembers, PageData, RustTeamData};
+use crate::teams::{AllTeamMembers, AllTeams, PageData, RustTeamData};
 use crate::{BaseUrl, ENGLISH, LAYOUT};
 use anyhow::Context;
 use handlebars::Handlebars;
@@ -183,6 +183,7 @@ pub fn render_index(render_ctx: &RenderCtx) -> anyhow::Result<()> {
 pub fn render_governance(
     render_ctx: &RenderCtx,
     all_team_members: &AllTeamMembers,
+    all_teams: &AllTeams,
 ) -> anyhow::Result<()> {
     let data = render_ctx.teams.index_data();
 
@@ -195,6 +196,7 @@ pub fn render_governance(
 
     // Individual teams
     for team in data.teams {
+        println!("Rendering team page for {}", team.team.name);
         let data: PageData = render_ctx
             .teams
             .page_data(team.section, &team.page_name)
@@ -216,19 +218,6 @@ pub fn render_governance(
         )?;
     }
 
-    // Archived teams
-    let archived_teams_data = render_ctx.teams.archived_teams();
-    for_all_langs("governance/archived-teams.html", |dst_path, lang| {
-        render_ctx
-            .page(
-                "governance/archived-teams",
-                "governance-archived-teams-title",
-                &archived_teams_data,
-                lang,
-            )
-            .render(dst_path)
-    })?;
-
     // Page with all team members
     for_all_langs("governance/people/index.html", |dst_path, lang| {
         render_ctx
@@ -236,6 +225,18 @@ pub fn render_governance(
                 "governance/all-team-members",
                 "governance-all-team-members-title",
                 all_team_members,
+                lang,
+            )
+            .render(dst_path)
+    })?;
+
+    // Render the "All Teams" page
+    for_all_langs("governance/teams/index.html", |dst_path, lang| {
+        render_ctx
+            .page(
+                "governance/all-teams",
+                "governance-all-teams-title",
+                &all_teams,
                 lang,
             )
             .render(dst_path)

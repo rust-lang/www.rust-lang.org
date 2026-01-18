@@ -1,0 +1,38 @@
+{{#*inline "page"}}
+<header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
+  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+    <h1>{{fluent "governance-all-teams-title"}}</h1>
+  </div>
+</header>
+
+<section class="green ph3 pb4">
+  <div class="w-100 mw-none mw-8-m mw9-l center f2">
+    <h2 class="f3 f1-ns mt0">
+      {{fluent "governance-active-teams-title"}}
+    </h2>
+    <p>
+      {{#fluent "governance-all-teams-intro" }}{{#fluentparam "count" }}{{len data.active}}{{/fluentparam}}{{/fluent}}
+    </p>
+  </div>
+  <div>
+    {{#each data.active as |team|}}
+    {{> governance/group-team team=team baseurl=../baseurl zulip_domain=../data.zulip_domain }}
+    {{/each}}
+  </div>
+</section>
+<section class="red ph4 pb4" id="archived-teams">
+  <div class="w-100 mw-none mw-8-m mw9-l center f2">
+    <h2>{{fluent "governance-all-teams-archived-title"}}</h2>
+    <p>
+      {{#fluent "governance-all-teams-archived-intro" }}{{#fluentparam "count"}}
+      {{len data.archived}}{{/fluentparam}}{{/fluent}}
+    </p>
+  </div>
+  <div>
+    {{#each data.archived as |team|}}
+    {{> governance/archived-team team=team baseurl=../baseurl }}
+    {{/each}}
+  </div>
+</section>
+{{/inline}}
+{{~> (lookup this "parent")~}}

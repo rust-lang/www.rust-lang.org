@@ -111,9 +111,10 @@ fn main() -> anyhow::Result<()> {
     )?;
 
     let all_team_members = ctx.teams.all_team_members();
+    let all_teams = ctx.teams.all_teams();
 
     render_index(&ctx)?;
-    render_governance(&ctx, &all_team_members)?;
+    render_governance(&ctx, &all_team_members, &all_teams)?;
     render_funding(&ctx, &all_team_members)?;
     render_directory(&ctx, "community")?;
     render_directory(&ctx, "learn")?;
