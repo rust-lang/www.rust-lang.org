@@ -11,9 +11,6 @@ governance-rfc-blurb = Each major decision in Rust starts as a Request for Comme
 governance-teams-header = Top-Level Teams
 governance-wgs-header = Working Groups
 
-governance-rust-project-link = Show all Rust team members
-governance-rust-project-teams-link = Show all Rust teams
-
 governance-teams-members-header = Teams and Members
 governance-teams-members-header-description = The Rust project is composed of many teams, and developed by many contributors.
 governance-archived-teams-link = Show archived teams
