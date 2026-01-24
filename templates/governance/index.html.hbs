@@ -15,47 +15,54 @@
     </header>
     <div class="flex flex-column flex-row-l">
       <div class="mw8 flex flex-column justify-between pt0 bp2 pv3-ns ph3-l">
-        <p>{{fluent "governance-rfc-blurb"}}
-        </p>
-        <a href="https://github.com/rust-lang/rfcs" class="button button-secondary">{{fluent "learn-more"}}</a>
+        <p>{{fluent "governance-rfc-blurb"}}</p>
+        <a
+          href="https://github.com/rust-lang/rfcs"
+          class="button button-secondary"
+          >{{fluent "learn-more"}}</a
+        >
       </div>
     </div>
   </div>
 </section>
 
 <section id="teams" class="purple">
-    <div class="w-100 mw-none ph3 mw-8-m mw9-l center f3">
-        <header>
-            <h2>{{fluent "governance-teams-header"}}</h2>
-            <div class="highlight"></div>
-        </header>
-        <div class="flex flex-column flex-row-l flex-wrap-l justify-start tc">
-            {{#each data.teams as |team| ~}}
-                {{> governance/index-team team=team baseurl=../baseurl}}
-            {{/each~}}
-        </div>
-        <div class="flex h-20">
-          <a href="{{baseurl}}/governance/people" class="center w-100 mw6 button button-secondary">
-            {{fluent "governance-rust-project-link"}}
-          </a>
-          <a href="{{baseurl}}/governance/teams" class="center w-100 mw6 button button-secondary">
-            {{fluent "governance-rust-project-teams-link"}}
-          </a>
-        </div>
-    </div>
-</section>
-
-<section id="archived-teams" class="green">
   <div class="w-100 mw-none ph3 mw-8-m mw9-l center f3">
     <header>
-      <h2>{{fluent "governance-archived-teams-header"}}</h2>
+      <h2>{{fluent "governance-teams-header"}}</h2>
       <div class="highlight"></div>
     </header>
-    <div class="mb2">{{fluent "governance-archived-teams-description"}}</div>
+    <div class="flex flex-column flex-row-l flex-wrap-l justify-start tc">
+      {{#each data.teams as |team| ~}}
+      {{> governance/index-team team=team baseurl=../baseurl}}
+      {{/each~}}
+    </div>
+  </div>
+</section>
 
-    <a href="{{baseurl}}/governance/teams/#archived-teams" class="center w-100 mw6 button button-secondary">
-      {{fluent "governance-archived-teams-link"}}
-    </a>
+<section id="teams-and-members" class="green">
+  <div class="w-100 mw-none ph3 mw-8-m mw9-l center f3">
+    <header>
+      <h2>{{fluent "governance-teams-members-header"}}</h2>
+      <div class="highlight"></div>
+    </header>
+    <div class="mb4">
+      {{fluent "governance-teams-members-header-description"}}
+    </div>
+
+    <div class="flex flex-column flex-row-l justify-start w-full mt2">
+      <a
+        href="{{ baseurl }}/governance/teams"
+        class="center w-100 mw6 button button-secondary"
+      >
+        {{fluent "governance-all-teams-link"}}
+      </a>
+      <a
+        href="{{ baseurl }}/governance/people"
+        class="center w-100 mw6 button button-secondary mt2"
+      >
+        {{fluent "governance-teams-members-link"}}
+      </a>
     </div>
   </div>
 </section>

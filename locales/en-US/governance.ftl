@@ -8,15 +8,14 @@ governance-rfc-blurb = Each major decision in Rust starts as a Request for Comme
           Everyone is invited to discuss the proposal, to work toward a shared understanding of the tradeoffs.
           Though sometimes arduous, this community deliberation is Rust’s secret sauce for quality.
 
-governance-teams-header = Teams
+governance-teams-header = Top-Level Teams
 governance-wgs-header = Working Groups
 
-governance-rust-project-link = Show all Rust team members
-governance-rust-project-teams-link = Show all Rust teams
-
-governance-archived-teams-header = Archived teams
-governance-archived-teams-description = Some past teams are no longer active. We call these "archived teams".
+governance-teams-members-header = Teams and Members
+governance-teams-members-header-description = The Rust project is composed of many teams, and developed by many contributors.
 governance-archived-teams-link = Show archived teams
+governance-all-teams-link = Show all teams
+governance-teams-members-link = Show all team members
 governance-archived-teams-title = Archived teams
 governance-archived-alumni-thanks = We want to thank all past members for their invaluable contributions!
 governance-archived-teams-intro = This page contains archived teams that are no longer active.
