@@ -19,4 +19,4 @@ rayon = "1"
 rand = "0.9"
 
 [dev-dependencies]
-time = { version = "0.3.44", features = ["parsing"] }
+time = { version = "0.3.46", features = ["parsing"] }
