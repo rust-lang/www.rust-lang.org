@@ -36,6 +36,19 @@ pub static PAGE_REDIRECTS: &[(&str, &str)] = &[
         "governance/wgs/wg-async",
         "governance/teams/lang#team-wg-async",
     ),
+    ("governance/wgs/wg-cli", "governance/teams#team-wg-cli"),
+    (
+        "governance/wgs/wg-embedded",
+        "governance/teams#team-wg-embedded",
+    ),
+    (
+        "governance/wgs/wg-gamedev",
+        "governance/teams#team-wg-gamedev",
+    ),
+    (
+        "governance/wgs/wg-secure-code",
+        "governance/teams#team-wg-secure-code",
+    ),
     // miscellaneous
     ("governance/wgs", "governance#working-groups"),
     ("governance/all-team-members.html", "governance/people"),
