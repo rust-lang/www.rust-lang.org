@@ -201,28 +201,9 @@ function set_up_copy_buttons() {
                 }, 2000);
             }
 
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(text).then(mark_copied).catch(function() {
-                    fallback_copy(code, mark_copied);
-                });
-            } else {
-                fallback_copy(code, mark_copied);
-            }
+            navigator.clipboard.writeText(text).then(mark_copied).catch(function() {});
         });
     });
-}
-
-function fallback_copy(code_el, on_success) {
-    var selection = window.getSelection();
-    var range = document.createRange();
-    range.selectNodeContents(code_el);
-    selection.removeAllRanges();
-    selection.addRange(range);
-    try {
-        document.execCommand('copy');
-        on_success();
-    } catch(e) {}
-    selection.removeAllRanges();
 }
 
 (function () {
