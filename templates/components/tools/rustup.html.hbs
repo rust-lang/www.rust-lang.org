@@ -1,7 +1,19 @@
 <div class="row">
   <div id="platform-instructions-unix" class="instructions db">
     <p>{{fluent "tools-rustup-unixy"}}</p>
-    <pre><code class="db w-100 copyable">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></pre>
+    <div class="pre-copy-wrap">
+      <pre><code class="db w-100 copyable">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></pre>
+      <button class="copy-code-btn" type="button" aria-label="Copy install command to clipboard">
+        <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <rect x="9" y="2" width="6" height="4" rx="1"/>
+          <path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2"/>
+        </svg>
+        <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+        <span class="copy-code-btn__text">Copy</span>
+      </button>
+    </div>
   </div>
   <div id="platform-instructions-win" class="instructions dn">
     <p>{{fluent "tools-rustup-windows-2"}}</p>
@@ -20,14 +32,38 @@
   </div>
   <h3 class="mt4">{{fluent "tools-rustup-wsl-heading"}}</h3>
   <p>{{fluent "tools-rustup-wsl"}}</p>
-  <pre><code class="db w-100 copyable">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></pre>
+  <div class="pre-copy-wrap">
+    <pre><code class="db w-100 copyable">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></pre>
+    <button class="copy-code-btn" type="button" aria-label="Copy WSL install command to clipboard">
+      <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <rect x="9" y="2" width="6" height="4" rx="1"/>
+        <path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2"/>
+      </svg>
+      <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+      <span class="copy-code-btn__text">Copy</span>
+    </button>
+  </div>
   </div>
   <div id="platform-instructions-default" class="instructions dn">
     <div>
       <p>
         {{fluent "tools-rustup-manual-default"}}
       </p>
-      <pre><code class="db w-100 copyable">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></pre>
+      <div class="pre-copy-wrap">
+        <pre><code class="db w-100 copyable">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></pre>
+        <button class="copy-code-btn" type="button" aria-label="Copy install command to clipboard">
+          <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <rect x="9" y="2" width="6" height="4" rx="1"/>
+            <path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2"/>
+          </svg>
+          <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <span class="copy-code-btn__text">Copy</span>
+        </button>
+      </div>
     </div>
     <hr class="white-hr" />
     <div>
