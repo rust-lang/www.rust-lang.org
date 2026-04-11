@@ -177,8 +177,38 @@ function check_initial_override() {
     }
 }
 
+
+function set_up_copy_buttons() {
+    var buttons = document.querySelectorAll('.copy-code-btn');
+    buttons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var wrap = btn.closest('.pre-copy-wrap');
+            var code = wrap && wrap.querySelector('code');
+            if (!code) { return; }
+            var text = code.textContent;
+
+            var original_label = btn.getAttribute('aria-label');
+
+            function mark_copied() {
+                var text_el = btn.querySelector('.copy-code-btn__text');
+                if (text_el) { text_el.textContent = 'Copied!'; }
+                btn.setAttribute('aria-label', 'Copied!');
+                btn.classList.add('copied');
+                setTimeout(function() {
+                    if (text_el) { text_el.textContent = 'Copy'; }
+                    btn.setAttribute('aria-label', original_label);
+                    btn.classList.remove('copied');
+                }, 2000);
+            }
+
+            navigator.clipboard.writeText(text).then(mark_copied).catch(function() {});
+        });
+    });
+}
+
 (function () {
     check_initial_override();
     adjust_for_platform();
     set_up_cycle_button();
+    set_up_copy_buttons();
 }());

@@ -119,6 +119,74 @@ code.copyable {
   user-select: all;
 }
 
+.pre-copy-wrap {
+  display: flex;
+  align-items: stretch;
+
+  pre {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+  }
+
+  // Square off the right edge of the code block so it meets the button flush
+  pre > code {
+    margin: 0;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .copy-code-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+    padding: 0 14px;
+    // Match the a11y-dark highlight.js theme used on the code block
+    background: #2b2b2b;
+    border: 1px solid #e1e1e1;
+    border-left: 1px solid rgba(248, 248, 242, 0.15);
+    border-radius: 0 $border-radius $border-radius 0;
+    color: #d4d0ab;
+    font-family: $body-font;
+    font-size: 0.75em;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s ease, color 0.15s ease;
+
+    // Checkmark icon only shown in .copied state
+    .check-icon {
+      display: none;
+    }
+
+    &:hover {
+      background: #3c3c3c;
+      color: #f8f8f2;
+    }
+
+    &:focus-visible {
+      outline: 2px solid white;
+      outline-offset: 2px;
+    }
+
+    &.copied {
+      color: #7ee787;
+
+      .copy-icon {
+        display: none;
+      }
+
+      .check-icon {
+        display: inline-block;
+      }
+    }
+  }
+}
+
 header h1,
 section h2 {
   z-index: 999999;
