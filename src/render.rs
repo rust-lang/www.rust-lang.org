@@ -194,8 +194,13 @@ pub fn render_governance(
             .render(dst_path)
     })?;
 
-    // Individual teams
-    for team in data.teams {
+    // Individual teams, plus legacy launching-pad subteams that have dedicated pages
+    // for backwards compatibility (e.g. /governance/wgs/wg-secure-code).
+    let all_team_pages = data
+        .teams
+        .into_iter()
+        .chain(render_ctx.teams.launching_pad_subteam_pages());
+    for team in all_team_pages {
         println!("Rendering team page for {}", team.team.name);
         let data: PageData = render_ctx
             .teams

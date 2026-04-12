@@ -229,6 +229,28 @@ impl RustTeamData {
         })
     }
 
+    /// Returns teams that are subteams of launching-pad and have their own dedicated page.
+    /// These are legacy working groups that were moved under launching-pad but still need
+    /// their own pages to avoid breaking external links (e.g. /governance/wgs/wg-secure-code).
+    pub fn launching_pad_subteam_pages(&self) -> Vec<IndexTeam> {
+        self.teams
+            .iter()
+            .filter(|team| team.website_data.is_some())
+            .filter(|team| team.subteam_of.as_deref() == Some("launching-pad"))
+            .filter(|team| team.kind == TeamKind::WorkingGroup)
+            .map(|team| {
+                let section = kind_to_str(team.kind);
+                let page_name = team.website_data.as_ref().unwrap().page.clone();
+                IndexTeam {
+                    url: format!("{section}/{page_name}"),
+                    section,
+                    page_name,
+                    team: team.clone(),
+                }
+            })
+            .collect()
+    }
+
     pub fn all_teams(&self) -> AllTeams {
         let mut active_teams = self
             .teams

@@ -126,6 +126,7 @@ So stay vigilant and update it if you notice something missing.
 - https://www.rust-lang.org/governance/teams/crates-io
 - https://www.rust-lang.org/governance/teams
 - https://www.rust-lang.org/governance/wgs
+- https://www.rust-lang.org/governance/wgs/wg-secure-code
 <!-- a couple localized redirects -->
 - https://www.rust-lang.org/es-ES
 - https://www.rust-lang.org/es-ES/contribute-compiler.html
