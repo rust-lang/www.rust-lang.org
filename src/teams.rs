@@ -103,17 +103,8 @@ impl RustTeamData {
             .ok_or(TeamNotFound)?;
 
         // Don't show pages for subteams
-        if let Some(subteam) = &main_team.subteam_of {
-            // In the past we gave working groups their own dedicated pages linked
-            // from the front page. We have now moved those working groups under
-            // launching-pad, and the groups are listed as subteams of the launching
-            // pad. To avoid breaking external links to things like
-            // https://www.rust-lang.org/governance/wgs/wg-secure-code,
-            // we still generate dedicated pages for these launching-pad teams,
-            // but they are not linked from the main site.
-            if !matches!(subteam.as_ref(), "launching-pad") {
-                return Err(TeamNotFound.into());
-            }
+        if main_team.subteam_of.is_some() {
+            return Err(TeamNotFound.into());
         }
 
         // Then find all the subteams, working groups and project groups.
