@@ -18,7 +18,6 @@ pub static PAGE_REDIRECTS: &[(&str, &str)] = &[
     ("contribute.html", "community"),
     ("documentation.html", "learn"),
     ("downloads.html", "tools/install"),
-    ("friends.html", "production"),
     ("install.html", "tools/install"),
     ("legal.html", "policies"),
     ("security.html", "policies/security"),
@@ -50,7 +49,7 @@ pub static PAGE_REDIRECTS: &[(&str, &str)] = &[
         "governance/teams#team-wg-secure-code",
     ),
     // miscellaneous
-    ("governance/wgs", "governance#working-groups"),
+    ("governance/wgs", "governance/teams"),
     ("governance/all-team-members.html", "governance/people"),
     (
         "governance/archived-teams.html",
