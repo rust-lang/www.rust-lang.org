@@ -44,7 +44,6 @@ So stay vigilant and update it if you notice something missing.
 - https://www.rust-lang.org/community
 - https://www.rust-lang.org/learn
 - https://www.rust-lang.org/policies
-- https://www.rust-lang.org/production
 - https://www.rust-lang.org/tools
 - https://www.rust-lang.org/what
 <!-- governance -->
@@ -64,8 +63,6 @@ So stay vigilant and update it if you notice something missing.
 - https://www.rust-lang.org/what/wasm
 <!-- files -->
 - https://www.rust-lang.org/static/images/rust-logo-blk.png
-<!-- robots_txt -->
-- https://www.rust-lang.org/robots.txt
 <!-- logos -->
 - https://www.rust-lang.org/static/logos/cargo.png
 <!-- index_locale -->
@@ -74,7 +71,6 @@ So stay vigilant and update it if you notice something missing.
 - https://www.rust-lang.org/es/community
 - https://www.rust-lang.org/es/learn
 - https://www.rust-lang.org/es/policies
-- https://www.rust-lang.org/es/production
 - https://www.rust-lang.org/es/tools
 - https://www.rust-lang.org/es/what
 <!-- governance_locale -->
@@ -104,7 +100,6 @@ So stay vigilant and update it if you notice something missing.
 - https://www.rust-lang.org/policies/media-guide
 - https://www.rust-lang.org/sponsors
 <!-- page redirects -->
-- https://www.rust-lang.org/community.html
 - https://www.rust-lang.org/conduct.html
 - https://www.rust-lang.org/contribute-bugs.html
 - https://www.rust-lang.org/contribute-community.html
@@ -115,7 +110,6 @@ So stay vigilant and update it if you notice something missing.
 - https://www.rust-lang.org/contribute.html
 - https://www.rust-lang.org/documentation.html
 - https://www.rust-lang.org/downloads.html
-- https://www.rust-lang.org/friends.html
 - https://www.rust-lang.org/index.html
 - https://www.rust-lang.org/install.html
 - https://www.rust-lang.org/legal.html
@@ -127,7 +121,3 @@ So stay vigilant and update it if you notice something missing.
 - https://www.rust-lang.org/governance/teams
 - https://www.rust-lang.org/governance/wgs
 - https://www.rust-lang.org/governance/wgs/wg-secure-code
-<!-- a couple localized redirects -->
-- https://www.rust-lang.org/es-ES
-- https://www.rust-lang.org/es-ES/contribute-compiler.html
-- https://www.rust-lang.org/es-ES/governance/teams
