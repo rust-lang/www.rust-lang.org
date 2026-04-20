@@ -1,4 +1,7 @@
-use crate::render::{RenderCtx, render_redirect};
+use crate::{
+    i18n::SUPPORTED_LOCALES,
+    render::{RenderCtx, render_redirect},
+};
 
 pub static PAGE_REDIRECTS: &[(&str, &str)] = &[
     // Pre-2018 website pages
@@ -100,6 +103,14 @@ pub fn create_redirects(ctx: &RenderCtx) -> anyhow::Result<()> {
     for (src, dst) in PAGE_REDIRECTS {
         render_redirect(ctx, src, dst)?;
     }
+    for locale in SUPPORTED_LOCALES.iter() {
+        for (src, dst) in PAGE_REDIRECTS {
+            let src = format!("{locale}/{src}");
+            let dst = format!("{locale}/{dst}");
+            render_redirect(ctx, &src, &dst)?;
+        }
+    }
+    render_redirect(ctx, "en-US", "")?;
 
     Ok(())
 }
