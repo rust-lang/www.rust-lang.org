@@ -8,7 +8,7 @@
 -security-coordinator-1-email-anchor =
         <a href="mailto:cuviper@gmail.com" lang="en-US">Josh Stone</a>
 -security-coordinator-2-email-anchor =
-        <a href="mailto:pietro@pietroalbini.org" lang="en-US">Pietro Albini</a>
+        <a href="mailto:emily@emilyalbini.it" lang="en-US">Emily Albini</a>
 
 -internals-rust-lang-org-href =
         https://internals.rust-lang.org/
