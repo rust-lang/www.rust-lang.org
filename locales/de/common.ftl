@@ -20,6 +20,7 @@ nav-install = Installieren
 nav-learn = Lernen
 nav-tools = Werkzeuge
 nav-governance = Leitung
+nav-funding = Finanzierung
 nav-community = Community
 nav-blog = Blog
 choose-language = Sprache

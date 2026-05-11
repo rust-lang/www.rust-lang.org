@@ -8,6 +8,7 @@ nav-install = llɐʇsuI
 nav-learn = uɹɐǝ˥
 nav-tools = sloo┴
 nav-governance = ǝɔuɐuɹǝʌoפ
+nav-funding = ƃuıpunℲ
 nav-community = ʎʇᴉunɯɯoƆ
 nav-blog = ƃolq
 

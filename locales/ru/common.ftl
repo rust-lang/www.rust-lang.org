@@ -28,6 +28,7 @@ nav-install = Установка
 nav-learn = Изучить
 nav-tools = Инструменты
 nav-governance = Управление
+nav-funding = Финансирование
 nav-community = Сообщество
 nav-blog = Блог
 nav-playground = Песочница

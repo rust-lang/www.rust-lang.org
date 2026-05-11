@@ -28,6 +28,7 @@ nav-install = 安装
 nav-learn = 学习
 nav-tools = 工具
 nav-governance = 团队
+nav-funding = 赞助
 nav-community = 社区
 nav-blog = 博客
 nav-playground = 实验

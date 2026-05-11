@@ -28,6 +28,7 @@ nav-install = インストール
 nav-learn = 学ぶ
 nav-tools = ツール
 nav-governance = ガバナンス
+nav-funding = 支援
 nav-community = コミュニティ
 nav-blog = ブログ
 nav-playground = Playground

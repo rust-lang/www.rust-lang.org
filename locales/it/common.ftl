@@ -28,6 +28,7 @@ nav-install = Installa
 nav-learn = Impara
 nav-tools = Strumenti
 nav-governance = Governance
+nav-funding = Finanziamento
 nav-community = Community
 nav-blog = Blog
 nav-playground = Playground
