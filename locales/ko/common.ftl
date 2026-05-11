@@ -26,6 +26,7 @@ nav-install = 설치
 nav-learn = 배우기
 nav-tools = 도구
 nav-governance = 거버넌스
+nav-funding = 펀딩
 nav-community = 커뮤니티
 nav-blog = 블로그
 choose-language = 언어

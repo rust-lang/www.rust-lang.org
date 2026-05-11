@@ -28,6 +28,7 @@ nav-install = 安裝
 nav-learn = 學習
 nav-tools = 工具
 nav-governance = 治理
+nav-funding = 贊助
 nav-community = 社群
 nav-blog = 網誌
 nav-playground = 遊樂場
