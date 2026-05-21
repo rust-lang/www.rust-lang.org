@@ -1,4 +1,3 @@
-use std::collections::HashMap;
 use crate::assets::AssetFiles;
 use crate::fs::{copy_dir_all, ensure_directory};
 use crate::i18n::{EXPLICIT_LOCALE_INFO, LocaleInfo, SUPPORTED_LOCALES};
@@ -7,16 +6,17 @@ use crate::teams::{AllTeamMembers, AllTeams, PageData, RustTeamData};
 use crate::{BaseUrl, ENGLISH, LAYOUT};
 use anyhow::Context;
 use handlebars::Handlebars;
+use handlebars_fluent::fluent_bundle::FluentArgs;
 use handlebars_fluent::{Loader, SimpleLoader};
 use rand::seq::SliceRandom;
 use rayon::iter::IntoParallelRefIterator;
 use rayon::iter::ParallelIterator;
 use serde::Serialize;
+use std::collections::HashMap;
 use std::ffi::OsStr;
 use std::fs::File;
 use std::io::BufWriter;
 use std::path::{Path, PathBuf};
-use handlebars_fluent::fluent_bundle::FluentArgs;
 
 #[derive(Serialize)]
 pub struct TemplateCtx<'a, T: Serialize> {
@@ -83,10 +83,14 @@ impl<'a, T: Serialize> PageCtx<'a, T> {
 
 pub struct PageTitle {
     id: String,
-    args: HashMap<String, String>
+    args: HashMap<String, String>,
 }
 
 impl PageTitle {
+    pub fn new(id: String, args: HashMap<String, String>) -> Self {
+        Self { id, args }
+    }
+
     fn args(&self) -> FluentArgs<'_> {
         let mut args = FluentArgs::new();
         for (key, value) in &self.args {
@@ -129,7 +133,8 @@ impl<'a> RenderCtx<'a> {
             "".into()
         } else {
             let lang = lang.parse().expect("lang should be valid");
-            self.fluent_loader.lookup(&lang, &title.id, Some(&title.args()))
+            self.fluent_loader
+                .lookup(&lang, &title.id, Some(&title.args()))
         };
         PageCtx {
             template_ctx: TemplateCtx {
@@ -281,7 +286,10 @@ pub fn render_governance(
                     render_ctx
                         .page(
                             "governance/person",
-                            "governance-person-title",
+                            PageTitle::new(
+                                "governance-person-title".to_string(),
+                                HashMap::from([("name".to_string(), person.name.clone())]),
+                            ),
                             &person,
                             lang,
                         )

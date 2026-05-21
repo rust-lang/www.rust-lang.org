@@ -499,7 +499,7 @@ impl PersonTeam {
 
 #[derive(Serialize)]
 pub struct PersonData {
-    name: String,
+    pub name: String,
     pub github: String,
     github_sponsors: bool,
     active_teams: Vec<PersonTeam>,
