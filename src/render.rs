@@ -1,3 +1,4 @@
+use std::collections::HashMap;
 use crate::assets::AssetFiles;
 use crate::fs::{copy_dir_all, ensure_directory};
 use crate::i18n::{EXPLICIT_LOCALE_INFO, LocaleInfo, SUPPORTED_LOCALES};
@@ -15,6 +16,7 @@ use std::ffi::OsStr;
 use std::fs::File;
 use std::io::BufWriter;
 use std::path::{Path, PathBuf};
+use handlebars_fluent::fluent_bundle::FluentArgs;
 
 #[derive(Serialize)]
 pub struct TemplateCtx<'a, T: Serialize> {
@@ -79,6 +81,30 @@ impl<'a, T: Serialize> PageCtx<'a, T> {
     }
 }
 
+pub struct PageTitle {
+    id: String,
+    args: HashMap<String, String>
+}
+
+impl PageTitle {
+    fn args(&self) -> FluentArgs<'_> {
+        let mut args = FluentArgs::new();
+        for (key, value) in &self.args {
+            args.set(key.as_str(), value.as_str());
+        }
+        args
+    }
+}
+
+impl<'a> From<&'a str> for PageTitle {
+    fn from(id: &'a str) -> Self {
+        Self {
+            id: id.to_string(),
+            args: Default::default(),
+        }
+    }
+}
+
 pub struct RenderCtx<'a> {
     pub handlebars: Handlebars<'a>,
     pub template_dir: PathBuf,
@@ -91,18 +117,19 @@ pub struct RenderCtx<'a> {
 }
 
 impl<'a> RenderCtx<'a> {
-    pub fn page<T: Serialize>(
+    pub fn page<T: Serialize, Title: Into<PageTitle>>(
         &'a self,
         page: &str,
-        title_id: &str,
+        title: Title,
         data: &'a T,
         lang: &str,
     ) -> PageCtx<'a, T> {
-        let title = if title_id.is_empty() {
+        let title: PageTitle = title.into();
+        let title = if title.id.is_empty() {
             "".into()
         } else {
             let lang = lang.parse().expect("lang should be valid");
-            self.fluent_loader.lookup(&lang, title_id, None)
+            self.fluent_loader.lookup(&lang, &title.id, Some(&title.args()))
         };
         PageCtx {
             template_ctx: TemplateCtx {
@@ -209,7 +236,7 @@ pub fn render_governance(
                 render_ctx
                     .page(
                         "governance/group",
-                        &format!("governance-team-{}-name", team.team.name),
+                        format!("governance-team-{}-name", team.team.name).as_str(),
                         &data,
                         lang,
                     )
@@ -311,7 +338,7 @@ pub fn render_directory(render_ctx: &RenderCtx, category: &str) -> anyhow::Resul
                     render_ctx
                         .page(
                             &format!("{category}/index"),
-                            &format!("{category}-page-title"),
+                            format!("{category}-page-title").as_str(),
                             &(),
                             lang,
                         )
@@ -327,7 +354,7 @@ pub fn render_directory(render_ctx: &RenderCtx, category: &str) -> anyhow::Resul
                         render_ctx
                             .page(
                                 &format!("{category}/{subject}"),
-                                &format!("{category}-{subject}-page-title"),
+                                format!("{category}-{subject}-page-title").as_str(),
                                 &(),
                                 lang,
                             )
