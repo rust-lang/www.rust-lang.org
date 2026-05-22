@@ -3,7 +3,9 @@ use handlebars::{
     Context, Handlebars, Helper, HelperResult, Output, RenderContext, RenderErrorReason,
 };
 use percent_encoding::{AsciiSet, NON_ALPHANUMERIC, utf8_percent_encode};
-use rust_team_data::v1::{BASE_URL, People, Person, Team, TeamKind, TeamMember, Teams};
+use rust_team_data::v1::{
+    BASE_URL, People, Person, Team, TeamKind, TeamMember, Teams, ZulipMapping,
+};
 use serde::Serialize;
 use std::cmp::Reverse;
 use std::collections::HashMap;
@@ -48,12 +50,16 @@ pub fn encode_zulip_stream(
     Ok(())
 }
 
+type GitHubId = u64;
+type ZulipId = u64;
+
 #[derive(Debug, Clone)]
 pub struct RustTeamData {
     pub teams: Vec<Team>,
     pub archived_teams: Vec<Team>,
     // GitHub username => person data
     pub people: HashMap<String, Person>,
+    pub zulip_ids: HashMap<GitHubId, ZulipId>,
 }
 
 impl RustTeamData {
@@ -63,6 +69,7 @@ impl RustTeamData {
             teams,
             archived_teams: vec![],
             people: HashMap::new(),
+            zulip_ids: HashMap::new(),
         }
     }
 
@@ -301,6 +308,7 @@ impl RustTeamData {
                 .or_insert_with(move || PersonData {
                     name: member.name.clone(),
                     github: member.github.clone(),
+                    zulip_id: ctx.zulip_ids.get(&member.github_id).copied(),
                     github_sponsors: person_team_data.github_sponsors,
                     active_teams: vec![],
                     alumni_teams: vec![],
@@ -501,6 +509,7 @@ impl PersonTeam {
 pub struct PersonData {
     name: String,
     pub github: String,
+    zulip_id: Option<ZulipId>,
     github_sponsors: bool,
     active_teams: Vec<PersonTeam>,
     alumni_teams: Vec<PersonTeam>,
@@ -521,7 +530,7 @@ pub fn load_rust_teams() -> anyhow::Result<RustTeamData> {
     println!("Downloading Team API data");
 
     // Parallelize the download to make website build faster
-    let (teams, archived_teams, people) = std::thread::scope(|scope| {
+    let (teams, archived_teams, people, zulip) = std::thread::scope(|scope| {
         let teams = scope.spawn(|| -> anyhow::Result<Teams> {
             let response = fetch(&format!("{BASE_URL}/teams.json"))?;
             Ok(serde_json::from_str(&response)?)
@@ -534,18 +543,27 @@ pub fn load_rust_teams() -> anyhow::Result<RustTeamData> {
             let response = fetch(&format!("{BASE_URL}/people.json"))?;
             Ok(serde_json::from_str(&response)?)
         });
+        let zulip = scope.spawn(|| -> anyhow::Result<ZulipMapping> {
+            let response = fetch(&format!("{BASE_URL}/zulip-map.json"))?;
+            Ok(serde_json::from_str(&response)?)
+        });
         (
             teams.join().unwrap(),
             archived_teams.join().unwrap(),
             people.join().unwrap(),
+            zulip.join().unwrap(),
         )
     });
-    let (teams, archived_teams, people) = (teams?, archived_teams?, people?);
+    let (teams, archived_teams, people, zulip) = (teams?, archived_teams?, people?, zulip?);
+
+    // Invert Zulip -> GitHub to GitHub -> Zulip
+    let zulip_ids = zulip.users.into_iter().map(|(k, v)| (v, k)).collect();
 
     Ok(RustTeamData {
         teams: teams.teams.into_values().collect(),
         archived_teams: archived_teams.teams.into_values().collect(),
         people: people.people.into_iter().collect(),
+        zulip_ids,
     })
 }
 

@@ -35,8 +35,15 @@
         </div>
       </div>
       <div class="f3">
+        {{# if data.zulip_id }}
+          <div>
+            <a href="https://rust-lang.zulipchat.com/#narrow/dm/{{data.zulip_id}}" class="button button-secondary mw6">Contact me on Zulip</a>
+          </div>
+        {{/if}}
         {{# if data.github_sponsors }}
-          <a href="https://github.com/sponsors/{{data.github}}" class="button button-secondary mw6">Sponsor {{ data.name }} on GitHub</a>
+          <div class="mt2">
+            <a href="https://github.com/sponsors/{{data.github}}" class="button button-secondary mw6">Sponsor me on GitHub</a>
+          </div>
         {{/if}}
       </div>
     </div>
