@@ -38,7 +38,6 @@ footer-get-help = کمک بگیر!
 footer-youtube-alt = توییتر
 footer-alt-youtube = لوگوی Youtube
 footer-github-alt = گیت هاب
-footer-old-site = به دنبال <a href="https://prev.rust-lang.org">وب سایت قبلی</a> هستید؟
 
 ## what/index.hbs
 
