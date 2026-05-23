@@ -507,7 +507,7 @@ impl PersonTeam {
 
 #[derive(Serialize)]
 pub struct PersonData {
-    name: String,
+    pub name: String,
     pub github: String,
     zulip_id: Option<ZulipId>,
     github_sponsors: bool,

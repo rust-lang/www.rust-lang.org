@@ -47,6 +47,6 @@ governance-all-teams-archived-title = Archived Rust Teams
 governance-all-teams-archived-intro = This section lists the { $count } archived teams that are no longer active. We want to thank all past members for their invaluable contributions!
 
 ## govenance/person.hbs
-governance-person-title = Rust Project team member
+governance-person-title = { $name }
 governance-person-team-member = Team member
 governance-person-team-alumni = Alumni
