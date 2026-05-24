@@ -46,7 +46,6 @@ footer-get-help = 도움 받기
 footer-youtube-alt = Twitter
 footer-alt-youtube = YouTube 로고
 footer-github-alt = GitHub
-footer-old-site = <a href="https://prev.rust-lang.org">이전 웹사이트</a>
 
 ## what/index.hbs
 

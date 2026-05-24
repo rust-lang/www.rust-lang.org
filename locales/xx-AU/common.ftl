@@ -33,4 +33,3 @@ footer-alt-youtube = oƃol ǝqnʇnoʎ
 footer-github-alt = qnHʇᴉפ
 footer-attribution = <a target="_blank" href="https://github.com/rust-lang/www.rust-lang.org/issues/new/choose">¡ ǝɹǝɥ xᴉɟ ɐ puǝS</a>
         ¿odʎʇ ɐ ǝǝS ˙ɯɐǝ┴ ʇsnɹ ǝɥʇ ʎq pǝuᴉɐʇuᴉɐW
-footer-old-site = <a href="https://prev.rust-lang.org">ǝʇᴉsqǝʍ snoᴉʌǝɹd</a> ǝɥʇ ɹoɟ ƃuᴉʞoo˥

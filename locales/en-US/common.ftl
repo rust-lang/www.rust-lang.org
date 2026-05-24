@@ -63,7 +63,5 @@ footer-attribution = Maintained by the Rust Team. See a bug?
 
 footer-autoupdate = Web site built every day at { $autoupdate }
 
-footer-old-site = Looking for the <a href="https://prev.rust-lang.org">previous website</a>?
-
 ## what/index.hbs
 what-header = What
