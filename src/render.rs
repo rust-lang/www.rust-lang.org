@@ -318,7 +318,7 @@ pub fn render_funding(
     // Index page
     for_all_langs("funding/index.html", |dst_path, lang| {
         render_ctx
-            .page("funding", "funding-page-title", &data, lang)
+            .page("funding/index", "funding-page-title", &data, lang)
             .render(dst_path)
     })?;
 
