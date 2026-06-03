@@ -413,9 +413,9 @@ dependencies = [
 
 [[package]]
 name = "handlebars"
-version = "6.4.0"
+version = "6.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9b3f9296c208515b87bd915a2f5d1163d4b3f863ba83337d7713cf478055948e"
+checksum = "d43ccdfe15a81ab0a8af639e90254227c9a46afd9c5f5b6ec7efaa345c4b0f00"
 dependencies = [
  "derive_builder",
  "log",
@@ -898,7 +898,7 @@ dependencies = [
 [[package]]
 name = "rust_team_data"
 version = "1.0.0"
-source = "git+https://github.com/rust-lang/team#1ca47b16836646d7a5adfb38d4440d6a597a4b05"
+source = "git+https://github.com/rust-lang/team#59b85f78c9594fac6641afb3e93bf8bb0c2ea9fe"
 dependencies = [
  "indexmap",
  "serde",
@@ -1035,9 +1035,9 @@ dependencies = [
 
 [[package]]
 name = "serde_json"
-version = "1.0.149"
+version = "1.0.150"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "83fc039473c5595ace860d8c4fafa220ff474b3fc6bfdb4293327f1a37e94d86"
+checksum = "e8014e44b4736ed0538adeecded0fce2a272f22dc9578a7eb6b2d9993c74cfb9"
 dependencies = [
  "itoa",
  "memchr",
