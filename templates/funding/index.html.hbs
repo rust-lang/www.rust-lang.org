@@ -23,17 +23,35 @@
     <div class="w-100 mw-none mw-8-m mw9-l center f1 ph3" style="font-size: 1.2em;">
       <p>{{fluent "funding-intro"}}</p>
     </div>
-    <div class="w-100 mw-none mw-8-m mw9-l center f1 ph3" style="font-size: 1.2em;">
-      <p>{{fluent "funding-intro-rfmf"}}</p>
-    </div>
-    <div class="w-100 mw-none mw-8-m mw9-l center f1 ph3" style="font-size: 1.2em;">
-      <p>{{fluent "funding-intro-individuals"}}</p>
+  </section>
+
+  <section class="red pb4" id="rfmf">
+    <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+      <header>
+        <h2>{{fluent "funding-rfmf-title"}}</h2>
+        <div class="highlight"></div>
+      </header>
+      <p>
+        {{#fluent "funding-rfmf-description"}}
+          {{#fluentparam "funding-team-url"}}{{baseurl}}/governance/teams/#team-funding{{/fluentparam}}
+        {{/fluent}}
+      </p>
+
+      <a href="https://github.com/sponsors/rustfoundation" class="button button-secondary mw6">{{fluent "funding-rfmf-donate"}}</a>
     </div>
   </section>
 
-  <section class="green pb4">
+  <section class="green pb4" id="people">
     <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-      <div id="people" class="flex flex-column flex-row-l flex-wrap-l">
+      <header>
+        <h2>{{fluent "funding-sponsors-title"}}</h2>
+        <div class="highlight"></div>
+      </header>
+      <div>
+        <p>{{fluent "funding-sponsors-description"}}</p>
+      </div>
+
+      <div id="sponsors-list" class="flex flex-column flex-row-l flex-wrap-l">
         {{#each data.people as |member|}}
           {{> member member=member baseurl=../baseurl }}
         {{/each}}

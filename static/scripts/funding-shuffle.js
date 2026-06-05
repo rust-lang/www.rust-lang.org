@@ -16,7 +16,7 @@ function shuffle(array) {
 
 document.addEventListener("DOMContentLoaded", () => {
   // Shuffle people to reduce ordering bias
-  const wrapper = document.querySelector("#people");
+  const wrapper = document.querySelector("#sponsors-list");
   const children = Array(...wrapper.children);
   shuffle(children);
   wrapper.replaceChildren(...children);
