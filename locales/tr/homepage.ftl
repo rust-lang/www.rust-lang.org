@@ -32,7 +32,7 @@ language-values-productivity-blurb = Rust harika bir belgelendirmeye, kullanış
 ## components/panels/domains.hbs
 
 domains-title = Rust ile yazın
-domains-blurb = 2018'de Rust topluluğu, bazı alanlarda(Bknz: <a href="https://blog.rust-lang.org/2018/03/12/roadmap.html">2018 yol haritası</a>) yazılım geliştirme deneyiminizi daya iyiye götürmeye karar verdi. Bu alanlarda geliştirme yapmaya başlamak için bir sürü yüksek kalite sandık ve harika rehberler bulabilirsiniz.
+domains-blurb = 2018'de Rust topluluğu, bazı alanlarda(Bknz: <a href="https://blog.rust-lang.org/2018/03/12/roadmap.html">2018 yol haritası</a>) yazılım geliştirme deneyiminizi daha iyiye götürmeye karar verdi. Bu alanlarda geliştirme yapmaya başlamak için bir sürü yüksek kalite sandık ve harika rehberler bulabilirsiniz.
 domains-cli = Komut Satırı
 domains-cli-blurb =
     Rust'ın güçlü ekosistemi ile çabucak bir KSA aracı hazırlayın.
