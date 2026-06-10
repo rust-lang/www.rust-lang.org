@@ -56,7 +56,7 @@ embedded-testimonials-sensirion-alt = Sensirion Logosu
 embedded-testimonials-sensirion-quote = Yakın zamanda Sensiron'da, Rust'ı Sensiron'un <a href="https://sensirion-automotive.com/products#PM2_5">Partikül Madde Sensörü</a> için bir gömülü bir gösterici yapmak için kullandık. Farklı hedeflere derlenebilme özelliği ve crates.io'daki pek çok yüksek kalite cratelerin kullanıma açık olması <b>bize çabucak, güçlü bir gösterici yapmamıza olanak tanıdı.</b>
 embedded-testimonials-sensirion-attribution = &ndash; Raphael Nestler, Yazılım Mühendisi, Sensirion
 embedded-testimonials-airborne-alt = Airborne Engineering Ltd logosu
-embedded-testimonials-airborne-quote = Airborne Engineering Ltd. olarak Rust'ı yakın zamanda gömülü bir ethernet bootloaderı olan şirket içi veri edinme sistemimiz <a href="https://github.com/airborneengineering/blethrs">blethrs</a>'i yazmak için kullandık. <b>Rust, umut vaat eden bir dil ve biz bu dili gelecekteki, gömülü ya da diğer, projelerimizde kullanacağımız için oldukça heyecanlıyız.
+embedded-testimonials-airborne-quote = Airborne Engineering Ltd. olarak Rust'ı yakın zamanda gömülü bir ethernet bootloaderı olan şirket içi veri edinme sistemimiz <a href="https://github.com/airborneengineering/blethrs">blethrs</a>'i yazmak için kullandık. <b>Rust, umut vaat eden bir dil ve biz bu dili gelecekteki, gömülü ya da diğer, projelerimizde kullanacağımız için oldukça heyecanlıyız.</b>
 embedded-testimonials-airborne-attribution = &ndash; Dr. Adam Greig, Enstrümantasyon Mühendisi, Airborne Engineering Ltd.
 embedded-testimonials-49nord-alt = 49nord logosu
 # "Fluent" requires a square bracket which is the first character of a line to be escaped like this: {"["} See https://projectfluent.org/fluent/guide/special.html
