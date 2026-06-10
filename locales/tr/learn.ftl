@@ -92,7 +92,7 @@ learn-dependencies-steps =
     <p>Şimdi bunu çalıştırabiliriz:</p>
     <code>cargo build</code>
     <p>...ve Cargo bizim için bağımlılıklarımızı yükleyecektir.</p>
-    <p>Bu komutu çalıştırmak bizim için <code>Cargo.lock</code> adında yeni bir dosya oluşturdu. Bu dosya, yerel olarak kullandığımız bağımlılıklarımızın tam ve doğru sürümlerini günlüktür.</p>
+    <p>Bu komutu çalıştırmanın bizim için <code>Cargo.lock</code> adında yeni bir dosya oluşturduğunu göreceksiniz. Bu dosya, yerel olarak kullandığımız bağımlılıkların tam sürümlerinin bir günlüğüdür.</p>
     <p>Bu bağımlılığı kullanmak için, <code>main.rs</code> dosyasını açıp içindeki her şeyi silip (bu sadece bir başka örnek) şu satırı ekleyebiliriz:</p>
     <pre><code>use ferris_says::say;</code></pre>
     <p>Bu satır, artık <code>ferris-says</code> crateinin dışa aktardığı <code>say</code> fonksiyonunu kullanabiliriz demek oluyor.</p>
