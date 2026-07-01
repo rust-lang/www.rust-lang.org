@@ -609,6 +609,7 @@ mod tests {
                     github_id: 123,
                     is_lead: false,
                     roles: vec!["convener".to_owned()],
+                    google_workspace: None,
                 },
                 TeamMember {
                     name: "John Doe".into(),
@@ -616,6 +617,7 @@ mod tests {
                     github_id: 456,
                     is_lead: false,
                     roles: Vec::new(),
+                    google_workspace: None,
                 },
                 TeamMember {
                     name: "Jane Doe".into(),
@@ -623,6 +625,7 @@ mod tests {
                     github_id: 789,
                     is_lead: true,
                     roles: Vec::new(),
+                    google_workspace: None,
                 },
             ],
             alumni: Vec::new(),
@@ -639,6 +642,7 @@ mod tests {
             roles: Vec::new(),
             github: None,
             top_level: None,
+            google_workspace_saml_group: None,
         }
     }
 
