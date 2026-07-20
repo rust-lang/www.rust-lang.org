@@ -36,7 +36,7 @@ wasm-js-heading = Хорошо работает с JavaScript
 wasm-js-augment-heading = Дополнение, а не замена
 wasm-js-augment-description = Мечта WebAssembly &mdash; не убить JavaScript, а работать вместе с ним, помогая в обработке тяжёлых или низкоуровневых задач &mdash; задач, которые выигрывают от подхода Rust к производительности.
 wasm-js-toolchains-heading = Работает с привычным набором инструментов
-wasm-js-toolchains-description = Публикуйте пакеты WebAssembly, созданные с Rust, в реестр пакетов, такой как npm. Упаковывайте и отправляйте их с webpack, Parcel и подобными. Поддерживайте их с помощью таких инструментов, как <code>npm audit</code> и Greenkeeper.
+wasm-js-toolchains-description = Публикуйте пакеты WebAssembly, созданные с Rust, в реестр пакетов, такой как npm. Упаковывайте и отправляйте их с webpack, Parcel и подобными. Поддерживайте их с помощью таких инструментов, как <code>npm audit</code> и Snyk.
 wasm-js-interop-heading = Бесшовная совместимость
 wasm-js-interop-description = Автоматически создавайте кодовые привязки между Rust, WebAssembly и JavaScript API. Получите преимущества таких библиотек, как <a href="https://docs.rs/web-sys/latest/web_sys/"><code>web-sys</code></a>, предоставляющих предварительно упакованные привязки для всех web-платформ.
 

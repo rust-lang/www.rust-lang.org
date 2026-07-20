@@ -51,7 +51,7 @@ wasm-js-augment-description =
 
 wasm-js-toolchains-heading = Works with familiar toolchains
 wasm-js-toolchains-description =
-        Publish Rust WebAssembly packages to package registries like npm. Bundle and ship them with webpack, Parcel, and others. Maintain them with tools like <code>npm audit</code> and Greenkeeper.
+        Publish Rust WebAssembly packages to package registries like npm. Bundle and ship them with webpack, Parcel, and others. Maintain them with tools like <code>npm audit</code> and Snyk.
 
 wasm-js-interop-heading = Seamless interop
 wasm-js-interop-description =
