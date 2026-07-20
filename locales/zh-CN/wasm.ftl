@@ -36,7 +36,7 @@ wasm-js-heading = JavaScript 的最佳搭档
 wasm-js-augment-heading = 增强，而非取代
 wasm-js-augment-description = WebAssembly 的梦想不是扼杀 JavaScript，而是与其并存，帮助处理一些繁重或底层的任务。Rust 以性能为先，这些任务也可以受益。
 wasm-js-toolchains-heading = 友好的工具链
-wasm-js-toolchains-description = 您可以将 Rust WebAssembly 包发布到 npm 之类的包仓储中心上。使用 webpack、Parcel 或其它工具来打包并分发它们。使用 <code>npm audit</code> 之类的工具和 Greenkeeper 来维护它们。
+wasm-js-toolchains-description = 您可以将 Rust WebAssembly 包发布到 npm 之类的包仓储中心上。使用 webpack、Parcel 或其它工具来打包并分发它们。使用 <code>npm audit</code> 之类的工具和 Snyk 来维护它们。
 wasm-js-interop-heading = 无缝的互操作性
 wasm-js-interop-description = 自动生成 Rust、WebAssembly 和 JavaScript API 之间的绑定代码。充分利用 <a href="https://docs.rs/web-sys/latest/web_sys/"><code>web-sys</code></a> 之类的库为整个 Web 平台提供预打包的绑定。
 

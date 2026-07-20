@@ -36,7 +36,7 @@ wasm-js-heading = JavaScript ile birlikte iyi çalışır
 wasm-js-augment-heading = Çoğalt… degiştirme
 wasm-js-augment-description = WebAssembly'nin hayali, JavaScript'i öldürmek değil, onunla birlikte çalışmak, işlemlerin ağır veya düşük düzeydeki görevlerin üstesinden gelmeye yardımcı olmaktır &mdash; Rust’tan yararlanan görevler performansa odaklanır.
 wasm-js-toolchains-heading = Bilinen alet zincirleriyle çalışır
-wasm-js-toolchains-description = Rust WebAssembly paketlerini npm gibi paket kayıtlarında paylaşın. Paketleyin ve webpack, Parcel vb. kullanarak dağıtın. <code>npm audit</code> ve Greenkeeper gibi araçlarla devamlılığını sağlayın.
+wasm-js-toolchains-description = Rust WebAssembly paketlerini npm gibi paket kayıtlarında paylaşın. Paketleyin ve webpack, Parcel vb. kullanarak dağıtın. <code>npm audit</code> ve Snyk gibi araçlarla devamlılığını sağlayın.
 wasm-js-interop-heading = Kesintisiz birlikte çalışma
 wasm-js-interop-description = Rust, WebAssembly ve JavaScript UPA'ları arasında otomatik olarak kodları bağlayın. <a href="https://docs.rs/web-sys/latest/web_sys/"><code>web-sys</code></a> gibi bütün web platformu için önceden paketlenmiş bağlantıları sağlayan kütüphanelerin avantajından yararlanın.
 
