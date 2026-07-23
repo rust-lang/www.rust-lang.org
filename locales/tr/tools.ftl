@@ -117,6 +117,7 @@ install-other-methods-link = Daha fazla bilgi edinin
 
 tools-rustup-unixy = Görünüşe bakılırsa macOS, Linux veya Unix tabanlı bir işletim sistemi kullanıyorsunuz. Rustup'ı indirmek ve Rust'ı yüklemek için uçbiriminizde şunları çalıştırın ve daha sonra ekranınıza gelen talimatları izleyin.
 tools-rustup-windows = Görünüşe bakılırsa Windows kullanıyorsunuz. Rust'ı yüklemek için şunu indirin ve çalıştırın. Ardından ekrandaki talimatları izleyin.
+tools-rustup-windows-2 = Windows kullanıyor gibi görünüyorsunuz. Rust'ı kullanmaya başlamak için yükleyiciyi indirin, ardından programı çalıştırın ve ekrandaki talimatları izleyin. İstendiğinde <a href="https://rust-lang.github.io/rustup/installation/windows-msvc.html">Visual Studio C++ Build Tools</a>'u yüklemeniz gerekebilir. Windows kullanmıyorsanız <a href="https://forge.rust-lang.org/infra/other-installation-methods.html">"Diğer Kurulum Yöntemleri"</a> bölümüne bakın.
 tools-rustup-wsl-heading = Windows için Linux Altsistemi
 tools-rustup-wsl = Eğer Windows için Linux Altsistemi kullanıcısıysanız Rust'ı yüklemek için uçbiriminizde şunları çalıştırın ve ardından ekrandaki talimatları izleyin.
 tools-rustup-manual-default = Eğer WSL, Linux veya macOS gibi bir Unix işletim sistemi kullanıyorsanız Rust'ı yüklemek için <br> uçbiriminizde şunları çalıştırın. Ardından ekrandaki talimatları izleyin.
