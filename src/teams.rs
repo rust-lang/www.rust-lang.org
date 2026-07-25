@@ -361,7 +361,7 @@ impl RustTeamData {
         people
     }
 
-    pub fn funding_data(&self, all_team_members: &AllTeamMembers) -> FundingData {
+    pub fn funding_data(&self, all_team_members: &AllTeamMembers) -> FundingPageData {
         let people_with_sponsors = all_team_members
             .active
             .iter()
@@ -377,7 +377,7 @@ impl RustTeamData {
                 }
             })
             .collect();
-        FundingData {
+        FundingPageData {
             people: people_with_sponsors,
         }
     }
@@ -522,7 +522,7 @@ pub struct FundablePerson {
 }
 
 #[derive(Serialize)]
-pub struct FundingData {
+pub struct FundingPageData {
     pub people: Vec<FundablePerson>,
 }
 

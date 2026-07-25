@@ -1,6 +1,7 @@
 use crate::assets::AssetFiles;
 use crate::fs::{copy_dir_all, ensure_directory};
 use crate::i18n::{EXPLICIT_LOCALE_INFO, LocaleInfo, SUPPORTED_LOCALES};
+use crate::mir::MirPageData;
 use crate::rust_version::RustVersion;
 use crate::teams::{AllTeamMembers, AllTeams, PageData, RustTeamData};
 use crate::{BaseUrl, ENGLISH, LAYOUT};
@@ -306,19 +307,26 @@ pub fn render_funding(
     render_ctx: &RenderCtx,
     all_team_members: &AllTeamMembers,
 ) -> anyhow::Result<()> {
-    let mut data = render_ctx.teams.funding_data(all_team_members);
+    let mut funding_data = render_ctx.teams.funding_data(all_team_members);
 
     // To reduce unnecessary ordering bias, we shuffle the list of fundable people.
     // While we also shuffle on the client (frontend), this does not work for people
     // with JavaScript disabled. And since the website is rebuilt regularly every day,
     // this ensures that even the baseline version of the page without client-side
     // shuffling will not always be the same.
-    data.people.shuffle(&mut rand::rng());
+    funding_data.people.shuffle(&mut rand::rng());
 
     // Index page
     for_all_langs("funding/index.html", |dst_path, lang| {
         render_ctx
-            .page("funding/index", "funding-page-title", &data, lang)
+            .page("funding/index", "funding-page-title", &funding_data, lang)
+            .render(dst_path)
+    })?;
+
+    let mir_data = MirPageData::build(&render_ctx.teams);
+    for_all_langs("funding/mir.html", |dst_path, lang| {
+        render_ctx
+            .page("funding/mir", "mir-page-title", &mir_data, lang)
             .render(dst_path)
     })?;
 

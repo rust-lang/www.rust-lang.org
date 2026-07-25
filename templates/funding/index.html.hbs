@@ -34,10 +34,18 @@
       <p>
         {{#fluent "funding-rfmf-description"}}
           {{#fluentparam "funding-team-url"}}{{baseurl}}/governance/teams/#team-funding{{/fluentparam}}
+          {{#fluentparam "mir-url"}}{{baseurl}}/funding/mir.html{{/fluentparam}}
         {{/fluent}}
       </p>
 
-      <a href="https://github.com/sponsors/rustfoundation" class="button button-secondary mw6">{{fluent "funding-rfmf-donate"}}</a>
+      <div class="flex items-center">
+        <div>
+          <a href="https://github.com/sponsors/rustfoundation" class="button button-secondary mw6">{{fluent "funding-rfmf-donate"}}</a>
+        </div>
+        <div class="pl4">
+          <a href="{{baseurl}}/funding/mir.html" class="button button-secondary mw6">{{fluent "funding-rfmf-mir-link"}}</a>
+        </div>
+      </div>
     </div>
   </section>
 
