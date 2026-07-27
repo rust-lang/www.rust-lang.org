@@ -7,7 +7,7 @@ policies-code-of-conduct-page-title = Code of conduct
 coc-conduct-heading = Conduct
 coc-conduct-description =
         <ul>
-          <li>We are committed to providing a friendly, safe and welcoming environment for all, regardless of level of experience, gender identity and expression, sexual orientation, disability, personal appearance, body size, race, ethnicity, age, religion, nationality, or other similar characteristic.</li>
+          <li>We are committed to providing a friendly, safe and welcoming environment for all, regardless of level of experience, gender identity and expression, sexual orientation, disability, personal appearance, body size, race, ethnicity, caste, age, religion, nationality, or other similar characteristic.</li>
           <li>Please avoid using overtly sexual aliases or other nicknames that might detract from a friendly, safe and welcoming environment for all.</li>
           <li>Please be kind and courteous. There’s no need to be mean or rude.</li>
           <li>Respect that people have differences of opinion and that every design or implementation choice carries a trade-off and numerous costs. There is seldom a right answer.</li>

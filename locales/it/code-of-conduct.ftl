@@ -7,7 +7,7 @@ policies-code-of-conduct-page-title = Codice di condotta
 coc-conduct-heading = Condotta
 coc-conduct-description =
     <ul>
-      <li>Ci impegniamo a creare un ambiente amichevole, sicuro e accogliente per tutti, a prescindere da livello di esperienza, sesso o orientamento sessuale, disabilità, aspetto fisico, corporatura, razza, etnia, età, religione, nazionalità e altre caratteristiche simili.</li>
+      <li>Ci impegniamo a creare un ambiente amichevole, sicuro e accogliente per tutti, a prescindere da livello di esperienza, sesso o orientamento sessuale, disabilità, aspetto fisico, corporatura, razza, etnia, casta, età, religione, nazionalità e altre caratteristiche simili.</li>
       <li>Evita di utilizzare pseudonimi sessualmente espliciti o altri nickname che possano interferire con un ambiente amichevole, sicuro e accogliente per tutti.</li>
       <li>Sii gentile e cortese. Non c'è bisogno di essere offensivi o maleducati.</li>
       <li>Rispetta il fatto che le persone hanno opinioni differenti e che ogni proposta di design o implementazione necessita di compromessi. Raramente una sola risposta è corretta.</li>

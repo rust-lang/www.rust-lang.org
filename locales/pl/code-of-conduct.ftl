@@ -7,7 +7,7 @@ policies-code-of-conduct-page-title = Kodeks postępowania
 coc-conduct-heading = Postępowanie
 coc-conduct-description =
     <ul>
-      <li>Obraliśmy sobie za cel zapewnienie przyjaznego i bezpiecznego środowiska dla wszystkich osób, bez względu na doświadczenie, płeć, orientację seksualną, niepełnosprawność, wygląd, rozmiar ciała, rasę, pochodzenie, wiek, religię, narodowość czy inne cechy.</li>
+      <li>Obraliśmy sobie za cel zapewnienie przyjaznego i bezpiecznego środowiska dla wszystkich osób, bez względu na doświadczenie, płeć, orientację seksualną, niepełnosprawność, wygląd, rozmiar ciała, rasę, pochodzenie, kasta, wiek, religię, narodowość czy inne cechy.</li>
       <li>Unikaj używania seksualnie nacechowanych i innych pseudonimów które mogłyby potencjalnie zaszkodzić środowisku przyjaznemu i bezpiecznemu dla wszystkich osób.<li>
       <li>Bądź miły i uprzejmy. Nie ma potrzeby być niemiłym.</li>
       <li>Uszanuj to, że ludzie mają odmienne zdanie i że każdy wybór pociąga za sobą pewne określone konsekwencje. Rzadko kiedy mamy do czynienia z wyborami, które uszczęśliwią wszystkich jednakowo.</li>

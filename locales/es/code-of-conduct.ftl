@@ -7,7 +7,7 @@ policies-code-of-conduct-page-title = Código de conducta
 coc-conduct-heading = Conducta
 coc-conduct-description =
     <ul>
-      <li>Nos comprometemos a proporcionar un entorno seguro, positivo y acogedor para todos, independientemente de su nivel de experiencia, identidad y expresión de género, orientación sexual, discapacidad, apariencia personal, tamaño corporal, raza, etnia, edad, religión, nacionalidad u otra característica similar.</li>
+      <li>Nos comprometemos a proporcionar un entorno seguro, positivo y acogedor para todos, independientemente de su nivel de experiencia, identidad y expresión de género, orientación sexual, discapacidad, apariencia personal, tamaño corporal, raza, etnia, casta, edad, religión, nacionalidad u otra característica similar.</li>
       <li>Evita el uso de apodos abiertamente sexuales u otros alias que puedan dificultar un entorno seguro, positivo y acogedor para todos.</li>
       <li>Sé respetuoso y educado. No es necesario ser grosero o antipático.</li>
       <li>Respeta el hecho de que la gente tiene diferencias de parecer, y de que cada opción de diseño o implementación tiene pros y contras, y costes diversos. Rara vez hay una respuesta correcta.</li>

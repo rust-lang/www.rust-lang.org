@@ -7,7 +7,7 @@ policies-code-of-conduct-page-title = Code de conduite
 coc-conduct-heading = Comportement
 coc-conduct-description =
     <ul>
-      <li>Nous nous engageons à mettre à disposition un environnement amical, sain et accueillant pour tous, sans distinction de niveau d'expérience, d'identité et d'expression de genre, d'orientation sexuelle, de handicap, d'apparence corporelle, de corpulence, de race, d'ethnie, d'âge, de religion, de nationalité ou de toute autre caractéristique similaire.
+      <li>Nous nous engageons à mettre à disposition un environnement amical, sain et accueillant pour tous, sans distinction de niveau d'expérience, d'identité et d'expression de genre, d'orientation sexuelle, de handicap, d'apparence corporelle, de corpulence, de race, d'ethnie, de caste, d'âge, de religion, de nationalité ou de toute autre caractéristique similaire.
       </li>
       <li>Nous vous remercions d’éviter d'utiliser une identité ayant une quelconque connotation sexuelle ou autres pseudonymes qui pourraient écarter d'un environnement amical, sain et accueillant pour tous.
       </li>
