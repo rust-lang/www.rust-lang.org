@@ -17,4 +17,4 @@ mir-intro = The Rust Foundation Maintainers Fund (RFMF) funds Rust Project contr
 mir-title = Maintainer in Residence
 mir-description = These contributors work as full-time or part-time Maintainers in Residence in the Rust Project.
 mir-grant-title = Maintainer grant
-mir-grant-description = These contributors were awarded a small monthly grant to financially support their Rust maintenance work.
+mir-grant-description = These contributors are supported with a small monthly grant to fund their Rust maintenance work.
