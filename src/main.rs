@@ -13,6 +13,7 @@ use std::path::{Path, PathBuf};
 mod assets;
 mod fs;
 mod i18n;
+mod mir;
 mod redirect;
 mod render;
 mod rust_version;

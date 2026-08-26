@@ -1,0 +1,81 @@
+{{#*inline "mir"}}
+  <div class="person w-100 mw-50-l pr5 pb5">
+    <div class="flex flex-row items-start">
+      <a class="mr4 flex-shrink-0" style="width: 12rem; height: 12rem;" href="{{baseurl}}/governance/people/{{data.login}}">
+        {{#if data.photo }}
+          <img class="w-100 h-100 bg-white br2"
+               src="{{baseurl}}/static/images/mir/{{data.photo}}"
+               alt="{{data.login}}">
+        {{else}}
+          <img class="w-100 h-100 bg-white br2"
+               src="https://avatars.githubusercontent.com/{{data.login}}"
+               alt="{{data.login}}">
+        {{/if}}
+      </a>
+      <div class="metadata">
+        <h3 class="ma0 mb2">
+          <a href="{{baseurl}}/governance/people/{{data.login}}">{{ data.name }}</a>
+        </h3>
+        <div>{{ data.role }}</div>
+        <div>Maintains: {{#each data.teams}}<a href="{{baseurl}}/governance/teams/#team-{{this}}">{{this}}</a>{{#unless @last}}, {{/unless}}{{/each}}</div>
+      </div>
+    </div>
+    <div class="description pt4">
+      {{ data.note }}
+    </div>
+  </div>
+{{/inline}}
+
+{{#*inline "page"}}
+  <header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
+    <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+      <h1>{{fluent "mir-page-title"}}</h1>
+    </div>
+  </header>
+
+  <section class="purple pb1">
+    <div class="w-100 mw-none mw-8-m mw9-l center f1 ph3" style="font-size: 1.2em;">
+      <p>
+        {{#fluent "mir-intro"}}
+          {{#fluentparam "funding-url"}}{{baseurl}}/funding{{/fluentparam}}
+        {{/fluent}}
+      </p>
+    </div>
+  </section>
+
+  <section class="green pb4" id="maintainer-in-residence">
+    <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+      <header>
+        <h2>{{fluent "mir-title"}}</h2>
+        <div class="highlight"></div>
+      </header>
+      <div>
+        <p>{{fluent "mir-description"}}</p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap;">
+        {{#each data.mirs as |mir| }}
+          {{> mir data=mir baseurl=../baseurl }}
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <section class="red pb4" id="maintainer-grant">
+    <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+      <header>
+        <h2>{{fluent "mir-grant-title"}}</h2>
+        <div class="highlight"></div>
+      </header>
+      <div>
+        <p>{{fluent "mir-grant-description"}}</p>
+      </div>
+      <div style="display: flex; flex-wrap: wrap;">
+        {{#each data.grants as |mir| }}
+          {{> mir data=mir baseurl=../baseurl }}
+        {{/each}}
+      </div>
+    </div>
+  </section>
+{{/inline}}
+
+{{~> (lookup this "parent")~}}
