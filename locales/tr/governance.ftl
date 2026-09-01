@@ -5,11 +5,6 @@
 
 governance-page-title = Yönetim
 governance-tagline = Rust'ın kendi topluluğu tarafından nasıl yapıldığı
-governance-rfc = Yol haritası ve yorumlar isteği süreci (RFC)
-governance-rfc-blurb =
-    Rust'ta her önemli karar bir yorumlar isteği (RFC) olarak başlar.
-    Yapılan takası herkesin anlayabilmesi için herkes öneriyi tartışmaya katkıda bulunabilir.
-    Bazen zorlu olmasına rağmen bu topluluk müzakeresi Rust'ın kalitesi için bir gizli sostur.
 governance-teams-header = Ekipler
 governance-wgs-header = Çalışma Grupları
 
