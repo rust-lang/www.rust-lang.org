@@ -4,7 +4,6 @@
 ## governance/index.hbs
 
 governance-page-title = 거버넌스
-governance-rfc = 로드맵 및 RFC 프로세스
 governance-teams-header = 팀
 governance-wgs-header = 작업 그룹
 
