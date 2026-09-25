@@ -85,6 +85,15 @@ impl<'a> MirPageData<'a> {
 rami3l has been a member of the Rustup team since 2023, and its lead since 2025. He deeply cares about developer tooling, and the facets of Rust that many might take for granted. In addition to maintaining the Rustup tool, he also introduces new contributors to the Rustup team, and has mentored two Google Summer of Code projects, in 2025 and 2026.
 "#,
         );
+        let scott = FundedMaintainer::new(
+            team_data,
+            "Muscraft",
+            &["cargo"],
+            MirRole::FullTime,
+            r#"
+Scott has been a member of the Cargo team since 2023. He led the effort to migrate the Rust compiler's diagnostics machinery to the annotate-snippets crate, which unblocked reusing the same diagnostics in Cargo, and he also leads the Rust Docker team. Currently, he is working as a Cargo maintainer.
+"#,
+        ).with_photo("scott-schafer.jpg");
         let chris = FundedMaintainer::new(
             team_data,
             "ChrisDenton",
@@ -135,7 +144,7 @@ Jason has been a member of the Clippy team since 2022. He is performing general 
 "#,
         ).with_photo("jason-newcomb.jpg");
 
-        let mut mirs = vec![rami3l, chris, alejandra, fmease];
+        let mut mirs = vec![rami3l, scott, chris, alejandra, fmease];
         mirs.sort_by_key(|mir| match mir.role_typed {
             MirRole::FullTime => 0,
             MirRole::HalfTime => 1,
