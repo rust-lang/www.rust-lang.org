@@ -4,7 +4,6 @@
 ## governance/index.hbs
 
 governance-tagline = چگونه Rust توسط جامعه خود ساخته شده است
-governance-rfc = نقشه راه و فرآیند RFC
 governance-teams-header = تیم‌ها
 governance-wgs-header = گروه های درحال کار
 

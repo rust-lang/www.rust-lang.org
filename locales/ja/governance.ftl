@@ -5,11 +5,6 @@
 
 governance-page-title = ガバナンス
 governance-tagline = Rustがコミュニティによってどのように作られているか
-governance-rfc = ロードマップおよびRFCプロセス
-governance-rfc-blurb =
-    Rustにおける主な決定事項はどれも、Request for Comments (RFC)の一つとして始まります。
-    提案されたRFCについて議論し、トレードオフについて共通理解を得るよう努めることが求められます。
-    時には労力を要しますが、このコミュニティによる熟議こそがRustの質を保つ秘訣なのです。
 governance-teams-header = チーム
 governance-wgs-header = ワーキンググループ
 
