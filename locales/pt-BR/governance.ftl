@@ -5,11 +5,6 @@
 
 governance-page-title = Governança
 governance-tagline = Como Rust é construído pela sua comunidade
-governance-rfc = Planejamento e processo de RFC
-governance-rfc-blurb =
-    Cada uma das maiores decisões em Rust começa com um Pedido por Comentários (RFC em inglês).
-    Todas as pessoas são convidadas a discutir a proposta, para trabalhar em direção a um entendimento compartilhado sobre as vantagens e desvantagens.
-    Mesmo sendo árduo algumas vezes, a deliberação da comunidade é o molho secreto para a qualidade do projeto Rust.
 governance-teams-header = Equipes
 governance-wgs-header = Grupos de Trabalho
 

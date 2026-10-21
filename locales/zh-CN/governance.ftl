@@ -5,11 +5,6 @@
 
 governance-page-title = 治理
 governance-tagline = 社区如何构筑 Rust
-governance-rfc = 路线图和 RFC 流程
-governance-rfc-blurb =
-    Rust 中的每个重要决定都是从征求意见稿（RFC）开始的。
-    任何人都可以参与提案的讨论，权衡利弊以便达成共识。
-    虽然有时会很艰难，但社区这种深思熟虑正是保证 Rust 高质量的秘诀。
 governance-teams-header = 团队
 governance-wgs-header = 工作组
 
