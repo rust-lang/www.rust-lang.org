@@ -26,7 +26,13 @@
               GitHub: <a href="https://github.com/{{member.github}}">{{member.github}}</a>
             </div>
             {{#if member.roles}}
-              <div class="f4">{{team-text ../team role (lookup member.roles 0)}}</div>
+              <div class="f4">
+              {{~#each member.roles as |role index|~}}
+                {{#if (eq index 0)~}}
+                  {{team-text ../team role role}}{{~else~}}, {{team-text ../team role role}}
+                {{~/if}}
+              {{~/each~}}
+              </div>
             {{/if}}
           </div>
         </div>
