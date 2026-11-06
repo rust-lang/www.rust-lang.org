@@ -8,6 +8,7 @@ production-use = Utilisation en production
 learn-more = En savoir plus
 zulip = Zulip
 mastodon = Mastodon
+bluesky = Bluesky
 
 ## components/panels/domain.hbs
 
