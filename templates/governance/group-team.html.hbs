@@ -59,7 +59,7 @@
             </a>
             <div class="flex flex-column w-100">
                 <h3 class="{{#unless member.is_lead}}fw4{{/unless}} ma0 mb2">
-                  <a href="{{../baseurl}}/governance/people/{{member.github}}">{{member.name}}</a>
+                    <a href="{{../baseurl}}/governance/people/{{member.github}}">{{member.name}}</a>
                 </h3>
                 <div>
                     {{#fluent "governance-user-github"}}
@@ -68,13 +68,31 @@
                     {{/fluentparam}}
                     {{/fluent}}
                 </div>
-                {{#if member.is_lead}}
-                <div>{{fluent "governance-user-team-leader"}}</div>
-                {{else}}
-                {{#if member.roles}}
-                <div>{{team-text ../team role (lookup member.roles 0)}}</div>
-                {{/if}}
-                {{/if}}
+                {{! "boolean logic has no place in templates. this is ideal. }}
+                {{#if member.is_lead~}}
+                    <div>
+                {{~else~}}
+                    {{~#if member.roles~}}
+                        <div>
+                    {{~/if~}}
+                {{~/if~}}
+                {{~#if member.is_lead~}}
+                    {{fluent "governance-user-team-leader"}}
+                {{~/if~}}
+                {{~#if member.roles~}}
+                    {{~#each member.roles as |role index|~}}
+                        {{#if (eq index 0) and not member.is_lead~}}
+                            {{team-text ../team role role}}{{~else~}}, {{team-text ../team role role}}
+                        {{~/if~}}
+                    {{~/each~}}
+                {{~/if~}}
+                {{~#if member.is_lead~}}
+                    </div>
+                {{~else~}}
+                    {{~#if member.roles~}}
+                        </div>
+                    {{~/if~}}
+                {{~/if~}}
             </div>
         </div>
         {{/each}}
@@ -97,7 +115,13 @@
                     GitHub: <a href="https://github.com/{{member.github}}">{{member.github}}</a>
                 </div>
                 {{#if member.roles}}
-                <div class="f4">{{team-text ../team role (lookup member.roles 0)}}</div>
+                  <div class="f4">
+                  {{~#each member.roles as |role index|~}}
+                    {{#if (eq index 0)~}}
+                      {{team-text ../team role role}}{{~else~}}, {{team-text ../team role role}}
+                    {{~/if}}
+                  {{~/each~}}
+                  </div>
                 {{/if}}
             </div>
         </div>
