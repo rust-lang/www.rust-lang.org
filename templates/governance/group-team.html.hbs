@@ -68,7 +68,6 @@
                     {{/fluentparam}}
                     {{/fluent}}
                 </div>
-                {{! "boolean logic has no place in templates. this is ideal. }}
                 {{#if member.is_lead~}}
                     <div>
                 {{~else~}}
@@ -81,9 +80,10 @@
                 {{~/if~}}
                 {{~#if member.roles~}}
                     {{~#each member.roles as |role index|~}}
-                        {{#if (eq index 0) and not member.is_lead~}}
-                            {{team-text ../team role role}}{{~else~}}, {{team-text ../team role role}}
+                        {{#if (ne index 0) ~}}, {{else~}}
+                        {{#if member.is_lead ~}}, {{/if~}}
                         {{~/if~}}
+                        {{team-text ../team role role}}
                     {{~/each~}}
                 {{~/if~}}
                 {{~#if member.is_lead~}}
