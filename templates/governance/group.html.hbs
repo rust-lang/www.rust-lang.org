@@ -1,5 +1,4 @@
 {{#*inline "page"}}
-
 {{#with data.team as |team|}}
     <section class="white">
         {{> governance/group-team team=team zulip_domain=../data.zulip_domain baseurl=../baseurl}}
@@ -33,6 +32,5 @@
         {{/each}}
     </section>
 {{/if}}
-
 {{/inline}}
 {{~> (lookup this "parent")~}}

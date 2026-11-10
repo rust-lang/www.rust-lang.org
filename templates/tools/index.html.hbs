@@ -1,120 +1,81 @@
 {{#*inline "page"}}
-
 <header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
-  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-    <h1>{{fluent "tools-page-title"}}</h1>
-  </div>
+    <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <h1>{{ fluent "tools-page-title" }}</h1>
+    </div>
 </header>
-
 <section id="tools-write" class="green">
-  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-    <header>
-      <h2>
-        {{fluent "tools-editor-support-heading"}}
-      </h2>
-      <div class="highlight highlight-yellow"></div>
-    </header>
-    <br>
-    <div class="tools-row">
-      <div id="tools-write-ide-prose">
-      <p>
-      {{#fluent "tools-editor-support-description"}}
-        {{#fluentparam "ra-link"}}
-          <a href="https://github.com/rust-analyzer/rust-analyzer">{{fluent "rust-analyzer"}}</a>
-        {{/fluentparam}}
-      {{/fluent}}  
-      </div>
+    <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <header>
+            <h2>{{ fluent "tools-editor-support-heading" }}</h2>
+            <div class="highlight highlight-yellow"></div>
+        </header>
+        <br>
+        <div class="tools-row">
+            <div id="tools-write-ide-prose">
+                <p>
+                    {{#fluent "tools-editor-support-description"}}
+                    {{#fluentparam "ra-link"}}
+                    <a href="https://github.com/rust-analyzer/rust-analyzer">{{ fluent "rust-analyzer" }}</a>
+                {{/fluentparam}}
+            </p>
+        {{/fluent}}
     </div>
-    {{> components/tools/editors }}
-  </div>
+</div>
+{{> components/tools/editors }}
+</div>
 </section>
-
 <section id="tools-build" class="purple">
-  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-    <header>
-      <h2>
-        {{fluent "tools-build-heading"}}
-      </h2>
-      <div class="highlight highlight-red"></div>
-    </header>
-    <p>
-      {{fluent "tools-build-description"}}
-    </p>
-    <div class="flex-none flex-l flex-row">
-      <div class="mt2 w-100" id="packages">
-        <h3 class="code-header">
-          {{fluent "tools-build-install-heading"}}
-        </h3>
-        <p>
-          {{fluent "tools-build-install-description"}}
-        </p>
-      </div>
-      <div class="mt2 w-100 ml5-l" id="linting">
-        <h3 class="code-header">
-          {{fluent "tools-build-test-heading"}}
-        </h3>
-        <p>
-          {{fluent "tools-build-test-description"}}
-        </p>
-      </div>
-      <div class="mt2 w-100 ml5-l" id="deployment">
-        <h3 class="code-header">
-          {{fluent "tools-build-deploy-heading"}}
-        </h3>
-        <p>
-          {{fluent "tools-build-deploy-description"}}
-        </p>
-      </div>
+    <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <header>
+            <h2>{{ fluent "tools-build-heading" }}</h2>
+            <div class="highlight highlight-red"></div>
+        </header>
+        <p>{{ fluent "tools-build-description" }}</p>
+        <div class="flex-none flex-l flex-row">
+            <div class="mt2 w-100" id="packages">
+                <h3 class="code-header">{{ fluent "tools-build-install-heading" }}</h3>
+                <p>{{ fluent "tools-build-install-description" }}</p>
+            </div>
+            <div class="mt2 w-100 ml5-l" id="linting">
+                <h3 class="code-header">{{ fluent "tools-build-test-heading" }}</h3>
+                <p>{{ fluent "tools-build-test-description" }}</p>
+            </div>
+            <div class="mt2 w-100 ml5-l" id="deployment">
+                <h3 class="code-header">{{ fluent "tools-build-deploy-heading" }}</h3>
+                <p>{{ fluent "tools-build-deploy-description" }}</p>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
-
 <section id="tools-debug" class="red">
-  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-    <header>
-      <h2>
-        {{fluent "tools-automation-heading"}}
-      </h2>
-      <div class="highlight highlight-red"></div>
-    </header>
-    <br>
-    <p>
-      {{fluent "tools-automation-description"}}
-    </p>
-    <div class="flex-none flex-l flex-row">
-      <div class="mt5 mt2-l flex flex-column w-100">
-        <h3 class="code-header">
-          {{fluent "tools-automation-rustfmt-heading"}}
-        </h3>
-        <p class="flex-grow-1">
-          {{fluent "tools-automation-rustfmt-description"}}
-        </p>
-        <a href="https://github.com/rust-lang/rustfmt"
-             class="button button-secondary">{{fluent "tools-automation-rustfmt-link"}}</a>
-      </div>
-      <div class="mt5 mt2-l flex flex-column w-100 ml5-l">
-        <h3 class="code-header">
-          {{fluent "tools-automation-clippy-heading"}}
-        </h3>
-        <p class="flex-grow-1">
-          {{fluent "tools-automation-clippy-description"}}
-        </p>
-         <a href="https://github.com/rust-lang/rust-clippy"
-             class="button button-secondary">{{fluent "tools-automation-clippy-link"}}</a>
-      </div>
-      <div class="mt5 mt2-l flex flex-column w-100 ml5-l">
-        <h3 class="code-header">
-          {{fluent "tools-automation-cargo-doc-heading"}}
-        </h3>
-        <p class="flex-grow-1">
-          {{fluent "tools-automation-cargo-doc-description"}}
-        </p>
-        <a href="https://docs.rs/"
-             class="button button-secondary">{{fluent "tools-automation-cargo-doc-link"}}</a>
-      </div>
+    <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <header>
+            <h2>{{ fluent "tools-automation-heading" }}</h2>
+            <div class="highlight highlight-red"></div>
+        </header>
+        <br>
+        <p>{{ fluent "tools-automation-description" }}</p>
+        <div class="flex-none flex-l flex-row">
+            <div class="mt5 mt2-l flex flex-column w-100">
+                <h3 class="code-header">{{ fluent "tools-automation-rustfmt-heading" }}</h3>
+                <p class="flex-grow-1">{{ fluent "tools-automation-rustfmt-description" }}</p>
+                <a href="https://github.com/rust-lang/rustfmt"
+                   class="button button-secondary">{{ fluent "tools-automation-rustfmt-link" }}</a>
+            </div>
+            <div class="mt5 mt2-l flex flex-column w-100 ml5-l">
+                <h3 class="code-header">{{ fluent "tools-automation-clippy-heading" }}</h3>
+                <p class="flex-grow-1">{{ fluent "tools-automation-clippy-description" }}</p>
+                <a href="https://github.com/rust-lang/rust-clippy"
+                   class="button button-secondary">{{ fluent "tools-automation-clippy-link" }}</a>
+            </div>
+            <div class="mt5 mt2-l flex flex-column w-100 ml5-l">
+                <h3 class="code-header">{{ fluent "tools-automation-cargo-doc-heading" }}</h3>
+                <p class="flex-grow-1">{{ fluent "tools-automation-cargo-doc-description" }}</p>
+                <a href="https://docs.rs/" class="button button-secondary">{{ fluent "tools-automation-cargo-doc-link" }}</a>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
-
 {{/inline}}
 {{~> (lookup this "parent")~}}

@@ -1,87 +1,82 @@
 {{#*inline "member"}}
-  <div class="person w-100 w-25-l mb3 flex flex-row items-center">
-    <a class="mr4 w4 h4 flex-shrink-0" href="{{baseurl}}/governance/people/{{member.github}}">
-      <img class="w-100 h-100 bg-white br2"
-           src="https://avatars.githubusercontent.com/{{member.github}}"
-           alt="{{member.name}}">
+<div class="person w-100 w-25-l mb3 flex flex-row items-center">
+    <a class="mr4 w4 h4 flex-shrink-0"
+       href="{{ baseurl }}/governance/people/{{ member.github }}">
+        <img class="w-100 h-100 bg-white br2"
+             src="https://avatars.githubusercontent.com/{{ member.github }}"
+             alt="{{ member.name }}">
     </a>
     <div class="flex flex-column">
-      <a href="{{baseurl}}/governance/people/{{member.github}}">{{member.name}}</a>
-      <a href="https://github.com/sponsors/{{member.github}}" class="button button-secondary mt2" style="max-width: fit-content">Sponsor</a>
+        <a href="{{ baseurl }}/governance/people/{{ member.github }}">{{ member.name }}</a>
+        <a href="https://github.com/sponsors/{{ member.github }}"
+           class="button button-secondary mt2 fit-content">Sponsor</a>
     </div>
-  </div>
+</div>
 {{/inline}}
-
 {{#*inline "page"}}
-  <header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
+<header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
     <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-      <h1>{{fluent "funding-page-title"}}</h1>
+        <h1>{{ fluent "funding-page-title" }}</h1>
     </div>
-  </header>
-
-  <section class="purple pb1">
-    <div class="w-100 mw-none mw-8-m mw9-l center f1 ph3" style="font-size: 1.2em;">
-      <p>{{fluent "funding-intro"}}</p>
+</header>
+<section class="purple pb1">
+    <div class="w-100 mw-none mw-8-m mw9-l center f2.5 ph3">
+        <p>{{ fluent "funding-intro" }}</p>
     </div>
-  </section>
-
-  <section class="red pb4" id="rfmf">
+</section>
+<section class="red pb4" id="rfmf">
     <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-      <header>
-        <h2>{{fluent "funding-maintenance-title"}}</h2>
-        <div class="highlight"></div>
-      </header>
-      <p>
-        {{#fluent "funding-rfmf-description"}}
-          {{#fluentparam "funding-team-url"}}{{baseurl}}/governance/teams/#team-funding{{/fluentparam}}
-          {{#fluentparam "mir-url"}}{{baseurl}}/funding/mir.html{{/fluentparam}}
+        <header>
+            <h2>{{ fluent "funding-maintenance-title" }}</h2>
+            <div class="highlight"></div>
+        </header>
+        <p>
+            {{#fluent "funding-rfmf-description"}}
+            {{#fluentparam "funding-team-url"}}{{ baseurl }}/governance/teams/#team-funding{{/fluentparam}}
+            {{#fluentparam "mir-url"}}{{ baseurl }}/funding/mir.html{{/fluentparam}}
         {{/fluent}}
-      </p>
-
-      <div class="flex items-center flex-column flex-row-ns">
+    </p>
+    <div class="flex items-center flex-column flex-row-ns">
         <div>
-          <a href="https://github.com/sponsors/rustfoundation" class="button button-secondary mw6">{{fluent "funding-rfmf-donate"}}</a>
+            <a href="https://github.com/sponsors/rustfoundation"
+               class="button button-secondary mw6">{{ fluent "funding-rfmf-donate" }}</a>
         </div>
         <div class="pt3 pt0-ns pl4-ns">
-          <a href="{{baseurl}}/funding/mir.html" class="button button-secondary mw6">{{fluent "funding-rfmf-mir-link"}}</a>
+            <a href="{{ baseurl }}/funding/mir.html"
+               class="button button-secondary mw6">{{ fluent "funding-rfmf-mir-link" }}</a>
         </div>
-      </div>
     </div>
-  </section>
-
-  <section class="green pb4" id="goals">
+</div>
+</section>
+<section class="green pb4" id="goals">
     <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-      <header>
-        <h2>{{fluent "funding-features-title"}}</h2>
-        <div class="highlight"></div>
-      </header>
-      <p>
-        {{fluent "funding-features-description"}}
-      </p>
-      <div>
-        <a href="https://goals.rust-lang.org/2026/funding.html" class="button button-secondary mw6">{{fluent "funding-goals-link"}}</a>
-      </div>
+        <header>
+            <h2>{{ fluent "funding-features-title" }}</h2>
+            <div class="highlight"></div>
+        </header>
+        <p>{{ fluent "funding-features-description" }}</p>
+        <div>
+            <a href="https://goals.rust-lang.org/2026/funding.html"
+               class="button button-secondary mw6">{{ fluent "funding-goals-link" }}</a>
+        </div>
     </div>
-  </section>
-
-  <section class="purple pb4" id="people">
+</section>
+<section class="purple pb4" id="people">
     <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-      <header>
-        <h2>{{fluent "funding-sponsors-title"}}</h2>
-        <div class="highlight"></div>
-      </header>
-      <div>
-        <p>{{fluent "funding-sponsors-description"}}</p>
-      </div>
-
-      <div id="sponsors-list" class="flex flex-column flex-row-l flex-wrap-l">
-        {{#each data.people as |member|}}
-          {{> member member=member baseurl=../baseurl }}
-        {{/each}}
-      </div>
-      <script type="text/javascript" src="{{assets.js.funding_shuffle}}"></script>
+        <header>
+            <h2>{{ fluent "funding-sponsors-title" }}</h2>
+            <div class="highlight"></div>
+        </header>
+        <div>
+            <p>{{ fluent "funding-sponsors-description" }}</p>
+        </div>
+        <div id="sponsors-list" class="flex flex-column flex-row-l flex-wrap-l">
+            {{#each data.people as |member|}}
+                {{> member member=member baseurl=../baseurl }}
+            {{/each}}
+        </div>
+        <script type="text/javascript" src="{{assets.js.funding_shuffle}}"></script>
     </div>
-  </section>
+</section>
 {{/inline}}
-
 {{~> (lookup this "parent")~}}

@@ -1,14 +1,12 @@
 {{#*inline "page"}}
-
 <header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
-  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-    <h1>{{fluent "what-cli-page-title"}}</h1>
-  </div>
+    <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <h1>{{ fluent "what-cli-page-title" }}</h1>
+    </div>
 </header>
-
 {{> components/what/cli/pitch }}
 {{> components/what/cli/maintainable }}
 {{> components/what/cli/example }}
 {{> components/what/cli/production }}
-
-{{/inline}} {{~> (lookup this "parent")~}}
+{{/inline}}
+{{~> (lookup this "parent")~}}

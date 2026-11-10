@@ -1,55 +1,84 @@
 <footer>
-  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-    <div class="flex flex-column flex-row-l pv0-l">
-      <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l" id="get-help">
-        <h4>{{fluent "footer-get-help"}}</h4>
-        <ul>
-          <li><a href="{{baseurl}}/learn">{{fluent "footer-doc"}}</a></li>
-          <li><a href="http://forge.rust-lang.org">{{fluent "footer-sup-doc"}}</a></li>
-          <li><a href="https://users.rust-lang.org">{{fluent "footer-ask"}}</a></li>
-        </ul>
-        <div class="languages">
-          <div class="select">
-            <label for="language-footer" class="hidden">{{fluent "choose-language"}}</label>
-            <select id="language-footer">
-              {{> components/languages-dropdown}}
-            </select>
-          </div>
+    <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <div class="flex flex-column flex-row-l pv0-l">
+            <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l"
+                 id="get-help">
+                <h4>{{ fluent "footer-get-help" }}</h4>
+                <ul>
+                    <li>
+                        <a href="{{ baseurl }}/learn">{{ fluent "footer-doc" }}</a>
+                    </li>
+                    <li>
+                        <a href="https://forge.rust-lang.org">{{ fluent "footer-sup-doc" }}</a>
+                    </li>
+                    <li>
+                        <a href="https://users.rust-lang.org">{{ fluent "footer-ask" }}</a>
+                    </li>
+                </ul>
+                <div class="languages">
+                    <div class="select">
+                        <label for="language-footer" class="hidden">{{ fluent "choose-language" }}</label>
+                        <select id="language-footer">{{> components/languages-dropdown}}</select>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l">
+                <h4>{{ fluent "footer-policies" }}</h4>
+                <ul>
+                    <li>
+                        <a href="{{ baseurl }}/policies/code-of-conduct">{{ fluent "footer-coc" }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ baseurl }}/policies/licenses">{{ fluent "footer-licenses" }}</a>
+                    </li>
+                    <li>
+                        <a href="https://foundation.rust-lang.org/policies/logo-policy-and-media-guide/">{{fluent
+                        "policies-media-guide-link"}}</a>
+                    </li>
+                    <li>
+                        <a href="{{ baseurl }}/policies/security">{{ fluent "footer-security" }}</a>
+                    </li>
+                    <li>
+                        <a href="https://foundation.rust-lang.org/policies/privacy-policy/">{{ fluent "policies-privacy-link" }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ baseurl }}/policies">{{ fluent "footer-policies-all" }}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l">
+                <h4>{{ fluent "footer-social" }}</h4>
+                <div class="flex flex-row flex-wrap items-center">
+                    <a rel="me" href="https://social.rust-lang.org/@rust" target="_blank">
+                        <img src="{{ baseurl_assets }}/static/images/mastodon.svg"
+                             alt="{{ fluent "mastodon" }}"
+                             title="{{ fluent "mastodon" }}" />
+                    </a>
+                    <a rel="me"
+                       href="https://bsky.app/profile/rust-lang.org"
+                       target="_blank">
+                        <img src="{{ baseurl_assets }}/static/images/bluesky.svg"
+                             alt="{{ fluent "bluesky" }}"
+                             title="{{ fluent "bluesky" }}" />
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA"
+                       target="_blank">
+                        <img class="pv2"
+                             src="{{ baseurl_assets }}/static/images/youtube.svg"
+                             alt="{{ fluent "footer-alt-youtube" }}"
+                             title="YouTube" />
+                    </a>
+                    <a href="https://github.com/rust-lang" target="_blank">
+                        <img src="{{ baseurl_assets }}/static/images/github.svg"
+                             alt="github logo"
+                             title="{{ fluent "footer-github-alt" }}" />
+                    </a>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l">
-        <h4>{{fluent "footer-policies"}}</h4>
-        <ul>
-          <li><a href="{{baseurl}}/policies/code-of-conduct">{{fluent "footer-coc"}}</a></li>
-          <li><a href="{{baseurl}}/policies/licenses">{{fluent "footer-licenses"}}</a></li>
-          <li><a href="https://foundation.rust-lang.org/policies/logo-policy-and-media-guide/">{{fluent
-              "policies-media-guide-link"}}</a></li>
-          <li><a href="{{baseurl}}/policies/security">{{fluent "footer-security"}}</a></li>
-          <li><a href="https://foundation.rust-lang.org/policies/privacy-policy/">{{fluent "policies-privacy-link"}}</a>
-          </li>
-          <li><a href="{{baseurl}}/policies">{{fluent "footer-policies-all"}}</a></li>
-        </ul>
-      </div>
-      <div class="flex flex-column mw8 w-100 measure-wide-l pv2 pv5-m pv2-ns ph4-m ph4-l">
-        <h4>{{fluent "footer-social"}}</h4>
-        <div class="flex flex-row flex-wrap items-center">
-          <a rel="me" href="https://social.rust-lang.org/@rust" target="_blank"><img src="{{baseurl_assets}}/static/images/mastodon.svg"
-              alt="{{fluent "mastodon"}}" title="{{fluent "mastodon"}}" /></a>
-          <a rel="me" href="https://bsky.app/profile/rust-lang.org" target="_blank"><img
-              src="{{baseurl_assets}}/static/images/bluesky.svg" alt="{{fluent "bluesky"}}" title="{{fluent "bluesky"}}" /></a>
-          <a href="https://www.youtube.com/channel/UCaYhcUwRBNscFNUKTjgPFiA" target="_blank"><img class="pv2"
-              src="{{baseurl_assets}}/static/images/youtube.svg" alt="{{fluent "footer-alt-youtube"}}" title="YouTube" /></a>
-          <a href="https://github.com/rust-lang" target="_blank"><img src="{{baseurl_assets}}/static/images/github.svg" alt="github logo"
-              title="{{fluent "footer-github-alt"}}" /></a>
+        <div class="attribution">
+            <p>{{ fluent "footer-attribution" }}</p>
+            <p>{{#fluent "footer-autoupdate"}}{{#fluentparam "autoupdate"}}22:00 UTC{{/fluentparam}}{{/fluent}}</p>
         </div>
-      </div>
-
     </div>
-    <div class="attribution">
-      <p>
-        {{fluent "footer-attribution"}}
-      </p>
-      <p>{{#fluent "footer-autoupdate"}}{{#fluentparam "autoupdate"}}22:00 UTC{{/fluentparam}}{{/fluent}}</p>
-    </div>
-  </div>
 </footer>

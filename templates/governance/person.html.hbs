@@ -1,80 +1,79 @@
 {{#*inline "teams"}}
-  {{#each teams as |team|}}
+{{#each teams as |team|}}
     <li>
-      {{#if team.toplevel_url }}
-        <a href="{{../baseurl}}/governance/{{team.toplevel_url}}#team-{{team.team.name}}">
-          {{ team.webpage_name }}</a>
-      {{else}}
-        {{ team.webpage_name }}
-      {{/if}}
-      {{#if team.roles }}
-        ({{~#each team.roles as |role index|~}}
-        {{#if (eq index 0)~}}
-          <b>{{role}}</b>{{~else~}}, <b>{{role}}</b>
-        {{~/if}}
-        {{~/each~}})
-      {{/if}}
-    </li>
-  {{/each}}
+        {{#if team.toplevel_url }}
+            <a href="{{../baseurl}}/governance/{{ team.toplevel_url }}#team-{{ team.team.name }}">{{ team.webpage_name }}</a>
+        {{ else }}
+            {{ team.webpage_name }}
+        {{/if}}
+        {{#if team.roles }}
+            ({{~#each team.roles as |role index|~}}
+            {{#if (eq index 0)~}}
+                <b>{{ role }}</b>{{~else~}}, <b>{{ role }}</b>
+                {{~/if}}
+                {{~/each~}})
+            {{/if}}
+        </li>
+    {{/each}}
 {{/inline}}
-
 {{#*inline "page"}}
-  <section class="green" style="padding-bottom: 10px;">
+<section class="green smaller">
     <div class="w-100 mw-none mw-8-m mw9-l center f1 ph3 flex flex-column flex-row-l items-end-l justify-between">
-      <div class="w-100 w-50-l mb3 flex flex-row items-start">
-        <a class="mr4 w4 h4 w5-l h5-l flex-shrink-0" href="https://github.com/{{data.github}}">
-          <img class="w-100 h-100 bg-white br2"
-               src="https://avatars.githubusercontent.com/{{data.github}}"
-               alt="{{data.name}}">
-        </a>
-        <div>
-          {{data.name}}
-          <div class="f4">
-            GitHub: <a href="https://github.com/{{data.github}}">{{data.github}}</a>
-          </div>
+        <div class="w-100 w-50-l mb3 flex flex-row items-start">
+            <a class="mr4 w4 h4 w5-l h5-l flex-shrink-0"
+               href="https://github.com/{{ data.github }}">
+                <img class="w-100 h-100 bg-white br2"
+                     src="https://avatars.githubusercontent.com/{{ data.github }}"
+                     alt="{{ data.name }}">
+            </a>
+            <div>
+                {{ data.name }}
+                <div class="f4">
+                    GitHub: <a href="https://github.com/{{ data.github }}">{{ data.github }}</a>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="f3">
-        {{# if data.zulip_id }}
-          <div>
-            <a href="https://rust-lang.zulipchat.com/#narrow/dm/{{data.zulip_id}}" class="button button-secondary mw6">Contact me on Zulip</a>
-          </div>
-        {{/if}}
-        {{# if data.github_sponsors }}
-          <div class="mt2">
-            <a href="https://github.com/sponsors/{{data.github}}" class="button button-secondary mw6">Sponsor me on GitHub</a>
-          </div>
-        {{/if}}
-      </div>
+        <div class="f3">
+            {{# if data.zulip_id }}
+                <div>
+                    <a href="https://rust-lang.zulipchat.com/#narrow/dm/{{ data.zulip_id }}"
+                       class="button button-secondary mw6">Contact me on Zulip</a>
+                </div>
+            {{/if}}
+            {{# if data.github_sponsors }}
+                <div class="mt2">
+                    <a href="https://github.com/sponsors/{{ data.github }}"
+                       class="button button-secondary mw6">Sponsor me on GitHub</a>
+                </div>
+            {{/if}}
+        </div>
     </div>
-  </section>
-
-  {{# if data.active_teams }}
-    <section class="purple" style="padding-bottom: 10px;">
-      <div class="w-100 mw-none mw-8-m mw9-l center ph3">
-        <header>
-          <h2>{{ fluent "governance-person-team-member" }}</h2>
-          <div class="highlight"></div>
-        </header>
-        <ul>
-          {{> teams teams=data.active_teams }}
-        </ul>
-      </div>
+</section>
+{{# if data.active_teams }}
+    <section class="purple smaller">
+        <div class="w-100 mw-none mw-8-m mw9-l center ph3">
+            <header>
+                <h2>{{ fluent "governance-person-team-member" }}</h2>
+                <div class="highlight"></div>
+            </header>
+            <ul>
+                {{> teams teams=data.active_teams }}
+            </ul>
+        </div>
     </section>
-  {{/if}}
-
-  {{# if data.alumni_teams }}
-    <section class="red" style="padding-bottom: 10px;">
-      <div class="w-100 mw-none mw-8-m mw9-l center ph3">
-        <header>
-          <h2>{{ fluent "governance-person-team-alumni" }}</h2>
-          <div class="highlight"></div>
-        </header>
-        <ul>
-          {{> teams teams=data.alumni_teams }}
-        </ul>
-      </div>
+{{/if}}
+{{# if data.alumni_teams }}
+    <section class="red smaller">
+        <div class="w-100 mw-none mw-8-m mw9-l center ph3">
+            <header>
+                <h2>{{ fluent "governance-person-team-alumni" }}</h2>
+                <div class="highlight"></div>
+            </header>
+            <ul>
+                {{> teams teams=data.alumni_teams }}
+            </ul>
+        </div>
     </section>
-  {{/if}}
+{{/if}}
 {{/inline}}
 {{~> (lookup this "parent")~}}
