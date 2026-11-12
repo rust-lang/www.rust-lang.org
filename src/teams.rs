@@ -402,10 +402,7 @@ impl RustTeamData {
 /// Is this a team for which we should display its members on the "All Project Members" page,
 /// and whose members should receive a separate person page?
 fn is_active_team(team: &Team) -> bool {
-    if team.kind == TeamKind::MarkerTeam && team.website_data.is_none() {
-        return false;
-    }
-    true
+    !(team.kind == TeamKind::MarkerTeam && team.website_data.is_none())
 }
 
 /// Get a relative URL of a team that should be appended to
