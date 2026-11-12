@@ -5,8 +5,8 @@ what-networking-page-title = Ağ Sistemleri
 ## templates/components/what/networking/get-started.hbs
 
 networking-get-started = Rust, web için kolay kullanılabilir kütüphanelerin bulunduğu büyüyen bir ekosisteme sahip. İşte size iki örnek:
-networking-get-started-post-json = Biraz JSON POSTlayın
-networking-get-started-take-json = Bir JSON POSTuyla başa çıkın
+networking-get-started-post-json = Biraz JSON POST'layın
+networking-get-started-take-json = Bir JSON POST'unu işleyin
 networking-get-started-reqwest = Reqwest hakkında daha fazla bilgi edinin
 networking-get-started-rocket = Rocket hakkında daha fazla bilgi edinin
 
