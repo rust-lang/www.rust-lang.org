@@ -5,8 +5,6 @@
 
 governance-page-title = Управление
 governance-tagline = Как Rust создаётся его сообществом
-governance-rfc = Дорожная карта и процесс RFC
-governance-rfc-blurb = Каждое важное решение в Rust начинается с Request for Comments (RFC). Приглашаем всех обсудить предложение и работать над общим пониманием всех компромиссов. Не смотря на то, что временами это трудно, такое обсуждение сообществом является секретным соусом Rust, повышающим его качество.
 governance-teams-header = Команды
 governance-wgs-header = Рабочие группы
 
