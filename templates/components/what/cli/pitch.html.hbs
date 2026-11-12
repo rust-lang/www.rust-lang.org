@@ -1,123 +1,89 @@
 <section class="purple">
-  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-    <header>
-      <h2>
-        {{fluent "why-rust"}}
-      </h2>
-      <div class="highlight"></div>
-    </header>
-
-    <div class="flex flex-column flex-row-l">
-      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l">
-        <div class="v-top tc-l">
-          <img src="{{baseurl_assets}}/static/images/cli-rustc-approved.svg" alt="{{fluent "cli-pitch-solid-img-alt"}}" class="mw3 mw4-ns"/>
+    <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <header>
+            <h2>{{ fluent "why-rust" }}</h2>
+            <div class="highlight"></div>
+        </header>
+        <div class="flex flex-column flex-row-l">
+            <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l">
+                <div class="v-top tc-l">
+                    <img src="{{ baseurl_assets }}/static/images/cli-rustc-approved.svg"
+                         alt="{{ fluent "cli-pitch-solid-img-alt" }}"
+                         class="mw3 mw4-ns" />
+                </div>
+                <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+                    <h3 class="tc-l">{{ fluent "cli-pitch-solid-heading" }}</h3>
+                    <p class="flex-grow-1">{{ fluent "cli-pitch-solid-description" }}</p>
+                    <a href="{{ baseurl }}/learn" class="button button-secondary">{{ fluent "cli-pitch-solid-link" }}</a>
+                </div>
+            </div>
+            <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l">
+                <div class="v-top tc-l">
+                    <img src="{{ baseurl_assets }}/static/images/cli-packaging.svg"
+                         alt="{{ fluent "cli-pitch-ship-img-alt" }}"
+                         class="mw3 mw4-ns" />
+                </div>
+                <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+                    <h3 class="tc-l">{{ fluent "cli-pitch-ship-heading" }}</h3>
+                    <p class="flex-grow-1">{{ fluent "cli-pitch-ship-description" }}</p>
+                    <a href="https://rust-cli.github.io/book/tutorial/packaging.html"
+                       class="button button-secondary">{{ fluent "cli-pitch-ship-link" }}</a>
+                </div>
+            </div>
+            <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l">
+                <div class="v-top tc-l">
+                    <img src="{{ baseurl_assets }}/static/images/cli-configs.svg"
+                         alt="{{ fluent "cli-pitch-config-img-alt" }}"
+                         class="mw3 mw4-ns" />
+                </div>
+                <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+                    <h3 class="tc-l">{{ fluent "cli-pitch-config-heading" }}</h3>
+                    <p class="flex-grow-1">{{ fluent "cli-pitch-config-description" }}</p>
+                    <a href="https://rust-cli.github.io/book/in-depth/config-files.html"
+                       class="button button-secondary">{{ fluent "cli-pitch-config-link" }}</a>
+                </div>
+            </div>
         </div>
-        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
-          <h3 class="tc-l">
-            {{fluent "cli-pitch-solid-heading"}}
-          </h3>
-          <p class="flex-grow-1">
-            {{fluent "cli-pitch-solid-description"}}
-          </p>
-          <a href="{{baseurl}}/learn" class="button button-secondary">
-            {{fluent "cli-pitch-solid-link"}}
-          </a>
+        <div class="flex-none flex-l flex-row mt5-l">
+            <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l">
+                <div class="v-top tc-l">
+                    <img src="{{ baseurl_assets }}/static/images/cli-man.svg"
+                         alt="{{ fluent "cli-pitch-manuals-img-alt" }}"
+                         class="mw3 mw4-ns" />
+                </div>
+                <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+                    <h3 class="tc-l">{{ fluent "cli-pitch-manuals-heading" }}</h3>
+                    <p class="flex-grow-1">{{ fluent "cli-pitch-manuals-description" }}</p>
+                    <a href="https://rust-cli.github.io/book/in-depth/docs.html"
+                       class="button button-secondary">{{ fluent "cli-pitch-manuals-link" }}</a>
+                </div>
+            </div>
+            <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l">
+                <div class="v-top tc-l">
+                    <img src="{{ baseurl_assets }}/static/images/cli-pipe.svg"
+                         alt="{{ fluent "cli-pitch-machines-img-alt" }}"
+                         class="mw3 mw4-ns" />
+                </div>
+                <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+                    <h3 class="tc-l">{{ fluent "cli-pitch-machines-heading" }}</h3>
+                    <p class="flex-grow-1">{{ fluent "cli-pitch-machines-description" }}</p>
+                    <a href="https://rust-cli.github.io/book/in-depth/machine-communication.html"
+                       class="button button-secondary">{{ fluent "cli-pitch-machines-link" }}</a>
+                </div>
+            </div>
+            <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l">
+                <div class="v-top tc-l">
+                    <img src="{{ baseurl_assets }}/static/images/cli-logging.svg"
+                         alt="{{ fluent "cli-pitch-logging-img-alt" }}"
+                         class="mw3 mw4-ns" />
+                </div>
+                <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
+                    <h3 class="tc-l">{{ fluent "cli-pitch-logging-heading" }}</h3>
+                    <p class="flex-grow-1">{{ fluent "cli-pitch-logging-description" }}</p>
+                    <a href="https://rust-cli.github.io/book/in-depth/human-communication.html"
+                       class="button button-secondary">{{ fluent "cli-pitch-logging-link" }}</a>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l">
-        <div class="v-top tc-l">
-          <img src="{{baseurl_assets}}/static/images/cli-packaging.svg" alt="{{fluent "cli-pitch-ship-img-alt"}}"
-               class="mw3 mw4-ns"/>
-        </div>
-        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
-          <h3 class="tc-l">
-            {{fluent "cli-pitch-ship-heading"}}
-          </h3>
-          <p class="flex-grow-1">
-            {{fluent "cli-pitch-ship-description"}}
-          </p>
-          <a href="https://rust-cli.github.io/book/tutorial/packaging.html" class="button button-secondary">
-            {{fluent "cli-pitch-ship-link"}}
-          </a>
-        </div>
-      </div>
-
-      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l">
-        <div class="v-top tc-l">
-          <img src="{{baseurl_assets}}/static/images/cli-configs.svg" alt="{{fluent "cli-pitch-config-img-alt"}}"
-               class="mw3 mw4-ns"/>
-        </div>
-        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
-          <h3 class="tc-l">
-            {{fluent "cli-pitch-config-heading"}}
-          </h3>
-
-          <p class="flex-grow-1">
-            {{fluent "cli-pitch-config-description"}}
-          </p>
-          <a href="https://rust-cli.github.io/book/in-depth/config-files.html" class="button button-secondary">
-              {{fluent "cli-pitch-config-link"}}
-          </a>
-        </div>
-      </div>
     </div>
-    <div class="flex-none flex-l flex-row mt5-l">
-      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l">
-        <div class="v-top tc-l">
-          <img src="{{baseurl_assets}}/static/images/cli-man.svg" alt="{{fluent "cli-pitch-manuals-img-alt"}}"
-               class="mw3 mw4-ns"/>
-        </div>
-        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
-          <h3 class="tc-l">
-            {{fluent "cli-pitch-manuals-heading"}}
-          </h3>
-          <p class="flex-grow-1">
-            {{fluent "cli-pitch-manuals-description"}}
-          </p>
-          <a href="https://rust-cli.github.io/book/in-depth/docs.html" class="button button-secondary">
-            {{fluent "cli-pitch-manuals-link"}}
-          </a>
-        </div>
-      </div>
-
-      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l">
-        <div class="v-top tc-l">
-          <img src="{{baseurl_assets}}/static/images/cli-pipe.svg" alt="{{fluent "cli-pitch-machines-img-alt"}}"
-               class="mw3 mw4-ns"/>
-        </div>
-        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
-          <h3 class="tc-l">
-            {{fluent "cli-pitch-machines-heading"}}
-          </h3>
-          <p class="flex-grow-1">
-            {{fluent "cli-pitch-machines-description"}}
-          </p>
-          <a href="https://rust-cli.github.io/book/in-depth/machine-communication.html" class="button button-secondary">
-            {{fluent "cli-pitch-machines-link"}}
-          </a>
-        </div>
-      </div>
-
-      <div class="flex flex-row flex-column-l justify-between-l mw8 measure-wide-l w-100 mt5 mt2-l pl4-l">
-        <div class="v-top tc-l">
-          <img src="{{baseurl_assets}}/static/images/cli-logging.svg"
-               alt="{{fluent "cli-pitch-logging-img-alt"}}"
-               class="mw3 mw4-ns"/>
-        </div>
-        <div class="v-top pl4 pl0-l pt0 pt3-l measure-wide-l flex-l flex-column-l flex-auto-l justify-between-l">
-          <h3 class="tc-l">
-            {{fluent "cli-pitch-logging-heading"}}
-          </h3>
-
-          <p class="flex-grow-1">
-            {{fluent "cli-pitch-logging-description"}}
-          </p>
-          <a href="https://rust-cli.github.io/book/in-depth/human-communication.html" class="button button-secondary">
-            {{fluent "cli-pitch-logging-link"}}
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
 </section>

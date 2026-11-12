@@ -244,6 +244,11 @@ h2.subtitle {
 section {
   padding: 30px 0 60px 0;
 
+  // used on governance/people pages
+  &.smaller {
+    padding-bottom: 10px;
+  }
+
   header {
     padding: 10px 0 30px 0;
     display: inline-block;
@@ -708,4 +713,20 @@ blockquote::before {
   border-top: 5px solid $gray;
   border-right: 5px solid transparent;
   border-left: 5px solid transparent;
+}
+
+// these "half-sizes" are useful for funding pages
+.f2\.5 {
+  font-size: 1.75rem
+}
+.w4\.5 {
+  width: 12rem;
+}
+.h4\.5 {
+  height: 12rem;
+}
+
+// as is this style
+.fit-content {
+  max-width: fit-content;
 }

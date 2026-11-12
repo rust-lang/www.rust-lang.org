@@ -1,3 +1,4 @@
 {{#each locales as |locale| ~}}
-    <option title="{{locale.text}} ({{locale.lang}})" value="{{locale.lang}}">{{locale.text}} ({{locale.lang}})</option>
+    <option title="{{ locale.text }} ({{ locale.lang }})"
+            value="{{ locale.lang }}">{{ locale.text }} ({{ locale.lang }})</option>
 {{/each~}}

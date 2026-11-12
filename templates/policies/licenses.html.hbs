@@ -1,48 +1,47 @@
 {{#*inline "page"}}
-
 <header class="mt3 mt2-ns mb4 mb5-ns tc tl-ns">
-  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-    <h1>{{fluent "policies-licenses-page-title"}}</h1>
-  </div>
+    <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <h1>{{ fluent "policies-licenses-page-title" }}</h1>
+    </div>
 </header>
-
 {{#if is_translation}}
-<section id="translation-warning" class="green pv4">
-  <div class="w-100 mw-none ph3 pw8-m mw9-l center f3">
-    <p class="mb0">
-      {{#fluent "policies-translation-warning"}}
-        {{#fluentparam "english"}}/policies/licenses{{/fluentparam}}
-      {{/fluent}}
-    </p>
-  </div>
+    <section id="translation-warning" class="green pv4">
+        <div class="w-100 mw-none ph3 pw8-m mw9-l center f3">
+            <p class="mb0">
+                {{#fluent "policies-translation-warning"}}
+                {{#fluentparam "english"}}/policies/licenses{{/fluentparam}}
+            {{/fluent}}
+        </p>
+    </div>
 </section>
 {{/if}}
-
 <section id="license" class="purple">
-  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-    <header>
-      <h2>{{fluent "licenses-license-heading"}}</h2>
-      <div class="highlight"></div>
-    </header>
-    <p>{{fluent "licenses-license-general-description"}}</p>
-    <ul>
-      <li><a href="http://www.apache.org/licenses/LICENSE-2.0">{{fluent "licenses-apache-v-2-0-link"}}</a></li>
-      <li><a href="http://opensource.org/licenses/MIT">{{fluent "licenses-mit-link"}}</a></li>
-    </ul>
-    {{fluent "licenses-license-specific-description"}}
-    <a href="mailto:council@rust-lang.org" class="button button-secondary">{{fluent "licenses-license-email-link"}}</a>
-  </div>
+    <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <header>
+            <h2>{{ fluent "licenses-license-heading" }}</h2>
+            <div class="highlight"></div>
+        </header>
+        <p>{{ fluent "licenses-license-general-description" }}</p>
+        <ul>
+            <li>
+                <a href="https://www.apache.org/licenses/LICENSE-2.0">{{ fluent "licenses-apache-v-2-0-link" }}</a>
+            </li>
+            <li>
+                <a href="https://opensource.org/licenses/MIT">{{ fluent "licenses-mit-link" }}</a>
+            </li>
+        </ul>
+        {{ fluent "licenses-license-specific-description" }}
+        <a href="mailto:council@rust-lang.org" class="button button-secondary">{{ fluent "licenses-license-email-link" }}</a>
+    </div>
 </section>
-
 <section id="attribution" class="red">
-  <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
-    <header>
-      <h2>{{fluent "licenses-attribution-heading"}}</h2>
-      <div class="highlight"></div>
-    </header>
-    <p>{{fluent "licenses-attribution-description"}}</p>
-  </div>
+    <div class="w-100 mw-none ph3 mw8-m mw9-l center f3">
+        <header>
+            <h2>{{ fluent "licenses-attribution-heading" }}</h2>
+            <div class="highlight"></div>
+        </header>
+        <p>{{ fluent "licenses-attribution-description" }}</p>
+    </div>
 </section>
-
 {{/inline}}
 {{~> (lookup this "parent")~}}
