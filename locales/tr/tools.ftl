@@ -106,6 +106,13 @@ install-notes-windows-description =
       <a href="https://rust-lang.github.io/rustup/installation/windows.html">
       Windows'a özgü <code>rustup</code> belgelendirmesi</a>nden ulaşabilirsiniz.
     </p>
+install-notes-uninstall-heading = Rust'ı Kaldır
+install-notes-uninstall-description =
+    <p>
+      Herhangi bir noktada Rust'ı kaldırmak isterseniz
+      <code>rustup self uninstall</code> komutunu çalıştırabilirsiniz.
+      Yine de sizi özleyeceğiz!
+    </p>
 install-other-methods-heading = Diğer kurulum yöntemleri
 install-other-methods-description =
     Yukarıda açıklanan <code>rustup</code> tabanlı kurulum
