@@ -7,6 +7,8 @@ why-rust = Neden Rust?
 production-use = Üretimde kullanım
 learn-more = Daha fazla bilgi edinin
 mastodon = Mastodon
+bluesky = Bluesky
+zulip = Zulip
 
 ## components/panels/domain.hbs
 
@@ -26,6 +28,7 @@ index-title = Rust Programlama Dili
 nav-install = Yükle
 nav-learn = Öğren
 nav-tools = Araçlar
+nav-funding = Finansman
 nav-governance = Yönetim
 nav-community = Topluluk
 nav-blog = Blog
@@ -36,6 +39,7 @@ nav-logo-alt = Rust Logosu
 ## components/footer.hbs
 
 footer-doc = Belgelendirme
+footer-sup-doc = Rust Forge (Katkıcı Belgelendirmesi)
 footer-ask = Kullanıcılar Forumunda Bir Soru Sorun
 footer-policies = Şartlar ve politikalar
 footer-coc = Davranış Kuralları
@@ -44,6 +48,7 @@ footer-media = Logo Politikası ve Medya Rehberi
 footer-security = Güvenlik Açıklaması
 footer-policies-all = Tüm Politikalar
 footer-social = Sosyal
+footer-autoupdate = Web sitesi her gün { $autoupdate } saatinde derlenmektedir
 footer-get-help = Yardım alın!
 footer-youtube-alt = Twitter
 footer-alt-youtube = youtube logosu
