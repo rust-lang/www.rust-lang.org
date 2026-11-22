@@ -1,6 +1,5 @@
 ### Translation file for page: https://www.rust-lang.org/policies/
 
-
 ## templates/policies/index.hbs
 
 policies-page-title = Politikalar
@@ -12,3 +11,7 @@ policies-security-link = Güvenlik Açıklamaları
 policies-privacy-link = Gizlilik Bildirisi
 policies-reach-out-description = Aradığınızı bulamadınız mı? Bir sorunuz mu var? Lütfen iletişime geçin!
 policies-reach-out-link = Rust Leadership Council'a mesaj at
+
+policies-translation-warning =
+    Bu politika Rust topluluk üyeleri tarafından çevrilmiş olabilir. <a href="{ $english }">İngilizce sürüm</a> ile
+    bir çeviri arasında herhangi bir çelişki olması durumunda İngilizce sürüm geçerli olacaktır.
