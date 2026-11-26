@@ -137,12 +137,7 @@ install-notes-path-description =
 
 install-notes-windows-heading = Windows considerations
 install-notes-windows-description =
-        <p>
-          On Windows, Rust additionally requires the MSVC build tools
-          for Visual Studio 2013 or later. See
-          <a href="https://rust-lang.github.io/rustup/installation/windows-msvc.html">
-          MSVC prerequistes</a>
-        </p>
+        <p>On Windows, Rust needs the MSVC linker and a Windows SDK. See <a href="https://rust-lang.github.io/rustup/installation/windows-msvc.html">MSVC prerequisites</a> to install them.</p>
         <p>
           For further information about configuring Rust on Windows see the
           <a href="https://rust-lang.github.io/rustup/installation/windows.html">
@@ -157,12 +152,18 @@ install-other-methods-link = Learn more
 
 ## components/tools/rustup.hbs
 
-tools-rustup-unixy = It looks like you’re running macOS, Linux, or another Unix-like OS. To download Rustup and install Rust, run the following in your terminal, then follow the on-screen instructions. See <a href="https://forge.rust-lang.org/infra/other-installation-methods.html">"Other Installation Methods"</a> if you are on Windows.
-tools-rustup-windows-2 = It looks like you’re running Windows. To start using Rust, download the installer, then run the program and follow the onscreen instructions. You may need to install the <a href="https://rust-lang.github.io/rustup/installation/windows-msvc.html">Visual Studio C++ Build tools</a> when prompted to do so. If you are not on Windows see <a href="https://forge.rust-lang.org/infra/other-installation-methods.html">"Other Installation Methods"</a>.
+tools-rustup-unixy = Run the following in your terminal, then follow the on-screen instructions. If you are on Windows see <a href="https://forge.rust-lang.org/infra/other-installation-methods.html">"Other Installation Methods"</a>.
+tools-rustup-windows-3 = Follow the on-screen instructions after downloading. If you are not on Windows see <a href="https://forge.rust-lang.org/infra/other-installation-methods.html">"Other Installation Methods"</a>.
+tools-rustup-windows-download-heading = Download the installer
+tools-rustup-windows-detected = Detected for this device
+tools-rustup-windows-arch-help = Not sure which one? Check Settings &gt; System &gt; About &gt; System type.
+tools-rustup-winget-heading = Via WinGet
+tools-rustup-winget-lead = Or install with <a href="https://learn.microsoft.com/windows/package-manager/winget/">WinGet</a> in PowerShell or Command Prompt:
+tools-rustup-winget = The first line installs the MSVC linker and Windows SDK that Rust needs. The Visual Studio Installer opens so you can review and confirm, and it needs administrator permission. The second installs <code>rustup</code>, which installs and updates Rust. See <a href="https://rust-lang.github.io/rustup/installation/windows-msvc.html">MSVC prerequisites</a> for other options. Installing the MSVC build tools requires a Visual Studio license. Visual Studio Community is free for individuals, open-source projects and small teams. See the <a href="https://visualstudio.microsoft.com/license-terms/vs2026-ga-diagnostic-buildtools/">Build Tools license terms</a>.
 tools-rustup-wsl-heading = Windows Subsystem for Linux
-tools-rustup-wsl = If you’re a Windows Subsystem for Linux user run the following in your terminal, then follow the on-screen instructions to install Rust.
-tools-rustup-manual-default = To install Rust, if you are running a Unix such as WSL, Linux or macOS,<br> run the following in your terminal, then follow the on-screen instructions.
-tools-rustup-manual-default-windows = If you are running Windows,<br>download and run <a href="https://win.rustup.rs">rustup‑init.exe</a> then follow the on-screen instructions.
+tools-rustup-wsl = Run the following in your WSL terminal, then follow the on-screen instructions.
+tools-rustup-manual-default = If you are running a Unix such as WSL, Linux or macOS,<br> run the following in your terminal, then follow the on-screen instructions.
+tools-rustup-manual-default-windows = On Windows,<br>download and run <a href="https://win.rustup.rs">rustup‑init.exe</a> then follow the on-screen instructions.
 
 ## components/tools/editors.hbs
 
