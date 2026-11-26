@@ -410,6 +410,21 @@ a.brand {
   }
 }
 
+// Shared by /tools/install (green) and /learn/get-started (purple).
+.rustup-win-detected .button.button-secondary {
+  background-color: white;
+  border-color: white;
+  color: $gray;
+  &:hover,
+  &:focus {
+    border-color: $gray;
+  }
+}
+.rustup-win-detected-label {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
 h3 {
   font-weight: 600;
   font-size: 1.5em;

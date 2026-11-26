@@ -57,6 +57,76 @@ function detect_platform() {
     return os;
 }
 
+// Maps User-Agent Client Hints to a rustup Windows target. Returns null unless
+// the hints clearly identify a Windows architecture we ship rustup-init for.
+function windows_arch_from_hints(hints) {
+    "use strict";
+
+    if (!hints || hints.platform !== "Windows") {
+        return null;
+    }
+    if (hints.architecture === "arm" && hints.bitness === "64") {
+        return "aarch64";
+    }
+    if (hints.architecture === "x86" && hints.bitness === "64") {
+        return "x86_64";
+    }
+    if (hints.architecture === "x86" && hints.bitness === "32") {
+        return "i686";
+    }
+    return null;
+}
+
+// Client Hints are optional (currently Chromium-based browsers only), so any
+// missing API or failure just means "unknown" and the default order is kept.
+function detect_windows_arch() {
+    "use strict";
+
+    var uad = navigator.userAgentData;
+    if (!uad || typeof uad.getHighEntropyValues !== "function") {
+        return Promise.resolve(null);
+    }
+    try {
+        return uad.getHighEntropyValues(["architecture", "bitness"])
+            .then(windows_arch_from_hints, function() { return null; });
+    } catch (e) {
+        return Promise.resolve(null);
+    }
+}
+
+function highlight_windows_arch(arch) {
+    "use strict";
+
+    var container = document.getElementById("rustup-win-downloads");
+    if (container === null) {
+        return;
+    }
+    var detected = null;
+    container.querySelectorAll("[data-arch]").forEach(function(item) {
+        var is_detected = item.getAttribute("data-arch") === arch;
+        if (is_detected) {
+            detected = item;
+        }
+        item.classList.toggle("rustup-win-detected", is_detected);
+        var label = item.querySelector(".rustup-win-detected-label");
+        if (label) {
+            vis(label, is_detected ? "db" : "dn");
+        }
+    });
+    if (detected !== null) {
+        container.insertBefore(detected, container.firstElementChild);
+    }
+    container.setAttribute("data-detected-arch", detected === null ? "none" : arch);
+}
+
+function adjust_windows_downloads() {
+    "use strict";
+
+    detect_windows_arch().then(highlight_windows_arch, function() {
+        highlight_windows_arch(null);
+    });
+}
+
 function adjust_for_platform() {
     "use strict";
 
@@ -211,4 +281,5 @@ function set_up_copy_buttons() {
     adjust_for_platform();
     set_up_cycle_button();
     set_up_copy_buttons();
+    adjust_windows_downloads();
 }());
